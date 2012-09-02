@@ -21,6 +21,22 @@ function nodeaccess_userreference_uninstall() {
 }
 
 /**
+ * Implements hook_requirements().
+ */
+function nodeaccess_userreference_requirements() {
+  $requirements = array();
+  if (!module_exists('user_reference') && !module_exists('entityreference')) {
+    $t = get_t();
+    $requirements['user_reference'] = array(
+      'title' => $t('User reference module'),
+      'severity' => REQUIREMENT_ERROR,
+      'description' => $t('You need a module to reference users.  Use either <em>Entity reference</em> or <em>References</em>.'),
+    );
+  }
+  return $requirements;
+}
+
+/**
  * Unset author grants for updated installations.
  */
 function nodeaccess_userreference_update_6300() {
@@ -210,17 +226,22 @@ function nodeaccess_userreference_update_7305() {
 }
 
 /**
- * Implements hook_requirements().
+ * Reduce settings to essentials.
  */
-function nodeaccess_userreference_requirements() {
-  $requirements = array();
-  if (!module_exists('user_reference') && !module_exists('entityreference')) {
-    $t = get_t();
-    $requirements['user_reference'] = array(
-      'title' => $t('User reference module'),
-      'severity' => REQUIREMENT_ERROR,
-      'description' => $t('You need a module to reference users.  Use either <em>Entity reference</em> or <em>References</em>.'),
-    );
+function nodeaccess_userreference_update_7306() {
+  $new_data = array();
+  $data = variable_get('nodeaccess_userreference', array());
+
+  variable_del('nodeaccess_userreference');
+
+  foreach ($data as $type => $type_data) {
+    foreach ($type_data as $field => $field_data) {
+      if (!empty($field_data)) {
+        $new_settings = nodeaccess_userreference_reduce_variable($field_data);
+        nodeaccess_userreference_field_settings($type, $field, $new_settings);
+      }
+    }
   }
-  return $requirements;
+
+  return "Reduced settings to essentials.";
 }

@@ -29,10 +29,23 @@ function nodeaccess_userreference_form_field_ui_field_edit_form_alter(&$form, $f
     &&
     $form['#instance']['entity_type'] == 'node'
   ) {
-    $data = nodeaccess_userreference_field_settings($form['#instance']['bundle'], $form['#field']['field_name']);
+    $data = isset($form['#instance']['settings']['nodeaccess_userreference']) ?
+      $form['#instance']['settings']['nodeaccess_userreference'] : array();
+    $current = nodeaccess_userreference_field_settings($form['#instance']['bundle'], $form['#instance']['field_name']);
+
     $form['instance']['settings']['nodeaccess_userreference'] = array(
       '#type' => 'fieldset',
       '#title' => t('Node access user reference'),
+      '#tree' => TRUE,
+      '#collapsible' => TRUE,
+      '#collapsed' => empty($current),
+    );
+
+
+    $referenced_states = array(
+      array('[name="instance[settings][nodeaccess_userreference][referenced][view]"]' => array('checked' => TRUE)),
+      array('[name="instance[settings][nodeaccess_userreference][referenced][update]"]' => array('checked' => TRUE)),
+      array('[name="instance[settings][nodeaccess_userreference][referenced][delete]"]' => array('checked' => TRUE)),
     );
     $form['instance']['settings']['nodeaccess_userreference']['referenced'] = array(
       '#type' => 'checkboxes',
@@ -75,6 +88,9 @@ function nodeaccess_userreference_form_field_ui_field_edit_form_alter(&$form, $f
         'delete' => t('Delete'),
       ),
       '#description' => t('These content access permissions will be granted to the authors of nodes.'),
+      '#states' => array(
+        'visible' => $referenced_states,
+      ),
     );
     $form['instance']['settings']['nodeaccess_userreference']['author_published'] = array(
       '#type' => 'select',
@@ -84,6 +100,9 @@ function nodeaccess_userreference_form_field_ui_field_edit_form_alter(&$form, $f
       '#options' => array(
         0 => t('Give these grants for published nodes only'),
         1 => t('Give these grants for published and unpublished nodes'),
+      ),
+      '#states' => array(
+        'visible' => $referenced_states,
       ),
     );
     $form['instance']['settings']['nodeaccess_userreference']['all'] = array(
@@ -99,6 +118,9 @@ function nodeaccess_userreference_form_field_ui_field_edit_form_alter(&$form, $f
           '%anon' => format_username(drupal_anonymous_user()),
         )
       ),
+      '#states' => array(
+        'visible' => $referenced_states,
+      ),
     );
     $form['instance']['settings']['nodeaccess_userreference']['all_published'] = array(
       '#type' => 'select',
@@ -108,6 +130,9 @@ function nodeaccess_userreference_form_field_ui_field_edit_form_alter(&$form, $f
       '#options' => array(
         0 => t('Give these grants for published nodes only'),
         1 => t('Give these grants for published and unpublished nodes'),
+      ),
+      '#states' => array(
+        'visible' => $referenced_states,
       ),
     );
     $form['instance']['settings']['nodeaccess_userreference']['unused'] = array(
@@ -119,6 +144,9 @@ function nodeaccess_userreference_form_field_ui_field_edit_form_alter(&$form, $f
         1 => t('Always'),
       ),
       '#description' => t('Determines whether to set grants when the field is not in use.'),
+      '#states' => array(
+        'visible' => $referenced_states,
+      ),
     );
     if (module_exists('views')) {
       $form['instance']['settings']['nodeaccess_userreference']['views'] = array(
@@ -162,6 +190,9 @@ function nodeaccess_userreference_form_field_ui_field_edit_form_alter(&$form, $f
       '#title' => t('Priority'),
       '#default_value' => isset($data['priority']) ? $data['priority'] : 0,
       '#description' => t('It is recommended to always leave this set to 0.'),
+      '#states' => array(
+        'visible' => $referenced_states,
+      ),
     );
   }
 }
@@ -222,15 +253,25 @@ function nodeaccess_userreference_field_update_instance($instance, $prior_instan
     &&
     $instance['entity_type'] == 'node'
   ) {
-     nodeaccess_userreference_field_settings($instance['bundle'], $instance['field_name'], $instance['settings']['nodeaccess_userreference']);
 
-     $nodes = db_query("SELECT 1 FROM {node} WHERE type = :type", array(
-       ':type' => $instance['bundle'],
-     ))->fetchField();
+     $old_settings = isset($prior_instance['settings']['nodeaccess_userreference']) ?
+       nodeaccess_userreference_reduce_variable($prior_instance['settings']['nodeaccess_userreference']) :
+       array();
+     $new_settings = isset($instance['settings']['nodeaccess_userreference']) ?
+       nodeaccess_userreference_reduce_variable($instance['settings']['nodeaccess_userreference']) :
+       array();
 
-     if ($nodes) {
-       // Because the field settings have changed we should prompt for a full rebuild.
-       node_access_needs_rebuild(TRUE);
+     if ($old_settings != $new_settings) {
+       nodeaccess_userreference_field_settings($instance['bundle'], $instance['field_name'], $new_settings);
+
+       $nodes = db_query("SELECT 1 FROM {node} WHERE type = :type", array(
+         ':type' => $instance['bundle'],
+       ))->fetchField();
+
+       if ($nodes) {
+         // Because the field settings have changed we should prompt for a full rebuild.
+         node_access_needs_rebuild(TRUE);
+       }
      }
   }
 }
@@ -264,13 +305,13 @@ function nodeaccess_userreference_add_grant(&$grants, $realm, $gid, $priority, $
     );
   }
   // Add the grants needed, so as not to override previous iterations.
-  if (isset($settings['view']) && $settings['view']) {
+  if (!empty($settings['view'])) {
     $grants[$key]['grant_view'] = 1;
   }
-  if (isset($settings['update']) && $settings['update']) {
+  if (!empty($settings['update'])) {
     $grants[$key]['grant_update'] = 1;
   }
-  if (isset($settings['delete']) && $settings['delete']) {
+  if (!empty($settings['delete'])) {
     $grants[$key]['grant_delete'] = 1;
   }
   // Increase the priority if needed.
@@ -288,6 +329,10 @@ function nodeaccess_userreference_node_access_records($node) {
   if (!empty($field_data)) {
     foreach ($field_data as $field_name => &$data) {
       if (!empty($data) && (empty($data['views']['view']) || nodeaccess_userreference_node_in_field_view($data, array($node->nid)))) {
+
+        if (!isset($data['priority'])) {
+          $data['priority'] = 0;
+        }
 
         if (!empty($node->status) || !empty($data['referenced_published'])) {
 
@@ -318,7 +363,7 @@ function nodeaccess_userreference_node_access_records($node) {
 
         }
 
-        if ($data['unused']) {
+        if (!empty($data['unused']) && isset($data['referenced'])) {
           // Add a dummy grant for user 1 to block other users' access.
           nodeaccess_userreference_add_grant(
             $grants,
@@ -333,7 +378,7 @@ function nodeaccess_userreference_node_access_records($node) {
         // but redundant calls will be correctly handled by the helper function:
         // nodeaccess_userreference_add_grant().
         if (!empty($grants)) {
-          if (!empty($node->status) || !empty($data['author_published'])) {
+          if (!empty($data['author']) && (!empty($node->status) || !empty($data['author_published']))) {
             // Add author grants.
             nodeaccess_userreference_add_grant(
               $grants,
@@ -343,7 +388,7 @@ function nodeaccess_userreference_node_access_records($node) {
               $data['author']
             );
           }
-          if (!empty($node->status) || !empty($data['all_published'])) {
+          if (!empty($data['all']) && (!empty($node->status) || !empty($data['all_published']))) {
             // Add all grants.
             nodeaccess_userreference_add_grant(
               $grants,
@@ -357,10 +402,8 @@ function nodeaccess_userreference_node_access_records($node) {
       }
     }
   }
-  if (!empty($grants)) {
-    return $grants;
-  }
-  return NULL;
+
+  return $grants;
 }
 
 /**
@@ -371,9 +414,8 @@ function nodeaccess_userreference_node_access($node, $op, $account) {
     // 'deny' functionality.
     $field_data = nodeaccess_userreference_field_settings($node->type);
     if (!empty($field_data)) {
-      $data_key = 'deny_' . $op;
       foreach ($field_data as $field_name => &$data) {
-        if (!empty($data->$data_key) && (empty($data['views']['view']) || nodeaccess_userreference_node_in_field_view($data, array($node->nid)))) {
+        if (!empty($data->referenced['deny_' . $op]) && (empty($data['views']['view']) || nodeaccess_userreference_node_in_field_view($data, array($node->nid)))) {
           // Add referenced user grants.
           $items = field_get_items('node', $node, $field_name);
           if (!empty($items)) {
@@ -389,6 +431,9 @@ function nodeaccess_userreference_node_access($node, $op, $account) {
   }
   else {
     // $op == 'create'.
+    if (is_object($node)) {
+      $node = $node->type;
+    }
     // Get list of content types.
     $types = node_type_get_types();
     foreach ($types as $type) {
@@ -451,13 +496,24 @@ function nodeaccess_userreference_node_access($node, $op, $account) {
  * @param $variable
  *   If set will update the value of the settings for this field.
  * @return
- *   The stored or updated value of the settings for this field.
+ *   The stored or updated value of the settings for this field, or array() if no settings found.
  */
 function nodeaccess_userreference_field_settings($bundle_name, $field_name = NULL, $variable = NULL) {
-  $data = variable_get('nodeaccess_userreference', NULL);
+  $data = variable_get('nodeaccess_userreference', array());
+
   if (!is_null($field_name)) {
-    if (isset($variable)) {
-      $data[$bundle_name][$field_name] = $variable;
+    if (!is_null($variable)) {
+      if (!empty($variable)) {
+        $data[$bundle_name][$field_name] = $variable;
+      }
+      else {
+        // Variable is empty.
+        unset($data[$bundle_name][$field_name]);
+        // Clear empty bundle too.
+        if (empty($data[$bundle_name])) {
+          unset($data[$bundle_name]);
+        }
+      }
       variable_set('nodeaccess_userreference', $data);
     }
     if (isset($data[$bundle_name][$field_name])) {
@@ -467,6 +523,58 @@ function nodeaccess_userreference_field_settings($bundle_name, $field_name = NUL
   elseif (isset($data[$bundle_name])) {
     return $data[$bundle_name];
   }
+
+  // No data found
+  return array();
+}
+
+/**
+ * Reduce settings array to the bare minimum.
+ *
+ * @param $variable
+ *  The settings array.
+ * @return
+ *  The minimum array or FALSE if there is no array left to save.
+ */
+function nodeaccess_userreference_reduce_variable($variable) {
+  // Filter the variable.
+  $variable = nodeaccess_userreference_recursive_filter($variable);
+
+  // Create a test array without the volatile keys and filter again.
+  $test = $variable;
+  unset($test['referenced_published']);
+  unset($test['author_published']);
+  unset($test['all_published']);
+  unset($test['unused']);
+  unset($test['priority']);
+  unset($test['field_type']);
+  $test = nodeaccess_userreference_recursive_filter($test);
+
+  // Remove major areas of the variable if they are empty in the test array.
+  foreach ($variable as $key => $value) {
+    if (is_array($value) && empty($test[$key])) {
+      unset($variable[$key]);
+    }
+  }
+
+  // If all of these are empty, then the variable can be considered empty.
+  if (empty($variable['referenced']) && empty($variable['create'])) {
+    return FALSE;
+  }
+
+  return $variable;
+}
+
+/**
+ * Recursively filter an array.
+ */
+function nodeaccess_userreference_recursive_filter($array) {
+  foreach ($array as $key => $value) {
+    if (is_array($value)) {
+      $array[$key] = nodeaccess_userreference_recursive_filter($value);
+    }
+  }
+  return array_filter($array);
 }
 
 /**
@@ -516,14 +624,7 @@ function nodeaccess_userreference_node_access_explain($row) {
  * Implements hook_field_delete_instance().
  */
 function nodeaccess_userreference_field_delete_instance($instance) {
-  $data = variable_get('nodeaccess_userreference', array());
-  if (isset($data[$instance['bundle']][$instance['field_name']])) {
-    unset($data[$instance['bundle']][$instance['field_name']]);
-    if (empty($data[$instance['bundle']])) {
-      unset($data[$instance['bundle']]);
-    }
-    variable_set('nodeaccess_userreference', $data);
-  }
+  nodeaccess_userreference_field_settings($instance['bundle'], $instance['field_name'], FALSE);
 }
 
 /**
