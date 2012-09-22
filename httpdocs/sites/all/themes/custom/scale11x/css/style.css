@@ -38,3 +38,17 @@ div.field-name-field-blog-image {
   float: left;
   margin: 1em 1em 1em 0;
 }
+
+/* Presentation edit form */
+#presentation-node-form > div > div {
+  margin-bottom: 2em;
+}
+
+#presentation-node-form div#edit-field-audience {
+  float: left;
+  margin-right: 1em;
+}
+
+#presentation-node-form div#edit-field-presentation-tags {
+  clear: both;
+}
