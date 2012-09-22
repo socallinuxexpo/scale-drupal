@@ -5,3 +5,36 @@
 @media(min-width: 980px) {
 body { padding-top: 112px; }
 }
+
+/* Fix for Environment Indicator */
+.navbar-fixed-top, .navbar-fixed-bottom {
+  z-index: 999;
+}
+
+/* Block, General */
+h2.block-title {
+  line-height: 24px;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+/* Fields, General */
+div.field {
+  margin-bottom: .5em;
+  margin-top: .5em;
+}
+
+/* Clean up */
+ul.links {
+  list-style: none;
+}
+
+li.comment_forbidden {
+  display: none;
+}
+
+/* Blog */
+div.field-name-field-blog-image {
+  float: left;
+  margin: 1em 1em 1em 0;
+}
