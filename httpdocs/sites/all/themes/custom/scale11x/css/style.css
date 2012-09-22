@@ -13,7 +13,7 @@ body { padding-top: 112px; }
 
 /* Block, General */
 h2.block-title {
-  line-height: 24px;
+  /*line-height: 24px;*/
   margin-bottom: 0.5em;
   margin-top: 0.5em;
 }
