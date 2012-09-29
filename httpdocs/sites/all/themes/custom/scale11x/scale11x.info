@@ -11,6 +11,6 @@ regions[sidebar_first]  = 'Primary'
 regions[sidebar_second] = 'Secondary'
 regions[footer]         = 'Footer'
 
-scripts[] = js/jquery.min.js
+;scripts[] = js/jquery.min.js
 
 stylesheets[all][] = css/style.css
