@@ -1,0 +1,25 @@
+name = UI Toolkit
+description = UI Toolkit Sample Theme
+core = 7.x
+engine = phptemplate
+
+stylesheets[all][] = css/bootstrap.css
+stylesheets[all][] = css/bootstrap-responsive.css
+stylesheets[all][] = css/style.css
+
+scripts[] = js/bootstrap.js
+scripts[] = js/bootstrap-modal.js
+scripts[] = js/bootstrap-carousel.js
+
+regions[header] = Header
+regions[primary_menu] = Primary Menu
+regions[search_top] = Top Search Area
+regions[breadcrumb] = Breadcrumb
+regions[radio_top] = Radio Top
+regions[content] = Content
+regions[left] = Left sidebar
+regions[right] = Right sidebar
+regions[radio_bottom] = Radio Bottom
+regions[footer] = Footer
+
+
