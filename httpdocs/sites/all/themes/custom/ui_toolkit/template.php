@@ -74,7 +74,7 @@ function ui_toolkit_preprocess_page(&$vars) {
     $vars['content_span'] += 3;
   }
   if (empty($vars['page']['right'])) {
-    $vars['content_span'] += 3;
+    $vars['content_span'] += 2;
   } 
 
   drupal_add_js("jQuery(function () { jQuery('.carousel').carousel(); });", 'inline');
