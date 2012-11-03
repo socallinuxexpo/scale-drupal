@@ -203,6 +203,10 @@ td, th {
   margin-bottom: 1em;
 }
 
+.view .attachment {
+  margin-top: 1.5em;
+}
+
 /* Typography */
 body {
   /*font-family: 'Source Sans Pro', sans-serif;*/
@@ -254,4 +258,4 @@ h2 {
 /* Perf */
 #perf {
   margin-top: 20px;
-]
+}
