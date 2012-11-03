@@ -1,20 +1,20 @@
 <?php
 /**
  * @file
- * presentations.features.inc
+ * sessions.features.inc
  */
 
 /**
  * Implements hook_views_api().
  */
-function presentations_views_api() {
+function sessions_views_api() {
   return array("version" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function presentations_node_info() {
+function sessions_node_info() {
   $items = array(
     'presentation' => array(
       'name' => t('Presentation'),

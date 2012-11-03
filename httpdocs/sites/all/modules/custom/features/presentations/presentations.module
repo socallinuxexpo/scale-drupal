@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Presentations feature.
- */
-
-include_once 'presentations.features.inc';

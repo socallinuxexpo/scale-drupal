@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * presentations.features.taxonomy.inc
+ * sessions.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function presentations_taxonomy_default_vocabularies() {
+function sessions_taxonomy_default_vocabularies() {
   return array(
     'audience' => array(
       'name' => 'Audience level',

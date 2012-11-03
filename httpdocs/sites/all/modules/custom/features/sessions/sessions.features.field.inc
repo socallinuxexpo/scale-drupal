@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * presentations.features.field.inc
+ * sessions.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function presentations_field_default_fields() {
+function sessions_field_default_fields() {
   $fields = array();
 
   // Exported field: 'node-presentation-field_audience'.
