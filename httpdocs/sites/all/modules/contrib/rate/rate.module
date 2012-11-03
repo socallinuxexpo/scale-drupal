@@ -533,6 +533,7 @@ function rate_save_vote($widget, $content_type, $content_id, $value, $ahah = FAL
   }
   $saved = TRUE;
   
+  /*
   module_load_include('inc', 'rate', 'rate.bots');
   if (rate_bots_is_blocked()) {
     if (variable_get(RATE_VAR_BOT_RETROACTIVE, TRUE)) {
@@ -540,6 +541,7 @@ function rate_save_vote($widget, $content_type, $content_id, $value, $ahah = FAL
     }
     return;
   }
+  */
 
   // Determine if the user may vote.
   $node = $content_type == 'node' ? node_load($content_id) : NULL;
