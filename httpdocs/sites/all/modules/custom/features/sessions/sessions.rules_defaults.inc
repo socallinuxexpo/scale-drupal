@@ -24,7 +24,7 @@ function sessions_default_rules_configuration() {
       ],
       "DO" : [
         { "mail" : {
-            "to" : "rgolan@superconcentrated.com",
+            "to" : "kapadia@socallinuxexpo.org,rgolan@superconcentrated.com",
             "subject" : "A new SCALE 11x presentation, [node:title], has been created",
             "message" : "[node:author] has submitted a presentation, [node:title], for SCALE 11x.",
             "from" : "rgolan+scale11x@superconcentrated.com",
