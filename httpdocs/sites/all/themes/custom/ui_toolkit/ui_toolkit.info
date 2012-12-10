@@ -5,6 +5,7 @@ engine = phptemplate
 
 stylesheets[all][] = css/bootstrap.css
 stylesheets[all][] = css/bootstrap-responsive.css
+stylesheets[all][] = css/mediaqueries.css
 stylesheets[all][] = css/style.css
 
 scripts[] = js/bootstrap.js
