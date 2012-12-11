@@ -69,3 +69,15 @@ h2 {
 #perf {
   margin-top: 20px;
 }
+/* Blog */
+p.left-image {
+  float: left;
+  margin-right: 20px;
+}
+p.right-image {
+  float: right;
+  margin-left: 20px;
+}
+div.submitted {
+  margin-bottom: 1em;
+}

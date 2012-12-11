@@ -10,7 +10,7 @@ stylesheets[all][] = css/style.css
 
 scripts[] = js/bootstrap.js
 scripts[] = js/bootstrap-modal.js
-scripts[] = js/bootstrap-carousel.js
+;scripts[] = js/bootstrap-carousel.js
 
 regions[header] = Header
 regions[primary_menu] = Primary Menu
