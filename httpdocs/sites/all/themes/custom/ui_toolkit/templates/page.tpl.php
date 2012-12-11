@@ -74,6 +74,14 @@
     <?php endif; ?>
     <!-- /Left sidebar -->
 
+    <!-- Featured -->
+    <div id="featured" class="span8">
+      <div class="row">
+        <?php print render($page['featured']); ?>
+      </div>
+    </div>
+    <!-- /Featured -->
+
     <!-- radio-display -->
     <div id="radio-display" class="span8">
     <div class="row">
