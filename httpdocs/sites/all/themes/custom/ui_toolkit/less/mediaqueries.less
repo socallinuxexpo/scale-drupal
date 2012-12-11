@@ -1,75 +1,180 @@
- /******************************************
+@import url('http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+
+
+/******************************************
  * WIDE VIEW (> 1200px)                   *
  ******************************************/
-@media (min-width:1200px)  {
-
+@media (min-width: 1200px) {
+body.device-indicator {background-color: yellow;}
+#radio-bottom,
+#radio-display {
+  width: 810px;
 }
-
-
-
+#sidebar-right {
+  width: 210px;
+}
+}
+/******************************************
+ * TABLET LAYOUT (1199px to 980px)         *
+ ******************************************/
+@media (max-width: 1199px) and (min-width: 980px) {
+body.device-indicator {background-color: red;}
+#radio-display {
+  width: 638px;
+}
+#sidebar-right {
+  width: 158px;
+}
+}
 /******************************************
  * ANYTHING LARGER THAN TABLET (> 980px)  *
  ******************************************/
-@media (min-width:980px)  {
-
+@media (min-width: 980px) {
 }
-
 /******************************************
  * TABLET AND SMALLER (< 979px)           *
  ******************************************/
-@media (max-width:979px)  {
-
-
+@media (max-width: 979px) {
+body.device-indicator {background-color: blue;}
+#radio-display {
+  width: 488px;
 }
-
+#sidebar-right {
+  width: 116px;
+}
+#sidebar-left h2 {
+  font-size: 20px;
+}
+}
 /******************************************
  * TABLET LAYOUT (979px to 768px)         *
  ******************************************/
-@media (max-width:979px) and (min-width:768px)  {
-
-  // Hide Header Menu
+@media (max-width: 979px) and (min-width: 768px) {
   .region-header {
-    display:none;
+    display: none;
   }
-
-  // Show the tablet-only logo
   #header #tablet-logo {
-    display:block;
+    display: block;
   }
-  
+  .navbar-inner {
+    display: none;
+  }
 }
-
 /******************************************
  * ANYTHING LARGER THAN PHONE  (> 768px)  *
  ******************************************/
-@media (min-width:768px)  {
-
+@media (min-width: 768px) {
+ /* Visual Design */
+/* radio color */
+body > * {
+  background-color: #AAA;
 }
 
+#radio-display {
+  background-color: #FFF;
+  /*margin-left: 25%;*/
+  border-radius: 20px;
+  padding: 0 10px 0 24px;
+}
+#header {
+  margin-top: 20px;
+  border-radius: 30px 30px 0 0;
+}
 
+#footer {
+  margin-bottom: 20px;
+  border-radius: 0 0 30px 30px;
+}
+
+#content-area {
+  margin-top: 15px;
+}
+
+.sidebar-left {
+  /*margin-left: 20px;*/
+}
+
+/* Menus */
+ul.menu li {
+  list-style: none;
+}
+
+#menu .region-search-top {
+  padding: 0 24px 0 24px;
+}
+
+ul.menu {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  margin-left: 0;
+}
+
+ul.menu a {
+  color: #EEE;
+}
+
+#sidebar-left ul li a:hover,
+#sidebar-left ul li a.active {
+  color: #FFF;
+  text-shadow: 0 0 0.2em #FFF;
+  text-decoration: none;
+}
+
+#radio-bottom ul.menu {
+  margin-top: 10px;
+}
+#radio-bottom ul.menu a {
+  color: #FFF;
+}
+#radio-bottom ul.menu li {
+  display: inline;
+  margin: 0;
+  padding: 0.2em 0.1em 0 0.4em;
+}
+#radio-bottom ul.menu li + li {
+  border-left: 1px solid #FFF;
+}
+}
 /******************************************
  * MOBILE LAYOUT ( < 768px)               *
  ******************************************/
-@media (max-width:767px) {
-
-  // Hide Header Menu 
+@media (max-width: 767px) {
+body.device-indicator {background-color: #FFF;}
   .region-header {
-    display:none;
+    display: none;
   }
-
-
-  // Hide sidebar
   .sidebar-area {
-    display:none;
-  } 
-
-
+    /*display: none;*/
+  }
+  #radio-bottom,
+  #sidebar-right {
+    display: none;
+  }
+#block-system-main-menu {
+  display: none;
+}
+  body {
+    padding: 5px;
+  }
+#radio-display {
+  width: auto;
 }
 
+}
 /******************************************
  * SMALL MOBILE LAYOUT ( < 520px)         *
  ******************************************/
-@media (max-width:600px) {
+@media (max-width: 600px) {
+  .hidden-phone {
+    display: none;
+  }
+}
+/******************************************
+ * SMALL PORTRAIT MOBILE LAYOUT ( < 480px)         *
+ ******************************************/
+@media (max-width: 465px) {
+  .hidden-phone-portrait {
+    display: none;
+  }
+}
 
- 
-} 
