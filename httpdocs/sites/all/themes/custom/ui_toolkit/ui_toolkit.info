@@ -16,6 +16,7 @@ regions[primary_menu] = Primary Menu
 regions[search_top] = Top Search Area
 regions[breadcrumb] = Breadcrumb
 regions[radio_top] = Radio Top
+regions[featured] = Featured
 regions[content] = Content
 regions[left] = Left sidebar
 regions[right] = Right sidebar
