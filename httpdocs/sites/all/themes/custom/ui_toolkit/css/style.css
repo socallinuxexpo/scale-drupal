@@ -33,22 +33,26 @@ th {
   margin: 0 auto;
 }
 /* Sponsor Page view */
-.view-sponsors .views-row {
+.view-sponsors .views-row,
+.view-exhibitors .views-row {
   clear: both;
   margin-bottom: 4em;
 }
-.view-sponsors .views-row .views-field {
+.view-sponsors .views-row .views-field,
+.view-exhibitors .views-row .views-field {
   margin-bottom: 1em;
   margin-left: 30%;
   padding-left: 15px;
 }
-.view-sponsors .views-row .views-field-title {
+.view-sponsors .views-row .views-field-title,
+.view-exhibitors .views-row .views-field-title {
   margin-left: 0;
   margin-bottom: 1em;
   padding: 0;
   font-size: 2em;
 }
-.view-sponsors .views-row .views-field-field-logo-website {
+.view-sponsors .views-row .views-field-field-logo-website,
+.view-exhibitors .views-row .views-field-field-logo-website {
   float: left;
   margin-bottom: 4em;
   margin-left: 0;
@@ -56,14 +60,17 @@ th {
   padding: 0;
   width: 30%;
 }
-.view-sponsors .views-row .views-field-field-logo-website img {
+.view-sponsors .views-row .views-field-field-logo-website img,
+.view-exhibitors .views-row .views-field-field-logo-website img {
   width: auto;
   height: auto;
 }
-.view-sponsors .views-row .views-field-field-sponsor-type {
+.view-sponsors .views-row .views-field-field-sponsor-type,
+.view-exhibitors .views-row .views-field-field-sponsor-type {
   margin-bottom: 15px;
 }
-.view-sponsors .views-row .views-field-field-sponsor-type .field-content {
+.view-sponsors .views-row .views-field-field-sponsor-type .field-content,
+.view-exhibitors .views-row .views-field-field-sponsor-type .field-content {
   display: inline-block;
   min-width: 112px;
   text-align: center;
