@@ -790,6 +790,9 @@ function sponsors_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_booth_number' => 'field_booth_number',
+  );
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -838,6 +841,7 @@ function sponsors_views_default_views() {
   $handler->display->display_options['fields']['field_booth_number']['table'] = 'field_data_field_booth_number';
   $handler->display->display_options['fields']['field_booth_number']['field'] = 'field_booth_number';
   $handler->display->display_options['fields']['field_booth_number']['label'] = 'Booth';
+  $handler->display->display_options['fields']['field_booth_number']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_booth_number']['hide_empty'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
