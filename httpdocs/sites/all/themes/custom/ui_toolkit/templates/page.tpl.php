@@ -6,10 +6,12 @@
     <div class="span12">
 
       <div id="branding">
-        <img class="hidden-phone-portrait" src="/<?php print drupal_get_path('theme', 'ui_toolkit'); ?>/img/11x_knob100.png">
-        <img class="region-header" src="/<?php print drupal_get_path('theme', 'ui_toolkit'); ?>/img/11x_knob100.png">
-        <img class="region-header" src="/<?php print drupal_get_path('theme', 'ui_toolkit'); ?>/img/11x_knob100.png">
-        <img src="/<?php print drupal_get_path('theme', 'ui_toolkit'); ?>/img/scale11x-logo60.png">
+        <a href="/">
+          <img class="hidden-phone-portrait" src="/<?php print drupal_get_path('theme', 'ui_toolkit'); ?>/img/11x_knob100.png">
+          <img class="region-header" src="/<?php print drupal_get_path('theme', 'ui_toolkit'); ?>/img/11x_knob100.png">
+          <img class="region-header" src="/<?php print drupal_get_path('theme', 'ui_toolkit'); ?>/img/11x_knob100.png">
+          <img src="/<?php print drupal_get_path('theme', 'ui_toolkit'); ?>/img/scale11x-logo60.png">
+        </a>
       </div>
 
       <div id="header-region">
