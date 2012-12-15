@@ -3,6 +3,9 @@
 [class*="xspan"] {
   border: 1px solid red;
 }
+h1.page-title {
+  margin-bottom: 1em;
+}
 #branding {
   font-size: 26px;
   font-weight: bold;
@@ -28,6 +31,61 @@ th {
 /* Sponsor Logos view */
 .views-slideshow-cycle-main-frame {
   margin: 0 auto;
+}
+/* Sponsor Page view */
+.view-sponsors .views-row {
+  clear: both;
+  margin-bottom: 4em;
+}
+.view-sponsors .views-row .views-field {
+  margin-bottom: 1em;
+  margin-left: 30%;
+  padding-left: 15px;
+}
+.view-sponsors .views-row .views-field-title {
+  margin-left: 0;
+  margin-bottom: 1em;
+  padding: 0;
+  font-size: 2em;
+}
+.view-sponsors .views-row .views-field-field-logo-website {
+  float: left;
+  margin-bottom: 4em;
+  margin-left: 0;
+  margin-right: 15px;
+  padding: 0;
+  width: 30%;
+}
+.view-sponsors .views-row .views-field-field-logo-website img {
+  width: auto;
+  height: auto;
+}
+.view-sponsors .views-row .views-field-field-sponsor-type {
+  margin-bottom: 15px;
+}
+.view-sponsors .views-row .views-field-field-sponsor-type .field-content {
+  display: inline-block;
+  min-width: 112px;
+  text-align: center;
+  background-color: #EEB;
+  border: 2px dotted #CC6;
+  padding: 3px 12px;
+}
+/* Featured Speakers view */
+.view-featured-speakers .views-row {
+  display: inline-block;
+  width: 32%;
+  text-align: center;
+  color: #FFF;
+}
+.view-featured-speakers .views-row .views-field-field-speaker-photo img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  /*border: 3px solid #FFF;*/
+
 }
 /* Typography */
 h2 {
@@ -80,4 +138,9 @@ p.right-image {
 }
 div.submitted {
   margin-bottom: 1em;
+}
+/* Featured region */
+#featured {
+  position: relative;
+  left: 4%;
 }
