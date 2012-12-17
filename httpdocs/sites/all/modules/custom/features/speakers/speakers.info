@@ -1,0 +1,16 @@
+name = Speakers
+core = 7.x
+package = Features
+version = 7.x-0.1
+project = speakers
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = field_sql_storage
+dependencies[] = node
+dependencies[] = user_reference
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[field][] = node-featured_speakers-field_featured_speaker
+features[node][] = featured_speakers
+features[views_view][] = featured_speakers

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Speakers feature.
+ */
+
+include_once 'speakers.features.inc';
