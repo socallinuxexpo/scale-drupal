@@ -29,15 +29,22 @@ function speakers_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Content: Speaker (field_featured_speaker) */
+  /* Relationship: featured speaker */
   $handler->display->display_options['relationships']['field_featured_speaker_uid']['id'] = 'field_featured_speaker_uid';
   $handler->display->display_options['relationships']['field_featured_speaker_uid']['table'] = 'field_data_field_featured_speaker';
   $handler->display->display_options['relationships']['field_featured_speaker_uid']['field'] = 'field_featured_speaker_uid';
+  $handler->display->display_options['relationships']['field_featured_speaker_uid']['ui_name'] = 'featured speaker';
   $handler->display->display_options['relationships']['field_featured_speaker_uid']['delta'] = '-1';
+  /* Relationship: featured speaker content */
+  $handler->display->display_options['relationships']['reverse_field_featured_speaker_node']['id'] = 'reverse_field_featured_speaker_node';
+  $handler->display->display_options['relationships']['reverse_field_featured_speaker_node']['table'] = 'users';
+  $handler->display->display_options['relationships']['reverse_field_featured_speaker_node']['field'] = 'reverse_field_featured_speaker_node';
+  $handler->display->display_options['relationships']['reverse_field_featured_speaker_node']['relationship'] = 'field_featured_speaker_uid';
+  $handler->display->display_options['relationships']['reverse_field_featured_speaker_node']['ui_name'] = 'featured speaker content';
   /* Field: Content: Speaker */
   $handler->display->display_options['fields']['field_featured_speaker']['id'] = 'field_featured_speaker';
   $handler->display->display_options['fields']['field_featured_speaker']['table'] = 'field_data_field_featured_speaker';
@@ -101,6 +108,11 @@ function speakers_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'featured_speakers' => 'featured_speakers',
   );
+  /* Filter criterion: Content: Sticky */
+  $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['filters']['sticky']['table'] = 'node';
+  $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['filters']['sticky']['value'] = '1';
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
