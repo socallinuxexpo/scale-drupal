@@ -9,6 +9,11 @@ h1.page-title {
   margin-bottom: 1em;
 }
 
+img {
+  width: auto;
+  height: auto;
+}
+
 #branding {
   font-size: 26px;
   font-weight: bold;
@@ -91,12 +96,15 @@ td, th {
 }
 
 /* Featured Speakers view */
-.view-featured-speakers .views-row {
+.view-featured-speakers .views-row,
+.view-featured-presentations .views-row {
   display: inline-block;
+  vertical-align: top;
   width: 32%;
   text-align: center;
   color: #FFF;
 
+  .views-field-title img,
   .views-field-field-speaker-photo img {
     width: auto;
     height: auto;

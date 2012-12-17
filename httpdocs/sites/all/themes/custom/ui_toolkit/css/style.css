@@ -6,6 +6,10 @@
 h1.page-title {
   margin-bottom: 1em;
 }
+img {
+  width: auto;
+  height: auto;
+}
 #branding {
   font-size: 26px;
   font-weight: bold;
@@ -83,13 +87,18 @@ th {
   padding: 3px 12px;
 }
 /* Featured Speakers view */
-.view-featured-speakers .views-row {
+.view-featured-speakers .views-row,
+.view-featured-presentations .views-row {
   display: inline-block;
+  vertical-align: top;
   width: 32%;
   text-align: center;
   color: #FFF;
 }
-.view-featured-speakers .views-row .views-field-field-speaker-photo img {
+.view-featured-speakers .views-row .views-field-title img,
+.view-featured-presentations .views-row .views-field-title img,
+.view-featured-speakers .views-row .views-field-field-speaker-photo img,
+.view-featured-presentations .views-row .views-field-field-speaker-photo img {
   width: auto;
   height: auto;
   max-width: 100%;
