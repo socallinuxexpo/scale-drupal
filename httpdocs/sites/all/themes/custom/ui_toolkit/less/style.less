@@ -115,6 +115,59 @@ td, th {
   }
 }
 
+/* Presentation page view */
+.view-presentation-page {
+  .views-row {
+    margin-bottom: 1.5em;
+
+    .views-field {
+      margin-bottom: 0.5em;
+    }
+
+    .terms {
+      float: left;
+      padding-right: 1.5em;
+      margin-bottom: 1.5em;
+      margin-top: -.5em;
+    }
+
+    .views-field-field-speaker-photo {
+      float: right;
+      margin-left: 1em;
+      width: 33%;
+    }
+
+    .views-field-field-speaker {
+      font-size: 2em;
+      line-height: 100%;
+    }
+
+    .views-field-field-long-abstract {
+      clear: left;
+      line-height: 1.5em;
+      :first-line {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+/* Speaker page view */
+.view-speaker-page {
+  .views-row {
+    .views-field {
+      margin-bottom: 9px;
+    }
+    .views-field-realname {
+      font-size: 2em;
+    }
+    .views-field-field-speaker-photo {
+      float: left;
+      margin-right: 1.5em;
+    }
+  }
+}
+
 /* Typography */
 
 h2 {
@@ -129,10 +182,6 @@ h2 {
 }
 
 /* Left Sidebar */
-#sidebar-left .region-left {
-  padding: 0 0 0 24px;
-}
-
 #sidebar-left input[type="text"],
 #sidebar-left input[type="password"] {
   width: 85%;
@@ -160,6 +209,13 @@ h2 {
   color: #AAA;
 }
 
+/* Social Media Links Block */
+#block-block-8 {
+  img {
+    margin: 0 1px 2px 1px;
+  }
+}
+
 /* Perf */
 #perf {
   margin-top: 20px;
@@ -183,5 +239,5 @@ div.submitted {
 /* Featured region */
 #featured {
   position: relative;
-  left: 4%;
+  /*left: 4%;*/
 }

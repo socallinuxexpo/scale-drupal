@@ -117,6 +117,16 @@
     text-shadow: 0 0 0.2em #FFF;
     text-decoration: none;
   }
+  #sidebar-left .region-left {
+    padding: 0 0 0 24px;
+  }
+  #featured {
+    /*left: 4%;*/
+  
+  }
+  #block-views-featured-speakers-block {
+    padding-left: 4%;
+  }
   #radio-bottom ul.menu {
     margin-top: 10px;
   }
@@ -130,6 +140,9 @@
   }
   #radio-bottom ul.menu li + li {
     border-left: 1px solid #FFF;
+  }
+  #block-block-8 {
+    padding-left: 0.5em;
   }
 }
 /******************************************
