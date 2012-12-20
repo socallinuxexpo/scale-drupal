@@ -108,32 +108,32 @@ th {
 
 }
 /* Presentation page view */
-.view-presentation-page .views-row {
+#presentation-page .panel-panel {
   margin-bottom: 1.5em;
 }
-.view-presentation-page .views-row .views-field {
+#presentation-page .panel-panel .panel-pane {
   margin-bottom: 0.5em;
 }
-.view-presentation-page .views-row .terms {
+#presentation-page .panel-panel .terms {
   float: left;
   padding-right: 1.5em;
   margin-bottom: 1.5em;
   margin-top: -0.5em;
 }
-.view-presentation-page .views-row .views-field-field-speaker-photo {
+#presentation-page .panel-panel .pane-user-field-speaker-photo {
   float: right;
   margin-left: 1em;
   width: 33%;
 }
-.view-presentation-page .views-row .views-field-field-speaker {
+#presentation-page .panel-panel .pane-node-field-speaker {
   font-size: 2em;
   line-height: 100%;
 }
-.view-presentation-page .views-row .views-field-field-long-abstract {
+#presentation-page .panel-panel .pane-node-field-long-abstract {
   clear: left;
   line-height: 1.5em;
 }
-.view-presentation-page .views-row .views-field-field-long-abstract :first-line {
+#presentation-page .panel-panel .pane-node-field-long-abstract :first-line {
   text-transform: uppercase;
 }
 /* Speaker page view */
