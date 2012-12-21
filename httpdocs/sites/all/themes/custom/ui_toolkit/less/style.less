@@ -146,11 +146,8 @@ td, th {
       clear: left;
       line-height: 1.5em;
 
-      p:first-line {
+      p:first-child:first-line {
         text-transform: uppercase;
-      }
-      * + p:first-line {
-        text-transform: none;
       }
     }
   }
