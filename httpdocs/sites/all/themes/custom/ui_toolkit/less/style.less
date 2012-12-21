@@ -145,8 +145,12 @@ td, th {
     .pane-node-field-long-abstract {
       clear: left;
       line-height: 1.5em;
-      :first-line {
+
+      p:first-line {
         text-transform: uppercase;
+      }
+      * + p:first-line {
+        text-transform: none;
       }
     }
   }
