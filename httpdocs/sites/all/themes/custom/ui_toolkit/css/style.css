@@ -136,6 +136,32 @@ th {
 #presentation-page .panel-panel .pane-node-field-long-abstract :first-line {
   text-transform: uppercase;
 }
+/* Presentation List view */
+.view-presentation-page .view-content .views-row {
+  margin-bottom: 1.5em;
+}
+.view-presentation-page .view-content .views-row .views-field {
+  margin-bottom: 0.5em;
+}
+.view-presentation-page .view-content .views-row .terms {
+  float: left;
+  margin-right: 0.5em;
+}
+.view-presentation-page .view-content .views-row .views-field-field-speaker-photo {
+  float: right;
+  margin-left: 1em;
+  width: 33%;
+}
+.view-presentation-page .view-content .views-row .views-field-title {
+  font-size: 2em;
+  line-height: 106%;
+}
+.view-presentation-page .view-content .views-row .views-field-field-speaker {
+  font-size: 1.5em;
+}
+.view-presentation-page .view-content .views-row .views-field-field-short-abstract {
+  clear: left;
+}
 /* Speaker page view */
 .view-speaker-page .views-row .views-field {
   margin-bottom: 9px;
