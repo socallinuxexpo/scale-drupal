@@ -1650,6 +1650,64 @@ function sponsors_views_default_views() {
     'default' => 0,
   );
   $handler->display->display_options['attachment_position'] = 'after';
+
+  /* Display: Sponsor Feed */
+  $handler = $view->new_display('feed', 'Sponsor Feed', 'feed_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Exhibitor, Sponsor (field_exhibitor_sponsor) */
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['id'] = 'field_exhibitor_sponsor_value';
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['table'] = 'field_data_field_exhibitor_sponsor';
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['field'] = 'field_exhibitor_sponsor_value';
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['value'] = array(
+    'Sponsor' => 'Sponsor',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'sponsor' => 'sponsor',
+  );
+  $handler->display->display_options['path'] = 'scale11x/sponsors.rss';
+
+  /* Display: Exhibitor Feed */
+  $handler = $view->new_display('feed', 'Exhibitor Feed', 'feed_2');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['style_plugin'] = 'rss';
+  $handler->display->display_options['row_plugin'] = 'node_rss';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Exhibitor, Sponsor (field_exhibitor_sponsor) */
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['id'] = 'field_exhibitor_sponsor_value';
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['table'] = 'field_data_field_exhibitor_sponsor';
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['field'] = 'field_exhibitor_sponsor_value';
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['value'] = array(
+    'Exhibitor' => 'Exhibitor',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'sponsor' => 'sponsor',
+  );
+  $handler->display->display_options['path'] = 'scale11x/exhibitors.rss';
   $export['sponsors'] = $view;
 
   return $export;
