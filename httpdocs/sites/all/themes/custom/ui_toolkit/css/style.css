@@ -133,11 +133,8 @@ th {
   clear: left;
   line-height: 1.5em;
 }
-#presentation-page .panel-panel .pane-node-field-long-abstract p:first-line {
+#presentation-page .panel-panel .pane-node-field-long-abstract p:first-child:first-line {
   text-transform: uppercase;
-}
-#presentation-page .panel-panel .pane-node-field-long-abstract * + p:first-line {
-  text-transform: none;
 }
 /* Presentation List view */
 .view-presentation-page .view-content .views-row {
