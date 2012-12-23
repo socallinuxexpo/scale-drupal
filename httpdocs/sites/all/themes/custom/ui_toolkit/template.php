@@ -349,39 +349,25 @@ function ui_toolkit_pager($variables) {
  * Renders a menu with Bootstrap's structure.
  */
 function ui_toolkit_nav($menuname) {
-
+  
   $output = '<ul class="nav">';
 
   $count = 0;
-  dpm(menu_tree_all_data($menuname));
-  foreach (menu_tree_all_data($menuname) as $menu_item) {
-
-    if (isset($menu_item['link']['href'])) {
+  foreach (menu_tree($menuname) as $menu_item) {
+    
+    if (isset($menu_item['#href'])) {
       if ($count==0) {
         $output .= '<li class="first">';
       }
       elseif ($count==count(menu_tree($menuname))-3) {
         $output .= '<li class="last">';
-      }
+      }        
       else {
         $output .= '<li>';
       }
-
-      $output .= '<a href="' . url($menu_item['link']['href']) . '">' . $menu_item['link']['link_title'] . '</a>';
-      // Insert submenus here
-      $submenu_count = count($menu_item['below']);
-      if ($submenu_count != 0) {
-        $output .= '<ul>';
-        foreach ($menu_item['below'] as $submenu_item) {
-          if (isset($submenu_item['link']['href'])) {
-            $output .= '<li><a href="' . url($submenu_item['link']['href']) . '">' . $submenu_item['link']['link_title'] . '</a></li>';
-          }
-        }
-        $output .= '</ul>';
-      }
-      // End of submenu code
-      $output .= '</li>';
-    }
+          
+      $output .= '<a href="' . url($menu_item['#href']) . '">' . $menu_item['#title'] . '</a></li>';
+    } 
     $count++;
   }
 
