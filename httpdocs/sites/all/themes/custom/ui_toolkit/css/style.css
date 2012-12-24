@@ -138,7 +138,7 @@ th {
 }
 /* Presentation List view */
 .view-presentation-page .view-content .views-row {
-  margin-bottom: 1.5em;
+  margin-bottom: 3em;
 }
 .view-presentation-page .view-content .views-row .views-field {
   margin-bottom: 0.5em;
@@ -163,6 +163,10 @@ th {
   clear: left;
 }
 /* Speaker page view */
+.view-speaker-page .views-row {
+  clear: both;
+  margin-bottom: 3em;
+}
 .view-speaker-page .views-row .views-field {
   margin-bottom: 9px;
 }
@@ -172,6 +176,7 @@ th {
 .view-speaker-page .views-row .views-field-field-speaker-photo {
   float: left;
   margin-right: 1.5em;
+  margin-bottom: 3em;
 }
 /* Typography */
 h2 {
@@ -231,4 +236,11 @@ div.submitted {
   position: relative;
   /*left: 4%;*/
 
+}
+/* Menu */
+li.submenu-item {
+  padding-left: 12px;
+}
+li.submenu-item a {
+  font-weight: normal !important;
 }

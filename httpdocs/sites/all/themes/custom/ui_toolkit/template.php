@@ -353,7 +353,6 @@ function ui_toolkit_nav($menuname) {
   $output = '<ul class="nav">';
 
   $count = 0;
-  //dpm(menu_tree_all_data($menuname));
   foreach (menu_tree_all_data($menuname) as $menu_item) {
 
     if (isset($menu_item['link']['href'])) {
@@ -371,10 +370,10 @@ function ui_toolkit_nav($menuname) {
       // Insert submenus here
       $submenu_count = count($menu_item['below']);
       if ($submenu_count != 0) {
-        $output .= '<ul>';
+        $output .= '<ul class="nav">';
         foreach ($menu_item['below'] as $submenu_item) {
           if (isset($submenu_item['link']['href'])) {
-            $output .= '<li><a href="' . url($submenu_item['link']['href']) . '">' . $submenu_item['link']['link_title'] . '</a></li>';
+            $output .= '<li class="submenu-item"><a href="' . url($submenu_item['link']['href']) . '">' . $submenu_item['link']['link_title'] . '</a></li>';
           }
         }
         $output .= '</ul>';
