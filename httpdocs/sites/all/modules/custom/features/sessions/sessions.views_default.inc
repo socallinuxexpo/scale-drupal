@@ -335,6 +335,15 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
   $handler->display->display_options['fields']['field_short_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_short_abstract']['element_label_colon'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'presentation' => 'presentation',
+  );
   $handler->display->display_options['path'] = 'presentations.csv';
   $export['presentation_page'] = $view;
 
