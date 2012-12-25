@@ -261,6 +261,81 @@ function sessions_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'scale11x/presentations';
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    6 => '6',
+    7 => '7',
+    9 => '9',
+    4 => '4',
+    10 => '10',
+    8 => '8',
+  );
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Photo */
+  $handler->display->display_options['fields']['field_speaker_photo']['id'] = 'field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['table'] = 'field_data_field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['field'] = 'field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['relationship'] = 'field_speaker_uid';
+  $handler->display->display_options['fields']['field_speaker_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_speaker_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speaker_photo']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_speaker_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_speaker_photo']['settings'] = array(
+    'image_style' => 'square_thumbnail',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  /* Field: Content: Speaker */
+  $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['label'] = '';
+  $handler->display->display_options['fields']['field_speaker']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['relationship'] = 'field_speaker_uid';
+  /* Field: Content: Primary contact email address */
+  $handler->display->display_options['fields']['field_primary_email']['id'] = 'field_primary_email';
+  $handler->display->display_options['fields']['field_primary_email']['table'] = 'field_data_field_primary_email';
+  $handler->display->display_options['fields']['field_primary_email']['field'] = 'field_primary_email';
+  /* Field: Content: Audience */
+  $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
+  $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_audience']['element_wrapper_class'] = 'terms';
+  $handler->display->display_options['fields']['field_audience']['hide_empty'] = TRUE;
+  /* Field: Content: Topic */
+  $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_topic']['element_wrapper_class'] = 'terms';
+  $handler->display->display_options['fields']['field_topic']['hide_empty'] = TRUE;
+  /* Field: Content: Short abstract */
+  $handler->display->display_options['fields']['field_short_abstract']['id'] = 'field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['table'] = 'field_data_field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_short_abstract']['element_label_colon'] = FALSE;
+  $handler->display->display_options['path'] = 'presentations.csv';
   $export['presentation_page'] = $view;
 
   $view = new view();
