@@ -172,6 +172,10 @@
   #radio-display {
     width: auto;
   }
+  /* Featured Speakers view */
+  .view-featured-speakers .views-field-realname {
+    color: #000;
+  }
 }
 /******************************************
  * SMALL MOBILE LAYOUT ( < 520px)         *

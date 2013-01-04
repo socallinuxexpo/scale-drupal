@@ -119,6 +119,7 @@ th {
   padding-right: 1.5em;
   margin-bottom: 1.5em;
   margin-top: -0.5em;
+  max-width: 55%;
 }
 #presentation-page .panel-panel .pane-user-field-speaker-photo {
   float: right;
@@ -128,6 +129,9 @@ th {
 #presentation-page .panel-panel .pane-node-field-speaker {
   font-size: 2em;
   line-height: 100%;
+}
+#presentation-page .panel-panel .pane-node-field-audience {
+  margin-bottom: 0;
 }
 #presentation-page .panel-panel .pane-node-field-long-abstract {
   clear: left;
