@@ -107,6 +107,10 @@ th {
   /*border: 3px solid #FFF;*/
 
 }
+/* Featured Presentations view */
+#block-views-featured-presentations-block {
+  width: 104%;
+}
 /* Presentation page view */
 #presentation-page .panel-panel {
   margin-bottom: 1.5em;
