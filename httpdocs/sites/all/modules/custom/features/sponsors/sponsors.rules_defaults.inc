@@ -16,7 +16,11 @@ function sponsors_default_rules_configuration() {
       "REQUIRES" : [ "rules" ],
       "ON" : [ "node_insert", "node_update" ],
       "IF" : [
-        { "node_is_of_type" : { "node" : [ "node" ], "type" : { "value" : { "sponsor" : "sponsor" } } } },
+        { "node_is_of_type" : {
+            "node" : [ "node" ],
+            "type" : { "value" : { "special_event" : "special_event", "sponsor" : "sponsor" } }
+          }
+        },
         { "AND" : [] },
         { "NOT node_is_published" : { "node" : [ "node" ] } },
         { "AND" : [] },
