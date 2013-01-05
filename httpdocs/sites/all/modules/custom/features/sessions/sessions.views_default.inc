@@ -44,6 +44,15 @@ function sessions_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Speaker (field_speaker) */
+  $handler->display->display_options['arguments']['field_speaker_uid']['id'] = 'field_speaker_uid';
+  $handler->display->display_options['arguments']['field_speaker_uid']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['arguments']['field_speaker_uid']['field'] = 'field_speaker_uid';
+  $handler->display->display_options['arguments']['field_speaker_uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_speaker_uid']['default_argument_type'] = 'current_user';
+  $handler->display->display_options['arguments']['field_speaker_uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_speaker_uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_speaker_uid']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
