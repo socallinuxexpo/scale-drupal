@@ -18,7 +18,12 @@ function sponsors_default_rules_configuration() {
       "IF" : [
         { "node_is_of_type" : {
             "node" : [ "node" ],
-            "type" : { "value" : { "special_event" : "special_event", "sponsor" : "sponsor" } }
+            "type" : { "value" : {
+                "blog" : "blog",
+                "special_event" : "special_event",
+                "sponsor" : "sponsor"
+              }
+            }
           }
         },
         { "AND" : [] },
