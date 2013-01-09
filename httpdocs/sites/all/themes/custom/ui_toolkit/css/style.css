@@ -186,6 +186,26 @@ th {
   margin-right: 1.5em;
   margin-bottom: 3em;
 }
+/* Special Events view */
+.view-special-events .views-row {
+  clear: both;
+  margin-bottom: 2.5em;
+}
+.view-special-events .views-row .views-field {
+  margin-left: 40%;
+}
+.view-special-events .views-field-field-logo {
+  float: left;
+  width: 33%;
+  margin-bottom: 2.5em;
+  margin-left: 0 !important;
+  margin-right: 15px;
+  text-align: center;
+}
+.view-special-events .views-field-field-logo img {
+  width: auto;
+  height: auto;
+}
 /* Typography */
 h2 {
   font-family: 'Source Sans Pro', sans-serif;
@@ -238,6 +258,22 @@ p.right-image {
 }
 div.submitted {
   margin-bottom: 1em;
+}
+/* Special Event node */
+.node-special-event .field {
+  margin-bottom: 1.5em;
+  clear: both;
+}
+.node-special-event .field-name-field-logo {
+  float: left;
+  width: 33%;
+  margin-left: 0 !important;
+  margin-right: 1.5em;
+  text-align: center;
+  clear: none;
+}
+.node-special-event .field-name-body {
+  clear: none;
 }
 /* Featured region */
 #featured {
