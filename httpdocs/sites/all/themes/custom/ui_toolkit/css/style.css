@@ -336,8 +336,11 @@ li.submenu-item a {
   width: 95%;
 }
 .schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content table.full {
-  width: auto;
-  min-width: 120px;
+  /*width: auto;
+            min-width: 120px;*/
+
+  width: 120px;
+  table-layout: auto;
 }
 .schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #multi-day-container {
   overflow: hidden;
