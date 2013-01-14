@@ -289,25 +289,60 @@ li.submenu-item a {
   font-weight: normal !important;
 }
 /* Schedule (Calendar) */
-#schedule_11x .panels-flexible-region + .panels-flexible-region td.first,
-#schedule_11x .panels-flexible-region + .panels-flexible-region td.calendar-time-holder {
+.schedule_11x .panels-flexible-region + .panels-flexible-region td.first,
+.schedule_11x .panels-flexible-region + .panels-flexible-region td.calendar-time-holder {
   display: none;
 }
-#schedule_11x .panels-flexible-region .panels-flexible-region-inside {
+.schedule_11x .panels-flexible-region .panels-flexible-region-inside {
   padding-left: 0;
   padding-right: 0;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content {
-  overflow: hidden;
+.schedule_11x .panels-flexible-region .panels-flexible-region-inside #time {
+  width: 50px;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content {
+.schedule_11x .panels-flexible-region .panels-flexible-region-inside #time table {
+  width: auto;
+}
+.schedule_11x .panels-flexible-region .panels-flexible-region-inside #time table xtd {
+  width: 50px;
+}
+.schedule_11x .panels-flexible-region .panels-flexible-region-inside #time table .calendar-agenda-hour {
+  width: 45px;
+  padding-right: 5px;
+}
+.schedule_11x .panels-flexible-region .panels-flexible-region-inside .pane-room-schedule:first-child td.first {
+  display: table-cell;
+}
+.schedule_11x .panels-flexible-region .panels-flexible-region-inside .pane-room-schedule:first-child td.last {
+  display: none;
+}
+.schedule_11x .panels-flexible-region .panels-flexible-region-inside .pane-room-schedule td.first {
+  display: none;
+}
+.schedule_11x .panels-flexible-region .panel-separator {
+  display: none;
+}
+.schedule_11x .panels-flexible-region .panel-pane {
+  float: left;
+}
+.schedule_11x .panels-flexible-region .panel-pane .pane-content {
+  overflow: hidden !important;
+}
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content {
   position: relative;
   top: -425px;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content .calendar-agenda-items .view-item {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content .calendar-agenda-items .view-item {
   width: 95%;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content table.full {
+  width: auto;
+  min-width: 120px;
+}
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #multi-day-container {
+  overflow: hidden;
+}
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container {
   overflow: hidden;
   height: 1100px;
   /* Track colors */
@@ -353,142 +388,145 @@ li.submenu-item a {
   /* Youth */
 
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track {
   border: none;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents {
   font-size: 12px;
   padding-top: 4px;
   margin-left: 5px;
   line-height: 110%;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents .views-field-title a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents .views-field-title a {
   font-weight: normal;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents * {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents * {
   margin-left: 0px;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 {
   background-color: #3353AF;
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-7 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-7 {
   background-color: #123;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-7 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-7 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-8 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-8 {
   background-color: #638DCE;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-8 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-8 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-9 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-9 {
   background-color: #D65C09;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-9 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-9 a {
   color: #000;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 {
   background-color: #565448;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-11 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-11 {
   background-color: #A30C0C;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-11 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-11 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-12 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-12 {
   background-color: #97A67A;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-12 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-12 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-13 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-13 {
   background-color: #AD9134;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-13 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-13 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-14 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-14 {
   background-color: #D31111;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-14 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-14 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 {
   background-color: #998876;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 {
   background-color: #8B47BB;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 {
   background-color: #72B20F;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-18 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-18 {
   background-color: #0AACA0;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-18 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-18 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-19 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-19 {
   background-color: #405E5E;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-19 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-19 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-20 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-20 {
   background-color: #123;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-20 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-20 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-21 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-21 {
   background-color: #C4C249;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-21 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-21 a {
   color: #000;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-22 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-22 {
   background-color: #956140;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-22 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-22 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-23 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-23 {
   background-color: #774022;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-23 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-23 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-24 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-24 {
   background-color: #956140;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-24 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-24 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25 {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25 {
   background-color: #098C09;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25 a {
+.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25 a {
   color: #FFF;
 }
-#schedule_11x .panels-flexible-region .panel-pane .pane-title {
+.schedule_11x .panels-flexible-region .panel-pane .pane-title {
   font-size: 12px;
+}
+.calendar-calendar .day-view #single-day-container table td {
+  width: 100%;
 }

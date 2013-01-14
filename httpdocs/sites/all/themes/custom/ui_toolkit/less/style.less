@@ -345,7 +345,7 @@ li.submenu-item {
 
 
 /* Schedule (Calendar) */
-#schedule_11x {
+.schedule_11x {
   .panels-flexible-region + .panels-flexible-region {
     td.first, td.calendar-time-holder {
       display: none;
@@ -355,10 +355,45 @@ li.submenu-item {
     .panels-flexible-region-inside {
       padding-left: 0;
       padding-right: 0;
+
+      #time {
+          width: 50px;
+          table {
+            width: auto;
+            xtd {
+              width: 50px;
+            }
+            .calendar-agenda-hour {
+              width: 45px;
+              padding-right: 5px;
+            }
+          }
+
+      }
+
+      .pane-room-schedule:first-child {
+        td.first {
+          display: table-cell;
+        }
+        td.last {
+          display: none;
+        }
+      }
+
+      .pane-room-schedule {
+        td.first {
+          display: none;
+        }
+      }
+    }
+    .panel-separator {
+      display: none;
     }
     .panel-pane {
+      float: left;
+
       .pane-content {
-        overflow: hidden;
+        overflow: hidden !important;
         .view-content {
           position: relative;
           top: -425px;
@@ -366,6 +401,14 @@ li.submenu-item {
             .view-item {
               width: 95%;
             }
+          }
+          table.full {
+            width: auto;
+            min-width: 120px;
+          }
+
+          #multi-day-container {
+            overflow: hidden;
           }
           #single-day-container {
             overflow: hidden;
@@ -557,4 +600,8 @@ li.submenu-item {
       }
     }
   }
+}
+
+.calendar-calendar .day-view #single-day-container table td {
+  width: 100%;
 }
