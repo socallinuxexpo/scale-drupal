@@ -330,7 +330,7 @@ li.submenu-item a {
 }
 .schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content {
   position: relative;
-  top: -425px;
+  top: -830px;
 }
 .schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content .calendar-agenda-items .view-item {
   width: 95%;
@@ -347,7 +347,7 @@ li.submenu-item a {
 }
 .schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container {
   overflow: hidden;
-  height: 1100px;
+  height: 2200px;
   /* Track colors */
 
   /* Beginners Tutorials */
@@ -395,7 +395,7 @@ li.submenu-item a {
   border: none;
 }
 .schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents {
-  font-size: 12px;
+  font-size: 11px;
   padding-top: 4px;
   margin-left: 5px;
   line-height: 110%;
