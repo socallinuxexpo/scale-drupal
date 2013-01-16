@@ -290,7 +290,7 @@ li.submenu-item a {
 }
 /* Schedule (Calendar) */
 .schedule_11x .panels-flexible-row-first {
-  height: 1480px;
+  height: 1490px;
   overflow: hidden;
 }
 .schedule_11x .panels-flexible-row-last {
@@ -319,6 +319,8 @@ li.submenu-item a {
 }
 .schedule_11x .inside .region-rooms .inside {
   width: 2100px;
+  height: 1475px;
+  overflow: hidden;
 }
 .schedule_11x .inside .region-rooms table.full {
   table-layout: auto;
