@@ -346,46 +346,54 @@ li.submenu-item {
 
 /* Schedule (Calendar) */
 .schedule_11x {
-  .panels-flexible-region + .panels-flexible-region {
-    td.first, td.calendar-time-holder {
-      display: none;
+  .panels-flexible-row-first {
+    height: 1480px;
+    overflow: hidden;
+  }
+  .panels-flexible-row-last {
+    height: 20px;
+    overflow: hidden;
+  }
+
+  .inside {
+    .region-time {
+      width: 50px;
+      #time {
+        width: 50px;
+        table {
+          .calendar-agenda-hour {
+            width: 50px;
+            padding-right: 0;
+            .calendar-hour {
+              padding-right: 2px;
+            }
+          }
+        }
+      }
+      td.last {
+        display: none;
+      }
+    }
+
+    .region-rooms {
+      margin-left: -50px;
+      overflow: auto;
+
+      .inside {
+        width: 2100px;
+      }
+
+      table.full {
+        table-layout: auto;
+        width: 120px;
+      }
+
+      td.first {
+        display: none;
+      }
     }
   }
   .panels-flexible-region {
-    .panels-flexible-region-inside {
-      padding-left: 0;
-      padding-right: 0;
-
-      #time {
-          width: 50px;
-          table {
-            width: auto;
-            xtd {
-              width: 50px;
-            }
-            .calendar-agenda-hour {
-              width: 45px;
-              padding-right: 5px;
-            }
-          }
-
-      }
-
-      .pane-room-schedule:first-child {
-        td.first {
-          display: table-cell;
-        }
-        td.last {
-          display: none;
-        }
-      }
-
-      .pane-room-schedule {
-        td.first {
-          display: none;
-        }
-      }
-    }
     .panel-separator {
       display: none;
     }
@@ -402,13 +410,6 @@ li.submenu-item {
               width: 95%;
             }
           }
-          table.full {
-            /*width: auto;
-            min-width: 120px;*/
-            width: 120px;
-            table-layout: auto;
-          }
-
           #multi-day-container {
             overflow: hidden;
           }

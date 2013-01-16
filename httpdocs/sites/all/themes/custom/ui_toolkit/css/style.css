@@ -289,34 +289,42 @@ li.submenu-item a {
   font-weight: normal !important;
 }
 /* Schedule (Calendar) */
-.schedule_11x .panels-flexible-region + .panels-flexible-region td.first,
-.schedule_11x .panels-flexible-region + .panels-flexible-region td.calendar-time-holder {
-  display: none;
+.schedule_11x .panels-flexible-row-first {
+  height: 1480px;
+  overflow: hidden;
 }
-.schedule_11x .panels-flexible-region .panels-flexible-region-inside {
-  padding-left: 0;
+.schedule_11x .panels-flexible-row-last {
+  height: 20px;
+  overflow: hidden;
+}
+.schedule_11x .inside .region-time {
+  width: 50px;
+}
+.schedule_11x .inside .region-time #time {
+  width: 50px;
+}
+.schedule_11x .inside .region-time #time table .calendar-agenda-hour {
+  width: 50px;
   padding-right: 0;
 }
-.schedule_11x .panels-flexible-region .panels-flexible-region-inside #time {
-  width: 50px;
+.schedule_11x .inside .region-time #time table .calendar-agenda-hour .calendar-hour {
+  padding-right: 2px;
 }
-.schedule_11x .panels-flexible-region .panels-flexible-region-inside #time table {
-  width: auto;
-}
-.schedule_11x .panels-flexible-region .panels-flexible-region-inside #time table xtd {
-  width: 50px;
-}
-.schedule_11x .panels-flexible-region .panels-flexible-region-inside #time table .calendar-agenda-hour {
-  width: 45px;
-  padding-right: 5px;
-}
-.schedule_11x .panels-flexible-region .panels-flexible-region-inside .pane-room-schedule:first-child td.first {
-  display: table-cell;
-}
-.schedule_11x .panels-flexible-region .panels-flexible-region-inside .pane-room-schedule:first-child td.last {
+.schedule_11x .inside .region-time td.last {
   display: none;
 }
-.schedule_11x .panels-flexible-region .panels-flexible-region-inside .pane-room-schedule td.first {
+.schedule_11x .inside .region-rooms {
+  margin-left: -50px;
+  overflow: auto;
+}
+.schedule_11x .inside .region-rooms .inside {
+  width: 2100px;
+}
+.schedule_11x .inside .region-rooms table.full {
+  table-layout: auto;
+  width: 120px;
+}
+.schedule_11x .inside .region-rooms td.first {
   display: none;
 }
 .schedule_11x .panels-flexible-region .panel-separator {
@@ -334,13 +342,6 @@ li.submenu-item a {
 }
 .schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content .calendar-agenda-items .view-item {
   width: 95%;
-}
-.schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content table.full {
-  /*width: auto;
-            min-width: 120px;*/
-
-  width: 120px;
-  table-layout: auto;
 }
 .schedule_11x .panels-flexible-region .panel-pane .pane-content .view-content #multi-day-container {
   overflow: hidden;
