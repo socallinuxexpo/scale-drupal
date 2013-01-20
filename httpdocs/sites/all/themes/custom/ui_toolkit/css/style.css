@@ -322,6 +322,12 @@ li.submenu-item a {
   height: 1475px;
   overflow: hidden;
 }
+.schedule_11x .inside .region-rooms .inside .pane-room-schedule .track-7 .views-field-title {
+  display: none;
+}
+.schedule_11x .inside .region-rooms .inside .pane-room-schedule:first-child .track-7 .views-field-title {
+  display: block;
+}
 .schedule_11x .inside .region-rooms table.full {
   table-layout: auto;
   width: 120px;
