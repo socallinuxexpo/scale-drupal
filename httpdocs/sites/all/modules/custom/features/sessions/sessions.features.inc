@@ -26,6 +26,14 @@ function sessions_views_api() {
  */
 function sessions_node_info() {
   $items = array(
+    'notice' => array(
+      'name' => t('Notice'),
+      'base' => 'node_content',
+      'description' => t('Use for event notices not to attributed to any specific user.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'presentation' => array(
       'name' => t('Presentation'),
       'base' => 'node_content',
