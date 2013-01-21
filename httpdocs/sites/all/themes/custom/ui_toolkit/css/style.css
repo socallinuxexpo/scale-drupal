@@ -544,16 +544,16 @@ li.submenu-item a {
 .calendar-calendar .day-view #single-day-container table td {
   width: 100%;
 }
-.menu-block-4 ul li.active,
-.menu-block-3 ul li.active {
+.menu-block-2 ul li.active,
+.menu-block-1 ul li.active {
   display: none;
 }
-.menu-block-4 ul li,
-.menu-block-3 ul li {
+.menu-block-2 ul li,
+.menu-block-1 ul li {
   list-style-type: none;
   list-style-image: none;
 }
-.menu-block-4 ul li a,
-.menu-block-3 ul li a {
+.menu-block-2 ul li a,
+.menu-block-1 ul li a {
   color: #08C;
 }

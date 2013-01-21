@@ -773,7 +773,7 @@ scale11x/schedule/2013-02-23',
     $pane->pid = 'new-18';
     $pane->panel = 'schedule_top';
     $pane->type = 'block';
-    $pane->subtype = 'menu_block-3';
+    $pane->subtype = 'menu_block-1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -1566,7 +1566,7 @@ scale11x/schedule/2013-02-24',
     $pane->pid = 'new-37';
     $pane->panel = 'schedule_top';
     $pane->type = 'block';
-    $pane->subtype = 'menu_block-3';
+    $pane->subtype = 'menu_block-1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -2359,7 +2359,7 @@ scale11x/schedule/2013-02-22',
     $pane->pid = 'new-56';
     $pane->panel = 'schedule_top';
     $pane->type = 'block';
-    $pane->subtype = 'menu_block-3';
+    $pane->subtype = 'menu_block-1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
