@@ -310,8 +310,8 @@ li.submenu-item a {
   display: none;
 }
 .schedule_11x .row-main .inside .region-rooms {
-  margin-left: -50px;
-  /*overflow: auto;*/
+  /*margin-left: -50px;
+        overflow: auto;*/
 
   overflow: scroll;
 }

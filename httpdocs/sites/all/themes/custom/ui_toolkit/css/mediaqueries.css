@@ -197,8 +197,8 @@
   body {
     padding: 5px;
   }
-  #radio-display {
-    width: auto;
+  .page-scale11x-schedule #radio-display {
+    width: 94%;
   }
   /* Featured Speakers view */
   #block-views-featured-presentations-block .views-field,
@@ -213,7 +213,7 @@
   }
   .menu-block-2 ul li a,
   .menu-block-1 ul li a {
-    width: 200px;
+    width: 90%;
   }
 }
 /******************************************
