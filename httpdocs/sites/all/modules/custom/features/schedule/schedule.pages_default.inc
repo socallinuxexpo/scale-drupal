@@ -88,8 +88,9 @@ scale11x/schedule/2013-02-23',
         'width' => 100,
         'width_type' => '%',
         'children' => array(
-          0 => 'main-row',
-          1 => 1,
+          0 => 2,
+          1 => 'main-row',
+          2 => 1,
         ),
         'parent' => 'canvas',
       ),
@@ -126,7 +127,7 @@ scale11x/schedule/2013-02-23',
           0 => 'notice',
         ),
         'parent' => 'main',
-        'class' => '',
+        'class' => 'row-notice',
       ),
       'notice' => array(
         'type' => 'region',
@@ -136,6 +137,23 @@ scale11x/schedule/2013-02-23',
         'parent' => '1',
         'class' => 'schedule-notice',
       ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'schedule_top',
+        ),
+        'parent' => 'main',
+        'class' => 'row-schedule-top',
+      ),
+      'schedule_top' => array(
+        'type' => 'region',
+        'title' => 'Schedule Top',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => 'schedule-top',
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -144,6 +162,7 @@ scale11x/schedule/2013-02-23',
       'center' => NULL,
       'time' => NULL,
       'notice' => NULL,
+      'schedule_top' => NULL,
     ),
   );
   $display->cache = array();
@@ -752,745 +771,14 @@ scale11x/schedule/2013-02-23',
     $display->panels['notice'][0] = 'new-17';
     $pane = new stdClass();
     $pane->pid = 'new-18';
-    $pane->panel = 'time';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
+    $pane->panel = 'schedule_top';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-20',
-      'url' => '',
-      'display' => 'page_3',
       'override_title' => 1,
-      'override_title_text' => 'Time',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'time',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $display->content['new-18'] = $pane;
-    $display->panels['time'][0] = 'new-18';
-  $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = '0';
-  $handler->conf['display'] = $display;
-  $page->default_handlers[$handler->name] = $handler;
-  $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
-  $handler->api_version = 1;
-  $handler->name = 'page_schedule_panel_context_2';
-  $handler->task = 'page';
-  $handler->subtask = 'schedule';
-  $handler->handler = 'panel_context';
-  $handler->weight = -30;
-  $handler->conf = array(
-    'title' => 'Friday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
-    'access' => array(
-      'logic' => 'and',
-      'plugins' => array(
-        0 => array(
-          'name' => 'path_visibility',
-          'settings' => array(
-            'visibility_setting' => '1',
-            'paths' => 'scale11x/schedule/friday
-scale11x/schedule/2013-02-22',
-          ),
-          'context' => 'empty',
-          'not' => FALSE,
-        ),
-      ),
-    ),
-  );
-  $display = new panels_display();
-  $display->layout = 'flexible';
-  $display->layout_settings = array(
-    'items' => array(
-      'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
-        'children' => array(
-          0 => 'main',
-        ),
-        'parent' => NULL,
-      ),
-      'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
-        'children' => array(
-          0 => 'main-row',
-          1 => 1,
-        ),
-        'parent' => 'canvas',
-      ),
-      'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'time',
-          1 => 'center',
-        ),
-        'parent' => 'main',
-      ),
-      'center' => array(
-        'type' => 'region',
-        'title' => 'Rooms',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
-      ),
-      'time' => array(
-        'type' => 'region',
-        'title' => 'Time',
-        'width' => 100,
-        'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
-      ),
-      1 => array(
-        'type' => 'row',
-        'contains' => 'region',
-        'children' => array(
-          0 => 'notice',
-        ),
-        'parent' => 'main',
-        'class' => '',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
-      ),
-    ),
-  );
-  $display->panel_settings = array(
-    'style_settings' => array(
-      'default' => NULL,
-      'center' => NULL,
-      'time' => NULL,
-      'notice' => NULL,
-    ),
-  );
-  $display->cache = array();
-  $display->title = 'Friday, February 22, 2013';
-  $display->content = array();
-  $display->panels = array();
-    $pane = new stdClass();
-    $pane->pid = 'new-19';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/454',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'La Jolla',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'la-jolla',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $display->content['new-19'] = $pane;
-    $display->panels['center'][0] = 'new-19';
-    $pane = new stdClass();
-    $pane->pid = 'new-20';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/442',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'Carmel',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'carmel',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-20'] = $pane;
-    $display->panels['center'][1] = 'new-20';
-    $pane = new stdClass();
-    $pane->pid = 'new-21';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/455',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'Los Angeles A',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'los-angeles-a',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-21'] = $pane;
-    $display->panels['center'][2] = 'new-21';
-    $pane = new stdClass();
-    $pane->pid = 'new-22';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/457',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'Los Angeles B',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'los-angeles-b',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $display->content['new-22'] = $pane;
-    $display->panels['center'][3] = 'new-22';
-    $pane = new stdClass();
-    $pane->pid = 'new-23';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/458',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'Los Angeles C',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'los-angeles-c',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 4;
-    $pane->locks = array();
-    $display->content['new-23'] = $pane;
-    $display->panels['center'][4] = 'new-23';
-    $pane = new stdClass();
-    $pane->pid = 'new-24';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/448',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'Century AB',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'century-ab',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 5;
-    $pane->locks = array();
-    $display->content['new-24'] = $pane;
-    $display->panels['center'][5] = 'new-24';
-    $pane = new stdClass();
-    $pane->pid = 'new-25';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/451',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'Century CD',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'century-cd',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 6;
-    $pane->locks = array();
-    $display->content['new-25'] = $pane;
-    $display->panels['center'][6] = 'new-25';
-    $pane = new stdClass();
-    $pane->pid = 'new-26';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/459',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'Marina',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'marina',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 7;
-    $pane->locks = array();
-    $display->content['new-26'] = $pane;
-    $display->panels['center'][7] = 'new-26';
-    $pane = new stdClass();
-    $pane->pid = 'new-27';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/441',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'Bel Air',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'bel-air',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 8;
-    $pane->locks = array();
-    $display->content['new-27'] = $pane;
-    $display->panels['center'][8] = 'new-27';
-    $pane = new stdClass();
-    $pane->pid = 'new-28';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/462',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'Santa Monica A',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'santa-monica-a',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 9;
-    $pane->locks = array();
-    $display->content['new-28'] = $pane;
-    $display->panels['center'][9] = 'new-28';
-    $pane = new stdClass();
-    $pane->pid = 'new-29';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/463',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'Santa Monica B',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'santa-monica-b',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 10;
-    $pane->locks = array();
-    $display->content['new-29'] = $pane;
-    $display->panels['center'][10] = 'new-29';
-    $pane = new stdClass();
-    $pane->pid = 'new-30';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/464',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'San Lorenzo B',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'san-lorenzo-b',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 11;
-    $pane->locks = array();
-    $display->content['new-30'] = $pane;
-    $display->panels['center'][11] = 'new-30';
-    $pane = new stdClass();
-    $pane->pid = 'new-31';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/465',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'San Lorenzo C',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'san-lorenzo-c',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 12;
-    $pane->locks = array();
-    $display->content['new-31'] = $pane;
-    $display->panels['center'][12] = 'new-31';
-    $pane = new stdClass();
-    $pane->pid = 'new-32';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/466',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'San Lorenzo D',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'san-lorenzo-d',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 13;
-    $pane->locks = array();
-    $display->content['new-32'] = $pane;
-    $display->panels['center'][13] = 'new-32';
-    $pane = new stdClass();
-    $pane->pid = 'new-33';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/467',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'San Lorenzo E',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'san-lorenzo-e',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 14;
-    $pane->locks = array();
-    $display->content['new-33'] = $pane;
-    $display->panels['center'][14] = 'new-33';
-    $pane = new stdClass();
-    $pane->pid = 'new-34';
-    $pane->panel = 'center';
-    $pane->type = 'views';
-    $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'override_pager_settings' => 0,
-      'use_pager' => 0,
-      'nodes_per_page' => '0',
-      'pager_id' => '0',
-      'offset' => '0',
-      'more_link' => 0,
-      'feed_icons' => 0,
-      'panel_args' => 0,
-      'link_to_view' => 0,
-      'args' => '2013-02-22/468',
-      'url' => '',
-      'display' => 'page_3',
-      'override_title' => 1,
-      'override_title_text' => 'San Lorenzo F',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array(
-      'css_id' => 'san-lorenzo-f',
-      'css_class' => '',
-    );
-    $pane->extras = array();
-    $pane->position = 15;
-    $pane->locks = array();
-    $display->content['new-34'] = $pane;
-    $display->panels['center'][15] = 'new-34';
-    $pane = new stdClass();
-    $pane->pid = 'new-35';
-    $pane->panel = 'notice';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => 'Schedule change notice',
-      'title' => '',
-      'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -1500,10 +788,10 @@ scale11x/schedule/2013-02-22',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-35'] = $pane;
-    $display->panels['notice'][0] = 'new-35';
+    $display->content['new-18'] = $pane;
+    $display->panels['schedule_top'][0] = 'new-18';
     $pane = new stdClass();
-    $pane->pid = 'new-36';
+    $pane->pid = 'new-19';
     $pane->panel = 'time';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -1536,8 +824,8 @@ scale11x/schedule/2013-02-22',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-36'] = $pane;
-    $display->panels['time'][0] = 'new-36';
+    $display->content['new-19'] = $pane;
+    $display->panels['time'][0] = 'new-19';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -1593,8 +881,9 @@ scale11x/schedule/2013-02-24',
         'width' => 100,
         'width_type' => '%',
         'children' => array(
-          0 => 'main-row',
-          1 => 1,
+          0 => 2,
+          1 => 'main-row',
+          2 => 1,
         ),
         'parent' => 'canvas',
       ),
@@ -1606,6 +895,7 @@ scale11x/schedule/2013-02-24',
           1 => 'center',
         ),
         'parent' => 'main',
+        'class' => 'row-main',
       ),
       'center' => array(
         'type' => 'region',
@@ -1630,7 +920,7 @@ scale11x/schedule/2013-02-24',
           0 => 'notice',
         ),
         'parent' => 'main',
-        'class' => '',
+        'class' => 'row-notice',
       ),
       'notice' => array(
         'type' => 'region',
@@ -1640,6 +930,23 @@ scale11x/schedule/2013-02-24',
         'parent' => '1',
         'class' => 'schedule-notice',
       ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'schedule_top',
+        ),
+        'parent' => 'main',
+        'class' => 'row-schedule-top',
+      ),
+      'schedule_top' => array(
+        'type' => 'region',
+        'title' => 'Schedule Top',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => 'schedule-top',
+      ),
     ),
   );
   $display->panel_settings = array(
@@ -1648,6 +955,7 @@ scale11x/schedule/2013-02-24',
       'center' => NULL,
       'time' => NULL,
       'notice' => NULL,
+      'schedule_top' => NULL,
     ),
   );
   $display->cache = array();
@@ -1655,7 +963,7 @@ scale11x/schedule/2013-02-24',
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-37';
+    $pane->pid = 'new-20';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -1688,10 +996,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-37'] = $pane;
-    $display->panels['center'][0] = 'new-37';
+    $display->content['new-20'] = $pane;
+    $display->panels['center'][0] = 'new-20';
     $pane = new stdClass();
-    $pane->pid = 'new-38';
+    $pane->pid = 'new-21';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -1724,10 +1032,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $display->content['new-38'] = $pane;
-    $display->panels['center'][1] = 'new-38';
+    $display->content['new-21'] = $pane;
+    $display->panels['center'][1] = 'new-21';
     $pane = new stdClass();
-    $pane->pid = 'new-39';
+    $pane->pid = 'new-22';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -1760,10 +1068,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $display->content['new-39'] = $pane;
-    $display->panels['center'][2] = 'new-39';
+    $display->content['new-22'] = $pane;
+    $display->panels['center'][2] = 'new-22';
     $pane = new stdClass();
-    $pane->pid = 'new-40';
+    $pane->pid = 'new-23';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -1796,10 +1104,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 3;
     $pane->locks = array();
-    $display->content['new-40'] = $pane;
-    $display->panels['center'][3] = 'new-40';
+    $display->content['new-23'] = $pane;
+    $display->panels['center'][3] = 'new-23';
     $pane = new stdClass();
-    $pane->pid = 'new-41';
+    $pane->pid = 'new-24';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -1832,10 +1140,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
-    $display->content['new-41'] = $pane;
-    $display->panels['center'][4] = 'new-41';
+    $display->content['new-24'] = $pane;
+    $display->panels['center'][4] = 'new-24';
     $pane = new stdClass();
-    $pane->pid = 'new-42';
+    $pane->pid = 'new-25';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -1868,10 +1176,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 5;
     $pane->locks = array();
-    $display->content['new-42'] = $pane;
-    $display->panels['center'][5] = 'new-42';
+    $display->content['new-25'] = $pane;
+    $display->panels['center'][5] = 'new-25';
     $pane = new stdClass();
-    $pane->pid = 'new-43';
+    $pane->pid = 'new-26';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -1904,10 +1212,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 6;
     $pane->locks = array();
-    $display->content['new-43'] = $pane;
-    $display->panels['center'][6] = 'new-43';
+    $display->content['new-26'] = $pane;
+    $display->panels['center'][6] = 'new-26';
     $pane = new stdClass();
-    $pane->pid = 'new-44';
+    $pane->pid = 'new-27';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -1940,10 +1248,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 7;
     $pane->locks = array();
-    $display->content['new-44'] = $pane;
-    $display->panels['center'][7] = 'new-44';
+    $display->content['new-27'] = $pane;
+    $display->panels['center'][7] = 'new-27';
     $pane = new stdClass();
-    $pane->pid = 'new-45';
+    $pane->pid = 'new-28';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -1976,10 +1284,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 8;
     $pane->locks = array();
-    $display->content['new-45'] = $pane;
-    $display->panels['center'][8] = 'new-45';
+    $display->content['new-28'] = $pane;
+    $display->panels['center'][8] = 'new-28';
     $pane = new stdClass();
-    $pane->pid = 'new-46';
+    $pane->pid = 'new-29';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -2012,10 +1320,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 9;
     $pane->locks = array();
-    $display->content['new-46'] = $pane;
-    $display->panels['center'][9] = 'new-46';
+    $display->content['new-29'] = $pane;
+    $display->panels['center'][9] = 'new-29';
     $pane = new stdClass();
-    $pane->pid = 'new-47';
+    $pane->pid = 'new-30';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -2048,10 +1356,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 10;
     $pane->locks = array();
-    $display->content['new-47'] = $pane;
-    $display->panels['center'][10] = 'new-47';
+    $display->content['new-30'] = $pane;
+    $display->panels['center'][10] = 'new-30';
     $pane = new stdClass();
-    $pane->pid = 'new-48';
+    $pane->pid = 'new-31';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -2084,10 +1392,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 11;
     $pane->locks = array();
-    $display->content['new-48'] = $pane;
-    $display->panels['center'][11] = 'new-48';
+    $display->content['new-31'] = $pane;
+    $display->panels['center'][11] = 'new-31';
     $pane = new stdClass();
-    $pane->pid = 'new-49';
+    $pane->pid = 'new-32';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -2120,10 +1428,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 12;
     $pane->locks = array();
-    $display->content['new-49'] = $pane;
-    $display->panels['center'][12] = 'new-49';
+    $display->content['new-32'] = $pane;
+    $display->panels['center'][12] = 'new-32';
     $pane = new stdClass();
-    $pane->pid = 'new-50';
+    $pane->pid = 'new-33';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -2156,10 +1464,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 13;
     $pane->locks = array();
-    $display->content['new-50'] = $pane;
-    $display->panels['center'][13] = 'new-50';
+    $display->content['new-33'] = $pane;
+    $display->panels['center'][13] = 'new-33';
     $pane = new stdClass();
-    $pane->pid = 'new-51';
+    $pane->pid = 'new-34';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -2192,10 +1500,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 14;
     $pane->locks = array();
-    $display->content['new-51'] = $pane;
-    $display->panels['center'][14] = 'new-51';
+    $display->content['new-34'] = $pane;
+    $display->panels['center'][14] = 'new-34';
     $pane = new stdClass();
-    $pane->pid = 'new-52';
+    $pane->pid = 'new-35';
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -2228,10 +1536,10 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 15;
     $pane->locks = array();
-    $display->content['new-52'] = $pane;
-    $display->panels['center'][15] = 'new-52';
+    $display->content['new-35'] = $pane;
+    $display->panels['center'][15] = 'new-35';
     $pane = new stdClass();
-    $pane->pid = 'new-53';
+    $pane->pid = 'new-36';
     $pane->panel = 'notice';
     $pane->type = 'custom';
     $pane->subtype = 'custom';
@@ -2252,10 +1560,31 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-53'] = $pane;
-    $display->panels['notice'][0] = 'new-53';
+    $display->content['new-36'] = $pane;
+    $display->panels['notice'][0] = 'new-36';
     $pane = new stdClass();
-    $pane->pid = 'new-54';
+    $pane->pid = 'new-37';
+    $pane->panel = 'schedule_top';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-37'] = $pane;
+    $display->panels['schedule_top'][0] = 'new-37';
+    $pane = new stdClass();
+    $pane->pid = 'new-38';
     $pane->panel = 'time';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
@@ -2288,8 +1617,801 @@ scale11x/schedule/2013-02-24',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
+    $display->content['new-38'] = $pane;
+    $display->panels['time'][0] = 'new-38';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_schedule_panel_context_2';
+  $handler->task = 'page';
+  $handler->subtask = 'schedule';
+  $handler->handler = 'panel_context';
+  $handler->weight = -30;
+  $handler->conf = array(
+    'title' => 'Friday',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => 'schedule_11x friday',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'scale11x/schedule/friday
+scale11x/schedule/2013-02-22',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $display = new panels_display();
+  $display->layout = 'flexible';
+  $display->layout_settings = array(
+    'items' => array(
+      'canvas' => array(
+        'type' => 'row',
+        'contains' => 'column',
+        'children' => array(
+          0 => 'main',
+        ),
+        'parent' => NULL,
+      ),
+      'main' => array(
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
+        'children' => array(
+          0 => 2,
+          1 => 'main-row',
+          2 => 1,
+        ),
+        'parent' => 'canvas',
+      ),
+      'main-row' => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'time',
+          1 => 'center',
+        ),
+        'parent' => 'main',
+        'class' => 'row-main',
+      ),
+      'center' => array(
+        'type' => 'region',
+        'title' => 'Rooms',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => 'main-row',
+        'class' => 'region-rooms',
+      ),
+      'time' => array(
+        'type' => 'region',
+        'title' => 'Time',
+        'width' => 100,
+        'width_type' => 'px',
+        'parent' => 'main-row',
+        'class' => 'region-time',
+      ),
+      1 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'notice',
+        ),
+        'parent' => 'main',
+        'class' => 'row-notice',
+      ),
+      'notice' => array(
+        'type' => 'region',
+        'title' => 'Notice',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '1',
+        'class' => 'schedule-notice',
+      ),
+      2 => array(
+        'type' => 'row',
+        'contains' => 'region',
+        'children' => array(
+          0 => 'schedule_top',
+        ),
+        'parent' => 'main',
+        'class' => 'row-schedule-top',
+      ),
+      'schedule_top' => array(
+        'type' => 'region',
+        'title' => 'Schedule Top',
+        'width' => 100,
+        'width_type' => '%',
+        'parent' => '2',
+        'class' => 'schedule-top',
+      ),
+    ),
+  );
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'center' => NULL,
+      'time' => NULL,
+      'notice' => NULL,
+      'schedule_top' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = 'Friday, February 22, 2013';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-39';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/454',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'La Jolla',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'la-jolla',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-39'] = $pane;
+    $display->panels['center'][0] = 'new-39';
+    $pane = new stdClass();
+    $pane->pid = 'new-40';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/442',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Carmel',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'carmel',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $display->content['new-40'] = $pane;
+    $display->panels['center'][1] = 'new-40';
+    $pane = new stdClass();
+    $pane->pid = 'new-41';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/455',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Los Angeles A',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'los-angeles-a',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-41'] = $pane;
+    $display->panels['center'][2] = 'new-41';
+    $pane = new stdClass();
+    $pane->pid = 'new-42';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/457',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Los Angeles B',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'los-angeles-b',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $display->content['new-42'] = $pane;
+    $display->panels['center'][3] = 'new-42';
+    $pane = new stdClass();
+    $pane->pid = 'new-43';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/458',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Los Angeles C',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'los-angeles-c',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $display->content['new-43'] = $pane;
+    $display->panels['center'][4] = 'new-43';
+    $pane = new stdClass();
+    $pane->pid = 'new-44';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/448',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Century AB',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'century-ab',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 5;
+    $pane->locks = array();
+    $display->content['new-44'] = $pane;
+    $display->panels['center'][5] = 'new-44';
+    $pane = new stdClass();
+    $pane->pid = 'new-45';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/451',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Century CD',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'century-cd',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $display->content['new-45'] = $pane;
+    $display->panels['center'][6] = 'new-45';
+    $pane = new stdClass();
+    $pane->pid = 'new-46';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/459',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Marina',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'marina',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 7;
+    $pane->locks = array();
+    $display->content['new-46'] = $pane;
+    $display->panels['center'][7] = 'new-46';
+    $pane = new stdClass();
+    $pane->pid = 'new-47';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/441',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Bel Air',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'bel-air',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 8;
+    $pane->locks = array();
+    $display->content['new-47'] = $pane;
+    $display->panels['center'][8] = 'new-47';
+    $pane = new stdClass();
+    $pane->pid = 'new-48';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/462',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Santa Monica A',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'santa-monica-a',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 9;
+    $pane->locks = array();
+    $display->content['new-48'] = $pane;
+    $display->panels['center'][9] = 'new-48';
+    $pane = new stdClass();
+    $pane->pid = 'new-49';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/463',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Santa Monica B',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'santa-monica-b',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 10;
+    $pane->locks = array();
+    $display->content['new-49'] = $pane;
+    $display->panels['center'][10] = 'new-49';
+    $pane = new stdClass();
+    $pane->pid = 'new-50';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/464',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'San Lorenzo B',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'san-lorenzo-b',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 11;
+    $pane->locks = array();
+    $display->content['new-50'] = $pane;
+    $display->panels['center'][11] = 'new-50';
+    $pane = new stdClass();
+    $pane->pid = 'new-51';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/465',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'San Lorenzo C',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'san-lorenzo-c',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 12;
+    $pane->locks = array();
+    $display->content['new-51'] = $pane;
+    $display->panels['center'][12] = 'new-51';
+    $pane = new stdClass();
+    $pane->pid = 'new-52';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/466',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'San Lorenzo D',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'san-lorenzo-d',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 13;
+    $pane->locks = array();
+    $display->content['new-52'] = $pane;
+    $display->panels['center'][13] = 'new-52';
+    $pane = new stdClass();
+    $pane->pid = 'new-53';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/467',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'San Lorenzo E',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'san-lorenzo-e',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 14;
+    $pane->locks = array();
+    $display->content['new-53'] = $pane;
+    $display->panels['center'][14] = 'new-53';
+    $pane = new stdClass();
+    $pane->pid = 'new-54';
+    $pane->panel = 'center';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-22/468',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'San Lorenzo F',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'san-lorenzo-f',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 15;
+    $pane->locks = array();
     $display->content['new-54'] = $pane;
-    $display->panels['time'][0] = 'new-54';
+    $display->panels['center'][15] = 'new-54';
+    $pane = new stdClass();
+    $pane->pid = 'new-55';
+    $pane->panel = 'notice';
+    $pane->type = 'custom';
+    $pane->subtype = 'custom';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'admin_title' => 'Schedule change notice',
+      'title' => '',
+      'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+      'format' => 'filtered_html',
+      'substitute' => TRUE,
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-55'] = $pane;
+    $display->panels['notice'][0] = 'new-55';
+    $pane = new stdClass();
+    $pane->pid = 'new-56';
+    $pane->panel = 'schedule_top';
+    $pane->type = 'block';
+    $pane->subtype = 'menu_block-3';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-56'] = $pane;
+    $display->panels['schedule_top'][0] = 'new-56';
+    $pane = new stdClass();
+    $pane->pid = 'new-57';
+    $pane->panel = 'time';
+    $pane->type = 'views';
+    $pane->subtype = 'room_schedule';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_pager_settings' => 0,
+      'use_pager' => 0,
+      'nodes_per_page' => '0',
+      'pager_id' => '0',
+      'offset' => '0',
+      'more_link' => 0,
+      'feed_icons' => 0,
+      'panel_args' => 0,
+      'link_to_view' => 0,
+      'args' => '2013-02-20',
+      'url' => '',
+      'display' => 'page_3',
+      'override_title' => 1,
+      'override_title_text' => 'Time',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => 'time',
+      'css_class' => '',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-57'] = $pane;
+    $display->panels['time'][0] = 'new-57';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
