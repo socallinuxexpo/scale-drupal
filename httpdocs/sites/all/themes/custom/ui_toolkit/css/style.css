@@ -260,11 +260,19 @@ div.submitted {
   margin-bottom: 1em;
 }
 /* Special Event node */
-.node-special-event .field {
+#special-events-page {
   margin-bottom: 1.5em;
   clear: both;
 }
-.node-special-event .field-name-field-logo {
+#special-events-page .panel-pane h2 {
+  font-size: 14px;
+  text-transform: none;
+  line-height: 18px;
+}
+#special-events-page .panel-pane h2.pane-title {
+  margin-bottom: 10px;
+}
+#special-events-page .pane-node-field-logo {
   float: left;
   width: 33%;
   margin-left: 0 !important;
@@ -272,8 +280,11 @@ div.submitted {
   text-align: center;
   clear: none;
 }
-.node-special-event .field-name-body {
+#special-events-page .pane-node-body {
   clear: none;
+}
+#special-events-page .pane-node-field-when {
+  clear: left;
 }
 /* Featured region */
 #featured {

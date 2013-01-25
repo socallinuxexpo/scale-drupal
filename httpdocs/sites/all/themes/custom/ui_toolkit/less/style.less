@@ -309,12 +309,21 @@ div.submitted {
 }
 
 /* Special Event node */
-.node-special-event {
-  .field {
-    margin-bottom: 1.5em;
-    clear: both;
+#special-events-page {
+  margin-bottom: 1.5em;
+  clear: both;
+
+  .panel-pane {
+    h2 {
+      font-size: 14px;
+      text-transform: none;
+      line-height: 18px;
+    }
+    h2.pane-title {
+      margin-bottom: 10px;
+    }
   }
-  .field-name-field-logo {
+  .pane-node-field-logo {
     float: left;
     width: 33%;
     margin-left: 0 !important;
@@ -322,8 +331,11 @@ div.submitted {
     text-align: center;
     clear: none;
   }
-  .field-name-body {
+  .pane-node-body {
     clear: none;
+  }
+  .pane-node-field-when {
+    clear: left;
   }
 }
 

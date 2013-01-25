@@ -188,6 +188,78 @@ function special_events_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-special_event-field_ready_for_approval'.
+  $fields['node-special_event-field_ready_for_approval'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_ready_for_approval',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => 'Ready for approval',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'special_event',
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '5',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_ready_for_approval',
+      'label' => 'Ready for approval',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_onoff',
+        'weight' => '6',
+      ),
+    ),
+  );
+
   // Exported field: 'node-special_event-field_schedule'.
   $fields['node-special_event-field_schedule'] = array(
     'field_config' => array(
@@ -266,7 +338,7 @@ function special_events_field_default_fields() {
   $fields['node-special_event-field_sponsor'] = array(
     'field_config' => array(
       'active' => '1',
-      'cardinality' => '1',
+      'cardinality' => '-1',
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_sponsor',
@@ -291,11 +363,14 @@ function special_events_field_default_fields() {
       'settings' => array(
         'referenceable_types' => array(
           'blog' => 0,
+          'featured_speakers' => 0,
           'notice' => 0,
           'page' => 0,
+          'panel' => 0,
           'presentation' => 0,
           'press_coverage' => 0,
           'press_release' => 0,
+          'promo_item' => 0,
           'special_event' => 0,
           'sponsor' => 'sponsor',
         ),
@@ -437,6 +512,7 @@ function special_events_field_default_fields() {
   // Included for use with string extractors like potx.
   t('Body');
   t('Logo');
+  t('Ready for approval');
   t('Schedule');
   t('Sponsor');
   t('When');
