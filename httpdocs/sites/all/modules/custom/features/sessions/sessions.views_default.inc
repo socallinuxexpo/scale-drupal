@@ -11,6 +11,94 @@ function sessions_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'electronic_sign';
+  $view->description = 'XML feed for electronic schedule signs';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Electronic Sign';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Electronic Sign';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Room */
+  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
+  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_room']['delta_offset'] = '0';
+  /* Field: Content: Time */
+  $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
+  $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Speaker */
+  $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['type'] = 'user_reference_plain';
+  $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Sort criterion: Content: Time -  start date (field_time) */
+  $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
+  $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
+  $handler->display->display_options['sorts']['field_time_value']['field'] = 'field_time_value';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'presentation' => 'presentation',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['path'] = 'electronic-sign';
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xml';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['transform'] = 1;
+  $handler->display->display_options['path'] = 'scale11x/sign.xml';
+  $export['electronic_sign'] = $view;
+
+  $view = new view();
   $view->name = 'my_presentations';
   $view->description = 'List of links to current user\'s presentations';
   $view->tag = 'default';
