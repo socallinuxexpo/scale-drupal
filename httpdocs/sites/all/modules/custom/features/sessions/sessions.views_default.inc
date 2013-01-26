@@ -51,7 +51,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
   $handler->display->display_options['fields']['field_time']['label'] = 'Day';
   $handler->display->display_options['fields']['field_time']['settings'] = array(
-    'format_type' => 'day_or_week',
+    'format_type' => 'day_of_week',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
