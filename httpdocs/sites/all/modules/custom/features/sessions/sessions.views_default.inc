@@ -49,8 +49,20 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
   $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
   $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['label'] = 'Day';
   $handler->display->display_options['fields']['field_time']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'day_or_week',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Time */
+  $handler->display->display_options['fields']['field_time_1']['id'] = 'field_time_1';
+  $handler->display->display_options['fields']['field_time_1']['table'] = 'field_data_field_time';
+  $handler->display->display_options['fields']['field_time_1']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time_1']['settings'] = array(
+    'format_type' => '24_hour_time',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -62,6 +74,11 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['type'] = 'user_reference_plain';
   $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: Content: Topic */
+  $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
   /* Sort criterion: Content: Time -  start date (field_time) */
   $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
   $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
