@@ -97,6 +97,18 @@ function sessions_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'presentation' => 'presentation',
   );
+  /* Filter criterion: Content: Room (field_room) */
+  $handler->display->display_options['filters']['field_room_tid']['id'] = 'field_room_tid';
+  $handler->display->display_options['filters']['field_room_tid']['table'] = 'field_data_field_room';
+  $handler->display->display_options['filters']['field_room_tid']['field'] = 'field_room_tid';
+  $handler->display->display_options['filters']['field_room_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_room_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_room_tid']['vocabulary'] = 'room';
+  /* Filter criterion: Content: Time -  start date (field_time) */
+  $handler->display->display_options['filters']['field_time_value']['id'] = 'field_time_value';
+  $handler->display->display_options['filters']['field_time_value']['table'] = 'field_data_field_time';
+  $handler->display->display_options['filters']['field_time_value']['field'] = 'field_time_value';
+  $handler->display->display_options['filters']['field_time_value']['operator'] = 'not empty';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
