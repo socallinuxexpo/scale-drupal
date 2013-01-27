@@ -63,7 +63,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_time_1']['field'] = 'field_time';
   $handler->display->display_options['fields']['field_time_1']['settings'] = array(
     'format_type' => '24_hour_time',
-    'fromto' => 'both',
+    'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
