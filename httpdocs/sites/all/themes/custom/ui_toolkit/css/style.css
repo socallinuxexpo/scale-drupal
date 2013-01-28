@@ -147,6 +147,7 @@ th {
 /* Presentation List view */
 .view-presentation-page .view-content .views-row {
   margin-bottom: 3em;
+  clear: both;
 }
 .view-presentation-page .view-content .views-row .views-field {
   margin-bottom: 0.5em;
@@ -158,6 +159,7 @@ th {
 .view-presentation-page .view-content .views-row .views-field-field-speaker-photo {
   float: right;
   margin-left: 1em;
+  margin-bottom: 3em;
   width: 33%;
 }
 .view-presentation-page .view-content .views-row .views-field-title {
