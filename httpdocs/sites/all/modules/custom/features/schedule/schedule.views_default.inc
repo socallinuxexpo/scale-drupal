@@ -403,6 +403,7 @@ function schedule_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -411,6 +412,10 @@ function schedule_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Taxonomy term: Content using Topic */
+  $handler->display->display_options['relationships']['reverse_field_topic_node']['id'] = 'reverse_field_topic_node';
+  $handler->display->display_options['relationships']['reverse_field_topic_node']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_topic_node']['field'] = 'reverse_field_topic_node';
   /* Field: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
@@ -428,12 +433,31 @@ function schedule_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'track track-[tid]';
+  /* Contextual filter: Content: Time -  start date (field_time) */
+  $handler->display->display_options['arguments']['field_time_value']['id'] = 'field_time_value';
+  $handler->display->display_options['arguments']['field_time_value']['table'] = 'field_data_field_time';
+  $handler->display->display_options['arguments']['field_time_value']['field'] = 'field_time_value';
+  $handler->display->display_options['arguments']['field_time_value']['relationship'] = 'reverse_field_topic_node';
+  $handler->display->display_options['arguments']['field_time_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_time_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_time_value']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_time_value']['granularity'] = 'day';
   /* Filter criterion: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'topic' => 'topic',
+  );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_topic_node';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'notice' => 'notice',
+    'presentation' => 'presentation',
+    'special_event' => 'special_event',
   );
 
   /* Display: Block */
