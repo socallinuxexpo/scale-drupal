@@ -119,8 +119,16 @@ function promo_items_views_default_views() {
   $handler->display->display_options['attachment_position'] = 'after';
 
   /* Display: audio */
-  $handler = $view->new_display('page', 'audio', 'page_1');
+  $handler = $view->new_display('attachment', 'audio', 'attachment_2');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h3 class="title">Banners</h3>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -144,7 +152,11 @@ function promo_items_views_default_views() {
   $handler->display->display_options['filters']['field_item_type_value']['value'] = array(
     'audio files' => 'audio files',
   );
-  $handler->display->display_options['path'] = 'scale11x/promo-items';
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+  );
+  $handler->display->display_options['attachment_position'] = 'after';
   $export['promo_items'] = $view;
 
   return $export;
