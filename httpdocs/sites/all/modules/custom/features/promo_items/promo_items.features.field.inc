@@ -129,7 +129,7 @@ function promo_items_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -199,10 +199,9 @@ function promo_items_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'above',
-          'module' => 'list',
           'settings' => array(),
-          'type' => 'list_default',
-          'weight' => '1',
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -272,7 +271,7 @@ function promo_items_field_default_fields() {
           'module' => 'file',
           'settings' => array(),
           'type' => 'file_default',
-          'weight' => '2',
+          'weight' => '1',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -313,6 +312,9 @@ function promo_items_field_default_fields() {
       'deleted' => '0',
       'entity_types' => array(),
       'field_name' => 'field_specificatins',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -345,7 +347,7 @@ function promo_items_field_default_fields() {
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -356,7 +358,7 @@ function promo_items_field_default_fields() {
       ),
       'entity_type' => 'node',
       'field_name' => 'field_specificatins',
-      'label' => 'Specificatins',
+      'label' => 'Specifications',
       'required' => 0,
       'settings' => array(
         'text_processing' => '0',
@@ -382,7 +384,7 @@ function promo_items_field_default_fields() {
   t('Enter  the embed code.');
   t('Item type');
   t('Promo file');
-  t('Specificatins');
+  t('Specifications');
   t('Suggested usage');
   t('note size of image (WxH) or file size as appropriate');
   t('upload the file for the promo item');
