@@ -426,7 +426,7 @@ scale11x/schedule/2013-02-23',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -498,7 +498,7 @@ scale11x/schedule/2013-02-23',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -534,7 +534,7 @@ scale11x/schedule/2013-02-23',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -570,7 +570,7 @@ scale11x/schedule/2013-02-23',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -606,7 +606,7 @@ scale11x/schedule/2013-02-23',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -642,7 +642,7 @@ scale11x/schedule/2013-02-23',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -678,7 +678,7 @@ scale11x/schedule/2013-02-23',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -714,7 +714,7 @@ scale11x/schedule/2013-02-23',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -1241,7 +1241,7 @@ scale11x/schedule/2013-02-24',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -1313,7 +1313,7 @@ scale11x/schedule/2013-02-24',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -1385,7 +1385,7 @@ scale11x/schedule/2013-02-24',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -1421,7 +1421,7 @@ scale11x/schedule/2013-02-24',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -1457,7 +1457,7 @@ scale11x/schedule/2013-02-24',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -1493,7 +1493,7 @@ scale11x/schedule/2013-02-24',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -1529,7 +1529,7 @@ scale11x/schedule/2013-02-24',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -2128,7 +2128,7 @@ scale11x/schedule/2013-02-22',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -2236,7 +2236,7 @@ scale11x/schedule/2013-02-22',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -2272,7 +2272,7 @@ scale11x/schedule/2013-02-22',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
