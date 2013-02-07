@@ -394,6 +394,8 @@ li.submenu-item a {
 
   /* Open Source Software in Education */
 
+  /* OpenNMS */
+
   /* PostgreSQL */
 
   /* ScaleU */
@@ -497,6 +499,12 @@ li.submenu-item a {
   background-color: #72B20F;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-436 {
+  background-color: #4D9E00;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-436 a {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-18 {
@@ -603,6 +611,8 @@ li.submenu-item a {
 
   /* Open Source Software in Education */
 
+  /* OpenNMS */
+
   /* PostgreSQL */
 
   /* ScaleU */
@@ -669,6 +679,10 @@ li.submenu-item a {
 }
 .legend-item .track-17 {
   background-color: #72B20F;
+  color: #FFF;
+}
+.legend-item .track-436 {
+  background-color: #4D9E00;
   color: #FFF;
 }
 .legend-item .track-18 {
