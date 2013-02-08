@@ -82,7 +82,6 @@ function sponsors_views_default_views() {
   $handler->display->display_options['fields']['field_booth_number']['id'] = 'field_booth_number';
   $handler->display->display_options['fields']['field_booth_number']['table'] = 'field_data_field_booth_number';
   $handler->display->display_options['fields']['field_booth_number']['field'] = 'field_booth_number';
-  $handler->display->display_options['fields']['field_booth_number']['label'] = 'Booth';
   $handler->display->display_options['fields']['field_booth_number']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_booth_number']['hide_empty'] = TRUE;
   /* Sort criterion: Content: Title */

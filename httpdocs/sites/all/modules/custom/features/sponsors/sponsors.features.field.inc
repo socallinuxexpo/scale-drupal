@@ -130,7 +130,7 @@ function sponsors_field_default_fields() {
       'description' => 'Enter an exhibitor booth number, if known.',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
