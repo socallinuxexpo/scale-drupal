@@ -571,6 +571,14 @@ function schedule_views_default_views() {
   $handler->display->display_options['fields']['field_short_abstract']['table'] = 'field_data_field_short_abstract';
   $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
   $handler->display->display_options['fields']['field_short_abstract']['label'] = 'Short Abstract';
+  /* Sort criterion: Content: Time -  start date (field_time) */
+  $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
+  $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
+  $handler->display->display_options['sorts']['field_time_value']['field'] = 'field_time_value';
+  /* Sort criterion: Content: Room (field_room) */
+  $handler->display->display_options['sorts']['field_room_tid']['id'] = 'field_room_tid';
+  $handler->display->display_options['sorts']['field_room_tid']['table'] = 'field_data_field_room';
+  $handler->display->display_options['sorts']['field_room_tid']['field'] = 'field_room_tid';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -594,7 +602,8 @@ function schedule_views_default_views() {
   /* Display: Data export */
   $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
   $handler->display->display_options['path'] = 'schedule.csv';
   $export['schedule_export'] = $view;
