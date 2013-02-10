@@ -128,6 +128,15 @@ function press_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<p> MEMBERS OF THE TECH AND NON-TECH MEDIA: To cover the Southern California Linux Expo, you must pre-register with SCALE. Send an e-mail to <a href="mailto:press@socallinuxexpo.org">press@socallinuxexpo.org</a> with your name, the name of publication/news outlet/blog and a phone number where you can be reached most conveniently, and a confirmation will be sent back to you. Your confirmation is your proof that you will have press credentials waiting for you. SCALE encourages you to do this in advance to prevent delays in confirming your status on the day of the event.</p>
+<h3>Press Coverage</h3>';
+  $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Date published */
   $handler->display->display_options['fields']['field_pub_date']['id'] = 'field_pub_date';
