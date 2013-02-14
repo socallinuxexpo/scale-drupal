@@ -731,3 +731,11 @@ li.submenu-item a {
   background-color: #098C09;
   color: #FFF;
 }
+/* Expo and others */
+.track- {
+  background-color: #FF3399;
+  color: #FFF;
+}
+.track- a {
+  color: #FFF;
+}
