@@ -402,6 +402,80 @@ function sessions_field_default_fields() {
     ),
   );
 
+  // Exported field: 'node-presentation-field_audio_video'.
+  $fields['node-presentation-field_audio_video'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_audio_video',
+      'field_permissions' => array(
+        'type' => '2',
+      ),
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'text_long',
+    ),
+    'field_instance' => array(
+      'bundle' => 'presentation',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => 'Enter the code to embed the audio or video of the presentation.',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => '11',
+        ),
+        'teaser' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'node',
+      'field_name' => 'field_audio_video',
+      'label' => 'Audio/Video',
+      'required' => 0,
+      'settings' => array(
+        'text_processing' => '1',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => '',
+          'maxlength_js_enforce' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_truncate_html' => 0,
+          'rows' => '5',
+        ),
+        'type' => 'text_textarea',
+        'weight' => '12',
+      ),
+    ),
+  );
+
   // Exported field: 'node-presentation-field_brief_description'.
   $fields['node-presentation-field_brief_description'] = array(
     'field_config' => array(
@@ -539,7 +613,7 @@ function sessions_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '10',
+        'weight' => '11',
       ),
     ),
   );
@@ -610,7 +684,7 @@ function sessions_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '11',
+        'weight' => '13',
       ),
     ),
   );
@@ -809,7 +883,7 @@ function sessions_field_default_fields() {
           'module' => 'taxonomy',
           'settings' => array(),
           'type' => 'taxonomy_term_reference_link',
-          'weight' => 10,
+          'weight' => '10',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -1195,9 +1269,11 @@ function sessions_field_default_fields() {
   t('A optional longer presentation description which will be displayed on our website if your proposal is accepted. This will additionally as provide the program committee a better understanding of what your presentation will cover. (up to 10000 characters)');
   t('A tag line that will be used on schedules, or as a subheading to your title. (up to 255 characters) ');
   t('Audience');
+  t('Audio/Video');
   t('Body');
   t('Brief description');
   t('Enter the <em>real names</em> (e.g. John Smith) of all speakers that will present this session, including yourself if you are planning to be a speaker. You may only enter speakers that have already registered. Speakers can also be added up to the close of the CFP.');
+  t('Enter the code to embed the audio or video of the presentation.');
   t('Enter the email address of the primary contact for this presentation. Information or questions regarding this presentation will be sent to this address. Multiple addresses may separated with commas.');
   t('Long abstract');
   t('Message to the reviewers');
