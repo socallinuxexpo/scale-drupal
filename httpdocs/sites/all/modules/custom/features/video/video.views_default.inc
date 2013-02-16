@@ -53,11 +53,10 @@ function video_views_default_views() {
   $handler->display->display_options['fields']['field_embed_code_video']['label'] = '';
   $handler->display->display_options['fields']['field_embed_code_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_embed_code_video']['empty'] = 'Video is not available at this time.';
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Room (field_room_video) */
+  $handler->display->display_options['sorts']['field_room_video_tid']['id'] = 'field_room_video_tid';
+  $handler->display->display_options['sorts']['field_room_video_tid']['table'] = 'field_data_field_room_video';
+  $handler->display->display_options['sorts']['field_room_video_tid']['field'] = 'field_room_video_tid';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
