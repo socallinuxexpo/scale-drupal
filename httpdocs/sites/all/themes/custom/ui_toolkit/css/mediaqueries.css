@@ -105,6 +105,12 @@
   #content-area {
     margin-top: 15px;
   }
+  .region-featured {
+    margin-left: 4%;
+  }
+  #block-views-featured-presentations-block {
+    width: 104%;
+  }
   .sidebar-left {
     /*margin-left: 20px;*/
   
@@ -139,7 +145,8 @@
   }
   #block-views-featured-presentations-block,
   #block-views-featured-speakers-block {
-    padding-left: 4%;
+    /*padding-left: 4%;*/
+  
   }
   #radio-bottom ul.menu {
     margin-top: 10px;
