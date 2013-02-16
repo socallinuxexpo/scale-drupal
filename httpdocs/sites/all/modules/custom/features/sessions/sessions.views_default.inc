@@ -287,6 +287,167 @@ function sessions_views_default_views() {
   $export['my_votes'] = $view;
 
   $view = new view();
+  $view->name = 'presentation_filter';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Presentation Filter';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Presentation Filter';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'track-[tid]';
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_time' => 'field_time',
+    'field_time_1' => 'field_time_1',
+  );
+  $handler->display->display_options['row_options']['separator'] = ' - ';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['label'] = 'track term';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'topic' => 'topic',
+    'audience' => 0,
+    'room' => 0,
+    'tags' => 0,
+  );
+  /* Field: Taxonomy term: Term ID */
+  $handler->display->display_options['fields']['tid']['id'] = 'tid';
+  $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['tid']['field'] = 'tid';
+  $handler->display->display_options['fields']['tid']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['fields']['tid']['label'] = '';
+  $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Time */
+  $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
+  $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['label'] = '';
+  $handler->display->display_options['fields']['field_time']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_time']['settings'] = array(
+    'format_type' => 'day_of_week',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Time */
+  $handler->display->display_options['fields']['field_time_1']['id'] = 'field_time_1';
+  $handler->display->display_options['fields']['field_time_1']['table'] = 'field_data_field_time';
+  $handler->display->display_options['fields']['field_time_1']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time_1']['label'] = '';
+  $handler->display->display_options['fields']['field_time_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_time_1']['settings'] = array(
+    'format_type' => '24_hour_time',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Sort criterion: Content: Time -  start date (field_time) */
+  $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
+  $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
+  $handler->display->display_options['sorts']['field_time_value']['field'] = 'field_time_value';
+  /* Sort criterion: Content: Room (field_room) */
+  $handler->display->display_options['sorts']['field_room_tid']['id'] = 'field_room_tid';
+  $handler->display->display_options['sorts']['field_room_tid']['table'] = 'field_data_field_room';
+  $handler->display->display_options['sorts']['field_room_tid']['field'] = 'field_room_tid';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'presentation' => 'presentation',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Topic (field_topic) */
+  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator_id'] = 'field_topic_tid_op';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['label'] = 'Track';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator'] = 'field_topic_tid_op';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['identifier'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    9 => 0,
+    10 => 0,
+    8 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
+  /* Filter criterion: Content: Audience (field_audience) */
+  $handler->display->display_options['filters']['field_audience_tid']['id'] = 'field_audience_tid';
+  $handler->display->display_options['filters']['field_audience_tid']['table'] = 'field_data_field_audience';
+  $handler->display->display_options['filters']['field_audience_tid']['field'] = 'field_audience_tid';
+  $handler->display->display_options['filters']['field_audience_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_audience_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_audience_tid']['expose']['operator_id'] = 'field_audience_tid_op';
+  $handler->display->display_options['filters']['field_audience_tid']['expose']['label'] = 'Audience';
+  $handler->display->display_options['filters']['field_audience_tid']['expose']['operator'] = 'field_audience_tid_op';
+  $handler->display->display_options['filters']['field_audience_tid']['expose']['identifier'] = 'field_audience_tid';
+  $handler->display->display_options['filters']['field_audience_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    9 => 0,
+    10 => 0,
+    8 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_audience_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_audience_tid']['vocabulary'] = 'audience';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['path'] = 'presentation-filter';
+  $export['presentation_filter'] = $view;
+
+  $view = new view();
   $view->name = 'presentation_page';
   $view->description = 'The public view of a presentation list page';
   $view->tag = 'default';
