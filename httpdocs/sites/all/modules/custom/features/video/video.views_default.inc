@@ -75,11 +75,24 @@ function video_views_default_views() {
   $handler->display->display_options['filters']['field_room_video_tid']['id'] = 'field_room_video_tid';
   $handler->display->display_options['filters']['field_room_video_tid']['table'] = 'field_data_field_room_video';
   $handler->display->display_options['filters']['field_room_video_tid']['field'] = 'field_room_video_tid';
+  $handler->display->display_options['filters']['field_room_video_tid']['value'] = array(
+    467 => '467',
+    468 => '468',
+    442 => '442',
+    448 => '448',
+    451 => '451',
+    454 => '454',
+    455 => '455',
+    457 => '457',
+    458 => '458',
+    459 => '459',
+  );
   $handler->display->display_options['filters']['field_room_video_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_room_video_tid']['expose']['operator_id'] = 'field_room_video_tid_op';
   $handler->display->display_options['filters']['field_room_video_tid']['expose']['label'] = 'Room';
   $handler->display->display_options['filters']['field_room_video_tid']['expose']['operator'] = 'field_room_video_tid_op';
-  $handler->display->display_options['filters']['field_room_video_tid']['expose']['identifier'] = 'field_room_video_tid';
+  $handler->display->display_options['filters']['field_room_video_tid']['expose']['identifier'] = 'room';
+  $handler->display->display_options['filters']['field_room_video_tid']['expose']['required'] = TRUE;
   $handler->display->display_options['filters']['field_room_video_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -92,8 +105,10 @@ function video_views_default_views() {
     7 => 0,
     3 => 0,
   );
+  $handler->display->display_options['filters']['field_room_video_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_room_video_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_room_video_tid']['vocabulary'] = 'room';
+  $handler->display->display_options['filters']['field_room_video_tid']['error_message'] = FALSE;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
