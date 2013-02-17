@@ -174,7 +174,7 @@
   .menu-block-2 ul li,
   .menu-block-1 ul li {
     display: inline-block;
-    width: 45%;
+    width: 30%;
   }
   .menu-block-2 ul li a,
   .menu-block-1 ul li a {
@@ -206,8 +206,17 @@
     padding: 5px;
   }
   .page-scale11x-schedule #radio-display {
-    width: 94%;
+    width: 100%;
     margin-left: 0;
+  }
+  ul.menu {
+    margin-left: 0;
+  }
+  ul.menu li {
+    margin: 0;
+  }
+  ul.menu li a.btn {
+    width: 95%;
   }
   /* Featured Speakers view */
   #block-views-featured-presentations-block .views-field,

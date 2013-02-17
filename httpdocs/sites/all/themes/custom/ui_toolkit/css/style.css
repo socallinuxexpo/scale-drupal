@@ -312,8 +312,10 @@ li.submenu-item a {
 }
 /* Schedule (Calendar) */
 .schedule_11x .row-main {
-  height: 1490px;
-  overflow: hidden;
+  /*height: 1490px;*/
+
+  /*overflow: hidden;*/
+
 }
 .schedule_11x .row-main .inside .region-time {
   width: 50px;
@@ -331,16 +333,23 @@ li.submenu-item a {
 .schedule_11x .row-main .inside .region-time td.last {
   display: none;
 }
+.schedule_11x .row-main .inside .pane-room-schedule {
+  overflow: hidden;
+  height: 1471px;
+}
 .schedule_11x .row-main .inside .region-rooms {
   /*margin-left: -50px;
         overflow: auto;*/
 
-  overflow: scroll;
+  /*overflow: scroll;*/
+
 }
 .schedule_11x .row-main .inside .region-rooms .inside {
   width: 2100px;
-  height: 1475px;
-  overflow: hidden;
+  /*height: 1475px;*/
+
+  /*overflow: hidden;*/
+
 }
 .schedule_11x .row-main .inside .region-rooms .inside .pane-room-schedule .track-7 .views-field-title {
   display: none;
