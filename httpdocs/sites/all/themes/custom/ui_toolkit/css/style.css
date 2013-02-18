@@ -432,6 +432,8 @@ li.submenu-item a {
 
   /* Beginners Tutorials */
 
+  /* BoFs */
+
   /* Break */
 
   /* Cloud and Virtualization */
@@ -497,6 +499,13 @@ li.submenu-item a {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-500 {
+  background-color: #FFBC00;
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-500 a {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-7 {
@@ -665,6 +674,8 @@ li.submenu-item a {
 
   /* Beginners Tutorials */
 
+  /* BoFs */
+
   /* Break */
 
   /* Cloud and Virtualization */
@@ -715,6 +726,10 @@ li.submenu-item a {
 }
 .legend-item .track-6 {
   background-color: #3353AF;
+  color: #FFF;
+}
+.legend-item .track-500 {
+  background-color: #FFBC00;
   color: #FFF;
 }
 .legend-item .track-7 {
