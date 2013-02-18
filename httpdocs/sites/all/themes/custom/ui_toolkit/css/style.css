@@ -442,6 +442,8 @@ li.submenu-item a {
 
   /* DevOps */
 
+  /* Evening Entertainment */
+
   /* Fedora */
 
   /* File System */
@@ -530,6 +532,12 @@ li.submenu-item a {
   background-color: #565448;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-501 {
+  background-color: #B20B77;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-501 a {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-11 {
@@ -684,6 +692,8 @@ li.submenu-item a {
 
   /* DevOps */
 
+  /* Evening Entertainment */
+
   /* Fedora */
 
   /* File System */
@@ -746,6 +756,10 @@ li.submenu-item a {
 }
 .legend-item .track-10 {
   background-color: #565448;
+  color: #FFF;
+}
+.legend-item .track-501 {
+  background-color: #B20B77;
   color: #FFF;
 }
 .legend-item .track-11 {
