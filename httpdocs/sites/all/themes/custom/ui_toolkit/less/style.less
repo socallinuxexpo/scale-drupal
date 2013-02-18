@@ -372,11 +372,36 @@ li.submenu-item {
 
 /* Schedule (Calendar) */
 .schedule_11x {
+  /*background-color: #AAA;*/
+  width: auto;
+  ul.menu li {
+    margin: 0 0.5em 0 0;
+  }
+  .page-container {
+    width: auto;
+    /*width: 1690px;*/
+    padding-right: 20px;
+    #radio-display {
+      width: auto;
+      /*width: 1635px;*/
+      #content-area {
+        width: auto;
+        .schedule-top {
+          width: auto;
+          min-width: 40%;
+        }
+        .panels-flexible-region-10-center {
+          width: auto;
+        }
+      }
+    }
+  }
   .row-main {
     /*height: 1490px;*/
     /*overflow: hidden;*/
 
     .inside {
+      /*width: 1647px;*/
       .region-time {
         width: 50px;
         #time {
@@ -401,13 +426,18 @@ li.submenu-item {
             height: 1471px;
           }
 
+      .rg2 span {
+        padding-right: 5px;
+      }
       .region-rooms {
         /*margin-left: -50px;
         overflow: auto;*/
         /*overflow: scroll;*/
 
         .inside {
-          width: 2100px;
+          width: auto;
+          padding-left: 3px;
+          /*width: 2100px;*/
           /*height: 1475px;*/
           /*overflow: hidden;*/
 
@@ -435,10 +465,12 @@ li.submenu-item {
         display: none;
       }
       .panel-pane {
-        float: left;
+        /*float: left;*/
+        display: table-cell;
 
         .pane-content {
           overflow: hidden !important;
+          height: 1435px;
           .view-content {
             position: relative;
             top: -830px;
