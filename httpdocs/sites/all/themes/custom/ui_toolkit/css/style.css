@@ -505,10 +505,10 @@ li.submenu-item a {
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-500 {
   background-color: #FFBC00;
-  color: #FFF;
+  color: #000;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-500 a {
-  color: #FFF;
+  color: #000;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-7 {
   background-color: #123;
@@ -740,7 +740,7 @@ li.submenu-item a {
 }
 .legend-item .track-500 {
   background-color: #FFBC00;
-  color: #FFF;
+  color: #000;
 }
 .legend-item .track-7 {
   background-color: #123;
