@@ -41,6 +41,12 @@ th {
   margin: 0 auto;
 }
 /* Sponsor Page view */
+.item-list {
+  clear: both;
+}
+.item-list ul li {
+  margin: inherit;
+}
 .view-sponsors .view-content + .attachment-after,
 .view-exhibitors .view-content + .attachment-after {
   margin-top: -1.5em;

@@ -82,7 +82,7 @@ function sponsors_views_default_views() {
   $handler->display->display_options['fields']['field_booth_number']['id'] = 'field_booth_number';
   $handler->display->display_options['fields']['field_booth_number']['table'] = 'field_data_field_booth_number';
   $handler->display->display_options['fields']['field_booth_number']['field'] = 'field_booth_number';
-  $handler->display->display_options['fields']['field_booth_number']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_booth_number']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_booth_number']['hide_empty'] = TRUE;
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
@@ -286,7 +286,8 @@ function sponsors_views_default_views() {
   /* Display: Diamond */
   $handler = $view->new_display('attachment', 'Diamond', 'attachment_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -326,7 +327,8 @@ function sponsors_views_default_views() {
   /* Display: Platinum */
   $handler = $view->new_display('attachment', 'Platinum', 'attachment_2');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -366,7 +368,8 @@ function sponsors_views_default_views() {
   /* Display: Gold */
   $handler = $view->new_display('attachment', 'Gold', 'attachment_3');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
@@ -406,7 +409,8 @@ function sponsors_views_default_views() {
   /* Display: Silver */
   $handler = $view->new_display('attachment', 'Silver', 'attachment_16');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['displays'] = array(
     'block_2' => 'block_2',
     'default' => 0,
@@ -416,7 +420,8 @@ function sponsors_views_default_views() {
   /* Display: ISP */
   $handler = $view->new_display('attachment', 'ISP', 'attachment_4');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['header'] = FALSE;
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
