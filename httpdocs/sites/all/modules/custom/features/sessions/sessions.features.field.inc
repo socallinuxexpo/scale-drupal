@@ -912,7 +912,7 @@ function sessions_field_default_fields() {
       'settings' => array(
         'description_field' => 0,
         'file_directory' => 'presentations',
-        'file_extensions' => 'txt pdf odf html htm odt rtf',
+        'file_extensions' => 'txt pdf odf html htm odt rtf odp',
         'max_filesize' => '20 MB',
         'user_register_form' => FALSE,
       ),
