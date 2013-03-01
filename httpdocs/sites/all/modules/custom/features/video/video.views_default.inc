@@ -33,6 +33,12 @@ function video_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Footer: Global: Text area */
+  $handler->display->display_options['footer']['area']['id'] = 'area';
+  $handler->display->display_options['footer']['area']['table'] = 'views';
+  $handler->display->display_options['footer']['area']['field'] = 'area';
+  $handler->display->display_options['footer']['area']['content'] = '<a href="/scale11x/sponsor/ooyala"><img src="/sites/default/files/logos/ooyala_logo.png" alt="Ooyala logo"></a>';
+  $handler->display->display_options['footer']['area']['format'] = 'full_html';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -76,8 +82,6 @@ function video_views_default_views() {
   $handler->display->display_options['filters']['field_room_video_tid']['table'] = 'field_data_field_room_video';
   $handler->display->display_options['filters']['field_room_video_tid']['field'] = 'field_room_video_tid';
   $handler->display->display_options['filters']['field_room_video_tid']['value'] = array(
-    467 => '467',
-    468 => '468',
     442 => '442',
     448 => '448',
     451 => '451',
