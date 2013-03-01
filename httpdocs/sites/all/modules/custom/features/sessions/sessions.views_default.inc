@@ -287,6 +287,94 @@ function sessions_views_default_views() {
   $export['my_votes'] = $view;
 
   $view = new view();
+  $view->name = 'presentation_downloads';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Presentation Downloads';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Presentation Downloads';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_audio_video' => 'field_audio_video',
+    'field_presentation_to_upload' => 'field_presentation_to_upload',
+  );
+  $handler->display->display_options['row_options']['separator'] = ' | ';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Audio/Video */
+  $handler->display->display_options['fields']['field_audio_video']['id'] = 'field_audio_video';
+  $handler->display->display_options['fields']['field_audio_video']['table'] = 'field_data_field_audio_video';
+  $handler->display->display_options['fields']['field_audio_video']['field'] = 'field_audio_video';
+  $handler->display->display_options['fields']['field_audio_video']['hide_empty'] = TRUE;
+  /* Field: Content: Presentation */
+  $handler->display->display_options['fields']['field_presentation_to_upload']['id'] = 'field_presentation_to_upload';
+  $handler->display->display_options['fields']['field_presentation_to_upload']['table'] = 'field_data_field_presentation_to_upload';
+  $handler->display->display_options['fields']['field_presentation_to_upload']['field'] = 'field_presentation_to_upload';
+  $handler->display->display_options['fields']['field_presentation_to_upload']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_presentation_to_upload']['click_sort_column'] = 'fid';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'presentation' => 'presentation',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Audio/Video (field_audio_video) */
+  $handler->display->display_options['filters']['field_audio_video_value']['id'] = 'field_audio_video_value';
+  $handler->display->display_options['filters']['field_audio_video_value']['table'] = 'field_data_field_audio_video';
+  $handler->display->display_options['filters']['field_audio_video_value']['field'] = 'field_audio_video_value';
+  $handler->display->display_options['filters']['field_audio_video_value']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_audio_video_value']['group'] = 2;
+  /* Filter criterion: Content: Presentation (field_presentation_to_upload:fid) */
+  $handler->display->display_options['filters']['field_presentation_to_upload_fid']['id'] = 'field_presentation_to_upload_fid';
+  $handler->display->display_options['filters']['field_presentation_to_upload_fid']['table'] = 'field_data_field_presentation_to_upload';
+  $handler->display->display_options['filters']['field_presentation_to_upload_fid']['field'] = 'field_presentation_to_upload_fid';
+  $handler->display->display_options['filters']['field_presentation_to_upload_fid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_presentation_to_upload_fid']['group'] = 2;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['path'] = 'scale11x/presentations/downloads';
+  $export['presentation_downloads'] = $view;
+
+  $view = new view();
   $view->name = 'presentation_filter';
   $view->description = '';
   $view->tag = 'default';
