@@ -336,7 +336,8 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_audio_video']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_audio_video']['alter']['text'] = 'Video';
   $handler->display->display_options['fields']['field_audio_video']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_audio_video']['alter']['path'] = '/[path]';
+  $handler->display->display_options['fields']['field_audio_video']['alter']['path'] = '[path]';
+  $handler->display->display_options['fields']['field_audio_video']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_audio_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_audio_video']['hide_empty'] = TRUE;
   /* Field: Content: Presentation */
