@@ -114,10 +114,12 @@ function ui_toolkit_preprocess_ui_toolkit_carousel(&$vars) {
  */
 function ui_toolkit_js_alter(&$javascript) {
   // Swap out jQuery to use an updated version of the library.
+  /*
   $path = isset($_GET['q']) ? $_GET['q'] : '';
   if (!path_is_admin($path) && !strstr($path, 'node/add/') && !preg_match('/node\/(.*?)\/edit/i', $path)) {
     $javascript['misc/jquery.js']['data'] = drupal_get_path('theme', 'ui_toolkit') . '/js/jquery-1.7.js';
   }
+*/
 }
 
 /**
