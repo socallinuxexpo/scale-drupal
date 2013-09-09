@@ -8228,12 +8228,12 @@ div.password-suggestions ul {
 .view-sponsor-logos .views-row-last {
   margin-bottom: 2em;
 }
-#block-menu-menu-footer-menu li {
+#block-menu-menu-12x-footer li {
   display: inline-block;
   border-left: 1px solid #999;
   padding: 0 4px 0 6px;
 }
-#block-menu-menu-footer-menu li.first {
+#block-menu-menu-12x-footer li.first {
   border-left: none;
   padding-left: 0;
 }
