@@ -380,13 +380,15 @@ function nodeaccess_userreference_node_access_records($node) {
         if (!empty($grants)) {
           if (!empty($data['author']) && (!empty($node->status) || !empty($data['author_published']))) {
             // Add author grants.
-            nodeaccess_userreference_add_grant(
-              $grants,
-              'nodeaccess_userreference_author',
-              $node->uid,
-              $data['priority'],
-              $data['author']
-            );
+            if ($node->uid > 0) {
+              nodeaccess_userreference_add_grant(
+                $grants,
+                'nodeaccess_userreference_author',
+                $node->uid,
+                $data['priority'],
+                $data['author']
+              );
+            }
           }
           if (!empty($data['all']) && (!empty($node->status) || !empty($data['all_published']))) {
             // Add all grants.
@@ -402,7 +404,6 @@ function nodeaccess_userreference_node_access_records($node) {
       }
     }
   }
-
   return $grants;
 }
 

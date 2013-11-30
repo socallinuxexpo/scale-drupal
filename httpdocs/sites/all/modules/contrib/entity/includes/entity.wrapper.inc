@@ -662,7 +662,7 @@ class EntityDrupalWrapper extends EntityStructureWrapper {
       $this->bundle = $this->type;
     }
     // Detect the bundle if not set yet and add in properties from the bundle.
-    elseif (!$this->bundle && !empty($this->entityInfo['fieldable']) && $load && $this->dataAvailable()) {
+    elseif (!$this->bundle && $load && $this->dataAvailable()) {
       try {
         if ($entity = $this->value()) {
           list($id, $vid, $bundle) = entity_extract_ids($this->type, $entity);
@@ -725,6 +725,15 @@ class EntityDrupalWrapper extends EntityStructureWrapper {
       $this->data = $return ? reset($return) : NULL;
     }
     return $this->data;
+  }
+
+  /**
+   * Returns the entity prepared for rendering.
+   *
+   * @see entity_view()
+   */
+  public function view($view_mode = 'full', $langcode = NULL, $page = NULL) {
+    return entity_view($this->type(), array($this->value()), $view_mode, $langcode, $page);
   }
 
   /**
