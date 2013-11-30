@@ -8237,3 +8237,41 @@ div.password-suggestions ul {
   border-left: none;
   padding-left: 0;
 }
+/* Featured Speakers block */
+#block-views-featured-presentations-block-1 {
+  margin-bottom: 2em;
+}
+#block-views-featured-presentations-block-1 .views-row {
+  float: left;
+  width: 33%;
+}
+#block-views-featured-presentations-block-1 .views-field-title {
+  margin-bottom: 0.5em;
+}
+/* Presentation pages */
+#presentation-page .panel-pane {
+  margin-bottom: .5em;
+}
+#presentation-page .pane-user-field-speaker-photo {
+  float: right;
+  margin-left: 20px;
+}
+#presentation-page .pane-node-field-speaker {
+  font-size: 2em;
+}
+#presentation-page .terms {
+  float: left;
+  margin-right: 20px;
+}
+#presentation-page .pane-node-field-long-abstract {
+  clear: left;
+}
+/* Speaker pages */
+.view-speaker-page .views-field {
+  margin-bottom: .5em;
+}
+.view-speaker-page .views-field-field-speaker-photo {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}

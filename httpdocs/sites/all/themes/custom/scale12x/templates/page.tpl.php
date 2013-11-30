@@ -64,7 +64,7 @@
 
     <section class="<?php print _bootstrap_content_span($columns); ?>">  
       <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted hero-unit"><?php print render($page['highlighted']); ?></div>
+        <div class="highlighted"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <a id="main-content"></a>
