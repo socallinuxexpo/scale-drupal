@@ -14,7 +14,7 @@ function sponsors_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "TAGS" : [ "Content approval" ],
       "REQUIRES" : [ "rules" ],
-      "ON" : [ "node_insert", "node_update" ],
+      "ON" : { "node_insert" : [], "node_update" : [] },
       "IF" : [
         { "node_is_of_type" : {
             "node" : [ "node" ],

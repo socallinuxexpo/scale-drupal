@@ -7,8 +7,8 @@
 /**
  * Implements hook_views_api().
  */
-function video_views_api() {
-  return array("version" => "3.0");
+function video_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**

@@ -1,0 +1,15 @@
+name = SCALE Common
+description = Elements common to multiple features
+core = 7.x
+package = Features
+version = 7.x-1.11
+project = scale_common
+dependencies[] = features
+dependencies[] = list
+dependencies[] = taxonomy
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_base][] = field_ready_for_approval
+features[field_base][] = field_scale_event
+features[taxonomy][] = scale_event

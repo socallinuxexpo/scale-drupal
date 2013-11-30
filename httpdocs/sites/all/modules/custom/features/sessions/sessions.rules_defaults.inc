@@ -14,7 +14,7 @@ function sessions_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "TAGS" : [ "presentation" ],
       "REQUIRES" : [ "rules" ],
-      "ON" : [ "node_insert" ],
+      "ON" : { "node_insert" : [] },
       "IF" : [
         { "node_is_of_type" : {
             "node" : [ "node" ],
