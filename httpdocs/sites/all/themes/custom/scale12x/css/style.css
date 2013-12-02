@@ -8278,6 +8278,7 @@ div.password-suggestions ul {
 /* Speakers List Page */
 .view-presentation-page .views-row {
   margin-bottom: 2em;
+  clear: both;
 }
 .view-presentation-page .views-field {
   margin-bottom: 12px;
@@ -8297,5 +8298,31 @@ div.password-suggestions ul {
   display: inline-block;
 }
 .view-presentation-page .views-field-field-topic {
+  margin: auto auto 20px 20px;
+}
+/* Presentations List Page */
+.view-speaker-page .views-row {
+  margin-bottom: 2em;
+  clear: both;
+  min-height: 210px;
+}
+.view-speaker-page .views-field {
+  margin-bottom: 12px;
+}
+.view-speaker-page .views-field-field-speaker-photo {
+  float: left;
+  margin-right: 20px;
+}
+.view-speaker-page .views-field-realname {
+  font-size: 2em;
+}
+.view-speaker-page .views-field-title {
+  font-size: 1em;
+  line-height: 1em;
+}
+.view-speaker-page .terms {
+  display: inline-block;
+}
+.view-speaker-page .views-field-field-topic {
   margin: auto auto 20px 20px;
 }
