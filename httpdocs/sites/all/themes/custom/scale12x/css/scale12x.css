@@ -65,3 +65,27 @@
   margin-right: 20px;
   margin-bottom: 20px;
 }
+/* Speakers List Page */
+.view-presentation-page .views-row {
+  margin-bottom: 2em;
+}
+.view-presentation-page .views-field {
+  margin-bottom: 12px;
+}
+.view-presentation-page .views-field-field-speaker-photo {
+  float: right;
+  margin-left: 20px;
+}
+.view-presentation-page .views-field-title {
+  font-size: 2em;
+  line-height: 1em;
+}
+.view-presentation-page .views-field-field-speaker {
+  font-size: 1.5em;
+}
+.view-presentation-page .terms {
+  display: inline-block;
+}
+.view-presentation-page .views-field-field-topic {
+  margin: auto auto 20px 20px;
+}

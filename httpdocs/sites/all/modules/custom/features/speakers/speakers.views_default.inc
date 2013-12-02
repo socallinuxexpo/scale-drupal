@@ -256,6 +256,16 @@ function speakers_views_default_views() {
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
   $handler->display->display_options['filters']['status_1']['relationship'] = 'reverse_field_speaker_node';
   $handler->display->display_options['filters']['status_1']['value'] = '1';
+  /* Filter criterion: Content: SCALE event (field_scale_event) */
+  $handler->display->display_options['filters']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
+  $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['relationship'] = 'reverse_field_speaker_node';
+  $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    504 => '504',
+  );
+  $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
 
   /* Display: Speaker */
   $handler = $view->new_display('page', 'Speaker', 'page');
@@ -263,8 +273,8 @@ function speakers_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'user/%';
 
-  /* Display: All Speakers */
-  $handler = $view->new_display('page', 'All Speakers', 'page_1');
+  /* Display: Speakers 11x */
+  $handler = $view->new_display('page', 'Speakers 11x', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Speakers';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
@@ -333,7 +343,116 @@ function speakers_views_default_views() {
     'trim_length' => '200',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid']['id'] = 'rid';
+  $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid']['value'] = array(
+    5 => '5',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['relationship'] = 'reverse_field_speaker_node';
+  $handler->display->display_options['filters']['status_1']['value'] = '1';
+  /* Filter criterion: Content: SCALE event (field_scale_event) */
+  $handler->display->display_options['filters']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
+  $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['relationship'] = 'reverse_field_speaker_node';
+  $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    503 => '503',
+  );
+  $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
   $handler->display->display_options['path'] = 'scale11x/speakers';
+
+  /* Display: Speakers 12x */
+  $handler = $view->new_display('page', 'Speakers 12x', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Speakers';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: User: Speaker (field_speaker) - reverse */
+  $handler->display->display_options['relationships']['reverse_field_speaker_node']['id'] = 'reverse_field_speaker_node';
+  $handler->display->display_options['relationships']['reverse_field_speaker_node']['table'] = 'users';
+  $handler->display->display_options['relationships']['reverse_field_speaker_node']['field'] = 'reverse_field_speaker_node';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = '';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
+  /* Field: Realname: Real name */
+  $handler->display->display_options['fields']['realname']['id'] = 'realname';
+  $handler->display->display_options['fields']['realname']['table'] = 'realname';
+  $handler->display->display_options['fields']['realname']['field'] = 'realname';
+  $handler->display->display_options['fields']['realname']['label'] = '';
+  $handler->display->display_options['fields']['realname']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['realname']['alter']['path'] = 'user/[uid]';
+  $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['realname']['link_to_user'] = FALSE;
+  /* Field: User: Photo */
+  $handler->display->display_options['fields']['field_speaker_photo']['id'] = 'field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['table'] = 'field_data_field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['field'] = 'field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_speaker_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speaker_photo']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_speaker_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_speaker_photo']['settings'] = array(
+    'image_style' => 'square_thumbnail',
+    'image_link' => '',
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'reverse_field_speaker_node';
+  $handler->display->display_options['fields']['title']['label'] = 'Presentation';
+  $handler->display->display_options['fields']['title']['hide_empty'] = TRUE;
+  /* Field: User: Job title */
+  $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
+  $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
+  $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
+  $handler->display->display_options['fields']['field_job_title']['label'] = '';
+  $handler->display->display_options['fields']['field_job_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_job_title']['hide_empty'] = TRUE;
+  /* Field: User: Organization */
+  $handler->display->display_options['fields']['field_organization']['id'] = 'field_organization';
+  $handler->display->display_options['fields']['field_organization']['table'] = 'field_data_field_organization';
+  $handler->display->display_options['fields']['field_organization']['field'] = 'field_organization';
+  $handler->display->display_options['fields']['field_organization']['label'] = '';
+  $handler->display->display_options['fields']['field_organization']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_organization']['hide_empty'] = TRUE;
+  /* Field: User: Biography */
+  $handler->display->display_options['fields']['field_biography']['id'] = 'field_biography';
+  $handler->display->display_options['fields']['field_biography']['table'] = 'field_data_field_biography';
+  $handler->display->display_options['fields']['field_biography']['field'] = 'field_biography';
+  $handler->display->display_options['fields']['field_biography']['label'] = '';
+  $handler->display->display_options['fields']['field_biography']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_biography']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['field_biography']['settings'] = array(
+    'trim_length' => '200',
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['path'] = 'scale12x/speakers';
   $export['speaker_page'] = $view;
 
   return $export;
