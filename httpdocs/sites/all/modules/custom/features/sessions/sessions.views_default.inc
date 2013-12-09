@@ -316,7 +316,7 @@ function sessions_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'scale11x/my-votes';
+  $handler->display->display_options['path'] = 'my-votes';
   $export['my_votes'] = $view;
 
   $view = new view();
