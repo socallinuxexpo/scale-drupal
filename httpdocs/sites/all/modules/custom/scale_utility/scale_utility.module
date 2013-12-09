@@ -1,0 +1,64 @@
+<?php
+/**
+ * Implements hook_menu_alter().
+ **/
+function scale_utility_menu_alter(&$items) {
+  // Swap out the access callback for user profile pages.
+  $items['user/%user']['access callback'] = '_scale_user_view_access';
+}
+
+/**
+ * User view access callback.
+ *
+ *   Can either be a full user object or a $uid.
+ *   Overriding core user_view_access().
+ */
+function _scale_user_view_access($account) {
+  $uid = is_object($account) ? $account->uid : (int) $account;
+
+  // Never allow access to view the anonymous user account.
+  if ($uid) {
+    // Admins can view all, users can view own profiles at all times.
+    if ($GLOBALS['user']->uid == $uid || user_access('administer users')) {
+      return TRUE;
+    }
+    elseif (user_access('access user profiles')) {
+      // Modify to only allow access to current speaker pages. RG 20131208.
+      if (!_scale_current_speaker($account)) {
+        return FALSE;
+      }
+      // At this point, load the complete account object.
+      if (!is_object($account)) {
+        $account = user_load($uid);
+      }
+      return (is_object($account) && $account->status);
+    }
+  }
+  return FALSE;
+}
+
+function _scale_current_speaker($account) {
+  $path = drupal_get_path_alias($_GET['q']);
+  $scale_event = strstr($path, '/', $before_needle = TRUE);
+  $scale_event_id = array_shift(taxonomy_get_term_by_name($scale_event))->tid;
+
+  // Find out if this speaker is has an accepted presentation for this year.
+  $result = db_query(
+    'SELECT sp.field_speaker_uid, sp.entity_id, n.status, se.field_scale_event_tid
+     FROM {field_data_field_speaker} sp
+     JOIN {node} n ON sp.entity_id = n.nid
+     JOIN {field_data_field_scale_event} se ON sp.entity_id = se.entity_id
+     WHERE n.status = :status AND sp.field_speaker_uid = :uid
+     AND se.field_scale_event_tid = :tid',
+     array(
+       ':status' => 1,
+       ':uid' => $account->uid,
+       ':tid' => $scale_event_id
+     )
+   );
+
+  $record = $result->fetchAssoc();
+
+  return($record);
+}
+

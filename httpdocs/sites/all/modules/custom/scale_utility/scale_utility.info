@@ -1,0 +1,6 @@
+name = SCALE Utility
+description = A utility (helper) module
+core = 7.x
+package = SCALE
+files[] = scale_utility.module
+
