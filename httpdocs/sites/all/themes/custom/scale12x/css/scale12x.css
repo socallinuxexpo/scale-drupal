@@ -20,8 +20,12 @@
 }
 .view-exhibitors .views-row,
 .view-sponsors-12x .views-row {
-  margin-bottom: 40px;
+  padding: 40px;
   clear: both;
+}
+.view-exhibitors .views-row-first,
+.view-sponsors-12x .views-row-first {
+  padding: 0;
 }
 .view-exhibitors .views-field,
 .view-sponsors-12x .views-field {
