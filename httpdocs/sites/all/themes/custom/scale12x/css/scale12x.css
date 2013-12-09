@@ -89,15 +89,6 @@
 #presentation-page .pane-node-field-long-abstract {
   clear: left;
 }
-/* Speaker pages */
-.view-speaker-page .views-field {
-  margin-bottom: .5em;
-}
-.view-speaker-page .views-field-field-speaker-photo {
-  float: left;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
 #speaker-page .pane-user-field-speaker-photo {
   float: left;
   margin-right: 20px;
@@ -109,7 +100,7 @@
 #speaker-page .views-field-field-biography {
   margin-top: 20px;
 }
-/* Speakers List Page */
+/* Presentations List Page */
 .view-presentation-page .views-row {
   margin-bottom: 2em;
   clear: both;
@@ -134,7 +125,7 @@
 .view-presentation-page .views-field-field-topic {
   margin: auto auto 20px 20px;
 }
-/* Presentations List Page */
+/* Speakers List Page */
 .view-speaker-page .views-row {
   margin-bottom: 2em;
   clear: both;
@@ -142,6 +133,9 @@
 }
 .view-speaker-page .views-field {
   margin-bottom: 12px;
+}
+.view-speaker-page .views-field-field-job-title {
+  margin-bottom: 0;
 }
 .view-speaker-page .views-field-field-speaker-photo {
   float: left;
