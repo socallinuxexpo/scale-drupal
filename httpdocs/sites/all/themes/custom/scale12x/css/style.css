@@ -8228,6 +8228,33 @@ div.password-suggestions ul {
 .view-sponsor-logos .views-row-last {
   margin-bottom: 2em;
 }
+.view-exhibitors .views-row,
+.view-sponsors-12x .views-row {
+  margin-bottom: 30px;
+}
+.view-exhibitors .views-field,
+.view-sponsors-12x .views-field {
+  margin-bottom: 10px;
+}
+.view-exhibitors .views-field-title,
+.view-sponsors-12x .views-field-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.view-exhibitors .views-field-field-logo-website,
+.view-sponsors-12x .views-field-field-logo-website {
+  float: left;
+  margin-right: 20px;
+}
+.view-exhibitors .views-field-field-sponsor-type,
+.view-sponsors-12x .views-field-field-sponsor-type {
+  background-color: #EEEEBB;
+  border: 2px dotted #CCCC66;
+  display: inline-block;
+  min-width: 112px;
+  padding: 3px 12px;
+  text-align: center;
+}
 #block-menu-menu-12x-footer li {
   display: inline-block;
   border-left: 1px solid #999;
@@ -8274,6 +8301,17 @@ div.password-suggestions ul {
   float: left;
   margin-right: 20px;
   margin-bottom: 20px;
+}
+#speaker-page .pane-user-field-speaker-photo {
+  float: left;
+  margin-right: 20px;
+}
+#speaker-page .pane-presentations-by-speaker-panel-pane-2,
+#speaker-page .pane-presentations-by-speaker-panel-pane-1 {
+  margin-bottom: 20px;
+}
+#speaker-page .views-field-field-biography {
+  margin-top: 20px;
 }
 /* Speakers List Page */
 .view-presentation-page .views-row {
