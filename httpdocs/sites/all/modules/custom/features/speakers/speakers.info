@@ -1,11 +1,12 @@
 name = Speakers
 core = 7.x
 package = Features
-version = 7.x-12.2
+version = 7.x-12.3
 project = speakers
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = page_manager
+dependencies[] = scale_common
 dependencies[] = user_reference
 dependencies[] = views
 dependencies[] = views_content
