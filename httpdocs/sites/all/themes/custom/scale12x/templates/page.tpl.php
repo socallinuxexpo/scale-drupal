@@ -57,12 +57,12 @@
   <div class="row-fluid">
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="span3 hidden-phone" role="complementary">
+      <aside class="span3" role="complementary">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
+    <?php endif; ?>  
 
-    <section class="<?php print _bootstrap_content_span($columns); ?>">
+    <section class="<?php print _bootstrap_content_span($columns); ?>">  
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
@@ -85,12 +85,6 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
     </section>
-
-    <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="span3 visible-phone" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>
 
     <?php if (!empty($page['sidebar_second'])): ?>
       <aside class="span3" role="complementary">
