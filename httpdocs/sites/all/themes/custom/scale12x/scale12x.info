@@ -21,6 +21,7 @@ stylesheets[all][] = css/style.css
 ;**********************************
 ;
 ; ; Scripts
+scripts[] = 'js/bootstrap-hover-dropdown.js'
 scripts[] = 'bootstrap/js/bootstrap-affix.js'
 scripts[] = 'bootstrap/js/bootstrap-alert.js'
 scripts[] = 'bootstrap/js/bootstrap-button.js'
@@ -33,7 +34,6 @@ scripts[] = 'bootstrap/js/bootstrap-popover.js'
 scripts[] = 'bootstrap/js/bootstrap-scrollspy.js'
 scripts[] = 'bootstrap/js/bootstrap-transition.js'
 scripts[] = 'bootstrap/js/bootstrap-typeahead.js'
-scripts[] = 'js/bootstrap-hover-dropdown.js'
 ;
 ; ; Settings inherited by base theme, uncomment to override.
 ; ;settings[toggle_name] = 0
