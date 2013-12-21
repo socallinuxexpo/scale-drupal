@@ -38,6 +38,12 @@ function _scale_user_view_access($account) {
 }
 
 function _scale_current_speaker($account) {
+  // If not the scale12x event, show the speaker.
+  GLOBAL $theme_key;
+  if ($theme_key != 'scale12x') {
+    return TRUE;
+  }
+
   $path = drupal_get_path_alias($_GET['q']);
   $scale_event = strstr($path, '/', $before_needle = TRUE);
   $scale_event_id = array_shift(taxonomy_get_term_by_name($scale_event))->tid;
