@@ -117,19 +117,9 @@ function speakers_default_page_manager_handlers() {
     $pane->pid = 'new-3';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'presentations_by_speaker-panel_pane_2';
+    $pane->subtype = 'speaker_individual-panel_pane_1';
     $pane->shown = TRUE;
-    $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'theme',
-          'settings' => array(
-            'theme' => 'scale12x',
-          ),
-          'not' => FALSE,
-        ),
-      ),
-    );
+    $pane->access = array();
     $pane->configuration = array(
       'context' => array(
         0 => 'argument_entity_id:user_1',
@@ -151,10 +141,23 @@ function speakers_default_page_manager_handlers() {
     $pane->pid = 'new-4';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
-    $pane->subtype = 'speaker_individual-panel_pane_1';
+    $pane->subtype = 'presentations_by_speaker-panel_pane_2';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'theme',
+          'settings' => array(
+            'theme' => 'scale12x',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:user_1',
+      ),
       'override_title' => 0,
       'override_title_text' => '',
     );

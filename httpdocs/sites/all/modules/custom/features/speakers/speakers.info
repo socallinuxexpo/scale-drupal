@@ -1,7 +1,7 @@
 name = Speakers
 core = 7.x
 package = Features
-version = 7.x-12.5
+version = 7.x-12.6
 project = speakers
 dependencies[] = ctools
 dependencies[] = features
