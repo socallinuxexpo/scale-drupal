@@ -30,16 +30,7 @@ function speakers_default_page_manager_handlers() {
     'relationships' => array(),
     'access' => array(
       'logic' => 'and',
-      'plugins' => array(
-        0 => array(
-          'name' => 'php',
-          'settings' => array(
-            'description' => 'Access control',
-            'php' => 'return TRUE;',
-          ),
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
     ),
   );
   $display = new panels_display();

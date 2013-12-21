@@ -705,7 +705,9 @@ function speakers_views_default_views() {
   $handler->display->display_options['fields']['realname']['field'] = 'realname';
   $handler->display->display_options['fields']['realname']['label'] = '';
   $handler->display->display_options['fields']['realname']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['realname']['alter']['path'] = 'user/[uid]';
+  $handler->display->display_options['fields']['realname']['alter']['path'] = 'scale11x/speakers/[realname]';
+  $handler->display->display_options['fields']['realname']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['realname']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['realname']['link_to_user'] = FALSE;
   /* Field: User: Photo */
