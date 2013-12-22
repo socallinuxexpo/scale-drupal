@@ -37,9 +37,12 @@ function _scale_user_view_access($account) {
   return FALSE;
 }
 
+/**
+ * Determine if a user was a speaker on the given SCALE event.
+ **/
 function _scale_current_speaker($uid) {
   // Get the SCALE event from the path alias
-  $path = drupal_get_path_alias(request_uri());
+  $path = request_uri();
   $path = trim($path, $charlist = "/");
   $scale_event = strstr($path, '/', $before_needle = TRUE);
   $scale_event_tid = array_shift(taxonomy_get_term_by_name($scale_event))->tid;
