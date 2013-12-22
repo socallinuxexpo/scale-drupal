@@ -24,7 +24,7 @@ function _scale_user_view_access($account) {
     }
     elseif (user_access('access user profiles')) {
       // Modify to only allow access to current speaker pages. RG 20131208.
-      if (!_scale_current_speaker($account)) {
+      if (!_scale_current_speaker($uid)) {
         return FALSE;
       }
       // At this point, load the complete account object.
@@ -37,16 +37,12 @@ function _scale_user_view_access($account) {
   return FALSE;
 }
 
-function _scale_current_speaker($account) {
-  // If not the scale12x event, show the speaker.
-  GLOBAL $theme_key;
-  if ($theme_key != 'scale12x') {
-    return TRUE;
-  }
-
-  $path = drupal_get_path_alias($_GET['q']);
+function _scale_current_speaker($uid) {
+  // Get the SCALE event from the path alias
+  $path = drupal_get_path_alias(request_uri());
+  $path = trim($path, $charlist = "/");
   $scale_event = strstr($path, '/', $before_needle = TRUE);
-  $scale_event_id = array_shift(taxonomy_get_term_by_name($scale_event))->tid;
+  $scale_event_tid = array_shift(taxonomy_get_term_by_name($scale_event))->tid;
 
   // Find out if this speaker is has an accepted presentation for this year.
   $result = db_query(
@@ -58,8 +54,8 @@ function _scale_current_speaker($account) {
      AND se.field_scale_event_tid = :tid',
      array(
        ':status' => 1,
-       ':uid' => $account->uid,
-       ':tid' => $scale_event_id
+       ':uid' => $uid,
+       ':tid' => $scale_event_tid
      )
    );
 
