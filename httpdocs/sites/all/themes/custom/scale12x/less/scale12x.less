@@ -92,21 +92,36 @@ body {
 }
 
 /* Presentation pages */
+.view-presentation-single,
 #presentation-page {
+  a {
+    text-decoration: none;
+  }
+  .views-label {
+    font-weight: bold;
+  }
+  .views-field,
   .panel-pane {
     margin-bottom: .5em;
   }
+  .views-field-field-speaker-photo,
   .pane-user-field-speaker-photo {
     float: right;
     margin-left: 20px;
   }
+  .views-field-nothing,
   .pane-node-field-speaker {
     font-size: 2em;
+  }
+  .views-label.terms {
+    margin-right: 5px;
   }
   .terms {
     float: left;
     margin-right: 20px;
+    margin-bottom: .5em;
   }
+  .views-field-field-long-abstract,
   .pane-node-field-long-abstract {
     clear: left;
   }

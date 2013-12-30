@@ -41,7 +41,7 @@ function _scale_user_view_access($account) {
  * Determine if a user was a speaker on the given SCALE event.
  **/
 function _scale_current_speaker($uid) {
-  // Get the SCALE event from the path alias
+  // Get the SCALE event tid from the path alias
   $path = request_uri();
   $path = trim($path, $charlist = "/");
   $scale_event = strstr($path, '/', $before_needle = TRUE);

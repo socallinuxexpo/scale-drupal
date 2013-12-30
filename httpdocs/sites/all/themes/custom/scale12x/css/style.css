@@ -8286,20 +8286,46 @@ div.password-suggestions ul {
   margin-bottom: 0.5em;
 }
 /* Presentation pages */
+.view-presentation-single a,
+#presentation-page a {
+  text-decoration: none;
+}
+.view-presentation-single .views-label,
+#presentation-page .views-label {
+  font-weight: bold;
+}
+.view-presentation-single .views-field,
+#presentation-page .views-field,
+.view-presentation-single .panel-pane,
 #presentation-page .panel-pane {
   margin-bottom: .5em;
 }
+.view-presentation-single .views-field-field-speaker-photo,
+#presentation-page .views-field-field-speaker-photo,
+.view-presentation-single .pane-user-field-speaker-photo,
 #presentation-page .pane-user-field-speaker-photo {
   float: right;
   margin-left: 20px;
 }
+.view-presentation-single .views-field-nothing,
+#presentation-page .views-field-nothing,
+.view-presentation-single .pane-node-field-speaker,
 #presentation-page .pane-node-field-speaker {
   font-size: 2em;
 }
+.view-presentation-single .views-label.terms,
+#presentation-page .views-label.terms {
+  margin-right: 5px;
+}
+.view-presentation-single .terms,
 #presentation-page .terms {
   float: left;
   margin-right: 20px;
+  margin-bottom: .5em;
 }
+.view-presentation-single .views-field-field-long-abstract,
+#presentation-page .views-field-field-long-abstract,
+.view-presentation-single .pane-node-field-long-abstract,
 #presentation-page .pane-node-field-long-abstract {
   clear: left;
 }
