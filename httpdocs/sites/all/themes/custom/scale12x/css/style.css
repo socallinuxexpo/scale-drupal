@@ -8265,6 +8265,17 @@ div.password-suggestions ul {
   padding: 3px 12px;
   text-align: center;
 }
+#block-menu-block-3 li {
+  display: inline-block;
+  border-left: 1px solid #000;
+  padding: 0 4px 0 8px;
+}
+#block-menu-block-3 li.first {
+  border-left: none;
+}
+#block-menu-block-3 li.active {
+  font-weight: bold;
+}
 #block-menu-menu-12x-footer li {
   display: inline-block;
   border-left: 1px solid #999;
