@@ -22,11 +22,14 @@
   width: 100px;
   margin: 0 auto;
 }
+.view-exhibitors .attachment-after .view-content .views-row,
+.view-sponsors-12x .attachment-after .view-content .views-row {
+  padding-top: 40px;
+}
 .view-exhibitors .views-row,
 .view-sponsors-12x .views-row {
   padding-top: 40px;
   clear: both;
-  margin-bottom: 40px;
 }
 .view-exhibitors .views-row-first,
 .view-sponsors-12x .views-row-first {
