@@ -62,6 +62,11 @@
 .view-sponsors-12x .view-content .views-row {
   padding-top: 0;
 }
+#navbar .dropdown:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  top: 35px;
+}
 #block-menu-block-3 li {
   display: inline-block;
   border-left: 1px solid #000;
