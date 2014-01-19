@@ -17,7 +17,7 @@ function special_events_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 1;
+  $handler->weight = -28;
   $handler->conf = array(
     'title' => 'Special Events',
     'no_blocks' => 0,
