@@ -1969,6 +1969,7 @@ function sponsors_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
   $handler->display->display_options['path'] = 'scale12x/sponsors';
 
   /* Display: Diamond */
