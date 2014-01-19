@@ -8427,3 +8427,535 @@ div.password-suggestions ul {
 .view-speaker-page .views-field-field-topic {
   margin: auto auto 20px 20px;
 }
+/* Schedule (Calendar) */
+.schedule_11x {
+  /*background-color: #AAA;*/
+
+  width: auto;
+}
+.schedule_11x ul.menu li {
+  margin: 0 0.5em 0 0;
+}
+.schedule_11x .page-container {
+  width: auto;
+  /*width: 1690px;*/
+
+  padding-right: 20px;
+}
+.schedule_11x .page-container #radio-display {
+  width: auto;
+  /*width: 1635px;*/
+
+}
+.schedule_11x .page-container #radio-display #content-area {
+  width: auto;
+}
+.schedule_11x .page-container #radio-display #content-area .schedule-top {
+  width: auto;
+  min-width: 40%;
+}
+.schedule_11x .page-container #radio-display #content-area .panels-flexible-region-10-center {
+  width: auto;
+}
+.schedule_11x .row-main {
+  /*height: 1490px;*/
+
+  /*overflow: hidden;*/
+
+}
+.schedule_11x .row-main .inside {
+  /*width: 1647px;*/
+
+}
+.schedule_11x .row-main .inside .region-time {
+  width: 50px;
+}
+.schedule_11x .row-main .inside .region-time #time {
+  width: 50px;
+}
+.schedule_11x .row-main .inside .region-time #time table .calendar-agenda-hour {
+  width: 50px;
+  padding-right: 0;
+}
+.schedule_11x .row-main .inside .region-time #time table .calendar-agenda-hour .calendar-hour {
+  padding-right: 2px;
+}
+.schedule_11x .row-main .inside .region-time td.last {
+  display: none;
+}
+.schedule_11x .row-main .inside .pane-room-schedule {
+  overflow: hidden;
+  height: 1471px;
+}
+.schedule_11x .row-main .inside .rg2 span {
+  padding-right: 5px;
+}
+.schedule_11x .row-main .inside .region-rooms {
+  /*margin-left: -50px;
+        overflow: auto;*/
+
+  /*overflow: scroll;*/
+
+}
+.schedule_11x .row-main .inside .region-rooms .inside {
+  width: auto;
+  padding-left: 3px;
+  /*width: 2100px;*/
+
+  /*height: 1475px;*/
+
+  /*overflow: hidden;*/
+
+}
+.schedule_11x .row-main .inside .region-rooms .inside .pane-room-schedule .track-7 .views-field-title {
+  display: none;
+}
+.schedule_11x .row-main .inside .region-rooms .inside .pane-room-schedule:first-child .track-7 .views-field-title {
+  display: block;
+}
+.schedule_11x .row-main .inside .region-rooms table.full {
+  table-layout: auto;
+  width: 120px;
+}
+.schedule_11x .row-main .inside .region-rooms td.first {
+  display: none;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-separator {
+  display: none;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane {
+  /*float: left;*/
+
+  display: table-cell;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content {
+  overflow: hidden !important;
+  height: 1435px;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content {
+  position: relative;
+  top: -830px;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content .calendar-agenda-items .view-item {
+  width: 95%;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #multi-day-container {
+  overflow: hidden;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container {
+  overflow: hidden;
+  height: 2200px;
+  /* Track colors */
+
+  /* Beginners Tutorials */
+
+  /* BoFs */
+
+  /* Break */
+
+  /* Cloud and Virtualization */
+
+  /* Developer */
+
+  /* DevOps */
+
+  /* Evening Entertainment */
+
+  /* Fedora */
+
+  /* File System */
+
+  /* General */
+
+  /* Kernel */
+
+  /* Keynote */
+
+  /* Mentoring */
+
+  /* MySQL */
+
+  /* Open Source Software in Education */
+
+  /* OpenNMS */
+
+  /* PostgreSQL */
+
+  /* Puppet */
+
+  /* ScaleU */
+
+  /* Sponsored */
+
+  /* SysAdmin */
+
+  /* Try It Lab */
+
+  /* Ubucon */
+
+  /* UpSCALE */
+
+  /* Youth */
+
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track {
+  border: none;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents {
+  font-size: 11px;
+  padding-top: 4px;
+  margin-left: 5px;
+  line-height: 110%;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents .views-field-title a {
+  font-weight: normal;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents * {
+  margin-left: 0px;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 {
+  background-color: #3353AF;
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-500 {
+  background-color: #FFBC00;
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-500 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-7 {
+  background-color: #123;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-7 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-8 {
+  background-color: #638DCE;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-8 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-9 {
+  background-color: #D65C09;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-9 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 {
+  background-color: #565448;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-501 {
+  background-color: #B20B77;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-501 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-11 {
+  background-color: #A30C0C;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-11 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-435 {
+  background-color: #FFE81F;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-435 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-12 {
+  background-color: #97A67A;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-12 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-13 {
+  background-color: #AD9134;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-13 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-14 {
+  background-color: #D31111;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-14 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 {
+  background-color: #998876;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 {
+  background-color: #8B47BB;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 {
+  background-color: #72B20F;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-436 {
+  background-color: #17AA17;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-436 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-18 {
+  background-color: #0AACA0;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-18 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-437 {
+  background-color: #D2A3E8;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-437 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-19 {
+  background-color: #405E5E;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-19 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-20 {
+  background-color: #007F06;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-20 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-21 {
+  background-color: #C4C249;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-21 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-22 {
+  background-color: #956140;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-22 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-23 {
+  background-color: #774022;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-23 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-24 {
+  background-color: #956140;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-24 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25 {
+  background-color: #098C09;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-title {
+  font-size: 12px;
+}
+.schedule_11x .row-notice {
+  /*height: 20px;*/
+
+  overflow: hidden;
+}
+.calendar-calendar .day-view #single-day-container table td {
+  width: 100%;
+}
+.menu-block-2 ul li.active,
+.menu-block-1 ul li.active {
+  display: none;
+}
+.menu-block-2 ul li,
+.menu-block-1 ul li {
+  list-style-type: none;
+  list-style-image: none;
+}
+.menu-block-2 ul li a,
+.menu-block-1 ul li a {
+  color: #08C;
+}
+.view-room-schedule-legend {
+  margin-top: -7px;
+}
+.legend-item {
+  display: inline-block;
+  line-height: 33px;
+  /* Track colors */
+
+  /* Beginners Tutorials */
+
+  /* BoFs */
+
+  /* Break */
+
+  /* Cloud and Virtualization */
+
+  /* Developer */
+
+  /* DevOps */
+
+  /* Evening Entertainment */
+
+  /* Fedora */
+
+  /* File System */
+
+  /* General */
+
+  /* Kernel */
+
+  /* Keynote */
+
+  /* Mentoring */
+
+  /* MySQL */
+
+  /* Open Source Software in Education */
+
+  /* OpenNMS */
+
+  /* PostgreSQL */
+
+  /* Puppet */
+
+  /* ScaleU */
+
+  /* Sponsored */
+
+  /* SysAdmin */
+
+  /* Try It Lab */
+
+  /* Ubucon */
+
+  /* UpSCALE */
+
+  /* Youth */
+
+}
+.legend-item .track {
+  padding: 7px;
+}
+.legend-item .track-6 {
+  background-color: #3353AF;
+  color: #FFF;
+}
+.legend-item .track-500 {
+  background-color: #FFBC00;
+  color: #000;
+}
+.legend-item .track-7 {
+  background-color: #123;
+  color: #FFF;
+}
+.legend-item .track-8 {
+  background-color: #638DCE;
+  color: #FFF;
+}
+.legend-item .track-9 {
+  background-color: #D65C09;
+  color: #FFF;
+}
+.legend-item .track-10 {
+  background-color: #565448;
+  color: #FFF;
+}
+.legend-item .track-501 {
+  background-color: #B20B77;
+  color: #FFF;
+}
+.legend-item .track-11 {
+  background-color: #A30C0C;
+  color: #FFF;
+}
+.legend-item .track-435 {
+  background-color: #FFE81F;
+  color: #000;
+}
+.legend-item .track-12 {
+  background-color: #97A67A;
+  color: #FFF;
+}
+.legend-item .track-13 {
+  background-color: #AD9134;
+  color: #FFF;
+}
+.legend-item .track-14 {
+  background-color: #D31111;
+  color: #FFF;
+}
+.legend-item .track-15 {
+  background-color: #998876;
+  color: #FFF;
+}
+.legend-item .track-16 {
+  background-color: #8B47BB;
+  color: #FFF;
+}
+.legend-item .track-17 {
+  background-color: #72B20F;
+  color: #FFF;
+}
+.legend-item .track-436 {
+  background-color: #17AA17;
+  color: #FFF;
+}
+.legend-item .track-18 {
+  background-color: #0AACA0;
+  color: #FFF;
+}
+.legend-item .track-437 {
+  background-color: #D2A3E8;
+  color: #000;
+}
+.legend-item .track-19 {
+  background-color: #405E5E;
+  color: #FFF;
+}
+.legend-item .track-20 {
+  background-color: #007F06;
+  color: #FFF;
+}
+.legend-item .track-21 {
+  background-color: #C4C249;
+  color: #000;
+}
+.legend-item .track-22 {
+  background-color: #956140;
+  color: #FFF;
+}
+.legend-item .track-23 {
+  background-color: #774022;
+  color: #FFF;
+}
+.legend-item .track-24 {
+  background-color: #956140;
+  color: #FFF;
+}
+.legend-item .track-25 {
+  background-color: #098C09;
+  color: #FFF;
+}
+/* Default track colors */
+.track- {
+  background-color: #C29 !important;
+  color: #FFFFFF;
+}
+.track- a {
+  color: #FFFFFF;
+}
