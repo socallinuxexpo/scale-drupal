@@ -83,6 +83,24 @@ function sessions_views_default_views() {
   $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
   $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
   $handler->display->display_options['sorts']['field_time_value']['field'] = 'field_time_value';
+  /* Contextual filter: scale event */
+  $handler->display->display_options['arguments']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['ui_name'] = 'scale event';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['vocabularies'] = array(
+    'scale_event' => 'scale_event',
+  );
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['type'] = 'convert';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
