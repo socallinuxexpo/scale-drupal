@@ -32,6 +32,13 @@ function sessions_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: speaker */
+  $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
+  $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
+  $handler->display->display_options['relationships']['field_speaker_uid']['ui_name'] = 'speaker';
+  $handler->display->display_options['relationships']['field_speaker_uid']['label'] = 'speaker';
+  $handler->display->display_options['relationships']['field_speaker_uid']['delta'] = '-1';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -63,7 +70,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_time_1']['field'] = 'field_time';
   $handler->display->display_options['fields']['field_time_1']['settings'] = array(
     'format_type' => '24_hour_time',
-    'fromto' => 'value',
+    'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
@@ -79,6 +86,21 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Short abstract */
+  $handler->display->display_options['fields']['field_short_abstract']['id'] = 'field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['table'] = 'field_data_field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
+  /* Field: User: Photo */
+  $handler->display->display_options['fields']['field_speaker_photo']['id'] = 'field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['table'] = 'field_data_field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['field'] = 'field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['relationship'] = 'field_speaker_uid';
+  $handler->display->display_options['fields']['field_speaker_photo']['alter']['text'] = '[field_speaker_photo]';
+  $handler->display->display_options['fields']['field_speaker_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_speaker_photo']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_speaker_photo']['settings'] = array(
+    'file_view_mode' => 'media_large',
+  );
   /* Sort criterion: Content: Time -  start date (field_time) */
   $handler->display->display_options['sorts']['field_time_value']['id'] = 'field_time_value';
   $handler->display->display_options['sorts']['field_time_value']['table'] = 'field_data_field_time';
