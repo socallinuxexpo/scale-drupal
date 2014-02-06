@@ -8965,7 +8965,7 @@ div.password-suggestions ul {
 .track- a {
   color: #FFFFFF;
 }
-@media (min-width: 1081px) {
+@media (min-width: 981px) {
   #navbar .dropdown:hover .dropdown-menu {
     display: block;
     position: absolute;
