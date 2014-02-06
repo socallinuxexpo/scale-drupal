@@ -8282,22 +8282,6 @@ div.password-suggestions ul {
 .view-sponsors-12x .view-content .views-row {
   padding-top: 0;
 }
-#navbar .dropdown:hover .dropdown-menu {
-  display: block;
-  position: absolute;
-  top: 35px;
-}
-#block-menu-block-3 li {
-  display: inline-block;
-  border-left: 1px solid #000;
-  padding: 0 4px 0 8px;
-}
-#block-menu-block-3 li.first {
-  border-left: none;
-}
-#block-menu-block-3 li.active {
-  font-weight: bold;
-}
 #block-menu-menu-12x-footer li {
   display: inline-block;
   border-left: 1px solid #999;
@@ -8980,4 +8964,22 @@ div.password-suggestions ul {
 }
 .track- a {
   color: #FFFFFF;
+}
+@media (min-width: 1081px) {
+  #navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 35px;
+  }
+  #block-menu-block-3 li {
+    display: inline-block;
+    border-left: 1px solid #000;
+    padding: 0 4px 0 8px;
+  }
+  #block-menu-block-3 li.first {
+    border-left: none;
+  }
+  #block-menu-block-3 li.active {
+    font-weight: bold;
+  }
 }
