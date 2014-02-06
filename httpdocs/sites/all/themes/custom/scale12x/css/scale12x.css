@@ -347,6 +347,8 @@
 
   /* General */
 
+  /* Hot Applications */
+
   /* Kernel */
 
   /* Keynote */
@@ -455,6 +457,12 @@
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-12 a {
   color: #FFF;
 }
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-505 {
+  background-color: #F4F437;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-505 a {
+  color: #000;
+}
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-13 {
   background-color: #AD9134;
 }
@@ -539,10 +547,12 @@
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-24 a {
   color: #FFF;
 }
-.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25 {
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25,
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-506 {
   background-color: #098C09;
 }
-.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25 a {
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25 a,
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-506 a {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-title {
@@ -597,6 +607,8 @@
 
   /* General */
 
+  /* Hot Applications */
+
   /* Kernel */
 
   /* Keynote */
@@ -604,6 +616,8 @@
   /* Mentoring */
 
   /* MySQL */
+
+  /* Next Generation */
 
   /* Open Source Software in Education */
 
@@ -671,6 +685,10 @@
   background-color: #97A67A;
   color: #FFF;
 }
+.legend-item .track-505 {
+  background-color: #FF0;
+  color: #000;
+}
 .legend-item .track-13 {
   background-color: #AD9134;
   color: #FFF;
@@ -686,6 +704,10 @@
 .legend-item .track-16 {
   background-color: #8B47BB;
   color: #FFF;
+}
+.legend-item .track-506 {
+  background-color: #96F74B;
+  color: #000;
 }
 .legend-item .track-17 {
   background-color: #72B20F;
