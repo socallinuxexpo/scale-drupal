@@ -43,7 +43,10 @@
 
   <header role="banner" id="page-header">
     <div class="row">
-    <div id="site-logo" class="span6 offset3">
+    <div class="visible-phone">
+      <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale12x') . '/img/scale_12x_dodecahedron_sm.png'; ?>" alt="SCALE 12x dodecahedron logo"></a>
+    </div>
+    <div id="site-logo" class="span6 offset3 hidden-phone">
       <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale12x') . '/img/scale_12x_dodecahedron.png'; ?>" alt="SCALE 12x dodecahedron logo"></a>
     </div>
     </div>
