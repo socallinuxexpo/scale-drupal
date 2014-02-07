@@ -43,7 +43,7 @@
 
   <header role="banner" id="page-header">
     <div class="row">
-    <div class="visible-phone">
+    <div class="visible-phone small-site-logo">
       <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale12x') . '/img/scale_12x_dodecahedron_sm.png'; ?>" alt="SCALE 12x dodecahedron logo"></a>
     </div>
     <div id="site-logo" class="span6 offset3 hidden-phone">
@@ -54,7 +54,9 @@
       <p class="lead"><?php print $site_slogan; ?></p>
     <?php endif; ?>
 
+    <div class="hidden-phone">
     <?php print render($page['header']); ?>
+    </div>
   </header> <!-- /#header -->
 
   <div class="row-fluid">
