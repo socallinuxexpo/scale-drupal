@@ -8547,6 +8547,8 @@ div.password-suggestions ul {
 
   /* Beginners Tutorials */
 
+  /* Big Data */
+
   /* BoFs */
 
   /* Break */
@@ -8623,6 +8625,13 @@ div.password-suggestions ul {
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 a {
   color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-881 {
+  background-color: #A6CEFF;
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-881 a {
+  color: #000;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-500 {
   background-color: #FFBC00;
@@ -8823,6 +8832,8 @@ div.password-suggestions ul {
 
   /* Beginners Tutorials */
 
+  /* Big Data */
+
   /* BoFs */
 
   /* Break */
@@ -8886,6 +8897,10 @@ div.password-suggestions ul {
 .legend-item .track-6 {
   background-color: #3353AF;
   color: #FFF;
+}
+.legend-item .track-881 {
+  background-color: #A6CEFF;
+  color: #000;
 }
 .legend-item .track-500 {
   background-color: #FFBC00;
