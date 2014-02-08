@@ -333,6 +333,8 @@
 
   /* Cloud and Virtualization */
 
+  /* Coder's Corner */
+
   /* Developer */
 
   /* DevOps */
@@ -344,6 +346,8 @@
   /* File System */
 
   /* General */
+
+  /* FOSS Camp */
 
   /* Hot Applications */
 
@@ -419,6 +423,12 @@
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-8 a {
   color: #FFF;
 }
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-879 {
+  background-color: #EFCA52;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-879 a {
+  color: #000;
+}
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-9 {
   background-color: #D65C09;
 }
@@ -454,6 +464,12 @@
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-12 a {
   color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-880 {
+  background-color: #C19EEF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-880 a {
+  color: #000;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-505 {
   background-color: #F4F437;
@@ -593,6 +609,8 @@
 
   /* Cloud and Virtualization */
 
+  /* Coder's Corner */
+
   /* Developer */
 
   /* DevOps */
@@ -604,6 +622,8 @@
   /* File System */
 
   /* General */
+
+  /* FOSS Camp */
 
   /* Hot Applications */
 
@@ -659,6 +679,10 @@
   background-color: #638DCE;
   color: #FFF;
 }
+.legend-item .track-879 {
+  background-color: #EFCA52;
+  color: #000;
+}
 .legend-item .track-9 {
   background-color: #D65C09;
   color: #FFF;
@@ -682,6 +706,10 @@
 .legend-item .track-12 {
   background-color: #97A67A;
   color: #FFF;
+}
+.legend-item .track-880 {
+  background-color: #C19EEF;
+  color: #000;
 }
 .legend-item .track-505 {
   background-color: #FF0;
