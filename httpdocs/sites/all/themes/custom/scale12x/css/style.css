@@ -8246,13 +8246,19 @@ div.password-suggestions ul {
   margin: 0 auto;
 }
 .view-sponsors-12x .attachment-after .views-row {
-  padding-top: 25px;
-  padding-bottom: 25px;
   clear: both;
+  margin-bottom: 3em;
 }
 .view-sponsors-12x .attachment-after .views-row-first {
   padding-top: 0;
   border-top: 0 none transparent;
+}
+.view-sponsors-12x .attachment-after .views-field {
+  margin-left: 240px;
+}
+.view-sponsors-12x .attachment-after .views-field-field-logo-website {
+  margin-left: 0;
+  margin-bottom: 3em;
 }
 .view-exhibitors .views-row {
   padding-top: 25px;
@@ -8279,11 +8285,10 @@ div.password-suggestions ul {
   margin-right: 20px;
   width: 220px;
 }
-.view-sponsors-12x .views-field-field-sponsor-type,
-.view-exhibitors .views-field-field-sponsor-type {
+.view-sponsors-12x .views-field-field-sponsor-type span,
+.view-exhibitors .views-field-field-sponsor-type span {
   background-color: #EEEEBB;
   border: 2px dotted #CCCC66;
-  display: inline-block;
   min-width: 112px;
   padding: 3px 12px;
   text-align: center;
