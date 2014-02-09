@@ -25,36 +25,42 @@
   width: 100px;
   margin: 0 auto;
 }
-.view-exhibitors .attachment-after .view-content .views-row,
-.view-sponsors-12x .attachment-after .view-content .views-row {
-  padding-top: 40px;
-}
-.view-exhibitors .views-row,
-.view-sponsors-12x .views-row {
-  padding-top: 40px;
+.view-sponsors-12x .attachment-after .views-row {
+  padding-top: 25px;
+  padding-bottom: 25px;
   clear: both;
 }
-.view-exhibitors .views-row-first,
-.view-sponsors-12x .views-row-first {
+.view-sponsors-12x .attachment-after .views-row-first {
   padding-top: 0;
+  border-top: 0 none transparent;
 }
-.view-exhibitors .views-field,
-.view-sponsors-12x .views-field {
+.view-exhibitors .views-row {
+  padding-top: 25px;
+  padding-bottom: 15px;
+  border-top: 1px solid #EEEEEE;
+  clear: both;
+}
+.view-exhibitors .views-row-first {
+  padding-top: 0;
+  border-top: 0 none transparent;
+}
+.view-sponsors-12x .views-field,
+.view-exhibitors .views-field {
   margin-bottom: 10px;
 }
-.view-exhibitors .views-field-title,
-.view-sponsors-12x .views-field-title {
+.view-sponsors-12x .views-field-title,
+.view-exhibitors .views-field-title {
   font-size: 2em;
   margin-bottom: 20px;
 }
-.view-exhibitors .views-field-field-logo-website,
-.view-sponsors-12x .views-field-field-logo-website {
+.view-sponsors-12x .views-field-field-logo-website,
+.view-exhibitors .views-field-field-logo-website {
   float: left;
   margin-right: 20px;
   width: 220px;
 }
-.view-exhibitors .views-field-field-sponsor-type,
-.view-sponsors-12x .views-field-field-sponsor-type {
+.view-sponsors-12x .views-field-field-sponsor-type,
+.view-exhibitors .views-field-field-sponsor-type {
   background-color: #EEEEBB;
   border: 2px dotted #CCCC66;
   display: inline-block;
@@ -123,6 +129,7 @@
 .view-presentation-single .pane-node-field-speaker,
 #presentation-page .pane-node-field-speaker {
   font-size: 2em;
+  line-height: 1.1em;
 }
 .view-presentation-single .views-label.terms,
 #presentation-page .views-label.terms {
@@ -169,6 +176,7 @@
 }
 .view-presentation-page .views-field-field-speaker {
   font-size: 1.5em;
+  line-height: 1.1em;
 }
 .view-presentation-page .terms {
   display: inline-block;
@@ -180,7 +188,12 @@
 .view-speaker-page .views-row {
   margin-bottom: 2em;
   clear: both;
-  min-height: 210px;
+  /*min-height: 210px;*/
+
+  padding-top: 2em;
+}
+.view-speaker-page .views-row-first {
+  padding-top: 0;
 }
 .view-speaker-page .views-field {
   margin-bottom: 12px;

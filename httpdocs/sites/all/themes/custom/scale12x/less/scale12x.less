@@ -37,22 +37,33 @@ body {
 }
 
 // Sponsor List Page(s)
-.view-exhibitors,
 .view-sponsors-12x {
   .attachment-after {
-    .view-content {
       .views-row {
-        padding-top: 40px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        clear: both;
+      }
+      .views-row-first {
+        padding-top: 0;
+        border-top: 0 none transparent;
       }
     }
-  }
+}
+.view-exhibitors {
   .views-row {
-    padding-top: 40px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    border-top: 1px solid #EEEEEE;
     clear: both;
   }
   .views-row-first {
     padding-top: 0;
+    border-top: 0 none transparent;
   }
+}
+.view-sponsors-12x,
+.view-exhibitors {
   .views-field {
     margin-bottom: 10px;
   }
@@ -145,6 +156,7 @@ body {
   .views-field-nothing,
   .pane-node-field-speaker {
     font-size: 2em;
+    line-height: 1.1em;
   }
   .views-label.terms {
     margin-right: 5px;
@@ -194,6 +206,7 @@ body {
   }
   .views-field-field-speaker {
     font-size: 1.5em;
+    line-height: 1.1em;
   }
   .terms {
     display: inline-block;
@@ -208,7 +221,11 @@ body {
   .views-row {
     margin-bottom: 2em;
     clear: both;
-    min-height: 210px;
+    /*min-height: 210px;*/
+    padding-top: 2em;
+  }
+  .views-row-first {
+    padding-top: 0;
   }
   .views-field {
     margin-bottom: 12px;
