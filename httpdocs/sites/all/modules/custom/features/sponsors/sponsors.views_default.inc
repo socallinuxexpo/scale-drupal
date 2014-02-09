@@ -1884,13 +1884,6 @@ function sponsors_views_default_views() {
     'field_booth_number' => 'field_booth_number',
   );
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Logo (website) */
   $handler->display->display_options['fields']['field_logo_website']['id'] = 'field_logo_website';
   $handler->display->display_options['fields']['field_logo_website']['table'] = 'field_data_field_logo_website';
@@ -1902,11 +1895,19 @@ function sponsors_views_default_views() {
     'image_style' => 'medium',
     'image_link' => '',
   );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Sponsor Type */
   $handler->display->display_options['fields']['field_sponsor_type']['id'] = 'field_sponsor_type';
   $handler->display->display_options['fields']['field_sponsor_type']['table'] = 'field_data_field_sponsor_type';
   $handler->display->display_options['fields']['field_sponsor_type']['field'] = 'field_sponsor_type';
   $handler->display->display_options['fields']['field_sponsor_type']['label'] = '';
+  $handler->display->display_options['fields']['field_sponsor_type']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_sponsor_type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_sponsor_type']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_sponsor_type']['delta_offset'] = '0';

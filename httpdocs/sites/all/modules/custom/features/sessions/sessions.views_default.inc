@@ -38,7 +38,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
   $handler->display->display_options['relationships']['field_speaker_uid']['ui_name'] = 'speaker';
   $handler->display->display_options['relationships']['field_speaker_uid']['label'] = 'speaker';
-  $handler->display->display_options['relationships']['field_speaker_uid']['delta'] = '-1';
+  $handler->display->display_options['relationships']['field_speaker_uid']['delta'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -1042,7 +1042,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
   $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
-  $handler->display->display_options['relationships']['field_speaker_uid']['delta'] = '-1';
+  $handler->display->display_options['relationships']['field_speaker_uid']['delta'] = '0';
   /* Field: User: Photo */
   $handler->display->display_options['fields']['field_speaker_photo']['id'] = 'field_speaker_photo';
   $handler->display->display_options['fields']['field_speaker_photo']['table'] = 'field_data_field_speaker_photo';
