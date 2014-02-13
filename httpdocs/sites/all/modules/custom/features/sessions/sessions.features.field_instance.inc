@@ -351,7 +351,7 @@ function sessions_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -393,7 +393,7 @@ function sessions_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -437,7 +437,7 @@ function sessions_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -481,7 +481,46 @@ function sessions_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'node-presentation-field_overflow_room'
+  $field_instances['node-presentation-field_overflow_room'] = array(
+    'bundle' => 'presentation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Room(s) designated for overflow for this presentation',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 16,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_overflow_room',
+    'label' => 'Overflow room',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_select',
+      'weight' => 10,
     ),
   );
 
@@ -536,7 +575,7 @@ function sessions_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'link_field',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -634,7 +673,7 @@ function sessions_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -691,7 +730,7 @@ function sessions_field_default_field_instances() {
         'label' => 'above',
         'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 12,
       ),
       'teaser' => array(
@@ -801,7 +840,7 @@ function sessions_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -985,10 +1024,12 @@ function sessions_field_default_field_instances() {
   t('Enter the email address of the primary contact for this presentation. Information or questions regarding this presentation will be sent to this address. Multiple addresses may separated with commas.');
   t('Long abstract');
   t('Message to the reviewers');
+  t('Overflow room');
   t('Presentation');
   t('Presentation Link');
   t('Primary contact email address');
   t('Room');
+  t('Room(s) designated for overflow for this presentation');
   t('SCALE event');
   t('Separate multiple tags with commas.');
   t('Short abstract');

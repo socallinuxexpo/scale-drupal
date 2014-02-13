@@ -52,6 +52,14 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
   $handler->display->display_options['fields']['field_room']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_room']['delta_offset'] = '0';
+  /* Field: Content: Overflow room */
+  $handler->display->display_options['fields']['field_overflow_room']['id'] = 'field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['table'] = 'field_data_field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['field'] = 'field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['label'] = 'Overflow';
+  $handler->display->display_options['fields']['field_overflow_room']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_overflow_room']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_overflow_room']['delta_offset'] = '0';
   /* Field: Content: Time */
   $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
   $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
