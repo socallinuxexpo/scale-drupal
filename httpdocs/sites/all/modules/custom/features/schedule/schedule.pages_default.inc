@@ -4012,7 +4012,7 @@ scale12x/schedule/2014-02-22',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = FALSE;
+    $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
