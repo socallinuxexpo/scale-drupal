@@ -262,6 +262,7 @@ function schedule_views_default_views() {
   $handler->display->display_options['fields']['field_speaker']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_speaker']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_speaker']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speaker']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
@@ -274,6 +275,8 @@ function schedule_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
