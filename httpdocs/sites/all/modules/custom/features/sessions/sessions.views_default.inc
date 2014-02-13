@@ -1123,6 +1123,7 @@ function sessions_views_default_views() {
   $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
   $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
   $handler->display->display_options['fields']['field_room']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_room']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_room']['delta_offset'] = '0';
   /* Field: Content: Time */
   $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
