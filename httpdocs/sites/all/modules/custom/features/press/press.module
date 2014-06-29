@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Press Release feature.
- */
-
-include_once 'press.features.inc';

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * blog1.features.inc
+ * scale_blog.features.inc
  */
 
 /**
  * Implements hook_node_info().
  */
-function blog1_node_info() {
+function scale_blog_node_info() {
   $items = array(
     'blog' => array(
       'name' => t('Blog'),

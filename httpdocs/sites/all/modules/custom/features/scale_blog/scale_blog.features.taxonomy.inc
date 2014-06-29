@@ -1,18 +1,18 @@
 <?php
 /**
  * @file
- * video.features.taxonomy.inc
+ * scale_blog.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function video_taxonomy_default_vocabularies() {
+function scale_blog_taxonomy_default_vocabularies() {
   return array(
-    'scale_event' => array(
-      'name' => 'SCALE event',
-      'machine_name' => 'scale_event',
-      'description' => 'Which SCALE event a piece of content belongs to',
+    'tags' => array(
+      'name' => 'Tags',
+      'machine_name' => 'tags',
+      'description' => 'Use tags to group articles on similar topics into categories.',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
