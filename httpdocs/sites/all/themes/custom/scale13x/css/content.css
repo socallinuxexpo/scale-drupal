@@ -1,0 +1,10 @@
+@media (max-width: 767px) {
+  h2 {
+    font-size: 24px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  h2 {
+    font-size: 24px;
+  }
+}

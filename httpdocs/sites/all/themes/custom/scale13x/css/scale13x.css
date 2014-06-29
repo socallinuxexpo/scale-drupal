@@ -1,0 +1,834 @@
+#site-logo {
+  margin-bottom: 2em;
+}
+.small-site-logo {
+  margin-bottom: 15px;
+}
+.social-media img {
+  margin: 0 3px 3px 0;
+}
+.view-sponsor-logos .views-field-nothing {
+  display: none;
+}
+.view-sponsor-logos h3 {
+  text-align: center;
+  font-size: 100%;
+}
+.view-sponsor-logos .views-field-field-logo-website {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.view-sponsor-logos .views-row-last {
+  margin-bottom: 2em;
+}
+.view-sponsor-logos .views-slideshow-cycle-main-frame {
+  width: 100px;
+  margin: 0 auto;
+}
+.view-sponsors-12x .attachment-after .views-row {
+  clear: both;
+  margin-bottom: 3em;
+}
+.view-sponsors-12x .attachment-after .views-row-first {
+  padding-top: 0;
+  border-top: 0 none transparent;
+}
+.view-sponsors-12x .attachment-after .views-field {
+  margin-left: 255px;
+}
+.view-sponsors-12x .attachment-after .views-field-field-logo-website {
+  margin-left: 0;
+  margin-bottom: 3em;
+}
+.view-exhibitors .views-row {
+  padding-top: 25px;
+  padding-bottom: 15px;
+  border-top: 1px solid #EEEEEE;
+  clear: both;
+}
+.view-exhibitors .views-row-first {
+  padding-top: 0;
+  border-top: 0 none transparent;
+}
+.view-sponsors-12x .views-field,
+.view-exhibitors .views-field {
+  margin-bottom: 10px;
+}
+.view-sponsors-12x .views-field-title,
+.view-exhibitors .views-field-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.view-sponsors-12x .views-field-field-logo-website,
+.view-exhibitors .views-field-field-logo-website {
+  float: left;
+  margin-right: 20px;
+  width: 220px;
+}
+.view-sponsors-12x .views-field-field-sponsor-type span,
+.view-exhibitors .views-field-field-sponsor-type span {
+  background-color: #EEEEBB;
+  border: 2px dotted #CCCC66;
+  min-width: 112px;
+  padding: 3px 12px;
+  text-align: center;
+}
+.view-sponsors-12x .view-content .views-row {
+  padding-top: 0;
+}
+#block-menu-block-3 li {
+  display: inline-block;
+  border-left: 1px solid #000;
+  padding: 0 4px 0 8px;
+}
+#block-menu-block-3 li.first {
+  border-left: none;
+}
+#block-menu-block-3 li.active {
+  font-weight: bold;
+}
+#block-menu-menu-12x-footer li {
+  display: inline-block;
+  border-left: 1px solid #999;
+  padding: 0 4px 0 6px;
+}
+#block-menu-menu-12x-footer li.first {
+  border-left: none;
+  padding-left: 0;
+}
+/* Featured Speakers block */
+#block-views-featured-presentations-block-1 {
+  margin-bottom: 2em;
+}
+#block-views-featured-presentations-block-1 .views-row {
+  float: left;
+  width: 33%;
+}
+#block-views-featured-presentations-block-1 .views-field-title {
+  margin-bottom: 0.5em;
+}
+/* Presentation pages */
+.view-presentation-single a,
+#presentation-page a {
+  text-decoration: none;
+}
+.view-presentation-single .views-label,
+#presentation-page .views-label {
+  font-weight: bold;
+}
+.view-presentation-single .views-field,
+#presentation-page .views-field,
+.view-presentation-single .panel-pane,
+#presentation-page .panel-pane {
+  margin-bottom: .5em;
+}
+.view-presentation-single .views-field-field-speaker-photo,
+#presentation-page .views-field-field-speaker-photo,
+.view-presentation-single .pane-user-field-speaker-photo,
+#presentation-page .pane-user-field-speaker-photo {
+  float: right;
+  margin-left: 20px;
+}
+.view-presentation-single .views-field-nothing,
+#presentation-page .views-field-nothing,
+.view-presentation-single .pane-node-field-speaker,
+#presentation-page .pane-node-field-speaker {
+  font-size: 2em;
+  line-height: 1.1em;
+}
+.view-presentation-single .views-label.terms,
+#presentation-page .views-label.terms {
+  margin-right: 5px;
+}
+.view-presentation-single .terms,
+#presentation-page .terms {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: .5em;
+}
+.view-presentation-single .views-field-field-long-abstract,
+#presentation-page .views-field-field-long-abstract,
+.view-presentation-single .pane-node-field-long-abstract,
+#presentation-page .pane-node-field-long-abstract {
+  clear: left;
+}
+#speaker-page .pane-user-field-speaker-photo {
+  float: left;
+  margin-right: 20px;
+}
+#speaker-page .pane-presentations-by-speaker-panel-pane-2,
+#speaker-page .pane-presentations-by-speaker-panel-pane-1 {
+  margin-bottom: 20px;
+}
+#speaker-page .views-field-field-biography {
+  margin-top: 20px;
+}
+/* Presentations List Page */
+.view-presentation-page .views-row {
+  margin-bottom: 2em;
+  clear: both;
+}
+.view-presentation-page .views-field {
+  margin-bottom: 12px;
+}
+.view-presentation-page .views-field-field-speaker-photo {
+  float: right;
+  margin-left: 20px;
+}
+.view-presentation-page .views-field-title {
+  font-size: 2em;
+  line-height: 1em;
+}
+.view-presentation-page .views-field-field-speaker {
+  font-size: 1.5em;
+  line-height: 1.1em;
+}
+.view-presentation-page .terms {
+  display: inline-block;
+}
+.view-presentation-page .views-field-field-topic {
+  margin: auto auto 20px 20px;
+}
+/* Speakers List Page */
+.view-speaker-page .views-row {
+  margin-bottom: 2em;
+  clear: both;
+  /*min-height: 210px;*/
+
+  padding-top: 2em;
+}
+.view-speaker-page .views-row-first {
+  padding-top: 0;
+}
+.view-speaker-page .views-field {
+  margin-bottom: 12px;
+}
+.view-speaker-page .views-field-field-job-title {
+  margin-bottom: 0;
+}
+.view-speaker-page .views-field-field-speaker-photo {
+  float: left;
+  margin-right: 20px;
+}
+.view-speaker-page .views-field-realname {
+  font-size: 2em;
+}
+.view-speaker-page .views-field-title {
+  font-size: 1em;
+  line-height: 1em;
+}
+.view-speaker-page .terms {
+  display: inline-block;
+}
+.view-speaker-page .views-field-field-topic {
+  margin: auto auto 20px 20px;
+}
+/* Schedule (Calendar) */
+.schedule_11x {
+  /*background-color: #AAA;*/
+
+  width: auto;
+}
+.schedule_11x ul.menu li {
+  margin: 0 0.5em 0 0;
+}
+.schedule_11x .page-container {
+  width: auto;
+  /*width: 1690px;*/
+
+  padding-right: 20px;
+}
+.schedule_11x .page-container #radio-display {
+  width: auto;
+  /*width: 1635px;*/
+
+}
+.schedule_11x .page-container #radio-display #content-area {
+  width: auto;
+}
+.schedule_11x .page-container #radio-display #content-area .schedule-top {
+  width: auto;
+  min-width: 40%;
+}
+.schedule_11x .page-container #radio-display #content-area .panels-flexible-region-10-center {
+  width: auto;
+}
+.schedule_11x .row-main {
+  /*height: 1490px;*/
+
+  /*overflow: hidden;*/
+
+}
+.schedule_11x .row-main .inside {
+  /*width: 1647px;*/
+
+}
+.schedule_11x .row-main .inside .region-time {
+  width: 50px;
+}
+.schedule_11x .row-main .inside .region-time #time {
+  width: 50px;
+}
+.schedule_11x .row-main .inside .region-time #time table .calendar-agenda-hour {
+  width: 50px;
+  padding-right: 0;
+}
+.schedule_11x .row-main .inside .region-time #time table .calendar-agenda-hour .calendar-hour {
+  padding-right: 2px;
+}
+.schedule_11x .row-main .inside .region-time td.last {
+  display: none;
+}
+.schedule_11x .row-main .inside .pane-room-schedule {
+  overflow: hidden;
+  height: 1471px;
+}
+.schedule_11x .row-main .inside .rg2 span {
+  padding-right: 5px;
+}
+.schedule_11x .row-main .inside .region-rooms {
+  /*margin-left: -50px;
+        overflow: auto;*/
+
+  /*overflow: scroll;*/
+
+}
+.schedule_11x .row-main .inside .region-rooms .inside {
+  width: auto;
+  padding-left: 3px;
+  /*width: 2100px;*/
+
+  /*height: 1475px;*/
+
+  /*overflow: hidden;*/
+
+}
+.schedule_11x .row-main .inside .region-rooms .inside .pane-room-schedule .track-7 .views-field-title {
+  display: none;
+}
+.schedule_11x .row-main .inside .region-rooms .inside .pane-room-schedule:first-child .track-7 .views-field-title {
+  display: block;
+}
+.schedule_11x .row-main .inside .region-rooms table.full {
+  table-layout: auto;
+  width: 120px;
+}
+.schedule_11x .row-main .inside .region-rooms td.first {
+  display: none;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-separator {
+  display: none;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane {
+  /*float: left;*/
+
+  display: table-cell;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content {
+  overflow: hidden !important;
+  height: 1435px;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content {
+  position: relative;
+  top: -830px;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content .calendar-agenda-items .view-item {
+  width: 95%;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #multi-day-container {
+  overflow: hidden;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container {
+  overflow: hidden;
+  height: 2200px;
+  /* Track colors */
+
+  /* Beginners Tutorials */
+
+  /* Big Data */
+
+  /* BoFs */
+
+  /* Break */
+
+  /* Cloud and Virtualization */
+
+  /* Coder's Corner */
+
+  /* Developer */
+
+  /* DevOps */
+
+  /* Evening Entertainment */
+
+  /* Fedora */
+
+  /* File System */
+
+  /* General */
+
+  /* FOSS Camp */
+
+  /* Hot Applications */
+
+  /* Kernel */
+
+  /* Keynote */
+
+  /* Mentoring */
+
+  /* MySQL */
+
+  /* Open Source Software in Education */
+
+  /* OpenNMS */
+
+  /* PostgreSQL */
+
+  /* Puppet */
+
+  /* ScaleU */
+
+  /* Sponsored */
+
+  /* SysAdmin */
+
+  /* Try It Lab */
+
+  /* Ubucon */
+
+  /* UpSCALE */
+
+  /* Youth */
+
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track {
+  border: none;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents {
+  font-size: 11px;
+  padding-top: 4px;
+  margin-left: 5px;
+  line-height: 110%;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents .views-field-title a {
+  font-weight: normal;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents * {
+  margin-left: 0px;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 {
+  background-color: #3353AF;
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-881 {
+  background-color: #A6CEFF;
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-881 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-500 {
+  background-color: #FFBC00;
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-500 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-7 {
+  background-color: #123;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-7 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-8 {
+  background-color: #638DCE;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-8 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-879 {
+  background-color: #EFCA52;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-879 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-9 {
+  background-color: #D65C09;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-9 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 {
+  background-color: #565448;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-501 {
+  background-color: #B20B77;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-501 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-11 {
+  background-color: #A30C0C;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-11 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-435 {
+  background-color: #FFE81F;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-435 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-12 {
+  background-color: #97A67A;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-12 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-880 {
+  background-color: #C19EEF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-880 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-505 {
+  background-color: #F4F437;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-505 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-13 {
+  background-color: #AD9134;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-13 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-14 {
+  background-color: #D31111;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-14 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 {
+  background-color: #998876;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 {
+  background-color: #8B47BB;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 {
+  background-color: #72B20F;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-436 {
+  background-color: #17AA17;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-436 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-18 {
+  background-color: #0AACA0;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-18 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-437 {
+  background-color: #D2A3E8;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-437 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-19 {
+  background-color: #405E5E;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-19 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-20 {
+  background-color: #007F06;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-20 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-21 {
+  background-color: #C4C249;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-21 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-22 {
+  background-color: #956140;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-22 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-23 {
+  background-color: #774022;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-23 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-24 {
+  background-color: #956140;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-24 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25,
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-506 {
+  background-color: #098C09;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-25 a,
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-506 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-title {
+  font-size: 12px;
+}
+.schedule_11x .row-notice {
+  /*height: 20px;*/
+
+  overflow: hidden;
+}
+.calendar-calendar .day-view #single-day-container table td {
+  width: 100%;
+}
+.menu-block-2 ul li.active,
+.menu-block-1 ul li.active {
+  display: none;
+}
+.menu-block-2 ul li,
+.menu-block-1 ul li {
+  list-style-type: none;
+  list-style-image: none;
+}
+.menu-block-2 ul li a,
+.menu-block-1 ul li a {
+  color: #08C;
+}
+.view-room-schedule-legend {
+  margin-top: -7px;
+}
+.legend-item {
+  display: inline-block;
+  line-height: 33px;
+  /* Track colors */
+
+  /* Beginners Tutorials */
+
+  /* Big Data */
+
+  /* BoFs */
+
+  /* Break */
+
+  /* Cloud and Virtualization */
+
+  /* Coder's Corner */
+
+  /* Developer */
+
+  /* DevOps */
+
+  /* Evening Entertainment */
+
+  /* Fedora */
+
+  /* File System */
+
+  /* General */
+
+  /* FOSS Camp */
+
+  /* Hot Applications */
+
+  /* Kernel */
+
+  /* Keynote */
+
+  /* Mentoring */
+
+  /* MySQL */
+
+  /* Next Generation */
+
+  /* Open Source Software in Education */
+
+  /* OpenNMS */
+
+  /* PostgreSQL */
+
+  /* Puppet */
+
+  /* ScaleU */
+
+  /* Sponsored */
+
+  /* SysAdmin */
+
+  /* Try It Lab */
+
+  /* Ubucon */
+
+  /* UpSCALE */
+
+  /* Youth */
+
+}
+.legend-item .track {
+  padding: 7px;
+}
+.legend-item .track-6 {
+  background-color: #3353AF;
+  color: #FFF;
+}
+.legend-item .track-881 {
+  background-color: #A6CEFF;
+  color: #000;
+}
+.legend-item .track-500 {
+  background-color: #FFBC00;
+  color: #000;
+}
+.legend-item .track-7 {
+  background-color: #123;
+  color: #FFF;
+}
+.legend-item .track-8 {
+  background-color: #638DCE;
+  color: #FFF;
+}
+.legend-item .track-879 {
+  background-color: #EFCA52;
+  color: #000;
+}
+.legend-item .track-9 {
+  background-color: #D65C09;
+  color: #FFF;
+}
+.legend-item .track-10 {
+  background-color: #565448;
+  color: #FFF;
+}
+.legend-item .track-501 {
+  background-color: #B20B77;
+  color: #FFF;
+}
+.legend-item .track-11 {
+  background-color: #A30C0C;
+  color: #FFF;
+}
+.legend-item .track-435 {
+  background-color: #FFE81F;
+  color: #000;
+}
+.legend-item .track-12 {
+  background-color: #97A67A;
+  color: #FFF;
+}
+.legend-item .track-880 {
+  background-color: #C19EEF;
+  color: #000;
+}
+.legend-item .track-505 {
+  background-color: #FF0;
+  color: #000;
+}
+.legend-item .track-13 {
+  background-color: #AD9134;
+  color: #FFF;
+}
+.legend-item .track-14 {
+  background-color: #D31111;
+  color: #FFF;
+}
+.legend-item .track-15 {
+  background-color: #998876;
+  color: #FFF;
+}
+.legend-item .track-16 {
+  background-color: #8B47BB;
+  color: #FFF;
+}
+.legend-item .track-506 {
+  background-color: #96F74B;
+  color: #000;
+}
+.legend-item .track-17 {
+  background-color: #72B20F;
+  color: #FFF;
+}
+.legend-item .track-436 {
+  background-color: #17AA17;
+  color: #FFF;
+}
+.legend-item .track-18 {
+  background-color: #0AACA0;
+  color: #FFF;
+}
+.legend-item .track-437 {
+  background-color: #D2A3E8;
+  color: #000;
+}
+.legend-item .track-19 {
+  background-color: #405E5E;
+  color: #FFF;
+}
+.legend-item .track-20 {
+  background-color: #007F06;
+  color: #FFF;
+}
+.legend-item .track-21 {
+  background-color: #C4C249;
+  color: #000;
+}
+.legend-item .track-22 {
+  background-color: #956140;
+  color: #FFF;
+}
+.legend-item .track-23 {
+  background-color: #774022;
+  color: #FFF;
+}
+.legend-item .track-24 {
+  background-color: #956140;
+  color: #FFF;
+}
+.legend-item .track-25 {
+  background-color: #098C09;
+  color: #FFF;
+}
+/* Default track colors */
+.track- {
+  background-color: #C29 !important;
+  color: #FFFFFF;
+}
+.track- a {
+  color: #FFFFFF;
+}
+.control-group > label {
+  margin-top: 2em;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+@media (min-width: 981px) {
+  #navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    position: absolute;
+    top: 35px;
+  }
+}
