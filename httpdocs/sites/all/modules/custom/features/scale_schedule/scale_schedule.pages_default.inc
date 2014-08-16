@@ -46,7 +46,7 @@ function scale_schedule_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Schedule 12x';
   $page->admin_description = '';
-  $page->path = 'scale12/schedule';
+  $page->path = 'scale12x/schedule';
   $page->access = array(
     'logic' => 'and',
     'plugins' => array(),
@@ -2719,7 +2719,7 @@ scale12x/blah',
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => '',
     );
     $pane->cache = array();
