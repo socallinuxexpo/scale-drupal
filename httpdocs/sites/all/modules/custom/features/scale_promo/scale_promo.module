@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Promo feature.
+ */
+
+include_once 'scale_promo.features.inc';

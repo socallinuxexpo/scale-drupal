@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Notice feature.
+ */
+
+include_once 'scale_notice.features.inc';

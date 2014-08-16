@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Presentation feature.
+ */
+
+include_once 'scale_presentation.features.inc';

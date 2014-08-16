@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Schedule feature.
+ */
+
+include_once 'scale_schedule.features.inc';

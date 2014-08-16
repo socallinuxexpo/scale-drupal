@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Press feature.
+ */
+
+include_once 'scale_press.features.inc';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Special Event feature.
+ */
+
+include_once 'scale_special_event.features.inc';

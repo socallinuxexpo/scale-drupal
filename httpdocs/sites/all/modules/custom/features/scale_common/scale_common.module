@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the SCALE Common feature.
  */
+
+include_once 'scale_common.features.inc';
