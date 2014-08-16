@@ -62,7 +62,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
                 $profile2_firstname = profile2_load($record->pid);
               }
               if (!empty($profile2_firstname->$field_firstname)) {
-                $replacements[$original] = $sanitize ? check_plain($profile2_firstname->{$field_firstname}['und']['0']['value']) : $profile2_firstname->{$field_firstname}['und']['0']['value'];
+                $replacements[$original] = $sanitize ? check_plain($profile2_firstname->{$field_firstname}[LANGUAGE_NONE]['0']['value']) : $profile2_firstname->{$field_firstname}[LANGUAGE_NONE]['0']['value'];
               }
               else {
                 $replacements[$original] =  '';
@@ -70,7 +70,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
             }
             else {
               if (!empty($account->$field_firstname)) {
-                $replacements[$original] = $sanitize ? check_plain($account->{$field_firstname}['und']['0']['value']) : $account->{$field_firstname}['und']['0']['value'];
+                $replacements[$original] = $sanitize ? check_plain($account->{$field_firstname}[LANGUAGE_NONE]['0']['value']) : $account->{$field_firstname}[LANGUAGE_NONE]['0']['value'];
               }
               else {
                 $replacements[$original] = '';
@@ -85,7 +85,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
                 $profile2_middlename = profile2_load($record->pid);
               }
               if (!empty($profile2_middlename->$field_middlename)) {
-                $replacements[$original] = $sanitize ? check_plain($profile2_middlename->{$field_middlename}['und']['0']['value']) : $profile2_middlename->{$field_middlename}['und']['0']['value'];
+                $replacements[$original] = $sanitize ? check_plain($profile2_middlename->{$field_middlename}[LANGUAGE_NONE]['0']['value']) : $profile2_middlename->{$field_middlename}[LANGUAGE_NONE]['0']['value'];
               }
               else {
                 $replacements[$original] = '';
@@ -93,7 +93,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
             }
             else {
               if (!empty($account->$field_middlename)) {
-                $replacements[$original] = $sanitize ? check_plain($account->{$field_middlename}['und']['0']['value']) : $account->{$field_middlename}['und']['0']['value'];
+                $replacements[$original] = $sanitize ? check_plain($account->{$field_middlename}[LANGUAGE_NONE]['0']['value']) : $account->{$field_middlename}[LANGUAGE_NONE]['0']['value'];
               }
               else {
                 $replacements[$original] = '';
@@ -108,7 +108,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
                 $profile2_lastname = profile2_load($record->pid);
               }
               if (!empty($profile2_lastname->$field_lastname)) {
-                $replacements[$original] = $sanitize ? check_plain($profile2_lastname->{$field_lastname}['und']['0']['value']) : $profile2_lastname->{$field_lastname}['und']['0']['value'];
+                $replacements[$original] = $sanitize ? check_plain($profile2_lastname->{$field_lastname}[LANGUAGE_NONE]['0']['value']) : $profile2_lastname->{$field_lastname}[LANGUAGE_NONE]['0']['value'];
               }
               else {
                 $replacements[$original] = '';
@@ -116,7 +116,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
             }
             else {
               if (!empty($account->$field_lastname)) {
-                $replacements[$original] = $sanitize ? check_plain($account->{$field_lastname}['und']['0']['value']) : $account->{$field_lastname}['und']['0']['value'];
+                $replacements[$original] = $sanitize ? check_plain($account->{$field_lastname}[LANGUAGE_NONE]['0']['value']) : $account->{$field_lastname}[LANGUAGE_NONE]['0']['value'];
               }
               else {
                 $replacements[$original] = '';
@@ -132,7 +132,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
               }
               if (!empty($profile2_firstname->$field_firstname)) {
                 $replacements[$original] = $sanitize ?
-                  check_plain(drupal_substr($profile2_firstname->{$field_firstname}['und']['0']['value'], 0, 1)) : drupal_substr($profile2_firstname->{$field_firstname}['und']['0']['value'], 0, 1);
+                  check_plain(drupal_substr($profile2_firstname->{$field_firstname}[LANGUAGE_NONE]['0']['value'], 0, 1)) : drupal_substr($profile2_firstname->{$field_firstname}[LANGUAGE_NONE]['0']['value'], 0, 1);
               }
               else {
                 $replacements[$original] = '';
@@ -141,7 +141,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
             else {
               if (!empty($account->$field_firstname)) {
                 $replacements[$original] = $sanitize ?
-                  check_plain(drupal_substr($account->{$field_firstname}['und']['0']['value'], 0, 1)) : drupal_substr($account->{$field_firstname}['und']['0']['value'], 0, 1);
+                  check_plain(drupal_substr($account->{$field_firstname}[LANGUAGE_NONE]['0']['value'], 0, 1)) : drupal_substr($account->{$field_firstname}[LANGUAGE_NONE]['0']['value'], 0, 1);
               }
               else {
                 $replacements[$original] = '';
@@ -157,7 +157,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
               }
               if (!empty($profile2_middlename->$field_middlename)) {
                 $replacements[$original] = $sanitize ?
-                  check_plain(drupal_substr($profile2_middlename->{$field_middlename}['und']['0']['value'], 0, 1)) : drupal_substr($profile2_middlename->{$field_middlename}['und']['0']['value'], 0, 1);
+                  check_plain(drupal_substr($profile2_middlename->{$field_middlename}[LANGUAGE_NONE]['0']['value'], 0, 1)) : drupal_substr($profile2_middlename->{$field_middlename}[LANGUAGE_NONE]['0']['value'], 0, 1);
               }
               else {
                 $replacements[$original] = '';
@@ -166,7 +166,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
             else {
               if (!empty($account->$field_middlename)) {
                 $replacements[$original] = $sanitize ?
-                  check_plain(drupal_substr($account->{$field_middlename}['und']['0']['value'], 0, 1)) : drupal_substr($account->{$field_middlename}['und']['0']['value'], 0, 1);
+                  check_plain(drupal_substr($account->{$field_middlename}[LANGUAGE_NONE]['0']['value'], 0, 1)) : drupal_substr($account->{$field_middlename}[LANGUAGE_NONE]['0']['value'], 0, 1);
               }
               else {
                 $replacements[$original] = '';
@@ -182,7 +182,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
               }
               if (!empty($profile2_lastname->$field_lastname)) {
                 $replacements[$original] = $sanitize ?
-                  check_plain(drupal_substr($profile2_lastname->{$field_lastname}['und']['0']['value'], 0, 1)) : drupal_substr($profile2_lastname->{$field_lastname}['und']['0']['value'], 0, 1);
+                  check_plain(drupal_substr($profile2_lastname->{$field_lastname}[LANGUAGE_NONE]['0']['value'], 0, 1)) : drupal_substr($profile2_lastname->{$field_lastname}[LANGUAGE_NONE]['0']['value'], 0, 1);
               }
               else {
                 $replacements[$original] = '';
@@ -191,7 +191,7 @@ function realname_registration_tokens($type, $tokens, array $data = array(), arr
             else {
               if (!empty($account->$field_lastname)) {
                 $replacements[$original] = $sanitize ?
-                  check_plain(drupal_substr($account->{$field_lastname}['und']['0']['value'], 0, 1)) : drupal_substr($account->{$field_lastname}['und']['0']['value'], 0, 1);
+                  check_plain(drupal_substr($account->{$field_lastname}[LANGUAGE_NONE]['0']['value'], 0, 1)) : drupal_substr($account->{$field_lastname}[LANGUAGE_NONE]['0']['value'], 0, 1);
               }
               else {
                 $replacements[$original] = '';
