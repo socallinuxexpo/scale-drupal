@@ -1,3 +1,6 @@
+.dropdown-backdrop {
+  position: static;
+}
 #site-logo {
   margin-bottom: 2em;
 }

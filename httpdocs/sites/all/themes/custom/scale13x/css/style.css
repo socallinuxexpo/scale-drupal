@@ -8218,6 +8218,9 @@ div.password-suggestions ul {
     font-size: 24px;
   }
 }
+.dropdown-backdrop {
+  position: static;
+}
 #site-logo {
   margin-bottom: 2em;
 }
