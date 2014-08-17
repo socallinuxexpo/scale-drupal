@@ -45,15 +45,3 @@ function scale13x_preprocess_page(&$variables) {
 
 }
 
-/**
- * Implements hook_form_alter().
- */
-function scale13x_form_alter(&$form, $form_state, $form_id) {
-  dpm($form_id);
-  /*
-  switch ($form_id) {
-    case '':
-  }
-*/
-}
-
