@@ -1,12 +1,13 @@
 name = Speaker
 core = 7.x
 package = SCALE
-version = 7.x-1.5
+version = 7.x-1.6
 project = scale_speaker
 dependencies[] = link
 dependencies[] = scale_common
 dependencies[] = strongarm
 dependencies[] = user_reference
+dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0

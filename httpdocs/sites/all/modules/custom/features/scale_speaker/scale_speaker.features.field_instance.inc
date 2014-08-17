@@ -132,7 +132,7 @@ function scale_speaker_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '<em>OPTIONAL: </em>SCALE is often occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.',
+    'description' => '<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -244,7 +244,7 @@ function scale_speaker_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '<em>OPTIONAL: </em>SCALE is often occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.',
+    'description' => '<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -661,7 +661,7 @@ function scale_speaker_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('<em>OPTIONAL: </em>SCALE is often occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.');
+  t('<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.');
   t('<p><big>I ACCEPT THAT IF OFFERED TO PARTICIPATE AS A SPEAKER AT THE EVENT, I UNDERSTAND AND AGREE THAT:</big>
 
 <p>* By participating as a Speaker at the Event, I consent to the terms and conditions of this Agreement And Release.
