@@ -12,13 +12,16 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       $last_item = array_shift($form['field_age'][LANGUAGE_NONE]['#options']);
       $form['field_age'][LANGUAGE_NONE]['#options']['_none'] = 'Decline to State';
       break;
-  }
-      /*
-  switch ($form_id) {
+
     case 'user_register_form':
+      // Changer Gender N/A option.
+      $last_item = array_shift($form['field_gender'][LANGUAGE_NONE]['#options']);
+      $form['field_gender'][LANGUAGE_NONE]['#options']['_none'] = 'Decline to State';
+      // Changer Age N/A option.
+      $last_item = array_shift($form['field_age'][LANGUAGE_NONE]['#options']);
+      $form['field_age'][LANGUAGE_NONE]['#options']['_none'] = 'Decline to State';
       break;
   }
-*/
 }
 
 /**
