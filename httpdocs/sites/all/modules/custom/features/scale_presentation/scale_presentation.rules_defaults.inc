@@ -12,6 +12,7 @@ function scale_presentation_default_rules_configuration() {
   $items['rules_notification_of_new_presentation'] = entity_import('rules_config', '{ "rules_notification_of_new_presentation" : {
       "LABEL" : "Notification of new presentation",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
       "ON" : { "node_insert" : [] },
       "IF" : [
@@ -23,10 +24,10 @@ function scale_presentation_default_rules_configuration() {
       ],
       "DO" : [
         { "mail" : {
-            "to" : "kapadia@socallinuxexpo.org,rgolan@superconcentrated.com",
+            "to" : "kapadia@socallinuxexpo.org,rgolan+scale13x@superconcentrated.com",
             "subject" : "A new [site:name] presentation, [node:title], has been created.",
             "message" : "[node:author] has submitted a presentation, [node:title], for [site:name].\\r\\n\\r\\n[node:url]",
-            "from" : "rgolan+scale11x@superconcentrated.com",
+            "from" : "rgolan+scale13x@superconcentrated.com",
             "language" : [ "" ]
           }
         }

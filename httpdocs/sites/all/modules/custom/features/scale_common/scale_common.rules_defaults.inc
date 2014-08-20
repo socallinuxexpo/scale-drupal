@@ -12,6 +12,7 @@ function scale_common_default_rules_configuration() {
   $items['rules_re'] = entity_import('rules_config', '{ "rules_re" : {
       "LABEL" : "Ready for approval email",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
       "ON" : { "node_insert" : [], "node_update" : [] },
       "IF" : [

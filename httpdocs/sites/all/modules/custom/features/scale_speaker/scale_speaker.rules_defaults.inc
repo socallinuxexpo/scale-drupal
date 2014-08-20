@@ -12,6 +12,7 @@ function scale_speaker_default_rules_configuration() {
   $items['rules_grant_speaker_role'] = entity_import('rules_config', '{ "rules_grant_speaker_role" : {
       "LABEL" : "Grant speaker role",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
       "ON" : { "user_insert" : [], "user_update" : [] },
       "IF" : [
@@ -25,6 +26,7 @@ function scale_speaker_default_rules_configuration() {
   $items['rules_revoke_speaker_role'] = entity_import('rules_config', '{ "rules_revoke_speaker_role" : {
       "LABEL" : "Revoke speaker role",
       "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
       "ON" : { "user_update" : [] },
       "IF" : [
