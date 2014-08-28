@@ -219,7 +219,7 @@ function scale_speaker_field_default_field_instances() {
 
 <p>* By participating as a Speaker at the Event, I consent to the terms and conditions of this Agreement And Release.
 
-<p>* I will not be paid for my services as Speaker, nor will my expenses be reimbursed, unless I have a separate  compensation or travel grant agreement with Linux Expo of Southern California regarding the Event. No fees will be paid on account of any reproduction or distribution of any materials that include any aspect of my participation in the Event.
+<p>* I will not be paid by the Linux Expo of Southern California for my services as Speaker, nor will my expenses be reimbursed by Linux Expo of Southern California unless I have a separate compensation or travel grant agreement regarding the Event. No fees will be paid on account of any reproduction or distribution of any materials that include any aspect of my participation in the Event.
 
 <p>* I will meet all deadlines for producing slides, materials, materials and other requirements.
 
@@ -599,7 +599,7 @@ function scale_speaker_field_default_field_instances() {
 
 <p>* By participating as a Speaker at the Event, I consent to the terms and conditions of this Agreement And Release.
 
-<p>* I will not be paid for my services as Speaker, nor will my expenses be reimbursed, unless I have a separate  compensation or travel grant agreement with Linux Expo of Southern California regarding the Event. No fees will be paid on account of any reproduction or distribution of any materials that include any aspect of my participation in the Event.
+<p>* I will not be paid by the Linux Expo of Southern California for my services as Speaker, nor will my expenses be reimbursed by Linux Expo of Southern California unless I have a separate compensation or travel grant agreement regarding the Event. No fees will be paid on account of any reproduction or distribution of any materials that include any aspect of my participation in the Event.
 
 <p>* I will meet all deadlines for producing slides, materials, materials and other requirements.
 

@@ -1,7 +1,7 @@
 name = Speaker
 core = 7.x
 package = SCALE
-version = 7.x-1.11
+version = 7.x-1.12
 project = scale_speaker
 dependencies[] = link
 dependencies[] = scale_common
