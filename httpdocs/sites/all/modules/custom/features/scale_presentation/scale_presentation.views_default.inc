@@ -489,7 +489,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
-    504 => '504',
+    885 => '885',
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';

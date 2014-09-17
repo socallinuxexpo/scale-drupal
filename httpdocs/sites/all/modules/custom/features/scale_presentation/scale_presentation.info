@@ -1,7 +1,7 @@
 name = Presentation
 core = 7.x
 package = SCALE
-version = 7.x-1.13
+version = 7.x-1.14
 project = scale_presentation
 dependencies[] = date
 dependencies[] = entity
