@@ -40,7 +40,7 @@ function scale_common_default_rules_configuration() {
             "language" : [ "" ]
           }
         },
-        { "drupal_message" : { "message" : "An email has been sent asking for review of this Sponsor\\/Exhibitor." } }
+        { "drupal_message" : { "message" : "An email has been sent asking for review of this content." } }
       ]
     }
   }');
