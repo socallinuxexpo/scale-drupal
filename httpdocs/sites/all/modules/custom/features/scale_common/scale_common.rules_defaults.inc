@@ -34,8 +34,8 @@ function scale_common_default_rules_configuration() {
       "DO" : [
         { "mail" : {
             "to" : "larry@socallinuxexpo.org",
-            "subject" : "A SCALE 11x Sponsor\\/Exhibitor, [node:title], is ready for approval",
-            "message" : "Please visit [node:url] to review the submitted Sponsor\\/Exhibitor. Once you think it\\u0027s ready for publication, please check the published box.",
+            "subject" : "A [site:slogan] Sponsor\\/Exhibitor or Blog Post, [node:title], is ready for approval",
+            "message" : "Please visit [node:url] to review the submitted content. Once you think it\\u0027s ready for publication, please check the published box.",
             "from" : "rgolan@superconcentrated.com",
             "language" : [ "" ]
           }
