@@ -173,7 +173,7 @@ function scale_sponsor_views_default_views() {
   $handler->display->display_options['arguments']['field_scale_event_tid']['ui_name'] = 'scale event';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
   $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['format'] = 'default_summary';
@@ -259,6 +259,7 @@ function scale_sponsor_views_default_views() {
   $handler = $view->new_display('page', 'Exhibitors 11x', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Exhibitors';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Sponsors page';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -290,6 +291,7 @@ function scale_sponsor_views_default_views() {
   $handler = $view->new_display('page', 'Exhibitors 12x', 'page_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Exhibitors';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Sponsors page';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -321,6 +323,7 @@ function scale_sponsor_views_default_views() {
   $handler = $view->new_display('page', 'Exhibitors 13x', 'page_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Exhibitors';
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['display_description'] = 'Sponsors page';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -347,6 +350,37 @@ function scale_sponsor_views_default_views() {
     'Exhibitor' => 'Exhibitor',
   );
   $handler->display->display_options['path'] = 'scale13x/exhibitors';
+
+  /* Display: multi-year */
+  $handler = $view->new_display('page', 'multi-year', 'page_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Exhibitors';
+  $handler->display->display_options['display_description'] = 'Sponsors page';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'sponsor' => 'sponsor',
+  );
+  /* Filter criterion: Content: Exhibitor, Sponsor (field_exhibitor_sponsor) */
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['id'] = 'field_exhibitor_sponsor_value';
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['table'] = 'field_data_field_exhibitor_sponsor';
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['field'] = 'field_exhibitor_sponsor_value';
+  $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['value'] = array(
+    'Exhibitor' => 'Exhibitor',
+  );
+  $handler->display->display_options['path'] = 'scale/%/exhibitors';
   $export['exhibitors'] = $view;
 
   $view = new view();
@@ -402,7 +436,7 @@ function scale_sponsor_views_default_views() {
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
   $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['tid']['default_argument_options']['index'] = '0';
+  $handler->display->display_options['arguments']['tid']['default_argument_options']['index'] = '1';
   $handler->display->display_options['arguments']['tid']['default_argument_options']['use_alias'] = TRUE;
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
@@ -2812,9 +2846,9 @@ function scale_sponsor_views_default_views() {
   $view = new view();
   $view->name = 'sponsors_13x';
   $view->description = 'Sponsors page';
-  $view->tag = 'default';
+  $view->tag = 'multi-year';
   $view->base_table = 'node';
-  $view->human_name = 'Sponsors 13x';
+  $view->human_name = 'Sponsors multi-year';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -2896,7 +2930,7 @@ function scale_sponsor_views_default_views() {
   $handler->display->display_options['arguments']['field_scale_event_tid']['ui_name'] = 'scale event';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
   $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['format'] = 'default_summary';
@@ -2921,7 +2955,7 @@ function scale_sponsor_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = TRUE;
-  $handler->display->display_options['path'] = 'scale13x/sponsors';
+  $handler->display->display_options['path'] = 'scale/%/sponsors';
 
   /* Display: Diamond */
   $handler = $view->new_display('attachment', 'Diamond', 'attachment_1');
@@ -3612,7 +3646,7 @@ function scale_sponsor_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  $handler->display->display_options['path'] = 'scale12x/sponsors.rss';
+  $handler->display->display_options['path'] = 'scale/%/sponsors.rss';
 
   /* Display: Exhibitor Feed */
   $handler = $view->new_display('feed', 'Exhibitor Feed', 'feed_2');
@@ -3647,7 +3681,7 @@ function scale_sponsor_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'sponsor' => 'sponsor',
   );
-  $handler->display->display_options['path'] = 'scale12x/exhibitors.rss';
+  $handler->display->display_options['path'] = 'scale/%/exhibitors.rss';
   $export['sponsors_13x'] = $view;
 
   return $export;
