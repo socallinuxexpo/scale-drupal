@@ -166,6 +166,16 @@
 #speaker-page .views-field-field-biography {
   margin-top: 20px;
 }
+#speaker-individual .views-field {
+  margin-bottom: 20px;
+}
+#speaker-individual .field-name-field-speaker-photo {
+  float: left;
+  margin-right: 20px;
+}
+#speaker-individual .views-field-field-job-title {
+  margin-bottom: 0;
+}
 /* Presentations List Page */
 .view-presentation-page .views-row {
   margin-bottom: 2em;
