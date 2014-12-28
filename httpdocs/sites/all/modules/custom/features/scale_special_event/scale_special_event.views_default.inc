@@ -77,7 +77,7 @@ function scale_special_event_views_default_views() {
   $handler->display->display_options['arguments']['field_scale_event_tid']['ui_name'] = 'scale event';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
   $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['format'] = 'default_summary';
@@ -103,18 +103,10 @@ function scale_special_event_views_default_views() {
     'special_event' => 'special_event',
   );
 
-  /* Display: Special events 11x */
-  $handler = $view->new_display('page', 'Special events 11x', 'page');
+  /* Display: Special events multi-year */
+  $handler = $view->new_display('page', 'Special events multi-year', 'page_1');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'scale11x/events';
-  $handler->display->display_options['menu']['title'] = 'Special Events';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['context'] = 0;
-
-  /* Display: Special events 12x */
-  $handler = $view->new_display('page', 'Special events 12x', 'page_1');
-  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'scale12x/events';
+  $handler->display->display_options['path'] = 'scale/%/events';
   $handler->display->display_options['menu']['title'] = 'Special Events';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
