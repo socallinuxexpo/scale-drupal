@@ -67,9 +67,10 @@ function _scale_user_view_access($account) {
  **/
 function _scale_current_speaker($uid) {
   // Get the SCALE event tid from the path alias
+  // Now in the 2nd parameter position
   $path = request_uri();
-  $path = trim($path, $charlist = "/");
-  $scale_event = strstr($path, '/', $before_needle = TRUE);
+  $items = explode('/', $path);
+  $scale_event = $items[2];
   $scale_event_tid = array_shift(taxonomy_get_term_by_name($scale_event))->tid;
 
   // Find out if this speaker is has an accepted presentation for this year.
