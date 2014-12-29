@@ -231,7 +231,7 @@ function scale_presentation_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_presentation_link',
     'field_permissions' => array(
-      'type' => 0,
+      'type' => 2,
     ),
     'foreign keys' => array(),
     'indexes' => array(),
@@ -328,7 +328,7 @@ function scale_presentation_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_presentation_to_upload',
     'field_permissions' => array(
-      'type' => 0,
+      'type' => 2,
     ),
     'foreign keys' => array(
       'fid' => array(
