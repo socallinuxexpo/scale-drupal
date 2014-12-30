@@ -1715,8 +1715,45 @@ function scale_presentation_views_default_views() {
     'presentation' => 'presentation',
   );
 
-  /* Display: Content pane */
-  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  /* Display: Accepted */
+  $handler = $view->new_display('panel_pane', 'Accepted', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'field_scale_event_tid' => array(
+      'type' => 'none',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'scale event',
+    ),
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Presentation ID',
+    ),
+  );
+
+  /* Display: Not Accepted */
+  $handler = $view->new_display('panel_pane', 'Not Accepted', 'panel_pane_2');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '0';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'presentation' => 'presentation',
+  );
   $handler->display->display_options['argument_input'] = array(
     'field_scale_event_tid' => array(
       'type' => 'none',
