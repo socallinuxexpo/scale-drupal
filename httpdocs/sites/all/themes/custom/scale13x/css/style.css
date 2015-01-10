@@ -8456,6 +8456,12 @@ div.password-suggestions ul {
 .view-speaker-page .views-field-field-topic {
   margin: auto auto 20px 20px;
 }
+/* Special Events */
+/*Event list*/
+/*Event page*/
+.node-special-event .field {
+  margin-bottom: 20px;
+}
 /* Schedule (Calendar) */
 .schedule_11x {
   /*background-color: #AAA;*/
