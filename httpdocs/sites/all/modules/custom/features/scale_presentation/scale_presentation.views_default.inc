@@ -1175,6 +1175,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_speaker_photo']['field'] = 'field_speaker_photo';
   $handler->display->display_options['fields']['field_speaker_photo']['relationship'] = 'field_speaker_uid';
   $handler->display->display_options['fields']['field_speaker_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_speaker_photo']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_speaker_photo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speaker_photo']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_speaker_photo']['click_sort_column'] = 'fid';
@@ -1186,13 +1187,11 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Content: Speaker */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
-  $handler->display->display_options['fields']['field_speaker']['label'] = '';
   $handler->display->display_options['fields']['field_speaker']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
   /* Field: User: E-mail */
@@ -1222,7 +1221,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_short_abstract']['id'] = 'field_short_abstract';
   $handler->display->display_options['fields']['field_short_abstract']['table'] = 'field_data_field_short_abstract';
   $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
-  $handler->display->display_options['fields']['field_short_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_short_abstract']['label'] = 'Short Abstract';
   $handler->display->display_options['fields']['field_short_abstract']['element_label_colon'] = FALSE;
   /* Field: Content: Published */
   $handler->display->display_options['fields']['status']['id'] = 'status';
@@ -1230,6 +1229,10 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['label'] = 'Accepted';
   $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_presentation_status']['id'] = 'field_presentation_status';
+  $handler->display->display_options['fields']['field_presentation_status']['table'] = 'field_data_field_presentation_status';
+  $handler->display->display_options['fields']['field_presentation_status']['field'] = 'field_presentation_status';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: scale event */
   $handler->display->display_options['arguments']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
