@@ -1,7 +1,7 @@
 name = Speaker
 core = 7.x
 package = SCALE
-version = 7.x-1.14
+version = 7.x-1.15
 project = scale_speaker
 dependencies[] = link
 dependencies[] = page_manager
@@ -48,4 +48,4 @@ features[views_view][] = speaker_individual
 features[views_view][] = speaker_list
 features[views_view][] = speaker_page
 features_exclude[dependencies][views] = views
-mtime = 1419230831
+mtime = 1419793300

@@ -8401,6 +8401,11 @@ div.password-suggestions ul {
   margin-bottom: 2em;
   clear: both;
 }
+.view-presentation-page .views-row .multi-speaker {
+  float: right;
+  margin-top: -2em;
+  margin-bottom: 2em;
+}
 .view-presentation-page .views-field {
   margin-bottom: 12px;
 }

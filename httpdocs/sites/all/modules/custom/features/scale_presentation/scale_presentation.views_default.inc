@@ -1391,6 +1391,8 @@ function scale_presentation_views_default_views() {
   /* Display: speaker photos */
   $handler = $view->new_display('block', 'speaker photos', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'multi-speaker';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Content: Speaker (field_speaker) */
   $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
@@ -1449,6 +1451,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['view']['ui_name'] = 'Photos';
   $handler->display->display_options['fields']['view']['label'] = '';
   $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['view']['view'] = 'presentation_page';
   $handler->display->display_options['fields']['view']['display'] = 'block_1';
   $handler->display->display_options['fields']['view']['arguments'] = '[%nid]';
