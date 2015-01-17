@@ -1239,7 +1239,8 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['arguments']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['arguments']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['arguments']['field_scale_event_tid']['ui_name'] = 'scale event';
-  $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['exception']['value'] = '';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
@@ -1506,6 +1507,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['arguments']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['arguments']['field_scale_event_tid']['ui_name'] = 'scale event';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['exception']['value'] = '';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
