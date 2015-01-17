@@ -1,0 +1,14 @@
+name = Taxonomy
+core = 7.x
+package = SCALE
+version = 7.x-0.1
+project = scale_taxonomy
+dependencies[] = page_manager
+dependencies[] = views
+dependencies[] = views_content
+features[ctools][] = page_manager:pages_default:1
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[page_manager_handlers][] = term_view_panel_context
+features[views_view][] = term_list
+features_exclude[dependencies][ctools] = ctools

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Taxonomy feature.
+ */
+
+include_once 'scale_taxonomy.features.inc';
