@@ -245,28 +245,35 @@ body {
 }
 
 /* Speakers List Page */
-.view-speaker-page {
-  .views-row {
-    margin-bottom: 2em;
-    clear: both;
-    /*min-height: 210px;*/
-    padding-top: 2em;
+.view-display-id-speakers_list {
+  & > .view-content {
+    &> .views-row {
+      margin-bottom: 2em;
+      clear: both;
+      padding-top: 2em;
+    }
+    .views-row-first {
+      padding-top: 0;
+    }
   }
-  .views-row-first {
-    padding-top: 0;
+  .views-field-realname {
+    font-size: 2em;
+    a:hover {
+      text-decoration: none;
+    }
+  }
+  .views-field-field-speaker-photo img {
+    float: left;
+    margin-right: 20px;
   }
   .views-field {
     margin-bottom: 12px;
   }
+  .presentation-title {
+    line-height: 1.2em;
+  }
   .views-field-field-job-title {
     margin-bottom: 0;
-  }
-  .views-field-field-speaker-photo {
-    float: left;
-    margin-right: 20px;
-  }
-  .views-field-realname {
-    font-size: 2em;
   }
   .views-field-title {
     font-size: 1em;
