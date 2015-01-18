@@ -1,7 +1,7 @@
 name = Schedule
 core = 7.x
 package = SCALE
-version = 7.x-1.4
+version = 7.x-1.5
 project = scale_schedule
 dependencies[] = calendar
 dependencies[] = date_views
@@ -26,4 +26,4 @@ features[views_view][] = room_schedule
 features[views_view][] = room_schedule_legend
 features[views_view][] = schedule_export
 features_exclude[dependencies][ctools] = ctools
-mtime = 1408230748
+mtime = 1421537884
