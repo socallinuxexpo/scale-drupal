@@ -740,7 +740,7 @@ function scale_schedule_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'track-colors';
+  $handler->display->display_options['path'] = 'scale/%/track-colors';
   $export['track_colors'] = $view;
 
   return $export;
