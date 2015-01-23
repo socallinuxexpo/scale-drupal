@@ -5668,7 +5668,7 @@ scale/13x/schedule/2015-02-22',
     $pane->pid = 'new-141';
     $pane->panel = 'middle';
     $pane->type = 'block';
-    $pane->subtype = 'menu_block-4';
+    $pane->subtype = 'menu-menu-schedule-13x';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
