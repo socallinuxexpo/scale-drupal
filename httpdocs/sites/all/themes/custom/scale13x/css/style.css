@@ -8591,6 +8591,8 @@ div.password-suggestions ul {
   height: 2200px;
   /* Track colors */
 
+  /* Ada Initiative Ally Workshop */
+
   /* Beginners Tutorials */
 
   /* Big Data */
@@ -8599,13 +8601,17 @@ div.password-suggestions ul {
 
   /* Break */
 
-  /* Cloud and Virtualization */
+  /* Cloud */
 
   /* Coder's Corner */
+
+  /* Container and Virtualization */
 
   /* Developer */
 
   /* DevOps */
+
+  /* Embedded */
 
   /* Evening Entertainment */
 
@@ -8626,6 +8632,8 @@ div.password-suggestions ul {
   /* Mentoring */
 
   /* MySQL */
+
+  /* NodeStack */
 
   /* Open Source Software in Education */
 
@@ -8664,6 +8672,13 @@ div.password-suggestions ul {
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track .contents * {
   margin-left: 0px;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1205 {
+  background-color: #ffa200;
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1205 a {
+  color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 {
   background-color: #3353AF;
@@ -8704,6 +8719,12 @@ div.password-suggestions ul {
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-879 a {
   color: #000;
 }
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1197 {
+  background-color: #ffa200;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1197 a {
+  color: #000;
+}
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-9 {
   background-color: #D65C09;
 }
@@ -8714,6 +8735,12 @@ div.password-suggestions ul {
   background-color: #565448;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1201 {
+  background-color: #004A4A;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1201 a {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-501 {
@@ -8775,6 +8802,12 @@ div.password-suggestions ul {
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 a {
   color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-434 {
+  background-color: #00ffd8;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-434 a {
+  color: #000;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 {
   background-color: #72B20F;
