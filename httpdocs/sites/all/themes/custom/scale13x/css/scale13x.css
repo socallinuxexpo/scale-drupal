@@ -656,6 +656,8 @@
   line-height: 33px;
   /* Track colors */
 
+  /* Ada Initiative Ally Workshop */
+
   /* Beginners Tutorials */
 
   /* Big Data */
@@ -668,9 +670,13 @@
 
   /* Coder's Corner */
 
+  /* Container and Virtualization */
+
   /* Developer */
 
   /* DevOps */
+
+  /* Embedded */
 
   /* Evening Entertainment */
 
@@ -693,6 +699,8 @@
   /* MySQL */
 
   /* Next Generation */
+
+  /* NodeStack */
 
   /* Open Source Software in Education */
 
@@ -720,6 +728,10 @@
 .legend-item .track {
   padding: 7px;
 }
+.legend-item .track-1205 {
+  background-color: #ffa200;
+  color: #FFF;
+}
 .legend-item .track-6 {
   background-color: #3353AF;
   color: #FFF;
@@ -744,12 +756,20 @@
   background-color: #EFCA52;
   color: #000;
 }
+.legend-item .track-1197 {
+  background-color: #ffa200;
+  color: #000;
+}
 .legend-item .track-9 {
   background-color: #D65C09;
   color: #FFF;
 }
 .legend-item .track-10 {
   background-color: #565448;
+  color: #FFF;
+}
+.legend-item .track-1201 {
+  background-color: #004A4A;
   color: #FFF;
 }
 .legend-item .track-501 {
@@ -794,6 +814,10 @@
 }
 .legend-item .track-506 {
   background-color: #96F74B;
+  color: #000;
+}
+.legend-item .track-434 {
+  background-color: #00ffd8;
   color: #000;
 }
 .legend-item .track-17 {
