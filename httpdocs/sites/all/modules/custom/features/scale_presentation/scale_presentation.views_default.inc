@@ -24,7 +24,7 @@ function scale_presentation_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Electronic Sign';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -120,7 +120,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['arguments']['field_scale_event_tid']['ui_name'] = 'scale event';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
   $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['format'] = 'default_summary';
@@ -160,11 +160,13 @@ function scale_presentation_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'electronic-sign';
 
   /* Display: Data export 11x */
   $handler = $view->new_display('views_data_export', 'Data export 11x', 'views_data_export_1');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -176,6 +178,7 @@ function scale_presentation_views_default_views() {
 
   /* Display: Data export 12x */
   $handler = $view->new_display('views_data_export', 'Data export 12x', 'views_data_export_2');
+  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -184,6 +187,17 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['path'] = 'scale12x/sign.xml';
+
+  /* Display: Data export multiyear */
+  $handler = $view->new_display('views_data_export', 'Data export multiyear', 'views_data_export_3');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xml';
+  $handler->display->display_options['style_options']['provide_file'] = 0;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['transform'] = 1;
+  $handler->display->display_options['path'] = 'scale/%/sign.xml';
   $export['electronic_sign'] = $view;
 
   $view = new view();
