@@ -2748,24 +2748,7 @@ scale12x/blah',
   $page->path = 'scale/13x/schedule/!date';
   $page->access = array(
     'logic' => 'and',
-    'plugins' => array(
-      0 => array(
-        'name' => 'role',
-        'settings' => array(
-          'rids' => array(
-            0 => 4,
-            1 => 9,
-            2 => 10,
-            3 => 8,
-            4 => 6,
-            5 => 7,
-            6 => 3,
-          ),
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
+    'plugins' => array(),
   );
   $page->menu = array(
     'type' => 'none',
@@ -5661,7 +5644,7 @@ scale/13x/schedule/2015-02-22',
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Schedules';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
