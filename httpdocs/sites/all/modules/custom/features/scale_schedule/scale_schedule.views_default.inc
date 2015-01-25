@@ -273,7 +273,7 @@ function scale_schedule_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_speaker]';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = '!3/speakers/[field_speaker]';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'scale/!3/speakers/[field_speaker]';
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -321,7 +321,7 @@ function scale_schedule_views_default_views() {
   $handler->display->display_options['arguments']['field_scale_event_tid']['ui_name'] = 'scale event';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
-  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
   $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
   $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['format'] = 'default_summary';
