@@ -3839,7 +3839,7 @@ scale/13x/schedule/2015-02-21',
     ),
   );
   $display->cache = array();
-  $display->title = 'Saturday, February 22, 2014';
+  $display->title = 'Saturday, February 21, 2015';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -4808,7 +4808,7 @@ scale/13x/schedule/2015-02-22',
     ),
   );
   $display->cache = array();
-  $display->title = 'Sunday, February 23, 2014';
+  $display->title = 'Sunday, February 22, 2015';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
