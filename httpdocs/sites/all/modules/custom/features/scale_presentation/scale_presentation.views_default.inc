@@ -1683,6 +1683,13 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_audio_video']['table'] = 'field_data_field_audio_video';
   $handler->display->display_options['fields']['field_audio_video']['field'] = 'field_audio_video';
   $handler->display->display_options['fields']['field_audio_video']['hide_empty'] = TRUE;
+  /* Field: Content: Overflow room */
+  $handler->display->display_options['fields']['field_overflow_room']['id'] = 'field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['table'] = 'field_data_field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['field'] = 'field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_overflow_room']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_overflow_room']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
