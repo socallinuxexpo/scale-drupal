@@ -8320,14 +8320,17 @@ div.password-suggestions ul {
   padding-left: 0;
 }
 /* Featured Speakers block */
-#block-views-featured-presentations-block-1 {
+#block-views-featured-presentations-block-1,
+#block-views-featured-presentations-block-2 {
   margin-bottom: 2em;
 }
-#block-views-featured-presentations-block-1 .views-row {
+#block-views-featured-presentations-block-1 .views-row,
+#block-views-featured-presentations-block-2 .views-row {
   float: left;
   width: 33%;
 }
-#block-views-featured-presentations-block-1 .views-field-title {
+#block-views-featured-presentations-block-1 .views-field-title,
+#block-views-featured-presentations-block-2 .views-field-title {
   margin-bottom: 0.5em;
 }
 /* Presentation pages */

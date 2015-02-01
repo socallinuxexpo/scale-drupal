@@ -282,6 +282,23 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: SCALE event (field_scale_event) */
+  $handler->display->display_options['arguments']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['vocabularies'] = array(
+    'scale_event' => 'scale_event',
+  );
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['type'] = 'convert';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -336,6 +353,25 @@ function scale_presentation_views_default_views() {
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
+
+  /* Display: Multiyear */
+  $handler = $view->new_display('block', 'Multiyear', 'block_2');
+  $handler->display->display_options['display_description'] = 'featured speakers for specified SCALE event';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'presentation' => 'presentation',
+  );
+  /* Filter criterion: Content: Sticky */
+  $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
+  $handler->display->display_options['filters']['sticky']['table'] = 'node';
+  $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
+  $handler->display->display_options['filters']['sticky']['value'] = '1';
   $export['featured_presentations'] = $view;
 
   $view = new view();
