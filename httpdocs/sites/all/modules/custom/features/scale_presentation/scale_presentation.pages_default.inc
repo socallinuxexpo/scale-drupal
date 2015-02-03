@@ -93,7 +93,7 @@ function scale_presentation_default_page_manager_handlers() {
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'presentation_single-panel_pane_2';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array(
       'plugins' => array(
         0 => array(

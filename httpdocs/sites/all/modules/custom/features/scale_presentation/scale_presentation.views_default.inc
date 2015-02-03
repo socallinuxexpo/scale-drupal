@@ -1705,7 +1705,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
   $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
   $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
-  $handler->display->display_options['fields']['field_time']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_time']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_time']['settings'] = array(
     'format_type' => 'long',
