@@ -3271,7 +3271,7 @@ scale/13x/schedule/friday',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -3503,7 +3503,7 @@ scale/13x/schedule/friday',
       'url' => '',
       'display' => 'page_3',
       'override_title' => 1,
-      'override_title_text' => 'Plaza B',
+      'override_title_text' => 'Plaza BC',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -3536,7 +3536,7 @@ scale/13x/schedule/friday',
       'url' => '',
       'display' => 'page_3',
       'override_title' => 1,
-      'override_title_text' => 'Plaza CD',
+      'override_title_text' => 'Plaza D',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -4207,7 +4207,7 @@ scale/13x/schedule/2015-02-21',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -4472,7 +4472,7 @@ scale/13x/schedule/2015-02-21',
       'url' => '',
       'display' => 'page_3',
       'override_title' => 1,
-      'override_title_text' => 'Plaza B',
+      'override_title_text' => 'Plaza BC',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -4505,7 +4505,7 @@ scale/13x/schedule/2015-02-21',
       'url' => '',
       'display' => 'page_3',
       'override_title' => 1,
-      'override_title_text' => 'Plaza CD',
+      'override_title_text' => 'Plaza D',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -5176,7 +5176,7 @@ scale/13x/schedule/2015-02-22',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -5408,7 +5408,7 @@ scale/13x/schedule/2015-02-22',
       'url' => '',
       'display' => 'page_3',
       'override_title' => 1,
-      'override_title_text' => 'Plaza B',
+      'override_title_text' => 'Plaza BC',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -5441,7 +5441,7 @@ scale/13x/schedule/2015-02-22',
       'url' => '',
       'display' => 'page_3',
       'override_title' => 1,
-      'override_title_text' => 'Plaza CD',
+      'override_title_text' => 'Plaza D',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -6169,7 +6169,7 @@ scale/13x/schedule/thursday',
     $pane->panel = 'center';
     $pane->type = 'views';
     $pane->subtype = 'room_schedule';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'override_pager_settings' => 0,
@@ -6366,6 +6366,11 @@ scale/13x/schedule/thursday',
       'display' => 'page_3',
       'override_title' => 1,
       'override_title_text' => 'San Lorenzo F',
+      'context' => array(
+        0 => '',
+        1 => '',
+        2 => '',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -6401,7 +6406,7 @@ scale/13x/schedule/thursday',
       'url' => '',
       'display' => 'page_3',
       'override_title' => 1,
-      'override_title_text' => 'Plaza B',
+      'override_title_text' => 'Plaza BC',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -6434,7 +6439,7 @@ scale/13x/schedule/thursday',
       'url' => '',
       'display' => 'page_3',
       'override_title' => 1,
-      'override_title_text' => 'Plaza CD',
+      'override_title_text' => 'Plaza D',
     );
     $pane->cache = array();
     $pane->style = array(
