@@ -376,6 +376,8 @@
 
   /* Ada Initiative Ally Workshop */
 
+  /* Apache Bigtop */
+
   /* Beginners Tutorials */
 
   /* Big Data */
@@ -422,6 +424,8 @@
 
   /* OpenNMS */
 
+  /* openSUSE */
+
   /* PostgreSQL */
 
   /* Puppet */
@@ -461,6 +465,13 @@
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1205 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1213 {
+  background-color: #0A7EF2;
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1213 a {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 {
@@ -604,6 +615,12 @@
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-436 a {
   color: #FFF;
 }
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1210 {
+  background-color: #669900;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1210 a {
+  color: #000;
+}
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-18 {
   background-color: #0AACA0;
 }
@@ -694,6 +711,8 @@
 
   /* Ada Initiative Ally Workshop */
 
+  /* Apache Bigtop */
+
   /* Beginners Tutorials */
 
   /* Big Data */
@@ -742,6 +761,8 @@
 
   /* OpenNMS */
 
+  /* openSUSE */
+
   /* PostgreSQL */
 
   /* Puppet */
@@ -766,6 +787,10 @@
 }
 .legend-item .track-1205 {
   background-color: #ffa200;
+  color: #FFF;
+}
+.legend-item .track-1213 {
+  background-color: #0A7EF2;
   color: #FFF;
 }
 .legend-item .track-6 {
@@ -863,6 +888,10 @@
 .legend-item .track-436 {
   background-color: #17AA17;
   color: #FFF;
+}
+.legend-item .track-1210 {
+  background-color: #669900;
+  color: #000;
 }
 .legend-item .track-18 {
   background-color: #0AACA0;
