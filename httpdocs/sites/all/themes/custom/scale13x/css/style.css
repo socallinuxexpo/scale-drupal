@@ -8616,6 +8616,8 @@ div.password-suggestions ul {
 
   /* DevOps */
 
+  /* DrupalCamp */
+
   /* Embedded */
 
   /* Evening Entertainment */
@@ -8688,7 +8690,7 @@ div.password-suggestions ul {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1213 {
-  background-color: #0A7EF2;
+  background-color: #2C9FF5;
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1213 a {
@@ -8749,6 +8751,12 @@ div.password-suggestions ul {
   background-color: #565448;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-10 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1221 {
+  background-color: #0678be;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1221 a {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1201 {
@@ -8951,6 +8959,8 @@ div.password-suggestions ul {
 
   /* DevOps */
 
+  /* DrupalCamp */
+
   /* Embedded */
 
   /* Evening Entertainment */
@@ -9010,7 +9020,7 @@ div.password-suggestions ul {
   color: #FFF;
 }
 .legend-item .track-1213 {
-  background-color: #0A7EF2;
+  background-color: #2C9FF5;
   color: #FFF;
 }
 .legend-item .track-6 {
@@ -9047,6 +9057,10 @@ div.password-suggestions ul {
 }
 .legend-item .track-10 {
   background-color: #565448;
+  color: #FFF;
+}
+.legend-item .track-1221 {
+  background-color: #0678be;
   color: #FFF;
 }
 .legend-item .track-1201 {
