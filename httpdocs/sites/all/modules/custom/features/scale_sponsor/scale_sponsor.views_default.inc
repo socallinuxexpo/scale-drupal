@@ -370,6 +370,17 @@ function scale_sponsor_views_default_views() {
   $handler->display->display_options['title'] = 'Exhibitors';
   $handler->display->display_options['display_description'] = 'Sponsors page';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<strong>Exhibit Hall Hours:</strong>
+Friday Feb 21st 2pm - 6pm
+Saturday Feb 22nd 10am - 6pm
+Sunday Feb 23rd 10am - 2pm';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
