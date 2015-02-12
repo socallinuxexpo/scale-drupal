@@ -8263,6 +8263,9 @@ div.password-suggestions ul {
   margin-left: 0;
   margin-bottom: 3em;
 }
+.view-exhibitors .view-header {
+  margin-bottom: 36px;
+}
 .view-exhibitors .views-row {
   padding-top: 25px;
   padding-bottom: 15px;
