@@ -6366,11 +6366,6 @@ scale/13x/schedule/thursday',
       'display' => 'page_3',
       'override_title' => 1,
       'override_title_text' => 'San Lorenzo F',
-      'context' => array(
-        0 => '',
-        1 => '',
-        2 => '',
-      ),
     );
     $pane->cache = array();
     $pane->style = array(
