@@ -301,6 +301,16 @@ body {
 }
 
 /* Schedule (Calendar) */
+.pane-menu-menu-schedule-13x {
+  li {
+    display: inline-block;
+    margin-bottom: 0.5em !important;
+    a {
+      display: inline-block;
+      width: 250px;
+    }
+  }
+}
 .schedule_11x {
   /*background-color: #AAA;*/
   width: auto;
@@ -1060,4 +1070,17 @@ body {
     }
   }
 
+}
+
+@media (max-width: 767px) {
+  .pane-menu-menu-schedule-13x {
+    li {
+      display: block;
+      margin-bottom: 0.5em !important;
+      a {
+        width: auto;
+        display: block;
+      }
+    }
+  }
 }

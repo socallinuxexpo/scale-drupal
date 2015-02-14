@@ -8478,6 +8478,14 @@ div.password-suggestions ul {
   margin-bottom: 20px;
 }
 /* Schedule (Calendar) */
+.pane-menu-menu-schedule-13x li {
+  display: inline-block;
+  margin-bottom: 0.5em !important;
+}
+.pane-menu-menu-schedule-13x li a {
+  display: inline-block;
+  width: 250px;
+}
 .schedule_11x {
   /*background-color: #AAA;*/
 
@@ -9215,5 +9223,15 @@ div.password-suggestions ul {
     display: block;
     position: absolute;
     top: 35px;
+  }
+}
+@media (max-width: 767px) {
+  .pane-menu-menu-schedule-13x li {
+    display: block;
+    margin-bottom: 0.5em !important;
+  }
+  .pane-menu-menu-schedule-13x li a {
+    width: auto;
+    display: block;
   }
 }

@@ -3575,7 +3575,10 @@ scale/13x/schedule/friday',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'expo',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 18;
     $pane->locks = array();
@@ -4544,7 +4547,10 @@ scale/13x/schedule/2015-02-21',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'expo',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 19;
     $pane->locks = array();
@@ -5480,7 +5486,10 @@ scale/13x/schedule/2015-02-22',
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => 'expo',
+      'css_class' => '',
+    );
     $pane->extras = array();
     $pane->position = 18;
     $pane->locks = array();
