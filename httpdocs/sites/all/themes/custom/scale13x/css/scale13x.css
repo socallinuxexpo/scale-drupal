@@ -403,6 +403,8 @@
 
   /* Embedded */
 
+  /* Entertainment */
+
   /* Evening Entertainment */
 
   /* Fedora */
@@ -548,6 +550,12 @@
   background-color: #004A4A;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1201 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1234 {
+  background-color: #004A4A;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1234 a {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-501 {
@@ -754,6 +762,8 @@
 
   /* Embedded */
 
+  /* Entertainment */
+
   /* Evening Entertainment */
 
   /* Fedora */
@@ -858,6 +868,10 @@
 }
 .legend-item .track-1201 {
   background-color: #004A4A;
+  color: #FFF;
+}
+.legend-item .track-1234 {
+  background-color: #B20B77;
   color: #FFF;
 }
 .legend-item .track-501 {
