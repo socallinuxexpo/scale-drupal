@@ -107,6 +107,7 @@ function scale_video_views_default_views() {
     458 => '458',
     459 => '459',
     1207 => '1207',
+    1208 => '1208',
   );
   $handler->display->display_options['filters']['field_room_video_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_room_video_tid']['expose']['operator_id'] = 'field_room_video_tid_op';
