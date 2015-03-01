@@ -463,7 +463,7 @@ function scale_presentation_field_default_field_instances() {
     'settings' => array(
       'description_field' => 0,
       'file_directory' => 'presentations',
-      'file_extensions' => 'txt pdf odf html htm odt rtf odp',
+      'file_extensions' => 'txt pdf odf html htm odt rtf odp svg',
       'max_filesize' => '55 MB',
       'user_register_form' => FALSE,
     ),
