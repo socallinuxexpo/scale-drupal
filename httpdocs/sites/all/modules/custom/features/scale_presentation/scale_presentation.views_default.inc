@@ -83,7 +83,7 @@ function scale_presentation_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -223,7 +223,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Content: Speaker (field_speaker) */
+  /* Relationship: Content: Speakers (field_speaker) */
   $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
   $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
@@ -518,7 +518,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Content: Speaker (field_speaker) */
+  /* Contextual filter: Content: Speakers (field_speaker) */
   $handler->display->display_options['arguments']['field_speaker_uid']['id'] = 'field_speaker_uid';
   $handler->display->display_options['arguments']['field_speaker_uid']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['arguments']['field_speaker_uid']['field'] = 'field_speaker_uid';
@@ -622,7 +622,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -678,7 +678,7 @@ function scale_presentation_views_default_views() {
 
   $view = new view();
   $view->name = 'presentation_downloads';
-  $view->description = '';
+  $view->description = 'See views-view-fields--presentation-downloads--page.tpl.php for Speaker label pluralization.';
   $view->tag = 'default';
   $view->base_table = 'node';
   $view->human_name = 'Presentation Downloads';
@@ -693,6 +693,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -704,7 +705,7 @@ function scale_presentation_views_default_views() {
     'field_presentation_link' => 'field_presentation_link',
   );
   $handler->display->display_options['row_options']['separator'] = ' | ';
-  /* Relationship: Content: Speaker (field_speaker) */
+  /* Relationship: Content: Speakers (field_speaker) */
   $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
   $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
@@ -723,10 +724,11 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['label'] = 'Speaker';
   $handler->display->display_options['fields']['field_speaker']['element_type'] = 'span';
   $handler->display->display_options['fields']['field_speaker']['element_label_type'] = 'span';
   $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
@@ -898,7 +900,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -1146,7 +1148,7 @@ function scale_presentation_views_default_views() {
     'field_audience' => 'field_audience',
     'field_topic' => 'field_topic',
   );
-  /* Relationship: Content: Speaker (field_speaker) */
+  /* Relationship: Content: Speakers (field_speaker) */
   $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
   $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
@@ -1170,7 +1172,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -1272,7 +1274,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -1410,7 +1412,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -1479,7 +1481,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'multi-speaker';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Speaker (field_speaker) */
+  /* Relationship: Content: Speakers (field_speaker) */
   $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
   $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
@@ -1546,7 +1548,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -1656,7 +1658,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Relationship: Content: Speaker (field_speaker) */
+  /* Relationship: Content: Speakers (field_speaker) */
   $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
   $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
@@ -1673,7 +1675,7 @@ function scale_presentation_views_default_views() {
     'image_style' => 'square_thumbnail',
     'image_link' => '',
   );
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -1978,7 +1980,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -2226,7 +2228,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';

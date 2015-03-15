@@ -417,6 +417,9 @@ function scale_presentation_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_speaker',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(
       'uid' => array(
         'columns' => array(
@@ -440,6 +443,9 @@ function scale_presentation_field_default_field_bases() {
         5 => 5,
         6 => 0,
         7 => 0,
+        8 => 0,
+        9 => 0,
+        10 => 0,
       ),
       'referenceable_status' => array(
         0 => 0,

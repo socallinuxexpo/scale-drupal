@@ -688,8 +688,9 @@ function scale_presentation_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
+    'field_label_plurals_singular' => 'Speaker',
     'field_name' => 'field_speaker',
-    'label' => 'Speaker',
+    'label' => 'Speakers',
     'required' => 0,
     'settings' => array(
       'nodeaccess_userreference' => array(
@@ -704,9 +705,18 @@ function scale_presentation_field_default_field_instances() {
         ),
         'author_published' => 1,
         'create' => array(
-          'blog_entry' => 0,
+          'blog' => 0,
+          'featured_speakers' => 0,
+          'notice' => 0,
           'page' => 0,
+          'panel' => 0,
           'presentation' => 'presentation',
+          'press_coverage' => 0,
+          'press_release' => 0,
+          'promo_item' => 0,
+          'special_event' => 0,
+          'sponsor' => 0,
+          'streaming_video' => 0,
         ),
         'priority' => 0,
         'referenced' => array(
@@ -855,7 +865,7 @@ function scale_presentation_field_default_field_instances() {
   t('SCALE event');
   t('Separate multiple tags with commas.');
   t('Short abstract');
-  t('Speaker');
+  t('Speakers');
   t('Status');
   t('Tags');
   t('Text that will be used in printed materials. (Up to 600 characters. Anything more than 600 characters will be removed.)');
