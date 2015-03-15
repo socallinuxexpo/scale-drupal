@@ -704,6 +704,11 @@ function scale_presentation_views_default_views() {
     'field_presentation_link' => 'field_presentation_link',
   );
   $handler->display->display_options['row_options']['separator'] = ' | ';
+  /* Relationship: Content: Speaker (field_speaker) */
+  $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
+  $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
+  $handler->display->display_options['relationships']['field_speaker_uid']['delta'] = '-1';
   /* Field: Content: Path */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
@@ -718,6 +723,13 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Speaker */
+  $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['element_type'] = 'span';
+  $handler->display->display_options['fields']['field_speaker']['element_label_type'] = 'span';
+  $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
   /* Field: Content: Audio/Video */
   $handler->display->display_options['fields']['field_audio_video']['id'] = 'field_audio_video';
   $handler->display->display_options['fields']['field_audio_video']['table'] = 'field_data_field_audio_video';
@@ -762,6 +774,23 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: SCALE event (field_scale_event) */
+  $handler->display->display_options['arguments']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['vocabularies'] = array(
+    'scale_event' => 'scale_event',
+  );
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['type'] = 'convert';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
@@ -797,7 +826,7 @@ function scale_presentation_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
-  $handler->display->display_options['path'] = 'scale11x/presentations/downloads';
+  $handler->display->display_options['path'] = 'scale/%/presentations/downloads';
   $export['presentation_downloads'] = $view;
 
   $view = new view();
