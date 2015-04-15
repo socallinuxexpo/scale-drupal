@@ -8,3 +8,4 @@ sites/*/private
 # Unwanted files
 .DS_Store
 *.swp
+
