@@ -48,10 +48,10 @@
   <header role="banner" id="page-header">
     <div class="row">
     <div class="visible-phone small-site-logo">
-      <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale13x') . '/img/13x_logo_temp_sm.png'; ?>" alt="SCALE 13x temp logo"></a>
+      <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale14x') . '/img/14x_logo_sm.png'; ?>" alt="SCALE 14x logo"></a>
     </div>
     <div id="site-logo" class="span6 offset3 hidden-phone">
-      <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale13x') . '/zimg/13x_logo_temp.png'; ?>" alt="SCALE 13x temp logo"></a>
+      <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale14x') . '/img/14x_logo_lg.png'; ?>" alt="SCALE 14x logo"></a>
     </div>
     </div>
     <?php if (!empty($site_slogan)): ?>
