@@ -1,3 +1,8 @@
+<?php
+//$current_theme = variable_get('theme_default','none');
+//dpm($current_theme);
+?>
+
 <header id="navbar" role="banner" class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
