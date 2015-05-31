@@ -176,7 +176,7 @@ function scale_blog_field_default_field_instances() {
     'bundle' => 'blog',
     'default_value' => array(
       0 => array(
-        'tid' => 885,
+        'tid' => 1235,
       ),
     ),
     'deleted' => 0,
