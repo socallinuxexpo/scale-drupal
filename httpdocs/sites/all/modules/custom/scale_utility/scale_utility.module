@@ -21,6 +21,27 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       //$last_item = array_shift($form['field_age'][LANGUAGE_NONE]['#options']);
       $form['field_age'][LANGUAGE_NONE]['#options']['_none'] = 'Decline to State';
       break;
+
+    case 'presentation_node_form':
+      // Remove options from Presentation Topic list but keep terms in database.
+      $remove_terms = array(
+        1205, // Ada Initiative.
+        1213, // Apache Bigtop.
+        881, // Big Data.
+        1221, // DrupalCamp.
+        1234, // Entertainment.
+        11, // Fedora.
+        880, // FOSS Camp.
+        14, // Keynote.
+        506, // Next Generation.
+        434, // Nodestack.
+        436, // OpenNMS.
+        1229, // Testing.
+      );
+      foreach ($remove_terms as $remove_term) {
+        unset($form['field_topic'][LANGUAGE_NONE]['#options'][$remove_term]);
+      }
+      break;
   }
 }
 
