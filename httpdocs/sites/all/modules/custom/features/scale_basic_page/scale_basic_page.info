@@ -1,7 +1,7 @@
 name = Basic page
 core = 7.x
 package = SCALE
-version = 7.x-1.1
+version = 7.x-2.0
 project = scale_basic_page
 dependencies[] = ctools
 dependencies[] = features
@@ -21,3 +21,4 @@ features[variable][] = comment_page
 features[variable][] = field_bundle_settings_node__page
 features[variable][] = node_options_page
 features[variable][] = node_submitted_page
+mtime = 1408223043
