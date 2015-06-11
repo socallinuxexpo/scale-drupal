@@ -44,7 +44,6 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       foreach ($remove_terms as $remove_term) {
         unset($form['field_topic'][LANGUAGE_NONE]['#options'][$remove_term]);
       }
-      dpm($form);
       break;
   }
 }
