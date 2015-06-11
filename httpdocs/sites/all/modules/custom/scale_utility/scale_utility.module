@@ -28,6 +28,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1205, // Ada Initiative.
         1213, // Apache Bigtop.
         881, // Big Data.
+        500, // BoFs.
         1221, // DrupalCamp.
         1234, // Entertainment.
         11, // Fedora.
@@ -36,11 +37,14 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         506, // Next Generation.
         434, // Nodestack.
         436, // OpenNMS.
+        1210, // openSUSE.
         1229, // Testing.
+        22, // Try It Lab.
       );
       foreach ($remove_terms as $remove_term) {
         unset($form['field_topic'][LANGUAGE_NONE]['#options'][$remove_term]);
       }
+      dpm($form);
       break;
   }
 }
