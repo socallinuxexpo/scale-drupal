@@ -5,7 +5,14 @@
  */
 
 /**
- * Preprocess variables for page.tpl.php
+ * Preprocess variables for html.tpl.php.
+ */
+function scale13x_preprocess_html(&$variables) {
+  $variables['head_title'] = $variables['head_title_array']['title'] . ' | SCALE 13x';
+}
+
+/**
+ * Preprocess variables for page.tpl.php.
  *
  * @see page.tpl.php
  */
