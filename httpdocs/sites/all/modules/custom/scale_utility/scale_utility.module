@@ -95,7 +95,9 @@ function _scale_current_speaker($uid) {
   $path = request_uri();
   $items = explode('/', $path);
   $scale_event = $items[2];
-  $scale_event_tid = array_shift(taxonomy_get_term_by_name($scale_event))->tid;
+  $scale_event_name = taxonomy_get_term_by_name($scale_event);
+  $scale_event_object = array_shift($scale_event_name);
+  $scale_event_tid = $scale_event_object->tid;
 
   // Find out if this speaker is has an accepted presentation for this year.
   $result = db_query(
