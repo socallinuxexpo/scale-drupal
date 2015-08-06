@@ -44,6 +44,11 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       foreach ($remove_terms as $remove_term) {
         unset($form['field_topic'][LANGUAGE_NONE]['#options'][$remove_term]);
       }
+
+      // Show demographics notice.
+      global $user;
+      $uid = $user->uid;
+      drupal_set_message(t('We\'ve added optional demographic fields to <a target="_blank" href="/user/@uid/edit">your speaker profile</a>. They are not used in CFP selection. Please consider filling it out.', array('@uid' => $uid)), 'status');
       break;
   }
 }
