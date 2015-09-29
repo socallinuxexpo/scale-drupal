@@ -527,6 +527,24 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['arguments']['field_speaker_uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_speaker_uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_speaker_uid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: SCALE event (field_scale_event) */
+  $handler->display->display_options['arguments']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['vocabularies'] = array(
+    'scale_event' => 'scale_event',
+  );
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['type'] = 'convert';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate']['fail'] = 'empty';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -534,15 +552,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'presentation' => 'presentation',
   );
-  /* Filter criterion: Content: SCALE event (field_scale_event) */
-  $handler->display->display_options['filters']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
-  $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
-  $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
-  $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
-    885 => '885',
-  );
-  $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
