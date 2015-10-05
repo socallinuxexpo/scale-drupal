@@ -377,9 +377,9 @@ function scale_sponsor_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = '<strong>Exhibit Hall Hours:</strong>
-Friday Feb 20th 2pm - 6pm
-Saturday Feb 21st 10am - 6pm
-Sunday Feb 22nd 10am - 2pm';
+Friday Jan 22nd 2pm - 6pm
+Saturday Jan 23rd 10am - 6pm
+Sunday Jan 24th 10am - 2pm';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
