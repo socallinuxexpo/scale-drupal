@@ -159,28 +159,6 @@ function scale_presentation_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-2'] = $pane;
     $display->panels['middle'][1] = 'new-2';
-    $pane = new stdClass();
-    $pane->pid = 'new-3';
-    $pane->panel = 'middle';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'presentation_single-panel_pane_2';
-    $pane->shown = FALSE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        1 => 'argument_entity_id:node_1',
-      ),
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['middle'][2] = 'new-3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
