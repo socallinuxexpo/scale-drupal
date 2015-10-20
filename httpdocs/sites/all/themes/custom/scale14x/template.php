@@ -43,5 +43,10 @@ function scale14x_preprocess_page(&$variables) {
     $variables['secondary_nav']['#theme_wrappers'] = array('menu_tree__secondary');
   }
 
+  // Don't cache CFP page so hashcash can work better.
+  if ($variables['node']->nid == 1951) {
+    drupal_page_is_cacheable(FALSE);
+  }
+
 }
 
