@@ -1,11 +1,12 @@
 <?php
 
 /**
- * @file template.php
+ * @file
+ * Theme PHP code.
  */
 
 /**
- * Preprocess variables for page.tpl.php
+ * Preprocess variables for page.tpl.php.
  *
  * @see page.tpl.php
  */
@@ -24,29 +25,22 @@ function scale14x_preprocess_page(&$variables) {
     $variables['columns'] = 1;
   }
 
-  // Primary nav
+  // Primary nav.
   $variables['primary_nav'] = FALSE;
   if ($variables['main_menu']) {
     // Build links
-    //$variables['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
+    // $variables['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
     $variables['primary_nav'] = menu_tree('menu-14x-main');
-    // Provide default theme wrapper function
+    // Provide default theme wrapper function.
     $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
   }
 
-  // Secondary nav
+  // Secondary nav.
   $variables['secondary_nav'] = FALSE;
   if ($variables['secondary_menu']) {
-    // Build links
+    // Build links.
     $variables['secondary_nav'] = menu_tree(variable_get('menu_secondary_links_source', 'user-menu'));
-    // Provide default theme wrapper function
+    // Provide default theme wrapper function.
     $variables['secondary_nav']['#theme_wrappers'] = array('menu_tree__secondary');
   }
-
-  // Don't cache CFP page so hashcash can work better.
-  if ($variables['node']->nid == 1951) {
-    drupal_page_is_cacheable(FALSE);
-  }
-
 }
-
