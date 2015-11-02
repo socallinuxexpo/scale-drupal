@@ -13,6 +13,70 @@ function scale_presentation_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
+  $handler->name = 'node_view__hide_presentations_from_public';
+  $handler->task = 'node_view';
+  $handler->subtask = '';
+  $handler->handler = 'http_response';
+  $handler->weight = -29;
+  $handler->conf = array(
+    'title' => 'hide presentations from public',
+    'contexts' => array(),
+    'relationships' => array(),
+    'code' => '404',
+    'destination' => '',
+    'name' => 'hide_presentations_from_public',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 4,
+              1 => 9,
+              2 => 10,
+              3 => 8,
+              4 => 7,
+            ),
+          ),
+          'context' => 'logged-in-user',
+          'not' => TRUE,
+        ),
+        1 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'presentation' => 'presentation',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+        2 => array(
+          'name' => 'entity_field_value:node:presentation:field_scale_event',
+          'settings' => array(
+            'field_scale_event' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1241',
+                ),
+              ),
+            ),
+            'field_scale_event_tid' => array(
+              0 => '1241',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    ),
+  );
+  $export['node_view__hide_presentations_from_public'] = $handler;
+
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
   $handler->name = 'node_view_panel_context';
   $handler->task = 'node_view';
   $handler->subtask = '';
