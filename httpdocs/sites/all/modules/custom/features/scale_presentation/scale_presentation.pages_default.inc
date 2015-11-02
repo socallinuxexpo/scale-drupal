@@ -17,7 +17,7 @@ function scale_presentation_default_page_manager_handlers() {
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = -28;
   $handler->conf = array(
     'title' => 'Presentation page',
     'no_blocks' => 0,
@@ -55,6 +55,23 @@ function scale_presentation_default_page_manager_handlers() {
           ),
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'entity_field_value:node:presentation:field_scale_event',
+          'settings' => array(
+            'field_scale_event' => array(
+              'und' => array(
+                0 => array(
+                  'tid' => '1241',
+                ),
+              ),
+            ),
+            'field_scale_event_tid' => array(
+              0 => '1241',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => TRUE,
         ),
       ),
       'logic' => 'and',
