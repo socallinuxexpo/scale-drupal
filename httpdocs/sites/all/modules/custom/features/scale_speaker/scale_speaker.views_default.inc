@@ -40,7 +40,7 @@ function scale_speaker_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'This user is not a speaker in the current year.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
-  /* Relationship: User: Speaker (field_speaker) - reverse */
+  /* Relationship: User: Speakers (field_speaker) - reverse */
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['id'] = 'reverse_field_speaker_node';
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['table'] = 'users';
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['field'] = 'reverse_field_speaker_node';
@@ -147,6 +147,39 @@ function scale_speaker_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
   $handler->display->display_options['path'] = 'speaker-test/%';
+
+  /* Display: Review info */
+  $handler = $view->new_display('panel_pane', 'Review info', 'panel_pane_2');
+  $handler->display->display_options['display_description'] = 'Speaker information only for presentation reviewers';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'context',
+      'context' => 'entity:user.uid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'speaker ID',
+    ),
+  );
   $export['speaker_individual'] = $view;
 
   $view = new view();
@@ -216,7 +249,7 @@ function scale_speaker_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Relationship: User: Speaker (field_speaker) - reverse */
+  /* Relationship: User: Speakers (field_speaker) - reverse */
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['id'] = 'reverse_field_speaker_node';
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['table'] = 'users';
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['field'] = 'reverse_field_speaker_node';
@@ -306,7 +339,7 @@ function scale_speaker_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: User: Speaker (field_speaker) - reverse */
+  /* Relationship: User: Speakers (field_speaker) - reverse */
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['id'] = 'reverse_field_speaker_node';
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['table'] = 'users';
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['field'] = 'reverse_field_speaker_node';
