@@ -2103,6 +2103,30 @@ function scale_presentation_views_default_views() {
     7 => 0,
     3 => 0,
   );
+  /* Filter criterion: Content: Tags (field_presentation_tags) */
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['id'] = 'field_presentation_tags_tid';
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['table'] = 'field_data_field_presentation_tags';
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['field'] = 'field_presentation_tags_tid';
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['expose']['operator_id'] = 'field_presentation_tags_tid_op';
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['expose']['label'] = 'Tags';
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['expose']['operator'] = 'field_presentation_tags_tid_op';
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['expose']['identifier'] = 'field_presentation_tags_tid';
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    9 => 0,
+    10 => 0,
+    8 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_presentation_tags_tid']['vocabulary'] = 'tags';
   /* Filter criterion: Content: Audience (field_audience) */
   $handler->display->display_options['filters']['field_audience_tid']['id'] = 'field_audience_tid';
   $handler->display->display_options['filters']['field_audience_tid']['table'] = 'field_data_field_audience';
