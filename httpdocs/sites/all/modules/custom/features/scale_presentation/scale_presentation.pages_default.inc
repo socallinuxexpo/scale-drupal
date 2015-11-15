@@ -120,23 +120,6 @@ function scale_presentation_default_page_manager_handlers() {
           'context' => 'argument_entity_id:node_1',
           'not' => FALSE,
         ),
-        1 => array(
-          'name' => 'entity_field_value:node:presentation:field_scale_event',
-          'settings' => array(
-            'field_scale_event' => array(
-              'und' => array(
-                0 => array(
-                  'tid' => '1241',
-                ),
-              ),
-            ),
-            'field_scale_event_tid' => array(
-              0 => '1241',
-            ),
-          ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => TRUE,
-        ),
       ),
       'logic' => 'and',
     ),
@@ -160,7 +143,27 @@ function scale_presentation_default_page_manager_handlers() {
     $pane->type = 'views_panes';
     $pane->subtype = 'presentation_single-panel_pane_1';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'entity_field_value:node:presentation:field_presentation_status',
+          'settings' => array(
+            'field_presentation_status' => array(
+              'und' => array(
+                0 => array(
+                  'value' => '20',
+                ),
+              ),
+            ),
+            'field_presentation_status_value' => array(
+              0 => '20',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'context' => array(
         1 => 'argument_entity_id:node_1',
