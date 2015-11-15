@@ -197,6 +197,84 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 0;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Room */
+  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
+  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_room']['delta_offset'] = '0';
+  /* Field: Content: Overflow room */
+  $handler->display->display_options['fields']['field_overflow_room']['id'] = 'field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['table'] = 'field_data_field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['field'] = 'field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['label'] = 'Overflow';
+  $handler->display->display_options['fields']['field_overflow_room']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_overflow_room']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_overflow_room']['delta_offset'] = '0';
+  /* Field: Content: Time */
+  $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
+  $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['label'] = 'Day';
+  $handler->display->display_options['fields']['field_time']['settings'] = array(
+    'format_type' => 'day_of_week',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Time */
+  $handler->display->display_options['fields']['field_time_1']['id'] = 'field_time_1';
+  $handler->display->display_options['fields']['field_time_1']['table'] = 'field_data_field_time';
+  $handler->display->display_options['fields']['field_time_1']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time_1']['settings'] = array(
+    'format_type' => '24_hour_time',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Speakers */
+  $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['type'] = 'user_reference_plain';
+  $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: Content: Topic */
+  $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Short abstract */
+  $handler->display->display_options['fields']['field_short_abstract']['id'] = 'field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['table'] = 'field_data_field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
+  /* Field: User: Photo */
+  $handler->display->display_options['fields']['field_speaker_photo']['id'] = 'field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['table'] = 'field_data_field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['field'] = 'field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['relationship'] = 'field_speaker_uid';
+  $handler->display->display_options['fields']['field_speaker_photo']['alter']['text'] = '[field_speaker_photo]';
+  $handler->display->display_options['fields']['field_speaker_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_speaker_photo']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_speaker_photo']['settings'] = array(
+    'file_view_mode' => 'media_large',
+  );
+  /* Field: Content: Path */
+  $handler->display->display_options['fields']['path']['id'] = 'path';
+  $handler->display->display_options['fields']['path']['table'] = 'node';
+  $handler->display->display_options['fields']['path']['field'] = 'path';
+  $handler->display->display_options['fields']['path']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['path']['alter']['text'] = '[path]';
+  $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['path'] = 'scale/%/sign.xml';
   $export['electronic_sign'] = $view;
 
