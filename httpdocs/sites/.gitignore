@@ -1,3 +1,6 @@
 # RG Additions
 all/modules/contrib/devel
 
+# Unwanted files
+.DS_Store
+*.swp
