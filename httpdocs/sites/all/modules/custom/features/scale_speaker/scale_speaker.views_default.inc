@@ -339,11 +339,12 @@ function scale_speaker_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: User: Speakers (field_speaker) - reverse */
+  /* Relationship: speaker to content */
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['id'] = 'reverse_field_speaker_node';
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['table'] = 'users';
   $handler->display->display_options['relationships']['reverse_field_speaker_node']['field'] = 'reverse_field_speaker_node';
-  $handler->display->display_options['relationships']['reverse_field_speaker_node']['label'] = 'speaker_content';
+  $handler->display->display_options['relationships']['reverse_field_speaker_node']['ui_name'] = 'speaker to content';
+  $handler->display->display_options['relationships']['reverse_field_speaker_node']['label'] = 'speaker to content';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
@@ -441,6 +442,24 @@ function scale_speaker_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: SCALE event (field_scale_event) */
+  $handler->display->display_options['arguments']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['relationship'] = 'reverse_field_speaker_node';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['default_argument_options']['use_alias'] = TRUE;
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['vocabularies'] = array(
+    'scale_event' => 'scale_event',
+  );
+  $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['type'] = 'convert';
 
   /* Display: Speakers list */
   $handler = $view->new_display('page', 'Speakers list', 'speakers_list');
@@ -450,7 +469,9 @@ function scale_speaker_views_default_views() {
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = '';
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   /* Field: Realname: Real name */
   $handler->display->display_options['fields']['realname']['id'] = 'realname';
   $handler->display->display_options['fields']['realname']['table'] = 'realname';
@@ -483,7 +504,7 @@ function scale_speaker_views_default_views() {
   $handler->display->display_options['fields']['view']['element_wrapper_class'] = 'presentation-subview';
   $handler->display->display_options['fields']['view']['view'] = 'speakers_list_multiyear';
   $handler->display->display_options['fields']['view']['display'] = 'presentations_by_speaker';
-  $handler->display->display_options['fields']['view']['arguments'] = '[!uid]';
+  $handler->display->display_options['fields']['view']['arguments'] = '[!uid],!1';
   /* Field: User: Job title */
   $handler->display->display_options['fields']['field_job_title']['id'] = 'field_job_title';
   $handler->display->display_options['fields']['field_job_title']['table'] = 'field_data_field_job_title';
