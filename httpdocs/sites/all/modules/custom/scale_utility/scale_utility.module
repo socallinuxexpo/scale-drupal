@@ -24,7 +24,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
 
     case 'presentation_node_form':
       // Remove options from Presentation Topic list but keep terms in database.
-      $remove_terms = array(
+      $remove_topic_terms = array(
         1205, // Ada Initiative.
         //1213, // Apache Bigtop.
         881, // Big Data.
@@ -41,8 +41,45 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1229, // Testing.
         22, // Try It Lab.
       );
-      foreach ($remove_terms as $remove_term) {
+      foreach ($remove_topic_terms as $remove_term) {
         unset($form['field_topic'][LANGUAGE_NONE]['#options'][$remove_term]);
+      }
+      // Remove options from Presentation Room list but keep terms in database.
+      $remove_room_terms = array(
+        441, // Bel-Air.
+        464, // San Lorenzo B.
+        465, // San Lorenzo C.
+        466, // San Lorenzo D.
+        467, // San Lorenzo E.
+        468, // San Lorenzo F.
+        442, // Carmel.
+        443, // Catalina A.
+        444, // Catalina B.
+        445, // Catalina C.
+        446, // Catalina D.
+        447, // Century A.
+        448, // Century AB.
+        449, // Century B.
+        450, // Century C.
+        451, // Century CD.
+        452, // Century D.
+        453, // Expo.
+        454, // La Jolla.
+        455, // Los Angeles A.
+        456, // Los Angeles AB.
+        457, // Los Angeles B.
+        458, // Los Angeles C.
+        459, // Marina.
+        460, // Newport A.
+        461, // Plaza Ballroom.
+        1207, // Plaza BC.
+        1208, // Plaza D.
+        462, // Santa Monica A.
+        463, // Santa Monica B.
+      );
+      foreach ($remove_room_terms as $remove_term) {
+        unset($form['field_room'][LANGUAGE_NONE]['#options'][$remove_term]);
+        unset($form['field_overflow_room'][LANGUAGE_NONE]['#options'][$remove_term]);
       }
 
       // Show demographics notice.
