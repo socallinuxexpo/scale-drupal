@@ -522,8 +522,10 @@ function scale_speaker_views_default_views() {
   $handler->display->display_options['fields']['field_biography']['table'] = 'field_data_field_biography';
   $handler->display->display_options['fields']['field_biography']['field'] = 'field_biography';
   $handler->display->display_options['fields']['field_biography']['label'] = '';
+  $handler->display->display_options['fields']['field_biography']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['field_biography']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_biography']['alter']['html'] = TRUE;
   $handler->display->display_options['fields']['field_biography']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_biography']['type'] = 'text_trimmed';
   $handler->display->display_options['fields']['field_biography']['settings'] = array(
     'trim_length' => '200',
   );
