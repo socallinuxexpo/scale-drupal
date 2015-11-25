@@ -6599,9 +6599,11 @@ div.password-suggestions ul {
   position: relative;
   top: 1px;
 }
+#views-exposed-form-presentations-with-filters-presentations-filtered .views-exposed-widgets,
 #views-exposed-form-presentation-vote-tally-page .views-exposed-widgets {
   position: relative;
 }
+#views-exposed-form-presentations-with-filters-presentations-filtered .views-exposed-widgets .views-widget-filter-field_presentation_tags_tid,
 #views-exposed-form-presentation-vote-tally-page .views-exposed-widgets .views-widget-filter-field_presentation_tags_tid {
   position: absolute;
   top: 66px;
