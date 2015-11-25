@@ -1,7 +1,7 @@
 name = Presentation
 core = 7.x
 package = SCALE
-version = 7.x-2.15
+version = 7.x-2.16
 project = scale_presentation
 dependencies[] = date
 dependencies[] = entity
@@ -89,4 +89,4 @@ features_exclude[dependencies][list] = list
 features_exclude[dependencies][options] = options
 features_exclude[dependencies][taxonomy] = taxonomy
 features_exclude[dependencies][scale_blog] = scale_blog
-mtime = 1448416987
+mtime = 1448418679
