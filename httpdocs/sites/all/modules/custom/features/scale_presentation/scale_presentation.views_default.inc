@@ -436,6 +436,11 @@ function scale_presentation_views_default_views() {
   $handler = $view->new_display('block', 'Multiyear', 'block_2');
   $handler->display->display_options['display_description'] = 'featured speakers for specified SCALE event';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -2658,11 +2663,11 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
     'field_speaker' => 'field_speaker',
-    'field_presentation_status' => 'field_presentation_status',
     'field_audience' => 'field_audience',
     'field_topic' => 'field_topic',
+    'field_presentation_status' => 'field_presentation_status',
   );
-  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['default'] = 'title';
   $handler->display->display_options['style_options']['info'] = array(
     'title' => array(
       'sortable' => 1,
@@ -2672,13 +2677,6 @@ function scale_presentation_views_default_views() {
       'empty_column' => 0,
     ),
     'field_speaker' => array(
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_presentation_status' => array(
-      'sortable' => 1,
-      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -2693,6 +2691,13 @@ function scale_presentation_views_default_views() {
     'field_topic' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_presentation_status' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -2743,10 +2748,12 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
   $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
   $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Topic */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Status */
   $handler->display->display_options['fields']['field_presentation_status']['id'] = 'field_presentation_status';
   $handler->display->display_options['fields']['field_presentation_status']['table'] = 'field_data_field_presentation_status';
