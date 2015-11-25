@@ -2236,6 +2236,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
+    1213 => '1213',
     6 => '6',
     8 => '8',
     9 => '9',
