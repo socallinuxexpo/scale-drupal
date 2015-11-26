@@ -6732,10 +6732,15 @@ div.password-suggestions ul {
 #block-views-featured-presentations-block-2 .views-row {
   float: left;
   width: 33%;
+  margin-bottom: 20px;
 }
 #block-views-featured-presentations-block-1 .views-field-title,
 #block-views-featured-presentations-block-2 .views-field-title {
   margin-bottom: 0.5em;
+}
+#block-views-featured-presentations-block-1 .views-field-realname,
+#block-views-featured-presentations-block-2 .views-field-realname {
+  padding: 0 4px;
 }
 /* Presentation pages */
 .view-presentation-single a,
