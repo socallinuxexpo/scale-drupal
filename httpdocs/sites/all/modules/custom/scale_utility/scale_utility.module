@@ -161,3 +161,33 @@ function _scale_current_speaker($uid) {
   return($record);
 }
 
+/**
+ * Implements hook_views_post_execute().
+ *
+ * Hide room and time from anonymous and speakers while schedule is in flux.
+ */
+function scale_utility_views_post_execute(&$view) {
+  if ($view->name == 'presentation_single') {
+    global $user;
+
+    // Roles which may view schedule.
+    $schedule_roles = array(
+      'administrator',
+      'editor',
+      'blogger',
+      'sponsorship editor',
+      'special events editor',
+      'presentation editor',
+      'presentation reviewer',
+    );
+    $can_view_schedule = array_intersect($schedule_roles, $user->roles);
+
+    // Limit hiding to single SCALE event.
+    $scale_event = $view->args[0];
+
+    if (empty($can_view_schedule) && $scale_event == '14x') {
+      unset($view->result[0]->field_field_room);
+      unset($view->result[0]->field_field_time);
+    }
+  }
+}

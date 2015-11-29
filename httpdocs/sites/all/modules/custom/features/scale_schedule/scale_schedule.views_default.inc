@@ -76,7 +76,7 @@ function scale_schedule_views_default_views() {
   );
   $handler->display->display_options['fields']['field_time']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_time']['delta_offset'] = '0';
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -256,7 +256,7 @@ function scale_schedule_views_default_views() {
   );
   $handler->display->display_options['fields']['field_time']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_time']['delta_offset'] = '0';
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -295,8 +295,7 @@ function scale_schedule_views_default_views() {
   $handler->display->display_options['arguments']['date_argument']['field'] = 'date_argument';
   $handler->display->display_options['arguments']['date_argument']['default_action'] = 'default';
   $handler->display->display_options['arguments']['date_argument']['default_argument_type'] = 'date';
-  $handler->display->display_options['arguments']['date_argument']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['date_argument']['year_range'] = '-1:+0';
+  $handler->display->display_options['arguments']['date_argument']['year_range'] = '-1:+1';
   $handler->display->display_options['arguments']['date_argument']['granularity'] = 'day';
   $handler->display->display_options['arguments']['date_argument']['date_fields'] = array(
     'field_data_field_time.field_time_value' => 'field_data_field_time.field_time_value',
@@ -585,7 +584,7 @@ function scale_schedule_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
