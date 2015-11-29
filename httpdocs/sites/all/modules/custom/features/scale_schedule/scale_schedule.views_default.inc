@@ -304,6 +304,8 @@ function scale_schedule_views_default_views() {
   $handler->display->display_options['arguments']['field_room_tid']['id'] = 'field_room_tid';
   $handler->display->display_options['arguments']['field_room_tid']['table'] = 'field_data_field_room';
   $handler->display->display_options['arguments']['field_room_tid']['field'] = 'field_room_tid';
+  $handler->display->display_options['arguments']['field_room_tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_room_tid']['title'] = '%2';
   $handler->display->display_options['arguments']['field_room_tid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_room_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_room_tid']['summary']['format'] = 'default_summary';
