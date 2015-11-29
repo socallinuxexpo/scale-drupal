@@ -2921,7 +2921,7 @@ scale/14x/schedule/thursday',
     ),
   );
   $display->cache = array();
-  $display->title = 'Thursday, February 19, 2015';
+  $display->title = 'Thursday, January 21, 2016';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -3912,7 +3912,7 @@ scale/14x/schedule/friday',
     ),
   );
   $display->cache = array();
-  $display->title = 'Thursday, February 19, 2015';
+  $display->title = 'Friday, January 22, 2016';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -4903,7 +4903,7 @@ scale/14x/schedule/saturday',
     ),
   );
   $display->cache = array();
-  $display->title = 'Thursday, February 19, 2015';
+  $display->title = 'Saturday, January 23, 2016';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
@@ -5894,7 +5894,7 @@ scale/14x/schedule/sunday',
     ),
   );
   $display->cache = array();
-  $display->title = 'Thursday, February 19, 2015';
+  $display->title = 'Sunday, January 24, 2016';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
