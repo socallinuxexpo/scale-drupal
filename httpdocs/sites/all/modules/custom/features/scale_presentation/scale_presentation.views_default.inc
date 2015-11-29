@@ -1848,7 +1848,8 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['label'] = '';
   $handler->display->display_options['fields']['field_speaker']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_speaker']['alter']['path'] = '11x/speakers/[field_speaker]';
+  $handler->display->display_options['fields']['field_speaker']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_speaker']['alter']['path'] = 'scale/!1/speakers/[field_speaker]';
   $handler->display->display_options['fields']['field_speaker']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['field_speaker']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['field_speaker']['alter']['strip_tags'] = TRUE;
@@ -1860,7 +1861,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_speaker]';
-  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'scale/!1/speakers/[field_speaker]';
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path_case'] = 'lower';
