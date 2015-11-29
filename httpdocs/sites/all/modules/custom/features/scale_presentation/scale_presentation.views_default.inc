@@ -1812,12 +1812,30 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
   $handler->display->display_options['relationships']['field_speaker_uid']['delta'] = '0';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: photos */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['ui_name'] = 'photos';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'presentation_page';
+  $handler->display->display_options['fields']['view']['display'] = 'block_1';
+  $handler->display->display_options['fields']['view']['arguments'] = '[%nid]';
   /* Field: User: Photo */
   $handler->display->display_options['fields']['field_speaker_photo']['id'] = 'field_speaker_photo';
   $handler->display->display_options['fields']['field_speaker_photo']['table'] = 'field_data_field_speaker_photo';
   $handler->display->display_options['fields']['field_speaker_photo']['field'] = 'field_speaker_photo';
   $handler->display->display_options['fields']['field_speaker_photo']['relationship'] = 'field_speaker_uid';
   $handler->display->display_options['fields']['field_speaker_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_speaker_photo']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_speaker_photo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speaker_photo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_speaker_photo']['settings'] = array(

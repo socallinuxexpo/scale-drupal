@@ -6757,12 +6757,22 @@ div.password-suggestions ul {
 #presentation-page .panel-pane {
   margin-bottom: .5em;
 }
+.view-presentation-single .view-id-presentation_page,
+#presentation-page .view-id-presentation_page,
 .view-presentation-single .views-field-field-speaker-photo,
 #presentation-page .views-field-field-speaker-photo,
 .view-presentation-single .pane-user-field-speaker-photo,
 #presentation-page .pane-user-field-speaker-photo {
   float: right;
   margin-left: 20px;
+}
+.view-presentation-single .view-id-presentation_page .views-row-first,
+#presentation-page .view-id-presentation_page .views-row-first,
+.view-presentation-single .views-field-field-speaker-photo .views-row-first,
+#presentation-page .views-field-field-speaker-photo .views-row-first,
+.view-presentation-single .pane-user-field-speaker-photo .views-row-first,
+#presentation-page .pane-user-field-speaker-photo .views-row-first {
+  margin-bottom: 0;
 }
 .view-presentation-single .views-field-nothing,
 #presentation-page .views-field-nothing,
