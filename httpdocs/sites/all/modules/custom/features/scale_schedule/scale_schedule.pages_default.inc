@@ -6792,12 +6792,13 @@ scale/14x/schedule/sunday',
     $pane->pid = 'new-168';
     $pane->panel = 'middle';
     $pane->type = 'block';
-    $pane->subtype = 'menu-menu-schedule-13x';
+    $pane->subtype = 'menu-menu-schedule-14x';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'override_title' => 1,
       'override_title_text' => '',
+      'override_title_heading' => 'h2',
     );
     $pane->cache = array();
     $pane->style = array(

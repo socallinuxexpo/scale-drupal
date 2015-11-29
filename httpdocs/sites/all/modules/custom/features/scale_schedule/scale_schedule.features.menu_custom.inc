@@ -16,9 +16,16 @@ function scale_schedule_menu_default_menu_custom() {
     'title' => 'Schedule 13x',
     'description' => '',
   );
+  // Exported menu: menu-schedule-14x.
+  $menus['menu-schedule-14x'] = array(
+    'menu_name' => 'menu-schedule-14x',
+    'title' => 'Schedule 14x',
+    'description' => '',
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('Schedule 13x');
+  t('Schedule 14x');
 
 
   return $menus;
