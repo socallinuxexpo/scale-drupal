@@ -39,7 +39,7 @@ function scale_taxonomy_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Speaker */
+  /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
@@ -132,7 +132,7 @@ function scale_taxonomy_views_default_views() {
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
-  $handler->display->display_options['arguments']['tid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['tid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'raw';
   $handler->display->display_options['arguments']['tid']['default_argument_options']['index'] = '3';
   $handler->display->display_options['arguments']['tid']['default_argument_options']['use_alias'] = TRUE;
@@ -147,6 +147,24 @@ function scale_taxonomy_views_default_views() {
   );
   $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'convert';
   $handler->display->display_options['arguments']['tid']['validate_options']['transform'] = TRUE;
+  $handler->display->display_options['argument_input'] = array(
+    'field_scale_event_tid' => array(
+      'type' => 'none',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '1',
+      'fixed' => '',
+      'label' => 'Content: SCALE event (field_scale_event)',
+    ),
+    'tid' => array(
+      'type' => 'none',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '3',
+      'fixed' => '',
+      'label' => 'Content: Has taxonomy term ID',
+    ),
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
