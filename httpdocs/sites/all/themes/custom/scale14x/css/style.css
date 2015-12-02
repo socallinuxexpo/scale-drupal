@@ -6714,11 +6714,13 @@ div.password-suggestions ul {
 #block-menu-block-3 li.active {
   font-weight: bold;
 }
+#block-menu-menu-14x-footer li,
 #block-menu-menu-13x-footer li {
   display: inline-block;
   border-left: 1px solid #999;
   padding: 0 4px 0 6px;
 }
+#block-menu-menu-14x-footer li.first,
 #block-menu-menu-13x-footer li.first {
   border-left: none;
   padding-left: 0;
