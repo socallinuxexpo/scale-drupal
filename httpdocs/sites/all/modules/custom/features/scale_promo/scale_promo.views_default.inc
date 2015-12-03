@@ -28,11 +28,10 @@ function scale_promo_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['view_mode'] = 'full';
+  $handler->display->display_options['row_plugin'] = 'fields';
   /* Header: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
@@ -46,6 +45,30 @@ function scale_promo_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Promo file */
+  $handler->display->display_options['fields']['field_promo_file']['id'] = 'field_promo_file';
+  $handler->display->display_options['fields']['field_promo_file']['table'] = 'field_data_field_promo_file';
+  $handler->display->display_options['fields']['field_promo_file']['field'] = 'field_promo_file';
+  $handler->display->display_options['fields']['field_promo_file']['label'] = '';
+  $handler->display->display_options['fields']['field_promo_file']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_promo_file']['alter']['text'] = '<div class="promo-item-image"><img src="[field_promo_file]"></div>';
+  $handler->display->display_options['fields']['field_promo_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_promo_file']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_promo_file']['type'] = 'file_url_plain';
+  $handler->display->display_options['fields']['field_promo_file']['settings'] = array(
+    'file_view_mode' => 'media_link',
+  );
+  /* Field: Content: Specifications */
+  $handler->display->display_options['fields']['field_specificatins']['id'] = 'field_specificatins';
+  $handler->display->display_options['fields']['field_specificatins']['table'] = 'field_data_field_specificatins';
+  $handler->display->display_options['fields']['field_specificatins']['field'] = 'field_specificatins';
+  /* Field: Content: Embed code */
+  $handler->display->display_options['fields']['field_embed_code']['id'] = 'field_embed_code';
+  $handler->display->display_options['fields']['field_embed_code']['table'] = 'field_data_field_embed_code';
+  $handler->display->display_options['fields']['field_embed_code']['field'] = 'field_embed_code';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -148,6 +171,35 @@ function scale_promo_views_default_views() {
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = '<h3 class="title">Audio</h3>';
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Promo file */
+  $handler->display->display_options['fields']['field_promo_file']['id'] = 'field_promo_file';
+  $handler->display->display_options['fields']['field_promo_file']['table'] = 'field_data_field_promo_file';
+  $handler->display->display_options['fields']['field_promo_file']['field'] = 'field_promo_file';
+  $handler->display->display_options['fields']['field_promo_file']['label'] = '';
+  $handler->display->display_options['fields']['field_promo_file']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_promo_file']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_promo_file']['settings'] = array(
+    'file_view_mode' => 'media_link',
+  );
+  /* Field: Content: Specifications */
+  $handler->display->display_options['fields']['field_specificatins']['id'] = 'field_specificatins';
+  $handler->display->display_options['fields']['field_specificatins']['table'] = 'field_data_field_specificatins';
+  $handler->display->display_options['fields']['field_specificatins']['field'] = 'field_specificatins';
+  /* Field: Content: Embed code */
+  $handler->display->display_options['fields']['field_embed_code']['id'] = 'field_embed_code';
+  $handler->display->display_options['fields']['field_embed_code']['table'] = 'field_data_field_embed_code';
+  $handler->display->display_options['fields']['field_embed_code']['field'] = 'field_embed_code';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */

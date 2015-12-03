@@ -7566,3 +7566,12 @@ div.password-suggestions ul {
   padding-bottom: 10px;
   border-bottom: 1px solid #EEE;
 }
+.view-promo-items-multi-year .views-row {
+  margin-bottom: 20px;
+}
+.view-promo-items-multi-year .views-row .views-field {
+  margin-bottom: 10px;
+}
+.view-promo-items-multi-year .views-row .views-label {
+  font-weight: bold;
+}

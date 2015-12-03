@@ -149,10 +149,12 @@ function scale_promo_field_default_field_instances() {
     'description' => 'upload the file for the promo item',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'file',
-        'settings' => array(),
-        'type' => 'file_default',
+        'label' => 'hidden',
+        'module' => 'file_entity',
+        'settings' => array(
+          'file_view_mode' => 'default',
+        ),
+        'type' => 'file_rendered',
         'weight' => 1,
       ),
       'teaser' => array(
