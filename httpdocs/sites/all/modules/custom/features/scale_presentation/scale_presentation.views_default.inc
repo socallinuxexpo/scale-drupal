@@ -1879,16 +1879,26 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
   $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
   $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_audience']['alter']['path'] = '/scale/!1/audience-level/[field_audience]';
+  $handler->display->display_options['fields']['field_audience']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['field_audience']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['field_audience']['element_class'] = 'terms';
   $handler->display->display_options['fields']['field_audience']['element_label_class'] = 'terms';
   $handler->display->display_options['fields']['field_audience']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_audience']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Topic */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_topic']['alter']['path'] = '/scale/!1/track/[field_topic]';
+  $handler->display->display_options['fields']['field_topic']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['field_topic']['alter']['path_case'] = 'lower';
   $handler->display->display_options['fields']['field_topic']['element_class'] = 'terms';
   $handler->display->display_options['fields']['field_topic']['element_label_class'] = 'terms';
   $handler->display->display_options['fields']['field_topic']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
   /* Field: Content: Long abstract */
   $handler->display->display_options['fields']['field_long_abstract']['id'] = 'field_long_abstract';
   $handler->display->display_options['fields']['field_long_abstract']['table'] = 'field_data_field_long_abstract';
