@@ -7035,6 +7035,7 @@ div.password-suggestions ul {
   /* Legal & Licensing */
   /* Mentoring */
   /* MySQL */
+  /* New to SCALE */
   /* NodeStack */
   /* Open Source Software in Education */
   /* OpenNMS */
@@ -7221,6 +7222,12 @@ div.password-suggestions ul {
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 a {
   color: #FFF;
 }
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1620 {
+  background-color: #7FFF00;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1620 a {
+  color: #228B22;
+}
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-434 {
   background-color: #00ffd8;
 }
@@ -7371,6 +7378,7 @@ div.password-suggestions ul {
   /* Legal & Licensing */
   /* Mentoring */
   /* MySQL */
+  /* New to SCALE */
   /* Next Generation */
   /* NodeStack */
   /* Open Source Software in Education */
@@ -7490,6 +7498,10 @@ div.password-suggestions ul {
 .legend-item .track-16 {
   background-color: #8B47BB;
   color: #FFF;
+}
+.legend-item .track-1620 {
+  background-color: #7FFF00;
+  color: #228B22;
 }
 .legend-item .track-506 {
   background-color: #96F74B;
