@@ -7032,6 +7032,7 @@ div.password-suggestions ul {
   /* Hot Applications */
   /* Kernel */
   /* Keynote */
+  /* Legal & Licensing */
   /* Mentoring */
   /* MySQL */
   /* NodeStack */
@@ -7041,6 +7042,7 @@ div.password-suggestions ul {
   /* PostgreSQL */
   /* Puppet */
   /* ScaleU */
+  /* Security */
   /* Sponsored */
   /* SysAdmin */
   /* Testing */
@@ -7201,6 +7203,12 @@ div.password-suggestions ul {
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-14 a {
   color: #FFF;
 }
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1242 {
+  background-color: #FFF8DC;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1242 a {
+  color: #000;
+}
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 {
   background-color: #998876;
 }
@@ -7254,6 +7262,12 @@ div.password-suggestions ul {
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-19 a {
   color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1422 {
+  background-color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1422 a {
+  color: #00FF00;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-20 {
   background-color: #007F06;
@@ -7354,6 +7368,7 @@ div.password-suggestions ul {
   /* Hot Applications */
   /* Kernel */
   /* Keynote */
+  /* Legal & Licensing */
   /* Mentoring */
   /* MySQL */
   /* Next Generation */
@@ -7364,6 +7379,7 @@ div.password-suggestions ul {
   /* PostgreSQL */
   /* Puppet */
   /* ScaleU */
+  /* Security */
   /* Sponsored */
   /* SysAdmin */
   /* Testing */
@@ -7463,6 +7479,10 @@ div.password-suggestions ul {
   background-color: #D31111;
   color: #FFF;
 }
+.legend-item .track-1242 {
+  background-color: #FFF8DC;
+  color: #000;
+}
 .legend-item .track-15 {
   background-color: #998876;
   color: #FFF;
@@ -7502,6 +7522,10 @@ div.password-suggestions ul {
 .legend-item .track-19 {
   background-color: #405E5E;
   color: #FFF;
+}
+.legend-item .track-1422 {
+  background-color: #000;
+  color: #00FF00;
 }
 .legend-item .track-20 {
   background-color: #007F06;
