@@ -23,6 +23,20 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       break;
 
     case 'presentation_node_form':
+      global $user;
+      // Determine if user is authorized to assign Keynote topic.
+      $user_roles = $user->roles;
+      $authorized_roles = array(
+        'presentation editor',
+        'special events editor',
+        'sponsorship editor',
+        'editor',
+        'administrator',
+      );
+      $common_roles = array_intersect($user_roles, $authorized_roles);
+      if (!empty($common_roles)) {
+        $keynote_authorized = TRUE;
+      }
       // Remove options from Presentation Topic list but keep terms in database.
       $remove_topic_terms = array(
         1205, // Ada Initiative.
@@ -33,7 +47,6 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1234, // Entertainment.
         11, // Fedora.
         880, // FOSS Camp.
-        14, // Keynote.
         506, // Next Generation.
         434, // Nodestack.
         436, // OpenNMS.
@@ -41,6 +54,10 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1229, // Testing.
         22, // Try It Lab.
       );
+      // Remove Keynote if not authorized.
+      if (!$keynote_authorized) {
+        $remove_topic_terms[] = 14; // Keynote.
+      }
       foreach ($remove_topic_terms as $remove_term) {
         unset($form['field_topic'][LANGUAGE_NONE]['#options'][$remove_term]);
       }
