@@ -8,7 +8,12 @@
  * Preprocess variables for html.tpl.php.
  */
 function scale13x_preprocess_html(&$variables) {
-  $variables['head_title'] = $variables['head_title_array']['title'] . ' | SCALE 13x';
+  if (isset($variables['head_title_array']['title'])) {
+    $variables['head_title'] = $variables['head_title_array']['title'] . ' | SCALE 13x';
+  }
+  else {
+    $variables['head_title'] = 'SCALE 13x';
+  }
 }
 
 /**
