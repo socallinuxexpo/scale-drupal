@@ -183,6 +183,7 @@ function _scale_current_speaker($uid) {
  *
  * Hide room and time from anonymous and speakers while schedule is in flux.
  */
+/*
 function scale_utility_views_post_execute(&$view) {
   if ($view->name == 'presentation_single') {
     global $user;
@@ -208,3 +209,4 @@ function scale_utility_views_post_execute(&$view) {
     }
   }
 }
+ */
