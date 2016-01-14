@@ -44,7 +44,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         //881, // Big Data.
         500, // BoFs.
         1221, // DrupalCamp.
-        1234, // Entertainment.
+        //1234, // Entertainment.
         11, // Fedora.
         880, // FOSS Camp.
         506, // Next Generation.
@@ -57,6 +57,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       // Remove Keynote if not authorized.
       if (!$keynote_authorized) {
         $remove_topic_terms[] = 14; // Keynote.
+        $remove_topic_terms[] = 1234; // Entertainment.
       }
       foreach ($remove_topic_terms as $remove_term) {
         unset($form['field_topic'][LANGUAGE_NONE]['#options'][$remove_term]);
