@@ -43,7 +43,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         //1213, // Apache Bigtop.
         //881, // Big Data.
         500, // BoFs.
-        1221, // DrupalCamp.
+        //1221, // GLAD Camp.
         //1234, // Entertainment.
         11, // Fedora.
         880, // FOSS Camp.
@@ -54,7 +54,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1229, // Testing.
         22, // Try It Lab.
       );
-      // Remove Keynote if not authorized.
+      // Remove Keynote if not authorized. See $authorized_roles above.
       if (!$keynote_authorized) {
         $remove_topic_terms[] = 14; // Keynote.
         $remove_topic_terms[] = 1234; // Entertainment.
