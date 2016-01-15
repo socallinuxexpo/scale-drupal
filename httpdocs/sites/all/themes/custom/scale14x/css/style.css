@@ -7154,7 +7154,7 @@ div.password-suggestions ul {
   background-color: #004A4A;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1234 a {
-  color: #FFF;
+  color: #FF3;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-501 {
   background-color: #B20B77;
@@ -7452,8 +7452,8 @@ div.password-suggestions ul {
   color: #FFF;
 }
 .legend-item .track-1234 {
-  background-color: #B20B77;
-  color: #FFF;
+  background-color: #004A4A;
+  color: #FF3;
 }
 .legend-item .track-501 {
   background-color: #B20B77;
