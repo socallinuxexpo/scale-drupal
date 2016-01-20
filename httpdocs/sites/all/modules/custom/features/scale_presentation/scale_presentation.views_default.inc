@@ -1458,6 +1458,23 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
   $handler->display->display_options['fields']['field_short_abstract']['label'] = 'Short Abstract';
   $handler->display->display_options['fields']['field_short_abstract']['element_label_colon'] = FALSE;
+  /* Field: Content: Time */
+  $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
+  $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Room */
+  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
+  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_room']['delta_offset'] = '0';
   /* Field: Content: Published */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
