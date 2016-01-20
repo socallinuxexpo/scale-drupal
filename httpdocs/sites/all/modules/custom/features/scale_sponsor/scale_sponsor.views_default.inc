@@ -266,7 +266,7 @@ function scale_sponsor_views_default_views() {
   $handler->display->display_options['filters']['field_exhibitor_sponsor_value']['value'] = array(
     'Exhibitor' => 'Exhibitor',
   );
-  $handler->display->display_options['path'] = 'scale11x/exhibitors.csv';
+  $handler->display->display_options['path'] = 'scale/%/exhibitors.csv';
 
   /* Display: Exhibitors 11x */
   $handler = $view->new_display('page', 'Exhibitors 11x', 'page_1');
