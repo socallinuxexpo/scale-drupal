@@ -230,18 +230,37 @@ function scale_sponsor_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['label'] = 'Name';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['label'] = 'Description';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_summary_or_trimmed';
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
+  );
+  /* Field: Content: Sponsor Type */
+  $handler->display->display_options['fields']['field_sponsor_type']['id'] = 'field_sponsor_type';
+  $handler->display->display_options['fields']['field_sponsor_type']['table'] = 'field_data_field_sponsor_type';
+  $handler->display->display_options['fields']['field_sponsor_type']['field'] = 'field_sponsor_type';
+  $handler->display->display_options['fields']['field_sponsor_type']['delta_offset'] = '0';
+  /* Field: Content: Logo (website) */
+  $handler->display->display_options['fields']['field_logo_website']['id'] = 'field_logo_website';
+  $handler->display->display_options['fields']['field_logo_website']['table'] = 'field_data_field_logo_website';
+  $handler->display->display_options['fields']['field_logo_website']['field'] = 'field_logo_website';
+  $handler->display->display_options['fields']['field_logo_website']['label'] = 'Logo';
+  $handler->display->display_options['fields']['field_logo_website']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_logo_website']['alter']['text'] = '[field_logo_website-fid]';
+  $handler->display->display_options['fields']['field_logo_website']['alter']['path'] = '[field_logo_website]';
+  $handler->display->display_options['fields']['field_logo_website']['alter']['absolute'] = TRUE;
+  $handler->display->display_options['fields']['field_logo_website']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_logo_website']['type'] = 'file_rendered';
+  $handler->display->display_options['fields']['field_logo_website']['settings'] = array(
+    'file_view_mode' => 'default',
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
