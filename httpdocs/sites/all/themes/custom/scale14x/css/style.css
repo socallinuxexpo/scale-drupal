@@ -7596,6 +7596,9 @@ div.password-suggestions ul {
     width: auto;
     display: block;
   }
+  .view-presentation-single .views-field-nothing {
+    font-size: 1.5em;
+  }
 }
 .view-presentation-downloads .views-row {
   margin-bottom: 10px;
