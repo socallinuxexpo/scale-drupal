@@ -44,3 +44,11 @@ function scale14x_preprocess_page(&$variables) {
     $variables['secondary_nav']['#theme_wrappers'] = array('menu_tree__secondary');
   }
 }
+
+function scale14x_preprocess_block(&$variables) {
+  // Show Guidebook link block only on mobile.
+  $block_id = $variables['block']->module . '-' . $variables['block']->delta;
+  if ($block_id == 'block-11') {
+    $variables['classes_array'][] = 'visible-phone';
+  }
+}
