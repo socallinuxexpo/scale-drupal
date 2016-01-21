@@ -1289,8 +1289,11 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['inline'] = array(
@@ -1830,10 +1833,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Content: Author */
-  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
-  $handler->display->display_options['relationships']['uid']['table'] = 'node';
-  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
   /* Relationship: Content: Speakers (field_speaker) */
   $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
   $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
@@ -1882,12 +1881,20 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_speaker']['alter']['strip_tags'] = TRUE;
   $handler->display->display_options['fields']['field_speaker']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: Realname: Real name */
+  $handler->display->display_options['fields']['realname']['id'] = 'realname';
+  $handler->display->display_options['fields']['realname']['table'] = 'realname';
+  $handler->display->display_options['fields']['realname']['field'] = 'realname';
+  $handler->display->display_options['fields']['realname']['relationship'] = 'field_speaker_uid';
+  $handler->display->display_options['fields']['realname']['label'] = '';
+  $handler->display->display_options['fields']['realname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_speaker]';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[realname]';
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'scale/!1/speakers/[field_speaker]';
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path_case'] = 'lower';
