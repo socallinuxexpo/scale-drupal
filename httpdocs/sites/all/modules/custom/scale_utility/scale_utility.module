@@ -42,7 +42,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1205, // Ada Initiative.
         //1213, // Apache Bigtop.
         //881, // Big Data.
-        500, // BoFs.
+        //500, // BoFs.
         //1221, // GLAD Camp.
         //1234, // Entertainment.
         11, // Fedora.
@@ -57,6 +57,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       // Remove Keynote if not authorized. See $authorized_roles above.
       if (!$keynote_authorized) {
         $remove_topic_terms[] = 14; // Keynote.
+        $remove_topic_terms[] = 500; // BoFs.
         $remove_topic_terms[] = 1234; // Entertainment.
       }
       foreach ($remove_topic_terms as $remove_term) {
