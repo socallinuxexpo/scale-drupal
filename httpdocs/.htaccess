@@ -1,3 +1,6 @@
+# Lei's redirect
+RedirectMatch ^/speaker_survey/(.*)$ http://reg.socallinuxexpo.org/speaker_survey/$1
+
 #
 # Apache/PHP/Drupal settings:
 #
@@ -89,9 +92,9 @@ DirectoryIndex index.php index.html index.htm
   # To redirect all users to access the site WITH the 'www.' prefix,
   # (http://example.com/... will be redirected to http://www.example.com/...)
   # uncomment the following:
-  # RewriteCond %{HTTP_HOST} .
-  # RewriteCond %{HTTP_HOST} !^www\. [NC]
-  # RewriteRule ^ http%{ENV:protossl}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+   RewriteCond %{HTTP_HOST} .
+   RewriteCond %{HTTP_HOST} !^www\. [NC]
+   RewriteRule ^ http%{ENV:protossl}://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   #
   # To redirect all users to access the site WITHOUT the 'www.' prefix,
   # (http://www.example.com/... will be redirected to http://example.com/...)
@@ -140,10 +143,4 @@ DirectoryIndex index.php index.html index.htm
       Header append Vary Accept-Encoding
     </FilesMatch>
   </IfModule>
-</IfModule>
-
-# Add headers to all responses.
-<IfModule mod_headers.c>
-  # Disable content sniffing, since it's an attack vector.
-  Header always set X-Content-Type-Options nosniff
 </IfModule>
