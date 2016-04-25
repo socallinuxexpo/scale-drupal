@@ -58,7 +58,7 @@ function rate_bots_is_blocked() {
   // Always count, even if threshold is disabled. This is to determine if we
   // can skip the BotScout check.
   $count = rate_bots_check_threshold($ip, 3600);
-  if ($count > $threshold) {
+  if ($threshold && ($count > $threshold)) {
     rate_bots_register_bot($ip);
     return TRUE;
   }
@@ -136,4 +136,39 @@ function rate_bots_check_botscout($ip) {
     }
   }
   return FALSE;
+}
+
+/**
+ * Delete votes from bots.
+ */
+function rate_bots_delete_votes() {
+  $limit = variable_get(RATE_VAR_CRON_DELETE_LIMIT, 25);
+  $queue = DrupalQueue::get('rate_delete_votes');
+  while ($item = $queue->claimItem()) {
+    $ip = $item->data;
+    $votes = db_select('votingapi_vote', 'v')
+      ->fields('v', array('vote_id', 'entity_type', 'entity_id'))
+      ->condition('v.vote_source', $ip)
+      ->range(0, $limit)
+      ->execute()
+      ->fetchAll();
+    foreach ($votes as $vote) {
+      db_delete('votingapi_vote')
+        ->condition('vote_id', $vote->vote_id)
+        ->execute();
+      votingapi_recalculate_results($vote->entity_type, $vote->entity_id, TRUE);
+    }
+    
+    $queue->deleteItem($item);
+    
+    if (count($votes) == $limit) {
+      // There may be more votes from this IP which needs to be deleted.
+      $queue->createItem($ip);
+    }
+    
+    $limit -= count($votes) + 1;
+    if ($limit <= 0) {
+      break;
+    }
+  }
 }

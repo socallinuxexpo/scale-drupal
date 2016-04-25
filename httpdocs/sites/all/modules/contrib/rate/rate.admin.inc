@@ -153,6 +153,7 @@ function rate_widget_form($form, &$form_state, $id = NULL) {
     $widget->description = '';
     $widget->description_in_compact = TRUE;
     $widget->delete_vote_on_second_click = 0;
+    $widget->use_source_translation = TRUE;
   }
   
   // Determine the template from GET (which is only available before the form
@@ -510,6 +511,21 @@ function rate_widget_form($form, &$form_state, $id = NULL) {
     '#default_value' => $widget->noperm_behaviour,
     '#description' => t('Choose an action what will happen if a user clicks on the widget but doesn\'t have the permission to vote.'),
   );
+  
+  if (module_exists('translation')) {
+    $form['translations'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Translations'),
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    );
+    $form['translations']['use_source_translation'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Use source translation'),
+      '#default_value' => $widget->use_source_translation,
+      '#description' => t('Save votes to the source translation. When this option is checked, every translation will show the same rating. Uncheck to separate rating per language.'),
+    );
+  }
 
   $form['submit'] = array(
     '#type' => 'submit',
@@ -601,6 +617,12 @@ function rate_widget_form_submit($form, &$form_state) {
   $widget->description = $form_state['values']['description'];
   $widget->description_in_compact = (bool) $form_state['values']['description_in_compact'];
   $widget->delete_vote_on_second_click = $form_state['values']['delete_vote_on_second_click'];
+  if (module_exists('translation')) {
+    $widget->use_source_translation = !empty($form_state['values']['use_source_translation']);
+  }
+  else {
+    $widget->use_source_translation = TRUE;
+  }
   
   if ($widget->template != 'custom') {
     // Take over the values from the template.
