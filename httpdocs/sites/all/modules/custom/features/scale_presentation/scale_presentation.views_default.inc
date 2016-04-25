@@ -1837,7 +1837,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['relationships']['field_speaker_uid']['id'] = 'field_speaker_uid';
   $handler->display->display_options['relationships']['field_speaker_uid']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['relationships']['field_speaker_uid']['field'] = 'field_speaker_uid';
-  $handler->display->display_options['relationships']['field_speaker_uid']['delta'] = '0';
+  $handler->display->display_options['relationships']['field_speaker_uid']['delta'] = '-1';
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -1894,7 +1894,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[realname]';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_speaker]';
   $handler->display->display_options['fields']['nothing']['alter']['path'] = 'scale/!1/speakers/[field_speaker]';
   $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['path_case'] = 'lower';

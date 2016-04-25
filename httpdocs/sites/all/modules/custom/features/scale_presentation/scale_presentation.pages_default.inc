@@ -58,12 +58,12 @@ function scale_presentation_default_page_manager_handlers() {
             'field_scale_event' => array(
               'und' => array(
                 0 => array(
-                  'tid' => '1241',
+                  'tid' => '1644',
                 ),
               ),
             ),
             'field_scale_event_tid' => array(
-              0 => '1241',
+              0 => '1644',
             ),
           ),
           'context' => 'argument_entity_id:node_1',
