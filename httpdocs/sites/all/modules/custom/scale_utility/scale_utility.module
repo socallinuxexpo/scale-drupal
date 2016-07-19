@@ -183,7 +183,19 @@ function _scale_current_speaker($uid) {
 
   $record = $result->fetchAssoc();
 
-  return($record);
+  return $record;
+}
+
+/**
+ * Get SCALE event name from node ID.
+ *
+ * Used for head title.
+ */
+function scale_utility_get_scale_event($nid) {
+  $node = node_load($nid);
+  $term = taxonomy_term_load($node->field_scale_event[LANGUAGE_NONE][0]['tid']);
+  return $term->name;
+
 }
 
 /**

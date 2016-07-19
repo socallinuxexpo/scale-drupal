@@ -6,6 +6,23 @@
  */
 
 /**
+ * Preprocess variables for html.tpl.php.
+ */
+function scale14x_preprocess_html(&$variables) {
+  // Fix head titles for previous SCALE events.
+  $current_event = variable_get('site_slogan');
+  $scale_event = (arg(0) == 'node' && is_numeric(arg(1))) ? scale_utility_get_scale_event(arg(1)) : arg(1);
+  if (!empty($scale_event) && ($scale_event != $current_event)) {
+    if (isset($variables['head_title_array']['title'])) {
+      $variables['head_title'] = $variables['head_title_array']['title'] . ' | SCALE ' . $scale_event;
+    }
+    else {
+      $variables['head_title'] = 'SCALE ' . $scale_event;
+    }
+  }
+}
+
+/**
  * Preprocess variables for page.tpl.php.
  *
  * @see page.tpl.php
