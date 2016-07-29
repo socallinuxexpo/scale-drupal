@@ -10,7 +10,7 @@
 function scale_basic_page_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -54,7 +54,7 @@ function scale_basic_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_page_image'
+  // Exported field_instance: 'node-page-field_page_image'.
   $field_instances['node-page-field_page_image'] = array(
     'bundle' => 'page',
     'deleted' => 0,
@@ -129,7 +129,7 @@ function scale_basic_page_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_scale_event'
+  // Exported field_instance: 'node-page-field_scale_event'.
   $field_instances['node-page-field_scale_event'] = array(
     'bundle' => 'page',
     'default_value' => array(

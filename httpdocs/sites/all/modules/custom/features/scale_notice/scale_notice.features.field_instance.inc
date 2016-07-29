@@ -10,7 +10,7 @@
 function scale_notice_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-notice-field_notice_body'
+  // Exported field_instance: 'node-notice-field_notice_body'.
   $field_instances['node-notice-field_notice_body'] = array(
     'bundle' => 'notice',
     'default_value' => NULL,
@@ -55,7 +55,46 @@ function scale_notice_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-notice-field_room'
+  // Exported field_instance: 'node-notice-field_notice_type'.
+  $field_instances['node-notice-field_notice_type'] = array(
+    'bundle' => 'notice',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_notice_type',
+    'label' => 'Type',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+      ),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-notice-field_room'.
   $field_instances['node-notice-field_room'] = array(
     'bundle' => 'notice',
     'default_value' => NULL,
@@ -95,7 +134,7 @@ function scale_notice_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-notice-field_scale_event'
+  // Exported field_instance: 'node-notice-field_scale_event'.
   $field_instances['node-notice-field_scale_event'] = array(
     'bundle' => 'notice',
     'default_value' => NULL,
@@ -133,7 +172,7 @@ function scale_notice_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-notice-field_time'
+  // Exported field_instance: 'node-notice-field_time'.
   $field_instances['node-notice-field_time'] = array(
     'bundle' => 'notice',
     'deleted' => 0,
@@ -194,7 +233,7 @@ function scale_notice_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-notice-field_topic'
+  // Exported field_instance: 'node-notice-field_topic'.
   $field_instances['node-notice-field_topic'] = array(
     'bundle' => 'notice',
     'default_value' => NULL,
@@ -240,6 +279,7 @@ function scale_notice_field_default_field_instances() {
   t('SCALE event');
   t('Time');
   t('Topic');
+  t('Type');
 
   return $field_instances;
 }

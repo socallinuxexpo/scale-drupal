@@ -10,7 +10,7 @@
 function scale_press_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_author'
+  // Exported field_base: 'field_author'.
   $field_bases['field_author'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -19,14 +19,6 @@ function scale_press_field_default_field_bases() {
     'field_name' => 'field_author',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
     ),
     'indexes' => array(
       'format' => array(
@@ -42,7 +34,7 @@ function scale_press_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_pub_date'
+  // Exported field_base: 'field_pub_date'.
   $field_bases['field_pub_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -52,7 +44,6 @@ function scale_press_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -75,7 +66,7 @@ function scale_press_field_default_field_bases() {
     'type' => 'datestamp',
   );
 
-  // Exported field_base: 'field_pub_link'
+  // Exported field_base: 'field_pub_link'.
   $field_bases['field_pub_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -85,7 +76,6 @@ function scale_press_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -108,7 +98,7 @@ function scale_press_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_pub_name'
+  // Exported field_base: 'field_pub_name'.
   $field_bases['field_pub_name'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -117,14 +107,6 @@ function scale_press_field_default_field_bases() {
     'field_name' => 'field_pub_name',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
     ),
     'indexes' => array(
       'format' => array(
@@ -140,7 +122,7 @@ function scale_press_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_release_date'
+  // Exported field_base: 'field_release_date'.
   $field_bases['field_release_date'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -150,7 +132,6 @@ function scale_press_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',

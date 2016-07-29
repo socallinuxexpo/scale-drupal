@@ -10,7 +10,7 @@
 function scale_speaker_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-featured_speakers-field_featured_speaker'
+  // Exported field_instance: 'node-featured_speakers-field_featured_speaker'.
   $field_instances['node-featured_speakers-field_featured_speaker'] = array(
     'bundle' => 'featured_speakers',
     'default_value' => NULL,
@@ -89,7 +89,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-featured_speakers-field_scale_event'
+  // Exported field_instance: 'node-featured_speakers-field_scale_event'.
   $field_instances['node-featured_speakers-field_scale_event'] = array(
     'bundle' => 'featured_speakers',
     'default_value' => NULL,
@@ -127,7 +127,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_biography'
+  // Exported field_instance: 'user-user-field_biography'.
   $field_instances['user-user-field_biography'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -165,7 +165,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_first_name'
+  // Exported field_instance: 'user-user-field_first_name'.
   $field_instances['user-user-field_first_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -206,7 +206,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_is_speaker'
+  // Exported field_instance: 'user-user-field_is_speaker'.
   $field_instances['user-user-field_is_speaker'] = array(
     'bundle' => 'user',
     'default_value' => array(
@@ -263,7 +263,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_job_title'
+  // Exported field_instance: 'user-user-field_job_title'.
   $field_instances['user-user-field_job_title'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -297,7 +297,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_last_name'
+  // Exported field_instance: 'user-user-field_last_name'.
   $field_instances['user-user-field_last_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -338,7 +338,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_organization'
+  // Exported field_instance: 'user-user-field_organization'.
   $field_instances['user-user-field_organization'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -372,7 +372,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_phone'
+  // Exported field_instance: 'user-user-field_phone'.
   $field_instances['user-user-field_phone'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -406,7 +406,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_postal_code'
+  // Exported field_instance: 'user-user-field_postal_code'.
   $field_instances['user-user-field_postal_code'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -440,7 +440,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_speaker_photo'
+  // Exported field_instance: 'user-user-field_speaker_photo'.
   $field_instances['user-user-field_speaker_photo'] = array(
     'bundle' => 'user',
     'deleted' => 0,
@@ -499,7 +499,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_twitter_url'
+  // Exported field_instance: 'user-user-field_twitter_url'.
   $field_instances['user-user-field_twitter_url'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -548,7 +548,7 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_website'
+  // Exported field_instance: 'user-user-field_website'.
   $field_instances['user-user-field_website'] = array(
     'bundle' => 'user',
     'default_value' => NULL,

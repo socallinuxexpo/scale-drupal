@@ -10,7 +10,7 @@
 function scale_press_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-press_coverage-field_author'
+  // Exported field_instance: 'node-press_coverage-field_author'.
   $field_instances['node-press_coverage-field_author'] = array(
     'bundle' => 'press_coverage',
     'default_value' => NULL,
@@ -52,7 +52,7 @@ function scale_press_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-press_coverage-field_pub_date'
+  // Exported field_instance: 'node-press_coverage-field_pub_date'.
   $field_instances['node-press_coverage-field_pub_date'] = array(
     'bundle' => 'press_coverage',
     'deleted' => 0,
@@ -106,7 +106,7 @@ function scale_press_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-press_coverage-field_pub_link'
+  // Exported field_instance: 'node-press_coverage-field_pub_link'.
   $field_instances['node-press_coverage-field_pub_link'] = array(
     'bundle' => 'press_coverage',
     'default_value' => NULL,
@@ -163,7 +163,7 @@ function scale_press_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-press_coverage-field_pub_name'
+  // Exported field_instance: 'node-press_coverage-field_pub_name'.
   $field_instances['node-press_coverage-field_pub_name'] = array(
     'bundle' => 'press_coverage',
     'default_value' => NULL,
@@ -205,7 +205,7 @@ function scale_press_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-press_coverage-field_scale_event'
+  // Exported field_instance: 'node-press_coverage-field_scale_event'.
   $field_instances['node-press_coverage-field_scale_event'] = array(
     'bundle' => 'press_coverage',
     'default_value' => NULL,
@@ -243,7 +243,7 @@ function scale_press_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-press_release-body'
+  // Exported field_instance: 'node-press_release-body'.
   $field_instances['node-press_release-body'] = array(
     'bundle' => 'press_release',
     'default_value' => NULL,
@@ -292,7 +292,7 @@ function scale_press_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-press_release-field_release_date'
+  // Exported field_instance: 'node-press_release-field_release_date'.
   $field_instances['node-press_release-field_release_date'] = array(
     'bundle' => 'press_release',
     'deleted' => 0,
@@ -353,7 +353,7 @@ function scale_press_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-press_release-field_scale_event'
+  // Exported field_instance: 'node-press_release-field_scale_event'.
   $field_instances['node-press_release-field_scale_event'] = array(
     'bundle' => 'press_release',
     'default_value' => NULL,

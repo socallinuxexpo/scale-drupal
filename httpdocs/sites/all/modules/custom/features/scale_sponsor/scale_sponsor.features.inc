@@ -37,5 +37,6 @@ function scale_sponsor_node_info() {
       'help' => t('The name of the organization.'),
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

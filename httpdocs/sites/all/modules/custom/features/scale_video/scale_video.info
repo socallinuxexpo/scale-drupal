@@ -1,7 +1,7 @@
 name = Video
 core = 7.x
 package = SCALE
-version = 7.x-1.4
+version = 7.x-1.5
 project = scale_video
 dependencies[] = scale_common
 dependencies[] = strongarm
@@ -35,4 +35,3 @@ features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][options] = options
 features_exclude[dependencies][taxonomy] = taxonomy
-mtime = 1424456480

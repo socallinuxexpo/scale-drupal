@@ -10,7 +10,7 @@
 function scale_video_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-streaming_video-field_embed_code_video'
+  // Exported field_instance: 'node-streaming_video-field_embed_code_video'.
   $field_instances['node-streaming_video-field_embed_code_video'] = array(
     'bundle' => 'streaming_video',
     'default_value' => NULL,
@@ -54,7 +54,7 @@ function scale_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-streaming_video-field_room_video'
+  // Exported field_instance: 'node-streaming_video-field_room_video'.
   $field_instances['node-streaming_video-field_room_video'] = array(
     'bundle' => 'streaming_video',
     'default_value' => NULL,
@@ -92,7 +92,7 @@ function scale_video_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-streaming_video-field_scale_event'
+  // Exported field_instance: 'node-streaming_video-field_scale_event'.
   $field_instances['node-streaming_video-field_scale_event'] = array(
     'bundle' => 'streaming_video',
     'default_value' => NULL,

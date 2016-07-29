@@ -10,7 +10,7 @@
 function scale_special_event_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_logo'
+  // Exported field_base: 'field_logo'.
   $field_bases['field_logo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -19,14 +19,6 @@ function scale_special_event_field_default_field_bases() {
     'field_name' => 'field_logo',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
     ),
     'indexes' => array(
       'fid' => array(
@@ -43,7 +35,7 @@ function scale_special_event_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_schedule'
+  // Exported field_base: 'field_schedule'.
   $field_bases['field_schedule'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -52,14 +44,6 @@ function scale_special_event_field_default_field_bases() {
     'field_name' => 'field_schedule',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
     ),
     'indexes' => array(
       'format' => array(
@@ -73,7 +57,7 @@ function scale_special_event_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_sponsor'
+  // Exported field_base: 'field_sponsor'.
   $field_bases['field_sponsor'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -82,14 +66,6 @@ function scale_special_event_field_default_field_bases() {
     'field_name' => 'field_sponsor',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'nid' => array(
-        'columns' => array(
-          'nid' => 'nid',
-        ),
-        'table' => 'node',
-      ),
     ),
     'indexes' => array(
       'nid' => array(
@@ -122,7 +98,7 @@ function scale_special_event_field_default_field_bases() {
     'type' => 'node_reference',
   );
 
-  // Exported field_base: 'field_when'
+  // Exported field_base: 'field_when'.
   $field_bases['field_when'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -132,7 +108,6 @@ function scale_special_event_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',

@@ -1,7 +1,7 @@
 name = Special Event
 core = 7.x
 package = SCALE
-version = 7.x-1.2
+version = 7.x-1.3
 project = scale_special_event
 dependencies[] = image
 dependencies[] = node_reference
@@ -42,4 +42,3 @@ features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][date] = date
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][options] = options
-mtime = 1408221583

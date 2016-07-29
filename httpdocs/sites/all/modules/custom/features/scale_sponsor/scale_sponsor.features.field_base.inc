@@ -10,7 +10,7 @@
 function scale_sponsor_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_booth_number'
+  // Exported field_base: 'field_booth_number'.
   $field_bases['field_booth_number'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -19,14 +19,6 @@ function scale_sponsor_field_default_field_bases() {
     'field_name' => 'field_booth_number',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
     ),
     'indexes' => array(
       'format' => array(
@@ -42,14 +34,13 @@ function scale_sponsor_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_exhibitor_sponsor'
+  // Exported field_base: 'field_exhibitor_sponsor'.
   $field_bases['field_exhibitor_sponsor'] = array(
     'active' => 1,
     'cardinality' => 2,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_exhibitor_sponsor',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -68,14 +59,13 @@ function scale_sponsor_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_exhibitor_type'
+  // Exported field_base: 'field_exhibitor_type'.
   $field_bases['field_exhibitor_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_exhibitor_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -94,7 +84,7 @@ function scale_sponsor_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_logo_website'
+  // Exported field_base: 'field_logo_website'.
   $field_bases['field_logo_website'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -103,14 +93,6 @@ function scale_sponsor_field_default_field_bases() {
     'field_name' => 'field_logo_website',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
     ),
     'indexes' => array(
       'fid' => array(
@@ -127,7 +109,7 @@ function scale_sponsor_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_sponsor_type'
+  // Exported field_base: 'field_sponsor_type'.
   $field_bases['field_sponsor_type'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -137,7 +119,6 @@ function scale_sponsor_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -170,7 +151,7 @@ function scale_sponsor_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_sponsor_website'
+  // Exported field_base: 'field_sponsor_website'.
   $field_bases['field_sponsor_website'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -180,7 +161,6 @@ function scale_sponsor_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',

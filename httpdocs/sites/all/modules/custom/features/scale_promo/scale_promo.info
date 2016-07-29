@@ -1,7 +1,7 @@
 name = Promo
 core = 7.x
 package = SCALE
-version = 7.x-1.3
+version = 7.x-1.4
 project = scale_promo
 dependencies[] = file
 dependencies[] = file_entity
@@ -41,4 +41,3 @@ features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][list] = list
 features_exclude[dependencies][options] = options
-mtime = 1419795921

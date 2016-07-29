@@ -10,7 +10,7 @@
 function scale_promo_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-promo_item-body'
+  // Exported field_instance: 'node-promo_item-body'.
   $field_instances['node-promo_item-body'] = array(
     'bundle' => 'promo_item',
     'default_value' => NULL,
@@ -59,7 +59,7 @@ function scale_promo_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-promo_item-field_embed_code'
+  // Exported field_instance: 'node-promo_item-field_embed_code'.
   $field_instances['node-promo_item-field_embed_code'] = array(
     'bundle' => 'promo_item',
     'default_value' => NULL,
@@ -103,7 +103,7 @@ function scale_promo_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-promo_item-field_item_type'
+  // Exported field_instance: 'node-promo_item-field_item_type'.
   $field_instances['node-promo_item-field_item_type'] = array(
     'bundle' => 'promo_item',
     'default_value' => NULL,
@@ -142,7 +142,7 @@ function scale_promo_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-promo_item-field_promo_file'
+  // Exported field_instance: 'node-promo_item-field_promo_file'.
   $field_instances['node-promo_item-field_promo_file'] = array(
     'bundle' => 'promo_item',
     'deleted' => 0,
@@ -201,7 +201,7 @@ function scale_promo_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-promo_item-field_scale_event'
+  // Exported field_instance: 'node-promo_item-field_scale_event'.
   $field_instances['node-promo_item-field_scale_event'] = array(
     'bundle' => 'promo_item',
     'default_value' => NULL,
@@ -239,7 +239,7 @@ function scale_promo_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-promo_item-field_specificatins'
+  // Exported field_instance: 'node-promo_item-field_specificatins'.
   $field_instances['node-promo_item-field_specificatins'] = array(
     'bundle' => 'promo_item',
     'default_value' => NULL,

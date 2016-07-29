@@ -10,7 +10,7 @@
 function scale_common_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -21,14 +21,6 @@ function scale_common_field_default_field_bases() {
     'field_name' => 'body',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
     ),
     'indexes' => array(
       'format' => array(
@@ -42,7 +34,7 @@ function scale_common_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'comment_body'
+  // Exported field_base: 'comment_body'.
   $field_bases['comment_body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -51,14 +43,6 @@ function scale_common_field_default_field_bases() {
       0 => 'comment',
     ),
     'field_name' => 'comment_body',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -71,7 +55,7 @@ function scale_common_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_ready_for_approval'
+  // Exported field_base: 'field_ready_for_approval'.
   $field_bases['field_ready_for_approval'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -81,7 +65,6 @@ function scale_common_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -100,7 +83,7 @@ function scale_common_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_room'
+  // Exported field_base: 'field_room'.
   $field_bases['field_room'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -109,14 +92,6 @@ function scale_common_field_default_field_bases() {
     'field_name' => 'field_room',
     'field_permissions' => array(
       'type' => 2,
-    ),
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
     ),
     'indexes' => array(
       'tid' => array(
@@ -137,7 +112,7 @@ function scale_common_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_scale_event'
+  // Exported field_base: 'field_scale_event'.
   $field_bases['field_scale_event'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -146,14 +121,6 @@ function scale_common_field_default_field_bases() {
     'field_name' => 'field_scale_event',
     'field_permissions' => array(
       'type' => 2,
-    ),
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
     ),
     'indexes' => array(
       'tid' => array(
@@ -174,7 +141,7 @@ function scale_common_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_time'
+  // Exported field_base: 'field_time'.
   $field_bases['field_time'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -184,7 +151,6 @@ function scale_common_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -207,7 +173,7 @@ function scale_common_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_topic'
+  // Exported field_base: 'field_topic'.
   $field_bases['field_topic'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -216,14 +182,6 @@ function scale_common_field_default_field_bases() {
     'field_name' => 'field_topic',
     'field_permissions' => array(
       'type' => 0,
-    ),
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
     ),
     'indexes' => array(
       'tid' => array(

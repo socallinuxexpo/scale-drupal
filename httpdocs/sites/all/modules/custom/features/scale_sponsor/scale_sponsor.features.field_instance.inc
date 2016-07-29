@@ -10,7 +10,7 @@
 function scale_sponsor_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-sponsor-body'
+  // Exported field_instance: 'node-sponsor-body'.
   $field_instances['node-sponsor-body'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -59,7 +59,7 @@ function scale_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_booth_number'
+  // Exported field_instance: 'node-sponsor-field_booth_number'.
   $field_instances['node-sponsor-field_booth_number'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -102,7 +102,7 @@ function scale_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_exhibitor_sponsor'
+  // Exported field_instance: 'node-sponsor-field_exhibitor_sponsor'.
   $field_instances['node-sponsor-field_exhibitor_sponsor'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -140,7 +140,7 @@ function scale_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_exhibitor_type'
+  // Exported field_instance: 'node-sponsor-field_exhibitor_type'.
   $field_instances['node-sponsor-field_exhibitor_type'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -178,7 +178,7 @@ function scale_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_logo_website'
+  // Exported field_instance: 'node-sponsor-field_logo_website'.
   $field_instances['node-sponsor-field_logo_website'] = array(
     'bundle' => 'sponsor',
     'deleted' => 0,
@@ -251,7 +251,7 @@ function scale_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_ready_for_approval'
+  // Exported field_instance: 'node-sponsor-field_ready_for_approval'.
   $field_instances['node-sponsor-field_ready_for_approval'] = array(
     'bundle' => 'sponsor',
     'default_value' => array(
@@ -294,7 +294,7 @@ function scale_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_scale_event'
+  // Exported field_instance: 'node-sponsor-field_scale_event'.
   $field_instances['node-sponsor-field_scale_event'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -332,7 +332,7 @@ function scale_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_sponsor_type'
+  // Exported field_instance: 'node-sponsor-field_sponsor_type'.
   $field_instances['node-sponsor-field_sponsor_type'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,
@@ -372,7 +372,7 @@ function scale_sponsor_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-sponsor-field_sponsor_website'
+  // Exported field_instance: 'node-sponsor-field_sponsor_website'.
   $field_instances['node-sponsor-field_sponsor_website'] = array(
     'bundle' => 'sponsor',
     'default_value' => NULL,

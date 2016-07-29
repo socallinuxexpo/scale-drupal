@@ -10,21 +10,13 @@
 function scale_speaker_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_biography'
+  // Exported field_base: 'field_biography'.
   $field_bases['field_biography'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_biography',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -37,21 +29,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_featured_speaker'
+  // Exported field_base: 'field_featured_speaker'.
   $field_bases['field_featured_speaker'] = array(
     'active' => 1,
     'cardinality' => 3,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_featured_speaker',
-    'foreign keys' => array(
-      'uid' => array(
-        'columns' => array(
-          'uid' => 'uid',
-        ),
-        'table' => 'users',
-      ),
-    ),
     'indexes' => array(
       'uid' => array(
         0 => 'uid',
@@ -85,21 +69,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'user_reference',
   );
 
-  // Exported field_base: 'field_first_name'
+  // Exported field_base: 'field_first_name'.
   $field_bases['field_first_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_first_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -114,14 +90,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_is_speaker'
+  // Exported field_base: 'field_is_speaker'.
   $field_bases['field_is_speaker'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_is_speaker',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -140,21 +115,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_job_title'
+  // Exported field_base: 'field_job_title'.
   $field_bases['field_job_title'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_job_title',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -169,21 +136,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_last_name'
+  // Exported field_base: 'field_last_name'.
   $field_bases['field_last_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_last_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -198,21 +157,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_organization'
+  // Exported field_base: 'field_organization'.
   $field_bases['field_organization'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_organization',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -227,21 +178,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_phone'
+  // Exported field_base: 'field_phone'.
   $field_bases['field_phone'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_phone',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -256,21 +199,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_postal_code'
+  // Exported field_base: 'field_postal_code'.
   $field_bases['field_postal_code'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_postal_code',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -285,21 +220,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_speaker_photo'
+  // Exported field_base: 'field_speaker_photo'.
   $field_bases['field_speaker_photo'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_speaker_photo',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -315,14 +242,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_twitter_url'
+  // Exported field_base: 'field_twitter_url'.
   $field_bases['field_twitter_url'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_twitter_url',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -345,14 +271,13 @@ function scale_speaker_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_website'
+  // Exported field_base: 'field_website'.
   $field_bases['field_website'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_website',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',

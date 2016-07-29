@@ -10,7 +10,7 @@
 function scale_special_event_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-special_event-body'
+  // Exported field_instance: 'node-special_event-body'.
   $field_instances['node-special_event-body'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -54,7 +54,7 @@ function scale_special_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_logo'
+  // Exported field_instance: 'node-special_event-field_logo'.
   $field_instances['node-special_event-field_logo'] = array(
     'bundle' => 'special_event',
     'deleted' => 0,
@@ -123,7 +123,7 @@ function scale_special_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_ready_for_approval'
+  // Exported field_instance: 'node-special_event-field_ready_for_approval'.
   $field_instances['node-special_event-field_ready_for_approval'] = array(
     'bundle' => 'special_event',
     'default_value' => array(
@@ -166,7 +166,7 @@ function scale_special_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_scale_event'
+  // Exported field_instance: 'node-special_event-field_scale_event'.
   $field_instances['node-special_event-field_scale_event'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -204,7 +204,7 @@ function scale_special_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_schedule'
+  // Exported field_instance: 'node-special_event-field_schedule'.
   $field_instances['node-special_event-field_schedule'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -248,7 +248,7 @@ function scale_special_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_sponsor'
+  // Exported field_instance: 'node-special_event-field_sponsor'.
   $field_instances['node-special_event-field_sponsor'] = array(
     'bundle' => 'special_event',
     'default_value' => NULL,
@@ -286,7 +286,7 @@ function scale_special_event_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-special_event-field_when'
+  // Exported field_instance: 'node-special_event-field_when'.
   $field_instances['node-special_event-field_when'] = array(
     'bundle' => 'special_event',
     'deleted' => 0,
