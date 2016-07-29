@@ -10,7 +10,7 @@
 function scale_presentation_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_appropriate_for'
+  // Exported field_base: 'field_appropriate_for'.
   $field_bases['field_appropriate_for'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -20,7 +20,6 @@ function scale_presentation_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -39,21 +38,13 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_audience'
+  // Exported field_base: 'field_audience'.
   $field_bases['field_audience'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_audience',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -73,7 +64,7 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_audio_video'
+  // Exported field_base: 'field_audio_video'.
   $field_bases['field_audio_video'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -82,14 +73,6 @@ function scale_presentation_field_default_field_bases() {
     'field_name' => 'field_audio_video',
     'field_permissions' => array(
       'type' => 2,
-    ),
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
     ),
     'indexes' => array(
       'format' => array(
@@ -103,21 +86,13 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_brief_description'
+  // Exported field_base: 'field_brief_description'.
   $field_bases['field_brief_description'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_brief_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -132,21 +107,13 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_long_abstract'
+  // Exported field_base: 'field_long_abstract'.
   $field_bases['field_long_abstract'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_long_abstract',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -159,21 +126,13 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_message_to_reviewers'
+  // Exported field_base: 'field_message_to_reviewers'.
   $field_bases['field_message_to_reviewers'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_message_to_reviewers',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -186,7 +145,7 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_overflow_room'
+  // Exported field_base: 'field_overflow_room'.
   $field_bases['field_overflow_room'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -195,14 +154,6 @@ function scale_presentation_field_default_field_bases() {
     'field_name' => 'field_overflow_room',
     'field_permissions' => array(
       'type' => 2,
-    ),
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
     ),
     'indexes' => array(
       'tid' => array(
@@ -223,7 +174,7 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_presentation_link'
+  // Exported field_base: 'field_presentation_link'.
   $field_bases['field_presentation_link'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -233,7 +184,6 @@ function scale_presentation_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -256,7 +206,7 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_presentation_status'
+  // Exported field_base: 'field_presentation_status'.
   $field_bases['field_presentation_status'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -266,7 +216,6 @@ function scale_presentation_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 2,
     ),
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -286,21 +235,13 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_presentation_tags'
+  // Exported field_base: 'field_presentation_tags'.
   $field_bases['field_presentation_tags'] = array(
     'active' => 1,
     'cardinality' => 6,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_presentation_tags',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -320,7 +261,7 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_presentation_to_upload'
+  // Exported field_base: 'field_presentation_to_upload'.
   $field_bases['field_presentation_to_upload'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -329,14 +270,6 @@ function scale_presentation_field_default_field_bases() {
     'field_name' => 'field_presentation_to_upload',
     'field_permissions' => array(
       'type' => 2,
-    ),
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
     ),
     'indexes' => array(
       'fid' => array(
@@ -354,21 +287,13 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'field_primary_email'
+  // Exported field_base: 'field_primary_email'.
   $field_bases['field_primary_email'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_primary_email',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -383,21 +308,13 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_short_abstract'
+  // Exported field_base: 'field_short_abstract'.
   $field_bases['field_short_abstract'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_short_abstract',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -410,21 +327,13 @@ function scale_presentation_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_speaker'
+  // Exported field_base: 'field_speaker'.
   $field_bases['field_speaker'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_speaker',
-    'foreign keys' => array(
-      'uid' => array(
-        'columns' => array(
-          'uid' => 'uid',
-        ),
-        'table' => 'users',
-      ),
-    ),
     'indexes' => array(
       'uid' => array(
         0 => 'uid',

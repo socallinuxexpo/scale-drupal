@@ -10,7 +10,7 @@
 function scale_presentation_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-presentation-field_appropriate_for'
+  // Exported field_instance: 'node-presentation-field_appropriate_for'.
   $field_instances['node-presentation-field_appropriate_for'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -49,7 +49,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_audience'
+  // Exported field_instance: 'node-presentation-field_audience'.
   $field_instances['node-presentation-field_audience'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -88,7 +88,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_audio_video'
+  // Exported field_instance: 'node-presentation-field_audio_video'.
   $field_instances['node-presentation-field_audio_video'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -132,7 +132,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_brief_description'
+  // Exported field_instance: 'node-presentation-field_brief_description'.
   $field_instances['node-presentation-field_brief_description'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -174,7 +174,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_long_abstract'
+  // Exported field_instance: 'node-presentation-field_long_abstract'.
   $field_instances['node-presentation-field_long_abstract'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -218,7 +218,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_message_to_reviewers'
+  // Exported field_instance: 'node-presentation-field_message_to_reviewers'.
   $field_instances['node-presentation-field_message_to_reviewers'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -262,7 +262,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_overflow_room'
+  // Exported field_instance: 'node-presentation-field_overflow_room'.
   $field_instances['node-presentation-field_overflow_room'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -301,7 +301,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_presentation_link'
+  // Exported field_instance: 'node-presentation-field_presentation_link'.
   $field_instances['node-presentation-field_presentation_link'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -358,7 +358,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_presentation_status'
+  // Exported field_instance: 'node-presentation-field_presentation_status'.
   $field_instances['node-presentation-field_presentation_status'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -397,7 +397,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_presentation_tags'
+  // Exported field_instance: 'node-presentation-field_presentation_tags'.
   $field_instances['node-presentation-field_presentation_tags'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -438,7 +438,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_presentation_to_upload'
+  // Exported field_instance: 'node-presentation-field_presentation_to_upload'.
   $field_instances['node-presentation-field_presentation_to_upload'] = array(
     'bundle' => 'presentation',
     'deleted' => 0,
@@ -501,7 +501,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_primary_email'
+  // Exported field_instance: 'node-presentation-field_primary_email'.
   $field_instances['node-presentation-field_primary_email'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -543,7 +543,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_room'
+  // Exported field_instance: 'node-presentation-field_room'.
   $field_instances['node-presentation-field_room'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -582,7 +582,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_scale_event'
+  // Exported field_instance: 'node-presentation-field_scale_event'.
   $field_instances['node-presentation-field_scale_event'] = array(
     'bundle' => 'presentation',
     'default_value' => array(
@@ -624,7 +624,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_short_abstract'
+  // Exported field_instance: 'node-presentation-field_short_abstract'.
   $field_instances['node-presentation-field_short_abstract'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -668,7 +668,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_speaker'
+  // Exported field_instance: 'node-presentation-field_speaker'.
   $field_instances['node-presentation-field_speaker'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
@@ -752,7 +752,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_time'
+  // Exported field_instance: 'node-presentation-field_time'.
   $field_instances['node-presentation-field_time'] = array(
     'bundle' => 'presentation',
     'deleted' => 0,
@@ -806,7 +806,7 @@ function scale_presentation_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-presentation-field_topic'
+  // Exported field_instance: 'node-presentation-field_topic'.
   $field_instances['node-presentation-field_topic'] = array(
     'bundle' => 'presentation',
     'default_value' => NULL,
