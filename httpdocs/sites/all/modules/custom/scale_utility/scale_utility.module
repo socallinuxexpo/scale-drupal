@@ -54,7 +54,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         434, // Nodestack.
         436, // OpenNMS.
         1210, // openSUSE.
-        18, // PostgreSQL.
+        //18, // PostgreSQL.
         437, // Puppet.
         1229, // Testing.
         22, // Try It Lab.
