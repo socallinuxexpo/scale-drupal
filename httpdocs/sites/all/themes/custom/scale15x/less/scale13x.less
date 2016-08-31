@@ -6,6 +6,10 @@
 body {
 }
 
+.page-header {
+  border: 0 none transparent;
+}
+
 // Banner Graphics
 #site-logo {
   margin-bottom: 2em;
@@ -49,7 +53,7 @@ body {
         margin-bottom: 3em;
       }
       .views-row-first {
-        padding-top: 0;
+        //padding-top: 0;
         border-top: 0 none transparent;
       }
       .views-field {
@@ -72,7 +76,7 @@ body {
     clear: both;
   }
   .views-row-first {
-    padding-top: 0;
+    //padding-top: 0;
     border-top: 0 none transparent;
   }
 }
@@ -124,8 +128,7 @@ body {
 }
 
 // Footer Menu
-#block-menu-menu-14x-footer,
-#block-menu-menu-13x-footer {
+.region-footer > .block-menu {
   li {
     display: inline-block;
     border-left: 1px solid #999;
@@ -225,7 +228,12 @@ body {
 }
 
 /* Presentations List Page */
-.view-presentation-page {
+.view-display-id-page_3 {
+  &> .view-content > .views-row {
+    border-top: 1px solid @listBorder;
+  }
+}
+.view-display-id-page_3 {
   .views-row {
     margin-bottom: 2em;
     clear: both;
@@ -233,6 +241,7 @@ body {
       float: right;
       margin-top: -2em;
       margin-bottom: 2em;
+      padding-top: 12px;
     }
   }
   .views-field {
@@ -265,12 +274,15 @@ body {
       margin-bottom: 2em;
       clear: both;
       padding-top: 2em;
+      border-top: 1px solid @listBorder;
     }
     .views-row-first {
-      padding-top: 0;
+      //padding-top: 0;
+      //border-top: 0 none transparent;
     }
   }
   .views-field-realname {
+    font-family: @titleFontFamily;
     font-size: 2em;
     a:hover {
       text-decoration: none;

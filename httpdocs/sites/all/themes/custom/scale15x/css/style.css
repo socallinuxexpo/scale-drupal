@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=Arimo|Varela+Round';
 /* RG Gruntfile test. */
 .clearfix {
   *zoom: 1;
@@ -6599,6 +6600,28 @@ div.password-suggestions ul {
   position: relative;
   top: 1px;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+section.main,
+aside,
+.highlighted section > h2.well {
+  margin-top: 0;
+  border: 2px solid black;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+.well {
+  background-color: transparent;
+  border: 0 none transparent;
+}
 #views-exposed-form-presentations-with-filters-presentations-filtered .views-exposed-widgets,
 #views-exposed-form-presentation-vote-tally-page .views-exposed-widgets {
   position: relative;
@@ -6621,6 +6644,9 @@ div.password-suggestions ul {
 }
 .dropdown-backdrop {
   position: static;
+}
+.page-header {
+  border: 0 none transparent;
 }
 #site-logo {
   margin-bottom: 2em;
@@ -6654,7 +6680,6 @@ div.password-suggestions ul {
   margin-bottom: 3em;
 }
 .view-sponsors-12x .attachment-after .views-row-first {
-  padding-top: 0;
   border-top: 0 none transparent;
 }
 .view-sponsors-12x .attachment-after .views-field {
@@ -6674,7 +6699,6 @@ div.password-suggestions ul {
   clear: both;
 }
 .view-exhibitors .views-row-first {
-  padding-top: 0;
   border-top: 0 none transparent;
 }
 .view-sponsors-12x .views-field,
@@ -6714,14 +6738,12 @@ div.password-suggestions ul {
 #block-menu-block-3 li.active {
   font-weight: bold;
 }
-#block-menu-menu-14x-footer li,
-#block-menu-menu-13x-footer li {
+.region-footer > .block-menu li {
   display: inline-block;
   border-left: 1px solid #999;
   padding: 0 4px 0 6px;
 }
-#block-menu-menu-14x-footer li.first,
-#block-menu-menu-13x-footer li.first {
+.region-footer > .block-menu li.first {
   border-left: none;
   padding-left: 0;
 }
@@ -6821,34 +6843,38 @@ div.password-suggestions ul {
   margin-bottom: 0;
 }
 /* Presentations List Page */
-.view-presentation-page .views-row {
+.view-display-id-page_3 > .view-content > .views-row {
+  border-top: 1px solid #000000;
+}
+.view-display-id-page_3 .views-row {
   margin-bottom: 2em;
   clear: both;
 }
-.view-presentation-page .views-row .multi-speaker {
+.view-display-id-page_3 .views-row .multi-speaker {
   float: right;
   margin-top: -2em;
   margin-bottom: 2em;
+  padding-top: 12px;
 }
-.view-presentation-page .views-field {
+.view-display-id-page_3 .views-field {
   margin-bottom: 12px;
 }
-.view-presentation-page .views-field-field-speaker-photo {
+.view-display-id-page_3 .views-field-field-speaker-photo {
   float: right;
   margin-left: 20px;
 }
-.view-presentation-page .views-field-title {
+.view-display-id-page_3 .views-field-title {
   font-size: 2em;
   line-height: 1em;
 }
-.view-presentation-page .views-field-field-speaker {
+.view-display-id-page_3 .views-field-field-speaker {
   font-size: 1.5em;
   line-height: 1.1em;
 }
-.view-presentation-page .terms {
+.view-display-id-page_3 .terms {
   display: inline-block;
 }
-.view-presentation-page .views-field-field-topic {
+.view-display-id-page_3 .views-field-field-topic {
   margin: auto auto 20px 20px;
 }
 /* Speakers List Page */
@@ -6856,11 +6882,10 @@ div.password-suggestions ul {
   margin-bottom: 2em;
   clear: both;
   padding-top: 2em;
-}
-.view-display-id-speakers_list > .view-content .views-row-first {
-  padding-top: 0;
+  border-top: 1px solid #000000;
 }
 .view-display-id-speakers_list .views-field-realname {
+  font-family: "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2em;
 }
 .view-display-id-speakers_list .views-field-realname a:hover {

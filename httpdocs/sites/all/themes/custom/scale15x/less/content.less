@@ -1,5 +1,27 @@
 // Insert your styling here.
 
+// HTML Elements.
+h1, h2, h3, h4, h5, h6 {
+  font-family: @titleFontFamily;
+  font-weight: normal;
+}
+
+// Bootstrap elements.
+section.main,
+aside,
+.highlighted section > h2.well {
+  margin-top: 0;
+  border: 2px solid black;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+.well {
+  background-color: transparent;
+  border: 0 none transparent;
+}
+
 // Presentation Votes view listing
 #views-exposed-form-presentations-with-filters-presentations-filtered,
 #views-exposed-form-presentation-vote-tally-page {

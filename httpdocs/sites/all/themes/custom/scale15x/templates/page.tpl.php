@@ -67,11 +67,12 @@
 
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="span3 hidden-phone" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
+        <?php $sidebar_first = render($page['sidebar_first']); ?>
+        <?php print render($sidebar_first); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
 
-    <section class="<?php print _bootstrap_content_span($columns); ?>">
+    <section class="main <?php print _bootstrap_content_span($columns); ?>">
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
@@ -97,7 +98,7 @@
 
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="span3 visible-phone" role="complementary">
-        <?php print render($page['sidebar_first']); ?>
+        <?php print render($sidebar_first); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
 
