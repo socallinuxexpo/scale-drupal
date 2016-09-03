@@ -27,6 +27,5 @@ function scale_schedule_menu_default_menu_custom() {
   t('Schedule 13x');
   t('Schedule 14x');
 
-
   return $menus;
 }

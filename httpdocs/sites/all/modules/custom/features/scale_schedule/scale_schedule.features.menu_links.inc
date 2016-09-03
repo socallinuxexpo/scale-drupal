@@ -10,7 +10,7 @@
 function scale_schedule_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: menu-schedule-13x_friday-february-20-2015:scale/13x/schedule/friday
+  // Exported menu link: menu-schedule-13x_friday-february-20-2015:scale/13x/schedule/friday.
   $menu_links['menu-schedule-13x_friday-february-20-2015:scale/13x/schedule/friday'] = array(
     'menu_name' => 'menu-schedule-13x',
     'link_path' => 'scale/13x/schedule/friday',
@@ -32,7 +32,7 @@ function scale_schedule_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-schedule-13x_saturday-february-21-2015:scale/13x/schedule/saturday
+  // Exported menu link: menu-schedule-13x_saturday-february-21-2015:scale/13x/schedule/saturday.
   $menu_links['menu-schedule-13x_saturday-february-21-2015:scale/13x/schedule/saturday'] = array(
     'menu_name' => 'menu-schedule-13x',
     'link_path' => 'scale/13x/schedule/saturday',
@@ -54,7 +54,7 @@ function scale_schedule_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: menu-schedule-13x_sunday-february-22-2015:scale/13x/schedule/sunday
+  // Exported menu link: menu-schedule-13x_sunday-february-22-2015:scale/13x/schedule/sunday.
   $menu_links['menu-schedule-13x_sunday-february-22-2015:scale/13x/schedule/sunday'] = array(
     'menu_name' => 'menu-schedule-13x',
     'link_path' => 'scale/13x/schedule/sunday',
@@ -76,7 +76,7 @@ function scale_schedule_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-schedule-13x_thursday-february-19-2015:scale/13x/schedule/thursday
+  // Exported menu link: menu-schedule-13x_thursday-february-19-2015:scale/13x/schedule/thursday.
   $menu_links['menu-schedule-13x_thursday-february-19-2015:scale/13x/schedule/thursday'] = array(
     'menu_name' => 'menu-schedule-13x',
     'link_path' => 'scale/13x/schedule/thursday',
@@ -98,7 +98,7 @@ function scale_schedule_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Exported menu link: menu-schedule-14x_friday-january--22-2016:scale/14x/schedule/friday
+  // Exported menu link: menu-schedule-14x_friday-january--22-2016:scale/14x/schedule/friday.
   $menu_links['menu-schedule-14x_friday-january--22-2016:scale/14x/schedule/friday'] = array(
     'menu_name' => 'menu-schedule-14x',
     'link_path' => 'scale/14x/schedule/friday',
@@ -120,7 +120,7 @@ function scale_schedule_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
-  // Exported menu link: menu-schedule-14x_saturday-january--23-2016:scale/14x/schedule/saturday
+  // Exported menu link: menu-schedule-14x_saturday-january--23-2016:scale/14x/schedule/saturday.
   $menu_links['menu-schedule-14x_saturday-january--23-2016:scale/14x/schedule/saturday'] = array(
     'menu_name' => 'menu-schedule-14x',
     'link_path' => 'scale/14x/schedule/saturday',
@@ -142,7 +142,7 @@ function scale_schedule_menu_default_menu_links() {
     'weight' => -48,
     'customized' => 1,
   );
-  // Exported menu link: menu-schedule-14x_sunday-january--24-2016:scale/14x/schedule/sunday
+  // Exported menu link: menu-schedule-14x_sunday-january--24-2016:scale/14x/schedule/sunday.
   $menu_links['menu-schedule-14x_sunday-january--24-2016:scale/14x/schedule/sunday'] = array(
     'menu_name' => 'menu-schedule-14x',
     'link_path' => 'scale/14x/schedule/sunday',
@@ -164,7 +164,7 @@ function scale_schedule_menu_default_menu_links() {
     'weight' => -47,
     'customized' => 1,
   );
-  // Exported menu link: menu-schedule-14x_thursday-january--21-2016:scale/14x/schedule/thursday
+  // Exported menu link: menu-schedule-14x_thursday-january--21-2016:scale/14x/schedule/thursday.
   $menu_links['menu-schedule-14x_thursday-january--21-2016:scale/14x/schedule/thursday'] = array(
     'menu_name' => 'menu-schedule-14x',
     'link_path' => 'scale/14x/schedule/thursday',
@@ -186,6 +186,7 @@ function scale_schedule_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Friday, February 20, 2015');
@@ -196,7 +197,6 @@ function scale_schedule_menu_default_menu_links() {
   t('Sunday, January  24, 2016');
   t('Thursday, February 19, 2015');
   t('Thursday, January  21, 2016');
-
 
   return $menu_links;
 }

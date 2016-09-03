@@ -1,7 +1,7 @@
 name = Taxonomy
 core = 7.x
 package = SCALE
-version = 7.x-0.3
+version = 7.x-0.4
 project = scale_taxonomy
 dependencies[] = page_manager
 dependencies[] = views
@@ -14,4 +14,3 @@ features[page_manager_pages][] = audience_page
 features[page_manager_pages][] = term_page
 features[views_view][] = term_list
 features_exclude[dependencies][ctools] = ctools
-mtime = 1421521580

@@ -132,11 +132,7 @@ function scale_basic_page_field_default_field_instances() {
   // Exported field_instance: 'node-page-field_scale_event'.
   $field_instances['node-page-field_scale_event'] = array(
     'bundle' => 'page',
-    'default_value' => array(
-      0 => array(
-        'tid' => 1235,
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(

@@ -463,6 +463,8 @@ function scale_speaker_views_default_views() {
 
   /* Display: Speakers list */
   $handler = $view->new_display('page', 'Speakers list', 'speakers_list');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Speakers';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: User: Uid */
