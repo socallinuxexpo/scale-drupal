@@ -27,6 +27,7 @@ function scale_presentation_default_rules_configuration() {
             "to" : "kapadia@socallinuxexpo.org,rgolan+cfp@superconcentrated.com",
             "subject" : "A new [site:name] presentation, [node:title], has been created.",
             "message" : "[node:author] has submitted a presentation, [node:title], for [site:name].\\r\\n\\r\\n[node:url]",
+            "from" : "rgolan+cfp@superconcentrated.com",
             "language" : [ "" ]
           }
         }

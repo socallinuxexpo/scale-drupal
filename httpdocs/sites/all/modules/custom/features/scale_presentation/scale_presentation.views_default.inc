@@ -174,6 +174,8 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 0;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
+  $handler->display->display_options['style_options']['root_node'] = 'nodes';
+  $handler->display->display_options['style_options']['item_node'] = 'node';
   $handler->display->display_options['path'] = 'scale11x/sign.xml';
 
   /* Display: Data export 12x */
@@ -186,6 +188,8 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 0;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
+  $handler->display->display_options['style_options']['root_node'] = 'nodes';
+  $handler->display->display_options['style_options']['item_node'] = 'node';
   $handler->display->display_options['path'] = 'scale12x/sign.xml';
 
   /* Display: Data export multiyear */
@@ -197,6 +201,8 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 0;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
+  $handler->display->display_options['style_options']['root_node'] = 'nodes';
+  $handler->display->display_options['style_options']['item_node'] = 'node';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -2433,8 +2439,11 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
@@ -2772,8 +2781,11 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
