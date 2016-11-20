@@ -2439,11 +2439,8 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['grouping'] = array(
     0 => array(
@@ -2533,6 +2530,13 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    1644 => '1644',
+    1241 => '1241',
+    885 => '885',
+    504 => '504',
+    503 => '503',
+  );
   $handler->display->display_options['filters']['field_scale_event_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['operator_id'] = 'field_scale_event_tid_op';
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['label'] = 'SCALE event';
@@ -2781,11 +2785,8 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
     'title' => 'title',
@@ -2902,6 +2903,13 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    1644 => '1644',
+    503 => '503',
+    504 => '504',
+    885 => '885',
+    1241 => '1241',
+  );
   $handler->display->display_options['filters']['field_scale_event_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_scale_event_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['operator_id'] = 'field_scale_event_tid_op';
