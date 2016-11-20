@@ -36,6 +36,8 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       $common_roles = array_intersect($user_roles, $authorized_roles);
       if (!empty($common_roles)) {
         $keynote_authorized = TRUE;
+      } else {
+        $keynote_authorized = FALSE;
       }
       // Remove options from Presentation Topic list but keep terms in database.
       $remove_topic_terms = array(
