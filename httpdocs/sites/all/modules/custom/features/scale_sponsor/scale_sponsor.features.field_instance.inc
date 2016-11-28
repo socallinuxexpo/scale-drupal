@@ -297,7 +297,11 @@ function scale_sponsor_field_default_field_instances() {
   // Exported field_instance: 'node-sponsor-field_scale_event'.
   $field_instances['node-sponsor-field_scale_event'] = array(
     'bundle' => 'sponsor',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 1644,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
