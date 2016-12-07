@@ -3013,6 +3013,7 @@ function scale_presentation_views_default_views() {
     8 => '8',
     9 => '9',
     10 => '10',
+    1201 => '1201',
     11 => '11',
     12 => '12',
     13 => '13',
