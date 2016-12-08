@@ -1,7 +1,7 @@
 name = Presentation
 core = 7.x
 package = SCALE
-version = 7.x-2.33
+version = 7.x-2.34
 project = scale_presentation
 dependencies[] = date
 dependencies[] = entity
@@ -77,6 +77,7 @@ features[views_view][] = featured_speakers
 features[views_view][] = my_presentations
 features[views_view][] = my_votes
 features[views_view][] = presentation_downloads
+features[views_view][] = presentation_exporter
 features[views_view][] = presentation_filter
 features[views_view][] = presentation_page
 features[views_view][] = presentation_single

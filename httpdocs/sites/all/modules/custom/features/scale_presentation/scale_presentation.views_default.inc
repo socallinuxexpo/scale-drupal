@@ -992,6 +992,240 @@ function scale_presentation_views_default_views() {
   $export['presentation_downloads'] = $view;
 
   $view = new view();
+  $view->name = 'presentation_exporter';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'presentation exporter';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'presentation exporter';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    9 => '9',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Audience */
+  $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
+  $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Tags */
+  $handler->display->display_options['fields']['field_presentation_tags']['id'] = 'field_presentation_tags';
+  $handler->display->display_options['fields']['field_presentation_tags']['table'] = 'field_data_field_presentation_tags';
+  $handler->display->display_options['fields']['field_presentation_tags']['field'] = 'field_presentation_tags';
+  $handler->display->display_options['fields']['field_presentation_tags']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_presentation_tags']['delta_offset'] = '0';
+  /* Field: Content: appropriate for */
+  $handler->display->display_options['fields']['field_appropriate_for']['id'] = 'field_appropriate_for';
+  $handler->display->display_options['fields']['field_appropriate_for']['table'] = 'field_data_field_appropriate_for';
+  $handler->display->display_options['fields']['field_appropriate_for']['field'] = 'field_appropriate_for';
+  /* Field: Content: Speakers */
+  $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['type'] = 'user_reference_plain';
+  $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: Content: Primary contact email address */
+  $handler->display->display_options['fields']['field_primary_email']['id'] = 'field_primary_email';
+  $handler->display->display_options['fields']['field_primary_email']['table'] = 'field_data_field_primary_email';
+  $handler->display->display_options['fields']['field_primary_email']['field'] = 'field_primary_email';
+  /* Field: Content: Brief description */
+  $handler->display->display_options['fields']['field_brief_description']['id'] = 'field_brief_description';
+  $handler->display->display_options['fields']['field_brief_description']['table'] = 'field_data_field_brief_description';
+  $handler->display->display_options['fields']['field_brief_description']['field'] = 'field_brief_description';
+  /* Field: Content: Short abstract */
+  $handler->display->display_options['fields']['field_short_abstract']['id'] = 'field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['table'] = 'field_data_field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
+  /* Field: Content: Long abstract */
+  $handler->display->display_options['fields']['field_long_abstract']['id'] = 'field_long_abstract';
+  $handler->display->display_options['fields']['field_long_abstract']['table'] = 'field_data_field_long_abstract';
+  $handler->display->display_options['fields']['field_long_abstract']['field'] = 'field_long_abstract';
+  /* Field: Content: Message to the reviewers */
+  $handler->display->display_options['fields']['field_message_to_reviewers']['id'] = 'field_message_to_reviewers';
+  $handler->display->display_options['fields']['field_message_to_reviewers']['table'] = 'field_data_field_message_to_reviewers';
+  $handler->display->display_options['fields']['field_message_to_reviewers']['field'] = 'field_message_to_reviewers';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'presentation' => 'presentation',
+  );
+  /* Filter criterion: Content: SCALE event (field_scale_event) */
+  $handler->display->display_options['filters']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
+  $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    1644 => '1644',
+    1241 => '1241',
+    885 => '885',
+    504 => '504',
+    503 => '503',
+  );
+  $handler->display->display_options['filters']['field_scale_event_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['operator_id'] = 'field_scale_event_tid_op';
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['label'] = 'event';
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['operator'] = 'field_scale_event_tid_op';
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['identifier'] = 'event';
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    9 => 0,
+    10 => 0,
+    8 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
+  /* Filter criterion: Content: Topic (field_topic) */
+  $handler->display->display_options['filters']['field_topic_tid']['id'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
+  $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
+    1205 => '1205',
+    1213 => '1213',
+    6 => '6',
+    881 => '881',
+    500 => '500',
+    8 => '8',
+    879 => '879',
+    1197 => '1197',
+    9 => '9',
+    10 => '10',
+    1201 => '1201',
+    1234 => '1234',
+    11 => '11',
+    435 => '435',
+    880 => '880',
+    12 => '12',
+    1221 => '1221',
+    505 => '505',
+    13 => '13',
+    14 => '14',
+    1242 => '1242',
+    15 => '15',
+    16 => '16',
+    1620 => '1620',
+    506 => '506',
+    434 => '434',
+    1645 => '1645',
+    1646 => '1646',
+    17 => '17',
+    1647 => '1647',
+    436 => '436',
+    1210 => '1210',
+    18 => '18',
+    437 => '437',
+    19 => '19',
+    1422 => '1422',
+    20 => '20',
+    21 => '21',
+    1229 => '1229',
+    22 => '22',
+    23 => '23',
+    24 => '24',
+    25 => '25',
+  );
+  $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator_id'] = 'field_topic_tid_op';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['label'] = 'topic';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['operator'] = 'field_topic_tid_op';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['identifier'] = 'topic';
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_topic_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    9 => 0,
+    10 => 0,
+    8 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'presentation_export');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['path'] = 'presentation-exporter';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Presentation Exporter';
+  $handler->display->display_options['menu']['description'] = 'Generate CSV export of presentation submittals';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'Data export', 'presentations_data_export_1');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_csv';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['filename'] = '%view_%exposed.csv';
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['style_options']['quote'] = 1;
+  $handler->display->display_options['style_options']['trim'] = 1;
+  $handler->display->display_options['style_options']['replace_newlines'] = 0;
+  $handler->display->display_options['style_options']['newline_token'] = '1';
+  $handler->display->display_options['style_options']['header'] = 1;
+  $handler->display->display_options['style_options']['keep_html'] = 0;
+  $handler->display->display_options['path'] = 'presentation-exporter.csv';
+  $handler->display->display_options['displays'] = array(
+    'presentation_export' => 'presentation_export',
+    'default' => 0,
+  );
+  $export['presentation_exporter'] = $view;
+
+  $view = new view();
   $view->name = 'presentation_filter';
   $view->description = '';
   $view->tag = 'default';
