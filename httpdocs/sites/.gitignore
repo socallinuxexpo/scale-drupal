@@ -1,5 +1,5 @@
 # RG Additions
-all/modules/contrib/devel
+#all/modules/contrib/devel
 
 # Unwanted files
 .DS_Store
