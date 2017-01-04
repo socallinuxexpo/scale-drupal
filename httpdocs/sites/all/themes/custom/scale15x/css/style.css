@@ -6769,6 +6769,16 @@ aside,
 #block-views-featured-presentations-block-2 .views-field-title {
   margin-bottom: 0.5em;
 }
+#block-views-featured-presentations-block-1 .views-field-realname,
+#block-views-featured-presentations-block-2 .views-field-realname,
+#block-views-featured-presentations-block-1 .views-field-field-job-title,
+#block-views-featured-presentations-block-2 .views-field-field-job-title,
+#block-views-featured-presentations-block-1 .views-field-field-organization,
+#block-views-featured-presentations-block-2 .views-field-field-organization {
+  font-size: 12px;
+  height: 15px;
+  overflow: hidden;
+}
 /* Presentation pages */
 .view-presentation-single a,
 #presentation-page a {
