@@ -486,7 +486,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_job_title']['field'] = 'field_job_title';
   $handler->display->display_options['fields']['field_job_title']['relationship'] = 'field_speaker_uid';
   $handler->display->display_options['fields']['field_job_title']['label'] = '';
-  $handler->display->display_options['fields']['field_job_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_job_title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_job_title']['hide_empty'] = TRUE;
   /* Field: User: Organization */
@@ -495,7 +494,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_organization']['field'] = 'field_organization';
   $handler->display->display_options['fields']['field_organization']['relationship'] = 'field_speaker_uid';
   $handler->display->display_options['fields']['field_organization']['label'] = '';
-  $handler->display->display_options['fields']['field_organization']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_organization']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_organization']['hide_empty'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
