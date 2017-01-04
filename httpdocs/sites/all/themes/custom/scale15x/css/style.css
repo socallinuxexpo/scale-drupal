@@ -6769,6 +6769,8 @@ aside,
 #block-views-featured-presentations-block-2 .views-field-title {
   margin-bottom: 0.5em;
 }
+#block-views-featured-presentations-block-1 .views-field-nothing,
+#block-views-featured-presentations-block-2 .views-field-nothing,
 #block-views-featured-presentations-block-1 .views-field-realname,
 #block-views-featured-presentations-block-2 .views-field-realname,
 #block-views-featured-presentations-block-1 .views-field-field-job-title,
@@ -6776,7 +6778,7 @@ aside,
 #block-views-featured-presentations-block-1 .views-field-field-organization,
 #block-views-featured-presentations-block-2 .views-field-field-organization {
   font-size: 12px;
-  height: 15px;
+  height: 51px;
   overflow: hidden;
 }
 /* Presentation pages */
