@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Arimo|Varela+Round';
+@import url('https://fonts.googleapis.com/css?family=Mallanna');
 /* RG Gruntfile test. */
 .clearfix {
   *zoom: 1;
@@ -6606,7 +6606,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Mallanna", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 section.main,
@@ -6689,6 +6689,10 @@ aside,
   margin-left: 0;
   margin-bottom: 3em;
 }
+#block-block-12,
+#block-block-13 {
+  margin-bottom: 20px;
+}
 .view-exhibitors .view-header {
   margin-bottom: 36px;
 }
@@ -6727,6 +6731,9 @@ aside,
 .view-sponsors-12x .view-content .views-row {
   padding-top: 0;
 }
+.node-sponsor .field {
+  margin-bottom: 20px;
+}
 #block-menu-block-3 li {
   display: inline-block;
   border-left: 1px solid #000;
@@ -6761,10 +6768,6 @@ aside,
 #block-views-featured-presentations-block-1 .views-field-title,
 #block-views-featured-presentations-block-2 .views-field-title {
   margin-bottom: 0.5em;
-}
-#block-views-featured-presentations-block-1 .views-field-realname,
-#block-views-featured-presentations-block-2 .views-field-realname {
-  padding: 0 4px;
 }
 /* Presentation pages */
 .view-presentation-single a,
@@ -6838,6 +6841,7 @@ aside,
 #speaker-individual .field-name-field-speaker-photo {
   float: left;
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 #speaker-individual .views-field-field-job-title {
   margin-bottom: 0;
@@ -6885,7 +6889,7 @@ aside,
   border-top: 1px solid #000000;
 }
 .view-display-id-speakers_list .views-field-realname {
-  font-family: "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Mallanna", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2em;
 }
 .view-display-id-speakers_list .views-field-realname a:hover {
