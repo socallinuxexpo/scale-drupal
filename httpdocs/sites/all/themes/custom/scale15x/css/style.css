@@ -6696,6 +6696,10 @@ aside,
 .view-sponsors-13x.view-display-id-page > .view-content {
   display: none;
 }
+.view-sponsors-13x .views-row .views-field-field-logo-website {
+  float: none;
+  margin-bottom: 20px;
+}
 .view-sponsors-13x .view-header,
 .view-exhibitors .view-header {
   margin-bottom: 36px;
