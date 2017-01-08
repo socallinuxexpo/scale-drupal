@@ -133,7 +133,6 @@ function scale_utility_menu_alter(&$items) {
  */
 function _scale_user_view_access($account) {
   $uid = is_object($account) ? $account->uid : (int) $account;
-
   // Never allow access to view the anonymous user account.
   if ($uid) {
     // Admins can view all, users can view own profiles at all times.
@@ -141,8 +140,10 @@ function _scale_user_view_access($account) {
       return TRUE;
     }
     elseif (user_access('access user profiles')) {
-      // Modify to only allow access to current speaker pages. RG 20131208.
-      if (!_scale_current_speaker($uid)) {
+      /* Modify to only allow access to speaker pages
+      which had accepted presentations. RG 20170102. */
+      if (!_scale_speaker($uid)) {
+      //if (!_scale_current_speaker($uid) && !_scale_speaker($uid)) {
         return FALSE;
       }
       // At this point, load the complete account object.
@@ -157,10 +158,10 @@ function _scale_user_view_access($account) {
 
 /**
  * Determine if a user was a speaker on the given SCALE event.
- **/
+ */
 function _scale_current_speaker($uid) {
-  // Get the SCALE event tid from the path alias
-  // Now in the 2nd parameter position
+  // Get the SCALE event tid from the path alias.
+  // Now in the 2nd parameter position.
   $path = request_uri();
   $items = explode('/', $path);
   $scale_event = $items[2];
@@ -180,6 +181,29 @@ function _scale_current_speaker($uid) {
        ':status' => 1,
        ':uid' => $uid,
        ':tid' => $scale_event_tid
+     )
+   );
+
+  $record = $result->fetchAssoc();
+
+  return $record;
+}
+
+/**
+ * Determine if a user was a speaker on any SCALE event.
+ */
+function _scale_speaker($uid) {
+  // Find out if this speaker had an accepted presentation.
+  $result = db_query(
+    'SELECT sp.field_speaker_uid, sp.entity_id, n.status
+     FROM {field_data_field_speaker} sp
+     JOIN {node} n ON sp.entity_id = n.nid
+     /*JOIN {field_data_field_scale_event} se ON sp.entity_id = se.entity_id*/
+     WHERE n.status = :status AND sp.field_speaker_uid = :uid
+     /*AND se.field_scale_event_tid = :tid*/',
+     array(
+       ':status' => 1,
+       ':uid' => $uid,
      )
    );
 
