@@ -6664,6 +6664,10 @@ div.password-suggestions ul {
   margin-left: 0;
   margin-bottom: 3em;
 }
+#block-block-12,
+#block-block-13 {
+  margin-bottom: 20px;
+}
 .view-exhibitors .view-header {
   margin-bottom: 36px;
 }
@@ -6702,6 +6706,9 @@ div.password-suggestions ul {
 }
 .view-sponsors-12x .view-content .views-row {
   padding-top: 0;
+}
+.node-sponsor .field {
+  margin-bottom: 20px;
 }
 #block-menu-block-3 li {
   display: inline-block;

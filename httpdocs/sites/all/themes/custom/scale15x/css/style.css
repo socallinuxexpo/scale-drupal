@@ -6693,43 +6693,42 @@ aside,
 #block-block-13 {
   margin-bottom: 20px;
 }
+.view-sponsors-13x.view-display-id-page > .view-content {
+  display: none;
+}
+.view-sponsors-13x .view-header,
 .view-exhibitors .view-header {
   margin-bottom: 36px;
 }
+.view-sponsors-13x .views-row,
 .view-exhibitors .views-row {
   padding-top: 25px;
   padding-bottom: 15px;
   border-top: 1px solid #EEEEEE;
   clear: both;
 }
+.view-sponsors-13x .views-row-first,
 .view-exhibitors .views-row-first {
   border-top: 0 none transparent;
 }
-.view-sponsors-12x .views-field,
 .view-exhibitors .views-field {
   margin-bottom: 10px;
 }
-.view-sponsors-12x .views-field-title,
 .view-exhibitors .views-field-title {
   font-size: 2em;
   margin-bottom: 20px;
 }
-.view-sponsors-12x .views-field-field-logo-website,
 .view-exhibitors .views-field-field-logo-website {
   float: left;
   margin-right: 20px;
   width: 220px;
 }
-.view-sponsors-12x .views-field-field-sponsor-type span,
 .view-exhibitors .views-field-field-sponsor-type span {
   background-color: #EEEEBB;
   border: 2px dotted #CCCC66;
   min-width: 112px;
   padding: 3px 12px;
   text-align: center;
-}
-.view-sponsors-12x .view-content .views-row {
-  padding-top: 0;
 }
 .node-sponsor .field {
   margin-bottom: 20px;
