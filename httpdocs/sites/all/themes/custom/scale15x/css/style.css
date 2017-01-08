@@ -6711,18 +6711,22 @@ aside,
 .view-exhibitors .views-row-first {
   border-top: 0 none transparent;
 }
+.view-sponsors-13x .views-field,
 .view-exhibitors .views-field {
   margin-bottom: 10px;
 }
+.view-sponsors-13x .views-field-title,
 .view-exhibitors .views-field-title {
   font-size: 2em;
   margin-bottom: 20px;
 }
+.view-sponsors-13x .views-field-field-logo-website,
 .view-exhibitors .views-field-field-logo-website {
   float: left;
   margin-right: 20px;
   width: 220px;
 }
+.view-sponsors-13x .views-field-field-sponsor-type span,
 .view-exhibitors .views-field-field-sponsor-type span {
   background-color: #EEEEBB;
   border: 2px dotted #CCCC66;
