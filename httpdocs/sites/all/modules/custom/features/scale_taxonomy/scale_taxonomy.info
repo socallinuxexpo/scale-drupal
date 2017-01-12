@@ -1,7 +1,7 @@
 name = Taxonomy
 core = 7.x
 package = SCALE
-version = 7.x-0.4
+version = 7.x-0.5
 project = scale_taxonomy
 dependencies[] = page_manager
 dependencies[] = views
