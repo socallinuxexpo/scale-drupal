@@ -3268,6 +3268,7 @@ function scale_presentation_views_default_views() {
     16 => '16',
     506 => '506',
     17 => '17',
+    1647 => '1647',
     18 => '18',
     19 => '19',
     20 => '20',
