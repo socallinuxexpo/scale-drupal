@@ -6866,38 +6866,38 @@ aside,
   margin-bottom: 0;
 }
 /* Presentations List Page */
-.view-display-id-page_3 > .view-content > .views-row {
+.page-scale-15x-presentations .view-display-id-page_3 > .view-content > .views-row {
   border-top: 1px solid #000000;
 }
-.view-display-id-page_3 .views-row {
+.page-scale-15x-presentations .view-display-id-page_3 .views-row {
   margin-bottom: 2em;
   clear: both;
 }
-.view-display-id-page_3 .views-row .multi-speaker {
+.page-scale-15x-presentations .view-display-id-page_3 .views-row .multi-speaker {
   float: right;
   margin-top: -2em;
   margin-bottom: 2em;
   padding-top: 12px;
 }
-.view-display-id-page_3 .views-field {
+.page-scale-15x-presentations .view-display-id-page_3 .views-field {
   margin-bottom: 12px;
 }
-.view-display-id-page_3 .views-field-field-speaker-photo {
+.page-scale-15x-presentations .view-display-id-page_3 .views-field-field-speaker-photo {
   float: right;
   margin-left: 20px;
 }
-.view-display-id-page_3 .views-field-title {
+.page-scale-15x-presentations .view-display-id-page_3 .views-field-title {
   font-size: 2em;
   line-height: 1em;
 }
-.view-display-id-page_3 .views-field-field-speaker {
+.page-scale-15x-presentations .view-display-id-page_3 .views-field-field-speaker {
   font-size: 1.5em;
   line-height: 1.1em;
 }
-.view-display-id-page_3 .terms {
+.page-scale-15x-presentations .view-display-id-page_3 .terms {
   display: inline-block;
 }
-.view-display-id-page_3 .views-field-field-topic {
+.page-scale-15x-presentations .view-display-id-page_3 .views-field-field-topic {
   margin: auto auto 20px 20px;
 }
 /* Speakers List Page */
