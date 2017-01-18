@@ -7113,21 +7113,7 @@ scale/14x/schedule/sunday',
   $page->path = 'scale/15x/schedule/!date';
   $page->access = array(
     'logic' => 'and',
-    'plugins' => array(
-      0 => array(
-        'name' => 'role',
-        'settings' => array(
-          'rids' => array(
-            0 => 9,
-            1 => 10,
-            2 => 7,
-            3 => 3,
-          ),
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
-    ),
+    'plugins' => array(),
   );
   $page->menu = array(
     'type' => 'none',
