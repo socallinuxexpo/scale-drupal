@@ -60,7 +60,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         437, // Puppet.
         1229, // Testing.
         22, // Try It Lab.
-        23, // Ubucon.
+        //23, // Ubucon.
       );
       // Remove Keynote if not authorized. See $authorized_roles above.
       if (!$keynote_authorized) {
