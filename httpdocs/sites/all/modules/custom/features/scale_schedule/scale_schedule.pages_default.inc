@@ -8080,14 +8080,17 @@ scale/15x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
+    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'more-arrow',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -8325,7 +8328,7 @@ scale/15x/schedule/friday',
   );
   $pane->css = array(
     'css_id' => 'la-jolla',
-    'css_class' => '',
+    'css_class' => 'more-arrow',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -9135,14 +9138,17 @@ scale/15x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
+    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'more-arrow',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -10190,14 +10196,17 @@ scale/15x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
+    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'more-arrow',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
@@ -11245,14 +11254,17 @@ scale/15x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
+    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array();
+  $pane->css = array(
+    'css_id' => '',
+    'css_class' => 'more-arrow',
+  );
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();

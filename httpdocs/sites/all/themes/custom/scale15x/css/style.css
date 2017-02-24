@@ -6961,6 +6961,13 @@ aside,
   /*background-color: #AAA;*/
   width: auto;
 }
+.schedule_11x .more-arrow .pane-title {
+  position: absolute;
+  right: 0;
+  padding: 0 1em;
+  color: #fff;
+  background-color: #ccc;
+}
 .schedule_11x ul.menu li {
   margin: 0 0.5em 0 0;
 }

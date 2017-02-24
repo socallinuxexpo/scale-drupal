@@ -442,6 +442,8 @@ function scale_presentation_views_default_views() {
   $handler = $view->new_display('block', 'Multiyear', 'block_2');
   $handler->display->display_options['display_description'] = 'featured speakers for specified SCALE event';
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['cache'] = FALSE;
+  $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
@@ -529,6 +531,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['sticky']['table'] = 'node';
   $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['value'] = '1';
+  $handler->display->display_options['block_caching'] = '-1';
   $export['featured_presentations'] = $view;
 
   $view = new view();
