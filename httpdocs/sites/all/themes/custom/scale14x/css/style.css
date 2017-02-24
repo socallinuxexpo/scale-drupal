@@ -6743,6 +6743,15 @@ div.password-suggestions ul {
   width: 33%;
   margin-bottom: 20px;
 }
+#block-views-featured-presentations-block-1 .views-row .views-field-nothing,
+#block-views-featured-presentations-block-2 .views-row .views-field-nothing {
+  min-height: 51px;
+}
+#block-views-featured-presentations-block-1 .featured-presentation-row,
+#block-views-featured-presentations-block-2 .featured-presentation-row {
+  position: relative;
+  overflow: hidden;
+}
 #block-views-featured-presentations-block-1 .views-field-title,
 #block-views-featured-presentations-block-2 .views-field-title {
   margin-bottom: 0.5em;
