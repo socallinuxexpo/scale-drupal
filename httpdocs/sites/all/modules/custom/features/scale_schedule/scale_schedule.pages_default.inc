@@ -8328,7 +8328,7 @@ scale/15x/schedule/friday',
   );
   $pane->css = array(
     'css_id' => 'la-jolla',
-    'css_class' => 'more-arrow',
+    'css_class' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
