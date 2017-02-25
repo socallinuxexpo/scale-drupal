@@ -7097,6 +7097,9 @@ aside,
   /* MySQL */
   /* New to SCALE */
   /* NodeStack */
+  /* Open Data */
+  /* Open Source in Enterprises */
+  /* Open Source Storage */
   /* Open Source Software in Education */
   /* OpenNMS */
   /* openSUSE */
@@ -7294,6 +7297,24 @@ aside,
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-434 a {
   color: #000;
 }
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1645 {
+  background-color: #6c6c6c;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1645 a {
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1646 {
+  background-color: #ffd672;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1646 a {
+  color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1647 {
+  background-color: #d9ff72;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1647 a {
+  color: #000;
+}
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-17 {
   background-color: #72B20F;
 }
@@ -7441,7 +7462,10 @@ aside,
   /* New to SCALE */
   /* Next Generation */
   /* NodeStack */
+  /* Open Data */
   /* Open Source Software in Education */
+  /* Open Source in Enterprises */
+  /* Open Source Storage */
   /* OpenNMS */
   /* openSUSE */
   /* PostgreSQL */
@@ -7571,9 +7595,21 @@ aside,
   background-color: #00ffd8;
   color: #000;
 }
+.legend-item .track-1645 {
+  background-color: #6c6c6c;
+  color: #FFF;
+}
 .legend-item .track-17 {
   background-color: #72B20F;
   color: #FFF;
+}
+.legend-item .track-1646 {
+  background-color: #ffd672;
+  color: #000;
+}
+.legend-item .track-1647 {
+  background-color: #d9ff72;
+  color: #000;
 }
 .legend-item .track-436 {
   background-color: #17AA17;
