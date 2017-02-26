@@ -1311,17 +1311,20 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['label'] = 'Schedule Track (Optional)';
   $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
-  /* Field: Content: Brief description */
-  $handler->display->display_options['fields']['field_brief_description']['id'] = 'field_brief_description';
-  $handler->display->display_options['fields']['field_brief_description']['table'] = 'field_data_field_brief_description';
-  $handler->display->display_options['fields']['field_brief_description']['field'] = 'field_brief_description';
-  $handler->display->display_options['fields']['field_brief_description']['label'] = 'Description';
   /* Field: Content: Speakers */
   $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_speaker']['type'] = 'user_reference_plain';
   $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: Content: Short abstract */
+  $handler->display->display_options['fields']['field_short_abstract']['id'] = 'field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['table'] = 'field_data_field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['label'] = 'Description';
+  $handler->display->display_options['fields']['field_short_abstract']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_short_abstract']['alter']['text'] = '[field_speaker]: [field_short_abstract]';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
