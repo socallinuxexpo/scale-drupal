@@ -2960,6 +2960,101 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['menu']['title'] = 'All presentations';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
+
+  /* Display: No uploads */
+  $handler = $view->new_display('page', 'No uploads', 'page_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Presentations without uploaded slides';
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Speakers */
+  $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: Realname: Real name */
+  $handler->display->display_options['fields']['realname']['id'] = 'realname';
+  $handler->display->display_options['fields']['realname']['table'] = 'realname';
+  $handler->display->display_options['fields']['realname']['field'] = 'realname';
+  $handler->display->display_options['fields']['realname']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['realname']['label'] = 'Node author';
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['label'] = '';
+  $handler->display->display_options['fields']['status']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['status']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['status']['type'] = 'published-notpublished';
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Content: Primary contact email address */
+  $handler->display->display_options['fields']['field_primary_email']['id'] = 'field_primary_email';
+  $handler->display->display_options['fields']['field_primary_email']['table'] = 'field_data_field_primary_email';
+  $handler->display->display_options['fields']['field_primary_email']['field'] = 'field_primary_email';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['text'] = 'add-presentation-slides-link';
+  $handler->display->display_options['fields']['nid']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nid']['alter']['path'] = 'node/[nid]/edit';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'presentation' => 'presentation',
+  );
+  /* Filter criterion: Content: SCALE event (field_scale_event) */
+  $handler->display->display_options['filters']['field_scale_event_tid']['id'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
+  $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    1644 => '1644',
+    1241 => '1241',
+    885 => '885',
+    504 => '504',
+    503 => '503',
+  );
+  $handler->display->display_options['filters']['field_scale_event_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['operator_id'] = 'field_scale_event_tid_op';
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['label'] = 'SCALE event';
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['operator'] = 'field_scale_event_tid_op';
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['identifier'] = 'field_scale_event_tid';
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_scale_event_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    9 => 0,
+    10 => 0,
+    8 => 0,
+    6 => 0,
+    7 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
+  /* Filter criterion: Content: Presentation (field_presentation_to_upload:fid) */
+  $handler->display->display_options['filters']['field_presentation_to_upload_fid']['id'] = 'field_presentation_to_upload_fid';
+  $handler->display->display_options['filters']['field_presentation_to_upload_fid']['table'] = 'field_data_field_presentation_to_upload';
+  $handler->display->display_options['filters']['field_presentation_to_upload_fid']['field'] = 'field_presentation_to_upload_fid';
+  $handler->display->display_options['filters']['field_presentation_to_upload_fid']['operator'] = 'empty';
+  $handler->display->display_options['path'] = 'presentations-no-upload';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'All presentations';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
   $export['presentations_all'] = $view;
 
   $view = new view();
