@@ -3050,6 +3050,18 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_presentation_to_upload_fid']['table'] = 'field_data_field_presentation_to_upload';
   $handler->display->display_options['filters']['field_presentation_to_upload_fid']['field'] = 'field_presentation_to_upload_fid';
   $handler->display->display_options['filters']['field_presentation_to_upload_fid']['operator'] = 'empty';
+  /* Filter criterion: Content: Status (field_presentation_status) */
+  $handler->display->display_options['filters']['field_presentation_status_value']['id'] = 'field_presentation_status_value';
+  $handler->display->display_options['filters']['field_presentation_status_value']['table'] = 'field_data_field_presentation_status';
+  $handler->display->display_options['filters']['field_presentation_status_value']['field'] = 'field_presentation_status_value';
+  $handler->display->display_options['filters']['field_presentation_status_value']['value'] = array(
+    20 => '20',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['path'] = 'presentations-no-upload';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'All presentations';
