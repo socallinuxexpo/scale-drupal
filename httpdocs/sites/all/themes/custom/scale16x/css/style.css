@@ -6613,7 +6613,6 @@ section.main,
 aside,
 .highlighted section > h2.well {
   margin-top: 0;
-  border: 2px solid black;
   border-radius: 0;
   border-left: none;
   border-right: none;
@@ -6961,7 +6960,7 @@ aside,
   /*background-color: #AAA;*/
   width: auto;
 }
-.schedule_11x .more-arrow > .pane-title {
+.schedule_11x .more-arrow .pane-title {
   position: absolute;
   right: 0;
   padding: 0 1em;

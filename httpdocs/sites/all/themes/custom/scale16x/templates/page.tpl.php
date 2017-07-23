@@ -2,27 +2,30 @@
 //$current_theme = variable_get('theme_default','none');
 //dpm($current_theme);
 ?>
-<header id="navbar" role="banner" class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
+<header role="banner" id="page-header">
+  <div class="container">
+    <div class="row">
+      <div class="visible-phone small-site-logo">
+        <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale16x') . '/img/16x_logo_sm.png'; ?>" alt="SCALE 16x logo"></a>
+      </div>
+      <div id="site-logo" class="span6 offset3 hidden-phone">
+        <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale16x') . '/img/16x_logo_lg.png'; ?>" alt="SCALE 16x logo"></a>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <header id="navbar" class="navbar">
+    <div class="navbar-inner">
+      <div class="hidden-phone">
+        <?php print render($page['header']); ?>
+      </div>
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-
-      <?php if (!empty($logo)): ?>
-        <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
-
-      <?php if (!empty($site_name)): ?>
-        <h1 id="site-name">
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="brand"><?php print $site_name; ?></a>
-        </h1>
-      <?php endif; ?>
 
       <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
         <div class="nav-collapse collapse">
@@ -40,25 +43,10 @@
         </div>
       <?php endif; ?>
     </div>
-  </div>
-</header>
+  </header> <!-- /#header -->
+</div>
 
 <div class="main-container container">
-
-  <header role="banner" id="page-header">
-    <div class="row">
-    <div class="visible-phone small-site-logo">
-      <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale16x') . '/img/16x_logo_sm.png'; ?>" alt="SCALE 16x logo"></a>
-    </div>
-    <div id="site-logo" class="span6 offset3 hidden-phone">
-      <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale16x') . '/img/16x_logo_lg.png'; ?>" alt="SCALE 16x logo"></a>
-    </div>
-    </div>
-
-    <div class="hidden-phone">
-    <?php print render($page['header']); ?>
-    </div>
-  </header> <!-- /#header -->
 
   <div class="row-fluid">
 
@@ -73,7 +61,6 @@
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
-      <?php //if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
