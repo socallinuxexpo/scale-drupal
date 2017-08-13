@@ -4,10 +4,42 @@
 }
 
 body {
+  background-color: lighten(@scaleyellow, 10%);
+}
+
+h1 {
 }
 
 .page-header {
   border: 0 none transparent;
+}
+
+// Navbar
+.navbar {
+  .navbar-inner {
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    border-left: 0 none transparent;
+    border-right: 0 none transparent;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 1.2em;
+    .caret {
+      border-top-color: white !important;
+      border-bottom-color: white !important;
+    }
+    .nav {
+      &> li {
+        &> a {
+          color: white;
+          text-shadow: none;
+        }
+      }
+    }
+  }
 }
 
 // Banner Graphics
@@ -54,7 +86,7 @@ body {
       }
       .views-row-first {
         //padding-top: 0;
-        border-top: 0 none transparent;
+        //border-top: 0 none transparent;
       }
       .views-field {
         margin-left: 255px;
@@ -93,12 +125,12 @@ body {
   .views-row {
     padding-top: 25px;
     padding-bottom: 15px;
-    border-top: 1px solid #EEEEEE;
+    //border-top: 1px solid #EEEEEE;
     clear: both;
   }
   .views-row-first {
     //padding-top: 0;
-    border-top: 0 none transparent;
+    //border-top: 0 none transparent;
   }
 }
 .view-sponsors-13x,
@@ -166,8 +198,9 @@ body {
   margin-bottom: 2em;
   .views-row {
     float: left;
-    width: 33%;
-    margin-bottom: 20px;
+    width: 16.66%;
+    //margin-bottom: 20px;
+    margin-left: 0;
   }
   .featured-presentation-row {
     position: relative;
@@ -175,6 +208,7 @@ body {
   }
   .views-field-title {
     margin-bottom: 0.5em;
+    padding: 4px;
   }
   .views-field-nothing,
   .views-field-realname,
@@ -262,7 +296,7 @@ body {
 .page-scale-15x-presentations {
   .view-display-id-page_3 {
     &> .view-content > .views-row {
-      border-top: 1px solid @listBorder;
+      //border-top: 1px solid @listBorder;
     }
   }
   .view-display-id-page_3 {
@@ -307,7 +341,7 @@ body {
       margin-bottom: 2em;
       clear: both;
       padding-top: 2em;
-      border-top: 1px solid @listBorder;
+      //border-top: 1px solid @listBorder;
     }
     .views-row-first {
       //padding-top: 0;
@@ -1203,8 +1237,24 @@ body {
   font-weight: bold;
 }
 
+// Save the Dates Block
+#save-dates {
+  display: flex;
+  flex: 1 200px;
+  font-size: 24px;
+  div {
+    //padding: 10px;
+  }
+}
+.dates {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
 // Responsive Styles
-@media (min-width: 981px) {
+@media (min-width: 980px) {
   // Dropdowns
   #navbar {
     .dropdown:hover {
@@ -1218,7 +1268,27 @@ body {
 
 }
 
+@media (max-width: 1199px) {
+  // Featured Speakers block
+  #block-views-featured-presentations-block-2 {
+    margin: 0 108px;
+    .views-row {
+      width: 33.33%;
+    }
+  }
+}
+
+@media (max-width: 979px) {
+  // Featured Speakers block
+  #block-views-featured-presentations-block-2 {
+    margin: 0;
+  }
+}
+
 @media (max-width: 767px) {
+  // Featured Speakers block
+  #block-views-featured-presentations-block-2 {
+  }
   .pane-menu-menu-schedule-13x {
     li {
       display: block;
@@ -1231,6 +1301,18 @@ body {
   }
   .view-presentation-single .views-field-nothing {
     font-size: 1.5em;
+  }
+
+}
+
+@media (max-width: 600px) {
+  // Featured Speakers block
+  #block-views-featured-presentations-block-2 {
+    .view-content {
+      .views-row {
+        width: 50%;
+      }
+    }
   }
 }
 

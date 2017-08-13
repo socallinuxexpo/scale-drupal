@@ -48,8 +48,14 @@
 
 <div class="main-container container">
 
-  <div class="row-fluid">
+  <div class="row">
 
+      <?php if (!empty($page['highlighted'])): ?>
+        <div class="span12 highlighted"><?php print render($page['highlighted']); ?></div>
+      <?php endif; ?>
+  </div>
+
+  <div class="row-fluid">
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="span3 hidden-phone" role="complementary">
         <?php $sidebar_first = render($page['sidebar_first']); ?>
@@ -58,9 +64,6 @@
     <?php endif; ?>
 
     <section class="main <?php print _bootstrap_content_span($columns); ?>">
-      <?php if (!empty($page['highlighted'])): ?>
-        <div class="highlighted"><?php print render($page['highlighted']); ?></div>
-      <?php endif; ?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if (!empty($title)): ?>
