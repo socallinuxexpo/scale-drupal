@@ -24,6 +24,30 @@ function scale_presentation_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function scale_presentation_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: speaker.
+  $styles['speaker'] = array(
+    'label' => 'speaker',
+    'effects' => array(
+      7 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 315,
+          'height' => 315,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function scale_presentation_node_info() {
