@@ -7706,7 +7706,7 @@ body {
 #block-block-15 .dates-wrapper {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
 }
 #block-block-15 .dates-wrapper .dates-left {
   flex: 2 280px;
