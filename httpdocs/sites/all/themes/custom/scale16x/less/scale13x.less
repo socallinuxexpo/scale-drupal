@@ -1261,19 +1261,32 @@ h1 {
 }
 
 // Save the Dates Block
-#save-dates {
-  display: flex;
-  flex: 1 200px;
-  font-size: 24px;
-  div {
-    //padding: 10px;
+#block-block-15 {
+  .dates-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .dates-left {
+      flex: 2 280px;
+      padding: 10px;
+    }
+    .dates-center {
+      flex: 2 240px;
+      padding: 10px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .dates-right {
+      flex-direction: column;
+      flex: 2 200px;
+      padding: 10px;
+      font-size: 32px;
+      font-weight: bold;
+      line-height: .9;
+    }
   }
-}
-.dates {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
 }
 
 // Responsive Styles

@@ -7703,16 +7703,30 @@ body {
 .view-promo-items-multi-year .views-row .views-label {
   font-weight: bold;
 }
-#save-dates {
+#block-block-15 .dates-wrapper {
   display: flex;
-  flex: 1 200px;
-  font-size: 24px;
-}
-.dates {
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+}
+#block-block-15 .dates-wrapper .dates-left {
+  flex: 2 280px;
+  padding: 10px;
+}
+#block-block-15 .dates-wrapper .dates-center {
+  flex: 2 240px;
+  padding: 10px;
+}
+#block-block-15 .dates-wrapper .dates-center img {
+  width: 100%;
+  height: auto;
+}
+#block-block-15 .dates-wrapper .dates-right {
+  flex-direction: column;
+  flex: 2 200px;
+  padding: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: .9;
 }
 @media (min-width: 980px) {
   #navbar .dropdown:hover .dropdown-menu {
