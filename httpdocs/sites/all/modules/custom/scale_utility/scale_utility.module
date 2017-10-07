@@ -36,7 +36,8 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       $common_roles = array_intersect($user_roles, $authorized_roles);
       if (!empty($common_roles)) {
         $keynote_authorized = TRUE;
-      } else {
+      }
+      else {
         $keynote_authorized = FALSE;
       }
       // Remove options from Presentation Topic list but keep terms in database.
@@ -44,23 +45,37 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1205, // Ada Initiative.
         1213, // Apache Bigtop.
         6, // Beginner Tutorials.
-        //881, // Big Data.
-        //500, // BoFs.
-        //1221, // GLAD Camp.
-        //1234, // Entertainment.
+        881, // Big Data.
+        500, // BoFs.
+        879, //Coder's Corner.
+        10, // DevOps.
+        1234, // Entertainment.
         11, // Fedora.
+        435, // File System.
         880, // FOSS Camp.
+        12, // General.
+        1221, // GLAD Camp.
         505, // Hot Applications.
-        506, // Next Generation.
+        13, // Kernel.
+        14, // Keynote.
+        16, // MySQL.
         1620, // New to SCALE.
+        //506, // Next Generation.
         434, // Nodestack.
+        17, // Open Source Software In Education.
+        1647, // Open Source Storage.
         436, // OpenNMS.
         1210, // openSUSE.
         //18, // PostgreSQL.
         437, // Puppet.
+        19, // ScaleU.
+        20, // Sponsored.
+        21, // SysAdmin.
         1229, // Testing.
         22, // Try It Lab.
-        //23, // Ubucon.
+        23, // Ubucon.
+        24, // UpSCALE.
+        25, // Youth.
       );
       // Remove Keynote if not authorized. See $authorized_roles above.
       if (!$keynote_authorized) {
