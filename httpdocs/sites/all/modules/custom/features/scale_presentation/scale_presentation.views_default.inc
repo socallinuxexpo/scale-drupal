@@ -1101,6 +1101,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    1967 => '1967',
     1644 => '1644',
     1241 => '1241',
     885 => '885',
@@ -1122,6 +1123,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    11 => 0,
     7 => 0,
     3 => 0,
   );
@@ -1132,49 +1134,18 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    1205 => '1205',
-    1213 => '1213',
-    6 => '6',
-    881 => '881',
-    500 => '500',
+    1996 => '1996',
     8 => '8',
-    879 => '879',
     1197 => '1197',
     9 => '9',
-    10 => '10',
     1201 => '1201',
-    1234 => '1234',
-    11 => '11',
-    435 => '435',
-    880 => '880',
-    12 => '12',
-    1221 => '1221',
-    505 => '505',
-    13 => '13',
-    14 => '14',
     1242 => '1242',
     15 => '15',
-    16 => '16',
-    1620 => '1620',
     506 => '506',
-    434 => '434',
     1645 => '1645',
     1646 => '1646',
-    17 => '17',
-    1647 => '1647',
-    436 => '436',
-    1210 => '1210',
     18 => '18',
-    437 => '437',
-    19 => '19',
     1422 => '1422',
-    20 => '20',
-    21 => '21',
-    1229 => '1229',
-    22 => '22',
-    23 => '23',
-    24 => '24',
-    25 => '25',
   );
   $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_topic_tid']['expose']['operator_id'] = 'field_topic_tid_op';
@@ -1191,6 +1162,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    11 => 0,
     7 => 0,
     3 => 0,
   );
@@ -1346,6 +1318,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    1967 => '1967',
     1644 => '1644',
     1241 => '1241',
     885 => '885',
@@ -1368,6 +1341,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    11 => 0,
     7 => 0,
     3 => 0,
   );
@@ -2931,7 +2905,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
-    1963 => '1963',
+    1967 => '1967',
     1644 => '1644',
     1241 => '1241',
     885 => '885',
@@ -3027,6 +3001,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    1967 => '1967',
     1644 => '1644',
     1241 => '1241',
     885 => '885',
@@ -3048,6 +3023,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    11 => 0,
     7 => 0,
     3 => 0,
   );
@@ -3519,29 +3495,18 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    1213 => '1213',
-    6 => '6',
+    1996 => '1996',
     8 => '8',
+    1197 => '1197',
     9 => '9',
-    10 => '10',
     1201 => '1201',
-    11 => '11',
-    12 => '12',
-    13 => '13',
-    14 => '14',
+    1242 => '1242',
     15 => '15',
-    16 => '16',
     506 => '506',
-    17 => '17',
-    1647 => '1647',
+    1645 => '1645',
+    1646 => '1646',
     18 => '18',
-    19 => '19',
-    20 => '20',
-    21 => '21',
-    22 => '22',
-    23 => '23',
-    24 => '24',
-    25 => '25',
+    1422 => '1422',
   );
   $handler->display->display_options['filters']['field_topic_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
@@ -3559,6 +3524,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    11 => 0,
     7 => 0,
     3 => 0,
   );
