@@ -48,7 +48,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         881, // Big Data.
         500, // BoFs.
         879, //Coder's Corner.
-        10, // DevOps.
+        //10, // DevOps.
         1234, // Entertainment.
         11, // Fedora.
         435, // File System.

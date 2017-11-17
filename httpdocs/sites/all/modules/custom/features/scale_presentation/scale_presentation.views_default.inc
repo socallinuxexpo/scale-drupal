@@ -3410,7 +3410,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
-    1963 => '1963',
+    1967 => '1967',
     1644 => '1644',
     1241 => '1241',
     885 => '885',
@@ -3520,6 +3520,7 @@ function scale_presentation_views_default_views() {
     8 => '8',
     1197 => '1197',
     9 => '9',
+    10 => '10',
     1201 => '1201',
     1242 => '1242',
     15 => '15',
