@@ -55,9 +55,9 @@ function scale_app_views_default_views() {
   $handler->display->display_options['fields']['field_speaker_photo']['table'] = 'field_data_field_speaker_photo';
   $handler->display->display_options['fields']['field_speaker_photo']['field'] = 'field_speaker_photo';
   $handler->display->display_options['fields']['field_speaker_photo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_speaker_photo']['type'] = 'file_download_link';
   $handler->display->display_options['fields']['field_speaker_photo']['settings'] = array(
-    'text' => 'Download [file:name]',
+    'image_style' => '',
+    'image_link' => '',
   );
   /* Field: User: Biography */
   $handler->display->display_options['fields']['field_biography']['id'] = 'field_biography';
