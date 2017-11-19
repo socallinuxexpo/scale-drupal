@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the App feature.
+ */
+
+include_once 'scale_app.features.inc';

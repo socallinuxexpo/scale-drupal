@@ -254,6 +254,14 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['type'] = 'user_reference_plain';
   $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: Speaker IDs */
+  $handler->display->display_options['fields']['field_speaker_1']['id'] = 'field_speaker_1';
+  $handler->display->display_options['fields']['field_speaker_1']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['fields']['field_speaker_1']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker_1']['ui_name'] = 'Speaker IDs';
+  $handler->display->display_options['fields']['field_speaker_1']['label'] = 'Speaker IDs';
+  $handler->display->display_options['fields']['field_speaker_1']['type'] = 'user_reference_uid';
+  $handler->display->display_options['fields']['field_speaker_1']['delta_offset'] = '0';
   /* Field: Content: Topic */
   $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
   $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
