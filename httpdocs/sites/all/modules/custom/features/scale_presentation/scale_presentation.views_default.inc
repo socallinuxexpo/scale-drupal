@@ -3077,9 +3077,10 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['path'] = 'presentations-no-upload';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'All presentations';
+  $handler->display->display_options['menu']['title'] = 'All presentations without upload';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['presentations_all'] = $view;
 
   $view = new view();
@@ -3530,6 +3531,7 @@ function scale_presentation_views_default_views() {
     9 => '9',
     10 => '10',
     1201 => '1201',
+    12 => '12',
     1242 => '1242',
     15 => '15',
     506 => '506',

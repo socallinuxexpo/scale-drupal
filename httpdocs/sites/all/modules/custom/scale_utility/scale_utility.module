@@ -53,7 +53,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         11, // Fedora.
         435, // File System.
         880, // FOSS Camp.
-        12, // General.
+        //12, // General.
         1221, // GLAD Camp.
         505, // Hot Applications.
         13, // Kernel.
