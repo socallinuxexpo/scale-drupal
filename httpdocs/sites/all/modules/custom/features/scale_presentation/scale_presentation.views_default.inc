@@ -2781,6 +2781,7 @@ function scale_presentation_views_default_views() {
     16 => '16',
     506 => '506',
     1645 => '1645',
+    1646 => '1646',
     17 => '17',
     18 => '18',
     19 => '19',
@@ -3541,6 +3542,7 @@ function scale_presentation_views_default_views() {
     1646 => '1646',
     18 => '18',
     1422 => '1422',
+    21 => '21',
   );
   $handler->display->display_options['filters']['field_topic_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
