@@ -1,7 +1,7 @@
 name = Schedule
 core = 7.x
 package = SCALE
-version = 7.x-1.32
+version = 7.x-1.33
 project = scale_schedule
 dependencies[] = calendar
 dependencies[] = date_views
@@ -29,6 +29,7 @@ features[page_manager_pages][] = schedule
 features[page_manager_pages][] = schedule_12x
 features[page_manager_pages][] = schedule_14x
 features[page_manager_pages][] = schedule_15x
+features[page_manager_pages][] = schedule_16x
 features[page_manager_pages][] = schedule_multiyear
 features[views_view][] = room_schedule
 features[views_view][] = room_schedule_legend
