@@ -7085,6 +7085,7 @@ body {
   /* Track colors */
   /* Ada Initiative Ally Workshop */
   /* Apache Bigtop */
+  /* Badge Hacking */
   /* Beginners Tutorials */
   /* Big Data */
   /* BoFs */
@@ -7107,6 +7108,7 @@ body {
   /* Keynote */
   /* Legal & Licensing */
   /* Mentoring */
+  /* Monitoring */
   /* MySQL */
   /* New to SCALE */
   /* NodeStack */
@@ -7156,6 +7158,13 @@ body {
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1213 a {
   color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1996 {
+  background-color: #FFF;
+  color: #D31111;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1996 a {
+  color: #D31111;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-6 {
   background-color: #3353AF;
@@ -7291,6 +7300,12 @@ body {
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 a {
   color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-2246 {
+  background-color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-2246 a {
+  color: #FF0;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-16 {
   background-color: #8B47BB;
@@ -7449,6 +7464,7 @@ body {
   /* Track colors */
   /* Ada Initiative Ally Workshop */
   /* Apache Bigtop */
+  /* Badge Hacking */
   /* Beginners Tutorials */
   /* Big Data */
   /* BoFs */
@@ -7471,6 +7487,7 @@ body {
   /* Keynote */
   /* Legal & Licensing */
   /* Mentoring */
+  /* Monitoring */
   /* MySQL */
   /* New to SCALE */
   /* Next Generation */
@@ -7503,6 +7520,10 @@ body {
 .legend-item .track-1213 {
   background-color: #2C9FF5;
   color: #FFF;
+}
+.legend-item .track-1996 {
+  background-color: #FFF;
+  color: #D31111;
 }
 .legend-item .track-6 {
   background-color: #3353AF;
@@ -7591,6 +7612,10 @@ body {
 .legend-item .track-15 {
   background-color: #998876;
   color: #FFF;
+}
+.legend-item .track-2246 {
+  background-color: #000;
+  color: #FF0;
 }
 .legend-item .track-16 {
   background-color: #8B47BB;
@@ -7765,4 +7790,7 @@ body {
   #block-views-featured-presentations-block-2 .view-content .views-row {
     width: 50%;
   }
+}
+body#tinymce {
+  background-color: transparent;
 }
