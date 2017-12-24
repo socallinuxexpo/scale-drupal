@@ -294,10 +294,11 @@ h1 {
 }
 
 /* Presentations List Page */
+.page-scale-16x-presentations,
 .page-scale-15x-presentations {
   .view-display-id-page_3 {
-    &> .view-content > .views-row {
-      //border-top: 1px solid @listBorder;
+    &> .view-content > .views-row + .views-row {
+      border-top: 1px solid @listBorder;
     }
   }
   .view-display-id-page_3 {
@@ -342,11 +343,11 @@ h1 {
       margin-bottom: 2em;
       clear: both;
       padding-top: 2em;
-      //border-top: 1px solid @listBorder;
+      border-top: 1px solid @listBorder;
     }
     .views-row-first {
-      //padding-top: 0;
-      //border-top: 0 none transparent;
+      padding-top: 0;
+      border-top: 0 none transparent;
     }
   }
   .views-field-realname {
@@ -561,7 +562,7 @@ h1 {
 
               /* Badge Hacking */
               .track-1996 {
-                background-color: #FFF;
+                background-color: #DDD;
                 color: #D31111;
                 a {
                   color: #D31111;
@@ -981,7 +982,7 @@ h1 {
 
   /* Badge Hacking */
   .track-1996 {
-    background-color: #FFF;
+    background-color: #DDD;
     color: #D31111;
   }
 

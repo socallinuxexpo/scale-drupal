@@ -6888,34 +6888,46 @@ body {
   margin-bottom: 0;
 }
 /* Presentations List Page */
+.page-scale-16x-presentations .view-display-id-page_3 > .view-content > .views-row + .views-row,
+.page-scale-15x-presentations .view-display-id-page_3 > .view-content > .views-row + .views-row {
+  border-top: 1px solid #000000;
+}
+.page-scale-16x-presentations .view-display-id-page_3 .views-row,
 .page-scale-15x-presentations .view-display-id-page_3 .views-row {
   margin-bottom: 2em;
   clear: both;
 }
+.page-scale-16x-presentations .view-display-id-page_3 .views-row .multi-speaker,
 .page-scale-15x-presentations .view-display-id-page_3 .views-row .multi-speaker {
   float: right;
   margin-top: -2em;
   margin-bottom: 2em;
   padding-top: 12px;
 }
+.page-scale-16x-presentations .view-display-id-page_3 .views-field,
 .page-scale-15x-presentations .view-display-id-page_3 .views-field {
   margin-bottom: 12px;
 }
+.page-scale-16x-presentations .view-display-id-page_3 .views-field-field-speaker-photo,
 .page-scale-15x-presentations .view-display-id-page_3 .views-field-field-speaker-photo {
   float: right;
   margin-left: 20px;
 }
+.page-scale-16x-presentations .view-display-id-page_3 .views-field-title,
 .page-scale-15x-presentations .view-display-id-page_3 .views-field-title {
   font-size: 2em;
   line-height: 1em;
 }
+.page-scale-16x-presentations .view-display-id-page_3 .views-field-field-speaker,
 .page-scale-15x-presentations .view-display-id-page_3 .views-field-field-speaker {
   font-size: 1.5em;
   line-height: 1.1em;
 }
+.page-scale-16x-presentations .view-display-id-page_3 .terms,
 .page-scale-15x-presentations .view-display-id-page_3 .terms {
   display: inline-block;
 }
+.page-scale-16x-presentations .view-display-id-page_3 .views-field-field-topic,
 .page-scale-15x-presentations .view-display-id-page_3 .views-field-field-topic {
   margin: auto auto 20px 20px;
 }
@@ -6924,6 +6936,11 @@ body {
   margin-bottom: 2em;
   clear: both;
   padding-top: 2em;
+  border-top: 1px solid #000000;
+}
+.view-display-id-speakers_list > .view-content .views-row-first {
+  padding-top: 0;
+  border-top: 0 none transparent;
 }
 .view-display-id-speakers_list .views-field-realname {
   font-family: "Mallanna", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -7160,7 +7177,7 @@ body {
   color: #FFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1996 {
-  background-color: #FFF;
+  background-color: #DDD;
   color: #D31111;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1996 a {
@@ -7522,7 +7539,7 @@ body {
   color: #FFF;
 }
 .legend-item .track-1996 {
-  background-color: #FFF;
+  background-color: #DDD;
   color: #D31111;
 }
 .legend-item .track-6 {
