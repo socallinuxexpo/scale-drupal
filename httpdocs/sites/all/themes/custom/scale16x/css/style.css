@@ -6756,6 +6756,9 @@ body {
 .node-sponsor .field {
   margin-bottom: 20px;
 }
+.navbar .nav > .active > a {
+  box-shadow: none;
+}
 #block-menu-block-3 li {
   display: inline-block;
   border-left: 1px solid #000;
