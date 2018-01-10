@@ -1209,6 +1209,55 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Audience */
+  $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
+  $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Tags */
+  $handler->display->display_options['fields']['field_presentation_tags']['id'] = 'field_presentation_tags';
+  $handler->display->display_options['fields']['field_presentation_tags']['table'] = 'field_data_field_presentation_tags';
+  $handler->display->display_options['fields']['field_presentation_tags']['field'] = 'field_presentation_tags';
+  $handler->display->display_options['fields']['field_presentation_tags']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_presentation_tags']['delta_offset'] = '0';
+  /* Field: Content: appropriate for */
+  $handler->display->display_options['fields']['field_appropriate_for']['id'] = 'field_appropriate_for';
+  $handler->display->display_options['fields']['field_appropriate_for']['table'] = 'field_data_field_appropriate_for';
+  $handler->display->display_options['fields']['field_appropriate_for']['field'] = 'field_appropriate_for';
+  /* Field: Content: Speakers */
+  $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['type'] = 'user_reference_plain';
+  $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: Content: Primary contact email address */
+  $handler->display->display_options['fields']['field_primary_email']['id'] = 'field_primary_email';
+  $handler->display->display_options['fields']['field_primary_email']['table'] = 'field_data_field_primary_email';
+  $handler->display->display_options['fields']['field_primary_email']['field'] = 'field_primary_email';
+  /* Field: Content: Brief description */
+  $handler->display->display_options['fields']['field_brief_description']['id'] = 'field_brief_description';
+  $handler->display->display_options['fields']['field_brief_description']['table'] = 'field_data_field_brief_description';
+  $handler->display->display_options['fields']['field_brief_description']['field'] = 'field_brief_description';
+  /* Field: Content: Short abstract */
+  $handler->display->display_options['fields']['field_short_abstract']['id'] = 'field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['table'] = 'field_data_field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
+  /* Field: Content: Long abstract */
+  $handler->display->display_options['fields']['field_long_abstract']['id'] = 'field_long_abstract';
+  $handler->display->display_options['fields']['field_long_abstract']['table'] = 'field_data_field_long_abstract';
+  $handler->display->display_options['fields']['field_long_abstract']['field'] = 'field_long_abstract';
+  /* Field: Content: Message to the reviewers */
+  $handler->display->display_options['fields']['field_message_to_reviewers']['id'] = 'field_message_to_reviewers';
+  $handler->display->display_options['fields']['field_message_to_reviewers']['table'] = 'field_data_field_message_to_reviewers';
+  $handler->display->display_options['fields']['field_message_to_reviewers']['field'] = 'field_message_to_reviewers';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -1292,6 +1341,29 @@ function scale_presentation_views_default_views() {
   );
   $handler->display->display_options['filters']['field_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_topic_tid']['vocabulary'] = 'topic';
+  /* Filter criterion: Content: Status (field_presentation_status) */
+  $handler->display->display_options['filters']['field_presentation_status_value']['id'] = 'field_presentation_status_value';
+  $handler->display->display_options['filters']['field_presentation_status_value']['table'] = 'field_data_field_presentation_status';
+  $handler->display->display_options['filters']['field_presentation_status_value']['field'] = 'field_presentation_status_value';
+  $handler->display->display_options['filters']['field_presentation_status_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_presentation_status_value']['expose']['operator_id'] = 'field_presentation_status_value_op';
+  $handler->display->display_options['filters']['field_presentation_status_value']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_presentation_status_value']['expose']['operator'] = 'field_presentation_status_value_op';
+  $handler->display->display_options['filters']['field_presentation_status_value']['expose']['identifier'] = 'field_presentation_status_value';
+  $handler->display->display_options['filters']['field_presentation_status_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    4 => 0,
+    9 => 0,
+    10 => 0,
+    8 => 0,
+    6 => 0,
+    12 => 0,
+    11 => 0,
+    7 => 0,
+    3 => 0,
+  );
   $handler->display->display_options['path'] = 'presentation-exporter';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Presentation Exporter';
