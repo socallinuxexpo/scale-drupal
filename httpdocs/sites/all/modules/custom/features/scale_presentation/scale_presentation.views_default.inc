@@ -1104,6 +1104,10 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_message_to_reviewers']['id'] = 'field_message_to_reviewers';
   $handler->display->display_options['fields']['field_message_to_reviewers']['table'] = 'field_data_field_message_to_reviewers';
   $handler->display->display_options['fields']['field_message_to_reviewers']['field'] = 'field_message_to_reviewers';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_presentation_status']['id'] = 'field_presentation_status';
+  $handler->display->display_options['fields']['field_presentation_status']['table'] = 'field_data_field_presentation_status';
+  $handler->display->display_options['fields']['field_presentation_status']['field'] = 'field_presentation_status';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -1483,6 +1487,10 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_short_abstract']['label'] = 'Description';
   $handler->display->display_options['fields']['field_short_abstract']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_short_abstract']['alter']['text'] = '[field_speaker]: [field_short_abstract]';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_presentation_status']['id'] = 'field_presentation_status';
+  $handler->display->display_options['fields']['field_presentation_status']['table'] = 'field_data_field_presentation_status';
+  $handler->display->display_options['fields']['field_presentation_status']['field'] = 'field_presentation_status';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
