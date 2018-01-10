@@ -1258,6 +1258,10 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_message_to_reviewers']['id'] = 'field_message_to_reviewers';
   $handler->display->display_options['fields']['field_message_to_reviewers']['table'] = 'field_data_field_message_to_reviewers';
   $handler->display->display_options['fields']['field_message_to_reviewers']['field'] = 'field_message_to_reviewers';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_presentation_status']['id'] = 'field_presentation_status';
+  $handler->display->display_options['fields']['field_presentation_status']['table'] = 'field_data_field_presentation_status';
+  $handler->display->display_options['fields']['field_presentation_status']['field'] = 'field_presentation_status';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
@@ -1348,6 +1352,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_presentation_status_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_presentation_status_value']['expose']['operator_id'] = 'field_presentation_status_value_op';
   $handler->display->display_options['filters']['field_presentation_status_value']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_presentation_status_value']['expose']['use_operator'] = TRUE;
   $handler->display->display_options['filters']['field_presentation_status_value']['expose']['operator'] = 'field_presentation_status_value_op';
   $handler->display->display_options['filters']['field_presentation_status_value']['expose']['identifier'] = 'field_presentation_status_value';
   $handler->display->display_options['filters']['field_presentation_status_value']['expose']['remember_roles'] = array(
