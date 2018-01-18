@@ -55,6 +55,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         880, // FOSS Camp.
         //12, // General.
         1221, // GLAD Camp.
+        //2255, // HAM Radio.
         505, // Hot Applications.
         13, // Kernel.
         //14, // Keynote.

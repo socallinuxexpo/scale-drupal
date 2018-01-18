@@ -12080,6 +12080,41 @@ scale/16x/schedule/thursday',
   $display->content['new-6b704f2d-6090-4278-974c-11fd69fc8ab0'] = $pane;
   $display->panels['center'][12] = 'new-6b704f2d-6090-4278-974c-11fd69fc8ab0';
   $pane = new stdClass();
+  $pane->pid = 'new-259b98b1-3cc3-4cf7-98ea-fd13e14e67a7';
+  $pane->panel = 'center';
+  $pane->type = 'views';
+  $pane->subtype = 'room_schedule';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '2018-03-08/2256',
+    'url' => '',
+    'display' => 'page_3',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 13;
+  $pane->locks = array();
+  $pane->uuid = '259b98b1-3cc3-4cf7-98ea-fd13e14e67a7';
+  $display->content['new-259b98b1-3cc3-4cf7-98ea-fd13e14e67a7'] = $pane;
+  $display->panels['center'][13] = 'new-259b98b1-3cc3-4cf7-98ea-fd13e14e67a7';
+  $pane = new stdClass();
   $pane->pid = 'new-5937ede2-1937-4e8a-97dd-45bab880c2c1';
   $pane->panel = 'center';
   $pane->type = 'views';
@@ -12112,11 +12147,11 @@ scale/16x/schedule/thursday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 13;
+  $pane->position = 14;
   $pane->locks = array();
   $pane->uuid = '5937ede2-1937-4e8a-97dd-45bab880c2c1';
   $display->content['new-5937ede2-1937-4e8a-97dd-45bab880c2c1'] = $pane;
-  $display->panels['center'][13] = 'new-5937ede2-1937-4e8a-97dd-45bab880c2c1';
+  $display->panels['center'][14] = 'new-5937ede2-1937-4e8a-97dd-45bab880c2c1';
   $pane = new stdClass();
   $pane->pid = 'new-cf413f91-2744-4f8a-a958-096bcdf6e0af';
   $pane->panel = 'center';
@@ -12150,17 +12185,17 @@ scale/16x/schedule/thursday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 14;
+  $pane->position = 15;
   $pane->locks = array();
   $pane->uuid = 'cf413f91-2744-4f8a-a958-096bcdf6e0af';
   $display->content['new-cf413f91-2744-4f8a-a958-096bcdf6e0af'] = $pane;
-  $display->panels['center'][14] = 'new-cf413f91-2744-4f8a-a958-096bcdf6e0af';
+  $display->panels['center'][15] = 'new-cf413f91-2744-4f8a-a958-096bcdf6e0af';
   $pane = new stdClass();
   $pane->pid = 'new-31d95240-34dd-45e1-bb8c-6ce4603935e1';
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -12188,11 +12223,11 @@ scale/16x/schedule/thursday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 15;
+  $pane->position = 16;
   $pane->locks = array();
   $pane->uuid = '31d95240-34dd-45e1-bb8c-6ce4603935e1';
   $display->content['new-31d95240-34dd-45e1-bb8c-6ce4603935e1'] = $pane;
-  $display->panels['center'][15] = 'new-31d95240-34dd-45e1-bb8c-6ce4603935e1';
+  $display->panels['center'][16] = 'new-31d95240-34dd-45e1-bb8c-6ce4603935e1';
   $pane = new stdClass();
   $pane->pid = 'new-989252a3-f26b-4725-8ce2-de0988a278a8';
   $pane->panel = 'center';
@@ -12223,11 +12258,11 @@ scale/16x/schedule/thursday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 16;
+  $pane->position = 17;
   $pane->locks = array();
   $pane->uuid = '989252a3-f26b-4725-8ce2-de0988a278a8';
   $display->content['new-989252a3-f26b-4725-8ce2-de0988a278a8'] = $pane;
-  $display->panels['center'][16] = 'new-989252a3-f26b-4725-8ce2-de0988a278a8';
+  $display->panels['center'][17] = 'new-989252a3-f26b-4725-8ce2-de0988a278a8';
   $pane = new stdClass();
   $pane->pid = 'new-7e2c3432-5969-47eb-94e4-7ed94bb7cf04';
   $pane->panel = 'center';
@@ -12258,11 +12293,11 @@ scale/16x/schedule/thursday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 17;
+  $pane->position = 18;
   $pane->locks = array();
   $pane->uuid = '7e2c3432-5969-47eb-94e4-7ed94bb7cf04';
   $display->content['new-7e2c3432-5969-47eb-94e4-7ed94bb7cf04'] = $pane;
-  $display->panels['center'][17] = 'new-7e2c3432-5969-47eb-94e4-7ed94bb7cf04';
+  $display->panels['center'][18] = 'new-7e2c3432-5969-47eb-94e4-7ed94bb7cf04';
   $pane = new stdClass();
   $pane->pid = 'new-cb940735-a9e6-4c7d-83e2-d1734cc28856';
   $pane->panel = 'center';
@@ -12293,11 +12328,11 @@ scale/16x/schedule/thursday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 18;
+  $pane->position = 19;
   $pane->locks = array();
   $pane->uuid = 'cb940735-a9e6-4c7d-83e2-d1734cc28856';
   $display->content['new-cb940735-a9e6-4c7d-83e2-d1734cc28856'] = $pane;
-  $display->panels['center'][18] = 'new-cb940735-a9e6-4c7d-83e2-d1734cc28856';
+  $display->panels['center'][19] = 'new-cb940735-a9e6-4c7d-83e2-d1734cc28856';
   $pane = new stdClass();
   $pane->pid = 'new-14fa296c-167a-4fc0-b57b-5d0a619ad453';
   $pane->panel = 'center';
@@ -12328,11 +12363,11 @@ scale/16x/schedule/thursday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 19;
+  $pane->position = 20;
   $pane->locks = array();
   $pane->uuid = '14fa296c-167a-4fc0-b57b-5d0a619ad453';
   $display->content['new-14fa296c-167a-4fc0-b57b-5d0a619ad453'] = $pane;
-  $display->panels['center'][19] = 'new-14fa296c-167a-4fc0-b57b-5d0a619ad453';
+  $display->panels['center'][20] = 'new-14fa296c-167a-4fc0-b57b-5d0a619ad453';
   $pane = new stdClass();
   $pane->pid = 'new-af476e26-48b6-4a07-a1a5-eeda0ee534e4';
   $pane->panel = 'notice';
@@ -13103,6 +13138,41 @@ scale/16x/schedule/friday',
   $display->content['new-473b98e5-bb55-413d-8c57-95b5b8b43471'] = $pane;
   $display->panels['center'][12] = 'new-473b98e5-bb55-413d-8c57-95b5b8b43471';
   $pane = new stdClass();
+  $pane->pid = 'new-4598455d-a740-43ea-856b-c630179b27d7';
+  $pane->panel = 'center';
+  $pane->type = 'views';
+  $pane->subtype = 'room_schedule';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '2018-03-09/2256',
+    'url' => '',
+    'display' => 'page_3',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 13;
+  $pane->locks = array();
+  $pane->uuid = '4598455d-a740-43ea-856b-c630179b27d7';
+  $display->content['new-4598455d-a740-43ea-856b-c630179b27d7'] = $pane;
+  $display->panels['center'][13] = 'new-4598455d-a740-43ea-856b-c630179b27d7';
+  $pane = new stdClass();
   $pane->pid = 'new-31ebcb05-9278-46d7-a64d-6880ee957de2';
   $pane->panel = 'center';
   $pane->type = 'views';
@@ -13135,11 +13205,11 @@ scale/16x/schedule/friday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 13;
+  $pane->position = 14;
   $pane->locks = array();
   $pane->uuid = '31ebcb05-9278-46d7-a64d-6880ee957de2';
   $display->content['new-31ebcb05-9278-46d7-a64d-6880ee957de2'] = $pane;
-  $display->panels['center'][13] = 'new-31ebcb05-9278-46d7-a64d-6880ee957de2';
+  $display->panels['center'][14] = 'new-31ebcb05-9278-46d7-a64d-6880ee957de2';
   $pane = new stdClass();
   $pane->pid = 'new-1d46324b-78df-4532-9b7d-6a0d0045ac15';
   $pane->panel = 'center';
@@ -13173,17 +13243,17 @@ scale/16x/schedule/friday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 14;
+  $pane->position = 15;
   $pane->locks = array();
   $pane->uuid = '1d46324b-78df-4532-9b7d-6a0d0045ac15';
   $display->content['new-1d46324b-78df-4532-9b7d-6a0d0045ac15'] = $pane;
-  $display->panels['center'][14] = 'new-1d46324b-78df-4532-9b7d-6a0d0045ac15';
+  $display->panels['center'][15] = 'new-1d46324b-78df-4532-9b7d-6a0d0045ac15';
   $pane = new stdClass();
   $pane->pid = 'new-6e03024c-09ac-4db5-b898-cc41782d4bff';
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -13211,11 +13281,11 @@ scale/16x/schedule/friday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 15;
+  $pane->position = 16;
   $pane->locks = array();
   $pane->uuid = '6e03024c-09ac-4db5-b898-cc41782d4bff';
   $display->content['new-6e03024c-09ac-4db5-b898-cc41782d4bff'] = $pane;
-  $display->panels['center'][15] = 'new-6e03024c-09ac-4db5-b898-cc41782d4bff';
+  $display->panels['center'][16] = 'new-6e03024c-09ac-4db5-b898-cc41782d4bff';
   $pane = new stdClass();
   $pane->pid = 'new-0ecb5db9-92ae-47d0-9af1-e1f2bab7a66e';
   $pane->panel = 'center';
@@ -13246,11 +13316,11 @@ scale/16x/schedule/friday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 16;
+  $pane->position = 17;
   $pane->locks = array();
   $pane->uuid = '0ecb5db9-92ae-47d0-9af1-e1f2bab7a66e';
   $display->content['new-0ecb5db9-92ae-47d0-9af1-e1f2bab7a66e'] = $pane;
-  $display->panels['center'][16] = 'new-0ecb5db9-92ae-47d0-9af1-e1f2bab7a66e';
+  $display->panels['center'][17] = 'new-0ecb5db9-92ae-47d0-9af1-e1f2bab7a66e';
   $pane = new stdClass();
   $pane->pid = 'new-28a98814-4c8c-4af4-bc19-4a3b7c948ad3';
   $pane->panel = 'center';
@@ -13281,11 +13351,11 @@ scale/16x/schedule/friday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 17;
+  $pane->position = 18;
   $pane->locks = array();
   $pane->uuid = '28a98814-4c8c-4af4-bc19-4a3b7c948ad3';
   $display->content['new-28a98814-4c8c-4af4-bc19-4a3b7c948ad3'] = $pane;
-  $display->panels['center'][17] = 'new-28a98814-4c8c-4af4-bc19-4a3b7c948ad3';
+  $display->panels['center'][18] = 'new-28a98814-4c8c-4af4-bc19-4a3b7c948ad3';
   $pane = new stdClass();
   $pane->pid = 'new-5a9d95cc-cdba-4a34-b417-488e5fb1119d';
   $pane->panel = 'center';
@@ -13316,11 +13386,11 @@ scale/16x/schedule/friday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 18;
+  $pane->position = 19;
   $pane->locks = array();
   $pane->uuid = '5a9d95cc-cdba-4a34-b417-488e5fb1119d';
   $display->content['new-5a9d95cc-cdba-4a34-b417-488e5fb1119d'] = $pane;
-  $display->panels['center'][18] = 'new-5a9d95cc-cdba-4a34-b417-488e5fb1119d';
+  $display->panels['center'][19] = 'new-5a9d95cc-cdba-4a34-b417-488e5fb1119d';
   $pane = new stdClass();
   $pane->pid = 'new-fea26346-4edc-48a3-b92b-f0f4912f0283';
   $pane->panel = 'center';
@@ -13351,11 +13421,11 @@ scale/16x/schedule/friday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 19;
+  $pane->position = 20;
   $pane->locks = array();
   $pane->uuid = 'fea26346-4edc-48a3-b92b-f0f4912f0283';
   $display->content['new-fea26346-4edc-48a3-b92b-f0f4912f0283'] = $pane;
-  $display->panels['center'][19] = 'new-fea26346-4edc-48a3-b92b-f0f4912f0283';
+  $display->panels['center'][20] = 'new-fea26346-4edc-48a3-b92b-f0f4912f0283';
   $pane = new stdClass();
   $pane->pid = 'new-79c15b8a-33d6-4730-adeb-a855ce75d04c';
   $pane->panel = 'center';
@@ -13386,11 +13456,11 @@ scale/16x/schedule/friday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 20;
+  $pane->position = 21;
   $pane->locks = array();
   $pane->uuid = '79c15b8a-33d6-4730-adeb-a855ce75d04c';
   $display->content['new-79c15b8a-33d6-4730-adeb-a855ce75d04c'] = $pane;
-  $display->panels['center'][20] = 'new-79c15b8a-33d6-4730-adeb-a855ce75d04c';
+  $display->panels['center'][21] = 'new-79c15b8a-33d6-4730-adeb-a855ce75d04c';
   $pane = new stdClass();
   $pane->pid = 'new-46671d54-b964-4cd2-b9eb-0f2ef01dd643';
   $pane->panel = 'notice';
@@ -14161,6 +14231,41 @@ scale/16x/schedule/saturday',
   $display->content['new-6dc5b21c-6eab-4590-bb48-d89cf958b37f'] = $pane;
   $display->panels['center'][12] = 'new-6dc5b21c-6eab-4590-bb48-d89cf958b37f';
   $pane = new stdClass();
+  $pane->pid = 'new-b95ad707-06f3-4588-ad2e-81e04bb1c6a7';
+  $pane->panel = 'center';
+  $pane->type = 'views';
+  $pane->subtype = 'room_schedule';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '2018-03-10/2256',
+    'url' => '',
+    'display' => 'page_3',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 13;
+  $pane->locks = array();
+  $pane->uuid = 'b95ad707-06f3-4588-ad2e-81e04bb1c6a7';
+  $display->content['new-b95ad707-06f3-4588-ad2e-81e04bb1c6a7'] = $pane;
+  $display->panels['center'][13] = 'new-b95ad707-06f3-4588-ad2e-81e04bb1c6a7';
+  $pane = new stdClass();
   $pane->pid = 'new-184df292-9622-45a8-94b8-0198b467f8d0';
   $pane->panel = 'center';
   $pane->type = 'views';
@@ -14193,11 +14298,11 @@ scale/16x/schedule/saturday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 13;
+  $pane->position = 14;
   $pane->locks = array();
   $pane->uuid = '184df292-9622-45a8-94b8-0198b467f8d0';
   $display->content['new-184df292-9622-45a8-94b8-0198b467f8d0'] = $pane;
-  $display->panels['center'][13] = 'new-184df292-9622-45a8-94b8-0198b467f8d0';
+  $display->panels['center'][14] = 'new-184df292-9622-45a8-94b8-0198b467f8d0';
   $pane = new stdClass();
   $pane->pid = 'new-0e7eaf3e-d674-43dd-b55a-017dcc6525f1';
   $pane->panel = 'center';
@@ -14231,17 +14336,17 @@ scale/16x/schedule/saturday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 14;
+  $pane->position = 15;
   $pane->locks = array();
   $pane->uuid = '0e7eaf3e-d674-43dd-b55a-017dcc6525f1';
   $display->content['new-0e7eaf3e-d674-43dd-b55a-017dcc6525f1'] = $pane;
-  $display->panels['center'][14] = 'new-0e7eaf3e-d674-43dd-b55a-017dcc6525f1';
+  $display->panels['center'][15] = 'new-0e7eaf3e-d674-43dd-b55a-017dcc6525f1';
   $pane = new stdClass();
   $pane->pid = 'new-c7e842f3-8fc6-428b-8ed6-6d358b2291ca';
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -14269,11 +14374,11 @@ scale/16x/schedule/saturday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 15;
+  $pane->position = 16;
   $pane->locks = array();
   $pane->uuid = 'c7e842f3-8fc6-428b-8ed6-6d358b2291ca';
   $display->content['new-c7e842f3-8fc6-428b-8ed6-6d358b2291ca'] = $pane;
-  $display->panels['center'][15] = 'new-c7e842f3-8fc6-428b-8ed6-6d358b2291ca';
+  $display->panels['center'][16] = 'new-c7e842f3-8fc6-428b-8ed6-6d358b2291ca';
   $pane = new stdClass();
   $pane->pid = 'new-3c75ab21-f903-4a77-ac57-96f8cee5d81b';
   $pane->panel = 'center';
@@ -14304,11 +14409,11 @@ scale/16x/schedule/saturday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 16;
+  $pane->position = 17;
   $pane->locks = array();
   $pane->uuid = '3c75ab21-f903-4a77-ac57-96f8cee5d81b';
   $display->content['new-3c75ab21-f903-4a77-ac57-96f8cee5d81b'] = $pane;
-  $display->panels['center'][16] = 'new-3c75ab21-f903-4a77-ac57-96f8cee5d81b';
+  $display->panels['center'][17] = 'new-3c75ab21-f903-4a77-ac57-96f8cee5d81b';
   $pane = new stdClass();
   $pane->pid = 'new-57765160-273d-4923-9f0e-fea332e0a3dd';
   $pane->panel = 'center';
@@ -14339,11 +14444,11 @@ scale/16x/schedule/saturday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 17;
+  $pane->position = 18;
   $pane->locks = array();
   $pane->uuid = '57765160-273d-4923-9f0e-fea332e0a3dd';
   $display->content['new-57765160-273d-4923-9f0e-fea332e0a3dd'] = $pane;
-  $display->panels['center'][17] = 'new-57765160-273d-4923-9f0e-fea332e0a3dd';
+  $display->panels['center'][18] = 'new-57765160-273d-4923-9f0e-fea332e0a3dd';
   $pane = new stdClass();
   $pane->pid = 'new-01c26c1e-c347-42d9-88a0-b446fc0d494f';
   $pane->panel = 'center';
@@ -14374,11 +14479,11 @@ scale/16x/schedule/saturday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 18;
+  $pane->position = 19;
   $pane->locks = array();
   $pane->uuid = '01c26c1e-c347-42d9-88a0-b446fc0d494f';
   $display->content['new-01c26c1e-c347-42d9-88a0-b446fc0d494f'] = $pane;
-  $display->panels['center'][18] = 'new-01c26c1e-c347-42d9-88a0-b446fc0d494f';
+  $display->panels['center'][19] = 'new-01c26c1e-c347-42d9-88a0-b446fc0d494f';
   $pane = new stdClass();
   $pane->pid = 'new-5f6e712d-1d15-4ef2-ac05-2c3a18292e56';
   $pane->panel = 'center';
@@ -14409,11 +14514,11 @@ scale/16x/schedule/saturday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 19;
+  $pane->position = 20;
   $pane->locks = array();
   $pane->uuid = '5f6e712d-1d15-4ef2-ac05-2c3a18292e56';
   $display->content['new-5f6e712d-1d15-4ef2-ac05-2c3a18292e56'] = $pane;
-  $display->panels['center'][19] = 'new-5f6e712d-1d15-4ef2-ac05-2c3a18292e56';
+  $display->panels['center'][20] = 'new-5f6e712d-1d15-4ef2-ac05-2c3a18292e56';
   $pane = new stdClass();
   $pane->pid = 'new-0d3c45b5-be95-4942-9aff-b3d1b81bbe35';
   $pane->panel = 'center';
@@ -14444,11 +14549,11 @@ scale/16x/schedule/saturday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 20;
+  $pane->position = 21;
   $pane->locks = array();
   $pane->uuid = '0d3c45b5-be95-4942-9aff-b3d1b81bbe35';
   $display->content['new-0d3c45b5-be95-4942-9aff-b3d1b81bbe35'] = $pane;
-  $display->panels['center'][20] = 'new-0d3c45b5-be95-4942-9aff-b3d1b81bbe35';
+  $display->panels['center'][21] = 'new-0d3c45b5-be95-4942-9aff-b3d1b81bbe35';
   $pane = new stdClass();
   $pane->pid = 'new-bb260660-a7d3-433a-901e-a474d3af3651';
   $pane->panel = 'notice';
@@ -14881,7 +14986,7 @@ scale/16x/schedule/sunday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = FALSE;
+  $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -15219,6 +15324,41 @@ scale/16x/schedule/sunday',
   $display->content['new-df3c269b-4c43-48e8-bc66-bd406f406527'] = $pane;
   $display->panels['center'][12] = 'new-df3c269b-4c43-48e8-bc66-bd406f406527';
   $pane = new stdClass();
+  $pane->pid = 'new-fbd6d525-ae79-4dc3-9530-8f4da990bcf4';
+  $pane->panel = 'center';
+  $pane->type = 'views';
+  $pane->subtype = 'room_schedule';
+  $pane->shown = TRUE;
+  $pane->access = array();
+  $pane->configuration = array(
+    'override_pager_settings' => 0,
+    'use_pager' => 0,
+    'nodes_per_page' => '0',
+    'pager_id' => '0',
+    'offset' => '0',
+    'more_link' => 0,
+    'feed_icons' => 0,
+    'panel_args' => 0,
+    'link_to_view' => 0,
+    'args' => '2018-03-11/2256',
+    'url' => '',
+    'display' => 'page_3',
+    'override_title' => 0,
+    'override_title_text' => '',
+    'override_title_heading' => 'h2',
+  );
+  $pane->cache = array();
+  $pane->style = array(
+    'settings' => NULL,
+  );
+  $pane->css = array();
+  $pane->extras = array();
+  $pane->position = 13;
+  $pane->locks = array();
+  $pane->uuid = 'fbd6d525-ae79-4dc3-9530-8f4da990bcf4';
+  $display->content['new-fbd6d525-ae79-4dc3-9530-8f4da990bcf4'] = $pane;
+  $display->panels['center'][13] = 'new-fbd6d525-ae79-4dc3-9530-8f4da990bcf4';
+  $pane = new stdClass();
   $pane->pid = 'new-1e0c81c1-eefd-44af-99ee-35f65858ef97';
   $pane->panel = 'center';
   $pane->type = 'views';
@@ -15251,11 +15391,11 @@ scale/16x/schedule/sunday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 13;
+  $pane->position = 14;
   $pane->locks = array();
   $pane->uuid = '1e0c81c1-eefd-44af-99ee-35f65858ef97';
   $display->content['new-1e0c81c1-eefd-44af-99ee-35f65858ef97'] = $pane;
-  $display->panels['center'][13] = 'new-1e0c81c1-eefd-44af-99ee-35f65858ef97';
+  $display->panels['center'][14] = 'new-1e0c81c1-eefd-44af-99ee-35f65858ef97';
   $pane = new stdClass();
   $pane->pid = 'new-46d96949-b5d1-4908-a529-f1b194f98a7d';
   $pane->panel = 'center';
@@ -15289,17 +15429,17 @@ scale/16x/schedule/sunday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 14;
+  $pane->position = 15;
   $pane->locks = array();
   $pane->uuid = '46d96949-b5d1-4908-a529-f1b194f98a7d';
   $display->content['new-46d96949-b5d1-4908-a529-f1b194f98a7d'] = $pane;
-  $display->panels['center'][14] = 'new-46d96949-b5d1-4908-a529-f1b194f98a7d';
+  $display->panels['center'][15] = 'new-46d96949-b5d1-4908-a529-f1b194f98a7d';
   $pane = new stdClass();
   $pane->pid = 'new-db1934ab-a38b-412d-a6bb-69fb3f921a64';
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -15327,17 +15467,17 @@ scale/16x/schedule/sunday',
     'css_class' => '',
   );
   $pane->extras = array();
-  $pane->position = 15;
+  $pane->position = 16;
   $pane->locks = array();
   $pane->uuid = 'db1934ab-a38b-412d-a6bb-69fb3f921a64';
   $display->content['new-db1934ab-a38b-412d-a6bb-69fb3f921a64'] = $pane;
-  $display->panels['center'][15] = 'new-db1934ab-a38b-412d-a6bb-69fb3f921a64';
+  $display->panels['center'][16] = 'new-db1934ab-a38b-412d-a6bb-69fb3f921a64';
   $pane = new stdClass();
   $pane->pid = 'new-b0a76fa6-18eb-4338-8cff-55d8b3cf51e5';
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -15362,11 +15502,11 @@ scale/16x/schedule/sunday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 16;
+  $pane->position = 17;
   $pane->locks = array();
   $pane->uuid = 'b0a76fa6-18eb-4338-8cff-55d8b3cf51e5';
   $display->content['new-b0a76fa6-18eb-4338-8cff-55d8b3cf51e5'] = $pane;
-  $display->panels['center'][16] = 'new-b0a76fa6-18eb-4338-8cff-55d8b3cf51e5';
+  $display->panels['center'][17] = 'new-b0a76fa6-18eb-4338-8cff-55d8b3cf51e5';
   $pane = new stdClass();
   $pane->pid = 'new-f0be736c-86c2-45c4-85ba-d805d0dd56eb';
   $pane->panel = 'center';
@@ -15397,11 +15537,11 @@ scale/16x/schedule/sunday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 17;
+  $pane->position = 18;
   $pane->locks = array();
   $pane->uuid = 'f0be736c-86c2-45c4-85ba-d805d0dd56eb';
   $display->content['new-f0be736c-86c2-45c4-85ba-d805d0dd56eb'] = $pane;
-  $display->panels['center'][17] = 'new-f0be736c-86c2-45c4-85ba-d805d0dd56eb';
+  $display->panels['center'][18] = 'new-f0be736c-86c2-45c4-85ba-d805d0dd56eb';
   $pane = new stdClass();
   $pane->pid = 'new-d903ba61-f03b-426c-90bf-eb6e28776fe7';
   $pane->panel = 'center';
@@ -15432,11 +15572,11 @@ scale/16x/schedule/sunday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 18;
+  $pane->position = 19;
   $pane->locks = array();
   $pane->uuid = 'd903ba61-f03b-426c-90bf-eb6e28776fe7';
   $display->content['new-d903ba61-f03b-426c-90bf-eb6e28776fe7'] = $pane;
-  $display->panels['center'][18] = 'new-d903ba61-f03b-426c-90bf-eb6e28776fe7';
+  $display->panels['center'][19] = 'new-d903ba61-f03b-426c-90bf-eb6e28776fe7';
   $pane = new stdClass();
   $pane->pid = 'new-cfbf6d31-6d3c-4ea2-9baf-cae5677f750d';
   $pane->panel = 'center';
@@ -15467,11 +15607,11 @@ scale/16x/schedule/sunday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 19;
+  $pane->position = 20;
   $pane->locks = array();
   $pane->uuid = 'cfbf6d31-6d3c-4ea2-9baf-cae5677f750d';
   $display->content['new-cfbf6d31-6d3c-4ea2-9baf-cae5677f750d'] = $pane;
-  $display->panels['center'][19] = 'new-cfbf6d31-6d3c-4ea2-9baf-cae5677f750d';
+  $display->panels['center'][20] = 'new-cfbf6d31-6d3c-4ea2-9baf-cae5677f750d';
   $pane = new stdClass();
   $pane->pid = 'new-1b71af9a-a14e-4470-876d-5788882c17e1';
   $pane->panel = 'center';
@@ -15502,11 +15642,11 @@ scale/16x/schedule/sunday',
   );
   $pane->css = array();
   $pane->extras = array();
-  $pane->position = 20;
+  $pane->position = 21;
   $pane->locks = array();
   $pane->uuid = '1b71af9a-a14e-4470-876d-5788882c17e1';
   $display->content['new-1b71af9a-a14e-4470-876d-5788882c17e1'] = $pane;
-  $display->panels['center'][20] = 'new-1b71af9a-a14e-4470-876d-5788882c17e1';
+  $display->panels['center'][21] = 'new-1b71af9a-a14e-4470-876d-5788882c17e1';
   $pane = new stdClass();
   $pane->pid = 'new-2270ad78-0d5d-4ccc-8186-ed345329401b';
   $pane->panel = 'notice';
