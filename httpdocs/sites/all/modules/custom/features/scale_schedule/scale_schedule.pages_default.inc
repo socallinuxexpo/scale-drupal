@@ -15823,10 +15823,10 @@ scale/16x/schedule/sunday',
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
-  $pane->pid = 'new-1ff4b06c-df1d-4b55-b6ed-e5b235a900af';
+  $pane->pid = 'new-8bc27ce3-d1d3-4dfa-801d-a03708a0d87d';
   $pane->panel = 'middle';
   $pane->type = 'block';
-  $pane->subtype = 'menu-menu-schedule-15x';
+  $pane->subtype = 'menu-menu-schedule-16x';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -15842,9 +15842,9 @@ scale/16x/schedule/sunday',
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '1ff4b06c-df1d-4b55-b6ed-e5b235a900af';
-  $display->content['new-1ff4b06c-df1d-4b55-b6ed-e5b235a900af'] = $pane;
-  $display->panels['middle'][0] = 'new-1ff4b06c-df1d-4b55-b6ed-e5b235a900af';
+  $pane->uuid = '8bc27ce3-d1d3-4dfa-801d-a03708a0d87d';
+  $display->content['new-8bc27ce3-d1d3-4dfa-801d-a03708a0d87d'] = $pane;
+  $display->panels['middle'][0] = 'new-8bc27ce3-d1d3-4dfa-801d-a03708a0d87d';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
