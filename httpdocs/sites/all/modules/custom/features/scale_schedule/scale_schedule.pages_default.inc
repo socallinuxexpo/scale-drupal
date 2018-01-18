@@ -11417,11 +11417,11 @@ scale/15x/schedule/sunday',
         'settings' => array(
           'rids' => array(
             0 => 1,
-            1 => 5,
+            1 => 2,
           ),
         ),
         'context' => 'logged-in-user',
-        'not' => TRUE,
+        'not' => FALSE,
       ),
     ),
   );
