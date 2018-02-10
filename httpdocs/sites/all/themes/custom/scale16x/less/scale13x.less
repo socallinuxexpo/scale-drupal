@@ -8,6 +8,11 @@ body {
   padding-top: 20px;
 }
 
+.lower-section {
+  background-color: #FFF;
+  padding-bottom: 20px;
+}
+
 h1 {
 }
 
@@ -54,6 +59,18 @@ h1 {
 // Social Media Icon Block
 .social-media img {
   margin: 0 3px 3px 0;
+}
+
+// main content
+.main {
+  .page-header {
+    margin-top: 15px;
+  }
+}
+
+// first sidebar
+.region-sidebar-first.well {
+  margin-top: 8px;
 }
 
 // Sponsor Logo Block
@@ -120,6 +137,7 @@ h1 {
 }
 .view-sponsors-13x,
 .view-exhibitors {
+  padding-right: 20px;
   .view-header {
     margin-bottom: 36px;
   }
@@ -195,6 +213,15 @@ h1 {
     border-left: none;
     padding-left: 0;
   }
+  a {
+    color: #FFF;
+    &:hover {
+      color: #999;
+    }
+  }
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
 }
 
 /* Featured Speakers block */
@@ -1341,7 +1368,7 @@ h1 {
 @media (max-width: 1199px) {
   // Featured Speakers block
   #block-views-featured-presentations-block-2 {
-    margin: 0 108px;
+    //margin: 0 108px;
     .views-row {
       width: 33.33%;
     }
@@ -1351,8 +1378,13 @@ h1 {
 @media (max-width: 979px) {
   // Featured Speakers block
   #block-views-featured-presentations-block-2 {
-    margin: 0;
+    //margin: 0;
   }
+  .lower-section {
+    padding: 20px;
+    width: auto;
+  }
+
 }
 
 @media (max-width: 767px) {

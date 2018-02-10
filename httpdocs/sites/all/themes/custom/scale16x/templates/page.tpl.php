@@ -55,7 +55,7 @@
       <?php endif; ?>
   </div>
 
-  <div class="row-fluid">
+  <div class="lower-section row-fluid">
     <?php if (!empty($page['sidebar_first'])): ?>
       <aside class="span3 hidden-phone" role="complementary">
         <?php $sidebar_first = render($page['sidebar_first']); ?>
