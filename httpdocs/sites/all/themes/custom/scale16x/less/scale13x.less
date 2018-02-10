@@ -68,9 +68,24 @@ h1 {
   }
 }
 
+.front {
+  .main {
+    margin-top: 8px;
+  }
+}
+
 // first sidebar
 .region-sidebar-first.well {
   margin-top: 8px;
+}
+
+// article
+article {
+  h2 a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 // Sponsor Logo Block
@@ -206,7 +221,7 @@ h1 {
 .region-footer > .block-menu {
   li {
     display: inline-block;
-    border-left: 1px solid #999;
+    border-left: 1px solid #FFF;
     padding: 0 4px 0 6px;
   }
   li.first {
