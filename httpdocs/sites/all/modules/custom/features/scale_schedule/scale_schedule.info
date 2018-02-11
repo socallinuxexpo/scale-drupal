@@ -1,7 +1,7 @@
 name = Schedule
 core = 7.x
 package = SCALE
-version = 7.x-1.37
+version = 7.x-1.38
 project = scale_schedule
 dependencies[] = calendar
 dependencies[] = date_views
