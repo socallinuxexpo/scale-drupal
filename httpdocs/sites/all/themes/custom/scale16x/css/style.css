@@ -6652,6 +6652,19 @@ body {
   background-color: #FFF;
   padding-bottom: 20px;
 }
+.page-scale-16x-schedule .lower-section {
+  background-color: transparent;
+}
+.page-scale-16x-schedule .lower-section .pane-menu-menu-schedule-16x a {
+  color: #FFF;
+}
+.page-scale-16x-schedule .lower-section .pane-menu-menu-schedule-16x a:hover {
+  color: #999;
+}
+.page-scale-16x-schedule .lower-section .pane-menu-menu-schedule-16x .pane-title {
+  background-color: #FFF;
+  color: #999;
+}
 .page-header {
   border: 0 none transparent;
 }
