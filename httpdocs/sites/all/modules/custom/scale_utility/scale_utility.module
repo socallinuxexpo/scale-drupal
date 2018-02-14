@@ -60,7 +60,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         13, // Kernel.
         //14, // Keynote.
         //2246, // Monitoring.
-        16, // MySQL.
+        //16, // MySQL.
         1620, // New to SCALE.
         //506, // Next Generation.
         434, // Nodestack.
@@ -75,7 +75,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         //21, // SysAdmin.
         1229, // Testing.
         22, // Try It Lab.
-        23, // Ubucon.
+        //23, // Ubucon.
         24, // UpSCALE.
         25, // Youth.
       );
