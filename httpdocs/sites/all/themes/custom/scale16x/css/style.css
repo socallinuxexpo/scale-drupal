@@ -7165,10 +7165,12 @@ article h2 a:hover {
   /* File System */
   /* General */
   /* FOSS Camp */
+  /* HAM Radio */
   /* Hot Applications */
   /* Kernel */
   /* Keynote */
   /* Legal & Licensing */
+  /* LibreGraphics */
   /* Mentoring */
   /* Monitoring */
   /* MySQL */
@@ -7333,6 +7335,13 @@ article h2 a:hover {
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-880 a {
   color: #000;
 }
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-2255 {
+  background-color: #96bEEF;
+  color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-2255 a {
+  color: #FFF;
+}
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-505 {
   background-color: #F4F437;
 }
@@ -7356,6 +7365,13 @@ article h2 a:hover {
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1242 a {
   color: #000;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-2268 {
+  background-color: #DDD;
+  color: #11A311;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-2268 a {
+  color: #11A311;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-15 {
   background-color: #998876;
@@ -7544,10 +7560,12 @@ article h2 a:hover {
   /* File System */
   /* General */
   /* FOSS Camp */
+  /* HAM Radio */
   /* Hot Applications */
   /* Kernel */
   /* Keynote */
   /* Legal & Licensing */
+  /* LibreGraphics */
   /* Mentoring */
   /* Monitoring */
   /* MySQL */
@@ -7655,6 +7673,10 @@ article h2 a:hover {
   background-color: #C19EEF;
   color: #000;
 }
+.legend-item .track-2255 {
+  background-color: #96bEEF;
+  color: #FFF;
+}
 .legend-item .track-505 {
   background-color: #FF0;
   color: #000;
@@ -7670,6 +7692,10 @@ article h2 a:hover {
 .legend-item .track-1242 {
   background-color: #FFF8DC;
   color: #000;
+}
+.legend-item .track-2268 {
+  background-color: #DDD;
+  color: #11A311;
 }
 .legend-item .track-15 {
   background-color: #998876;
