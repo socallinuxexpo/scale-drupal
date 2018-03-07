@@ -6665,6 +6665,9 @@ body {
   background-color: #FFF;
   color: #999;
 }
+.page-scale-16x-schedule .calendar-calendar .day-view .full div.single-day .inner {
+  z-index: auto;
+}
 .page-header {
   border: 0 none transparent;
 }
