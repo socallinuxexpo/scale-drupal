@@ -16,13 +16,18 @@
 .inner-frame {
   position: relative;
   margin: 0 auto;
-  width: 90%;
+  width: 80%;
   max-width: 415px;
-  top: -310px;
+  top: -250px;
   text-align: center;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-weight: bold;
+}
+@media (min-width: 400px) {
+  .inner-frame {
+    top: -310px;
+  }
 }
 .inner-frame img {
   max-width: 100%;
