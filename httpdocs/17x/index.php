@@ -43,7 +43,7 @@
   background-color: red;
   color: white;
   padding: 10px 15px;
-  border-radius: 20px;
+  border-radius: 30px;
   text-decoration: none;
   cursor: pointer;
   position: relative;
