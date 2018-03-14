@@ -18,15 +18,18 @@
   margin: 0 auto;
   width: 80%;
   max-width: 415px;
-  top: -250px;
+  top: -310px;
   text-align: center;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-weight: bold;
 }
-@media (min-width: 400px) {
+@media (max-width: 800px) {
+  .outer-frame {
+    top: 0;
+  }
   .inner-frame {
-    top: -310px;
+    top: 20px;
   }
 }
 .inner-frame img {
