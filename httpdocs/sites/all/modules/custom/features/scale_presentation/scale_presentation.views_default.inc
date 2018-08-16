@@ -837,6 +837,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    2283 => '2283',
     1967 => '1967',
     1644 => '1644',
     1241 => '1241',
@@ -859,6 +860,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    12 => 0,
     11 => 0,
     7 => 0,
     3 => 0,
@@ -1125,6 +1127,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    2283 => '2283',
     1967 => '1967',
     1644 => '1644',
     1241 => '1241',
@@ -1147,6 +1150,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    12 => 0,
     11 => 0,
     7 => 0,
     3 => 0,
@@ -1280,6 +1284,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    2283 => '2283',
     1967 => '1967',
     1644 => '1644',
     1241 => '1241',
@@ -1302,6 +1307,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    12 => 0,
     11 => 0,
     7 => 0,
     3 => 0,
@@ -1506,6 +1512,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    2283 => '2283',
     1967 => '1967',
     1644 => '1644',
     1241 => '1241',
@@ -1529,6 +1536,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    12 => 0,
     11 => 0,
     7 => 0,
     3 => 0,
@@ -1658,6 +1666,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    2283 => '2283',
     1967 => '1967',
     1644 => '1644',
     1241 => '1241',
@@ -1681,6 +1690,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    12 => 0,
     11 => 0,
     7 => 0,
     3 => 0,
@@ -2983,6 +2993,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    2283 => '2283',
     1967 => '1967',
     1644 => '1644',
     1241 => '1241',
@@ -3006,6 +3017,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    12 => 0,
     11 => 0,
     7 => 0,
     3 => 0,
@@ -3260,6 +3272,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    2283 => '2283',
     1967 => '1967',
     1644 => '1644',
     1241 => '1241',
@@ -3282,6 +3295,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    12 => 0,
     11 => 0,
     7 => 0,
     3 => 0,
@@ -3356,6 +3370,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    2283 => '2283',
     1967 => '1967',
     1644 => '1644',
     1241 => '1241',
@@ -3378,6 +3393,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    12 => 0,
     11 => 0,
     7 => 0,
     3 => 0,
@@ -3745,6 +3761,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
+    2283 => '2283',
     1967 => '1967',
     1644 => '1644',
     1241 => '1241',
@@ -3768,6 +3785,7 @@ function scale_presentation_views_default_views() {
     10 => 0,
     8 => 0,
     6 => 0,
+    12 => 0,
     11 => 0,
     7 => 0,
     3 => 0,
