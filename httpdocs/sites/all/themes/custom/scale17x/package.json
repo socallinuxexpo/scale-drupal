@@ -1,0 +1,15 @@
+{
+  "name": "grunttest",
+  "version": "1.0.0",
+  "description": "Experiment with Grunt",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^0.x.x",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}

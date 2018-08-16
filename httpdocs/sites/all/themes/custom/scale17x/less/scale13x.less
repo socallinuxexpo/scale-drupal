@@ -1,0 +1,1489 @@
+// Bootstrap fixes
+.dropdown-backdrop {
+    position: static;
+}
+
+body {
+  //background-color: lighten(@scaleyellow, 10%);
+  padding-top: 20px;
+}
+
+.lower-section {
+  background-color: #FFF;
+  padding-bottom: 20px;
+}
+
+.page-scale-16x-schedule {
+  .lower-section {
+    background-color: transparent;
+    .pane-menu-menu-schedule-16x {
+      a {
+        color: #FFF;
+        &:hover {
+          color: #999;
+        }
+      }
+      .pane-title {
+        background-color: #FFF;
+        color: #999;
+      }
+    }
+  }
+  // Fix unclickable content in presentation boxes.
+  .calendar-calendar .day-view .full div.single-day .inner {
+    z-index: auto;
+  }
+}
+
+
+.page-header {
+  border: 0 none transparent;
+}
+
+// Navbar
+.navbar {
+  .navbar-inner {
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    border-left: 0 none transparent;
+    border-right: 0 none transparent;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    color: white;
+    font-size: 1.2em;
+    .caret {
+      border-top-color: white !important;
+      border-bottom-color: white !important;
+    }
+    .nav {
+      &> li {
+        &> a {
+          //color: black;
+          text-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+// Banner Graphics
+#site-logo {
+  margin-bottom: 2em;
+}
+.small-site-logo {
+  margin-bottom: 15px;
+}
+
+// Social Media Icon Block
+.social-media img {
+  margin: 0 3px 3px 0;
+}
+
+// main content
+.main {
+  .page-header {
+    margin-top: 15px;
+  }
+}
+
+.front {
+  .main {
+    margin-top: 8px;
+  }
+}
+
+// first sidebar
+.region-sidebar-first.well {
+  margin-top: 8px;
+}
+
+// article
+article {
+  h2 a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+// Sponsor Logo Block
+.view-sponsor-logos {
+  .views-field-nothing {
+    display: none;
+  }
+  h3 {
+    text-align: center;
+    font-size: 100%;
+  }
+  .views-field-field-logo-website {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .views-row-last {
+    margin-bottom: 2em;
+  }
+  .views-slideshow-cycle-main-frame {
+    width: 100px;
+    margin: 0 auto;
+  }
+}
+
+// Sponsor List Page(s)
+.view-sponsors-12x {
+  .attachment-after {
+      .views-row {
+        clear: both;
+        margin-bottom: 3em;
+      }
+      .views-row-first {
+        //padding-top: 0;
+        //border-top: 0 none transparent;
+      }
+      .views-field {
+        margin-left: 255px;
+      }
+      .views-field-field-logo-website {
+        margin-left: 0;
+        margin-bottom: 3em;
+      }
+    }
+}
+
+// Expo hours block.
+#block-block-12,
+#block-block-13 {
+  margin-bottom: 20px;
+
+}
+.view-sponsors-13x.view-display-id-page {
+  &> .view-content {
+    display: none;
+  }
+}
+.view-sponsors-13x {
+  .views-row {
+    .views-field-field-logo-website {
+      float: none;
+      margin-bottom: 20px;
+    }
+  }
+}
+.view-sponsors-13x,
+.view-exhibitors {
+  padding-right: 20px;
+  .view-header {
+    margin-bottom: 36px;
+  }
+  .views-row {
+    padding-top: 25px;
+    padding-bottom: 15px;
+    //border-top: 1px solid #EEEEEE;
+    clear: both;
+  }
+  .views-row-first {
+    //padding-top: 0;
+    //border-top: 0 none transparent;
+  }
+}
+.view-sponsors-13x,
+.view-exhibitors {
+  .views-field {
+    margin-bottom: 10px;
+  }
+  .views-field-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  .views-field-field-logo-website {
+    float: left;
+    margin-right: 20px;
+    width: 220px;
+  }
+  .views-field-field-sponsor-type span {
+    background-color: #EEEEBB;
+    border: 2px dotted #CCCC66;
+    min-width: 112px;
+    padding: 3px 12px;
+    text-align: center;
+  }
+}
+
+// Sponsor/Exhibitor node pages.
+.node-sponsor {
+  .field {
+    margin-bottom: 20px;
+  }
+}
+
+// Menus
+// Main
+.navbar .nav > .active > a {
+  box-shadow: none;
+}
+// Main - Submenu
+#block-menu-block-3 {
+  li {
+    display: inline-block;
+    border-left: 1px solid #000;
+    padding: 0 4px 0 8px;
+    &.first {
+      border-left: none;
+    }
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+// Footer Menu
+.region-footer > .block-menu {
+  li {
+    display: inline-block;
+    border-left: 1px solid #FFF;
+    padding: 0 4px 0 6px;
+  }
+  li.first {
+    border-left: none;
+    padding-left: 0;
+  }
+  a {
+    color: #FFF;
+    &:hover {
+      color: #999;
+    }
+  }
+}
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: transparent;
+}
+
+/* Featured Speakers block */
+#block-views-featured-presentations-block-1,
+#block-views-featured-presentations-block-2 {
+  margin-bottom: 2em;
+  .views-row {
+    float: left;
+    width: 16.66%;
+    //margin-bottom: 20px;
+    margin-left: 0;
+  }
+  .featured-presentation-row {
+    position: relative;
+    overflow: hidden;
+  }
+  .views-field-title {
+    margin-bottom: 0.5em;
+    padding: 4px;
+  }
+  .views-field-nothing,
+  .views-field-realname,
+  .views-field-field-job-title,
+  .views-field-field-organization {
+    font-size: 12px;
+    height: 51px;
+    overflow: hidden;
+    //padding: 0 4px;
+  }
+}
+
+/* Presentation pages */
+.view-presentation-single,
+#presentation-page {
+  a {
+    text-decoration: none;
+  }
+  .views-label {
+    font-weight: bold;
+  }
+  .views-field,
+  .panel-pane {
+    margin-bottom: .5em;
+  }
+  .view-id-presentation_page,
+  .views-field-field-speaker-photo,
+  .pane-user-field-speaker-photo {
+    float: right;
+    margin-left: 20px;
+
+    .views-row-first {
+      margin-bottom: 0;
+    }
+  }
+  .views-field-nothing,
+  .pane-node-field-speaker {
+    font-size: 2em;
+    line-height: 1.1em;
+  }
+  .views-label.terms {
+    margin-right: 5px;
+  }
+  .terms {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: .5em;
+  }
+  .views-field-field-long-abstract,
+  .pane-node-field-long-abstract {
+    clear: left;
+  }
+}
+
+// Speakers Individual page
+#speaker-page {
+  .pane-user-field-speaker-photo {
+    float: left;
+    margin-right: 20px;
+  }
+  .pane-presentations-by-speaker-panel-pane-2,
+  .pane-presentations-by-speaker-panel-pane-1 {
+    margin-bottom: 20px;
+  }
+  .views-field-field-biography {
+    margin-top: 20px;
+  }
+}
+
+#speaker-individual {
+  .views-field {
+    margin-bottom: 20px;
+  }
+  .field-name-field-speaker-photo {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .views-field-field-job-title {
+    margin-bottom: 0;
+  }
+}
+
+/* Presentations List Page */
+.page-scale-16x-presentations,
+.page-scale-15x-presentations {
+  .view-display-id-page_3 {
+    &> .view-content > .views-row + .views-row {
+      border-top: 1px solid @listBorder;
+    }
+  }
+  .view-display-id-page_3 {
+    .views-row {
+      margin-bottom: 2em;
+      clear: both;
+      .multi-speaker {
+        float: right;
+        margin-top: -2em;
+        margin-bottom: 2em;
+        padding-top: 12px;
+      }
+    }
+    .views-field {
+      margin-bottom: 12px;
+    }
+    .views-field-field-speaker-photo {
+      float: right;
+      margin-left: 20px;
+    }
+    .views-field-title {
+      font-size: 2em;
+      line-height: 1em;
+    }
+    .views-field-field-speaker {
+      font-size: 1.5em;
+      line-height: 1.1em;
+    }
+    .terms {
+      display: inline-block;
+    }
+    .views-field-field-topic {
+      margin: auto auto 20px 20px;
+    }
+  }
+}
+
+/* Speakers List Page */
+.view-display-id-speakers_list {
+  & > .view-content {
+    &> .views-row {
+      margin-bottom: 2em;
+      clear: both;
+      padding-top: 2em;
+      border-top: 1px solid @listBorder;
+    }
+    .views-row-first {
+      padding-top: 0;
+      border-top: 0 none transparent;
+    }
+  }
+  .views-field-realname {
+    font-family: @titleFontFamily;
+    font-size: 2em;
+    a:hover {
+      text-decoration: none;
+    }
+  }
+  .views-field-field-speaker-photo img {
+    float: left;
+    margin-right: 20px;
+  }
+  .views-field {
+    margin-bottom: 12px;
+  }
+  .presentation-title {
+    line-height: 1.2em;
+  }
+  .views-field-field-job-title {
+    margin-bottom: 0;
+  }
+  .views-field-title {
+    font-size: 1em;
+    line-height: 1em;
+  }
+  .terms {
+    display: inline-block;
+  }
+  .views-field-field-topic {
+    margin: auto auto 20px 20px;
+  }
+}
+
+/* Special Events */
+/*Event list*/
+/*Event page*/
+.node-special-event {
+  .field {
+    margin-bottom: 20px;
+  }
+}
+
+/* Schedule (Calendar) */
+.pane-menu-menu-schedule-13x {
+  li {
+    display: inline-block;
+    margin-bottom: 0.5em !important;
+    a {
+      display: inline-block;
+      width: 250px;
+    }
+  }
+}
+.schedule_11x {
+  /*background-color: #AAA;*/
+  .more-arrow .pane-title {
+    position: absolute;
+    right: 0;
+    padding: 0 1em;
+    color: #fff;
+    background-color: #ccc;
+  }
+  width: auto;
+  ul.menu li {
+    margin: 0 0.5em 0 0;
+  }
+  .page-container {
+    width: auto;
+    /*width: 1690px;*/
+    padding-right: 20px;
+    #radio-display {
+      width: auto;
+      /*width: 1635px;*/
+      #content-area {
+        width: auto;
+        .schedule-top {
+          width: auto;
+          min-width: 40%;
+        }
+        .panels-flexible-region-10-center {
+          width: auto;
+        }
+      }
+    }
+  }
+  .row-main {
+    /*height: 1490px;*/
+    /*overflow: hidden;*/
+
+    .inside {
+      /*width: 1647px;*/
+      .region-time {
+        width: 50px;
+        #time {
+          width: 50px;
+          table {
+            .calendar-agenda-hour {
+              width: 50px;
+              padding-right: 0;
+              .calendar-hour {
+                padding-right: 2px;
+              }
+            }
+          }
+        }
+        td.last {
+          display: none;
+        }
+      }
+
+          .pane-room-schedule {
+            overflow: hidden;
+            height: 1471px;
+          }
+
+      .rg2 span {
+        padding-right: 5px;
+      }
+      .region-rooms {
+        /*margin-left: -50px;
+        overflow: auto;*/
+        /*overflow: scroll;*/
+
+        .inside {
+          width: auto;
+          padding-left: 3px;
+          /*width: 2100px;*/
+          /*height: 1475px;*/
+          /*overflow: hidden;*/
+
+          .pane-room-schedule .track-7 .views-field-title {
+            display: none;
+          }
+          .pane-room-schedule:first-child .track-7 .views-field-title {
+            display: block;
+          }
+        }
+
+        table.full {
+          table-layout: auto;
+          width: 120px;
+        }
+
+        td.first {
+          display: none;
+        }
+      }
+
+    }
+    .panels-flexible-region {
+      .panel-separator {
+        display: none;
+      }
+      .panel-pane {
+        /*float: left;*/
+        display: table-cell;
+
+        .pane-content {
+          overflow: hidden !important;
+          height: 1435px;
+          .view-content {
+            position: relative;
+            top: -830px;
+            .calendar-agenda-items {
+              .view-item {
+                width: 95%;
+              }
+            }
+            #multi-day-container {
+              overflow: hidden;
+            }
+            #single-day-container {
+              overflow: hidden;
+              height: 2200px;
+
+              .track {
+                border: none;
+                .contents {
+                  font-size: 11px;
+                  padding-top: 4px;
+                  margin-left: 5px;
+                  line-height: 110%;
+                  .views-field-title a {
+                    font-weight: normal;
+                  }
+                  * {
+                    margin-left: 0px;
+                  }
+                }
+
+              }
+
+              /* Track colors */
+              /* Ada Initiative Ally Workshop */
+              .track-1205 {
+                background-color: #ffa200;
+                color: #FFF;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Apache Bigtop */
+              .track-1213 {
+                background-color: #2C9FF5;
+                color: #FFF;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Badge Hacking */
+              .track-1996 {
+                background-color: #DDD;
+                color: #D31111;
+                a {
+                  color: #D31111;
+                }
+              }
+
+              /* Beginners Tutorials */
+              .track-6 {
+                background-color: #3353AF;
+                color: #FFF;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Big Data */
+              .track-881 {
+                background-color: #A6CEFF;
+                color: #000;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* BoFs */
+              .track-500 {
+                background-color: #FFBC00;
+                color: #000;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* Break */
+              .track-7 {
+                background-color: #123;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Cloud */
+              .track-8 {
+                background-color: #638DCE;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Coder's Corner */
+              .track-879 {
+                background-color: #EFCA52;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* Container and Virtualization */
+              .track-1197 {
+                background-color: #ffa200;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* Developer */
+              .track-9 {
+                background-color: #D65C09;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* DevOps */
+              .track-10 {
+                background-color: #565448;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* DrupalCamp */
+              .track-1221 {
+                background-color: #0678be;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Embedded */
+              .track-1201 {
+                background-color: #004A4A;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Entertainment */
+              .track-1234 {
+                background-color: #004A4A;
+                a {
+                  color: #FF3;
+                }
+              }
+
+              /* Evening Entertainment */
+              .track-501 {
+                background-color: #B20B77;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Fedora */
+              .track-11 {
+                background-color: #A30C0C;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* File System */
+              .track-435 {
+                background-color: #FFE81F;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* General */
+              .track-12 {
+                background-color: #97A67A;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* FOSS Camp */
+              .track-880 {
+                background-color: #C19EEF;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* HAM Radio */
+              .track-2255 {
+                background-color: #96bEEF;
+                color: #FFF;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Hot Applications */
+              .track-505 {
+                background-color: #F4F437;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* Kernel */
+              .track-13 {
+                background-color: #AD9134;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Keynote */
+              .track-14 {
+                background-color: #D31111;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Legal & Licensing */
+              .track-1242 {
+                background-color: #FFF8DC;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* LibreGraphics */
+              .track-2268 {
+                background-color: #DDD;
+                color: #11A311;
+                a {
+                  color: #11A311;
+                }
+              }
+
+              /* Mentoring */
+              .track-15 {
+                background-color: #998876;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Monitoring */
+              .track-2246 {
+                background-color: #000;
+                a {
+                  color: #FF0;
+                }
+              }
+
+              /* MySQL */
+              .track-16 {
+                background-color: #8B47BB;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* New to SCALE */
+              .track-1620 {
+                background-color: #7FFF00;
+                a {
+                  color: #228B22;
+                }
+              }
+
+              /* NodeStack */
+              .track-434 {
+                background-color: #00ffd8;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* Open Data */
+              .track-1645 {
+                background-color: #6c6c6c;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Open Source in Enterprises */
+              .track-1646 {
+                background-color: #ffd672;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* Open Source Storage */
+              .track-1647 {
+                background-color: #d9ff72;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* Open Source Software in Education */
+              .track-17 {
+                background-color: #72B20F;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* OpenNMS */
+              .track-436 {
+                background-color: #17AA17;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* openSUSE */
+              .track-1210 {
+                background-color: #669900;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* PostgreSQL */
+              .track-18 {
+                background-color: #0AACA0;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Puppet */
+              .track-437 {
+                background-color: #D2A3E8;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* ScaleU */
+              .track-19 {
+                background-color: #405E5E;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Security */
+              .track-1422 {
+                background-color: #000;
+                a {
+                  color: #00FF00;
+                }
+              }
+
+              /* Sponsored */
+              .track-20 {
+                background-color: #007F06;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* SysAdmin */
+              .track-21 {
+                background-color: #C4C249;
+                a {
+                  color: #000;
+                }
+              }
+
+              /* Testing */
+              .track-1229 {
+                background-color: #EA18E5;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Try It Lab */
+              .track-22 {
+                background-color: #956140;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Ubucon */
+              .track-23 {
+                background-color: #774022;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* UpSCALE */
+              .track-24 {
+                background-color: #956140;
+                a {
+                  color: #FFF;
+                }
+              }
+
+              /* Youth */
+              .track-25, .track-506 {
+                background-color: #098C09;
+                a {
+                  color: #FFF;
+                }
+              }
+            }
+          }
+        }
+        .pane-title {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .row-notice {
+    /*height: 20px;*/
+    overflow: hidden;
+  }
+
+  .panels-flexible-region-inside-last .pane-room-schedule:last-child {
+    padding-right: 50px;
+  }
+
+}
+
+.calendar-calendar .day-view #single-day-container table td {
+  width: 100%;
+}
+
+.menu-block-2,
+.menu-block-1 {
+  ul {
+
+    li.active {
+      display: none;
+    }
+    li {
+      list-style-type: none;
+      list-style-image: none;
+
+      a {
+        color: #08C;
+      }
+    }
+  }
+}
+
+.view-room-schedule-legend {
+  margin-top: -7px;
+}
+.legend-item {
+  display: inline-block;
+  line-height: 33px;
+
+  .track {
+    padding: 7px;
+  }
+  /* Track colors */
+  /* Ada Initiative Ally Workshop */
+  .track-1205 {
+    background-color: #ffa200;
+    color: #FFF;
+  }
+
+  /* Apache Bigtop */
+  .track-1213 {
+    background-color: #2C9FF5;
+    color: #FFF;
+  }
+
+  /* Badge Hacking */
+  .track-1996 {
+    background-color: #DDD;
+    color: #D31111;
+  }
+
+  /* Beginners Tutorials */
+  .track-6 {
+    background-color: #3353AF;
+    color: #FFF;
+  }
+
+  /* Big Data */
+  .track-881 {
+    background-color: #A6CEFF;
+    color: #000;
+  }
+
+  /* BoFs */
+  .track-500 {
+    background-color: #FFBC00;
+    color: #000;
+  }
+
+  /* Break */
+  .track-7 {
+    background-color: #123;
+      color: #FFF;
+  }
+
+  /* Cloud and Virtualization */
+  .track-8 {
+    background-color: #638DCE;
+      color: #FFF;
+  }
+
+  /* Coder's Corner */
+  .track-879 {
+    background-color: #EFCA52;
+      color: #000;
+  }
+
+  /* Container and Virtualization */
+  .track-1197 {
+    background-color: #ffa200;
+      color: #000;
+  }
+
+  /* Developer */
+  .track-9 {
+    background-color: #D65C09;
+      color: #FFF;
+  }
+
+  /* DevOps */
+  .track-10 {
+    background-color: #565448;
+      color: #FFF;
+  }
+
+  /* DrupalCamp */
+  .track-1221 {
+    background-color: #0678be;
+      color: #FFF;
+  }
+
+  /* Embedded */
+  .track-1201 {
+    background-color: #004A4A;
+      color: #FFF;
+  }
+
+  /* Entertainment */
+  .track-1234 {
+    background-color: #004A4A;
+      color: #FF3;
+  }
+
+  /* Evening Entertainment */
+  .track-501 {
+    background-color: #B20B77;
+      color: #FFF;
+  }
+
+  /* Fedora */
+  .track-11 {
+    background-color: #A30C0C;
+      color: #FFF;
+  }
+
+  /* File System */
+  .track-435 {
+    background-color: #FFE81F;
+      color: #000;
+  }
+
+  /* General */
+  .track-12 {
+    background-color: #97A67A;
+      color: #FFF;
+  }
+
+  /* FOSS Camp */
+  .track-880 {
+    background-color: #C19EEF;
+      color: #000;
+  }
+
+  /* HAM Radio */
+  .track-2255 {
+    //background-color: #A6CEFF;
+    background-color: #96bEEF;
+    color: #FFF;
+  }
+
+  /* Hot Applications */
+    .track-505 {
+      background-color: #FF0;
+      color: #000;
+    }
+
+  /* Kernel */
+  .track-13 {
+    background-color: #AD9134;
+      color: #FFF;
+  }
+
+  /* Keynote */
+  .track-14 {
+    background-color: #D31111;
+      color: #FFF;
+  }
+
+  /* Legal & Licensing */
+  .track-1242 {
+    background-color: #FFF8DC;
+      color: #000;
+  }
+
+  /* LibreGraphics */
+  .track-2268 {
+    background-color: #DDD;
+    color: #11A311;
+  }
+
+  /* Mentoring */
+  .track-15 {
+    background-color: #998876;
+      color: #FFF;
+  }
+
+  /* Monitoring */
+  .track-2246 {
+    background-color: #000;
+      color: #FF0;
+  }
+
+  /* MySQL */
+  .track-16 {
+    background-color: #8B47BB;
+      color: #FFF;
+  }
+
+  /* New to SCALE */
+  .track-1620 {
+    background-color: #7FFF00;
+      color: #228B22;
+  }
+
+  /* Next Generation */
+  .track-506 {
+    background-color: #96F74B;
+      color: #000;
+  }
+
+  /* NodeStack */
+  .track-434 {
+    background-color: #00ffd8;
+      color: #000;
+  }
+
+  /* Open Data */
+  .track-1645 {
+    background-color: #6c6c6c;
+      color: #FFF;
+  }
+
+  /* Open Source Software in Education */
+  .track-17 {
+    background-color: #72B20F;
+      color: #FFF;
+  }
+
+  /* Open Source in Enterprises */
+  .track-1646 {
+    background-color: #ffd672;
+      color: #000;
+  }
+
+  /* Open Source Storage */
+  .track-1647 {
+    background-color: #d9ff72;
+      color: #000;
+  }
+
+  /* OpenNMS */
+  .track-436 {
+    background-color: #17AA17;
+      color: #FFF;
+  }
+
+  /* openSUSE */
+  .track-1210 {
+    background-color: #669900;
+      color: #000;
+  }
+
+  /* PostgreSQL */
+  .track-18 {
+    background-color: #0AACA0;
+      color: #FFF;
+  }
+
+  /* Puppet */
+  .track-437 {
+    background-color: #D2A3E8;
+      color: #000;
+  }
+
+  /* ScaleU */
+  .track-19 {
+    background-color: #405E5E;
+      color: #FFF;
+  }
+
+  /* Security */
+  .track-1422 {
+    background-color: #000;
+      color: #00FF00;
+  }
+
+  /* Sponsored */
+  .track-20 {
+    background-color: #007F06;
+      color: #FFF;
+  }
+
+  /* SysAdmin */
+  .track-21 {
+    background-color: #C4C249;
+      color: #000;
+  }
+
+  /* Testing */
+  .track-1229 {
+    background-color: #EA18E5;
+      color: #FFF;
+  }
+
+  /* Try It Lab */
+  .track-22 {
+    background-color: #956140;
+      color: #FFF;
+  }
+
+  /* Ubucon */
+  .track-23 {
+    background-color: #774022;
+    color: #FFF;
+  }
+
+  /* UpSCALE */
+  .track-24 {
+    background-color: #956140;
+    color: #FFF;
+  }
+
+  /* Youth */
+  .track-25 {
+    background-color: #098C09;
+    color: #FFF;
+  }
+}
+
+/* Default track colors */
+.track- {
+    background-color: #C29 !important;
+    color: #FFFFFF;
+
+    a {
+      color: #FFFFFF;
+    }
+}
+
+// Forms
+.control-group > label {
+  margin-top: 2em;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+// Presentation Downloads
+.view-presentation-downloads {
+  .views-row {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEE;
+  }
+}
+
+// Promo Items Page
+.view-promo-items-multi-year {
+  .views-row {
+    margin-bottom: 20px;
+    .views-field {
+      margin-bottom: 10px;
+    }
+    .views-label {
+      font-weight: bold;
+    }
+  }
+}
+
+// Save the Dates Block
+#block-block-15 {
+  .dates-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    .dates-left {
+      flex: 2 280px;
+      padding: 10px;
+    }
+    .dates-center {
+      flex: 2 240px;
+      padding: 10px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .dates-right {
+      flex-direction: column;
+      flex: 2 200px;
+      padding: 10px;
+      font-size: 32px;
+      font-weight: bold;
+      line-height: .9;
+    }
+  }
+}
+
+// Responsive Styles
+@media (min-width: 980px) {
+  // Dropdowns
+  #navbar {
+    .dropdown:hover {
+      .dropdown-menu {
+        display: block;
+        position: absolute;
+        top: 35px;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 1199px) {
+  // Featured Speakers block
+  #block-views-featured-presentations-block-2 {
+    //margin: 0 108px;
+    .views-row {
+      width: 33.33%;
+    }
+  }
+}
+
+@media (max-width: 979px) {
+  // Featured Speakers block
+  #block-views-featured-presentations-block-2 {
+    //margin: 0;
+  }
+  .lower-section {
+    padding: 20px;
+    width: auto;
+  }
+
+}
+
+@media (max-width: 767px) {
+  // Featured Speakers block
+  #block-views-featured-presentations-block-2 {
+  }
+  .pane-menu-menu-schedule-13x {
+    li {
+      display: block;
+      margin-bottom: 0.5em !important;
+      a {
+        width: auto;
+        display: block;
+      }
+    }
+  }
+  .view-presentation-single .views-field-nothing {
+    font-size: 1.5em;
+  }
+
+}
+
+@media (max-width: 600px) {
+  // Featured Speakers block
+  #block-views-featured-presentations-block-2 {
+    .view-content {
+      .views-row {
+        width: 50%;
+      }
+    }
+  }
+}
+
+body#tinymce {
+  background-color: transparent;
+}
