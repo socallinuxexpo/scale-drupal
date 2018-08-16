@@ -589,7 +589,7 @@ function scale_presentation_field_default_field_instances() {
     'bundle' => 'presentation',
     'default_value' => array(
       0 => array(
-        'tid' => 1967,
+        'tid' => 2283,
       ),
     ),
     'deleted' => 0,
