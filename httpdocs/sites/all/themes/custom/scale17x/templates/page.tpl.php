@@ -6,10 +6,10 @@
   <div class="container">
     <div class="row">
       <div class="visible-phone small-site-logo">
-        <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale17x') . '/img/16x_logo_sm.png'; ?>" alt="SCALE 17x logo"></a>
+        <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale17x') . '/img/scale_logo_lg.svg'; ?>" alt="SCALE 17x logo"></a>
       </div>
       <div id="site-logo" class="span6 offset3 hidden-phone">
-        <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale17x') . '/img/16x_logo_lg.png'; ?>" alt="SCALE 17x logo"></a>
+        <a href="/"><img src="<?php print '/' . drupal_get_path('theme', 'scale17x') . '/img/scale_logo_lg.svg'; ?>" alt="SCALE 17x logo"></a>
       </div>
     </div>
   </div>

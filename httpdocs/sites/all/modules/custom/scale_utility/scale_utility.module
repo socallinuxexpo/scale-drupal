@@ -44,6 +44,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       $remove_topic_terms = array(
         1205, // Ada Initiative.
         1213, // Apache Bigtop.
+        1996, //Badge Hacking.
         6, // Beginner Tutorials.
         881, // Big Data.
         500, // BoFs.
@@ -53,7 +54,6 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         //9, //Developer.
         10, // DevOps.
         //1201, //Embedded.
-        //2285, //Enterprise.
         1234, // Entertainment.
         11, // Fedora.
         435, // File System.
@@ -64,15 +64,16 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         505, // Hot Applications.
         13, // Kernel.
         14, // Keynote.
+        1242, //Legal & Licensing.
         //2268, // LibreGraphics.
         //15, //Mentoring.
-        2246, // Monitoring.
+        2246, // Observability, was Monitoring.
         16, // MySQL.
         1620, // New to SCALE.
         //506, // Next Generation.
         434, // Nodestack.
-        //2284, //Observability.
         //1645, //Open Data.
+        //1646, //Open Source in Enterprise.
         17, // Open Source Software In Education.
         1647, // Open Source Storage.
         436, // OpenNMS.
