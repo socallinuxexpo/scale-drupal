@@ -67,7 +67,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1242, //Legal & Licensing.
         //2268, // LibreGraphics.
         //15, //Mentoring.
-        2246, // Observability, was Monitoring.
+        //2246, // Observability, was Monitoring.
         16, // MySQL.
         1620, // New to SCALE.
         //506, // Next Generation.
