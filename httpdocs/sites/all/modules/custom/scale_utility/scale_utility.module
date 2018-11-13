@@ -53,7 +53,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         879, //Coder's Corner.
         //1197, //Container and Virtualization.
         //9, //Developer.
-        10, // DevOps.
+        //10, // DevOps.
         //1201, //Embedded.
         1234, // Entertainment.
         11, // Fedora.
