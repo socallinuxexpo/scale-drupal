@@ -31,22 +31,15 @@ function scale_speaker_default_page_manager_handlers() {
     'access' => array(
       'plugins' => array(
         0 => array(
-          'name' => 'role',
+          'name' => 'perm',
           'settings' => array(
-            'rids' => array(
-              0 => 4,
-              1 => 9,
-              2 => 10,
-              3 => 8,
-              4 => 7,
-              5 => 3,
-            ),
+            'perm' => 'review presentations',
           ),
           'context' => 'logged-in-user',
           'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
+      'logic' => 'or',
     ),
     'name' => 'speaker-individual-for-reviewer',
   );

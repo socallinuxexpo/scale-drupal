@@ -155,6 +155,20 @@ function scale_utility_menu_alter(&$items) {
 }
 
 /**
+ * Implements hook_permission().
+ */
+function scale_utility_permission() {
+  return array(
+    'review presentations' => array(
+      'title' => t('Review SCALE presentations'),
+      'description' => t('/* optional */'),
+      'restrict access' => t('/* optional */'),
+      'warning' => t('/* optional */'),
+    ),
+  );
+}
+
+/**
  * User view access callback.
  *
  *   Can either be a full user object or a $uid.
