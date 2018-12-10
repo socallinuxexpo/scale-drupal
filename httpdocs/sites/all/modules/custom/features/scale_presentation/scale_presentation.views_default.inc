@@ -545,6 +545,12 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['sticky']['table'] = 'node';
   $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['value'] = '1';
+  /* Filter criterion: User: Photo (field_speaker_photo:fid) */
+  $handler->display->display_options['filters']['field_speaker_photo_fid']['id'] = 'field_speaker_photo_fid';
+  $handler->display->display_options['filters']['field_speaker_photo_fid']['table'] = 'field_data_field_speaker_photo';
+  $handler->display->display_options['filters']['field_speaker_photo_fid']['field'] = 'field_speaker_photo_fid';
+  $handler->display->display_options['filters']['field_speaker_photo_fid']['relationship'] = 'field_speaker_uid';
+  $handler->display->display_options['filters']['field_speaker_photo_fid']['operator'] = 'not empty';
   $handler->display->display_options['block_caching'] = '-1';
   $export['featured_presentations'] = $view;
 
