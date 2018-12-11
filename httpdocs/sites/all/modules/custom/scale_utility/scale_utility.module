@@ -88,7 +88,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1229, // Testing.
         22, // Try It Lab.
         //23, // Ubucon.
-        24, // UpSCALE.
+        //24, // UpSCALE.
         25, // Youth.
       );
       // Remove Keynote if not authorized. See $authorized_roles above.
