@@ -6935,15 +6935,27 @@ article h2 a:hover {
   margin-bottom: 0;
 }
 /* Presentations List Page */
+.page-scale-17x-presentations .view-id-presentation_page > .view-content > .views-row + .views-row,
+.page-scale-16x-presentations .view-id-presentation_page > .view-content > .views-row + .views-row,
+.page-scale-15x-presentations .view-id-presentation_page > .view-content > .views-row + .views-row,
+.page-scale-17x-presentations .view-display-id-page_3 > .view-content > .views-row + .views-row,
 .page-scale-16x-presentations .view-display-id-page_3 > .view-content > .views-row + .views-row,
 .page-scale-15x-presentations .view-display-id-page_3 > .view-content > .views-row + .views-row {
   border-top: 1px solid #000000;
 }
+.page-scale-17x-presentations .view-id-presentation_page .views-row,
+.page-scale-16x-presentations .view-id-presentation_page .views-row,
+.page-scale-15x-presentations .view-id-presentation_page .views-row,
+.page-scale-17x-presentations .view-display-id-page_3 .views-row,
 .page-scale-16x-presentations .view-display-id-page_3 .views-row,
 .page-scale-15x-presentations .view-display-id-page_3 .views-row {
   margin-bottom: 2em;
   clear: both;
 }
+.page-scale-17x-presentations .view-id-presentation_page .views-row .multi-speaker,
+.page-scale-16x-presentations .view-id-presentation_page .views-row .multi-speaker,
+.page-scale-15x-presentations .view-id-presentation_page .views-row .multi-speaker,
+.page-scale-17x-presentations .view-display-id-page_3 .views-row .multi-speaker,
 .page-scale-16x-presentations .view-display-id-page_3 .views-row .multi-speaker,
 .page-scale-15x-presentations .view-display-id-page_3 .views-row .multi-speaker {
   float: right;
@@ -6951,29 +6963,53 @@ article h2 a:hover {
   margin-bottom: 2em;
   padding-top: 12px;
 }
+.page-scale-17x-presentations .view-id-presentation_page .views-field,
+.page-scale-16x-presentations .view-id-presentation_page .views-field,
+.page-scale-15x-presentations .view-id-presentation_page .views-field,
+.page-scale-17x-presentations .view-display-id-page_3 .views-field,
 .page-scale-16x-presentations .view-display-id-page_3 .views-field,
 .page-scale-15x-presentations .view-display-id-page_3 .views-field {
   margin-bottom: 12px;
 }
+.page-scale-17x-presentations .view-id-presentation_page .views-field-field-speaker-photo,
+.page-scale-16x-presentations .view-id-presentation_page .views-field-field-speaker-photo,
+.page-scale-15x-presentations .view-id-presentation_page .views-field-field-speaker-photo,
+.page-scale-17x-presentations .view-display-id-page_3 .views-field-field-speaker-photo,
 .page-scale-16x-presentations .view-display-id-page_3 .views-field-field-speaker-photo,
 .page-scale-15x-presentations .view-display-id-page_3 .views-field-field-speaker-photo {
   float: right;
   margin-left: 20px;
 }
+.page-scale-17x-presentations .view-id-presentation_page .views-field-title,
+.page-scale-16x-presentations .view-id-presentation_page .views-field-title,
+.page-scale-15x-presentations .view-id-presentation_page .views-field-title,
+.page-scale-17x-presentations .view-display-id-page_3 .views-field-title,
 .page-scale-16x-presentations .view-display-id-page_3 .views-field-title,
 .page-scale-15x-presentations .view-display-id-page_3 .views-field-title {
   font-size: 2em;
   line-height: 1em;
 }
+.page-scale-17x-presentations .view-id-presentation_page .views-field-field-speaker,
+.page-scale-16x-presentations .view-id-presentation_page .views-field-field-speaker,
+.page-scale-15x-presentations .view-id-presentation_page .views-field-field-speaker,
+.page-scale-17x-presentations .view-display-id-page_3 .views-field-field-speaker,
 .page-scale-16x-presentations .view-display-id-page_3 .views-field-field-speaker,
 .page-scale-15x-presentations .view-display-id-page_3 .views-field-field-speaker {
   font-size: 1.5em;
   line-height: 1.1em;
 }
+.page-scale-17x-presentations .view-id-presentation_page .terms,
+.page-scale-16x-presentations .view-id-presentation_page .terms,
+.page-scale-15x-presentations .view-id-presentation_page .terms,
+.page-scale-17x-presentations .view-display-id-page_3 .terms,
 .page-scale-16x-presentations .view-display-id-page_3 .terms,
 .page-scale-15x-presentations .view-display-id-page_3 .terms {
   display: inline-block;
 }
+.page-scale-17x-presentations .view-id-presentation_page .views-field-field-topic,
+.page-scale-16x-presentations .view-id-presentation_page .views-field-field-topic,
+.page-scale-15x-presentations .view-id-presentation_page .views-field-field-topic,
+.page-scale-17x-presentations .view-display-id-page_3 .views-field-field-topic,
 .page-scale-16x-presentations .view-display-id-page_3 .views-field-field-topic,
 .page-scale-15x-presentations .view-display-id-page_3 .views-field-field-topic {
   margin: auto auto 20px 20px;
