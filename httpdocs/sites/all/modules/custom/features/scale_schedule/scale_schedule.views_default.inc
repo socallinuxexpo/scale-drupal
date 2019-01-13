@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_schedule.views_default.inc
