@@ -17958,10 +17958,10 @@ scale/17x/schedule/friday',
   $display->content['new-15af96dd-1dfe-4a32-a031-de9c01b75883'] = $pane;
   $display->panels['notice'][1] = 'new-15af96dd-1dfe-4a32-a031-de9c01b75883';
   $pane = new stdClass();
-  $pane->pid = 'new-681affb5-155c-43db-9eb0-b3686a3e4900';
+  $pane->pid = 'new-b05ab6e1-637d-41a3-81eb-6638ce861d38';
   $pane->panel = 'schedule_top';
   $pane->type = 'block';
-  $pane->subtype = 'menu-menu-schedule-16x';
+  $pane->subtype = 'menu-menu-schedule-17x';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -17973,16 +17973,13 @@ scale/17x/schedule/friday',
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'more-arrow',
-  );
+  $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = '681affb5-155c-43db-9eb0-b3686a3e4900';
-  $display->content['new-681affb5-155c-43db-9eb0-b3686a3e4900'] = $pane;
-  $display->panels['schedule_top'][0] = 'new-681affb5-155c-43db-9eb0-b3686a3e4900';
+  $pane->uuid = 'b05ab6e1-637d-41a3-81eb-6638ce861d38';
+  $display->content['new-b05ab6e1-637d-41a3-81eb-6638ce861d38'] = $pane;
+  $display->panels['schedule_top'][0] = 'new-b05ab6e1-637d-41a3-81eb-6638ce861d38';
   $pane = new stdClass();
   $pane->pid = 'new-272a281d-815e-4656-ac51-fe87d1c1bd79';
   $pane->panel = 'schedule_top';
@@ -18006,27 +18003,6 @@ scale/17x/schedule/friday',
   $pane->uuid = '272a281d-815e-4656-ac51-fe87d1c1bd79';
   $display->content['new-272a281d-815e-4656-ac51-fe87d1c1bd79'] = $pane;
   $display->panels['schedule_top'][1] = 'new-272a281d-815e-4656-ac51-fe87d1c1bd79';
-  $pane = new stdClass();
-  $pane->pid = 'new-b05ab6e1-637d-41a3-81eb-6638ce861d38';
-  $pane->panel = 'schedule_top';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-schedule-17x';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'More >>',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array();
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = 'b05ab6e1-637d-41a3-81eb-6638ce861d38';
-  $display->content['new-b05ab6e1-637d-41a3-81eb-6638ce861d38'] = $pane;
-  $display->panels['schedule_top'][2] = 'new-b05ab6e1-637d-41a3-81eb-6638ce861d38';
   $pane = new stdClass();
   $pane->pid = 'new-95388608-25a7-4abe-90e1-66cecec1b5e4';
   $pane->panel = 'time';
@@ -19072,10 +19048,10 @@ scale/17x/schedule/saturday',
   $display->content['new-3f2f8597-1a73-44bb-ade7-66ee50dd6b66'] = $pane;
   $display->panels['notice'][1] = 'new-3f2f8597-1a73-44bb-ade7-66ee50dd6b66';
   $pane = new stdClass();
-  $pane->pid = 'new-d9e14344-3ee1-433a-804d-6e62b2cc31c3';
+  $pane->pid = 'new-9b0d5d87-5d52-4894-8bfc-0a98df2ff788';
   $pane->panel = 'schedule_top';
   $pane->type = 'block';
-  $pane->subtype = 'menu-menu-schedule-16x';
+  $pane->subtype = 'menu-menu-schedule-17x';
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
@@ -19087,16 +19063,13 @@ scale/17x/schedule/saturday',
   $pane->style = array(
     'settings' => NULL,
   );
-  $pane->css = array(
-    'css_id' => '',
-    'css_class' => 'more-arrow',
-  );
+  $pane->css = array();
   $pane->extras = array();
   $pane->position = 0;
   $pane->locks = array();
-  $pane->uuid = 'd9e14344-3ee1-433a-804d-6e62b2cc31c3';
-  $display->content['new-d9e14344-3ee1-433a-804d-6e62b2cc31c3'] = $pane;
-  $display->panels['schedule_top'][0] = 'new-d9e14344-3ee1-433a-804d-6e62b2cc31c3';
+  $pane->uuid = '9b0d5d87-5d52-4894-8bfc-0a98df2ff788';
+  $display->content['new-9b0d5d87-5d52-4894-8bfc-0a98df2ff788'] = $pane;
+  $display->panels['schedule_top'][0] = 'new-9b0d5d87-5d52-4894-8bfc-0a98df2ff788';
   $pane = new stdClass();
   $pane->pid = 'new-78df3bcf-816f-4117-bb23-649148fba86d';
   $pane->panel = 'schedule_top';
@@ -19120,27 +19093,6 @@ scale/17x/schedule/saturday',
   $pane->uuid = '78df3bcf-816f-4117-bb23-649148fba86d';
   $display->content['new-78df3bcf-816f-4117-bb23-649148fba86d'] = $pane;
   $display->panels['schedule_top'][1] = 'new-78df3bcf-816f-4117-bb23-649148fba86d';
-  $pane = new stdClass();
-  $pane->pid = 'new-9b0d5d87-5d52-4894-8bfc-0a98df2ff788';
-  $pane->panel = 'schedule_top';
-  $pane->type = 'block';
-  $pane->subtype = 'menu-menu-schedule-17x';
-  $pane->shown = TRUE;
-  $pane->access = array();
-  $pane->configuration = array(
-    'override_title' => 1,
-    'override_title_text' => 'More >>',
-    'override_title_heading' => 'h2',
-  );
-  $pane->cache = array();
-  $pane->style = array();
-  $pane->css = array();
-  $pane->extras = array();
-  $pane->position = 2;
-  $pane->locks = array();
-  $pane->uuid = '9b0d5d87-5d52-4894-8bfc-0a98df2ff788';
-  $display->content['new-9b0d5d87-5d52-4894-8bfc-0a98df2ff788'] = $pane;
-  $display->panels['schedule_top'][2] = 'new-9b0d5d87-5d52-4894-8bfc-0a98df2ff788';
   $pane = new stdClass();
   $pane->pid = 'new-a5f82299-27ec-4088-a6a9-6d432fd2c405';
   $pane->panel = 'time';
