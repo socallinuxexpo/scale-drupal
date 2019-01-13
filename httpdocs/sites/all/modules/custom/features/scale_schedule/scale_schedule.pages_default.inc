@@ -15925,8 +15925,8 @@ scale/16x/schedule/sunday',
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'scale/16x/schedule/2018-03-08
-scale/16x/schedule/thursday',
+            'paths' => 'scale/17x/schedule/2019-03-07
+scale/17x/schedule/thursday',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -16980,8 +16980,8 @@ scale/16x/schedule/thursday',
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'scale/16x/schedule/2018-03-09
-scale/16x/schedule/friday',
+            'paths' => 'scale/17x/schedule/2019-03-08
+scale/17x/schedule/friday',
           ),
           'context' => 'empty',
           'not' => FALSE,
@@ -18094,8 +18094,8 @@ scale/16x/schedule/friday',
           'name' => 'path_visibility',
           'settings' => array(
             'visibility_setting' => '1',
-            'paths' => 'scale/16x/schedule/2018-03-10
-scale/16x/schedule/saturday',
+            'paths' => 'scale/17x/schedule/2019-03-09
+scale/17x/schedule/saturday',
           ),
           'context' => 'empty',
           'not' => FALSE,
