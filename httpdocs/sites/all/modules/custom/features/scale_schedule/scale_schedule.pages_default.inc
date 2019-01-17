@@ -16117,7 +16117,7 @@ scale/17x/schedule/thursday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -16155,7 +16155,7 @@ scale/17x/schedule/thursday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -16193,7 +16193,7 @@ scale/17x/schedule/thursday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -16231,7 +16231,7 @@ scale/17x/schedule/thursday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -16269,7 +16269,7 @@ scale/17x/schedule/thursday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -16307,7 +16307,7 @@ scale/17x/schedule/thursday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -16345,7 +16345,7 @@ scale/17x/schedule/thursday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -16383,7 +16383,7 @@ scale/17x/schedule/thursday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -16471,7 +16471,7 @@ scale/17x/schedule/thursday',
     'feed_icons' => 0,
     'panel_args' => 0,
     'link_to_view' => 0,
-    'args' => '2018-03-08/1601',
+    'args' => '2019-03-07/1601',
     'url' => '',
     'display' => 'page_3',
     'override_title' => 0,
@@ -16646,7 +16646,7 @@ scale/17x/schedule/thursday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -16684,7 +16684,7 @@ scale/17x/schedule/thursday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -16930,7 +16930,7 @@ scale/17x/schedule/thursday',
     'feed_icons' => 0,
     'panel_args' => 0,
     'link_to_view' => 0,
-    'args' => '2017-03-02',
+    'args' => '2019-03-07',
     'url' => '',
     'display' => 'page_3',
     'override_title' => 1,
@@ -17324,7 +17324,7 @@ scale/17x/schedule/friday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -17400,7 +17400,7 @@ scale/17x/schedule/friday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -17438,7 +17438,7 @@ scale/17x/schedule/friday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -17701,7 +17701,7 @@ scale/17x/schedule/friday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -17739,7 +17739,7 @@ scale/17x/schedule/friday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -18020,7 +18020,7 @@ scale/17x/schedule/friday',
     'feed_icons' => 0,
     'panel_args' => 0,
     'link_to_view' => 0,
-    'args' => '2017-03-03',
+    'args' => '2019-03-08',
     'url' => '',
     'display' => 'page_3',
     'override_title' => 1,
@@ -18414,7 +18414,7 @@ scale/17x/schedule/saturday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -18490,7 +18490,7 @@ scale/17x/schedule/saturday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -18528,7 +18528,7 @@ scale/17x/schedule/saturday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -18791,7 +18791,7 @@ scale/17x/schedule/saturday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -18829,7 +18829,7 @@ scale/17x/schedule/saturday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -19110,7 +19110,7 @@ scale/17x/schedule/saturday',
     'feed_icons' => 0,
     'panel_args' => 0,
     'link_to_view' => 0,
-    'args' => '2017-03-04',
+    'args' => '2019-03-09',
     'url' => '',
     'display' => 'page_3',
     'override_title' => 1,
@@ -19504,7 +19504,7 @@ scale/17x/schedule/sunday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -19580,7 +19580,7 @@ scale/17x/schedule/sunday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -19618,7 +19618,7 @@ scale/17x/schedule/sunday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -19881,7 +19881,7 @@ scale/17x/schedule/sunday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -19919,7 +19919,7 @@ scale/17x/schedule/sunday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -20200,7 +20200,7 @@ scale/17x/schedule/sunday',
     'feed_icons' => 0,
     'panel_args' => 0,
     'link_to_view' => 0,
-    'args' => '2017-03-05',
+    'args' => '2019-03-10',
     'url' => '',
     'display' => 'page_3',
     'override_title' => 1,
