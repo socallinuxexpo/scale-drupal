@@ -17286,7 +17286,7 @@ scale/17x/schedule/friday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
@@ -17362,7 +17362,7 @@ scale/17x/schedule/friday',
   $pane->panel = 'center';
   $pane->type = 'views';
   $pane->subtype = 'room_schedule';
-  $pane->shown = TRUE;
+  $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
     'override_pager_settings' => 0,
