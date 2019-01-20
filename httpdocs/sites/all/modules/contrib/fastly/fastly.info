@@ -1,0 +1,16 @@
+name = Fastly
+description = Integration with the Fastly service
+package = Reports
+core = 7.x
+configure = admin/config/services/fastly
+files[] = fastly.api.inc
+files[] = fastly.vcl.inc
+files[] = fastly.webhook.inc
+dependencies[] = expire
+
+; Information added by Drupal.org packaging script on 2018-03-21
+version = "7.x-2.5"
+core = "7.x"
+project = "fastly"
+datestamp = "1521645187"
+
