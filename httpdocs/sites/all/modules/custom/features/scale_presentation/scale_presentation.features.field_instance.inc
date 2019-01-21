@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_presentation.features.field_instance.inc
@@ -769,6 +770,7 @@ function scale_presentation_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 11,

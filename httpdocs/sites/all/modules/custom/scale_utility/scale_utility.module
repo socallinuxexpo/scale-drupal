@@ -78,7 +78,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         17, // Open Source Software In Education.
         1647, // Open Source Storage.
         436, // OpenNMS.
-        1210, // openSUSE.
+        //1210, // openSUSE.
         //18, // PostgreSQL.
         437, // Puppet.
         //1422, //Security.

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_presentation.pages_default.inc
@@ -11,7 +12,7 @@ function scale_presentation_default_page_manager_handlers() {
   $export = array();
 
   $handler = new stdClass();
-  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->disabled = TRUE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
   $handler->name = 'node_view__hide_presentations_from_public';
   $handler->task = 'node_view';

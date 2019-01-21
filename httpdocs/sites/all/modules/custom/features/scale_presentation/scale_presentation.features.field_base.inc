@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_presentation.features.field_base.inc

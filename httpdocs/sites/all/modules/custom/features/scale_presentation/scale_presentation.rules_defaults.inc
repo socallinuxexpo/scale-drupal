@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_presentation.rules_defaults.inc
