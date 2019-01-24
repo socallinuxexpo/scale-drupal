@@ -17085,7 +17085,7 @@ scale/17x/schedule/friday',
     ),
   );
   $display->cache = array();
-  $display->title = 'Friday, March 9, 2018';
+  $display->title = 'Friday, March 8, 2019';
   $display->uuid = '79ad9454-79dd-425a-b258-e6114c1d02c9';
   $display->storage_type = '';
   $display->storage_id = '';
@@ -18175,7 +18175,7 @@ scale/17x/schedule/saturday',
     ),
   );
   $display->cache = array();
-  $display->title = 'Saturday, March 10, 2018';
+  $display->title = 'Saturday, March 9, 2019';
   $display->uuid = 'e19211b3-ed94-4861-b361-7f0243e99fe8';
   $display->storage_type = '';
   $display->storage_id = '';
@@ -19265,7 +19265,7 @@ scale/17x/schedule/sunday',
     ),
   );
   $display->cache = array();
-  $display->title = 'Sunday, March 11, 2018';
+  $display->title = 'Sunday, March 10, 2019';
   $display->uuid = '3a5f9c8f-8be9-45ef-bec1-b065a0d57e76';
   $display->storage_type = '';
   $display->storage_id = '';
