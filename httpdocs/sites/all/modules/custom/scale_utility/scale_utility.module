@@ -48,7 +48,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1996, //Badge Hacking.
         6, // Beginner Tutorials.
         881, // Big Data.
-        500, // BoFs.
+        //500, // BoFs.
         //8, //Cloud.
         879, //Coder's Corner.
         //1197, //Container and Virtualization.
