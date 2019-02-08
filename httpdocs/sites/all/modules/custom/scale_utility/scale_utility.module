@@ -65,6 +65,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         505, // Hot Applications.
         13, // Kernel.
         //14, // Keynote.
+        //2520, // Kubeflow.
         1242, //Legal & Licensing.
         //2268, // LibreGraphics.
         //15, //Mentoring.
@@ -83,7 +84,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         437, // Puppet.
         //1422, //Security.
         19, // ScaleU.
-        20, // Sponsored.
+        //20, // Sponsored.
         //21, // SysAdmin.
         1229, // Testing.
         22, // Try It Lab.
