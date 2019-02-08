@@ -7207,6 +7207,7 @@ article h2 a:hover {
   /* Hot Applications */
   /* Kernel */
   /* Keynote */
+  /* Kubeflow */
   /* Legal & Licensing */
   /* LibreGraphics */
   /* Mentoring */
@@ -7397,6 +7398,12 @@ article h2 a:hover {
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-14 a {
   color: #FFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-2520 {
+  background-color: #303030;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-2520 a {
+  color: #A6CEFF;
 }
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1242 {
   background-color: #FFF8DC;
@@ -7602,6 +7609,7 @@ article h2 a:hover {
   /* Hot Applications */
   /* Kernel */
   /* Keynote */
+  /* Kubeflow */
   /* Legal & Licensing */
   /* LibreGraphics */
   /* Mentoring */
@@ -7726,6 +7734,10 @@ article h2 a:hover {
 .legend-item .track-14 {
   background-color: #D31111;
   color: #FFF;
+}
+.legend-item .track-2520 {
+  background-color: #303030;
+  color: #A6CEFF;
 }
 .legend-item .track-1242 {
   background-color: #FFF8DC;
