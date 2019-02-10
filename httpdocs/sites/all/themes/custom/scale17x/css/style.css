@@ -7216,6 +7216,7 @@ article h2 a:hover {
   /* New to SCALE */
   /* NodeStack */
   /* Open Data */
+  /* Open Government */
   /* Open Source in Enterprises */
   /* Open Source Storage */
   /* Open Source Software in Education */
@@ -7454,6 +7455,12 @@ article h2 a:hover {
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1645 a {
   color: #FFF;
 }
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-2521 {
+  background-color: #A6CEFF;
+}
+.schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-2521 a {
+  color: #F00;
+}
 .schedule_11x .row-main .panels-flexible-region .panel-pane .pane-content .view-content #single-day-container .track-1646 {
   background-color: #ffd672;
 }
@@ -7619,6 +7626,7 @@ article h2 a:hover {
   /* Next Generation */
   /* NodeStack */
   /* Open Data */
+  /* Open Government */
   /* Open Source Software in Education */
   /* Open Source in Enterprises */
   /* Open Source Storage */
@@ -7774,6 +7782,10 @@ article h2 a:hover {
 .legend-item .track-1645 {
   background-color: #6c6c6c;
   color: #FFF;
+}
+.legend-item .track-2521 {
+  background-color: #A6CEFF;
+  color: #F00;
 }
 .legend-item .track-17 {
   background-color: #72B20F;
