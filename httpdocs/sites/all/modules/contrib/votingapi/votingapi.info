@@ -4,22 +4,16 @@ package = Voting
 core = 7.x
 configure = admin/config/search/votingapi
 
-files[] = votingapi.module
-files[] = votingapi.admin.inc
-files[] = votingapi.drush.inc
-files[] = votingapi.install
+files[] = votingapi.migrate.inc
 
 files[] = tests/votingapi.test
 
-files[] = views/votingapi.views.inc
-files[] = views/votingapi.views_default.inc
 files[] = views/votingapi_views_handler_field_value.inc
 files[] = views/votingapi_views_handler_sort_nullable.inc
 files[] = views/votingapi_views_handler_relationship.inc
 
-; Information added by drupal.org packaging script on 2012-10-16
-version = "7.x-2.9"
+; Information added by Drupal.org packaging script on 2018-05-20
+version = "7.x-2.15"
 core = "7.x"
 project = "votingapi"
-datestamp = "1350410215"
-
+datestamp = "1526810587"

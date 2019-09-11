@@ -8,9 +8,9 @@ dependencies[] = environment_indicator
 
 files[] = class/EnvironmentVariableRealmController.php
 
-; Information added by  packaging script on 2013-11-30
-version = "7.x-2.1"
+; Information added by Drupal.org packaging script on 2017-11-09
+version = "7.x-2.9"
 core = "7.x"
 project = "environment_indicator"
-datestamp = "1385814813"
+datestamp = "1510267711"
 
