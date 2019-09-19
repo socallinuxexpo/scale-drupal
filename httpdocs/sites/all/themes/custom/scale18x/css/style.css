@@ -7896,24 +7896,24 @@ article h2 a:hover {
 .view-promo-items-multi-year .views-row .views-label {
   font-weight: bold;
 }
-#block-block-15 .dates-wrapper {
+.region-highlighted .block .dates-wrapper {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
 }
-#block-block-15 .dates-wrapper .dates-left {
+.region-highlighted .block .dates-wrapper .dates-left {
   flex: 2 280px;
   padding: 10px;
 }
-#block-block-15 .dates-wrapper .dates-center {
+.region-highlighted .block .dates-wrapper .dates-center {
   flex: 2 240px;
   padding: 10px;
 }
-#block-block-15 .dates-wrapper .dates-center img {
+.region-highlighted .block .dates-wrapper .dates-center img {
   width: 100%;
   height: auto;
 }
-#block-block-15 .dates-wrapper .dates-right {
+.region-highlighted .block .dates-wrapper .dates-right {
   flex-direction: column;
   flex: 2 200px;
   padding: 10px;
