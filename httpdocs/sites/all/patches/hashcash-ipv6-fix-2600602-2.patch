@@ -1,0 +1,60 @@
+diff --git a/hashcash.js.inc b/hashcash.js.inc
+index 6fb774e..08d357b 100644
+--- a/hashcash.js.inc
++++ b/hashcash.js.inc
+@@ -10,7 +10,7 @@ function hashcash_get_hashcash($form_id){
+   header("Content-Type: text/plain; charset=UTF-8");
+   // Cookie domain is added to hashcash to prevent same hashcash being used on multiple sites
+   global $cookie_domain;
+-  print '1:' . date('ymd') . ':' . $form_id . ':' . ip_address() . ':' . $cookie_domain . ':';
++  print '1:' . date('ymd') . ':' . $form_id . ':' . _hashcash_safe_ip_address() . ':' . $cookie_domain . ':';
+   // Prevent Boost caching this.
+   $GLOBALS['_boost_cache_this'] = FALSE;
+-}
+\ No newline at end of file
++}
+diff --git a/hashcash.module b/hashcash.module
+index a15d29d..1b222c2 100644
+--- a/hashcash.module
++++ b/hashcash.module
+@@ -190,7 +190,7 @@ function hashcash_passes($form, $form_state){
+   // Hashcash passed, now check the parts.
+   $hashcash_parts = explode(':', $form_state['input']['hashcash']);
+   global $cookie_domain;
+-  if($hashcash_parts[0] != '1' || ($hashcash_parts[1] != date('ymd') && $hashcash_parts != date('ymd', time() - (24 * 60 * 60))) || $hashcash_parts[2] != $form['form_id']['#value'] || $hashcash_parts[3] != ip_address() || $hashcash_parts[4] != $cookie_domain || !(isset($hashcash_parts[5]) && strlen($hashcash_parts[5]) > 10)){return FALSE;}
++  if($hashcash_parts[0] != '1' || ($hashcash_parts[1] != date('ymd') && $hashcash_parts != date('ymd', time() - (24 * 60 * 60))) || $hashcash_parts[2] != $form['form_id']['#value'] || $hashcash_parts[3] != _hashcash_safe_ip_address() || $hashcash_parts[4] != $cookie_domain || !(isset($hashcash_parts[5]) && strlen($hashcash_parts[5]) > 10)){return FALSE;}
+   // Parts passed. Check not submitted already
+   // First thing, delete all the stale hashcash values from the database.
+   db_delete('hashcash')->condition('hcdate', date('ymd', time() - (24 * 60 * 60 * variable_get('hashcash_expire', 2))), '<')->execute();
+@@ -228,7 +228,7 @@ function hashcash_validate($form, $form_state){
+       // Hashcash passed, now check the parts.
+       $hashcash_parts = explode(':', $hashcash);
+       global $cookie_domain;
+-      if($hashcash_parts[0] != '1' || ($hashcash_parts[1] != date('ymd') && $hashcash_parts != date('ymd', time() - (24 * 60 * 60))) || $hashcash_parts[2] != $form['form_id']['#value'] || $hashcash_parts[3] != ip_address() || $hashcash_parts[4] != $cookie_domain || !(isset($hashcash_parts[5]) && strlen($hashcash_parts[5]) > 10)){
++      if($hashcash_parts[0] != '1' || ($hashcash_parts[1] != date('ymd') && $hashcash_parts != date('ymd', time() - (24 * 60 * 60))) || $hashcash_parts[2] != $form['form_id']['#value'] || $hashcash_parts[3] != _hashcash_safe_ip_address() || $hashcash_parts[4] != $cookie_domain || !(isset($hashcash_parts[5]) && strlen($hashcash_parts[5]) > 10)){
+         if(!isset($hashcash_parts[5])){
+           $hashcash_parts[5] = 'NOT SET';
+         }
+@@ -241,7 +241,7 @@ function hashcash_validate($form, $form_state){
+             '@parts2' => $hashcash_parts[2],
+             '@formid' => $form['form_id']['#value'],
+             '@parts3' => $hashcash_parts[3],
+-            '@ipaddress' => ip_address(),
++            '@ipaddress' => _hashcash_safe_ip_address(),
+             '@parts4' => $hashcash_parts[4],
+             '@cookiedomain' => $cookie_domain,
+             '@parts5' => $hashcash_parts[5]
+@@ -272,3 +272,13 @@ function hashcash_validate($form, $form_state){
+     }
+   }
+ }
++
++/**
++ * Private function to create 'safe' IPv6 addresses.
++ */
++function _hashcash_safe_ip_address() {
++  $ip_addr_parts = explode(':', ip_address());
++  $safe_ip_addr = implode('_', $ip_addr_parts);
++
++  return $safe_ip_addr;
++}
