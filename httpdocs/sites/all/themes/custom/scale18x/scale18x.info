@@ -33,6 +33,7 @@ stylesheets[all][] = css/style.css
 ;scripts[] = 'bootstrap/js/bootstrap-scrollspy.js'
 ;scripts[] = 'bootstrap/js/bootstrap-transition.js'
 ;scripts[] = 'bootstrap/js/bootstrap-typeahead.js'
+scripts[] = 'scripts/schedule.js'
 ;
 ; ; Settings inherited by base theme, uncomment to override.
 ; ;settings[toggle_name] = 0

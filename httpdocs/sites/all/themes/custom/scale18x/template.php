@@ -57,3 +57,10 @@ function scale18x_preprocess_block(&$variables) {
     $variables['classes_array'][] = 'visible-phone';
   }
 }
+
+function scale18x_preprocess_calendar_day_overlap(&$variables) {
+  $view = $variables['view'];
+  if (count($view->args) > 1 && !empty($variables['rows']['empty'])) {
+    $variables['display_empty'] = TRUE;
+  }
+}
