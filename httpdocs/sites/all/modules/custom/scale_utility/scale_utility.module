@@ -87,7 +87,8 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         unset($form['field_topic'][LANGUAGE_NONE]['#options'][$remove_term]);
       }
       // Remove options from Presentation Room list but keep terms in database.
-      $remove_room_terms = array(
+      $remove_room_terms = array();
+      /*
         441, // Bel-Air.
         464, // San Lorenzo B.
         465, // San Lorenzo C.
@@ -119,6 +120,7 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         462, // Santa Monica A.
         463, // Santa Monica B.
       );
+      */
       foreach ($remove_room_terms as $remove_term) {
         unset($form['field_room'][LANGUAGE_NONE]['#options'][$remove_term]);
         unset($form['field_overflow_room'][LANGUAGE_NONE]['#options'][$remove_term]);
