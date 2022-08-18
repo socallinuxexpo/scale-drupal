@@ -1,0 +1,59 @@
+diff --git a/backup_migrate.install b/backup_migrate.install
+index 0d550fc..570bea5 100644
+--- a/backup_migrate.install
++++ b/backup_migrate.install
+@@ -803,29 +803,39 @@ function backup_migrate_update_7302() {
+  * Add a serial id field to all tables to allow them to be ctools exportable.
+  */
+ function backup_migrate_update_7303() {
+-  foreach (array(
++  $tables = array(
+     'backup_migrate_sources' => 'source_id',
+     'backup_migrate_destinations' => 'destination_id',
+     'backup_migrate_schedules' => 'schedule_id',
+     'backup_migrate_profiles' => 'profile_id',
+-  ) as $table => $id) {
++  );
++
++  // Make sure that each table colum nexists.
++  foreach ($tables as $table => $column) {
++    if (!db_field_exists($table, $column)) {
++      throw new DrupalUpdateException(t('Unable to find the %column column in the %table table. This should not have happened, please try running the updates again.', array('%column' => $column, '%table' => $table)));
++    }
++  }
++
++  // Now that all of the columns are available, update the indexes.
++  foreach ($tables as $table => $column) {
+     // Take the primary key status from the machine name so it can be renamed
+     // A serial field must be defined as a key, so make a temporary index.
+-    // See: https://www.drupal.org/node/190027
+-    db_add_index($table, 'temp', array($id));
++    // @see https://www.drupal.org/node/190027
++    db_add_index($table, 'temp', array($column));
+     db_drop_primary_key($table);
+     // Drop our temporary index.
+     db_drop_index($table, 'temp');
+ 
+     // Switch the name of the id to 'machine_name' to be more ctools standard.
+-    db_change_field($table, $id, 'machine_name', array(
++    db_change_field($table, $column, 'machine_name', array(
+       'type' => 'varchar',
+       'length' => 32,
+       'not null' => TRUE,
+     ));
+ 
+     // Add a serial ID.
+-    db_add_field($table, $id,
++    db_add_field($table, $column,
+       array(
+         'type' => 'serial',
+         'unsigned' => TRUE,
+@@ -834,7 +844,7 @@ function backup_migrate_update_7303() {
+         // Do not export database-only keys.
+         'no export' => TRUE,
+       ),
+-        array('primary key' => array($id))
++        array('primary key' => array($column))
+     );
+   }
+   foreach (array('backup_migrate_sources', 'backup_migrate_destinations') as $table) {
