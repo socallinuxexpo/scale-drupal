@@ -1,0 +1,16 @@
+name: scale
+recipe: drupal7
+config:
+  composer_version: "2.0.7"
+  xdebug: true
+  config:
+    php: .lando.php.ini
+services:
+  phpmyadmin:
+    type: phpmyadmin:5.0
+tooling:
+  drush:
+    service: appserver
+    cmd: drush
+    env:
+      DRUSH_OPTIONS_URI: http://scale.lndo.site
