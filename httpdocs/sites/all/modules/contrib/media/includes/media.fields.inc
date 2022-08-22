@@ -206,7 +206,7 @@ function media_field_widget_form(&$form, &$form_state, $field, $instance, $langc
 /**
  * The #value_callback for the media field element.
  */
-function media_field_widget_value($element, $input = FALSE, $form_state) {
+function media_field_widget_value($element, $input = FALSE, $form_state = array()) {
   if ($input) {
     // Checkboxes lose their value when empty.
     // If the display field is present make sure its unchecked value is saved.
@@ -279,7 +279,7 @@ function media_field_widget_process($element, &$form_state, $form) {
       '#default_value' => isset($item['alt']) ? $item['alt'] : '',
       '#description' => t('This text will be used by screen readers, search engines, or when the image cannot be loaded.<br />
 <em>(Notice: this field is not fetched on -all- formatters yet. For example: If the Rendered file formatter will be used, this field is not available at the moment.)</em>'),
-      '#maxlength' => variable_get('image_alt_length', 80),
+      '#maxlength' => variable_get('image_alt_length', 100),
       '#weight' => 1,
     );
   }
