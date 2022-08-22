@@ -45,6 +45,9 @@ The primary features include:
   [current-page:pager] into e.g. page titles, description tags, etc. The
   replacement string may be customized from the settings page.
 
+* Views integration to show meta tags for entities as fields, with options to
+  process the tokens to see the final output.
+
 * Per-path control over meta tags using the "Metatag: Context" submodule
   (requires the Context module).
 
@@ -354,7 +357,7 @@ functionality:
 * Alternative hreflang
   https://www.drupal.org/project/hreflang
   An alternative to the Metatag:hreflang module. Automatically outputs
-  <link rel="alternate" hreflang="x" href="http://" /> meta tags on every page
+  <link rel="alternate" hreflang="x" href="https://" /> meta tags on every page
   for each language/locale available on the site. Also does not provide any way
   of overriding the values or setting the x-default value.
 

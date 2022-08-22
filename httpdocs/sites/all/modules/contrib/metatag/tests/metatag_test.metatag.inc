@@ -10,7 +10,7 @@
  *
  * @todo Expand to cover more meta tags.
  *
- * @see MetatagTestHelper::getTestDefaults()
+ * @see MetatagTestBase::getTestDefaults()
  */
 function metatag_test_metatag_config_default() {
   $configs = array();
@@ -59,11 +59,19 @@ function metatag_test_metatag_info() {
     ),
   );
 
-  $info['test:foo'] = array(
+  $info['tags']['test:foo'] = array(
     'label' => t('Foo meta tag'),
     'description' => t('Testing metatag.'),
     'class' => 'DrupalTextMetaTag',
     'group' => 'testing',
+  );
+
+  $info['tags']['test:multifoo'] = array(
+    'label' => t('Multi foo meta tag'),
+    'description' => t('Testing metatag.'),
+    'class' => 'DrupalTextMetaTag',
+    'group' => 'testing',
+    'multiple' => TRUE,
   );
 
   return $info;
