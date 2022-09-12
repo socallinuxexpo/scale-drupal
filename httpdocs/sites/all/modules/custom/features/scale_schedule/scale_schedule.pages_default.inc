@@ -20339,6 +20339,31 @@ scale/17x/schedule/sunday',
       ),
     ),
   ); 
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'schedule_20x';
+  $page->task = 'page';
+  $page->admin_title = 'Schedule 20x';
+  $page->admin_description = '';
+  $page->path = 'scale/19x/schedule/!date';
+  $page->access = array(
+    'logic' => 'and',
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 1,
+            1 => 2,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+  ); 
   
   $page->menu = array(
     'type' => 'none',
