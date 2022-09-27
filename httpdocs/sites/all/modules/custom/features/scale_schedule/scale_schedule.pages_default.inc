@@ -20347,7 +20347,7 @@ scale/17x/schedule/sunday',
   $page->task = 'page';
   $page->admin_title = 'Schedule 20x';
   $page->admin_description = '';
-  $page->path = 'scale/19x/schedule/!date';
+  $page->path = 'scale/20x/schedule/!date';
   $page->access = array(
     'logic' => 'and',
     'plugins' => array(
