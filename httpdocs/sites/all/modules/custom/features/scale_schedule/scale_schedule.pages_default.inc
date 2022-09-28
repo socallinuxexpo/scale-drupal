@@ -22,16 +22,16 @@ function scale_schedule_default_page_manager_pages() {
     'plugins' => array(),
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array();
   $page->conf = array(
@@ -53,16 +53,16 @@ function scale_schedule_default_page_manager_pages() {
     'plugins' => array(),
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array();
   $page->conf = array(
@@ -78,123 +78,123 @@ function scale_schedule_default_page_manager_pages() {
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Friday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale12x/schedule/friday
 scale12x/schedule/2014-02-21',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Friday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -212,28 +212,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/454',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'La Jolla',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -249,28 +249,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/442',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Carmel',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -286,28 +286,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/455',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -323,28 +323,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/457',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -360,28 +360,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/458',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -397,28 +397,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/448',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century AB',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -434,28 +434,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/451',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century CD',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -471,28 +471,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/459',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Marina',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -508,28 +508,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/441',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Bel Air',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -545,28 +545,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/462',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -582,28 +582,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/463',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -619,28 +619,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/464',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -656,28 +656,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/465',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -693,28 +693,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/466',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -730,28 +730,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/467',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo E',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -767,28 +767,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21/468',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo F',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -805,10 +805,10 @@ scale12x/schedule/2014-02-21',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -897,28 +897,28 @@ scale12x/schedule/2014-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-21',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -939,123 +939,123 @@ scale12x/schedule/2014-02-21',
   $handler->handler = 'panel_context';
   $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Saturday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x saturday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale12x/schedule/saturday
 scale12x/schedule/2014-02-22',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x saturday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Saturday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -1073,28 +1073,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/454',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'La Jolla',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -1110,28 +1110,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/442',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Carmel',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -1147,28 +1147,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/455',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -1184,28 +1184,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/457',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -1221,28 +1221,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/458',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -1258,28 +1258,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/448',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century AB',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -1295,28 +1295,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/451',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century CD',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -1332,28 +1332,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/459',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Marina',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -1369,28 +1369,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/441',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Bel Air',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -1406,28 +1406,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/462',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -1443,28 +1443,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/463',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -1480,28 +1480,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/464',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -1517,28 +1517,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/465',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -1554,28 +1554,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/466',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -1591,28 +1591,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/467',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo E',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -1628,28 +1628,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/468',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo F',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -1665,20 +1665,20 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/461',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Plaza Ballroom',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1699,20 +1699,20 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22/453',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Expo',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1734,10 +1734,10 @@ scale12x/schedule/2014-02-22',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -1826,28 +1826,28 @@ scale12x/schedule/2014-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-22',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -1868,124 +1868,124 @@ scale12x/schedule/2014-02-22',
   $handler->handler = 'panel_context';
   $handler->weight = 2;
   $handler->conf = array(
-    'title' => 'Sunday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x sunday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale12x/schedule/sunday
 scale12x/schedule/2014-02-23
 scale12x/blah',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x sunday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Sunday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -2003,28 +2003,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/454',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'La Jolla',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -2040,28 +2040,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/442',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Carmel',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -2077,28 +2077,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/455',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -2114,28 +2114,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/457',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -2151,28 +2151,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/458',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -2188,28 +2188,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/448',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century AB',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -2225,28 +2225,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/451',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century CD',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -2262,28 +2262,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/459',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Marina',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -2299,28 +2299,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/441',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Bel Air',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -2336,28 +2336,28 @@ scale12x/blah',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/462',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -2373,28 +2373,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/463',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -2410,28 +2410,28 @@ scale12x/blah',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/464',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -2447,28 +2447,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/465',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -2484,28 +2484,28 @@ scale12x/blah',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/466',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -2521,28 +2521,28 @@ scale12x/blah',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/467',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo E',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -2558,28 +2558,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/468',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo F',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -2595,20 +2595,20 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23/453',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Expo',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2630,10 +2630,10 @@ scale12x/blah',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -2722,28 +2722,28 @@ scale12x/blah',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2014-02-23',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -2764,15 +2764,15 @@ scale12x/blah',
   $handler->handler = 'panel_context';
   $handler->weight = 3;
   $handler->conf = array(
-    'title' => 'Schedule',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Schedule',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -2831,22 +2831,22 @@ scale12x/blah',
     'plugins' => array(),
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'date' => array(
+      'argument' => '',
       'id' => '',
       'identifier' => '',
-      'argument' => '',
       'settings' => array(),
     ),
   );
@@ -2863,124 +2863,124 @@ scale12x/blah',
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Thursday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/14x/schedule/2016-01-21
 scale/14x/schedule/thursday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Thursday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -2998,29 +2998,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -3036,29 +3036,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -3074,29 +3074,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -3112,29 +3112,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -3150,29 +3150,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -3188,29 +3188,29 @@ scale/14x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -3226,29 +3226,29 @@ scale/14x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -3264,29 +3264,29 @@ scale/14x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -3302,29 +3302,29 @@ scale/14x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -3340,29 +3340,29 @@ scale/14x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -3378,29 +3378,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -3416,29 +3416,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -3454,29 +3454,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -3492,29 +3492,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -3530,29 +3530,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -3568,29 +3568,29 @@ scale/14x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -3606,21 +3606,21 @@ scale/14x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3641,21 +3641,21 @@ scale/14x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3676,21 +3676,21 @@ scale/14x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3711,21 +3711,21 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3747,10 +3747,10 @@ scale/14x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3795,8 +3795,8 @@ scale/14x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -3840,29 +3840,29 @@ scale/14x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-21',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -3883,124 +3883,124 @@ scale/14x/schedule/thursday',
   $handler->handler = 'panel_context';
   $handler->weight = -29;
   $handler->conf = array(
-    'title' => 'Friday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/14x/schedule/2016-01-22
 scale/14x/schedule/friday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'friday',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Friday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -4018,29 +4018,29 @@ scale/14x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -4056,29 +4056,29 @@ scale/14x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -4094,29 +4094,29 @@ scale/14x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -4132,29 +4132,29 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -4170,29 +4170,29 @@ scale/14x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -4208,29 +4208,29 @@ scale/14x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -4246,29 +4246,29 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -4284,29 +4284,29 @@ scale/14x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -4322,29 +4322,29 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -4360,29 +4360,29 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -4398,29 +4398,29 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -4436,29 +4436,29 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -4474,29 +4474,29 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -4512,29 +4512,29 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -4550,29 +4550,29 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -4588,29 +4588,29 @@ scale/14x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -4626,21 +4626,21 @@ scale/14x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4661,21 +4661,21 @@ scale/14x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4696,21 +4696,21 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4731,21 +4731,21 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4766,21 +4766,21 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4802,10 +4802,10 @@ scale/14x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4850,8 +4850,8 @@ scale/14x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -4895,29 +4895,29 @@ scale/14x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-22',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -4938,124 +4938,124 @@ scale/14x/schedule/friday',
   $handler->handler = 'panel_context';
   $handler->weight = -28;
   $handler->conf = array(
-    'title' => 'Saturday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/14x/schedule/2016-01-23
 scale/14x/schedule/saturday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'saturday',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Saturday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -5073,29 +5073,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -5111,29 +5111,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -5149,29 +5149,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -5187,29 +5187,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -5225,29 +5225,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -5263,29 +5263,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -5301,29 +5301,29 @@ scale/14x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -5339,29 +5339,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -5377,29 +5377,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -5415,29 +5415,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -5453,29 +5453,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -5491,29 +5491,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -5529,29 +5529,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -5567,29 +5567,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -5605,29 +5605,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -5643,29 +5643,29 @@ scale/14x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -5681,21 +5681,21 @@ scale/14x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -5716,21 +5716,21 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -5751,21 +5751,21 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -5786,21 +5786,21 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -5821,21 +5821,21 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -5857,10 +5857,10 @@ scale/14x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -5905,8 +5905,8 @@ scale/14x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -5950,29 +5950,29 @@ scale/14x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-23',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -5993,124 +5993,124 @@ scale/14x/schedule/saturday',
   $handler->handler = 'panel_context';
   $handler->weight = -27;
   $handler->conf = array(
-    'title' => 'Sunday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/14x/schedule/2016-01-24
 scale/14x/schedule/sunday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'sunday',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Sunday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -6128,29 +6128,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -6166,29 +6166,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -6204,29 +6204,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -6242,29 +6242,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -6280,29 +6280,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -6318,29 +6318,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -6356,29 +6356,29 @@ scale/14x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -6394,29 +6394,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -6432,29 +6432,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -6470,29 +6470,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -6508,29 +6508,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -6546,29 +6546,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -6584,29 +6584,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -6622,29 +6622,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -6660,29 +6660,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -6698,29 +6698,29 @@ scale/14x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -6736,21 +6736,21 @@ scale/14x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -6771,21 +6771,21 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -6806,21 +6806,21 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -6841,21 +6841,21 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -6876,21 +6876,21 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -6912,10 +6912,10 @@ scale/14x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -6960,8 +6960,8 @@ scale/14x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -7005,29 +7005,29 @@ scale/14x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2016-01-24',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -7048,16 +7048,16 @@ scale/14x/schedule/sunday',
   $handler->handler = 'panel_context';
   $handler->weight = -26;
   $handler->conf = array(
-    'title' => 'Schedule',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
-    'name' => '',
+    'title' => 'Schedule',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -7084,8 +7084,8 @@ scale/14x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -7117,22 +7117,22 @@ scale/14x/schedule/sunday',
     'plugins' => array(),
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'date' => array(
+      'argument' => '',
       'id' => '',
       'identifier' => '',
-      'argument' => '',
       'settings' => array(),
     ),
   );
@@ -7149,124 +7149,124 @@ scale/14x/schedule/sunday',
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Thursday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/15x/schedule/2017-03-02
 scale/15x/schedule/thursday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Thursday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -7284,29 +7284,29 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -7322,29 +7322,29 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -7360,29 +7360,29 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -7398,29 +7398,29 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -7436,29 +7436,29 @@ scale/15x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -7474,29 +7474,29 @@ scale/15x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -7512,29 +7512,29 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -7550,29 +7550,29 @@ scale/15x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -7588,29 +7588,29 @@ scale/15x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -7626,29 +7626,29 @@ scale/15x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -7664,29 +7664,29 @@ scale/15x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -7702,29 +7702,29 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -7740,29 +7740,29 @@ scale/15x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -7778,29 +7778,29 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -7816,29 +7816,29 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -7854,29 +7854,29 @@ scale/15x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -7892,21 +7892,21 @@ scale/15x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -7927,21 +7927,21 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -7962,21 +7962,21 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -7997,21 +7997,21 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -8033,10 +8033,10 @@ scale/15x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -8081,16 +8081,16 @@ scale/15x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'more-arrow',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -8129,29 +8129,29 @@ scale/15x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -8172,124 +8172,124 @@ scale/15x/schedule/thursday',
   $handler->handler = 'panel_context';
   $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Friday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/15x/schedule/2017-03-03
 scale/15x/schedule/friday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Friday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -8307,29 +8307,29 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -8345,29 +8345,29 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -8383,29 +8383,29 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -8421,29 +8421,29 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -8459,29 +8459,29 @@ scale/15x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -8497,29 +8497,29 @@ scale/15x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -8535,29 +8535,29 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -8573,29 +8573,29 @@ scale/15x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -8611,29 +8611,29 @@ scale/15x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -8649,29 +8649,29 @@ scale/15x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -8687,29 +8687,29 @@ scale/15x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -8725,29 +8725,29 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -8763,29 +8763,29 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -8801,29 +8801,29 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -8839,29 +8839,29 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -8877,29 +8877,29 @@ scale/15x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -8915,21 +8915,21 @@ scale/15x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -8950,21 +8950,21 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -8985,21 +8985,21 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -9020,21 +9020,21 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -9055,21 +9055,21 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -9091,10 +9091,10 @@ scale/15x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -9139,16 +9139,16 @@ scale/15x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'more-arrow',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -9187,29 +9187,29 @@ scale/15x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -9230,124 +9230,124 @@ scale/15x/schedule/friday',
   $handler->handler = 'panel_context';
   $handler->weight = 2;
   $handler->conf = array(
-    'title' => 'Saturday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/15x/schedule/2017-03-04
 scale/15x/schedule/saturday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Saturday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -9365,29 +9365,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -9403,29 +9403,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -9441,29 +9441,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -9479,29 +9479,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -9517,29 +9517,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -9555,29 +9555,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -9593,29 +9593,29 @@ scale/15x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -9631,29 +9631,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -9669,29 +9669,29 @@ scale/15x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -9707,29 +9707,29 @@ scale/15x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -9745,29 +9745,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -9783,29 +9783,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -9821,29 +9821,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -9859,29 +9859,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -9897,29 +9897,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -9935,29 +9935,29 @@ scale/15x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -9973,21 +9973,21 @@ scale/15x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -10008,21 +10008,21 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -10043,21 +10043,21 @@ scale/15x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -10078,21 +10078,21 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -10113,21 +10113,21 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -10149,10 +10149,10 @@ scale/15x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -10197,16 +10197,16 @@ scale/15x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'more-arrow',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -10245,29 +10245,29 @@ scale/15x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -10288,124 +10288,124 @@ scale/15x/schedule/saturday',
   $handler->handler = 'panel_context';
   $handler->weight = 3;
   $handler->conf = array(
-    'title' => 'Sunday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/15x/schedule/2017-03-05
 scale/15x/schedule/sunday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Sunday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -10423,29 +10423,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -10461,29 +10461,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -10499,29 +10499,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -10537,29 +10537,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -10575,29 +10575,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -10613,29 +10613,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -10651,29 +10651,29 @@ scale/15x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -10689,29 +10689,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -10727,29 +10727,29 @@ scale/15x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -10765,29 +10765,29 @@ scale/15x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -10803,29 +10803,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -10841,29 +10841,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -10879,29 +10879,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -10917,29 +10917,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -10955,29 +10955,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -10993,29 +10993,29 @@ scale/15x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -11031,21 +11031,21 @@ scale/15x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -11066,21 +11066,21 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -11101,21 +11101,21 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -11136,21 +11136,21 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -11171,21 +11171,21 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -11207,10 +11207,10 @@ scale/15x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -11255,16 +11255,16 @@ scale/15x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'more-arrow',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -11303,29 +11303,29 @@ scale/15x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -11346,16 +11346,16 @@ scale/15x/schedule/sunday',
   $handler->handler = 'panel_context';
   $handler->weight = 4;
   $handler->conf = array(
-    'title' => 'Schedule',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
-    'name' => '',
+    'title' => 'Schedule',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -11382,8 +11382,8 @@ scale/15x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -11414,35 +11414,35 @@ scale/15x/schedule/sunday',
     'logic' => 'and',
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
             1 => 2,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'date' => array(
+      'argument' => '',
       'id' => '',
       'identifier' => '',
-      'argument' => '',
       'settings' => array(),
     ),
   );
@@ -11459,124 +11459,124 @@ scale/15x/schedule/sunday',
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Thursday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/16x/schedule/2018-03-08
 scale/16x/schedule/thursday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Thursday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -11594,29 +11594,29 @@ scale/16x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -11632,29 +11632,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -11670,29 +11670,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -11708,29 +11708,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -11746,29 +11746,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -11784,29 +11784,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -11822,29 +11822,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -11860,29 +11860,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -11898,29 +11898,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -11936,29 +11936,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -11974,29 +11974,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -12012,29 +12012,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -12050,29 +12050,29 @@ scale/16x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -12088,21 +12088,21 @@ scale/16x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -12123,29 +12123,29 @@ scale/16x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -12161,29 +12161,29 @@ scale/16x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -12199,29 +12199,29 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -12237,21 +12237,21 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -12272,21 +12272,21 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -12307,21 +12307,21 @@ scale/16x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -12342,21 +12342,21 @@ scale/16x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-08/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -12378,10 +12378,10 @@ scale/16x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -12426,16 +12426,16 @@ scale/16x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'more-arrow',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -12474,29 +12474,29 @@ scale/16x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-02',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -12517,124 +12517,124 @@ scale/16x/schedule/thursday',
   $handler->handler = 'panel_context';
   $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Friday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/16x/schedule/2018-03-09
 scale/16x/schedule/friday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Friday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -12652,29 +12652,29 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -12690,29 +12690,29 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -12728,29 +12728,29 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -12766,29 +12766,29 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -12804,29 +12804,29 @@ scale/16x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -12842,29 +12842,29 @@ scale/16x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -12880,29 +12880,29 @@ scale/16x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -12918,29 +12918,29 @@ scale/16x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -12956,29 +12956,29 @@ scale/16x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -12994,29 +12994,29 @@ scale/16x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -13032,29 +13032,29 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -13070,29 +13070,29 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -13108,29 +13108,29 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -13146,21 +13146,21 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -13181,29 +13181,29 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -13219,29 +13219,29 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -13257,29 +13257,29 @@ scale/16x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -13295,21 +13295,21 @@ scale/16x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -13330,21 +13330,21 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -13365,21 +13365,21 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -13400,21 +13400,21 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -13435,21 +13435,21 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-09/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -13471,10 +13471,10 @@ scale/16x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -13519,16 +13519,16 @@ scale/16x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'more-arrow',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -13567,29 +13567,29 @@ scale/16x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-03',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -13610,124 +13610,124 @@ scale/16x/schedule/friday',
   $handler->handler = 'panel_context';
   $handler->weight = 2;
   $handler->conf = array(
-    'title' => 'Saturday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/16x/schedule/2018-03-10
 scale/16x/schedule/saturday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Saturday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -13745,29 +13745,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -13783,29 +13783,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -13821,29 +13821,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -13859,29 +13859,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -13897,29 +13897,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -13935,29 +13935,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -13973,29 +13973,29 @@ scale/16x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -14011,29 +14011,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -14049,29 +14049,29 @@ scale/16x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -14087,29 +14087,29 @@ scale/16x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -14125,29 +14125,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -14163,29 +14163,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -14201,29 +14201,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -14239,21 +14239,21 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14274,29 +14274,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -14312,29 +14312,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -14350,29 +14350,29 @@ scale/16x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -14388,21 +14388,21 @@ scale/16x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14423,21 +14423,21 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14458,21 +14458,21 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14493,21 +14493,21 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14528,21 +14528,21 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-10/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14564,10 +14564,10 @@ scale/16x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -14612,16 +14612,16 @@ scale/16x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'more-arrow',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -14660,29 +14660,29 @@ scale/16x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-04',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -14703,124 +14703,124 @@ scale/16x/schedule/saturday',
   $handler->handler = 'panel_context';
   $handler->weight = 3;
   $handler->conf = array(
-    'title' => 'Sunday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/16x/schedule/2018-03-11
 scale/16x/schedule/sunday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Sunday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -14838,29 +14838,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -14876,29 +14876,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -14914,29 +14914,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -14952,29 +14952,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -14990,29 +14990,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -15028,29 +15028,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -15066,29 +15066,29 @@ scale/16x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -15104,29 +15104,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -15142,29 +15142,29 @@ scale/16x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -15180,29 +15180,29 @@ scale/16x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -15218,29 +15218,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -15256,29 +15256,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -15294,29 +15294,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -15332,21 +15332,21 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -15367,29 +15367,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -15405,29 +15405,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -15443,29 +15443,29 @@ scale/16x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -15481,21 +15481,21 @@ scale/16x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -15516,21 +15516,21 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -15551,21 +15551,21 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -15586,21 +15586,21 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -15621,21 +15621,21 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2018-03-11/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -15657,10 +15657,10 @@ scale/16x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -15705,16 +15705,16 @@ scale/16x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => '',
     'css_class' => 'more-arrow',
+    'css_id' => '',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -15753,29 +15753,29 @@ scale/16x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2017-03-05',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -15796,16 +15796,16 @@ scale/16x/schedule/sunday',
   $handler->handler = 'panel_context';
   $handler->weight = 4;
   $handler->conf = array(
-    'title' => 'Schedule',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
-    'name' => '',
+    'title' => 'Schedule',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -15832,8 +15832,8 @@ scale/16x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -15864,35 +15864,35 @@ scale/16x/schedule/sunday',
     'logic' => 'and',
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
             1 => 2,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'date' => array(
+      'argument' => '',
       'id' => '',
       'identifier' => '',
-      'argument' => '',
       'settings' => array(),
     ),
   );
@@ -15909,124 +15909,124 @@ scale/16x/schedule/sunday',
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Thursday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/17x/schedule/2019-03-07
 scale/17x/schedule/thursday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Thursday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -16044,29 +16044,29 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -16082,29 +16082,29 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -16120,29 +16120,29 @@ scale/17x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -16158,29 +16158,29 @@ scale/17x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -16196,29 +16196,29 @@ scale/17x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -16234,29 +16234,29 @@ scale/17x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -16272,29 +16272,29 @@ scale/17x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -16310,29 +16310,29 @@ scale/17x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -16348,29 +16348,29 @@ scale/17x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -16386,29 +16386,29 @@ scale/17x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -16424,29 +16424,29 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -16462,29 +16462,29 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -16500,29 +16500,29 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -16538,21 +16538,21 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -16573,29 +16573,29 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -16611,29 +16611,29 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -16649,29 +16649,29 @@ scale/17x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -16687,21 +16687,21 @@ scale/17x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -16722,21 +16722,21 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -16757,21 +16757,21 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -16792,21 +16792,21 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -16828,10 +16828,10 @@ scale/17x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -16876,8 +16876,8 @@ scale/17x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -16921,29 +16921,29 @@ scale/17x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-07',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -16964,124 +16964,124 @@ scale/17x/schedule/thursday',
   $handler->handler = 'panel_context';
   $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Friday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/17x/schedule/2019-03-08
 scale/17x/schedule/friday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Friday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -17099,29 +17099,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -17137,29 +17137,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -17175,29 +17175,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -17213,29 +17213,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -17251,29 +17251,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -17289,29 +17289,29 @@ scale/17x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -17327,29 +17327,29 @@ scale/17x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -17365,29 +17365,29 @@ scale/17x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -17403,29 +17403,29 @@ scale/17x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -17441,29 +17441,29 @@ scale/17x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -17479,29 +17479,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -17517,29 +17517,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -17555,29 +17555,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -17593,21 +17593,21 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -17628,29 +17628,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -17666,29 +17666,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -17704,29 +17704,29 @@ scale/17x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -17742,21 +17742,21 @@ scale/17x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -17777,21 +17777,21 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -17812,21 +17812,21 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -17847,21 +17847,21 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -17882,21 +17882,21 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -17918,10 +17918,10 @@ scale/17x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -17966,8 +17966,8 @@ scale/17x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -18011,29 +18011,29 @@ scale/17x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-08',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -18054,124 +18054,124 @@ scale/17x/schedule/friday',
   $handler->handler = 'panel_context';
   $handler->weight = 2;
   $handler->conf = array(
-    'title' => 'Saturday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/17x/schedule/2019-03-09
 scale/17x/schedule/saturday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Saturday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -18189,29 +18189,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -18227,29 +18227,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -18265,29 +18265,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -18303,29 +18303,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -18341,29 +18341,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -18379,29 +18379,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -18417,29 +18417,29 @@ scale/17x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -18455,29 +18455,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -18493,29 +18493,29 @@ scale/17x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -18531,29 +18531,29 @@ scale/17x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -18569,29 +18569,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -18607,29 +18607,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -18645,29 +18645,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -18683,21 +18683,21 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -18718,29 +18718,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -18756,29 +18756,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -18794,29 +18794,29 @@ scale/17x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -18832,21 +18832,21 @@ scale/17x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -18867,21 +18867,21 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -18902,21 +18902,21 @@ scale/17x/schedule/saturday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -18937,21 +18937,21 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -18972,21 +18972,21 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -19008,10 +19008,10 @@ scale/17x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -19056,8 +19056,8 @@ scale/17x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -19101,29 +19101,29 @@ scale/17x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-09',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -19144,124 +19144,124 @@ scale/17x/schedule/saturday',
   $handler->handler = 'panel_context';
   $handler->weight = 3;
   $handler->conf = array(
-    'title' => 'Sunday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/17x/schedule/2019-03-10
 scale/17x/schedule/sunday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Sunday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -19279,29 +19279,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -19317,29 +19317,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -19355,29 +19355,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -19393,29 +19393,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -19431,29 +19431,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -19469,29 +19469,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -19507,29 +19507,29 @@ scale/17x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -19545,29 +19545,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -19583,29 +19583,29 @@ scale/17x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -19621,29 +19621,29 @@ scale/17x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -19659,29 +19659,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -19697,29 +19697,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -19735,29 +19735,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -19773,21 +19773,21 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -19808,29 +19808,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -19846,29 +19846,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -19884,29 +19884,29 @@ scale/17x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -19922,21 +19922,21 @@ scale/17x/schedule/sunday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -19957,21 +19957,21 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -19992,21 +19992,21 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -20027,21 +20027,21 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -20062,21 +20062,21 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -20098,10 +20098,10 @@ scale/17x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -20146,8 +20146,8 @@ scale/17x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -20191,29 +20191,29 @@ scale/17x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2019-03-10',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -20234,16 +20234,16 @@ scale/17x/schedule/sunday',
   $handler->handler = 'panel_context';
   $handler->weight = 4;
   $handler->conf = array(
-    'title' => 'Schedule',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
-    'name' => '',
+    'title' => 'Schedule',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -20270,8 +20270,8 @@ scale/17x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -20302,43 +20302,43 @@ scale/17x/schedule/sunday',
     'logic' => 'and',
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
             1 => 2,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
- 
-  $page = new stdClass();
-  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
-  $page->api_version = 1;
-  $page->name = 'schedule_19x';
-  $page->task = 'page';
-  $page->admin_title = 'Schedule 19x';
-  $page->admin_description = '';
-  $page->path = 'scale/19x/schedule/!date';
-  $page->access = array(
-    'logic' => 'and',
-    'plugins' => array(
-      0 => array(
-        'name' => 'role',
-        'settings' => array(
-          'rids' => array(
-            0 => 1,
-            1 => 2,
-          ),
-        ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
-      ),
+  $page->menu = array(
+    'name' => 'menu-18x-main',
+    'parent' => array(
+      'name' => 'navigation',
+      'title' => '',
+      'type' => 'normal',
+      'weight' => '0',
     ),
-  ); 
+    'title' => 'Schedule',
+    'type' => 'normal',
+    'weight' => '-1',
+  );
+  $page->arguments = array(
+    'date' => array(
+      'argument' => '',
+      'id' => '',
+      'identifier' => '',
+      'settings' => array(),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $pages['schedule_18x'] = $page;
 
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
@@ -20352,36 +20352,35 @@ scale/17x/schedule/sunday',
     'logic' => 'and',
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 1,
             1 => 2,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
-  ); 
-  
+  );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'date' => array(
+      'argument' => '',
       'id' => '',
       'identifier' => '',
-      'argument' => '',
       'settings' => array(),
     ),
   );
@@ -20394,128 +20393,128 @@ scale/17x/schedule/sunday',
   $handler->api_version = 1;
   $handler->name = 'page_schedule_18x__panel_context_a2a775cc-518c-4d2c-9a9b-9deaf20b79b8';
   $handler->task = 'page';
-  $handler->subtask = 'schedule_18x';
+  $handler->subtask = 'schedule_20x';
   $handler->handler = 'panel_context';
   $handler->weight = 0;
   $handler->conf = array(
-    'title' => 'Thursday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/18x/schedule/2020-03-05
 scale/18x/schedule/thursday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Thursday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -20533,29 +20532,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -20571,29 +20570,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -20609,29 +20608,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -20647,29 +20646,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -20685,29 +20684,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -20723,29 +20722,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -20761,29 +20760,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -20799,29 +20798,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -20837,29 +20836,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -20875,29 +20874,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -20913,29 +20912,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -20951,29 +20950,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -20989,29 +20988,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -21027,21 +21026,21 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -21062,29 +21061,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -21100,29 +21099,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -21138,29 +21137,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -21176,21 +21175,21 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -21211,21 +21210,21 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -21246,21 +21245,21 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -21281,21 +21280,21 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -21317,10 +21316,10 @@ scale/18x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -21365,8 +21364,8 @@ scale/18x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -21388,8 +21387,8 @@ scale/18x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -21433,29 +21432,29 @@ scale/18x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-05',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -21472,128 +21471,128 @@ scale/18x/schedule/thursday',
   $handler->api_version = 1;
   $handler->name = 'page_schedule_18x__panel_context_d12fae56-8d77-4c4a-a772-719555898b64';
   $handler->task = 'page';
-  $handler->subtask = 'schedule_18x';
+  $handler->subtask = 'schedule_20x';
   $handler->handler = 'panel_context';
   $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Friday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/18x/schedule/2020-03-06
 scale/18x/schedule/friday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Friday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -21611,29 +21610,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -21649,29 +21648,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -21687,29 +21686,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -21725,29 +21724,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -21763,29 +21762,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -21801,29 +21800,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -21839,29 +21838,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -21877,29 +21876,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -21915,29 +21914,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -21953,29 +21952,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -21991,29 +21990,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -22029,29 +22028,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -22067,29 +22066,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -22105,21 +22104,21 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -22140,29 +22139,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -22178,29 +22177,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -22216,29 +22215,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -22254,21 +22253,21 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -22289,21 +22288,21 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -22324,21 +22323,21 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -22359,21 +22358,21 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -22394,21 +22393,21 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -22430,10 +22429,10 @@ scale/18x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -22478,8 +22477,8 @@ scale/18x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -22501,8 +22500,8 @@ scale/18x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -22546,29 +22545,29 @@ scale/18x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-06',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -22585,128 +22584,128 @@ scale/18x/schedule/friday',
   $handler->api_version = 1;
   $handler->name = 'page_schedule_18x__panel_context_02e3e221-93ad-4cfd-bdb7-57e751b4c1b7';
   $handler->task = 'page';
-  $handler->subtask = 'schedule_18x';
+  $handler->subtask = 'schedule_20x';
   $handler->handler = 'panel_context';
   $handler->weight = 2;
   $handler->conf = array(
-    'title' => 'Saturday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/18x/schedule/2020-03-07
 scale/18x/schedule/saturday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Saturday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -22724,29 +22723,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -22762,29 +22761,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -22800,29 +22799,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -22838,29 +22837,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -22876,29 +22875,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -22914,29 +22913,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -22952,29 +22951,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -22990,29 +22989,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -23028,29 +23027,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -23066,29 +23065,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -23104,29 +23103,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -23142,29 +23141,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -23180,29 +23179,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -23218,21 +23217,21 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -23253,29 +23252,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -23291,29 +23290,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -23329,29 +23328,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -23367,21 +23366,21 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -23402,21 +23401,21 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -23437,21 +23436,21 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -23472,21 +23471,21 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -23507,21 +23506,21 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -23543,10 +23542,10 @@ scale/18x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -23591,8 +23590,8 @@ scale/18x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -23614,8 +23613,8 @@ scale/18x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -23659,29 +23658,29 @@ scale/18x/schedule/saturday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-07',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -23698,128 +23697,128 @@ scale/18x/schedule/saturday',
   $handler->api_version = 1;
   $handler->name = 'page_schedule_18x__panel_context_f8c270db-1541-49bf-a759-b0b1565bb85e';
   $handler->task = 'page';
-  $handler->subtask = 'schedule_18x';
+  $handler->subtask = 'schedule_20x';
   $handler->handler = 'panel_context';
   $handler->weight = 3;
   $handler->conf = array(
-    'title' => 'Sunday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/18x/schedule/2020-03-8
 scale/18x/schedule/sunday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Sunday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -23837,29 +23836,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1592',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -23875,29 +23874,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1593',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -23913,29 +23912,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1594',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -23951,29 +23950,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1595',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -23989,29 +23988,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1596',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -24027,29 +24026,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1597',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -24065,29 +24064,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1599',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -24103,29 +24102,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1598',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -24141,29 +24140,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1610',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -24179,29 +24178,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1611',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -24217,29 +24216,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1600',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -24255,29 +24254,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1601',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -24293,29 +24292,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1602',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -24331,21 +24330,21 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/2256',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24366,29 +24365,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1603',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -24404,29 +24403,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1604',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -24442,29 +24441,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1605',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 16;
@@ -24480,21 +24479,21 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1606',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24515,21 +24514,21 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1607',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24550,21 +24549,21 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1608',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24585,21 +24584,21 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1609',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24620,21 +24619,21 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08/1632',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24656,10 +24655,10 @@ scale/18x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24704,8 +24703,8 @@ scale/18x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24750,8 +24749,8 @@ scale/18x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24772,29 +24771,29 @@ scale/18x/schedule/sunday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2020-03-08',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
-    'override_title_text' => 'Time',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -24811,20 +24810,20 @@ scale/18x/schedule/sunday',
   $handler->api_version = 1;
   $handler->name = 'page_schedule_18x__panel_context_3bb4cc0f-c95b-44b5-9943-1583fe103b76';
   $handler->task = 'page';
-  $handler->subtask = 'schedule_18x';
+  $handler->subtask = 'schedule_20x';
   $handler->handler = 'panel_context';
   $handler->weight = 4;
   $handler->conf = array(
-    'title' => 'Schedule',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'name' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
-    'name' => '',
+    'title' => 'Schedule',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -24851,8 +24850,8 @@ scale/18x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24874,8 +24873,8 @@ scale/18x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'override_title' => 1,
-    'override_title_text' => 'More >>',
     'override_title_heading' => 'h2',
+    'override_title_text' => 'More >>',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -24892,7 +24891,7 @@ scale/18x/schedule/sunday',
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
-  $pages['schedule_18x'] = $page;
+  $pages['schedule_20x'] = $page;
 
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
@@ -24907,22 +24906,22 @@ scale/18x/schedule/sunday',
     'plugins' => array(),
   );
   $page->menu = array(
-    'type' => 'none',
-    'title' => '',
     'name' => 'navigation',
-    'weight' => '0',
     'parent' => array(
-      'type' => 'none',
-      'title' => '',
       'name' => 'navigation',
+      'title' => '',
+      'type' => 'none',
       'weight' => '0',
     ),
+    'title' => '',
+    'type' => 'none',
+    'weight' => '0',
   );
   $page->arguments = array(
     'date' => array(
+      'argument' => '',
       'id' => '',
       'identifier' => '',
-      'argument' => '',
       'settings' => array(),
     ),
   );
@@ -24939,123 +24938,123 @@ scale/18x/schedule/sunday',
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Thursday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/13x/schedule/2015-02-19
 scale/13x/schedule/thursday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Thursday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -25073,28 +25072,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/454',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'La Jolla',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -25110,28 +25109,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/442',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Carmel',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -25147,28 +25146,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/455',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -25184,28 +25183,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/457',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -25221,28 +25220,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/458',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -25258,28 +25257,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/448',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century AB',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -25295,28 +25294,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/451',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century CD',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -25332,28 +25331,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/459',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Marina',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -25369,28 +25368,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/441',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Bel Air',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -25406,28 +25405,28 @@ scale/13x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/462',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -25443,28 +25442,28 @@ scale/13x/schedule/thursday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/463',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -25480,28 +25479,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/464',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -25517,28 +25516,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/465',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -25554,28 +25553,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/466',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -25591,28 +25590,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/467',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo E',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -25628,28 +25627,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/468',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo F',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -25665,20 +25664,20 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/1207',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Plaza BC',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -25699,20 +25698,20 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19/1208',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Plaza D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -25734,10 +25733,10 @@ scale/13x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -25826,28 +25825,28 @@ scale/13x/schedule/thursday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-19',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -25868,123 +25867,123 @@ scale/13x/schedule/thursday',
   $handler->handler = 'panel_context';
   $handler->weight = -29;
   $handler->conf = array(
-    'title' => 'Friday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x friday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/13x/schedule/2015-02-20
 scale/13x/schedule/friday',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x friday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Friday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -26002,28 +26001,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/454',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'La Jolla',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -26039,28 +26038,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/442',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Carmel',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -26076,28 +26075,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/455',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -26113,28 +26112,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/457',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -26150,28 +26149,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/458',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -26187,28 +26186,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/448',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century AB',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -26224,28 +26223,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/451',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century CD',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -26261,28 +26260,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/459',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Marina',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -26298,28 +26297,28 @@ scale/13x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/441',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Bel Air',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -26335,28 +26334,28 @@ scale/13x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/462',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -26372,28 +26371,28 @@ scale/13x/schedule/friday',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/463',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -26409,28 +26408,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/464',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -26446,28 +26445,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/465',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -26483,28 +26482,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/466',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -26520,28 +26519,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/467',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo E',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -26557,28 +26556,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/468',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo F',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -26594,20 +26593,20 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/1207',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Plaza BC',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -26628,20 +26627,20 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/1208',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Plaza D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -26662,28 +26661,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20/453',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Expo',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'expo',
     'css_class' => '',
+    'css_id' => 'expo',
   );
   $pane->extras = array();
   $pane->position = 18;
@@ -26700,10 +26699,10 @@ scale/13x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -26792,28 +26791,28 @@ scale/13x/schedule/friday',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-20',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -26834,123 +26833,123 @@ scale/13x/schedule/friday',
   $handler->handler = 'panel_context';
   $handler->weight = -28;
   $handler->conf = array(
-    'title' => 'Saturday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x saturday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/13x/schedule/saturday
 scale/13x/schedule/2015-02-21',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x saturday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Saturday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -26968,28 +26967,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/454',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'La Jolla',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -27005,28 +27004,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/442',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Carmel',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -27042,28 +27041,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/455',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -27079,28 +27078,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/457',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -27116,28 +27115,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/458',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -27153,28 +27152,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/448',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century AB',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -27190,28 +27189,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/451',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century CD',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -27227,28 +27226,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/459',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Marina',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -27264,28 +27263,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/441',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Bel Air',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -27301,28 +27300,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/462',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -27338,28 +27337,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/463',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -27375,28 +27374,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/464',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -27412,28 +27411,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/465',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -27449,28 +27448,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/466',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -27486,28 +27485,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/467',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo E',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -27523,28 +27522,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/468',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo F',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -27560,20 +27559,20 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/461',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Plaza Ballroom',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -27594,20 +27593,20 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/1207',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Plaza BC',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -27628,20 +27627,20 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/1208',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Plaza D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -27662,28 +27661,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21/453',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Expo',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'expo',
     'css_class' => '',
+    'css_id' => 'expo',
   );
   $pane->extras = array();
   $pane->position = 19;
@@ -27700,10 +27699,10 @@ scale/13x/schedule/2015-02-21',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -27792,28 +27791,28 @@ scale/13x/schedule/2015-02-21',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-21',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -27834,123 +27833,123 @@ scale/13x/schedule/2015-02-21',
   $handler->handler = 'panel_context';
   $handler->weight = -27;
   $handler->conf = array(
-    'title' => 'Sunday',
-    'no_blocks' => 1,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => 'schedule_11x sunday',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'empty',
           'name' => 'path_visibility',
+          'not' => FALSE,
           'settings' => array(
-            'visibility_setting' => '1',
             'paths' => 'scale/13x/schedule/sunday
 scale/13x/schedule/2015-02-22',
+            'visibility_setting' => '1',
           ),
-          'context' => 'empty',
-          'not' => FALSE,
         ),
       ),
     ),
+    'body_classes_to_add' => 'schedule_11x sunday',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Sunday',
   );
   $display = new panels_display();
   $display->layout = 'flexible';
   $display->layout_settings = array(
     'items' => array(
       'canvas' => array(
-        'type' => 'row',
-        'contains' => 'column',
         'children' => array(
           0 => 'main',
         ),
+        'contains' => 'column',
         'parent' => NULL,
+        'type' => 'row',
+      ),
+      'center' => array(
+        'class' => 'region-rooms',
+        'parent' => 'main-row',
+        'title' => 'Rooms',
+        'type' => 'region',
+        'width' => '100',
+        'width_type' => '%',
       ),
       'main' => array(
-        'type' => 'column',
-        'width' => 100,
-        'width_type' => '%',
         'children' => array(
           0 => 2,
           1 => 'main-row',
           2 => 1,
         ),
         'parent' => 'canvas',
+        'type' => 'column',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'main-row' => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'time',
           1 => 'center',
         ),
-        'parent' => 'main',
         'class' => 'row-main',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
-      'center' => array(
+      'notice' => array(
+        'class' => 'schedule-notice',
+        'parent' => '1',
+        'title' => 'Notice',
         'type' => 'region',
-        'title' => 'Rooms',
-        'width' => '100',
+        'width' => 100,
         'width_type' => '%',
-        'parent' => 'main-row',
-        'class' => 'region-rooms',
+      ),
+      'schedule_top' => array(
+        'class' => 'schedule-top',
+        'parent' => '2',
+        'title' => 'Schedule Top',
+        'type' => 'region',
+        'width' => 100,
+        'width_type' => '%',
       ),
       'time' => array(
-        'type' => 'region',
+        'class' => 'region-time',
+        'parent' => 'main-row',
         'title' => 'Time',
+        'type' => 'region',
         'width' => '50',
         'width_type' => 'px',
-        'parent' => 'main-row',
-        'class' => 'region-time',
       ),
       1 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'notice',
         ),
-        'parent' => 'main',
         'class' => 'row-notice',
-      ),
-      'notice' => array(
-        'type' => 'region',
-        'title' => 'Notice',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '1',
-        'class' => 'schedule-notice',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
       2 => array(
-        'type' => 'row',
-        'contains' => 'region',
         'children' => array(
           0 => 'schedule_top',
         ),
-        'parent' => 'main',
         'class' => 'row-schedule-top',
-      ),
-      'schedule_top' => array(
-        'type' => 'region',
-        'title' => 'Schedule Top',
-        'width' => 100,
-        'width_type' => '%',
-        'parent' => '2',
-        'class' => 'schedule-top',
+        'contains' => 'region',
+        'parent' => 'main',
+        'type' => 'row',
       ),
     ),
   );
   $display->panel_settings = array(
     'style_settings' => array(
-      'default' => NULL,
       'center' => NULL,
-      'time' => NULL,
+      'default' => NULL,
       'notice' => NULL,
       'schedule_top' => NULL,
+      'time' => NULL,
     ),
   );
   $display->cache = array();
@@ -27968,28 +27967,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/454',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'La Jolla',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'la-jolla',
     'css_class' => '',
+    'css_id' => 'la-jolla',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -28005,28 +28004,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/442',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Carmel',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'carmel',
     'css_class' => '',
+    'css_id' => 'carmel',
   );
   $pane->extras = array();
   $pane->position = 1;
@@ -28042,28 +28041,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/455',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-a',
     'css_class' => '',
+    'css_id' => 'los-angeles-a',
   );
   $pane->extras = array();
   $pane->position = 2;
@@ -28079,28 +28078,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/457',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-b',
     'css_class' => '',
+    'css_id' => 'los-angeles-b',
   );
   $pane->extras = array();
   $pane->position = 3;
@@ -28116,28 +28115,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/458',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Los Angeles C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'los-angeles-c',
     'css_class' => '',
+    'css_id' => 'los-angeles-c',
   );
   $pane->extras = array();
   $pane->position = 4;
@@ -28153,28 +28152,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/448',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century AB',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-ab',
     'css_class' => '',
+    'css_id' => 'century-ab',
   );
   $pane->extras = array();
   $pane->position = 5;
@@ -28190,28 +28189,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/451',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Century CD',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'century-cd',
     'css_class' => '',
+    'css_id' => 'century-cd',
   );
   $pane->extras = array();
   $pane->position = 6;
@@ -28227,28 +28226,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/459',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Marina',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'marina',
     'css_class' => '',
+    'css_id' => 'marina',
   );
   $pane->extras = array();
   $pane->position = 7;
@@ -28264,28 +28263,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/441',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Bel Air',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'bel-air',
     'css_class' => '',
+    'css_id' => 'bel-air',
   );
   $pane->extras = array();
   $pane->position = 8;
@@ -28301,28 +28300,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/462',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica A',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-a',
     'css_class' => '',
+    'css_id' => 'santa-monica-a',
   );
   $pane->extras = array();
   $pane->position = 9;
@@ -28338,28 +28337,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = FALSE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/463',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Santa Monica B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'santa-monica-b',
     'css_class' => '',
+    'css_id' => 'santa-monica-b',
   );
   $pane->extras = array();
   $pane->position = 10;
@@ -28375,28 +28374,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/464',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo B',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-b',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-b',
   );
   $pane->extras = array();
   $pane->position = 11;
@@ -28412,28 +28411,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/465',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo C',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-c',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-c',
   );
   $pane->extras = array();
   $pane->position = 12;
@@ -28449,28 +28448,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/466',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-d',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-d',
   );
   $pane->extras = array();
   $pane->position = 13;
@@ -28486,28 +28485,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/467',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo E',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-e',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-e',
   );
   $pane->extras = array();
   $pane->position = 14;
@@ -28523,28 +28522,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/468',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'San Lorenzo F',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'san-lorenzo-f',
     'css_class' => '',
+    'css_id' => 'san-lorenzo-f',
   );
   $pane->extras = array();
   $pane->position = 15;
@@ -28560,20 +28559,20 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/1207',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Plaza BC',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -28594,20 +28593,20 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/1208',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Plaza D',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
@@ -28628,28 +28627,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22/453',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Expo',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'expo',
     'css_class' => '',
+    'css_id' => 'expo',
   );
   $pane->extras = array();
   $pane->position = 18;
@@ -28666,10 +28665,10 @@ scale/13x/schedule/2015-02-22',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'title' => '',
     'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
+    'title' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -28758,28 +28757,28 @@ scale/13x/schedule/2015-02-22',
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'override_pager_settings' => 0,
-    'use_pager' => 0,
-    'nodes_per_page' => '0',
-    'pager_id' => '0',
-    'offset' => '0',
-    'more_link' => 0,
-    'feed_icons' => 0,
-    'panel_args' => 0,
-    'link_to_view' => 0,
     'args' => '2015-02-22',
-    'url' => '',
     'display' => 'page_3',
+    'feed_icons' => 0,
+    'link_to_view' => 0,
+    'more_link' => 0,
+    'nodes_per_page' => '0',
+    'offset' => '0',
+    'override_pager_settings' => 0,
     'override_title' => 1,
     'override_title_text' => 'Time',
+    'pager_id' => '0',
+    'panel_args' => 0,
+    'url' => '',
+    'use_pager' => 0,
   );
   $pane->cache = array();
   $pane->style = array(
     'settings' => NULL,
   );
   $pane->css = array(
-    'css_id' => 'time',
     'css_class' => '',
+    'css_id' => 'time',
   );
   $pane->extras = array();
   $pane->position = 0;
@@ -28800,15 +28799,15 @@ scale/13x/schedule/2015-02-22',
   $handler->handler = 'panel_context';
   $handler->weight = -26;
   $handler->conf = array(
-    'title' => 'Schedule',
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
+    'title' => 'Schedule',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
