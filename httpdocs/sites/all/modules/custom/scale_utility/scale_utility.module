@@ -43,6 +43,8 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
       }
       // Remove options from Presentation Topic list but keep terms in database.
       $remove_topic_terms = array(
+        1197, // Container and Orchestrators
+        2268, // LibreGraphics
         1205, // Ada Initiative.
         1213, // Apache Bigtop.
         1996, //Badge Hacking.
