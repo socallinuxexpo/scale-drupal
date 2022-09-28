@@ -30,7 +30,7 @@ function scale20x_preprocess_page(&$variables) {
   if ($variables['main_menu']) {
     // Build links
     // $variables['primary_nav'] = menu_tree(variable_get('menu_main_links_source', 'main-menu'));
-    $variables['primary_nav'] = menu_tree('menu-19x-main');
+    $variables['primary_nav'] = menu_tree('menu-20x-main');
     // Provide default theme wrapper function.
     $variables['primary_nav']['#theme_wrappers'] = array('menu_tree__primary');
   }
