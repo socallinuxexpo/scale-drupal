@@ -853,7 +853,7 @@ function node_reference_potential_references($field, $options = array()) {
     'string' => '',
     'match' => 'contains',
     'ids' => array(),
-    'limit' => 25,
+    'limit' => false,
   );
 
   $results = &drupal_static(__FUNCTION__, array());
