@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_basic_page.features.field_instance.inc
@@ -134,7 +135,7 @@ function scale_basic_page_field_default_field_instances() {
     'bundle' => 'page',
     'default_value' => array(
       0 => array(
-        'tid' => 1963,
+        'tid' => 2990,
       ),
     ),
     'deleted' => 0,
@@ -163,9 +164,7 @@ function scale_basic_page_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 1,
     ),
