@@ -39,6 +39,7 @@ features[page_manager_pages][] = schedule_17x
 features[page_manager_pages][] = schedule_18x
 features[page_manager_pages][] = schedule_19x_working
 features[page_manager_pages][] = schedule_20x
+features[page_manager_pages][] = schedule_21x
 features[page_manager_pages][] = schedule_multiyear
 features[views_view][] = room_schedule
 features[views_view][] = room_schedule_legend
