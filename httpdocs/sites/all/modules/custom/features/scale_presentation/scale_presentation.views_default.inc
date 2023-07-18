@@ -844,7 +844,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
-    2990 => '2990',
+    3311 => '3311',
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['operator_id'] = 'field_scale_event_tid_op';
@@ -2987,7 +2987,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
-    2990 => '2990',
+    3311 => '3311',
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_scale_event_tid']['exposed'] = TRUE;
