@@ -172,7 +172,7 @@ function scale_special_event_field_default_field_instances() {
     'bundle' => 'special_event',
     'default_value' => array(
       0 => array(
-        'tid' => 2990,
+        'tid' => 3311,
       ),
     ),
     'deleted' => 0,
