@@ -135,7 +135,7 @@ function scale_basic_page_field_default_field_instances() {
     'bundle' => 'page',
     'default_value' => array(
       0 => array(
-        'tid' => 2990,
+        'tid' => 3311,
       ),
     ),
     'deleted' => 0,
