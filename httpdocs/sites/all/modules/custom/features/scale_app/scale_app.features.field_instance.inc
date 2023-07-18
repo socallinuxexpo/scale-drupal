@@ -112,7 +112,7 @@ function scale_app_field_default_field_instances() {
     'bundle' => 'announcement',
     'default_value' => array(
       0 => array(
-        'tid' => 2990,
+        'tid' => 3311,
       ),
     ),
     'deleted' => 0,
