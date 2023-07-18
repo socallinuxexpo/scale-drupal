@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_app.features.inc
