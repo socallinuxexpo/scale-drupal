@@ -2793,6 +2793,149 @@ function scale_presentation_views_default_views() {
 
   /* Display: Not Accepted */
   $handler = $view->new_display('panel_pane', 'Not Accepted', 'panel_pane_2');
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: photos */
+  $handler->display->display_options['fields']['view']['id'] = 'view';
+  $handler->display->display_options['fields']['view']['table'] = 'views';
+  $handler->display->display_options['fields']['view']['field'] = 'view';
+  $handler->display->display_options['fields']['view']['ui_name'] = 'photos';
+  $handler->display->display_options['fields']['view']['label'] = '';
+  $handler->display->display_options['fields']['view']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view']['view'] = 'presentation_page';
+  $handler->display->display_options['fields']['view']['display'] = 'block_1';
+  $handler->display->display_options['fields']['view']['arguments'] = '[%nid]';
+  /* Field: User: Photo */
+  $handler->display->display_options['fields']['field_speaker_photo']['id'] = 'field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['table'] = 'field_data_field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['field'] = 'field_speaker_photo';
+  $handler->display->display_options['fields']['field_speaker_photo']['relationship'] = 'field_speaker_uid';
+  $handler->display->display_options['fields']['field_speaker_photo']['label'] = '';
+  $handler->display->display_options['fields']['field_speaker_photo']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_speaker_photo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speaker_photo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_speaker_photo']['settings'] = array(
+    'image_style' => 'square_thumbnail',
+    'image_link' => '',
+  );
+  /* Field: Content: Speakers */
+  $handler->display->display_options['fields']['field_speaker']['id'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
+  $handler->display->display_options['fields']['field_speaker']['label'] = '';
+  $handler->display->display_options['fields']['field_speaker']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_speaker']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_speaker']['alter']['path'] = 'scale/!1/speakers/[field_speaker]';
+  $handler->display->display_options['fields']['field_speaker']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['field_speaker']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['field_speaker']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_speaker']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: Realname: Real name */
+  $handler->display->display_options['fields']['realname']['id'] = 'realname';
+  $handler->display->display_options['fields']['realname']['table'] = 'realname';
+  $handler->display->display_options['fields']['realname']['field'] = 'realname';
+  $handler->display->display_options['fields']['realname']['relationship'] = 'field_speaker_uid';
+  $handler->display->display_options['fields']['realname']['label'] = '';
+  $handler->display->display_options['fields']['realname']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['realname']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_speaker]';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'scale/!1/speakers/[field_speaker]';
+  $handler->display->display_options['fields']['nothing']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Content: Audience */
+  $handler->display->display_options['fields']['field_audience']['id'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['table'] = 'field_data_field_audience';
+  $handler->display->display_options['fields']['field_audience']['field'] = 'field_audience';
+  $handler->display->display_options['fields']['field_audience']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_audience']['alter']['path'] = '/scale/!1/audience-level/[field_audience]';
+  $handler->display->display_options['fields']['field_audience']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['field_audience']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['field_audience']['element_class'] = 'terms';
+  $handler->display->display_options['fields']['field_audience']['element_label_class'] = 'terms';
+  $handler->display->display_options['fields']['field_audience']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_audience']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Topic */
+  $handler->display->display_options['fields']['field_topic']['id'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['table'] = 'field_data_field_topic';
+  $handler->display->display_options['fields']['field_topic']['field'] = 'field_topic';
+  $handler->display->display_options['fields']['field_topic']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_topic']['alter']['path'] = '/scale/!1/track/[field_topic]';
+  $handler->display->display_options['fields']['field_topic']['alter']['replace_spaces'] = TRUE;
+  $handler->display->display_options['fields']['field_topic']['alter']['path_case'] = 'lower';
+  $handler->display->display_options['fields']['field_topic']['element_class'] = 'terms';
+  $handler->display->display_options['fields']['field_topic']['element_label_class'] = 'terms';
+  $handler->display->display_options['fields']['field_topic']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_topic']['type'] = 'taxonomy_term_reference_plain';
+  /* Field: Content: Long abstract */
+  $handler->display->display_options['fields']['field_long_abstract']['id'] = 'field_long_abstract';
+  $handler->display->display_options['fields']['field_long_abstract']['table'] = 'field_data_field_long_abstract';
+  $handler->display->display_options['fields']['field_long_abstract']['field'] = 'field_long_abstract';
+  $handler->display->display_options['fields']['field_long_abstract']['label'] = '';
+  $handler->display->display_options['fields']['field_long_abstract']['element_label_colon'] = FALSE;
+  /* Field: Content: Presentation */
+  $handler->display->display_options['fields']['field_presentation_to_upload']['id'] = 'field_presentation_to_upload';
+  $handler->display->display_options['fields']['field_presentation_to_upload']['table'] = 'field_data_field_presentation_to_upload';
+  $handler->display->display_options['fields']['field_presentation_to_upload']['field'] = 'field_presentation_to_upload';
+  $handler->display->display_options['fields']['field_presentation_to_upload']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_presentation_to_upload']['click_sort_column'] = 'fid';
+  /* Field: Content: Presentation Link */
+  $handler->display->display_options['fields']['field_presentation_link']['id'] = 'field_presentation_link';
+  $handler->display->display_options['fields']['field_presentation_link']['table'] = 'field_data_field_presentation_link';
+  $handler->display->display_options['fields']['field_presentation_link']['field'] = 'field_presentation_link';
+  $handler->display->display_options['fields']['field_presentation_link']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_presentation_link']['click_sort_column'] = 'url';
+  /* Field: Content: Room */
+  $handler->display->display_options['fields']['field_room']['id'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['table'] = 'field_data_field_room';
+  $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
+  $handler->display->display_options['fields']['field_room']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_room']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_room']['delta_offset'] = '0';
+  /* Field: Content: Time */
+  $handler->display->display_options['fields']['field_time']['id'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['table'] = 'field_data_field_time';
+  $handler->display->display_options['fields']['field_time']['field'] = 'field_time';
+  $handler->display->display_options['fields']['field_time']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_time']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Audio/Video */
+  $handler->display->display_options['fields']['field_audio_video']['id'] = 'field_audio_video';
+  $handler->display->display_options['fields']['field_audio_video']['table'] = 'field_data_field_audio_video';
+  $handler->display->display_options['fields']['field_audio_video']['field'] = 'field_audio_video';
+  $handler->display->display_options['fields']['field_audio_video']['hide_empty'] = TRUE;
+  /* Field: Content: Overflow room */
+  $handler->display->display_options['fields']['field_overflow_room']['id'] = 'field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['table'] = 'field_data_field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['field'] = 'field_overflow_room';
+  $handler->display->display_options['fields']['field_overflow_room']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_overflow_room']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_overflow_room']['delta_offset'] = '0';
+  /* Field: Content: Message to the reviewers */
+  $handler->display->display_options['fields']['field_message_to_reviewers']['id'] = 'field_message_to_reviewers';
+  $handler->display->display_options['fields']['field_message_to_reviewers']['table'] = 'field_data_field_message_to_reviewers';
+  $handler->display->display_options['fields']['field_message_to_reviewers']['field'] = 'field_message_to_reviewers';
+  /* Field: Content: Short abstract */
+  $handler->display->display_options['fields']['field_short_abstract']['id'] = 'field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['table'] = 'field_data_field_short_abstract';
+  $handler->display->display_options['fields']['field_short_abstract']['field'] = 'field_short_abstract';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Type */
