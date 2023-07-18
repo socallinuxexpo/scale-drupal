@@ -300,7 +300,7 @@ function scale_sponsor_field_default_field_instances() {
     'bundle' => 'sponsor',
     'default_value' => array(
       0 => array(
-        'tid' => 2990,
+        'tid' => 3311,
       ),
     ),
     'deleted' => 0,
