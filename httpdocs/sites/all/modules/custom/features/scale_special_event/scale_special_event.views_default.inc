@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_special_event.views_default.inc
@@ -88,7 +89,7 @@ function scale_special_event_views_default_views() {
     'scale_event' => 'scale_event',
   );
   $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['type'] = 'convert';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
