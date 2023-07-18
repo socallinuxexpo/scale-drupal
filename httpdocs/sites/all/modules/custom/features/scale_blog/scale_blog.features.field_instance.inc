@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_blog.features.field_instance.inc
@@ -174,7 +175,11 @@ function scale_blog_field_default_field_instances() {
   // Exported field_instance: 'node-blog-field_scale_event'.
   $field_instances['node-blog-field_scale_event'] = array(
     'bundle' => 'blog',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 3311,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -201,9 +206,7 @@ function scale_blog_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 1,
     ),

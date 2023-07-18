@@ -132,7 +132,7 @@ function scale_presentation_views_default_views() {
     'scale_event' => 'scale_event',
   );
   $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['type'] = 'convert';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -399,7 +399,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'presentation' => 'presentation',
   );
-  /* Filter criterion: Content: Sticky */
+  /* Filter criterion: Content: Sticky status */
   $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['table'] = 'node';
   $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
@@ -432,7 +432,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'presentation' => 'presentation',
   );
-  /* Filter criterion: Content: Sticky */
+  /* Filter criterion: Content: Sticky status */
   $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['table'] = 'node';
   $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
@@ -541,7 +541,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'presentation' => 'presentation',
   );
-  /* Filter criterion: Content: Sticky */
+  /* Filter criterion: Content: Sticky status */
   $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['table'] = 'node';
   $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
@@ -639,7 +639,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -653,7 +653,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'featured_speakers' => 'featured_speakers',
   );
-  /* Filter criterion: Content: Sticky */
+  /* Filter criterion: Content: Sticky status */
   $handler->display->display_options['filters']['sticky']['id'] = 'sticky';
   $handler->display->display_options['filters']['sticky']['table'] = 'node';
   $handler->display->display_options['filters']['sticky']['field'] = 'sticky';
@@ -844,13 +844,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
-    2283 => '2283',
-    1967 => '1967',
-    1644 => '1644',
-    1241 => '1241',
-    885 => '885',
-    504 => '504',
-    503 => '503',
+    2990 => '2990',
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['operator_id'] = 'field_scale_event_tid_op';
@@ -860,17 +854,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    5 => 0,
-    4 => 0,
-    9 => 0,
-    10 => 0,
-    8 => 0,
-    6 => 0,
-    12 => 0,
-    11 => 0,
-    7 => 0,
-    3 => 0,
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
@@ -976,7 +959,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_presentation_link']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_presentation_link']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_presentation_link']['type'] = 'link_plain';
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Content: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
@@ -1007,7 +990,7 @@ function scale_presentation_views_default_views() {
     1 => 'AND',
     2 => 'OR',
   );
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1550,7 +1533,7 @@ function scale_presentation_views_default_views() {
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1704,7 +1687,7 @@ function scale_presentation_views_default_views() {
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1829,7 +1812,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['sorts']['field_room_tid']['id'] = 'field_room_tid';
   $handler->display->display_options['sorts']['field_room_tid']['table'] = 'field_data_field_room';
   $handler->display->display_options['sorts']['field_room_tid']['field'] = 'field_room_tid';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -1935,7 +1918,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -2113,7 +2096,7 @@ function scale_presentation_views_default_views() {
     'scale_event' => 'scale_event',
   );
   $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['type'] = 'convert';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -2217,7 +2200,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_room']['field'] = 'field_room';
   $handler->display->display_options['fields']['field_room']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_room']['delta_offset'] = '0';
-  /* Field: Content: Published */
+  /* Field: Content: Published status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
   $handler->display->display_options['fields']['status']['field'] = 'status';
@@ -2263,7 +2246,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Content: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
@@ -2280,7 +2263,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Content: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
@@ -2348,7 +2331,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_short_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_short_abstract']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Content: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
@@ -2360,7 +2343,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -2494,7 +2477,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_short_abstract']['label'] = '';
   $handler->display->display_options['fields']['field_short_abstract']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Content: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
@@ -2525,7 +2508,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['type'] = 'convert';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -2749,7 +2732,7 @@ function scale_presentation_views_default_views() {
     'presentation' => 'presentation',
   );
   $handler->display->display_options['arguments']['nid']['validate_options']['access'] = TRUE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -2768,7 +2751,7 @@ function scale_presentation_views_default_views() {
   $handler = $view->new_display('panel_pane', 'Accepted', 'panel_pane_1');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -2958,6 +2941,10 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['field_speaker']['table'] = 'field_data_field_speaker';
   $handler->display->display_options['fields']['field_speaker']['field'] = 'field_speaker';
   $handler->display->display_options['fields']['field_speaker']['delta_offset'] = '0';
+  /* Field: Content: Status */
+  $handler->display->display_options['fields']['field_presentation_status']['id'] = 'field_presentation_status';
+  $handler->display->display_options['fields']['field_presentation_status']['table'] = 'field_data_field_presentation_status';
+  $handler->display->display_options['fields']['field_presentation_status']['field'] = 'field_presentation_status';
   /* Field: Vote results: Value */
   $handler->display->display_options['fields']['value']['id'] = 'value';
   $handler->display->display_options['fields']['value']['table'] = 'votingapi_cache';
@@ -3000,13 +2987,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
-    2283 => '2283',
-    1967 => '1967',
-    1644 => '1644',
-    1241 => '1241',
-    885 => '885',
-    504 => '504',
-    503 => '503',
+    2990 => '2990',
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_scale_event_tid']['exposed'] = TRUE;
@@ -3017,17 +2998,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    5 => 0,
-    4 => 0,
-    9 => 0,
-    10 => 0,
-    8 => 0,
-    6 => 0,
-    12 => 0,
-    11 => 0,
-    7 => 0,
-    3 => 0,
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
@@ -3108,26 +3078,35 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    8 => '8',
+    2991 => '2991',
+    500 => '500',
+    2791 => '2791',
+    2807 => '2807',
     1197 => '1197',
     9 => '9',
     10 => '10',
     1201 => '1201',
     12 => '12',
     2255 => '2255',
+    2992 => '2992',
+    13 => '13',
+    2994 => '2994',
     14 => '14',
+    2993 => '2993',
     2268 => '2268',
-    15 => '15',
     16 => '16',
     506 => '506',
     2246 => '2246',
     1645 => '1645',
-    1646 => '1646',
-    1210 => '1210',
+    2521 => '2521',
+    2808 => '2808',
     18 => '18',
+    19 => '19',
     1422 => '1422',
-    21 => '21',
+    20 => '20',
+    2809 => '2809',
     23 => '23',
+    24 => '24',
   );
   $handler->display->display_options['filters']['field_topic_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
@@ -3138,17 +3117,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_topic_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    5 => 0,
-    4 => 0,
-    9 => 0,
-    10 => 0,
-    8 => 0,
-    6 => 0,
-    12 => 0,
-    11 => 0,
-    7 => 0,
-    3 => 0,
   );
   $handler->display->display_options['filters']['field_topic_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_topic_tid']['reduce_duplicates'] = TRUE;
@@ -3228,7 +3196,7 @@ function scale_presentation_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Relationship: Content: Author */
+  /* Relationship: Content: Content author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -3249,7 +3217,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['realname']['field'] = 'realname';
   $handler->display->display_options['fields']['realname']['relationship'] = 'uid';
   $handler->display->display_options['fields']['realname']['label'] = 'Node author';
-  /* Field: Content: Published */
+  /* Field: Content: Published status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
   $handler->display->display_options['fields']['status']['field'] = 'status';
@@ -3338,7 +3306,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['fields']['realname']['field'] = 'realname';
   $handler->display->display_options['fields']['realname']['relationship'] = 'uid';
   $handler->display->display_options['fields']['realname']['label'] = 'Node author';
-  /* Field: Content: Published */
+  /* Field: Content: Published status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
   $handler->display->display_options['fields']['status']['field'] = 'status';
@@ -3415,7 +3383,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_presentation_status_value']['value'] = array(
     20 => '20',
   );
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -3490,7 +3458,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['arguments']['field_speaker_uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_speaker_uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_speaker_uid']['validate']['type'] = 'user';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -3509,7 +3477,7 @@ function scale_presentation_views_default_views() {
   $handler = $view->new_display('panel_pane', 'multi-year', 'panel_pane_3');
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -3764,13 +3732,7 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['table'] = 'field_data_field_scale_event';
   $handler->display->display_options['filters']['field_scale_event_tid']['field'] = 'field_scale_event_tid';
   $handler->display->display_options['filters']['field_scale_event_tid']['value'] = array(
-    2283 => '2283',
-    1967 => '1967',
-    1644 => '1644',
-    1241 => '1241',
-    885 => '885',
-    504 => '504',
-    503 => '503',
+    2990 => '2990',
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_scale_event_tid']['exposed'] = TRUE;
@@ -3781,17 +3743,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_scale_event_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    5 => 0,
-    4 => 0,
-    9 => 0,
-    10 => 0,
-    8 => 0,
-    6 => 0,
-    12 => 0,
-    11 => 0,
-    7 => 0,
-    3 => 0,
   );
   $handler->display->display_options['filters']['field_scale_event_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_scale_event_tid']['vocabulary'] = 'scale_event';
@@ -3872,26 +3823,34 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['table'] = 'field_data_field_topic';
   $handler->display->display_options['filters']['field_topic_tid']['field'] = 'field_topic_tid';
   $handler->display->display_options['filters']['field_topic_tid']['value'] = array(
-    8 => '8',
+    2991 => '2991',
+    500 => '500',
+    2791 => '2791',
+    2807 => '2807',
     1197 => '1197',
     9 => '9',
     10 => '10',
     1201 => '1201',
     12 => '12',
     2255 => '2255',
+    2992 => '2992',
+    2994 => '2994',
     14 => '14',
+    2993 => '2993',
     2268 => '2268',
-    15 => '15',
     16 => '16',
     506 => '506',
     2246 => '2246',
     1645 => '1645',
+    2521 => '2521',
+    2808 => '2808',
     1646 => '1646',
-    1210 => '1210',
     18 => '18',
+    19 => '19',
     1422 => '1422',
+    20 => '20',
     21 => '21',
-    23 => '23',
+    2809 => '2809',
   );
   $handler->display->display_options['filters']['field_topic_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_topic_tid']['exposed'] = TRUE;
@@ -3902,17 +3861,6 @@ function scale_presentation_views_default_views() {
   $handler->display->display_options['filters']['field_topic_tid']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_topic_tid']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    5 => 0,
-    4 => 0,
-    9 => 0,
-    10 => 0,
-    8 => 0,
-    6 => 0,
-    12 => 0,
-    11 => 0,
-    7 => 0,
-    3 => 0,
   );
   $handler->display->display_options['filters']['field_topic_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_topic_tid']['reduce_duplicates'] = TRUE;

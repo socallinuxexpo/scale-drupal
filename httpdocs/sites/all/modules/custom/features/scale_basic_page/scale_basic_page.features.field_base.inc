@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_basic_page.features.field_base.inc

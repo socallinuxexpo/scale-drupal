@@ -312,7 +312,9 @@ function scale_presentation_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 8,
       ),
@@ -337,6 +339,7 @@ function scale_presentation_field_default_field_instances() {
         'target' => '_blank',
         'title' => '',
       ),
+      'convert_aliases' => 0,
       'display' => array(
         'url_cutoff' => 80,
       ),
@@ -590,7 +593,7 @@ function scale_presentation_field_default_field_instances() {
     'bundle' => 'presentation',
     'default_value' => array(
       0 => array(
-        'tid' => 2283,
+        'tid' => 3311,
       ),
     ),
     'deleted' => 0,
@@ -619,9 +622,7 @@ function scale_presentation_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 1,
     ),
@@ -747,6 +748,7 @@ function scale_presentation_field_default_field_instances() {
       'settings' => array(
         'autocomplete_match' => 'contains',
         'autocomplete_path' => 'user_reference/autocomplete',
+        'limit' => 10,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         'size' => 60,
       ),
@@ -765,6 +767,7 @@ function scale_presentation_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',

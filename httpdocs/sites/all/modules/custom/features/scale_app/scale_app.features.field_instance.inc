@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_app.features.field_instance.inc
@@ -111,7 +112,7 @@ function scale_app_field_default_field_instances() {
     'bundle' => 'announcement',
     'default_value' => array(
       0 => array(
-        'tid' => 1967,
+        'tid' => 3311,
       ),
     ),
     'deleted' => 0,
@@ -141,9 +142,7 @@ function scale_app_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 1,
     ),

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_blog.features.field_base.inc

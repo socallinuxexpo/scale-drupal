@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_special_event.features.inc

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_special_event.features.field_instance.inc
@@ -169,7 +170,11 @@ function scale_special_event_field_default_field_instances() {
   // Exported field_instance: 'node-special_event-field_scale_event'.
   $field_instances['node-special_event-field_scale_event'] = array(
     'bundle' => 'special_event',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'tid' => 3311,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -196,9 +201,7 @@ function scale_special_event_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-      ),
+      'settings' => array(),
       'type' => 'options_select',
       'weight' => 1,
     ),
@@ -277,11 +280,15 @@ function scale_special_event_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'node_reference',
       'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'node_reference/autocomplete',
+        'limit' => 10,
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        'size' => 60,
       ),
-      'type' => 'options_select',
+      'type' => 'node_reference_autocomplete',
       'weight' => 6,
     ),
   );
@@ -296,11 +303,13 @@ function scale_special_event_field_default_field_instances() {
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'long',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
+          'show_remaining_days' => FALSE,
         ),
         'type' => 'date_default',
         'weight' => 3,

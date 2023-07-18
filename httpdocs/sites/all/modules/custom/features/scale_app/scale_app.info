@@ -28,6 +28,7 @@ features[variable][] = menu_parent_announcement
 features[variable][] = node_options_announcement
 features[variable][] = node_preview_announcement
 features[variable][] = node_submitted_announcement
+features[variable][] = pathauto_node_announcement_pattern
 features[views_view][] = announcements
 features[views_view][] = app_speaker
 features_exclude[dependencies][ctools] = ctools
