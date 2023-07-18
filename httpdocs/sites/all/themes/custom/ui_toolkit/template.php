@@ -3,7 +3,7 @@
 /*
  * UI Toolkit Base Theme
  *
- * Provided functions 
+ * Provided functions
  *
  * - ui_toolkit_nav($menuname)
  *     Renders a Drupal menu using a structure that Bootstrap can work with. Use
@@ -17,12 +17,12 @@
  *       'path': Path the button should link to.
  *
  *       'style': Button style.
- *       Available styles: 'standard' (default), 'primary', 'info', 'success', 
+ *       Available styles: 'standard' (default), 'primary', 'info', 'success',
  *       'warning', 'danger', 'inverse'.
  *       See http://twitter.github.com/bootstrap/base-css.html#buttons
  *
  *       'icon': Icon to show in the button near the title.
- *       For available icons, see 
+ *       For available icons, see
  *       http://twitter.github.com/bootstrap/base-css.html#icons
  *
  * - theme('ui_toolkit_modal', $variables)
@@ -38,14 +38,14 @@
  *     Renders carousel with the images provided.
  *     $variables is an array with the following keys:
  *       'style': The image style to use to display the images. If not defined,
- *        the original image will be used. 
+ *        the original image will be used.
  *
  *       'images': An array containing the images. The array elements can either
  *        be strings containing the url to the image, or an array contain the
  *        following keys:
  *          'file': The url to the image.
  *          'title': The text to use as image caption.
- *        
+ *
  *     The image url should contain the stream wrapper. E.g.
  *     $variables['images'] = array(
  *       array('file' => 'public://slideshow/test1.jpg', 'title' => 'Test title'),
@@ -57,7 +57,7 @@
  *     $variables['images'] = array(
  *       'public://slideshow/test1.jpg',
  *       'public://slideshow/test2.jpg',
- *     );   
+ *     );
  *
  */
 
@@ -75,7 +75,7 @@ function ui_toolkit_preprocess_page(&$vars) {
   }
   if (empty($vars['page']['right'])) {
     $vars['content_span'] += 2;
-  } 
+  }
 
   drupal_add_js("jQuery(function () { jQuery('.carousel').carousel(); });", 'inline');
 }
@@ -85,7 +85,7 @@ function ui_toolkit_preprocess_page(&$vars) {
  */
 function ui_toolkit_preprocess_ui_toolkit_modal(&$vars) {
   static $modal_counter = 0;
-  
+
   $vars['counter'] = $modal_counter++;
 }
 
@@ -130,14 +130,14 @@ function ui_toolkit_theme() {
     'ui_toolkit_modal' => array(
       'variables' => array('button' => FALSE, 'title' => FALSE, 'content' => FALSE),
       'template' => 'ui_toolkit_modal',
-    ), 
+    ),
     'ui_toolkit_btn' => array(
       'variables' => array('title' => FALSE, 'path' => FALSE, 'style' => 'standard', 'icon' => FALSE),
-    ), 
+    ),
     'ui_toolkit_carousel' => array(
       'variables' => array('images' => array(), 'style' => FALSE),
       'template' => 'ui_toolkit_carousel',
-    ), 
+    ),
   );
 }
 
@@ -191,7 +191,7 @@ function ui_toolkit_status_messages($variables) {
 
     $output .= '<a class="close" href="#" data-dismiss="alert">×</a>';
     $output .= '<div class="alert ' . $alerttype . '">';
-    
+
     if (!empty($status_heading[$type])) {
       $output .= '<h2 class="element-invisible">' . $status_heading[$type] . "</h2>";
     }
