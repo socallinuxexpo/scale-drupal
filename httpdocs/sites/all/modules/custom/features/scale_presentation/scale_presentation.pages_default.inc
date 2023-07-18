@@ -20,17 +20,13 @@ function scale_presentation_default_page_manager_handlers() {
   $handler->handler = 'http_response';
   $handler->weight = -29;
   $handler->conf = array(
-    'title' => 'hide presentations from public',
-    'contexts' => array(),
-    'relationships' => array(),
-    'code' => '404',
-    'destination' => '',
-    'name' => 'hide_presentations_from_public',
     'access' => array(
       'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'logged-in-user',
           'name' => 'role',
+          'not' => TRUE,
           'settings' => array(
             'rids' => array(
               0 => 4,
@@ -40,21 +36,21 @@ function scale_presentation_default_page_manager_handlers() {
               4 => 7,
             ),
           ),
-          'context' => 'logged-in-user',
-          'not' => TRUE,
         ),
         1 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'presentation' => 'presentation',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
         2 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'entity_field_value:node:presentation:field_scale_event',
+          'not' => FALSE,
           'settings' => array(
             'field_scale_event' => array(
               'und' => array(
@@ -67,11 +63,15 @@ function scale_presentation_default_page_manager_handlers() {
               0 => '1963',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
     ),
+    'code' => '404',
+    'contexts' => array(),
+    'destination' => '',
+    'name' => 'hide_presentations_from_public',
+    'relationships' => array(),
+    'title' => 'hide presentations from public',
   );
   $export['node_view__hide_presentations_from_public'] = $handler;
 
@@ -84,45 +84,23 @@ function scale_presentation_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Presentation review',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      0 => array(
-        'identifier' => 'User from Node (on Node: Speaker [field_speaker])',
-        'keyword' => 'speaker',
-        'name' => 'entity_from_field:field_speaker-node-user',
-        'delta' => '0',
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      1 => array(
-        'identifier' => 'User from Node (on node.node_author)',
-        'keyword' => 'author',
-        'name' => 'entity_from_schema:uid-node-user',
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'presentation' => 'presentation',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
         1 => array(
+          'context' => 'logged-in-user',
           'name' => 'role',
+          'not' => FALSE,
           'settings' => array(
             'rids' => array(
               0 => 4,
@@ -130,19 +108,41 @@ function scale_presentation_default_page_manager_handlers() {
               2 => 3,
             ),
           ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
         ),
         2 => array(
-          'name' => 'node_status',
-          'settings' => NULL,
           'context' => 'argument_entity_id:node_1',
+          'name' => 'node_status',
           'not' => TRUE,
+          'settings' => NULL,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
     'name' => 'presentation-review',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      0 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => '0',
+        'id' => 1,
+        'identifier' => 'User from Node (on Node: Speaker [field_speaker])',
+        'keyword' => 'speaker',
+        'name' => 'entity_from_field:field_speaker-node-user',
+      ),
+      1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+        'identifier' => 'User from Node (on node.node_author)',
+        'keyword' => 'author',
+        'name' => 'entity_from_schema:uid-node-user',
+      ),
+    ),
+    'title' => 'Presentation review',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -169,7 +169,9 @@ function scale_presentation_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 4,
@@ -177,18 +179,16 @@ function scale_presentation_default_page_manager_handlers() {
             2 => 3,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
     ),
   );
   $pane->configuration = array(
     'build_mode' => '2',
-    'widget_name' => '1',
     'context' => 'argument_entity_id:node_1',
     'override_title' => 1,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
+    'widget_name' => '1',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -210,7 +210,9 @@ function scale_presentation_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'argument_entity_id:node_1',
         'name' => 'entity_field_value:node:presentation:field_presentation_status',
+        'not' => FALSE,
         'settings' => array(
           'field_presentation_status' => array(
             'und' => array(
@@ -223,8 +225,6 @@ function scale_presentation_default_page_manager_handlers() {
             0 => '20',
           ),
         ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
       ),
     ),
   );
@@ -251,9 +251,12 @@ function scale_presentation_default_page_manager_handlers() {
   $pane->subtype = 'presentation_single-panel_pane_2';
   $pane->shown = TRUE;
   $pane->access = array(
+    'logic' => 'or',
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 4,
@@ -265,33 +268,33 @@ function scale_presentation_default_page_manager_handlers() {
             6 => 3,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
       1 => array(
-        'name' => 'compare_users',
-        'settings' => array(
-          'equality' => '1',
-        ),
         'context' => array(
           0 => 'logged-in-user',
           1 => 'relationship_entity_from_field:field_speaker-node-user_1',
         ),
-        'not' => FALSE,
-      ),
-      2 => array(
         'name' => 'compare_users',
+        'not' => FALSE,
         'settings' => array(
           'equality' => '1',
         ),
+      ),
+      2 => array(
         'context' => array(
           0 => 'logged-in-user',
           1 => 'relationship_entity_from_schema:uid-node-user_1',
         ),
+        'name' => 'compare_users',
         'not' => FALSE,
+        'settings' => array(
+          'equality' => '1',
+        ),
       ),
       3 => array(
+        'context' => 'argument_entity_id:node_1',
         'name' => 'entity_field_value:node:presentation:field_presentation_status',
+        'not' => TRUE,
         'settings' => array(
           'field_presentation_status' => array(
             'und' => array(
@@ -304,11 +307,8 @@ function scale_presentation_default_page_manager_handlers() {
             0 => '20',
           ),
         ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => TRUE,
       ),
     ),
-    'logic' => 'or',
   );
   $pane->configuration = array(
     'context' => array(
@@ -334,12 +334,12 @@ function scale_presentation_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'mode' => '1',
     'comments_per_page' => '50',
     'context' => 'argument_entity_id:node_1',
+    'mode' => '1',
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -366,46 +366,46 @@ function scale_presentation_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -28;
   $handler->conf = array(
-    'title' => 'Presentation page',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(
-      0 => array(
-        'identifier' => 'User from Node (on Node: Speaker [field_speaker])',
-        'keyword' => 'speaker',
-        'name' => 'entity_from_field:field_speaker-node-user',
-        'delta' => '0',
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-      1 => array(
-        'identifier' => 'User from Node (on node.node_author)',
-        'keyword' => 'author',
-        'name' => 'entity_from_schema:uid-node-user',
-        'context' => 'argument_entity_id:node_1',
-        'id' => 1,
-      ),
-    ),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'presentation' => 'presentation',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(
+      0 => array(
+        'context' => 'argument_entity_id:node_1',
+        'delta' => '0',
+        'id' => 1,
+        'identifier' => 'User from Node (on Node: Speaker [field_speaker])',
+        'keyword' => 'speaker',
+        'name' => 'entity_from_field:field_speaker-node-user',
+      ),
+      1 => array(
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+        'identifier' => 'User from Node (on node.node_author)',
+        'keyword' => 'author',
+        'name' => 'entity_from_schema:uid-node-user',
+      ),
+    ),
+    'title' => 'Presentation page',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -419,8 +419,8 @@ function scale_presentation_default_page_manager_handlers() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '33b138ec-a7af-4544-888e-0cee6b00e8da';
-  $display->storage_type = '';
-  $display->storage_id = '';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'node_view_panel_context';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
@@ -432,7 +432,9 @@ function scale_presentation_default_page_manager_handlers() {
   $pane->access = array(
     'plugins' => array(
       0 => array(
+        'context' => 'argument_entity_id:node_1',
         'name' => 'entity_field_value:node:presentation:field_presentation_status',
+        'not' => FALSE,
         'settings' => array(
           'field_presentation_status' => array(
             'und' => array(
@@ -445,8 +447,6 @@ function scale_presentation_default_page_manager_handlers() {
             0 => '20',
           ),
         ),
-        'context' => 'argument_entity_id:node_1',
-        'not' => FALSE,
       ),
     ),
   );
@@ -473,9 +473,12 @@ function scale_presentation_default_page_manager_handlers() {
   $pane->subtype = 'presentation_single-panel_pane_2';
   $pane->shown = TRUE;
   $pane->access = array(
+    'logic' => 'or',
     'plugins' => array(
       0 => array(
+        'context' => 'logged-in-user',
         'name' => 'role',
+        'not' => FALSE,
         'settings' => array(
           'rids' => array(
             0 => 4,
@@ -487,33 +490,30 @@ function scale_presentation_default_page_manager_handlers() {
             6 => 3,
           ),
         ),
-        'context' => 'logged-in-user',
-        'not' => FALSE,
       ),
       1 => array(
-        'name' => 'compare_users',
-        'settings' => array(
-          'equality' => '1',
-        ),
         'context' => array(
           0 => 'logged-in-user',
           1 => 'relationship_entity_from_field:field_speaker-node-user_1',
         ),
-        'not' => FALSE,
-      ),
-      2 => array(
         'name' => 'compare_users',
+        'not' => FALSE,
         'settings' => array(
           'equality' => '1',
         ),
+      ),
+      2 => array(
         'context' => array(
           0 => 'logged-in-user',
           1 => 'relationship_entity_from_schema:uid-node-user_1',
         ),
+        'name' => 'compare_users',
         'not' => FALSE,
+        'settings' => array(
+          'equality' => '1',
+        ),
       ),
     ),
-    'logic' => 'or',
   );
   $pane->configuration = array(
     'context' => array(
