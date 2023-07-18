@@ -49,6 +49,7 @@ features[variable][] = menu_parent_sponsor
 features[variable][] = node_options_sponsor
 features[variable][] = node_preview_sponsor
 features[variable][] = node_submitted_sponsor
+features[variable][] = pathauto_node_sponsor_pattern
 features[views_view][] = event_sponsors
 features[views_view][] = exhibitors
 features[views_view][] = sponsor_logos

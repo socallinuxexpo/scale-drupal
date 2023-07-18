@@ -20,30 +20,30 @@ function scale_sponsor_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = 1;
   $handler->conf = array(
-    'title' => 'Special Event',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => '',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'and',
       'plugins' => array(
         0 => array(
+          'context' => 'argument_entity_id:node_1',
           'name' => 'node_type',
+          'not' => FALSE,
           'settings' => array(
             'type' => array(
               'special_event' => 'special_event',
             ),
           ),
-          'context' => 'argument_entity_id:node_1',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'and',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => '',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Special Event',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -69,15 +69,15 @@ function scale_sponsor_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
+    'build_mode' => 'full',
+    'context' => 'argument_entity_id:node_1',
+    'identifier' => '',
+    'leave_node_title' => 0,
+    'link' => 0,
     'links' => 0,
     'no_extras' => 1,
     'override_title' => 1,
     'override_title_text' => '',
-    'identifier' => '',
-    'link' => 0,
-    'leave_node_title' => 0,
-    'build_mode' => 'full',
-    'context' => 'argument_entity_id:node_1',
   );
   $pane->cache = array();
   $pane->style = array(
