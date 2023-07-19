@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_themes.features.inc
