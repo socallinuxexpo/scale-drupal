@@ -71,18 +71,20 @@ function scale20x_preprocess_calendar_day_overlap(&$variables) {
 function scale20x_preprocess_html(&$variables) {
   // Construct page title.
   if (drupal_get_title()) {
+    // Produces if applicable:
+    // [title] | SCALE 20x
     $head_title = array(
       'title' => strip_tags(drupal_get_title()),
-      // Override Site Name for each new SCALE
       'name' => t('SCALE 20x'),
     );
   }
   else {
-    // Override Site Name for each new SCALE
-    $head_title = array('name' => t('SCALE 20x'));
-    if (variable_get('site_slogan', '')) {
-      $head_title['slogan'] = filter_xss_admin(variable_get('site_slogan', ''));
-    }
+    // Produces if applicable:
+    // SCALE 20x | SCALE 20x
+    $head_title = array(
+      'title' => t('SCALE 20x'),
+      'name' => t('SCALE 20x')
+    );
   }
   $variables['head_title_array'] = $head_title;
   $variables['head_title'] = implode(' | ', $head_title);
