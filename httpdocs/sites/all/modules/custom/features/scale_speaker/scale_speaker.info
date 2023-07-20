@@ -45,6 +45,7 @@ features[rules_config][] = rules_grant_speaker_role
 features[rules_config][] = rules_revoke_speaker_role
 features[variable][] = field_bundle_settings_node__featured_speakers
 features[variable][] = field_bundle_settings_user__user
+features[variable][] = pathauto_node_featured_speakers_pattern
 features[views_view][] = speaker_individual
 features[views_view][] = speaker_list
 features[views_view][] = speakers_list_multiyear

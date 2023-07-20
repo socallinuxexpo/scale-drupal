@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_speaker.rules_defaults.inc

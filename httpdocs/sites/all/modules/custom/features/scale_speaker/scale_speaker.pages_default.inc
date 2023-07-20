@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_speaker.pages_default.inc
@@ -19,29 +20,29 @@ function scale_speaker_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Speaker Individual for reviewer',
-    'no_blocks' => 0,
-    'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => 'speaker-individual',
-    'css' => '',
-    'contexts' => array(),
-    'relationships' => array(),
     'access' => array(
+      'logic' => 'or',
       'plugins' => array(
         0 => array(
+          'context' => 'logged-in-user',
           'name' => 'perm',
+          'not' => FALSE,
           'settings' => array(
             'perm' => 'review presentations',
           ),
-          'context' => 'logged-in-user',
-          'not' => FALSE,
         ),
       ),
-      'logic' => 'or',
     ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => 'speaker-individual',
     'name' => 'speaker-individual-for-reviewer',
+    'no_blocks' => 0,
+    'pipeline' => 'standard',
+    'relationships' => array(),
+    'title' => 'Speaker Individual for reviewer',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -55,8 +56,8 @@ function scale_speaker_default_page_manager_handlers() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = '65b99614-c6fd-4c93-9478-85003a69d0d2';
-  $display->storage_type = '';
-  $display->storage_id = '';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'user_view__speaker-individual-for-reviewer';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
@@ -67,16 +68,16 @@ function scale_speaker_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:user_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => 'square_thumbnail',
       'image_link' => '',
+      'image_style' => 'square_thumbnail',
     ),
-    'context' => 'argument_entity_id:user_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => '',
   );
@@ -128,8 +129,8 @@ function scale_speaker_default_page_manager_handlers() {
       0 => 'argument_entity_id:user_1',
     ),
     'override_title' => 0,
-    'override_title_text' => '',
     'override_title_heading' => 'h2',
+    'override_title_text' => '',
   );
   $pane->cache = array();
   $pane->style = array(
@@ -156,19 +157,19 @@ function scale_speaker_default_page_manager_handlers() {
   $handler->handler = 'panel_context';
   $handler->weight = -29;
   $handler->conf = array(
-    'title' => 'Speaker individual public',
+    'access' => array(
+      'logic' => 'and',
+      'plugins' => array(),
+    ),
+    'body_classes_to_add' => '',
+    'body_classes_to_remove' => '',
+    'contexts' => array(),
+    'css' => '',
+    'css_id' => 'speaker-individual',
     'no_blocks' => 0,
     'pipeline' => 'standard',
-    'body_classes_to_remove' => '',
-    'body_classes_to_add' => '',
-    'css_id' => 'speaker-individual',
-    'css' => '',
-    'contexts' => array(),
     'relationships' => array(),
-    'access' => array(
-      'plugins' => array(),
-      'logic' => 'and',
-    ),
+    'title' => 'Speaker individual public',
   );
   $display = new panels_display();
   $display->layout = 'onecol';
@@ -182,8 +183,8 @@ function scale_speaker_default_page_manager_handlers() {
   $display->cache = array();
   $display->title = '';
   $display->uuid = 'e375d2f7-ad72-4de3-bbf4-7e39405ff5df';
-  $display->storage_type = '';
-  $display->storage_id = '';
+  $display->storage_type = 'page_manager';
+  $display->storage_id = 'user_view_panel_context';
   $display->content = array();
   $display->panels = array();
   $pane = new stdClass();
@@ -194,16 +195,16 @@ function scale_speaker_default_page_manager_handlers() {
   $pane->shown = TRUE;
   $pane->access = array();
   $pane->configuration = array(
-    'label' => 'hidden',
-    'formatter' => 'image',
+    'context' => 'argument_entity_id:user_1',
     'delta_limit' => 0,
     'delta_offset' => '0',
     'delta_reversed' => FALSE,
+    'formatter' => 'image',
     'formatter_settings' => array(
-      'image_style' => 'square_thumbnail',
       'image_link' => '',
+      'image_style' => 'square_thumbnail',
     ),
-    'context' => 'argument_entity_id:user_1',
+    'label' => 'hidden',
     'override_title' => 1,
     'override_title_text' => '',
   );
