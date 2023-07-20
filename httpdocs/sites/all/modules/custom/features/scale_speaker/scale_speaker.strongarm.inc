@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_speaker.strongarm.inc
@@ -15,9 +16,20 @@ function scale_speaker_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__featured_speakers';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '3',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+      ),
+    ),
     'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => FALSE,
@@ -31,23 +43,12 @@ function scale_speaker_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '3',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__featured_speakers'] = $strongarm;
@@ -57,6 +58,37 @@ function scale_speaker_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_user__user';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(
+        'summary' => array(
+          'default' => array(
+            'visible' => TRUE,
+            'weight' => '10',
+          ),
+          'entityreference_view_widget' => array(
+            'visible' => FALSE,
+            'weight' => '2',
+          ),
+        ),
+      ),
+      'form' => array(
+        'account' => array(
+          'weight' => '0',
+        ),
+        'googleanalytics' => array(
+          'weight' => '3',
+        ),
+        'metatags' => array(
+          'weight' => '21',
+        ),
+        'mollom' => array(
+          'weight' => '16',
+        ),
+        'timezone' => array(
+          'weight' => '20',
+        ),
+      ),
+    ),
     'view_modes' => array(
       'full' => array(
         'custom_settings' => FALSE,
@@ -65,36 +97,15 @@ function scale_speaker_strongarm() {
         'custom_settings' => FALSE,
       ),
     ),
-    'extra_fields' => array(
-      'form' => array(
-        'account' => array(
-          'weight' => '0',
-        ),
-        'timezone' => array(
-          'weight' => '15',
-        ),
-        'googleanalytics' => array(
-          'weight' => '3',
-        ),
-        'mollom' => array(
-          'weight' => '16',
-        ),
-      ),
-      'display' => array(
-        'summary' => array(
-          'default' => array(
-            'weight' => '10',
-            'visible' => TRUE,
-          ),
-          'entityreference_view_widget' => array(
-            'weight' => '2',
-            'visible' => FALSE,
-          ),
-        ),
-      ),
-    ),
   );
   $export['field_bundle_settings_user__user'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_featured_speakers_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_featured_speakers_pattern'] = $strongarm;
 
   return $export;
 }

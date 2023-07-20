@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_speaker.features.field_base.inc
@@ -9,6 +10,39 @@
  */
 function scale_speaker_field_default_field_bases() {
   $field_bases = array();
+
+  // Exported field_base: 'field_age'.
+  $field_bases['field_age'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_age',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        10 => 'Under 18',
+        20 => '18-24',
+        30 => '25-34',
+        40 => '35-44',
+        50 => '45-54',
+        60 => '55+',
+        '_none' => 'Prefer not to say',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
 
   // Exported field_base: 'field_biography'.
   $field_bases['field_biography'] = array(
@@ -27,6 +61,113 @@ function scale_speaker_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_education'.
+  $field_bases['field_education'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_id_type' => NULL,
+    'entity_types' => array(),
+    'field_name' => 'field_education',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'somehs' => 'Some high school',
+        'hs' => 'High school or equivalent',
+        'bach' => 'Bachelor\'s Degree',
+        'masters' => 'Master\'s Degree',
+        'dr' => 'Doctorate (e.g. PhD, EdD, MD)',
+        'trade' => 'Trade School',
+        'other' => 'Other',
+        '_none' => 'Prefer not to say',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_employment_status'.
+  $field_bases['field_employment_status'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_id_type' => NULL,
+    'entity_types' => array(),
+    'field_name' => 'field_employment_status',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'fulltime' => 'Employed full-time',
+        'parttime' => 'Employed part-time',
+        'unemplooking' => 'Unemployed (looking for work)',
+        'unemp' => 'Unemployed (not looking for work)',
+        'student' => 'Student',
+        'retired' => 'Retired',
+        'self' => 'Self-employed',
+        'other' => 'Other',
+        '_none' => 'Prefer not to say',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_ethnicity'.
+  $field_bases['field_ethnicity'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_id_type' => NULL,
+    'entity_types' => array(),
+    'field_name' => 'field_ethnicity',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'white' => 'White / Caucasian',
+        'black' => 'Black / African American',
+        'latino' => 'Latino / Hispanic',
+        'asian' => 'Asian',
+        'native' => 'Native American / American Indian',
+        'pacific' => 'Native Hawaiian or Pacific Islander',
+        'twoplus' => 'Two or More',
+        'other' => 'Other/Unknown',
+        '_none' => 'Prefer not to say',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_featured_speaker'.
@@ -88,6 +229,70 @@ function scale_speaker_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_gender'.
+  $field_bases['field_gender'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_gender',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        15 => 'Male',
+        10 => 'Female',
+        'nonbinary' => 'Non-binary',
+        20 => 'Other',
+        '_none' => 'Prefer not to say',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_household_income'.
+  $field_bases['field_household_income'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_id_type' => NULL,
+    'entity_types' => array(),
+    'field_name' => 'field_household_income',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        10 => 'Below $10k / year',
+        '10_50' => '$10k-$50k / year',
+        '50_100' => '$50k-$100k / year',
+        '100_200' => '$100k-$200k / year',
+        '200_500' => '$200k-$500k / year',
+        '500plus' => 'More than $500k / year',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_is_speaker'.
@@ -155,6 +360,40 @@ function scale_speaker_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'field_marital_status'.
+  $field_bases['field_marital_status'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_id_type' => NULL,
+    'entity_types' => array(),
+    'field_name' => 'field_marital_status',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'single' => 'Single',
+        'married' => 'Married',
+        'divorced' => 'Divorced',
+        'widowed' => 'Widowed',
+        'partnership' => 'Domestic Partnership',
+        'other' => 'Other',
+        '_none' => 'Prefer not to say',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
   );
 
   // Exported field_base: 'field_organization'.
