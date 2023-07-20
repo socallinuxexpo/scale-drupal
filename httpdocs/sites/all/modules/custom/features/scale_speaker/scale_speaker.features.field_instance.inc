@@ -129,6 +129,37 @@ function scale_speaker_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_age'.
+  $field_instances['user-user-field_age'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_age',
+    'label' => 'Age',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_biography'.
   $field_instances['user-user-field_biography'] = array(
     'bundle' => 'user',
@@ -164,6 +195,99 @@ function scale_speaker_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 11,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_education'.
+  $field_instances['user-user-field_education'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 14,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_education',
+    'label' => 'Education',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_employment_status'.
+  $field_instances['user-user-field_employment_status'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 15,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_employment_status',
+    'label' => 'Employment Status',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_ethnicity'.
+  $field_instances['user-user-field_ethnicity'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 13,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_ethnicity',
+    'label' => 'Ethnicity',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 14,
     ),
   );
 
@@ -205,6 +329,68 @@ function scale_speaker_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_gender'.
+  $field_instances['user-user-field_gender'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_gender',
+    'label' => 'Gender',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_household_income'.
+  $field_instances['user-user-field_household_income'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 17,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_household_income',
+    'label' => 'Household Income',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 18,
     ),
   );
 
@@ -337,6 +523,37 @@ function scale_speaker_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_marital_status'.
+  $field_instances['user-user-field_marital_status'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 16,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_marital_status',
+    'label' => 'Marital Status',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 17,
     ),
   );
 
@@ -497,7 +714,7 @@ function scale_speaker_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 14,
+      'weight' => 19,
     ),
   );
 
@@ -611,6 +828,7 @@ function scale_speaker_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.');
   t('<p><big>I ACCEPT THAT IF OFFERED TO PARTICIPATE AS A SPEAKER AT THE EVENT, I UNDERSTAND AND AGREE THAT:</big>
 
 <p>* By participating as a Speaker at the Event, I consent to the terms and conditions of this Agreement And Release.
@@ -631,12 +849,19 @@ function scale_speaker_field_default_field_instances() {
 
 <p>**This Agreement And Release is governed by California law; choice of law rules do not apply, regardless of jurisdiction.
     ');
+  t('Age');
   t('Biography');
+  t('Education');
+  t('Employment Status');
+  t('Ethnicity');
   t('First name');
+  t('Gender');
+  t('Household Income');
   t('I would like to be a speaker and...');
   t('Job title');
   t('Last name');
   t('Limit text to 1000 characters');
+  t('Marital Status');
   t('Organization');
   t('Phone');
   t('Photo');

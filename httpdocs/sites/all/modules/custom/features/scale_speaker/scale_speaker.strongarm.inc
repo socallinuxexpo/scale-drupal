@@ -78,11 +78,14 @@ function scale_speaker_strongarm() {
         'googleanalytics' => array(
           'weight' => '3',
         ),
+        'metatags' => array(
+          'weight' => '21',
+        ),
         'mollom' => array(
           'weight' => '16',
         ),
         'timezone' => array(
-          'weight' => '15',
+          'weight' => '20',
         ),
       ),
     ),
