@@ -2,10 +2,10 @@
   <div class="container">
     <div class="row">
       <div class="visible-phone small-site-logo">
-        <a href="/"><img src="<?php print '/' . drupal_get_path('theme', $current_theme) . '/img/scale_logo_lg.svg'; ?>" alt="<?php print $current_image_alt; ?>>"></a>
+        <a href="/"><img src="<?php print '/' . drupal_get_path('theme', $current_theme) . '/img/scale_logo_website_header.png'; ?>" alt="<?php print $current_image_alt; ?>>"></a>
       </div>
       <div id="site-logo" class="span6 offset3 hidden-phone">
-        <a href="/"><img src="<?php print '/' . drupal_get_path('theme', $current_theme) . '/img/scale_logo_lg.svg'; ?>" alt="<?php print $current_image_alt; ?>"></a>
+        <a href="/"><img src="<?php print '/' . drupal_get_path('theme', $current_theme) . '/img/scale_logo_website_header.png'; ?>" alt="<?php print $current_image_alt; ?>"></a>
       </div>
     </div>
   </div>
