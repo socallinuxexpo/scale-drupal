@@ -60,6 +60,10 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1229, // Testing.
         22, // Try It Lab.
         25, // Youth.
+        1645, // Open Data
+        2808, // Open Medical
+        2983, // Test
+        2991, // Aerospace
       );
       // Remove Keynote if not authorized. See $authorized_roles above.
       if (!$keynote_authorized) {
