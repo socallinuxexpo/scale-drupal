@@ -282,12 +282,13 @@ function scale_speaker_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        10 => 'Below $10k / year',
+        '10' => 'Below $10k / year',
         '10_50' => '$10k-$50k / year',
         '50_100' => '$50k-$100k / year',
         '100_200' => '$100k-$200k / year',
         '200_500' => '$200k-$500k / year',
         '500plus' => 'More than $500k / year',
+        'blank' => 'Prefer not to say',
       ),
       'allowed_values_function' => '',
     ),
