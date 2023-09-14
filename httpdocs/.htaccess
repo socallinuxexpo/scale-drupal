@@ -1,4 +1,12 @@
 #
+# Datadog APM Settings
+
+SetEnv DD_PROFILING_ENABLED true
+SetEnv DD_APPSEC_ENABLED true
+SetEnv DD_SERVICE drupal
+SetEnv DD_ENV prod
+
+#
 # Apache/PHP/Drupal settings:
 #
 
