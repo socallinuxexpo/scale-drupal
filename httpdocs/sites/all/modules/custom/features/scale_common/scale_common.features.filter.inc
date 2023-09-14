@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_common.features.filter.inc
