@@ -1,0 +1,535 @@
+<?php
+
+class S3fsWebTestCase extends DrupalWebTestCase {
+
+  /**
+   * State variables.
+   */
+  protected $bucket_not_found = FALSE;
+  protected $bucket_not_found_message = '';
+  protected $remote_tests_folder = '_s3fs_tests';
+  protected $remote_tests_folder_key = '_s3fs_tests';
+  protected $remote_tests_folder_uri = 's3://_s3fs_tests';
+  protected $config = array();
+  protected $file_public_path = '';
+  protected $folders = array();
+
+  public static function getInfo() {
+    return array(
+      'name' => 'S3 File System Tests',
+      'description' => 'Ensure that the remote file system functionality provided by S3 File System works correctly.',
+      'group' => 'S3 File System',
+    );
+  }
+
+  function setUp() {
+    static $config = NULL;
+    if ($config === NULL) {
+      $config = _s3fs_get_config(TRUE);
+    }
+
+    static $file_public_path = NULL;
+    if ($file_public_path === NULL) {
+      $file_public_path = variable_get('file_public_path', FALSE);
+    }
+
+    $sdk_loader = (!module_exists('composer_manager')) ? 'libraries' : 'composer_manager';
+    parent::setUp($sdk_loader, 's3fs', 'file', 'image');
+
+    // Empty out the bucket before the test, to prevent unexpected errors.
+    $this->config = $config;
+    $this->s3 = _s3fs_get_amazons3_client($this->config);
+    if (!empty($this->config['root_folder'])) {
+      $this->remote_tests_folder_key = "{$this->config['root_folder']}/$this->remote_tests_folder";
+    }
+    // Adding this to ensure it's set.
+    $this->public_files_directory = $file_public_path;
+
+    $this->folders = array(
+      'root' => (!empty($this->config['root_folder'])) ? $this->config['root_folder'] : '',
+      'public' => (!empty($this->config['public_folder'])) ? $this->config['public_folder'] : 's3fs-public',
+      'private' => (!empty($this->config['private_folder'])) ? $this->config['private_folder'] : 's3fs-private',
+    );
+
+    // Prevent issues with derivative tokens during test.
+    variable_set('image_allow_insecure_derivatives', TRUE);
+    $this->bucket_not_found = !$this->s3->doesBucketExist($this->config['bucket']);
+    $this->bucket_not_found_message = "The '{$this->config['bucket']}' bucket does not exist in the '{$this->config['region']}' region on your AWS account.
+      Either edit the protected properties of the S3fsWebTestCase class, or create a bucket called 's3fs-testing-bucket' in the 'us-east-1' region.";
+    if (!$this->bucket_not_found) {
+      $this->s3->deleteMatchingObjects($this->config['bucket'], $this->remote_tests_folder_key);
+      debug("Deleted file(s) from S3 test folder to prepare for the test.");
+    }
+  }
+
+  /**
+   * Coverage test for the stream wrapper.
+   */
+  public function testStreamWrapperCoverage() {
+    // Immediately exit test function if bucket is not found.
+    if ($this->bucket_not_found) {
+      $this->fail($this->bucket_not_found_message);
+      return;
+    }
+    $test_uri1 = "{$this->remote_tests_folder_uri}/test_file.txt";
+    $test_uri2 = "{$this->remote_tests_folder_uri}/test_file2.txt";
+
+    $this->assertTrue(file_stream_wrapper_valid_scheme('s3'), '"s3" is a valid stream wrapper scheme.');
+    $this->assertEqual(file_stream_wrapper_get_class('s3'), 'S3fsStreamWrapper', 'URIs with scheme "s3" should be handled by S3fsStreamWrapper.');
+
+    // The test.txt file is enough data to force multiple calls to write_stream().
+    $file_contents = file_get_contents(drupal_get_path('module', 's3fs') . '/tests/test.txt');
+
+    $this->assertTrue(drupal_mkdir($this->remote_tests_folder_uri), 'Exercised mkdir to create the testing directory (in the DB).');
+    $this->assertTrue(is_dir($this->remote_tests_folder_uri), 'Make sure the folder we just created correctly reports that it is a folder.');
+
+    debug("Exercising file upload functionality.");
+    $start_time = time();
+    $s3_file = file_save_data($file_contents, $test_uri1);
+    $end_time = time();
+    $total = $end_time - $start_time;
+    debug("Upload time: $total seconds");
+
+    $this->assertTrue(file_valid_uri($s3_file->uri), "Uploaded the first test file, $test_uri1.");
+
+    debug("Exercising file copy functionality.");
+    $s3_file2 = file_copy($s3_file, $test_uri2);
+    $this->assertNotIdentical($s3_file2, FALSE, "Copied the the first test file to $test_uri2.");
+
+    debug('Exercising the dir_*() functions.');
+    $files = file_scan_directory($this->remote_tests_folder_uri, '#.*#');
+    $this->assertTrue(isset($files[$test_uri1]), 'The first test file is in the tests directory.');
+    $this->assertTrue(isset($files[$test_uri2]), 'The second test file is in the tests directory.');
+    $this->assertEqual(count($files), 2, "There are exactly two files in the tests directory.");
+
+    debug('Exercising getExternalUrl().');
+    $url = file_create_url($test_uri1);
+    $this->assertNotIdentical($url, FALSE, 'file_create_url() succeeded.');
+
+    debug('Exercising unlink().');
+    $this->assertIdentical(file_delete($s3_file), TRUE, "Deleted the first test file.");
+    $this->assertIdentical(file_exists($test_uri1), FALSE, 'The wrapper reports that the first test file no longer exists.');
+
+    debug('Exercising rename().');
+    $this->assertTrue(rename($test_uri2, $test_uri1), "Renamed the second test file to the newly-vacated URI of $test_uri1.");
+    $s3_file2->uri = $test_uri1;
+
+    debug('Exercising rmdir().');
+    $this->assertFalse(drupal_rmdir($this->remote_tests_folder_uri), 'rmdir() did not delete the tests folder because it is not empty.');
+    $this->assertTrue(file_delete($s3_file2), 'Deleted the last test file.');
+    $this->assertTrue(drupal_rmdir($this->remote_tests_folder_uri), 'Deleted the tests folder.');
+    $this->assertFalse(is_dir($this->remote_tests_folder_uri), 'The wrapper reports that the tests folder is gone.');
+  }
+
+  /**
+   * Test the image derivative functionality.
+   */
+  public function testImageDerivatives() {
+    // Immediately exit test function if bucket is not found.
+    if ($this->bucket_not_found) {
+      $this->fail($this->bucket_not_found_message);
+      return;
+    }
+    $img_uri1 = "{$this->remote_tests_folder_uri}/test.png";
+    $img_localpath = drupal_get_path('module', 's3fs') . '/tests/test.png';
+
+    // Upload the test image.
+    $this->assertTrue(drupal_mkdir($this->remote_tests_folder_uri), 'Created the testing directory in the DB.');
+    $img_data = file_get_contents($img_localpath);
+    $img_file = file_save_data($img_data, $img_uri1);
+    $this->assertTrue($img_file, "Copied the the test image to $img_uri1.");
+
+    // Request a derivative.
+    // Parse query parameters to ensure they get passed.
+    $img_style_load = image_style_load('thumbnail');
+    $img_style_path = image_style_path('thumbnail', $img_uri1);
+    $this->assertTrue(image_style_create_derivative($img_style_load, $img_uri1, $img_style_path), 'The returned derivative is a valid image.');
+  }
+
+  /**
+   * Test the cache refresh.
+   */
+  public function testCacheRefresh() {
+    // Immediately exit test function if bucket is not found.
+    if ($this->bucket_not_found) {
+      $this->fail($this->bucket_not_found_message);
+      return;
+    }
+
+    // Add several files to the bucket using the AWS SDK directly, so that
+    // s3fs won't cache them.
+    $filenames = array('files/test2.txt', 'parts/test3.txt', 'test.txt');
+    foreach ($filenames as $filename) {
+      $filename = $this->remote_tests_folder_key . '/' . $filename;
+      $this->s3->putObject(
+        array(
+          'Bucket' => $this->config['bucket'],
+          'Key' => $filename,
+          'ACL' => 'public-read',
+        )
+      );
+    }
+
+    $refresh_config = $this->config;
+    // Set the current test folder as the root prefix.
+    $refresh_config['root_folder'] = $this->remote_tests_folder_key;
+    _s3fs_refresh_cache($refresh_config);
+
+    // Query the DB to confirm that all the new files are cached.
+    $result = db_select('s3fs_file', 's')
+      ->fields('s')
+      ->condition('dir', 0, '=')
+      ->execute();
+    $cached_files = array();
+    foreach ($result as $record) {
+      $cached_files[] = str_replace('s3://', '', $record->uri);
+    }
+    $this->assertEqual($filenames, $cached_files, 'The test files were all cached.');
+
+    // Flush the cache, then do a refresh using the root_folder setting.
+    // Only the file in the root folder (test3.txt) should become cached.
+    $delete_query = db_delete('s3fs_file')->execute();
+    $refresh_config['root_folder'] = $this->remote_tests_folder_key . '/parts';
+    _s3fs_refresh_cache($refresh_config);
+
+    // Confirm that only the file in the "parts" folder was cached.
+    $records = db_select('s3fs_file', 's')
+      ->fields('s')
+      ->condition('dir', 0, '=')
+      ->execute()
+      ->fetchAll();
+    $this->assertEqual(count($records), 1, 'There was only one file in the partially refreshed cache.');
+    $this->assertEqual($records[0]->uri, 's3://test3.txt', 'That file was the one in the "parts" folder, which is now the root folder, so "parts" is not in the URI.');
+  }
+
+  /**
+   * Test schema exceptions for files.
+   */
+  public function testSchemaExceptionsForFiles() {
+    // Immediately exit test function if bucket is not found.
+    if ($this->bucket_not_found) {
+      $this->fail($this->bucket_not_found_message);
+      return;
+    }
+
+    foreach ($this->schemaExceptionsDataProvider($this->folders) as $test => $items) {
+      $mkdir = $items[0];
+      $path = $items[0] . '/test.txt';
+      $expect_exception = $items[1];
+
+      try {
+        // Use write mode so no error on 'object not found' for read.
+        $file = fopen($path, 'w');
+        fclose($file);
+        $this->assertFalse($expect_exception, "$test test: no exception on fopen");
+      }
+      catch (Exception $e) {
+        $this->assertTrue($expect_exception, "$test test: fopen exception");
+      }
+
+      try {
+        drupal_mkdir($mkdir);
+        $file_contents = file_get_contents(drupal_get_path('module', 's3fs') . '/tests/test.txt');
+        file_save_data($file_contents, $path);
+        $this->assertFalse($expect_exception, "$test test: no exception on file_save_data");
+      }
+      catch (Exception $e) {
+        $this->assertTrue($expect_exception, "$test test: file_save_data threw exception");
+      }
+
+      try {
+        $s3fs_stream = new S3fsStreamWrapper();
+        $s3fs_stream->setUri($path);
+        $this->assertFalse($expect_exception, "$test test: no exception on setUri");
+      }
+      catch (Exception $e) {
+        $this->assertTrue($expect_exception, "$test test: setUri threw exception");
+      }
+
+      try {
+        unlink($path);
+        $this->assertFalse($expect_exception, "$test test: no exception on unlink");
+      }
+      catch (Exception $e) {
+        $this->assertTrue($expect_exception, "$test test: unlink threw exception");
+      }
+
+      try {
+        file_put_contents('s3://rename_source.txt', 'source file for rename test');
+        rename("s3://rename_source.txt", $path);
+        $this->assertFalse($expect_exception, "$test test: no exception on rename");
+      }
+      catch (Exception $e) {
+        $this->assertTrue($expect_exception, "$test test: rename threw exception");
+      }
+
+      try {
+        $stat = stat($path);
+        $this->assertFalse($expect_exception, "$test test: no exception on stat");
+      }
+      catch (Exception $e) {
+        $this->assertTrue($expect_exception, "$test test: stat threw exception");
+      }
+
+      try {
+        $s3fs_stream = new S3fsStreamWrapper();
+        $s3fs_stream->writeUriToCache($path);
+        $this->assertFalse($expect_exception, "$test test: no exception on writeUriToCache");
+      }
+      catch (Exception $e) {
+        $this->assertTrue($expect_exception, "$test test: writeUriToCache threw exception");
+      }
+    }
+  }
+
+  /**
+   * Data for testSchemaExceptionsForFiles function.
+   *
+   * @param array $folders
+   *   Referenced directories for root, public and private.
+   *
+   * @return array
+   *   - Path
+   *   - Should exception be thrown
+   */
+  public function schemaExceptionsDataProvider($folders) {
+    return array(
+      'file under ' . $folders['private'] => array(
+        's3://' . $folders['private'],
+        TRUE,
+      ),
+      'file under ' . $folders['public'] => array(
+        's3://' . $folders['public'],
+        TRUE,
+      ),
+      'file under ' . $folders['private'] . ' with extra slashes' => array(
+        's3:////' . $folders['private'] . '/',
+        TRUE,
+      ),
+      'file under ' . $folders['public'] . ' with extra slashes' => array(
+        's3:///' . $folders['public'] . '/',
+        TRUE,
+      ),
+      $folders['private'] . ' folder not under root' => array(
+        's3://subdir/' . $folders['private'],
+        FALSE,
+      ),
+      $folders['public'] . ' folder not under root' => array(
+        's3://subdir/' . $folders['public'],
+        FALSE,
+      ),
+    );
+  }
+
+  /**
+   * Test directory functions for access exception.
+   */
+  public function testDirectoriesAccess() {
+    // Immediately exit test function if bucket is not found.
+    if ($this->bucket_not_found) {
+      $this->fail($this->bucket_not_found_message);
+      return;
+    }
+
+    foreach ($this->schemaDirectoryExceptionsDataProvider($this->folders) as $test => $items) {
+      $config = $this->config;
+
+      $path = $items[0];
+      $expect_exception = $items[1];
+
+      if (isset($items[2])) {
+        foreach ($items[2] as $folder_type => $folder_name) {
+          $config[$folder_type] = $folder_name;
+        }
+      }
+      drupal_static_reset();
+
+      $this->s3 = _s3fs_get_amazons3_client($config);
+
+      $s3fs_stream = new S3fsStreamWrapper();
+      try {
+        $s3fs_stream->mkdir($path, 0755, 0);
+        $this->assertFalse($expect_exception, "$test test: no exception on mkdir");
+      }
+      catch (Exception $e) {
+        $this->assertTrue($expect_exception, "$test test: mkdir threw exception");
+      }
+
+      try {
+        $s3fs_stream->rmdir($path, 0);
+        $this->assertFalse($expect_exception, "$test test: no exception on rmdir");
+      }
+      catch (Exception $e) {
+        $this->assertTrue($expect_exception, "$test test: rmdir threw exception");
+      }
+
+      try {
+        // We don't care that the dir doesn't exist so suppress errors.
+        @$s3fs_stream->url_stat($path, 0);
+        $this->assertFalse($expect_exception, "$test test: no exception on stat");
+      }
+      catch (Exception $e) {
+        $this->assertTrue($expect_exception, "$test test: stat threw exception");
+      }
+    }
+  }
+
+  /**
+   * Provide data for testDirectoriesAccess function
+   *
+   * @param array $folders
+   *   Referenced directories for root, public and private.
+   *
+   * @return array
+   *   - Path
+   *   - Should throw exception
+   *   - Array config to override
+   */
+  public function schemaDirectoryExceptionsDataProvider($folders) {
+    return array(
+      'Allow s3:// Root level access' => array(
+        's3://',
+        FALSE,
+      ),
+      'Deny public:// via s3://' => array(
+        's3://' . $folders['public'],
+        TRUE,
+      ),
+      'Deny directory under public:// via s3://' => array(
+        's3://' . $folders['public'] . '/somedir',
+        TRUE,
+      ),
+      'Allow Directory carrying same name as public://' => array(
+        's3://subdir/' . $folders['public'] . '/somedir',
+        FALSE,
+      ),
+      'Allow Directory carrying same name as private://' => array(
+        's3://subdir/' . $folders['private'] . '/somedir',
+        FALSE,
+      ),
+      's3:// validate public:// has renamed' => array(
+        's3://' . $folders['public'] . '/somedir',
+        FALSE,
+        array('public_folder' => 'test1'),
+      ),
+      's3:// validate private:// has renamed' => array(
+        's3://s3fs-private/somedir',
+        FALSE,
+        array('private_folder' => 'test1'),
+      ),
+      'Deny private:// under public://' => array(
+        'public://' . $folders['private'] . '/text.txt',
+        TRUE,
+        array(
+          'private_folder' => 'test1/' . $folders['private'],
+          'public_folder' => 'test1',
+        ),
+      ),
+      'Deny public:// under private://'  => array(
+        'private://' . $folders['public'] . '/test.txt',
+        TRUE,
+        array(
+          'private_folder' => 'test1',
+          'public_folder' => 'test1/' . $folders['public'],
+        ),
+      ),
+    );
+  }
+
+  /**
+   * Validate that file listings are not exposed through scandir().
+   */
+  public function testDirectoryScan() {
+    $folders = $this->folders;
+
+    $values = array(
+      array(
+        'uri' => 's3://testdir',
+        'filesize' => '0',
+        'timestamp' => '150000000',
+        'dir' => '1',
+        'version' => '',
+      ),
+      array(
+        'uri' => 's3://testdir/' . $folders['private'],
+        'filesize' => '0',
+        'timestamp' => '150000000',
+        'dir' => '1',
+        'version' => '',
+      ),
+      array(
+        'uri' => 's3://testdir/' . $folders['public'],
+        'filesize' => '0',
+        'timestamp' => '150000000',
+        'dir' => '1',
+        'version' => '',
+      ),
+      array(
+        'uri' => 's3://' . $folders['public'],
+        'filesize' => '0',
+        'timestamp' => '150000000',
+        'dir' => '1',
+        'version' => '',
+      ),
+      array(
+        'uri' => 's3://' . $folders['public'] . '/test.txt',
+        'filesize' => '100',
+        'timestamp' => '150000000',
+        'dir' => '0',
+        'version' => '',
+      ),
+      array(
+        'uri' => 's3://' . $folders['private'],
+        'filesize' => '0',
+        'timestamp' => '150000000',
+        'dir' => '1',
+        'version' => '',
+      ),
+      array(
+        'uri' => 's3://' . $folders['private'] . '/test.txt',
+        'filesize' => '100',
+        'timestamp' => '150000000',
+        'dir' => '0',
+        'version' => '',
+      ),
+    );
+
+    $query = db_insert('s3fs_file')
+      ->fields(array('uri', 'filesize', 'timestamp', 'dir', 'version'));
+    foreach ($values as $record) {
+      $query->values($record);
+    }
+    $query->execute();
+
+    $scan_root = scandir("s3://");
+    $this->assertEqual(count($scan_root), 1, 'One sub-directory exists in the s3:// root directory.');
+
+    $scan_testdir = scandir("s3://testdir");
+    $this->assertEqual(count($scan_testdir), 2, 'Two sub-directories exist in the s3://testdir directory.');
+
+    try {
+      scandir('s3://' . $folders['public'] . '/');
+      $this->fail('Expected exception for s3://' . $folders['public']);
+    }
+    catch (Exception $e) {
+      $this->assertTrue(TRUE, 'Threw exception for s3://' . $folders['public']);
+    }
+
+    try {
+      scandir('s3://' . $folders['private']  . '/');
+      $this->fail('Expected exception for s3://' . $folders['private']);
+    }
+    catch (Exception $e) {
+      $this->assertTrue(TRUE, 'Threw exception for s3://' . $folders['private']);
+    }
+  }
+
+  /**
+   * Clean up S3 folder.
+   */
+  public function tearDown() {
+    $this->s3->deleteMatchingObjects($this->config['bucket'], $this->remote_tests_folder_key);
+    parent::tearDown();
+  }
+
+} // END S3fsWebTestCase class

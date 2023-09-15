@@ -1,0 +1,22 @@
+name = S3 File System
+description = Adds an Amazon Simple Storage Service-based remote file system to Drupal.
+core = 7.x
+php = 5.5
+configure = admin/config/media/s3fs/settings
+
+; Either or dependencies don't exist.
+;dependencies[] = composer_manager
+; or
+;dependencies[] = libraries
+
+; Includes
+files[] = S3fsStreamWrapper.inc
+
+; Tests
+files[] = tests/s3fs.test
+
+; Information added by Drupal.org packaging script on 2022-09-28
+version = "7.x-3.0-alpha2+3-dev"
+core = "7.x"
+project = "s3fs"
+datestamp = "1664330812"

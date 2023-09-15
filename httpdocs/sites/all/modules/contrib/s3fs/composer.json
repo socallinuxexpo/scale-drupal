@@ -1,0 +1,9 @@
+{
+  "name": "drupal/s3fs",
+  "description": "",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "require": {
+    "aws/aws-sdk-php": "~3.0"
+  }
+}
