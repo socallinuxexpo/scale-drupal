@@ -1,0 +1,7 @@
+name: scale10
+recipe: drupal10
+config:
+  webroot: web
+  xdebug: true
+  config:
+    php: .lando.php.ini
