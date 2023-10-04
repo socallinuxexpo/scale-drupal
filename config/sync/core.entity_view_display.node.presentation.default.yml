@@ -1,0 +1,28 @@
+uuid: f4978c3b-200f-4de5-8dd9-dcc1a7a779ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.presentation.body
+    - node.type.presentation
+  module:
+    - text
+    - user
+id: node.presentation.default
+targetEntityType: node
+bundle: presentation
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
