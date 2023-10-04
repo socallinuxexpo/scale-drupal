@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_front_page.features.inc

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_promo.strongarm.inc
@@ -62,11 +63,43 @@ function scale_promo_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_enable_revisions_page_node_promo_item';
+  $strongarm->value = 1;
+  $export['diff_enable_revisions_page_node_promo_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_promo_item';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_promo_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_promo_item';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_promo_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__promo_item';
   $strongarm->value = array(
+    'extra_fields' => array(
+      'display' => array(),
+      'form' => array(
+        'path' => array(
+          'weight' => '7',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+      ),
+    ),
     'view_modes' => array(
-      'teaser' => array(
-        'custom_settings' => TRUE,
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
       ),
       'full' => array(
         'custom_settings' => FALSE,
@@ -80,23 +113,12 @@ function scale_promo_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
-      'diff_standard' => array(
-        'custom_settings' => FALSE,
+      'teaser' => array(
+        'custom_settings' => TRUE,
       ),
       'token' => array(
         'custom_settings' => FALSE,
       ),
-    ),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '0',
-        ),
-        'path' => array(
-          'weight' => '7',
-        ),
-      ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__promo_item'] = $strongarm;
@@ -140,6 +162,13 @@ function scale_promo_strongarm() {
   $strongarm->name = 'node_submitted_promo_item';
   $strongarm->value = 0;
   $export['node_submitted_promo_item'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_promo_item_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_promo_item_pattern'] = $strongarm;
 
   return $export;
 }

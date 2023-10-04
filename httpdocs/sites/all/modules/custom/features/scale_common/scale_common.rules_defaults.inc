@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_common.rules_defaults.inc
