@@ -1,0 +1,7 @@
+type: module
+name: Drupal 10 Migration
+description: Functionality required for the migration from D7 to D10
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - drupal:migrate

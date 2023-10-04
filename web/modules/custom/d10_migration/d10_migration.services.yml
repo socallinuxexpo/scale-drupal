@@ -1,0 +1,4 @@
+services:
+  d10_migration.client:
+    class: Drupal\d10_migration\Client
+    arguments: [ '@http_client' ]
