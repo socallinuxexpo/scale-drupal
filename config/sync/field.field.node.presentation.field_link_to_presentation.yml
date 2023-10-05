@@ -1,0 +1,23 @@
+uuid: cbdef4be-5df7-4013-b01f-bb8c8a300b04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_link_to_presentation
+    - node.type.presentation
+  module:
+    - link
+id: node.presentation.field_link_to_presentation
+field_name: field_link_to_presentation
+entity_type: node
+bundle: presentation
+label: 'Presentation Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 2
+  link_type: 17
+field_type: link

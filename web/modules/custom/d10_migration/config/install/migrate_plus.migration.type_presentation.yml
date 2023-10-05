@@ -18,5 +18,41 @@ process:
     plugin: default_value
     default_value: presentation
   title: title
+  created: created
+  status: published
+  field_audience:
+    plugin: entity_generate
+    source: audience
+  field_topic:
+    plugin: entity_generate
+    source: topic
+  field_tags:
+    - plugin: explode
+      source: tags
+      delimiter: ','
+    - plugin: entity_generate
+  field_rating:
+    plugin: entity_generate
+    source: rating
+  field_legacy_nid: nid
+  body/value: long_abstract
+  body/summary: short_abstract
+  field_audio_video/value: audio_video
+  field_long_abstract/value: long_abstract
+  field_short_abstract/value: short_abstract
+  field_moderation_message/value: moderation_message
+  field_link_to_presentation/title: link_to_prezi__title
+  field_link_to_presentation/uri: link_to_prezi__url
+  field_primary_contact: primary_contact
+  path/pathauto:
+    plugin: default_value
+    default_value: 1
+  path/alias: path
+# TODO: Moderation State
+# @see https://www.drupal.org/project/drupal/issues/3157105#comment-13830538
 destination:
   plugin: 'entity:node'
+migration_dependencies: null
+#migration_dependencies:
+#  required:
+#    - tax_presentation_rating_source

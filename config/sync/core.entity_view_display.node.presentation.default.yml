@@ -4,8 +4,20 @@ status: true
 dependencies:
   config:
     - field.field.node.presentation.body
+    - field.field.node.presentation.field_audience
+    - field.field.node.presentation.field_audio_video
+    - field.field.node.presentation.field_legacy_nid
+    - field.field.node.presentation.field_link_to_presentation
+    - field.field.node.presentation.field_long_abstract
+    - field.field.node.presentation.field_moderation_message
+    - field.field.node.presentation.field_primary_contact
+    - field.field.node.presentation.field_rating
+    - field.field.node.presentation.field_short_abstract
+    - field.field.node.presentation.field_tags
+    - field.field.node.presentation.field_topic
     - node.type.presentation
   module:
+    - link
     - text
     - user
 id: node.presentation.default
@@ -19,6 +31,93 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_audience:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_audio_video:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_legacy_nid:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_link_to_presentation:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_long_abstract:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_moderation_message:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_primary_contact:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_rating:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_short_abstract:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_topic:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 103
     region: content
   links:
     settings: {  }

@@ -1,0 +1,19 @@
+uuid: 8acdf0a9-a934-49fe-b00d-5e2e35ec8949
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_nid
+    - node.type.presentation
+id: node.presentation.field_legacy_nid
+field_name: field_legacy_nid
+entity_type: node
+bundle: presentation
+label: 'Legacy NID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

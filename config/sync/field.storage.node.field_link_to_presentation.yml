@@ -1,0 +1,19 @@
+uuid: df814b6a-6062-4c7c-bc16-b136ff83f0dd
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_link_to_presentation
+field_name: field_link_to_presentation
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

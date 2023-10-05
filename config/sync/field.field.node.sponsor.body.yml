@@ -1,18 +1,16 @@
-uuid: c8a5e5fe-c413-4417-b87b-715902841ae9
+uuid: 6a5631ca-f353-4462-84ed-ed716cb50a68
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.article
+    - node.type.sponsor
   module:
     - text
-_core:
-  default_config_hash: 4Wxs1LseZ8JsNwD9uJVIbzZqG35yQXN8Eo1Hub6NMuI
-id: node.article.body
+id: node.sponsor.body
 field_name: body
 entity_type: node
-bundle: article
+bundle: sponsor
 label: Body
 description: ''
 required: false

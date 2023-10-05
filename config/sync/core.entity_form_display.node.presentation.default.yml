@@ -4,8 +4,20 @@ status: true
 dependencies:
   config:
     - field.field.node.presentation.body
+    - field.field.node.presentation.field_audience
+    - field.field.node.presentation.field_audio_video
+    - field.field.node.presentation.field_legacy_nid
+    - field.field.node.presentation.field_link_to_presentation
+    - field.field.node.presentation.field_long_abstract
+    - field.field.node.presentation.field_moderation_message
+    - field.field.node.presentation.field_primary_contact
+    - field.field.node.presentation.field_rating
+    - field.field.node.presentation.field_short_abstract
+    - field.field.node.presentation.field_tags
+    - field.field.node.presentation.field_topic
     - node.type.presentation
   module:
+    - link
     - path
     - text
 id: node.presentation.default
@@ -28,6 +40,102 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_audience:
+    type: entity_reference_autocomplete
+    weight: 122
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_audio_video:
+    type: text_textarea
+    weight: 131
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_nid:
+    type: string_textfield
+    weight: 126
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_link_to_presentation:
+    type: link_default
+    weight: 130
+    region: content
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_long_abstract:
+    type: text_textarea
+    weight: 128
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_moderation_message:
+    type: text_textarea
+    weight: 129
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_primary_contact:
+    type: email_default
+    weight: 132
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_rating:
+    type: entity_reference_autocomplete
+    weight: 125
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_short_abstract:
+    type: text_textarea
+    weight: 127
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_tags:
+    type: entity_reference_autocomplete
+    weight: 124
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_topic:
+    type: entity_reference_autocomplete
+    weight: 123
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   path:
     type: path

@@ -1,0 +1,28 @@
+uuid: ec706713-e93a-4d04-9a18-d3a7d8f2ce48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.sponsor.body
+    - node.type.sponsor
+  module:
+    - text
+    - user
+id: node.sponsor.default
+targetEntityType: node
+bundle: sponsor
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

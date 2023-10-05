@@ -1,0 +1,24 @@
+uuid: e44b2747-8619-45cd-afa6-0adea8031263
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_moderation_message
+    - filter.format.basic_html
+    - node.type.presentation
+  module:
+    - text
+id: node.presentation.field_moderation_message
+field_name: field_moderation_message
+entity_type: node
+bundle: presentation
+label: 'Moderation Message'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

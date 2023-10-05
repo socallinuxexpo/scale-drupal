@@ -1,0 +1,29 @@
+uuid: 627c4af6-1dc3-4cf9-9539-ac6c32ce49a1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audience
+    - node.type.presentation
+    - taxonomy.vocabulary.presentation_audience
+id: node.presentation.field_audience
+field_name: field_audience
+entity_type: node
+bundle: presentation
+label: Audience
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      presentation_audience: presentation_audience
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

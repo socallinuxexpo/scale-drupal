@@ -1,0 +1,29 @@
+uuid: f68db68a-2762-4b4b-8160-b40879812c79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_topic
+    - node.type.presentation
+    - taxonomy.vocabulary.presentation_topic
+id: node.presentation.field_topic
+field_name: field_topic
+entity_type: node
+bundle: presentation
+label: Topic
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      presentation_topic: presentation_topic
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

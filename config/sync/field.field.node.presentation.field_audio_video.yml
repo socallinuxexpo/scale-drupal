@@ -1,0 +1,24 @@
+uuid: b732e60c-b559-4a0a-9491-b91903c1d5a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_audio_video
+    - filter.format.basic_html
+    - node.type.presentation
+  module:
+    - text
+id: node.presentation.field_audio_video
+field_name: field_audio_video
+entity_type: node
+bundle: presentation
+label: 'Audio / Video'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long
