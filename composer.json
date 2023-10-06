@@ -21,7 +21,9 @@
         "drupal/core-project-message": "^10.1",
         "drupal/core-recommended": "^10.1",
         "drupal/gin": "^3.0@RC",
+        "drupal/migrate_file": "^2.1",
         "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_skip_on_404": "^1.1",
         "drush/drush": "^12.2"
     },
     "conflict": {

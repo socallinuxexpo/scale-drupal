@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2b6315b96f2e5c0cd3c3dcd4c8b8d4dd",
+    "content-hash": "b45a044b3bd1ece0d3f0782f17d809a8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1660,6 +1660,54 @@
             ]
         },
         {
+            "name": "drupal/migrate_file",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migrate_file.git",
+                "reference": "2.1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_file-2.1.2.zip",
+                "reference": "2.1.2",
+                "shasum": "3febc85243c9a67991db102a10c6d81c0bea07c5"
+            },
+            "require": {
+                "drupal/core": "^9 | ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.2",
+                    "datestamp": "1674948365",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "drclaw",
+                    "homepage": "https://www.drupal.org/user/823702"
+                }
+            ],
+            "description": "Additional support for migrating files including downloading remote files and using remote uris (without download)",
+            "homepage": "https://www.drupal.org/project/migrate_file",
+            "keywords": [
+                "Drupal"
+            ],
+            "support": {
+                "source": "http://cgit.drupalcode.org/migrate_file",
+                "issues": "https://www.drupal.org/project/issues/migrate_file"
+            }
+        },
+        {
             "name": "drupal/migrate_plus",
             "version": "6.0.1",
             "source": {
@@ -1721,6 +1769,57 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/migrate_plus",
                 "issues": "https://www.drupal.org/project/issues/migrate_plus",
+                "slack": "#migrate"
+            }
+        },
+        {
+            "name": "drupal/migrate_skip_on_404",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/migrate_skip_on_404.git",
+                "reference": "1.1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/migrate_skip_on_404-1.1.1.zip",
+                "reference": "1.1.1",
+                "shasum": "63122bd236705b553353ecab87c0ba66bfc268df"
+            },
+            "require": {
+                "drupal/core": "^9 || ^10"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.1.1",
+                    "datestamp": "1663866017",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "See contributors",
+                    "homepage": "https://www.drupal.org/node/3195613/committers",
+                    "role": "Developer"
+                },
+                {
+                    "name": "sorlov",
+                    "homepage": "https://www.drupal.org/user/370717"
+                }
+            ],
+            "description": "Automatically skip files if they do not exist on the server, rather than make the Migrate Drupal UI or Migrate Upgrade -based migration fail.",
+            "homepage": "https://www.drupal.org/project/migrate_skip_on_404",
+            "support": {
+                "source": "https://git.drupalcode.org/project/migrate_skip_on_404",
+                "issues": "https://www.drupal.org/project/issues/migrate_skip_on_404",
                 "slack": "#migrate"
             }
         },

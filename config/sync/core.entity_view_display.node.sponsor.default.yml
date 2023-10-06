@@ -4,8 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.sponsor.body
+    - field.field.node.sponsor.field_legacy_nid
+    - field.field.node.sponsor.field_sponsor_logo
+    - field.field.node.sponsor.field_sponsor_website
     - node.type.sponsor
   module:
+    - image
+    - link
     - text
     - user
 id: node.sponsor.default
@@ -19,6 +24,37 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_legacy_nid:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_sponsor_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_sponsor_website:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 103
     region: content
   links:
     settings: {  }

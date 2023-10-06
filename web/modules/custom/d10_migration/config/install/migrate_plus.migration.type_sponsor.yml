@@ -1,0 +1,61 @@
+langcode: en
+status: true
+dependencies: { }
+id: type_sponsor
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: default
+label: 'Sponsor Type'
+source:
+  plugin: type_sponsor_source
+  track_changes: true
+  constants:
+    DRUPAL_FILE_DIRECTORY: 'public://'
+process:
+  type:
+    plugin: default_value
+    default_value: sponsor
+  title: title
+  created: created
+  status: published
+  field_legacy_nid: nid
+  body/value: body
+  body/summary: body_summary
+  field_sponsor_website/title: website_title
+  field_sponsor_website/uri: website_url
+  pseudo_folder_date:
+    - plugin: format_date
+      source: created
+      from_format: U
+      to_format: Y-m
+  pseudo_folder_directory:
+    plugin: concat
+    source:
+      - constants/DRUPAL_FILE_DIRECTORY
+      - '@pseudo_folder_date'
+  pseudo_destination_path:
+    plugin: concat
+    source:
+      - '@pseudo_folder_directory'
+      - filename
+    delimiter: /
+  field_sponsor_logo:
+    - plugin: skip_on_empty
+      source: logo/src
+      method: row
+      message: 'Cannot import empty image filename.'
+    - plugin: skip_on_404
+      method: row
+      message: 'Cannot reach the image at that URI.'
+    - plugin: file_import
+      source: logo/src
+      destination: '@pseudo_destination_path'
+  path/pathauto:
+    plugin: default_value
+    default_value: 1
+  path/alias: path
+destination:
+  plugin: 'entity:node'
+migration_dependencies: null
