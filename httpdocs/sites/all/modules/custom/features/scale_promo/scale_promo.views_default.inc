@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_promo.views_default.inc
@@ -93,7 +94,7 @@ function scale_promo_views_default_views() {
   );
   $handler->display->display_options['arguments']['field_scale_event_tid']['validate_options']['type'] = 'convert';
   $handler->display->display_options['arguments']['field_scale_event_tid']['validate']['fail'] = 'access denied';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -112,7 +113,7 @@ function scale_promo_views_default_views() {
   $handler->display->display_options['filters']['field_item_type_value']['table'] = 'field_data_field_item_type';
   $handler->display->display_options['filters']['field_item_type_value']['field'] = 'field_item_type_value';
   $handler->display->display_options['filters']['field_item_type_value']['value'] = array(
-    'buttons' => 'buttons',
+    'flyers' => 'flyers',
   );
 
   /* Display: buttons */
@@ -133,7 +134,7 @@ function scale_promo_views_default_views() {
   $handler->display->display_options['header']['area']['format'] = 'filtered_html';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -202,7 +203,7 @@ function scale_promo_views_default_views() {
   $handler->display->display_options['fields']['field_embed_code']['field'] = 'field_embed_code';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -228,6 +229,11 @@ function scale_promo_views_default_views() {
     'default' => 0,
   );
   $handler->display->display_options['attachment_position'] = 'after';
+
+  /* Display: Flyers */
+  $handler = $view->new_display('ctools_context', 'Flyers', 'ctools_context_1');
+  $handler->display->display_options['style_plugin'] = 'ctools_context';
+  $handler->display->display_options['row_plugin'] = 'fields';
   $export['promo_items_multi_year'] = $view;
 
   return $export;

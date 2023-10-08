@@ -141,7 +141,7 @@ function scale_presentation_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_presentation_pattern';
-  $strongarm->value = 'scale/[site:slogan]/presentations/[node:title]';
+  $strongarm->value = 'scale/[node:field-scale-event:0:name]/presentations/[node:title]';
   $export['pathauto_node_presentation_pattern'] = $strongarm;
 
   $strongarm = new stdClass();

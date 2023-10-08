@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * scale_promo.features.field_instance.inc
