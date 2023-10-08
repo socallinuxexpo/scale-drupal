@@ -1,54 +1,35 @@
-uuid: fad01f45-7da8-426c-b5c5-c4f7da942d6d
 langcode: en
 status: true
-dependencies: {  }
-id: type_sponsor
+dependencies: { }
+id: type_blog
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: default
-label: 'Sponsor Type'
+label: 'Blog Type'
 source:
-  plugin: type_sponsor_source
+  plugin: type_blog_source
   track_changes: true
   constants:
     DRUPAL_FILE_DIRECTORY: 'public://'
 process:
   type:
     plugin: default_value
-    default_value: sponsor
+    default_value: article
   title: title
   created: created
   status: published
-  field_legacy_nid: nid
-  body/value: body
-  body/summary: body_summary
-  field_sponsor_website/title: website_title
-  field_sponsor_website/uri: website_url
-  field_ready_for_approval: ready_for_approval
-  field_booth_number: booth
-  field_sponsor_tier:
-    -
-      plugin: explode
-      source: sponsor_tier
+  field_tags:
+    - plugin: explode
+      source: tags
       delimiter: ','
-    -
-      plugin: entity_generate
-  field_sponsor_type:
-    -
-      plugin: explode
-      source: sponsor_type
-      delimiter: ','
-    -
-      plugin: entity_generate
-  field_exhibitor_type:
-    -
-      plugin: entity_generate
-      source: exhibitor_type
+    - plugin: skip_on_empty
+      method: process
+      message: 'Empty tags.'
+    - plugin: entity_generate
   pseudo_folder_date:
-    -
-      plugin: format_date
+    - plugin: format_date
       source: created
       from_format: U
       to_format: Y-m
@@ -63,24 +44,25 @@ process:
       - '@pseudo_folder_directory'
       - filename
     delimiter: /
-  field_sponsor_logo:
-    -
-      plugin: skip_on_empty
-      source: logo/src
+  field_article_image:
+    - plugin: skip_on_empty
+      source: image/src
       method: process
       message: 'Cannot import empty image filename.'
-    -
-      plugin: skip_on_404
+    - plugin: skip_on_404
       method: process
       message: 'Cannot reach the image at that URI.'
-    -
-      plugin: file_import
-      source: logo/src
+    - plugin: file_import
+#      source: image/src
       destination: '@pseudo_destination_path'
+  body/value: body
+  body/summary: body_summary
   path/pathauto:
     plugin: default_value
     default_value: 1
   path/alias: path
+# TODO: Moderation State
+# @see https://www.drupal.org/project/drupal/issues/3157105#comment-13830538
 destination:
   plugin: 'entity:node'
 migration_dependencies: null

@@ -1,0 +1,8 @@
+uuid: d51f1967-118b-4dc4-807c-a7b9b5094545
+langcode: en
+status: true
+dependencies: {  }
+name: 'Exhibitor Type'
+vid: exhibitor_type
+description: ''
+weight: 0

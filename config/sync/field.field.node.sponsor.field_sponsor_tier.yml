@@ -1,0 +1,29 @@
+uuid: 1ca3015b-cd0a-41b8-9e1d-80b73624e9ea
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsor_tier
+    - node.type.sponsor
+    - taxonomy.vocabulary.sponsor_tier
+id: node.sponsor.field_sponsor_tier
+field_name: field_sponsor_tier
+entity_type: node
+bundle: sponsor
+label: 'Sponsor Tier'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      sponsor_tier: sponsor_tier
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

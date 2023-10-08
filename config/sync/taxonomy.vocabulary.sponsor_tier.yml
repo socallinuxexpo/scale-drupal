@@ -1,0 +1,8 @@
+uuid: cb5696d0-364d-4d30-a039-98bc43f0a7fd
+langcode: en
+status: true
+dependencies: {  }
+name: 'Sponsor Tier'
+vid: sponsor_tier
+description: ''
+weight: 0

@@ -25,6 +25,21 @@ process:
   body/summary: body_summary
   field_sponsor_website/title: website_title
   field_sponsor_website/uri: website_url
+  field_ready_for_approval: ready_for_approval
+  field_booth_number: booth
+  field_sponsor_tier:
+    - plugin: explode
+      source: sponsor_tier
+      delimiter: ','
+    - plugin: entity_generate
+  field_sponsor_type:
+    - plugin: explode
+      source: sponsor_type
+      delimiter: ','
+    - plugin: entity_generate
+  field_exhibitor_type:
+    - plugin: entity_generate
+      source: exhibitor_type
   pseudo_folder_date:
     - plugin: format_date
       source: created
@@ -44,10 +59,10 @@ process:
   field_sponsor_logo:
     - plugin: skip_on_empty
       source: logo/src
-      method: row
+      method: process
       message: 'Cannot import empty image filename.'
     - plugin: skip_on_404
-      method: row
+      method: process
       message: 'Cannot reach the image at that URI.'
     - plugin: file_import
       source: logo/src

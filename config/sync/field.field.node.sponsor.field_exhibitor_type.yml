@@ -1,0 +1,29 @@
+uuid: 20a2d7b4-f56a-4cf9-aba7-7b31d263d95a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_exhibitor_type
+    - node.type.sponsor
+    - taxonomy.vocabulary.exhibitor_type
+id: node.sponsor.field_exhibitor_type
+field_name: field_exhibitor_type
+entity_type: node
+bundle: sponsor
+label: 'Exhibitor Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      exhibitor_type: exhibitor_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

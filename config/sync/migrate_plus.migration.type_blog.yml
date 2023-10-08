@@ -1,51 +1,37 @@
-uuid: fad01f45-7da8-426c-b5c5-c4f7da942d6d
+uuid: 1e65bba1-0c32-4f64-a458-c11d5a251583
 langcode: en
 status: true
 dependencies: {  }
-id: type_sponsor
+id: type_blog
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: default
-label: 'Sponsor Type'
+label: 'Blog Type'
 source:
-  plugin: type_sponsor_source
+  plugin: type_blog_source
   track_changes: true
   constants:
     DRUPAL_FILE_DIRECTORY: 'public://'
 process:
   type:
     plugin: default_value
-    default_value: sponsor
+    default_value: article
   title: title
   created: created
   status: published
-  field_legacy_nid: nid
-  body/value: body
-  body/summary: body_summary
-  field_sponsor_website/title: website_title
-  field_sponsor_website/uri: website_url
-  field_ready_for_approval: ready_for_approval
-  field_booth_number: booth
-  field_sponsor_tier:
+  field_tags:
     -
       plugin: explode
-      source: sponsor_tier
+      source: tags
       delimiter: ','
     -
-      plugin: entity_generate
-  field_sponsor_type:
-    -
-      plugin: explode
-      source: sponsor_type
-      delimiter: ','
+      plugin: skip_on_empty
+      method: process
+      message: 'Empty tags.'
     -
       plugin: entity_generate
-  field_exhibitor_type:
-    -
-      plugin: entity_generate
-      source: exhibitor_type
   pseudo_folder_date:
     -
       plugin: format_date
@@ -63,10 +49,10 @@ process:
       - '@pseudo_folder_directory'
       - filename
     delimiter: /
-  field_sponsor_logo:
+  field_article_image:
     -
       plugin: skip_on_empty
-      source: logo/src
+      source: image/src
       method: process
       message: 'Cannot import empty image filename.'
     -
@@ -75,8 +61,9 @@ process:
       message: 'Cannot reach the image at that URI.'
     -
       plugin: file_import
-      source: logo/src
       destination: '@pseudo_destination_path'
+  body/value: body
+  body/summary: body_summary
   path/pathauto:
     plugin: default_value
     default_value: 1

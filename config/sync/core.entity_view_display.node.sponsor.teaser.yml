@@ -5,8 +5,13 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.sponsor.body
+    - field.field.node.sponsor.field_booth_number
+    - field.field.node.sponsor.field_exhibitor_type
     - field.field.node.sponsor.field_legacy_nid
+    - field.field.node.sponsor.field_ready_for_approval
     - field.field.node.sponsor.field_sponsor_logo
+    - field.field.node.sponsor.field_sponsor_tier
+    - field.field.node.sponsor.field_sponsor_type
     - field.field.node.sponsor.field_sponsor_website
     - node.type.sponsor
   module:
@@ -31,6 +36,11 @@ content:
     weight: 100
     region: content
 hidden:
+  field_booth_number: true
+  field_exhibitor_type: true
   field_legacy_nid: true
+  field_ready_for_approval: true
   field_sponsor_logo: true
+  field_sponsor_tier: true
+  field_sponsor_type: true
   field_sponsor_website: true
