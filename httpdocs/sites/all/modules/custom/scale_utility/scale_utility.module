@@ -151,60 +151,60 @@ function scale_utility_permission() {
  *   Overriding core user_view_access().
  */
 function _scale_user_view_access($account) {
-  $uid = is_object($account) ? $account->uid : (int) $account;
 
-  // Never allow access to view the anonymous user account.
-  if ($uid) {
-    // Admins can view all, users can view own profiles at all times.
-    if ($GLOBALS['user']->uid == $uid || user_access('administer users')) {
-      return TRUE;
-    }
-    elseif (user_access('access user profiles')) {
-      // Modify to only allow access to current speaker pages. RG 20131208.
-      if (!_scale_current_speaker($uid)) {
-        return FALSE;
-      }
-      // At this point, load the complete account object.
-      if (!is_object($account)) {
-        $account = user_load($uid);
-      }
-      return (is_object($account) && $account->status);
-    }
+  // Admins bypass access restrictions
+  if(user_access('administer users')) {
+    return TRUE;
   }
-  return FALSE;
+
+  // Never allow access to view the anonymous or admin user account.
+  if($account->uid && $account->uid == 1) {
+    return FALSE;
+  }
+
+  // Deny if user doesn't have permission to view profiles
+  if(!user_access('access user profiles')) {
+    return FALSE;
+  }
+
+  $current_event = _get_current_event();
+  $is_speaker = _scale_current_speaker($account->uid, $current_event->tid);
+
+  return $is_speaker && $account->status;
+}
+
+function _get_current_event() {
+  $vocabulary = taxonomy_vocabulary_machine_name_load('scale_event');
+  if ($vocabulary) {
+    $terms = taxonomy_get_tree($vocabulary->vid);
+    return $terms[0];
+  }
+
+  return NULL;
 }
 
 /**
  * Determine if a user was a speaker on the given SCALE event.
  **/
-function _scale_current_speaker($uid) {
-  // Get the SCALE event tid from the path alias
-  // Now in the 2nd parameter position
-  $path = request_uri();
-  $items = explode('/', $path);
-  $scale_event = $items[2];
-  $scale_event_name = taxonomy_get_term_by_name($scale_event);
-  $scale_event_object = array_shift($scale_event_name);
-  $scale_event_tid = $scale_event_object->tid;
+function _scale_current_speaker($uid, $tid) {
+  $query = db_select('node', 'n');
+  $query->fields('n', array('nid'))
+    ->condition('n.type', 'presentation', '=');
 
-  // Find out if this speaker is has an accepted presentation for this year.
-  $result = db_query(
-    'SELECT sp.field_speaker_uid, sp.entity_id, n.status, se.field_scale_event_tid
-     FROM {field_data_field_speaker} sp
-     JOIN {node} n ON sp.entity_id = n.nid
-     JOIN {field_data_field_scale_event} se ON sp.entity_id = se.entity_id
-     WHERE n.status = :status AND sp.field_speaker_uid = :uid
-     AND se.field_scale_event_tid = :tid',
-     array(
-       ':status' => 1,
-       ':uid' => $uid,
-       ':tid' => $scale_event_tid
-     )
-   );
+  // Join to the field data for the user reference field.
+  $query->join('field_data_field_speaker', 'fu', 'n.nid = fu.entity_id');
 
-  $record = $result->fetchAssoc();
+  // Join to the field data for the taxonomy term reference field.
+  $query->join('field_data_field_scale_event', 'ft', 'n.nid = ft.entity_id');
 
-  return $record;
+  $query->condition('fu.field_speaker_uid', $uid, '=')
+    ->condition('ft.field_scale_event_tid', $tid, '=')
+    ->range(0, 1); // We only need to know if at least one exists.
+
+  // Execute the query.
+  $result = $query->execute();
+
+  return (bool) $result->fetchField();
 }
 
 /**
