@@ -5,3 +5,6 @@ config:
   xdebug: true
   config:
     php: .lando.php.ini
+  services:
+    phpmyadmin:
+      type: phpmyadmin

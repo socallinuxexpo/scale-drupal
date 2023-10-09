@@ -1,0 +1,29 @@
+uuid: db9347fb-61e2-412f-bea7-3e70af041119
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_venue_rooms
+    - node.type.venue
+    - taxonomy.vocabulary.venue_room
+id: node.venue.field_venue_rooms
+field_name: field_venue_rooms
+entity_type: node
+bundle: venue
+label: Rooms
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      venue_room: venue_room
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies: { }
+id: tax_room
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: default
+label: 'Room Taxonomy'
+source:
+  plugin: tax_room_source
+  track_changes: true
+process:
+  name: name
+  field_legacy_tid: tid
+destination:
+  plugin: 'entity:taxonomy_term'
+  default_bundle: venue_room
+migration_dependencies: null

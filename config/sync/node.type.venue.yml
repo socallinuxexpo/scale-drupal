@@ -1,0 +1,17 @@
+uuid: 7cf245cf-9ceb-47d5-b76d-48cbbc3c892f
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Venue
+type: venue
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false
