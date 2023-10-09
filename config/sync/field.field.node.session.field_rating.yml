@@ -1,16 +1,16 @@
-uuid: ec2cf8c7-fd2a-428f-bd4d-6a3f851b33fa
+uuid: 6c22dd51-e2c5-40c8-a762-186e5d4fd4c9
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
-    - node.type.article
-    - taxonomy.vocabulary.article_tags
-id: node.article.field_tags
-field_name: field_tags
+    - field.storage.node.field_rating
+    - node.type.session
+    - taxonomy.vocabulary.session_rating
+id: node.session.field_rating
+field_name: field_rating
 entity_type: node
-bundle: article
-label: Tags
+bundle: session
+label: Rating
 description: ''
 required: false
 translatable: false
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      article_tags: article_tags
+      session_rating: session_rating
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: session_tags
+    auto_create_bundle: ''
 field_type: entity_reference

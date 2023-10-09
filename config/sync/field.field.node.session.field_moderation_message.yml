@@ -1,20 +1,20 @@
-uuid: b7000dfe-6b85-4c72-b142-fe6fbac05d85
+uuid: a18b79cd-e7ba-4474-87c4-5345396be334
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_long_abstract
+    - field.storage.node.field_moderation_message
     - filter.format.basic_html
-    - node.type.presentation
+    - node.type.session
   module:
     - text
-id: node.presentation.field_long_abstract
-field_name: field_long_abstract
+id: node.session.field_moderation_message
+field_name: field_moderation_message
 entity_type: node
-bundle: presentation
-label: 'Long Abstract'
+bundle: session
+label: 'Moderation Message'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

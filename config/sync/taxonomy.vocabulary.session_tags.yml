@@ -1,0 +1,8 @@
+uuid: 89c1558a-b2bf-4c5a-aa4c-c13cf83593e7
+langcode: en
+status: true
+dependencies: {  }
+name: 'Session Tags'
+vid: session_tags
+description: ''
+weight: 0

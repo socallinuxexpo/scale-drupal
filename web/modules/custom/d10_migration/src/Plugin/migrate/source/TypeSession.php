@@ -6,10 +6,10 @@ use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
 
 /**
  * @MigrateSource(
- *  id = "type_presentation_source",
+ *  id = "type_session_source",
  * )
  */
-class TypePresentation extends SourcePluginBase {
+class TypeSession extends SourcePluginBase {
 
   /**
    * {@inheritdoc}

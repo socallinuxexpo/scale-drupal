@@ -1,13 +1,13 @@
-uuid: 9cc894cf-ed94-4f01-aaff-5355750a3203
+uuid: 6218eb6d-b54f-44ee-a6a6-c67221620b62
 langcode: en
 status: true
 dependencies:
   config:
-    - node.type.presentation
-id: node.presentation.promote
+    - node.type.session
+id: node.session.promote
 field_name: promote
 entity_type: node
-bundle: presentation
+bundle: session
 label: 'Promoted to front page'
 description: ''
 required: false

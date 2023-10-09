@@ -1,16 +1,16 @@
-uuid: 063d3a44-cd72-4240-82dc-dd44bb80810a
+uuid: 86611232-d77c-4e77-908f-fcea1873322b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
-    - node.type.presentation
-    - taxonomy.vocabulary.presentation_tags
-id: node.presentation.field_tags
-field_name: field_tags
+    - field.storage.node.field_session_room
+    - node.type.session
+    - taxonomy.vocabulary.venue_room
+id: node.session.field_session_room
+field_name: field_session_room
 entity_type: node
-bundle: presentation
-label: Tags
+bundle: session
+label: Room
 description: ''
 required: false
 translatable: false
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      presentation_tags: presentation_tags
+      venue_room: venue_room
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: presentation_tags
+    auto_create_bundle: ''
 field_type: entity_reference

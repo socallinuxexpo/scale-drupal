@@ -1,29 +1,29 @@
 langcode: en
 status: true
 dependencies: { }
-id: type_presentation
+id: type_session
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: default
-label: 'Presentation Type'
+label: 'Session Type'
 source:
-  plugin: type_presentation_source
+  plugin: type_session_source
   track_changes: true
   constants:
     DRUPAL_FILE_DIRECTORY: 'public://'
 process:
   type:
     plugin: default_value
-    default_value: presentation
+    default_value: session
   title: title
   created: created
   status: published
-  field_audience:
+  field_session_level:
     plugin: entity_generate
     source: audience
-  field_topic:
+  field_session_track:
     plugin: entity_generate
     source: topic
   field_tags:
@@ -44,6 +44,21 @@ process:
   field_link_to_presentation/title: link_to_prezi__title
   field_link_to_presentation/uri: link_to_prezi__url
   field_primary_contact: primary_contact
+  field_scale_event:
+    - plugin: explode
+      source: scale_event
+      delimiter: ','
+    - plugin: entity_generate
+  field_session_room:
+    - plugin: explode
+      source: room
+      delimiter: ','
+    - plugin: entity_generate
+  field_session_room_overflow:
+    - plugin: explode
+      source: room_overflow
+      delimiter: ','
+    - plugin: entity_generate
   path/pathauto:
     plugin: default_value
     default_value: 1
@@ -52,7 +67,6 @@ process:
 # @see https://www.drupal.org/project/drupal/issues/3157105#comment-13830538
 destination:
   plugin: 'entity:node'
-migration_dependencies: null
-#migration_dependencies:
-#  required:
-#    - tax_presentation_rating_source
+migration_dependencies:
+  required:
+    - tax_room

@@ -1,16 +1,16 @@
-uuid: f68db68a-2762-4b4b-8160-b40879812c79
+uuid: fa33e7de-ee31-4e22-bc5c-ce4800d6897c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_topic
-    - node.type.presentation
-    - taxonomy.vocabulary.presentation_topic
-id: node.presentation.field_topic
-field_name: field_topic
+    - field.storage.node.field_session_track
+    - node.type.session
+    - taxonomy.vocabulary.session_track
+id: node.session.field_session_track
+field_name: field_session_track
 entity_type: node
-bundle: presentation
-label: Topic
+bundle: session
+label: 'Session Track'
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      presentation_topic: presentation_topic
+      session_track: session_track
     sort:
       field: name
       direction: asc

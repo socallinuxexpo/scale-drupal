@@ -1,16 +1,16 @@
-uuid: cbdef4be-5df7-4013-b01f-bb8c8a300b04
+uuid: ad19dd1d-3553-4819-ad57-6242f6220caf
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_link_to_presentation
-    - node.type.presentation
+    - node.type.session
   module:
     - link
-id: node.presentation.field_link_to_presentation
+id: node.session.field_link_to_presentation
 field_name: field_link_to_presentation
 entity_type: node
-bundle: presentation
+bundle: session
 label: 'Presentation Link'
 description: ''
 required: false

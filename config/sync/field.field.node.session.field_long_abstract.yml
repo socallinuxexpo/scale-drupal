@@ -1,20 +1,20 @@
-uuid: b732e60c-b559-4a0a-9491-b91903c1d5a8
+uuid: 49c003e2-2b66-4fcc-b340-17c7aa36ced7
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_audio_video
+    - field.storage.node.field_long_abstract
     - filter.format.basic_html
-    - node.type.presentation
+    - node.type.session
   module:
     - text
-id: node.presentation.field_audio_video
-field_name: field_audio_video
+id: node.session.field_long_abstract
+field_name: field_long_abstract
 entity_type: node
-bundle: presentation
-label: 'Audio / Video'
+bundle: session
+label: 'Long Abstract'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

@@ -1,0 +1,58 @@
+uuid: db5e7841-d997-4a9a-ae76-aaa3db21c984
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.session.body
+    - field.field.node.session.field_audio_video
+    - field.field.node.session.field_legacy_nid
+    - field.field.node.session.field_link_to_presentation
+    - field.field.node.session.field_long_abstract
+    - field.field.node.session.field_moderation_message
+    - field.field.node.session.field_primary_contact
+    - field.field.node.session.field_rating
+    - field.field.node.session.field_scale_event
+    - field.field.node.session.field_session_level
+    - field.field.node.session.field_session_room
+    - field.field.node.session.field_session_room_overflow
+    - field.field.node.session.field_session_track
+    - field.field.node.session.field_short_abstract
+    - field.field.node.session.field_tags
+    - node.type.session
+  module:
+    - text
+    - user
+id: node.session.teaser
+targetEntityType: node
+bundle: session
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_audio_video: true
+  field_legacy_nid: true
+  field_link_to_presentation: true
+  field_long_abstract: true
+  field_moderation_message: true
+  field_primary_contact: true
+  field_rating: true
+  field_scale_event: true
+  field_session_level: true
+  field_session_room: true
+  field_session_room_overflow: true
+  field_session_track: true
+  field_short_abstract: true
+  field_tags: true

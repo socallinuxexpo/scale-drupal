@@ -1,14 +1,14 @@
-uuid: 8acdf0a9-a934-49fe-b00d-5e2e35ec8949
+uuid: a3c4780c-8ab0-4f0c-8bd9-9ff1f9311825
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_legacy_nid
-    - node.type.presentation
-id: node.presentation.field_legacy_nid
+    - node.type.session
+id: node.session.field_legacy_nid
 field_name: field_legacy_nid
 entity_type: node
-bundle: presentation
+bundle: session
 label: 'Legacy NID'
 description: ''
 required: false

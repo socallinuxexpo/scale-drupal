@@ -1,8 +1,0 @@
-uuid: 000e1579-289f-4b0a-9f64-faaf77a23cd8
-langcode: en
-status: true
-dependencies: {  }
-name: 'Presentation Rating'
-vid: presentation_rating
-description: ''
-weight: 0

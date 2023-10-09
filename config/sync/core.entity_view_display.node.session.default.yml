@@ -1,28 +1,31 @@
-uuid: f4978c3b-200f-4de5-8dd9-dcc1a7a779ea
+uuid: 71278c03-8b0b-460c-b9a9-3242ec88aa20
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.presentation.body
-    - field.field.node.presentation.field_audience
-    - field.field.node.presentation.field_audio_video
-    - field.field.node.presentation.field_legacy_nid
-    - field.field.node.presentation.field_link_to_presentation
-    - field.field.node.presentation.field_long_abstract
-    - field.field.node.presentation.field_moderation_message
-    - field.field.node.presentation.field_primary_contact
-    - field.field.node.presentation.field_rating
-    - field.field.node.presentation.field_short_abstract
-    - field.field.node.presentation.field_tags
-    - field.field.node.presentation.field_topic
-    - node.type.presentation
+    - field.field.node.session.body
+    - field.field.node.session.field_audio_video
+    - field.field.node.session.field_legacy_nid
+    - field.field.node.session.field_link_to_presentation
+    - field.field.node.session.field_long_abstract
+    - field.field.node.session.field_moderation_message
+    - field.field.node.session.field_primary_contact
+    - field.field.node.session.field_rating
+    - field.field.node.session.field_scale_event
+    - field.field.node.session.field_session_level
+    - field.field.node.session.field_session_room
+    - field.field.node.session.field_session_room_overflow
+    - field.field.node.session.field_session_track
+    - field.field.node.session.field_short_abstract
+    - field.field.node.session.field_tags
+    - node.type.session
   module:
     - link
     - text
     - user
-id: node.presentation.default
+id: node.session.default
 targetEntityType: node
-bundle: presentation
+bundle: session
 mode: default
 content:
   body:
@@ -31,14 +34,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
-    region: content
-  field_audience:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 102
     region: content
   field_audio_video:
     type: text_default
@@ -96,6 +91,46 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
+  field_scale_event:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_session_level:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_session_room:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_session_room_overflow:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_session_track:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 116
+    region: content
   field_short_abstract:
     type: text_default
     label: above
@@ -110,14 +145,6 @@ content:
       link: true
     third_party_settings: {  }
     weight: 104
-    region: content
-  field_topic:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 103
     region: content
   links:
     settings: {  }

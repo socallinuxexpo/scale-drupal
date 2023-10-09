@@ -1,16 +1,16 @@
-uuid: 80cc9395-bfac-4c9f-86cd-5b044a806e55
+uuid: 266b90b3-c4db-4a0d-8a1e-0dd23970c161
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.presentation
+    - node.type.session
   module:
     - text
-id: node.presentation.body
+id: node.session.body
 field_name: body
 entity_type: node
-bundle: presentation
+bundle: session
 label: Body
 description: ''
 required: false

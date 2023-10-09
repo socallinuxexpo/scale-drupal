@@ -1,16 +1,16 @@
-uuid: 183fdcf8-5bce-4b1a-868c-c20a0cbef33b
+uuid: 9d5303d8-e369-4ae1-b1e7-f0e0444f37b7
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_rating
-    - node.type.presentation
-    - taxonomy.vocabulary.presentation_rating
-id: node.presentation.field_rating
-field_name: field_rating
+    - field.storage.node.field_tags
+    - node.type.session
+    - taxonomy.vocabulary.session_tags
+id: node.session.field_tags
+field_name: field_tags
 entity_type: node
-bundle: presentation
-label: Rating
+bundle: session
+label: Tags
 description: ''
 required: false
 translatable: false
@@ -20,10 +20,10 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      presentation_rating: presentation_rating
+      session_tags: session_tags
     sort:
       field: name
       direction: asc
     auto_create: false
-    auto_create_bundle: ''
+    auto_create_bundle: session_tags
 field_type: entity_reference

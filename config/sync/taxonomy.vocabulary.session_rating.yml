@@ -1,0 +1,8 @@
+uuid: 55934c38-735d-4d04-bb92-21d3f649d711
+langcode: en
+status: true
+dependencies: {  }
+name: 'Session Rating'
+vid: session_rating
+description: ''
+weight: 0
