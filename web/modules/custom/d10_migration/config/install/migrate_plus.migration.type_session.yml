@@ -75,6 +75,15 @@ process:
       delimiter: ','
     - plugin: trim
     - plugin: entity_generate
+  field_speakers_ref:
+    - plugin: skip_on_empty
+      source: speakers
+      method: process
+      message: 'Skipping empty speakers.'
+    - plugin: explode
+      delimiter: ','
+    - plugin: trim
+    - plugin: entity_generate
   path/pathauto:
     plugin: default_value
     default_value: 1

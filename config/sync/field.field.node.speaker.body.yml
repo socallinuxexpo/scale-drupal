@@ -1,0 +1,24 @@
+uuid: 46a59dc6-9e4f-458c-a92d-616f71445dda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.speaker
+  module:
+    - text
+id: node.speaker.body
+field_name: body
+entity_type: node
+bundle: speaker
+label: Biography
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

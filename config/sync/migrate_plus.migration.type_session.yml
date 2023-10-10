@@ -29,8 +29,12 @@ process:
     source: topic
   field_tags:
     -
-      plugin: explode
+      plugin: skip_on_empty
       source: tags
+      method: process
+      message: 'Skipping empty tags.'
+    -
+      plugin: explode
       delimiter: ','
     -
       plugin: trim
@@ -41,6 +45,9 @@ process:
     source: rating
   field_legacy_nid: nid
   body/value: long_abstract
+  body/format:
+    plugin: default_value
+    default_value: basic_html
   body/summary: short_abstract
   field_audio_video/value: audio_video
   field_long_abstract/value: long_abstract
@@ -60,8 +67,12 @@ process:
       plugin: entity_generate
   field_session_room:
     -
-      plugin: explode
+      plugin: skip_on_empty
       source: room
+      method: process
+      message: 'Skipping empty room.'
+    -
+      plugin: explode
       delimiter: ','
     -
       plugin: trim
@@ -69,8 +80,25 @@ process:
       plugin: entity_generate
   field_session_room_overflow:
     -
-      plugin: explode
+      plugin: skip_on_empty
       source: room_overflow
+      method: process
+      message: 'Skipping empty room_overflow.'
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: trim
+    -
+      plugin: entity_generate
+  field_speakers_ref:
+    -
+      plugin: skip_on_empty
+      source: speakers
+      method: process
+      message: 'Skipping empty speakers.'
+    -
+      plugin: explode
       delimiter: ','
     -
       plugin: trim
@@ -85,3 +113,4 @@ destination:
 migration_dependencies:
   required:
     - tax_room
+    - tax_event

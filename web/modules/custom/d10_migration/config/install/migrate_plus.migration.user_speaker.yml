@@ -1,36 +1,40 @@
-uuid: f0cbbfb0-8453-467e-ae46-93cf00bddc5f
 langcode: en
 status: true
-dependencies: {  }
-id: type_vendor
+dependencies: { }
+id: user_speaker
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: default
-label: 'Vendor Type'
+label: 'User Speaker'
 source:
-  plugin: type_vendor_source
+  plugin: user_speaker_source
   track_changes: true
   constants:
     DRUPAL_FILE_DIRECTORY: 'public://'
 process:
   type:
     plugin: default_value
-    default_value: vendor
-  title: title
+    default_value: speaker
+  title: name
   created: created
-  status: published
-  field_legacy_nid: nid
-  body/value: body
+  field_legacy_uid: uid
+  status:
+    plugin: default_value
+    default_value: 1
+  field_first_name: first_name
+  field_last_name: last_name
+  field_job_title: job_title
+  field_organization: organization
+  field_website: website
+  field_twitter_profile: twitter
+  body/value: bio
   body/format:
     plugin: default_value
     default_value: basic_html
-  body/summary: body_summary
-  field_vendor_website/uri: website_url
   pseudo_folder_date:
-    -
-      plugin: format_date
+    - plugin: format_date
       source: created
       from_format: U
       to_format: Y-m
@@ -45,25 +49,23 @@ process:
       - '@pseudo_folder_directory'
       - filename
     delimiter: /
-  field_vendor_logo:
-    -
-      plugin: skip_on_empty
-      source: logo/src
+  field_profile_photo:
+    - plugin: skip_on_empty
+      source: photo/src
       method: process
       message: 'Cannot import empty image filename.'
-    -
-      plugin: skip_on_404
+    - plugin: skip_on_404
       method: process
       message: 'Cannot reach the image at that URI.'
-    -
-      plugin: file_import
-      source: logo/src
+    - plugin: file_import
       destination: '@pseudo_destination_path'
-  field_article_image/alt: title
+  field_profile_photo/alt: name
   path/pathauto:
     plugin: default_value
     default_value: 1
   path/alias: path
+# TODO: Moderation State
+# @see https://www.drupal.org/project/drupal/issues/3157105#comment-13830538
 destination:
   plugin: 'entity:node'
 migration_dependencies: null

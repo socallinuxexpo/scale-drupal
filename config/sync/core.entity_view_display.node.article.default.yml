@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.article.body
     - field.field.node.article.field_article_image
+    - field.field.node.article.field_scale_events
     - field.field.node.article.field_tags
     - node.type.article
   module:
@@ -33,6 +34,14 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 105
+    region: content
+  field_scale_events:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 118
     region: content
   field_tags:
     type: entity_reference_label

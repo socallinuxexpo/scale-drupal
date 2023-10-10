@@ -1,0 +1,46 @@
+uuid: d7638954-ee05-45b9-a5b8-fb3c0fc4b43c
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.speaker.body
+    - field.field.node.speaker.field_first_name
+    - field.field.node.speaker.field_job_title
+    - field.field.node.speaker.field_last_name
+    - field.field.node.speaker.field_legacy_uid
+    - field.field.node.speaker.field_organization
+    - field.field.node.speaker.field_profile_photo
+    - field.field.node.speaker.field_twitter_profile
+    - field.field.node.speaker.field_website
+    - node.type.speaker
+  module:
+    - text
+    - user
+id: node.speaker.teaser
+targetEntityType: node
+bundle: speaker
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_first_name: true
+  field_job_title: true
+  field_last_name: true
+  field_legacy_uid: true
+  field_organization: true
+  field_profile_photo: true
+  field_twitter_profile: true
+  field_website: true

@@ -23,15 +23,15 @@ process:
   status: published
   field_tags:
     -
-      plugin: explode
+      plugin: skip_on_empty
+      method: process
       source: tags
+      message: 'Empty tags.'
+    -
+      plugin: explode
       delimiter: ','
     -
       plugin: trim
-    -
-      plugin: skip_on_empty
-      method: process
-      message: 'Empty tags.'
     -
       plugin: entity_generate
   pseudo_folder_date:
@@ -64,12 +64,27 @@ process:
     -
       plugin: file_import
       destination: '@pseudo_destination_path'
+  field_article_image/alt: title
   body/value: body
+  body/format:
+    plugin: default_value
+    default_value: basic_html
   body/summary: body_summary
+  field_scale_events:
+    -
+      plugin: explode
+      source: scale_event
+      delimiter: ','
+    -
+      plugin: trim
+    -
+      plugin: entity_generate
   path/pathauto:
     plugin: default_value
     default_value: 1
   path/alias: path
 destination:
   plugin: 'entity:node'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - tax_event

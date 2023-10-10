@@ -1,0 +1,19 @@
+uuid: 64212e3c-3d7b-4126-a4d3-c51bdc312316
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_legacy_uid
+    - node.type.speaker
+id: node.speaker.field_legacy_uid
+field_name: field_legacy_uid
+entity_type: node
+bundle: speaker
+label: 'Legacy UID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

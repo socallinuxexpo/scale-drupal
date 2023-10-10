@@ -55,6 +55,7 @@ process:
       message: 'Cannot reach the image at that URI.'
     - plugin: file_import
       destination: '@pseudo_destination_path'
+  field_article_image/alt: title
   body/value: body
   body/format:
     plugin: default_value

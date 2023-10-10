@@ -17,6 +17,7 @@ dependencies:
     - field.field.node.session.field_session_room_overflow
     - field.field.node.session.field_session_track
     - field.field.node.session.field_short_abstract
+    - field.field.node.session.field_speakers_ref
     - field.field.node.session.field_tags
     - node.type.session
   module:
@@ -137,6 +138,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 107
+    region: content
+  field_speakers_ref:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 119
     region: content
   field_tags:
     type: entity_reference_label

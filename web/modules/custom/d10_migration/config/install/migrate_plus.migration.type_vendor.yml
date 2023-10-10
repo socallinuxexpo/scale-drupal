@@ -54,6 +54,7 @@ process:
     - plugin: file_import
       source: logo/src
       destination: '@pseudo_destination_path'
+  field_article_image/alt: title
   path/pathauto:
     plugin: default_value
     default_value: 1

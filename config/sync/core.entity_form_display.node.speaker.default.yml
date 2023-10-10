@@ -1,21 +1,27 @@
-uuid: a29ba0e8-bba5-4e7a-9418-4250a06de6d2
+uuid: fd09fb63-de8c-4572-97f0-c495b70afb28
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.article.body
-    - field.field.node.article.field_article_image
-    - field.field.node.article.field_scale_events
-    - field.field.node.article.field_tags
+    - field.field.node.speaker.body
+    - field.field.node.speaker.field_first_name
+    - field.field.node.speaker.field_job_title
+    - field.field.node.speaker.field_last_name
+    - field.field.node.speaker.field_legacy_uid
+    - field.field.node.speaker.field_organization
+    - field.field.node.speaker.field_profile_photo
+    - field.field.node.speaker.field_twitter_profile
+    - field.field.node.speaker.field_website
     - image.style.thumbnail
-    - node.type.article
+    - node.type.speaker
   module:
     - image
+    - link
     - path
     - text
-id: node.article.default
+id: node.speaker.default
 targetEntityType: node
-bundle: article
+bundle: speaker
 mode: default
 content:
   body:
@@ -34,33 +40,69 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_article_image:
-    type: image_image
+  field_first_name:
+    type: string_textfield
+    weight: 122
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_job_title:
+    type: string_textfield
+    weight: 124
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_last_name:
+    type: string_textfield
+    weight: 123
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_legacy_uid:
+    type: string_textfield
+    weight: 127
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_organization:
+    type: string_textfield
     weight: 125
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_profile_photo:
+    type: image_image
+    weight: 129
     region: content
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
-  field_scale_events:
-    type: entity_reference_autocomplete
-    weight: 138
+  field_twitter_profile:
+    type: link_default
+    weight: 128
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
-  field_tags:
-    type: entity_reference_autocomplete
-    weight: 124
+  field_website:
+    type: link_default
+    weight: 126
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   path:
     type: path

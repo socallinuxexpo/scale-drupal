@@ -1,0 +1,29 @@
+uuid: f73973db-9b98-4dbc-b00d-37091332246e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_scale_events
+    - node.type.article
+    - node.type.event
+id: node.article.field_scale_events
+field_name: field_scale_events
+entity_type: node
+bundle: article
+label: Event(s)
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event: event
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

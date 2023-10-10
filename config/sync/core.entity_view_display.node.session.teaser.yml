@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.session.field_session_room_overflow
     - field.field.node.session.field_session_track
     - field.field.node.session.field_short_abstract
+    - field.field.node.session.field_speakers_ref
     - field.field.node.session.field_tags
     - node.type.session
   module:
@@ -55,4 +56,5 @@ hidden:
   field_session_room_overflow: true
   field_session_track: true
   field_short_abstract: true
+  field_speakers_ref: true
   field_tags: true

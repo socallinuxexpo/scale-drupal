@@ -1,0 +1,23 @@
+uuid: 6884663d-adf8-4b39-98b3-7b4453b82363
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_website
+    - node.type.speaker
+  module:
+    - link
+id: node.speaker.field_website
+field_name: field_website
+entity_type: node
+bundle: speaker
+label: Website
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  title: 0
+  link_type: 16
+field_type: link
