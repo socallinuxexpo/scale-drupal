@@ -1,17 +1,17 @@
-uuid: 0877d592-6fe1-4add-93f0-254a2ffb3b44
+uuid: 0203b961-1a82-4f02-a3cf-8f6240f8893c
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_sponsor_logo
-    - node.type.sponsor
+    - field.storage.node.field_vendor_logo
+    - node.type.vendor
   module:
     - image
-id: node.sponsor.field_sponsor_logo
-field_name: field_sponsor_logo
+id: node.vendor.field_vendor_logo
+field_name: field_vendor_logo
 entity_type: node
-bundle: sponsor
-label: Logo
+bundle: vendor
+label: 'Vendor Logo'
 description: ''
 required: false
 translatable: false

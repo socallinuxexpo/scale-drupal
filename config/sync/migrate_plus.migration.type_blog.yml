@@ -27,6 +27,8 @@ process:
       source: tags
       delimiter: ','
     -
+      plugin: trim
+    -
       plugin: skip_on_empty
       method: process
       message: 'Empty tags.'

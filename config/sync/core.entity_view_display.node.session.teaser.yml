@@ -12,7 +12,7 @@ dependencies:
     - field.field.node.session.field_moderation_message
     - field.field.node.session.field_primary_contact
     - field.field.node.session.field_rating
-    - field.field.node.session.field_scale_event
+    - field.field.node.session.field_scale_events
     - field.field.node.session.field_session_level
     - field.field.node.session.field_session_room
     - field.field.node.session.field_session_room_overflow
@@ -49,7 +49,7 @@ hidden:
   field_moderation_message: true
   field_primary_contact: true
   field_rating: true
-  field_scale_event: true
+  field_scale_events: true
   field_session_level: true
   field_session_room: true
   field_session_room_overflow: true

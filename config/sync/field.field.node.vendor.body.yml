@@ -1,16 +1,16 @@
-uuid: 6a5631ca-f353-4462-84ed-ed716cb50a68
+uuid: f25b54b9-180d-4a24-bba0-d1e23b419d61
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.body
-    - node.type.sponsor
+    - node.type.vendor
   module:
     - text
-id: node.sponsor.body
+id: node.vendor.body
 field_name: body
 entity_type: node
-bundle: sponsor
+bundle: vendor
 label: Body
 description: ''
 required: false

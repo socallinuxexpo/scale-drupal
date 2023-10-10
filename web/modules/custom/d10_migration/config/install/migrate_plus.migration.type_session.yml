@@ -30,6 +30,7 @@ process:
     - plugin: explode
       source: tags
       delimiter: ','
+    - plugin: trim
     - plugin: entity_generate
   field_rating:
     plugin: entity_generate
@@ -44,20 +45,23 @@ process:
   field_link_to_presentation/title: link_to_prezi__title
   field_link_to_presentation/uri: link_to_prezi__url
   field_primary_contact: primary_contact
-  field_scale_event:
+  field_scale_events:
     - plugin: explode
       source: scale_event
       delimiter: ','
+    - plugin: trim
     - plugin: entity_generate
   field_session_room:
     - plugin: explode
       source: room
       delimiter: ','
+    - plugin: trim
     - plugin: entity_generate
   field_session_room_overflow:
     - plugin: explode
       source: room_overflow
       delimiter: ','
+    - plugin: trim
     - plugin: entity_generate
   path/pathauto:
     plugin: default_value

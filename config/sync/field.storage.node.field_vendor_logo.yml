@@ -1,4 +1,4 @@
-uuid: d7da738f-0d59-450c-a5a0-3789a495d080
+uuid: efa44379-2091-4e88-aa2d-d4c0ae15ed95
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - file
     - image
     - node
-id: node.field_sponsor_logo
-field_name: field_sponsor_logo
+id: node.field_vendor_logo
+field_name: field_vendor_logo
 entity_type: node
 type: image
 settings:

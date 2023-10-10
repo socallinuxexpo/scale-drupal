@@ -32,6 +32,7 @@ module:
   migrate: 0
   migrate_file: 0
   migrate_plus: 0
+  migrate_process_trim: 0
   migrate_skip_on_404: 0
   mysql: 0
   node: 0

@@ -17,60 +17,47 @@ process:
   type:
     plugin: default_value
     default_value: sponsor
-  title: title
+  title:
+    plugin: concat
+    source:
+      - scale_event
+      - sponsor_tier
+      - title
+    delimiter: ' - '
   created: created
   status: published
   field_legacy_nid: nid
-  body/value: body
-  body/summary: body_summary
-  field_sponsor_website/title: website_title
-  field_sponsor_website/uri: website_url
   field_ready_for_approval: ready_for_approval
   field_booth_number: booth
+  field_scale_event:
+    - plugin: explode
+      source: scale_event
+      delimiter: ','
+    - plugin: trim
+    - plugin: entity_generate
+  field_vendor_ref:
+    - plugin: entity_generate
+      source: title
   field_sponsor_tier:
+    - plugin: skip_on_empty
+      method: process
+      message: 'Skipping empty sponsor tier.'
     - plugin: explode
       source: sponsor_tier
       delimiter: ','
+    - plugin: trim
     - plugin: entity_generate
   field_sponsor_type:
     - plugin: explode
       source: sponsor_type
       delimiter: ','
+    - plugin: trim
     - plugin: entity_generate
   field_exhibitor_type:
     - plugin: entity_generate
       source: exhibitor_type
-  pseudo_folder_date:
-    - plugin: format_date
-      source: created
-      from_format: U
-      to_format: Y-m
-  pseudo_folder_directory:
-    plugin: concat
-    source:
-      - constants/DRUPAL_FILE_DIRECTORY
-      - '@pseudo_folder_date'
-  pseudo_destination_path:
-    plugin: concat
-    source:
-      - '@pseudo_folder_directory'
-      - filename
-    delimiter: /
-  field_sponsor_logo:
-    - plugin: skip_on_empty
-      source: logo/src
-      method: process
-      message: 'Cannot import empty image filename.'
-    - plugin: skip_on_404
-      method: process
-      message: 'Cannot reach the image at that URI.'
-    - plugin: file_import
-      source: logo/src
-      destination: '@pseudo_destination_path'
-  path/pathauto:
-    plugin: default_value
-    default_value: 1
-  path/alias: path
 destination:
   plugin: 'entity:node'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - type_vendor

@@ -23,6 +23,7 @@
         "drupal/gin": "^3.0@RC",
         "drupal/migrate_file": "^2.1",
         "drupal/migrate_plus": "^6.0",
+        "drupal/migrate_process_trim": "^2.0@dev",
         "drupal/migrate_skip_on_404": "^1.1",
         "drush/drush": "^12.2"
     },

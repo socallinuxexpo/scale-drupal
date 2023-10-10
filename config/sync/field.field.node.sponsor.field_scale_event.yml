@@ -1,15 +1,15 @@
-uuid: 07beb526-ed2f-432b-9eae-74df193846b5
+uuid: 93ff2d10-41ce-41cc-9c7b-94f81e0af32c
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_scale_event
     - node.type.event
-    - node.type.session
-id: node.session.field_scale_event
+    - node.type.sponsor
+id: node.sponsor.field_scale_event
 field_name: field_scale_event
 entity_type: node
-bundle: session
+bundle: sponsor
 label: Event
 description: ''
 required: false
