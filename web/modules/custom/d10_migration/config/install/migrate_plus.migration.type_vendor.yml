@@ -22,6 +22,9 @@ process:
   status: published
   field_legacy_nid: nid
   body/value: body
+  body/format:
+    plugin: default_value
+    default_value: basic_html
   body/summary: body_summary
   field_vendor_website/uri: website_url
   pseudo_folder_date:

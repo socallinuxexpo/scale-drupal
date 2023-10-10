@@ -21,13 +21,13 @@ process:
   created: created
   status: published
   field_tags:
-    - plugin: explode
-      source: tags
-      delimiter: ','
-    - plugin: trim
     - plugin: skip_on_empty
       method: process
+      source: tags
       message: 'Empty tags.'
+    - plugin: explode
+      delimiter: ','
+    - plugin: trim
     - plugin: entity_generate
   pseudo_folder_date:
     - plugin: format_date
@@ -54,10 +54,18 @@ process:
       method: process
       message: 'Cannot reach the image at that URI.'
     - plugin: file_import
-#      source: image/src
       destination: '@pseudo_destination_path'
   body/value: body
+  body/format:
+    plugin: default_value
+    default_value: basic_html
   body/summary: body_summary
+  field_scale_events:
+    - plugin: explode
+      source: scale_event
+      delimiter: ','
+    - plugin: trim
+    - plugin: entity_generate
   path/pathauto:
     plugin: default_value
     default_value: 1
@@ -66,4 +74,6 @@ process:
 # @see https://www.drupal.org/project/drupal/issues/3157105#comment-13830538
 destination:
   plugin: 'entity:node'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - tax_event

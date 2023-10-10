@@ -61,3 +61,4 @@ destination:
 migration_dependencies:
   required:
     - type_vendor
+    - tax_event
