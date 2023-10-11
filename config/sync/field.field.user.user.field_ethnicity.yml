@@ -1,0 +1,30 @@
+uuid: 0edd2a91-a78d-420a-8285-d287ad98f402
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_ethnicity
+    - taxonomy.vocabulary.user_ethnicity
+  module:
+    - user
+id: user.user.field_ethnicity
+field_name: field_ethnicity
+entity_type: user
+bundle: user
+label: Ethnicity
+description: '<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      user_ethnicity: user_ethnicity
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

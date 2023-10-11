@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.speaker.field_organization
     - field.field.node.speaker.field_profile_photo
     - field.field.node.speaker.field_twitter_profile
+    - field.field.node.speaker.field_user_account
     - field.field.node.speaker.field_website
     - node.type.speaker
   module:
@@ -92,6 +93,14 @@ content:
       target: ''
     third_party_settings: {  }
     weight: 108
+    region: content
+  field_user_account:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
     region: content
   field_website:
     type: link

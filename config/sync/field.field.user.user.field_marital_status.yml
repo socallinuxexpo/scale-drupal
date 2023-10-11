@@ -1,0 +1,30 @@
+uuid: 526bbd62-b82a-4b8a-a57a-090d3bbceb64
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_marital_status
+    - taxonomy.vocabulary.user_marital_status
+  module:
+    - user
+id: user.user.field_marital_status
+field_name: field_marital_status
+entity_type: user
+bundle: user
+label: 'Marital Status'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      user_marital_status: user_marital_status
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

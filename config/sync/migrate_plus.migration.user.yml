@@ -1,0 +1,42 @@
+uuid: 1c0d64cc-f18b-4ce5-b653-4042238668d9
+langcode: en
+status: true
+dependencies: {  }
+id: user
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: default
+label: User
+source:
+  plugin: user_source
+  track_changes: true
+process:
+  type:
+    plugin: default_value
+    default_value: speaker
+  name: email
+  mail: email
+  created: created
+  field_legacy_uid: uid
+  status:
+    plugin: default_value
+    default_value: 1
+  field_first_name: first_name
+  field_last_name: last_name
+  field_age: age
+  field_education: education
+  field_employment_status: employment
+  field_ethnicity: ethnicity
+  field_gender: gender
+  field_household_income: household_income
+  field_marital_status: marital_status
+  field_phone: phone
+  path/pathauto:
+    plugin: default_value
+    default_value: 1
+  path/alias: path
+destination:
+  plugin: 'entity:user'
+migration_dependencies: null

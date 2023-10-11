@@ -1,0 +1,8 @@
+uuid: 68a42276-d272-41ec-a815-e41f45419f91
+langcode: en
+status: true
+dependencies: {  }
+name: 'User Ethnicity'
+vid: user_ethnicity
+description: ''
+weight: 0

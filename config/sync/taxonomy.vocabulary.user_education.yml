@@ -1,0 +1,8 @@
+uuid: 57bd6061-cbea-4a77-bb20-6750373af2e2
+langcode: en
+status: true
+dependencies: {  }
+name: 'User Education'
+vid: user_education
+description: ''
+weight: 0

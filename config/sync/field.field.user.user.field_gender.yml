@@ -1,0 +1,30 @@
+uuid: 9a5eba2b-7181-4dec-a300-98054806605d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_gender
+    - taxonomy.vocabulary.user_gender
+  module:
+    - user
+id: user.user.field_gender
+field_name: field_gender
+entity_type: user
+bundle: user
+label: Gender
+description: '<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      user_gender: user_gender
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

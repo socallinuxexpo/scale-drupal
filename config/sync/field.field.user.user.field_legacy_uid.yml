@@ -1,0 +1,20 @@
+uuid: 446453d6-a2f9-484c-ab0f-7561bbaafc62
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_legacy_uid
+  module:
+    - user
+id: user.user.field_legacy_uid
+field_name: field_legacy_uid
+entity_type: user
+bundle: user
+label: 'Legacy UID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

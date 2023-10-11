@@ -1,0 +1,29 @@
+uuid: 374874d5-5f32-4c0a-9fea-aa48b5c7d2e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_user_account
+    - node.type.speaker
+id: node.speaker.field_user_account
+field_name: field_user_account
+entity_type: node
+bundle: speaker
+label: 'User Account'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: false
+field_type: entity_reference

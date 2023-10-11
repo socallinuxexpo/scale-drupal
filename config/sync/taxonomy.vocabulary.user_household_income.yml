@@ -1,0 +1,8 @@
+uuid: daa5acb4-9553-4edf-b23c-38c9574b9e0e
+langcode: en
+status: true
+dependencies: {  }
+name: 'User Household Income'
+vid: user_household_income
+description: ''
+weight: 0

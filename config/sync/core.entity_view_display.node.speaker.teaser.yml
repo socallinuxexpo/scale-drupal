@@ -12,6 +12,7 @@ dependencies:
     - field.field.node.speaker.field_organization
     - field.field.node.speaker.field_profile_photo
     - field.field.node.speaker.field_twitter_profile
+    - field.field.node.speaker.field_user_account
     - field.field.node.speaker.field_website
     - node.type.speaker
   module:
@@ -43,4 +44,5 @@ hidden:
   field_organization: true
   field_profile_photo: true
   field_twitter_profile: true
+  field_user_account: true
   field_website: true

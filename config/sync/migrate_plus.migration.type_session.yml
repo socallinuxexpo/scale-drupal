@@ -114,3 +114,4 @@ migration_dependencies:
   required:
     - tax_room
     - tax_event
+    - user

@@ -60,6 +60,12 @@ process:
     - plugin: file_import
       destination: '@pseudo_destination_path'
   field_profile_photo/alt: name
+  field_user_account:
+    - plugin: skip_on_empty
+      method: process
+      source: uid
+    - plugin: migration_lookup
+      migration: user
   path/pathauto:
     plugin: default_value
     default_value: 1
@@ -68,4 +74,6 @@ process:
 # @see https://www.drupal.org/project/drupal/issues/3157105#comment-13830538
 destination:
   plugin: 'entity:node'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - user
