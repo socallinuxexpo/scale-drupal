@@ -15,6 +15,7 @@ dependencies:
     - field.field.user.user.field_legacy_uid
     - field.field.user.user.field_marital_status
     - field.field.user.user.field_phone
+    - field.field.user.user.field_postal_code
     - field.field.user.user.user_picture
     - image.style.thumbnail
   module:
@@ -50,4 +51,5 @@ hidden:
   field_legacy_uid: true
   field_marital_status: true
   field_phone: true
+  field_postal_code: true
   member_for: true

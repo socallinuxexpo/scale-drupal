@@ -25,6 +25,7 @@ process:
     default_value: 1
   field_first_name: first_name
   field_last_name: last_name
+  field_postal_code: postal_code
   field_age:
     -
       plugin: skip_on_empty
