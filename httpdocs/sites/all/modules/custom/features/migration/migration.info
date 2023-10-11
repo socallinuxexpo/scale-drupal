@@ -1,11 +1,14 @@
 name = Migration
 core = 7.x
 package = SCALE
+dependencies[] = basic_auth
 dependencies[] = calendar
+dependencies[] = features
 dependencies[] = views
 dependencies[] = views_json
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
+features[user_permission][] = configure basic auth
 features[views_view][] = migration_blog
 features[views_view][] = migration_presentation
 features[views_view][] = migration_room
