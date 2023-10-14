@@ -167,10 +167,31 @@ function _scale_user_view_access($account) {
     return FALSE;
   }
 
-  $current_event = _get_current_event();
-  $is_speaker = _scale_current_speaker($account->uid, $current_event->tid);
+  $current_event = _get_event_tid_from_path();
+  $is_speaker = _is_speaker($account->uid, $current_event->tid);
 
   return $is_speaker && $account->status;
+}
+
+function _get_event_tid_from_path() {
+  // Get the path alias, since Drupal paths might be aliased.
+  $path = drupal_get_path_alias(request_path());
+  // Break up the path into its components (e.g., ['scale', '19x', 'speakers'])
+  $path_args = explode('/', $path);
+
+  // Check if path fits our pattern: "/scale/[event]/speakers"
+  if ($path_args[0] == 'scale' && $path_args[2] == 'speakers') {
+    // Try to load the taxonomy term by its name from the 'event' vocabulary.
+    $terms = taxonomy_get_term_by_name($path_args[1], 'scale_event');
+
+    // If we have terms, and it’s only one term, return the tid.
+    if ($terms && count($terms) == 1) {
+      return reset($terms);
+    }
+  }
+
+  // Return NULL if no tid found or path pattern is not as expected.
+  return NULL;
 }
 
 function _get_current_event() {
@@ -186,7 +207,7 @@ function _get_current_event() {
 /**
  * Determine if a user was a speaker on the given SCALE event.
  **/
-function _scale_current_speaker($uid, $tid) {
+function _is_speaker($uid, $tid) {
   $query = db_select('node', 'n');
   $query->fields('n', array('nid'))
     ->condition('n.type', 'presentation', '=');
