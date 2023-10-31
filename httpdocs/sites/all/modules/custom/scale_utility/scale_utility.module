@@ -157,6 +157,11 @@ function _scale_user_view_access($account) {
     return TRUE;
   }
 
+  // Users can access their own account
+  if($GLOBALS['user']->uid == $account->uid) {
+    return TRUE;
+  }
+
   // Never allow access to view the anonymous or admin user account.
   if($account->uid && $account->uid == 1) {
     return FALSE;
