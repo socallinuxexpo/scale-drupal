@@ -38,7 +38,6 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         15, // Mentoring.
         1210, // OpenSUSE.
         21, // SysAdmin.
-        23, // Ubucon.
         881, // Big Data.
         //500, // BoFs.
         879, //Coder's Corner.
@@ -49,7 +48,6 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         1221, // GLAD Camp.
         505, // Hot Applications.
         13, // Kernel.
-        14, // Keynote.
         1242, //Legal & Licensing.
         434, // Nodestack.
         17, // Open Source Software In Education.
