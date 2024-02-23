@@ -805,7 +805,7 @@ scale12x/schedule/2014-02-21',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -1734,7 +1734,7 @@ scale12x/schedule/2014-02-22',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -2630,7 +2630,7 @@ scale12x/blah',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -3747,7 +3747,7 @@ scale/14x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -4802,7 +4802,7 @@ scale/14x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -5857,7 +5857,7 @@ scale/14x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -6912,7 +6912,7 @@ scale/14x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -8033,7 +8033,7 @@ scale/15x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -9091,7 +9091,7 @@ scale/15x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -10149,7 +10149,7 @@ scale/15x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -11207,7 +11207,7 @@ scale/15x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -12378,7 +12378,7 @@ scale/16x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -13471,7 +13471,7 @@ scale/16x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -14564,7 +14564,7 @@ scale/16x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -15657,7 +15657,7 @@ scale/16x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -16828,7 +16828,7 @@ scale/17x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -17918,7 +17918,7 @@ scale/17x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -19008,7 +19008,7 @@ scale/17x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -20098,7 +20098,7 @@ scale/17x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -21021,7 +21021,7 @@ scale/19x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -22158,7 +22158,7 @@ scale/19x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -23295,7 +23295,7 @@ scale/19x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -24432,7 +24432,7 @@ scale/19x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -25670,7 +25670,7 @@ scale/20x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -26760,7 +26760,7 @@ scale/20x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -27850,7 +27850,7 @@ scale/20x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -28940,7 +28940,7 @@ scale/20x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -30108,7 +30108,7 @@ scale/18x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -31221,7 +31221,7 @@ scale/18x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -32334,7 +32334,7 @@ scale/18x/schedule/saturday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -33447,7 +33447,7 @@ scale/18x/schedule/sunday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -34525,7 +34525,7 @@ scale/13x/schedule/thursday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -35491,7 +35491,7 @@ scale/13x/schedule/friday',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -36491,7 +36491,7 @@ scale/13x/schedule/2015-02-21',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
@@ -37457,7 +37457,7 @@ scale/13x/schedule/2015-02-22',
   $pane->access = array();
   $pane->configuration = array(
     'admin_title' => 'Schedule change notice',
-    'body' => '<p>* The schedule of events is subjected to change without prior notifications.</p>',
+    'body' => '<p>* The schedule of events is subject to change without prior notifications.</p>',
     'format' => 'filtered_html',
     'substitute' => TRUE,
     'title' => '',
