@@ -1,0 +1,17 @@
+{% set content %}
+
+    <h2>Latest Articles</h2>
+    <div>
+        {{ preprocessor.latest_articles }}
+    </div>
+
+    <div class="text-center py-5">
+        <a href="/blog" class="btn btn-black">View all News</a>
+    </div>
+{% endset %}
+
+{% embed 'scale:container' with {containerWidth: 'fixed'} %}
+    {% block content %}
+        {{ content }}
+    {% endblock %}
+{% endembed %}

@@ -1,0 +1,27 @@
+uuid: e3842db1-948a-4427-a330-cd476e9edc18
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_layout
+field_name: field_layout
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: marquee
+      label: Marquee
+    -
+      value: grouped_grid
+      label: 'Grouped Grid'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

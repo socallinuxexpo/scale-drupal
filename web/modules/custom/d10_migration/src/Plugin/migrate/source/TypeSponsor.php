@@ -9,17 +9,9 @@ use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
  *  id = "type_sponsor_source",
  * )
  */
-class TypeSponsor extends SourcePluginBase {
+class TypeSponsor extends PaginatedSource {
 
-  /**
-   * {@inheritdoc}
-   */
-  public function initializeIterator() {
-    $client = \Drupal::service('d10_migration.client');
-    $response = $client->get('/migrate/type/sponsor/json/test');
-
-    return new \ArrayIterator($response);
-  }
+  protected string $endpoint = '/migrate/type/sponsor/json/paged';
 
   /**
    * {@inheritdoc}

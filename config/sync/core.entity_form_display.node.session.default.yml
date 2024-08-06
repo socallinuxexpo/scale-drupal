@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.session.body
+    - field.field.node.session.field_assets
     - field.field.node.session.field_audio_video
     - field.field.node.session.field_legacy_nid
     - field.field.node.session.field_link_to_presentation
@@ -19,8 +20,11 @@ dependencies:
     - field.field.node.session.field_short_abstract
     - field.field.node.session.field_speakers_ref
     - field.field.node.session.field_tags
+    - field.field.node.session.field_time_slot
     - node.type.session
   module:
+    - datetime_range
+    - file
     - link
     - path
     - text
@@ -44,6 +48,13 @@ content:
     weight: 10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_assets:
+    type: file_generic
+    weight: 140
+    region: content
+    settings:
+      progress_indicator: throbber
     third_party_settings: {  }
   field_audio_video:
     type: text_textarea
@@ -180,6 +191,12 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  field_time_slot:
+    type: daterange_default
+    weight: 141
+    region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path

@@ -1,0 +1,28 @@
+{% set name = [
+  node.field_first_name.value,
+  node.field_last_name.value
+]|join(' ') %}
+
+{% embed 'scale:profile-card' %}
+
+  {% block header %}
+    <div class="">
+      {{ content.profile_image }}
+    </div>
+  {% endblock %}
+
+  {% block body %}
+    <div class="mt-auto">
+      <div class="font-semibold text-lg">
+        {{ name }}
+      </div>
+      <div class="font-medium text-sm">
+        {{ node.field_job_title.value }}
+      </div>
+      <div class="font-medium text-sm">
+        {{ node.field_organization.value }}
+      </div>
+    </div>
+  {% endblock %}
+
+{% endembed %}

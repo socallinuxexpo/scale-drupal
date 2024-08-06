@@ -1,0 +1,15 @@
+uuid: b0807aa4-529e-44db-9b60-66a0a5dea190
+langcode: en
+status: true
+dependencies: {  }
+name: avatar_256x256
+label: avatar_256x256
+effects:
+  5c9bd758-a142-4e44-bf51-e1f9d709635b:
+    uuid: 5c9bd758-a142-4e44-bf51-e1f9d709635b
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 256
+      height: 256
+      anchor: center-center

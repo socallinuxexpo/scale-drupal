@@ -1,0 +1,15 @@
+uuid: ac36722e-7f83-4847-9b44-b8de505b74a4
+langcode: en
+status: true
+dependencies: {  }
+name: avatar_128x128
+label: avatar_128x128
+effects:
+  d80a9146-543f-4bdc-a1a1-1d420e30c5bf:
+    uuid: d80a9146-543f-4bdc-a1a1-1d420e30c5bf
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 128
+      height: 128
+      anchor: center-center

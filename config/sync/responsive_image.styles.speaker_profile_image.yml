@@ -1,0 +1,31 @@
+uuid: d674977b-69aa-4ed3-8909-dfabfe4a0d79
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.square_128x128_webp
+    - image.style.square_256x256_webp
+    - image.style.square_64x64
+    - image.style.square_64x64_webp
+  theme:
+    - stark
+id: speaker_profile_image
+label: 'Speaker Profile Image'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: square_256x256_webp
+    breakpoint_id: stark.wide
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: square_128x128_webp
+    breakpoint_id: stark.narrow
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: square_64x64_webp
+    breakpoint_id: stark.mobile
+    multiplier: 1x
+breakpoint_group: stark
+fallback_image_style: square_64x64

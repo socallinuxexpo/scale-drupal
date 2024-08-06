@@ -1,0 +1,21 @@
+uuid: 214ac13c-f9f2-49c3-a82f-e64cffff1f52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.latest_articles.field_event
+    - paragraphs.paragraphs_type.latest_articles
+id: paragraph.latest_articles.default
+targetEntityType: paragraph
+bundle: latest_articles
+mode: default
+content:
+  field_event:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

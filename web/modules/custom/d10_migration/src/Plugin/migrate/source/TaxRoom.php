@@ -2,30 +2,20 @@
 
 namespace Drupal\d10_migration\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
 
 /**
  * @MigrateSource(
  *  id = "tax_room_source",
  * )
  */
-class TaxRoom extends SourcePluginBase {
+class TaxRoom extends Source {
+
+  protected string $endpoint = '/migrate/tax/room/json/all';
 
   /**
    * {@inheritdoc}
    */
-  public function initializeIterator() {
-    $client = \Drupal::service('d10_migration.client');
-    $response = $client->get('/migrate/tax/room/json/all');
-
-    return new \ArrayIterator($response);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function fields() {
-  }
+  public function fields() {}
 
   /**
    * {@inheritdoc}

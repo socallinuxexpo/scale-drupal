@@ -1,0 +1,15 @@
+uuid: 05981559-43c0-49f7-85de-1d381c01cdcf
+langcode: en
+status: true
+dependencies: {  }
+name: avatar_64x64
+label: avatar_64x64
+effects:
+  84536d55-bd03-41b6-8f1e-190c43288cea:
+    uuid: 84536d55-bd03-41b6-8f1e-190c43288cea
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 64
+      height: 64
+      anchor: center-center

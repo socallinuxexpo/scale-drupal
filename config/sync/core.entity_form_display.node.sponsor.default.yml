@@ -8,12 +8,18 @@ dependencies:
     - field.field.node.sponsor.field_legacy_nid
     - field.field.node.sponsor.field_ready_for_approval
     - field.field.node.sponsor.field_scale_event
+    - field.field.node.sponsor.field_sponsor_bio
+    - field.field.node.sponsor.field_sponsor_logo
     - field.field.node.sponsor.field_sponsor_tier
     - field.field.node.sponsor.field_sponsor_type
-    - field.field.node.sponsor.field_vendor_ref
+    - field.field.node.sponsor.field_sponsor_website
+    - image.style.thumbnail
     - node.type.sponsor
   module:
+    - image
+    - link
     - path
+    - text
 id: node.sponsor.default
 targetEntityType: node
 bundle: sponsor
@@ -34,14 +40,10 @@ content:
       placeholder: ''
     third_party_settings: {  }
   field_exhibitor_type:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 128
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_legacy_nid:
     type: string_textfield
@@ -59,44 +61,48 @@ content:
       display_label: true
     third_party_settings: {  }
   field_scale_event:
-    type: entity_reference_autocomplete
+    type: options_select
     weight: 135
     region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_sponsor_bio:
+    type: text_textarea_with_summary
+    weight: 139
+    region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
+      rows: 9
+      summary_rows: 3
       placeholder: ''
+      show_summary: false
+    third_party_settings: {  }
+  field_sponsor_logo:
+    type: image_image
+    weight: 138
+    region: content
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   field_sponsor_tier:
-    type: entity_reference_autocomplete
+    type: options_buttons
     weight: 129
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_sponsor_type:
-    type: entity_reference_autocomplete
+    type: options_buttons
     weight: 127
     region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-  field_vendor_ref:
-    type: entity_reference_autocomplete
-    weight: 132
+  field_sponsor_website:
+    type: link_default
+    weight: 137
     region: content
     settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
+      placeholder_url: ''
+      placeholder_title: ''
     third_party_settings: {  }
   path:
     type: path

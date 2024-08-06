@@ -1,0 +1,28 @@
+
+
+{% set date = node.getCreatedTime|date('j M Y') %}
+
+{% embed 'scale:summary-card' %}
+    {% block content %}
+        <div class="">
+            <div class="font-semibold text-lg">
+                {{ node.label }}
+            </div>
+             <div class="font-medium text-sm">
+                {{ date }}
+            </div>
+        </div>
+
+        <div class="py-7 overflow-auto">
+            <div class="mt-auto">
+                {% if body_summary %}
+                    {{ body_summary }}
+                {% endif %}
+            </div>
+        </div>
+    {% endblock %}
+
+    {% set footer %}
+        {{ drupal_link('Read More'|t, 'node/' ~ node.id, {attributes: {class: ['btn', 'btn-black'], target: '_blank', download}}) }}
+    {% endset %}
+{% endembed %}

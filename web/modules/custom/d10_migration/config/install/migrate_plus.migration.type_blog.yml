@@ -59,7 +59,7 @@ process:
   body/value: body
   body/format:
     plugin: default_value
-    default_value: basic_html
+    default_value: full_html
   body/summary: body_summary
   field_scale_events:
     - plugin: explode
@@ -75,6 +75,3 @@ process:
 # @see https://www.drupal.org/project/drupal/issues/3157105#comment-13830538
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - tax_event

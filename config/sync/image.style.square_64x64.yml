@@ -1,0 +1,15 @@
+uuid: f26aa902-6b25-4870-885e-4843dfe66887
+langcode: en
+status: true
+dependencies: {  }
+name: square_64x64
+label: square_64x64
+effects:
+  06a37b06-34ff-4c8b-9547-ba5f16a8f617:
+    uuid: 06a37b06-34ff-4c8b-9547-ba5f16a8f617
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 64
+      height: 64
+      anchor: center-center

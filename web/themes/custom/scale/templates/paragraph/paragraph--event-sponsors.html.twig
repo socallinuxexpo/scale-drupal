@@ -1,0 +1,27 @@
+{% if preprocessor.layout == 'grouped_grid' %}
+
+    {% set content %}
+        {% for item in preprocessor.content %}
+            <div class="mb-5">
+                <h2>{{ item.group }}</h2>
+                <div class="py-4">
+                    {{ item.view }}
+                </div>
+            </div>
+        {% endfor %}
+    {% endset %}
+
+    {% embed 'scale:container' with {containerWidth: 'fixed'} %}
+        {% block content %}
+            {{ content }}
+        {% endblock %}
+    {% endembed %}
+
+{% elseif preprocessor.layout == 'marquee' %}
+    {% embed 'scale:container' with {containerWidth: 'fluid'} %}
+        {% block content %}
+            {{ preprocessor.content }}
+        {% endblock %}
+    {% endembed %}
+{% endif %}
+

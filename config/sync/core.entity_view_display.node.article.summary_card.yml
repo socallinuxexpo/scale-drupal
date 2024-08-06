@@ -1,0 +1,60 @@
+uuid: 44b353d6-7d14-426a-a3b7-d1038f745249
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.summary_card
+    - field.field.node.article.body
+    - field.field.node.article.field_article_image
+    - field.field.node.article.field_scale_events
+    - field.field.node.article.field_tags
+    - node.type.article
+  module:
+    - image
+    - text
+    - user
+id: node.article.summary_card
+targetEntityType: node
+bundle: article
+mode: summary_card
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_article_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_scale_events:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

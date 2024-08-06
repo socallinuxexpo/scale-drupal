@@ -1,0 +1,7 @@
+services:
+  appserver:
+    xdebug: true
+    config:
+      php: .lando.local.php.ini
+  phpmyadmin:
+    type: phpmyadmin

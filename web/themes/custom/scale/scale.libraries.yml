@@ -1,0 +1,11 @@
+scale:
+  css:
+    theme:
+      dist/css/styles.css: { minified: false }
+
+swiperjs:
+  css:
+    theme:
+      dist/third-party/swiper-11.1.4/swiper-bundle.min.css: { minified: true }
+  js:
+    dist/third-party/swiper-11.1.4/swiper-bundle.min.js: { minified: true }

@@ -1,0 +1,124 @@
+uuid: 997c2343-738f-4b17-a1f2-3c83f9ee3612
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.summary_card
+    - field.field.node.speaker.body
+    - field.field.node.speaker.field_first_name
+    - field.field.node.speaker.field_job_title
+    - field.field.node.speaker.field_last_name
+    - field.field.node.speaker.field_legacy_uid
+    - field.field.node.speaker.field_organization
+    - field.field.node.speaker.field_profile_photo
+    - field.field.node.speaker.field_twitter_profile
+    - field.field.node.speaker.field_user_account
+    - field.field.node.speaker.field_website
+    - image.style.large
+    - node.type.speaker
+  module:
+    - image
+    - link
+    - text
+    - user
+id: node.speaker.summary_card
+targetEntityType: node
+bundle: speaker
+mode: summary_card
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_job_title:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_legacy_uid:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_organization:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_profile_photo:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: large
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_twitter_profile:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_user_account:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_website:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

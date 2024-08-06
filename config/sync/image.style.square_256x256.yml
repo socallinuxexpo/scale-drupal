@@ -1,0 +1,15 @@
+uuid: a135ce16-0acf-4282-b5b3-2b8e27799011
+langcode: en
+status: true
+dependencies: {  }
+name: square_256x256
+label: square_256x256
+effects:
+  3e99a8cc-ef32-49ff-a1a0-a8b89dddcb78:
+    uuid: 3e99a8cc-ef32-49ff-a1a0-a8b89dddcb78
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 256
+      height: 256
+      anchor: center-center

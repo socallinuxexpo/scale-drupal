@@ -2,19 +2,30 @@
 
 use Drupal\migrate\MigrateExecutable;
 use Drupal\migrate\MigrateMessage;
+use Drupal\node\Entity\Node;
 
 /**
  * Implements hook_preprocess_HOOK().
  */
 function d10_migration_preprocess_page(&$variables) {
-//  $migration_id = 'type_presentation';
-//
-//  $migration = \Drupal::service('plugin.manager.migration')
-//    ->createInstance($migration_id);
+  $migration_id = 'user';
+
+//  $migration = \Drupal::service('plugin.manager.migration')->createInstance($migration_id);
 //  $migration->getIdMap()->prepareUpdate();
 //  $executable = new MigrateExecutable($migration, new MigrateMessage());
 //  $executable->import();
   $i = 3;
+
+
+//  $nids = \Drupal::entityQuery('node')
+//    ->condition('type', 'vendor')
+//    ->accessCheck(FALSE)
+//    ->execute();
+//
+//  $nodes = Node::loadMultiple($nids);
+//  foreach ($nodes as $node) {
+//    $node->delete();
+//  }
 }
 
 /**

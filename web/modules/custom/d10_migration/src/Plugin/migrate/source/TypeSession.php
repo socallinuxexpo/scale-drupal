@@ -2,24 +2,14 @@
 
 namespace Drupal\d10_migration\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
-
 /**
  * @MigrateSource(
  *  id = "type_session_source",
  * )
  */
-class TypeSession extends SourcePluginBase {
+class TypeSession extends PaginatedSource {
 
-  /**
-   * {@inheritdoc}
-   */
-  public function initializeIterator() {
-    $client = \Drupal::service('d10_migration.client');
-    $response = $client->get('/migrate/type/presentation/json/test');
-
-    return new \ArrayIterator($response);
-  }
+  protected string $endpoint = '/migrate/type/presentation/json/all';
 
   /**
    * {@inheritdoc}

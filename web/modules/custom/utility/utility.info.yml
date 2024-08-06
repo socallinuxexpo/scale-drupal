@@ -1,0 +1,4 @@
+type: module
+name: Scale Utility Module
+description: General utility functions for Scale website
+core_version_requirement: ^10

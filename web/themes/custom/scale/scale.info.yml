@@ -1,0 +1,33 @@
+name: Scale
+type: theme
+base theme: stark
+description: 'Custom theme for Scale'
+core_version_requirement: ^10
+
+libraries:
+  - scale/scale
+
+#ckeditor_stylesheets:
+#  - dist/css/theme/accent.css
+#  - dist/css/theme/variables.css
+#  - dist/css/theme/ckeditor.css
+
+ckeditor5-stylesheets: false
+
+# Regions
+regions:
+  site_branding: 'Site Branding'
+  primary_menu: 'Primary Navigation'
+  secondary_menu: 'Secondary Navigation'
+  breadcrumb: Breadcrumb
+  pre_content: 'Pre-content'
+  highlighted: Highlighted
+#  help: Help
+  content: Content
+  footer: Footer
+  disclosure: Disclosure
+#  page_top: 'Page top'
+#  page_bottom: 'Page bottom'
+#  sidebar_first: 'First sidebar'
+#regions_hidden:
+#  - sidebar_first

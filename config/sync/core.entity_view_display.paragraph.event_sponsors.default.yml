@@ -1,0 +1,31 @@
+uuid: 22f9dae0-ef52-4aed-a1c5-94be15fb97b6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_sponsors.field_event
+    - field.field.paragraph.event_sponsors.field_layout
+    - paragraphs.paragraphs_type.event_sponsors
+  module:
+    - options
+id: paragraph.event_sponsors.default
+targetEntityType: paragraph
+bundle: event_sponsors
+mode: default
+content:
+  field_event:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_layout:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

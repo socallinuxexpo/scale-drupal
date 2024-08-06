@@ -1,0 +1,10 @@
+uuid: aef29a72-4c5f-4ac4-a79a-8b7beb7bef1f
+langcode: en
+status: true
+dependencies: {  }
+id: event_sponsors
+label: 'Event Sponsors'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

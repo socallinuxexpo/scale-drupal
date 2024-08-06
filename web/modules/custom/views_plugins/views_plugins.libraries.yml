@@ -1,0 +1,9 @@
+
+views_swiper:
+  js:
+    js/views-swiper.js: { minified: false }
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once
+    - scale/swiperjs

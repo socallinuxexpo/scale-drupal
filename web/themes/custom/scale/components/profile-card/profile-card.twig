@@ -1,0 +1,13 @@
+<div class="profile-card flex flex-col gap-3 h-full">
+  <div class="profile-card__header aspect-square">
+    {% block header %}
+      {{ header }}
+    {% endblock %}
+  </div>
+  <div class="profile-card__body">
+    {% block body %}
+      {{ body }}
+    {% endblock %}
+  </div>
+</div>
+

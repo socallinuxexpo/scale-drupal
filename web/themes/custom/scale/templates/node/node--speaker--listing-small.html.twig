@@ -1,0 +1,32 @@
+{% set name = [
+  node.field_first_name.value,
+  node.field_last_name.value
+]|join(' ') %}
+
+{% set image %}
+  {% if node.field_profile_photo is not empty %}
+    {% set image_field = content.field_profile_photo[0] %}
+    {% if image_field %}
+      <img src="{{ image_field['#item'].entity.uri.value | image_style('avatar_32x32_webp') }}"
+           alt="{{ image_field['#item'].alt }}"
+           class="rounded-full">
+    {% endif %}
+  {% endif %}
+{% endset %}
+
+{% set speaker = [
+  name,
+  node.field_job_title.value ?? '',
+  node.field_organization.value ?? '',
+]|filter(v => v is not empty)|join(' / ') %}
+
+{% set link %}
+  {{ drupal_link(speaker, '/node/' ~ node.id(), check_access=true) }}
+{% endset %}
+
+<div class="flex gap-3 items-center mb-3">
+  {{ image }}
+  <span class="text-2xl">
+    {{ link }}
+  </span>
+</div>

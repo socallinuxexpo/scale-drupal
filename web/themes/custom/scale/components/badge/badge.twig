@@ -1,0 +1,17 @@
+{% set classes = [
+  'badge',
+  'bg-black',
+  'text-white',
+  'text-sm',
+  'px-3', 'py-1'
+] %}
+
+{% set attributes = create_attribute() %}
+
+<div{{ attributes.addClass(classes) }}>
+  {% block text %}
+    {{ text }}
+  {% endblock %}
+</div>
+
+

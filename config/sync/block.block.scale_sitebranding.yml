@@ -1,0 +1,23 @@
+uuid: d36d3ffe-9738-4566-98ba-3a6043feee71
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - scale
+id: scale_sitebranding
+theme: scale
+region: site_branding
+weight: -5
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

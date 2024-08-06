@@ -1,0 +1,19 @@
+<div class="bg-slate-100 p-7 flex flex-col h-full">
+    {% if header %}
+        {% block header %}
+            <div class="">
+                {{ header }}
+            </div>
+        {% endblock %}
+    {% endif %}
+    {% block content %}
+        {{ content }}
+    {% endblock %}
+    {% if footer %}
+        {% block footer %}
+            <div class="mt-auto">
+                {{ footer }}
+            </div>
+        {% endblock %}
+    {% endif %}
+</div>

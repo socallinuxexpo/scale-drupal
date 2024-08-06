@@ -1,0 +1,23 @@
+<div class="swiper">
+    <div class="swiper-wrapper" style="transition-timing-function: linear">
+        {% for row in rows %}
+            <div class="swiper-slide" style="height: auto;">{{ row.content }}</div>
+        {% endfor %}
+    </div>
+
+    {% if pagination %}
+        <div class="swiper-pagination"></div>
+    {% endif %}
+
+    {% if navigation %}
+        <div class="swiper-navigation">
+            <div class="swiper-control swiper-control-prev"></div>
+            <div class="swiper-control swiper-control-next"></div>
+        </div>
+    {% endif %}
+
+    {% if scrollbar %}
+        <div class="swiper-scrollbar"></div>
+    {% endif %}
+</div>
+

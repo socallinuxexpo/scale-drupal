@@ -20,6 +20,8 @@ class Client {
   protected $clientHeaders = [
     'Accept' => 'application/json',
     'Content-Type' => 'application/json',
+    'Authorization' => 'Basic bWlncmF0aW9uOmQxZzFjMG5m',
+    'User-Agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
   ];
 
   /**
@@ -48,7 +50,7 @@ class Client {
    * @return mixed
    *   JSON formatted string with the nodes from the remote server.
    *
-   * @throws \RuntimeException
+   * @throws \RuntimeException|\GuzzleHttp\Exception\GuzzleException
    */
   public function get($path, $params = []) {
     $rootEndpoint = $this->getBaseUrl();
@@ -57,14 +59,16 @@ class Client {
       \Drupal::logger('migration_client')->info("Making GET request to: " . $rootEndpoint . $path);
       $response = $this->client->get($rootEndpoint . $path, [
           'headers' => $this->clientHeaders,
-          'query' => Query::build($params)
+          'query' => Query::build($params),
         ]
       );
       $body = Json::decode($response->getBody());
-      if(isset($body['nodes']) && !empty($body['nodes'])) {
-        return $body['nodes'];
-      } else {
-        \Drupal::logger('migration_client')->error('Empty body for ' . $rootEndpoint . $path);
+      if (!empty($body['nodes'])) {
+        return $body;
+      }
+      else {
+        \Drupal::logger('migration_client')
+          ->error('Empty body for ' . $rootEndpoint . $path);
         return [];
       }
     }
@@ -76,6 +80,8 @@ class Client {
   }
 
   public function getBaseUrl() {
-    return 'http://scale.lndo.site';
+    return 'https://www.socallinuxexpo.org';
+    //    return 'http://scale.lndo.site';
   }
+
 }

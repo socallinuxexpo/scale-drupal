@@ -1,0 +1,5 @@
+type: module
+name: Views Plugins
+description: 'Custom views plugins for Scale website'
+package: Custom
+core_version_requirement: ^10

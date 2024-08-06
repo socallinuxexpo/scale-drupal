@@ -9,9 +9,11 @@ dependencies:
     - field.field.node.sponsor.field_legacy_nid
     - field.field.node.sponsor.field_ready_for_approval
     - field.field.node.sponsor.field_scale_event
+    - field.field.node.sponsor.field_sponsor_bio
+    - field.field.node.sponsor.field_sponsor_logo
     - field.field.node.sponsor.field_sponsor_tier
     - field.field.node.sponsor.field_sponsor_type
-    - field.field.node.sponsor.field_vendor_ref
+    - field.field.node.sponsor.field_sponsor_website
     - node.type.sponsor
   module:
     - user
@@ -31,6 +33,8 @@ hidden:
   field_legacy_nid: true
   field_ready_for_approval: true
   field_scale_event: true
+  field_sponsor_bio: true
+  field_sponsor_logo: true
   field_sponsor_tier: true
   field_sponsor_type: true
-  field_vendor_ref: true
+  field_sponsor_website: true

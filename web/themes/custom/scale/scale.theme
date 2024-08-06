@@ -1,0 +1,7 @@
+<?php
+
+// Load form alter hooks from the /preprocess directory.
+$files = \Drupal::service('file_system')->scanDirectory(dirname(__FILE__) . '/preprocess', "/.preprocess.inc/");
+foreach ($files as $filepath => $file) {
+  require_once($filepath);
+}

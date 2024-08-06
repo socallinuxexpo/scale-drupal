@@ -1,0 +1,21 @@
+uuid: 663faf96-5453-4d00-a23c-b21dd46fcede
+langcode: en
+status: true
+dependencies: {  }
+name: avatar_128x128_webp
+label: avatar_128x128_webp
+effects:
+  dcfe211e-9cb6-462d-985d-6178237e2816:
+    uuid: dcfe211e-9cb6-462d-985d-6178237e2816
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 128
+      height: 128
+      anchor: center-center
+  509e3644-380a-4ae8-8955-bac648c964d1:
+    uuid: 509e3644-380a-4ae8-8955-bac648c964d1
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp

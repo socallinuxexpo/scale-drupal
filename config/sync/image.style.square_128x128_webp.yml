@@ -1,0 +1,21 @@
+uuid: 63dc4fb4-a88d-4d85-9434-010b0ff5a882
+langcode: en
+status: true
+dependencies: {  }
+name: square_128x128_webp
+label: square_128x128_webp
+effects:
+  2164a1f8-14e3-4cc4-ac44-c58b31eefdb5:
+    uuid: 2164a1f8-14e3-4cc4-ac44-c58b31eefdb5
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 128
+      height: 128
+      anchor: center-center
+  8b683d70-b1da-48f0-9bd3-f0673faab125:
+    uuid: 8b683d70-b1da-48f0-9bd3-f0673faab125
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp

@@ -2,24 +2,14 @@
 
 namespace Drupal\d10_migration\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
-
 /**
  * @MigrateSource(
  *  id = "tax_event_source",
  * )
  */
-class TaxScaleEvent extends SourcePluginBase {
+class TaxScaleEvent extends Source {
 
-  /**
-   * {@inheritdoc}
-   */
-  public function initializeIterator() {
-    $client = \Drupal::service('d10_migration.client');
-    $response = $client->get('/migrate/tax/event/json/all');
-
-    return new \ArrayIterator($response);
-  }
+  protected string $endpoint = '/migrate/tax/event/json/all';
 
   /**
    * {@inheritdoc}

@@ -50,8 +50,17 @@ process:
     default_value: basic_html
   body/summary: short_abstract
   field_audio_video/value: audio_video
+  field_audio_video/format:
+    plugin: default_value
+    default_value: full_html
   field_long_abstract/value: long_abstract
+  field_long_abstract/format:
+    plugin: default_value
+    default_value: basic_html
   field_short_abstract/value: short_abstract
+  field_short_abstract/format:
+    plugin: default_value
+    default_value: basic_html
   field_moderation_message/value: moderation_message
   field_link_to_presentation/title: link_to_prezi__title
   field_link_to_presentation/uri: link_to_prezi__url
@@ -104,6 +113,53 @@ process:
       plugin: trim
     -
       plugin: entity_generate
+  pseudo_folder_date:
+    -
+      plugin: format_date
+      source: created
+      from_format: U
+      to_format: Y-m
+  pseudo_folder_directory:
+    plugin: concat
+    source:
+      - constants/DRUPAL_FILE_DIRECTORY
+      - '@pseudo_folder_date'
+  pseudo_destination_path:
+    plugin: concat
+    source:
+      - '@pseudo_folder_directory'
+      - filename
+    delimiter: /
+  field_assets:
+    -
+      plugin: skip_on_empty
+      source: uploaded_file
+      method: process
+      message: 'Skipping empty assets.'
+    -
+      plugin: skip_on_404
+      method: process
+      message: 'Cannot reach the image at that URI.'
+    -
+      plugin: file_import
+      source: uploaded_file
+      destination: '@pseudo_destination_path'
+  field_time_slot/value:
+    -
+      plugin: format_date
+      source: slot_start
+      from_format: 'Y-m-d H:i:s'
+      to_format: 'Y-m-d\TH:i:s'
+      from_timezone: America/New_York
+      to_timezone: America/Los_Angeles
+  field_time_slot/end_value:
+    -
+      plugin: format_date
+      source: slot_end
+      from_format: 'Y-m-d H:i:s'
+      to_format: 'Y-m-d\TH:i:s'
+      from_timezone: America/New_York
+      to_timezone: America/Los_Angeles
   path/pathauto:
     plugin: default_value
     default_value: 1
@@ -112,6 +168,6 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
+    - user_speaker
     - tax_room
     - tax_event
-    - user

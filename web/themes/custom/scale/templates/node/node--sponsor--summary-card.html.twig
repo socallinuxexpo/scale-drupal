@@ -1,0 +1,37 @@
+
+
+{% set image %}
+    {% if node.field_sponsor_logo is not empty %}
+        {% set image_field = content.field_sponsor_logo[0] %}
+        {% if image_field %}
+            <img src="{{ image_field['#item'].entity.uri.value | image_style('medium') }}"
+                 alt="{{ image_field['#item'].alt }}"
+                 class="">
+        {% endif %}
+    {% endif %}
+{% endset %}
+
+{% embed 'scale:summary-card' %}
+    {% block content %}
+        <div class="mb-5">
+            <div class="font-semibold text-lg">
+                {{ image }}
+            </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 mb-5">
+            {% for item in content.field_sponsor_tier['#items'] %}
+                {% set entity = item.entity %}
+                {% embed 'scale:badge' %}
+                    {% block text %}
+                        {{ entity.label }}
+                    {% endblock %}
+                {% endembed %}
+            {% endfor %}
+        </div>
+
+        <div class="">
+            {{ drupal_field('field_sponsor_bio', 'node', node.id, {label: 'hidden'}) }}
+        </div>
+    {% endblock %}
+{% endembed %}

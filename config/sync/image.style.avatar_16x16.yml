@@ -1,0 +1,15 @@
+uuid: 90fb8ae5-4050-47b6-84d8-ba0bd95fcdd3
+langcode: en
+status: true
+dependencies: {  }
+name: avatar_16x16
+label: avatar_16x16
+effects:
+  49ddb3c2-88d7-4d1e-b15a-4adf887c4e4b:
+    uuid: 49ddb3c2-88d7-4d1e-b15a-4adf887c4e4b
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 16
+      height: 16
+      anchor: center-center

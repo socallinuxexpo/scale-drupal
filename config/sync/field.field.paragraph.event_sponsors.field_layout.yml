@@ -1,0 +1,21 @@
+uuid: a1583b58-4109-49b6-b134-33a56e86e8f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_layout
+    - paragraphs.paragraphs_type.event_sponsors
+  module:
+    - options
+id: paragraph.event_sponsors.field_layout
+field_name: field_layout
+entity_type: paragraph
+bundle: event_sponsors
+label: Layout
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

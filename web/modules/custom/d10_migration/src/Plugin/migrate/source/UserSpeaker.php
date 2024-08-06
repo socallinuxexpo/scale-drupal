@@ -2,24 +2,15 @@
 
 namespace Drupal\d10_migration\Plugin\migrate\source;
 
-use Drupal\migrate\Plugin\migrate\source\SourcePluginBase;
 
 /**
  * @MigrateSource(
  *  id = "user_speaker_source",
  * )
  */
-class UserSpeaker extends SourcePluginBase {
+class UserSpeaker extends PaginatedSource {
 
-  /**
-   * {@inheritdoc}
-   */
-  public function initializeIterator() {
-    $client = \Drupal::service('d10_migration.client');
-    $response = $client->get('/migrate/user/speaker/json/test');
-
-    return new \ArrayIterator($response);
-  }
+  protected string $endpoint = '/migrate/user/speaker/json/all';
 
   /**
    * {@inheritdoc}

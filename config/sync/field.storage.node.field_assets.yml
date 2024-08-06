@@ -1,0 +1,23 @@
+uuid: 7dfc402f-4d00-4472-836c-1f3c67de2400
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - node
+id: node.field_assets
+field_name: field_assets
+entity_type: node
+type: file
+settings:
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

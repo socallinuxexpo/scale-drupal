@@ -1,0 +1,20 @@
+uuid: 775a2d25-121f-4293-a47d-c90c8810c14f
+langcode: en
+status: true
+dependencies:
+  theme:
+    - scale
+_core:
+  default_config_hash: CdXfDmRgAvms7EQovxxWPdYi0GitxeRbVtScYK16ZH0
+id: scale_local_actions
+theme: scale
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

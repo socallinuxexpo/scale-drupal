@@ -1,0 +1,155 @@
+default:
+  id: square
+  label: Square
+  suffix: square
+  styles:
+    64x64:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 64
+            height: 64
+    64x64_webp:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 64
+            height: 64
+        -
+          type: 'image_convert'
+          data:
+            extension: 'webp'
+    128x128:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 128
+            height: 128
+    128x128_webp:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 128
+            height: 128
+        -
+          type: 'image_convert'
+          data:
+            extension: 'webp'
+    256x256:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 256
+            height: 256
+    256x256_webp:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 256
+            height: 256
+        -
+          type: 'image_convert'
+          data:
+            extension: 'webp'
+
+avatar:
+  id: avatar
+  label: Avatar
+  suffix: avatar
+  styles:
+    16x16:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 16
+            height: 16
+    16x16_webp:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 16
+            height: 16
+        -
+          type: 'image_convert'
+          data:
+            extension: 'webp'
+    32x32:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 32
+            height: 32
+    32x32_webp:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 32
+            height: 32
+        -
+          type: 'image_convert'
+          data:
+            extension: 'webp'
+    64x64:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 64
+            height: 64
+    64x64_webp:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 64
+            height: 64
+        -
+          type: 'image_convert'
+          data:
+            extension: 'webp'
+    128x128:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 128
+            height: 128
+    128x128_webp:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 128
+            height: 128
+        -
+          type: 'image_convert'
+          data:
+            extension: 'webp'
+    256x256:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 256
+            height: 256
+    256x256_webp:
+      effects:
+        -
+          type: 'image_scale_and_crop'
+          data:
+            width: 256
+            height: 256
+        -
+          type: 'image_convert'
+          data:
+            extension: 'webp'

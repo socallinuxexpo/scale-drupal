@@ -68,7 +68,7 @@ process:
   body/value: body
   body/format:
     plugin: default_value
-    default_value: basic_html
+    default_value: full_html
   body/summary: body_summary
   field_scale_events:
     -
@@ -85,6 +85,4 @@ process:
   path/alias: path
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - tax_event
+migration_dependencies: null

@@ -1,0 +1,65 @@
+<div class="max-w-screen-lg mx-auto">
+
+  <h1 class="mb-12">{{ node.label }}</h1>
+
+  <div class="mb-12">
+    {{ content.speakers }}
+  </div>
+
+  <div class="flex items-center gap-3 mb-8">
+    {% if node.field_session_level %}
+      {% embed 'scale:badge' %}
+        {% block text %}
+          Audience: {{ node.field_session_level.entity.label }}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
+
+    {% if node.field_session_level %}
+      {% embed 'scale:badge' %}
+        {% block text %}
+          Topic: {{ node.field_session_track.entity.label }}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
+  </div>
+
+  <hr class="border border-black mb-7">
+
+  <div class="bg-primary-50 p-7 mb-7">
+    {% set room = node.field_session_room.entity.label %}
+    {% set date_field = node.field_time_slot %}
+    {% set start_date = date_field.value|date('l, F j, Y - H:i') %}
+    {% set end_date = date_field.end_value|date('H:i') %}
+    <div class="text-xl mb-3">
+      The presentation <span class="font-bold">will take place in {{ room }}</span> on <span
+        class="font-bold">{{ start_date }} to {{ end_date }}</span>
+    </div>
+    <div class="flex gap-3 items-center">
+      {% embed 'scale:button' with {color: 'black'} %}
+        {% block button_text %}
+          Add to Calendar (TODO)
+        {% endblock %}
+      {% endembed %}
+      {% embed 'scale:button' with {color: 'black'} %}
+        {% block button_text %}
+          Share (TODO)
+        {% endblock %}
+      {% endembed %}
+    </div>
+  </div>
+
+  <div class="text-2xl">
+    {{ drupal_field('field_long_abstract', 'node', node.id, {label: 'hidden'}) }}
+  </div>
+
+  {{ content.field_audio_video }}
+
+  <div class="my-7">
+    {% if node.field_assets is not empty %}
+      {% set file_url = node.field_assets.entity.uri.value|file_url %}
+      {{ drupal_link('Download Presentation'|t, file_url, {attributes: {class: ['btn', 'btn-black'], target: '_blank', download}}) }}
+    {% endif %}
+  </div>
+
+</div>

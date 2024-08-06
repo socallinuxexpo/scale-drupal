@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.speaker.field_twitter_profile
     - field.field.node.speaker.field_user_account
     - field.field.node.speaker.field_website
+    - image.style.large
     - node.type.speaker
   module:
     - image
@@ -73,10 +74,10 @@ content:
     region: content
   field_profile_photo:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: large
       image_loading:
         attribute: lazy
     third_party_settings: {  }

@@ -8,3 +8,13 @@ config:
   services:
     phpmyadmin:
       type: phpmyadmin
+tooling:
+  drush:
+    service: appserver
+    cmd: drush
+    env:
+      DRUSH_OPTIONS_URI: scale10.lndo.site
+events:
+  pre-db-import:
+    # Fix MySQL 8 import issue (dropping DB with Drush).
+    - appserver: echo "Dropping DB" && $LANDO_WEBROOT/../vendor/bin/drush sql:drop -y

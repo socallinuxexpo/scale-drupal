@@ -1,0 +1,23 @@
+uuid: cea4f0ef-f0f1-4125-be74-5852607c3b0b
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - scale
+id: scale_sitebranding_2
+theme: scale
+region: disclosure
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

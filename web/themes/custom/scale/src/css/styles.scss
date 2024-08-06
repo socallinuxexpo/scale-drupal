@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "fonts";
+@import "hero";
+@import "sponsor-carousel";
+
+
+body {
+  @apply font-body;
+}
+
+
+// TODO: Find view using this and remove this
+// TODO: Or make this a utility class
+.view-sponsor-logos {
+  .view-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    grid-gap: 1rem;
+    align-items: center;
+  }
+}
+
+// TODO: Make this gracefully degrade to viewport
+// Loop through columns and apply number of columns to grid
+@for $i from 1 through 12 {
+  .views-grid-#{$i} {
+    .view-content {
+      display: grid;
+      grid-template-columns: repeat(#{$i}, 1fr);
+      grid-gap: 1rem;
+    }
+  }
+}
+

@@ -1,0 +1,11 @@
+uuid: b7b9a870-6a66-4811-90e3-7379431999f8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.summary_card
+label: 'Summary Card'
+description: ''
+targetEntityType: node
+cache: true

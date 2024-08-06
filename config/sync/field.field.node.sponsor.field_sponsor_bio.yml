@@ -1,0 +1,26 @@
+uuid: ca6cde01-d323-4189-b538-bbea35a891ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_sponsor_bio
+    - filter.format.basic_html
+    - node.type.sponsor
+  module:
+    - text
+id: node.sponsor.field_sponsor_bio
+field_name: field_sponsor_bio
+entity_type: node
+bundle: sponsor
+label: 'Sponsor Bio'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats:
+    - basic_html
+field_type: text_with_summary

@@ -1,0 +1,21 @@
+uuid: 07e4e243-6c04-47b7-b30c-a652206b7881
+langcode: en
+status: true
+dependencies: {  }
+name: avatar_16x16_webp
+label: avatar_16x16_webp
+effects:
+  b1723796-7f22-4795-b09f-c0f7ad5bafc7:
+    uuid: b1723796-7f22-4795-b09f-c0f7ad5bafc7
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 16
+      height: 16
+      anchor: center-center
+  48e9a5d4-1431-4af2-acc2-644b2015d315:
+    uuid: 48e9a5d4-1431-4af2-acc2-644b2015d315
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp

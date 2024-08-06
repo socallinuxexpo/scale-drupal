@@ -1,0 +1,47 @@
+{% set name = [
+  node.field_first_name.value,
+  node.field_last_name.value
+]|join(' ') %}
+
+{% set image %}
+  {% if node.field_profile_photo is not empty %}
+    {% set image_field = content.field_profile_photo[0] %}
+    {% if image_field %}
+      <img src="{{ image_field['#item'].entity.uri.value | image_style('square_128x128_webp') }}"
+           alt="{{ image_field['#item'].alt }}"
+           class="">
+    {% endif %}
+  {% endif %}
+{% endset %}
+
+{% set title = node.field_job_title.value %}
+{% set organization = node.field_organization.value %}
+{% set subhead = [title, organization]|filter(v => v is not empty)|join(' - ') %}
+
+{% embed 'scale:summary-card' %}
+  {% block content %}
+    <div class="">
+      <div class="font-semibold text-lg">
+        {{ name }}
+      </div>
+      {% if subhead %}
+        <div class="font-medium text-sm">
+          {{ subhead }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="py-7 overflow-auto">
+      <div class="float-start mr-7 mb-4">
+        {{ image }}
+      </div>
+      <div class="mt-auto">
+        {{ drupal_field('body', 'node', node.id, {label: 'hidden'}) }}
+      </div>
+    </div>
+  {% endblock %}
+
+  {% set footer %}
+    {{ drupal_link('Browse Presentations'|t, 'node/' ~ node.id, {attributes: {class: ['btn', 'btn-black'], target: '_blank', download}}) }}
+  {% endset %}
+{% endembed %}

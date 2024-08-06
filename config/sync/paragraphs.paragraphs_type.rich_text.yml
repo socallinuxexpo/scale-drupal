@@ -1,0 +1,10 @@
+uuid: 04409811-5e71-4880-8e5b-5834898ee9f2
+langcode: en
+status: true
+dependencies: {  }
+id: rich_text
+label: 'Rich Text'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

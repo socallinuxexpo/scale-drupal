@@ -1,0 +1,21 @@
+uuid: 2aeae9bb-50e2-483f-aee0-bdd661af0873
+langcode: en
+status: true
+dependencies: {  }
+name: avatar_32x32_webp
+label: avatar_32x32_webp
+effects:
+  44e14014-eb4d-4a5a-ae39-3f5c1a795576:
+    uuid: 44e14014-eb4d-4a5a-ae39-3f5c1a795576
+    id: image_scale_and_crop
+    weight: 0
+    data:
+      width: 32
+      height: 32
+      anchor: center-center
+  6c9712a6-dce3-46ac-81fb-8ea027200f7c:
+    uuid: 6c9712a6-dce3-46ac-81fb-8ea027200f7c
+    id: image_convert
+    weight: 1
+    data:
+      extension: webp

@@ -1,0 +1,44 @@
+
+
+.view.view-event-sponsors {
+  margin-bottom: 3rem;
+
+  .swiper-slide {
+    width: auto;
+
+
+    img {
+      display: block;
+      height: 38px;
+      width: auto;
+    }
+  }
+}
+
+
+
+.swiper {
+  position: relative;
+}
+
+.swiper-navigation {
+  @apply absolute container-fixed z-50;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+.swiper-control {
+  @apply absolute bg-white shadow rounded-full;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px; height: 30px;
+  background-image: url("/themes/custom/scale/assets/swiper-prev.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &.swiper-control-next {
+    right: 0;
+    background-image: url("/themes/custom/scale/assets/swiper-next.svg");
+  }
+}

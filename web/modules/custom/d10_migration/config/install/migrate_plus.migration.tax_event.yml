@@ -26,4 +26,6 @@ process:
     - plugin: entity_generate
 destination:
   plugin: 'entity:node'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - tax_room

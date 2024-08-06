@@ -1,0 +1,25 @@
+uuid: 342dc765-7504-4a53-8ae9-f8212f008f5a
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c8fdb018-7957-4274-a8ae-59336bf5e8a2'
+  module:
+    - block_content
+  theme:
+    - scale
+id: scale_disclosure
+theme: scale
+region: disclosure
+weight: -5
+provider: null
+plugin: 'block_content:c8fdb018-7957-4274-a8ae-59336bf5e8a2'
+settings:
+  id: 'block_content:c8fdb018-7957-4274-a8ae-59336bf5e8a2'
+  label: Disclosure
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

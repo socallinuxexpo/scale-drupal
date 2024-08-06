@@ -8,11 +8,16 @@ dependencies:
     - field.field.node.sponsor.field_legacy_nid
     - field.field.node.sponsor.field_ready_for_approval
     - field.field.node.sponsor.field_scale_event
+    - field.field.node.sponsor.field_sponsor_bio
+    - field.field.node.sponsor.field_sponsor_logo
     - field.field.node.sponsor.field_sponsor_tier
     - field.field.node.sponsor.field_sponsor_type
-    - field.field.node.sponsor.field_vendor_ref
+    - field.field.node.sponsor.field_sponsor_website
     - node.type.sponsor
   module:
+    - image
+    - link
+    - text
     - user
 id: node.sponsor.default
 targetEntityType: node
@@ -61,6 +66,24 @@ content:
     third_party_settings: {  }
     weight: 115
     region: content
+  field_sponsor_bio:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_sponsor_logo:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 118
+    region: content
   field_sponsor_tier:
     type: entity_reference_label
     label: above
@@ -77,13 +100,17 @@ content:
     third_party_settings: {  }
     weight: 107
     region: content
-  field_vendor_ref:
-    type: entity_reference_label
+  field_sponsor_website:
+    type: link
     label: above
     settings:
-      link: true
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    weight: 112
+    weight: 117
     region: content
   links:
     settings: {  }
