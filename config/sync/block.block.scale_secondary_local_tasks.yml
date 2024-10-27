@@ -9,7 +9,7 @@ _core:
 id: scale_secondary_local_tasks
 theme: scale
 region: pre_content
-weight: -2
+weight: -4
 provider: null
 plugin: local_tasks_block
 settings:

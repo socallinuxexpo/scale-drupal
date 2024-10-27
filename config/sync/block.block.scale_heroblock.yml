@@ -1,0 +1,20 @@
+uuid: effeaa48-200b-4bb0-9268-fef647d8719c
+langcode: en
+status: true
+dependencies:
+  module:
+    - hero_block
+  theme:
+    - scale
+id: scale_heroblock
+theme: scale
+region: pre_content
+weight: -7
+provider: null
+plugin: hero_block
+settings:
+  id: hero_block
+  label: 'Hero Block'
+  label_display: '0'
+  provider: hero_block
+visibility: {  }

@@ -1,14 +1,5 @@
-{% set date = node.getCreatedTime|date('j M Y') %}
-
 <div class="max-w-screen-lg mx-auto">
-
-    <h1 class="">{{ node.label }}</h1>
-    <div class="text-2xl mb-12">{{ date }}</div>
-
-    <hr class="border border-black mb-7">
-
-    <div class="">
-        {{ drupal_field('body', 'node', node.id, {label: 'hidden'}) }}
-    </div>
-
+  <div class="">
+    {{ drupal_field('body', 'node', node.id, {label: 'hidden'}) }}
+  </div>
 </div>

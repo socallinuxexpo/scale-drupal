@@ -1,0 +1,42 @@
+<?php
+
+namespace Drupal\hero_block\Plugin\Block;
+
+use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
+use Drupal\node\Entity\Node;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+
+/**
+ * Provides a block that displays rendered fields from the current node.
+ *
+ * @Block(
+ *   id = "hero_block",
+ *   admin_label = @Translation("Hero Block"),
+ *   category = @Translation("Custom")
+ * )
+ */
+class HeroBlock extends BlockBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function build() {
+    // Check if we are on a node route and get the node object.
+    $node = \Drupal::routeMatch()->getParameter('node');
+//    if ($node instanceof Node) {
+//    }
+
+    return [
+      '#theme' => 'hero_block',
+      '#node' => $node,
+      '#title' => $node->getTitle(),
+      '#cache' => [
+        'contexts' => ['route'],
+      ],
+    ];
+  }
+
+}

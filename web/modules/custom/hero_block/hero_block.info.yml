@@ -1,0 +1,5 @@
+name: Here Block
+description: 'Displays a custom hero component on the page'
+type: module
+package: Custom
+core_version_requirement: ^10

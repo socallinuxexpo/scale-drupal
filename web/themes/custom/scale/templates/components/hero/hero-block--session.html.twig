@@ -1,0 +1,28 @@
+{% extends 'hero-block.html.twig' %}
+
+
+{% block hero__bottom %}
+
+  <div class="mb-12">
+    {{ content.speakers }}
+  </div>
+
+  <div class="flex items-center gap-3 mb-8">
+    {% if node.field_session_level %}
+      {% embed 'scale:badge' %}
+        {% block text %}
+          Audience: {{ node.field_session_level.entity.label }}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
+
+    {% if node.field_session_level %}
+      {% embed 'scale:badge' %}
+        {% block text %}
+          Topic: {{ node.field_session_track.entity.label }}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
+  </div>
+
+{% endblock %}

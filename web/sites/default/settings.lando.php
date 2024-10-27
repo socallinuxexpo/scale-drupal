@@ -14,6 +14,7 @@ if (getenv('LANDO_INFO')) {
 
 $settings['config_sync_directory'] = '../config/sync';
 $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/lando.services.yml';
+
 $config['system.performance']['css']['preprocess'] = FALSE;
 $config['system.performance']['js']['preprocess'] = FALSE;
 $settings['cache']['bins']['render'] = 'cache.backend.null';
