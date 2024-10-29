@@ -924,10 +924,6 @@ ul.menu .menu-item:has(.is-active):before {
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
 }
-.my-8 {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -940,6 +936,9 @@ ul.menu .menu-item:has(.is-active):before {
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .mb-7 {
   margin-bottom: 1.75rem;
 }
@@ -951,9 +950,6 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .mt-auto {
   margin-top: auto;
-}
-.mb-6 {
-  margin-bottom: 1.5rem;
 }
 .block {
   display: block;
@@ -970,17 +966,14 @@ ul.menu .menu-item:has(.is-active):before {
 .aspect-square {
   aspect-ratio: 1 / 1;
 }
+.h-44 {
+  height: 11rem;
+}
 .h-auto {
   height: auto;
 }
 .h-full {
   height: 100%;
-}
-.h-56 {
-  height: 14rem;
-}
-.h-44 {
-  height: 11rem;
 }
 .max-h-\[60px\] {
   max-height: 60px;
@@ -988,14 +981,11 @@ ul.menu .menu-item:has(.is-active):before {
 .min-h-screen {
   min-height: 100vh;
 }
-.w-full {
-  width: 100%;
-}
-.w-56 {
-  width: 14rem;
-}
 .w-44 {
   width: 11rem;
+}
+.w-full {
+  width: 100%;
 }
 .max-w-screen-lg {
   max-width: 1024px;
@@ -1029,11 +1019,6 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .overflow-auto {
   overflow: auto;
-}
-.truncate {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .rounded-full {
   border-radius: 9999px;
@@ -1161,16 +1146,16 @@ ul.menu .menu-item:has(.is-active):before {
 .font-semibold {
   font-weight: 600;
 }
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
 .text-inherit {
   color: inherit;
 }
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
