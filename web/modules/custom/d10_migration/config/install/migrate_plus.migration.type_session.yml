@@ -89,6 +89,8 @@ process:
       source: speakers
       method: process
       message: 'Skipping empty speakers.'
+    - plugin: callback
+      callable: html_entity_decode
     - plugin: explode
       delimiter: ','
     - plugin: trim
@@ -134,7 +136,6 @@ process:
       to_format: Y-m-d\TH:i:s
       from_timezone: 'America/New_York'
       to_timezone: 'America/Los_Angeles'
-
   path/pathauto:
     plugin: default_value
     default_value: 1
