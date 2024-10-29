@@ -20,13 +20,11 @@
     ],
     "require": {
         "composer/installers": "^2.0",
-        "pantheon-upstreams/upstream-configuration": "dev-main",
-        "drupal/core-composer-scaffold": "^10",
-        "drupal/core-recommended": "^10",
-        "pantheon-systems/drupal-integrations": "^10",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.4",
+        "drupal/core-composer-scaffold": "^10",
         "drupal/core-project-message": "^10.2",
+        "drupal/core-recommended": "^10",
         "drupal/devel": "^5.2",
         "drupal/flag": "^4.0@beta",
         "drupal/gin": "^3.0@RC",
@@ -35,8 +33,12 @@
         "drupal/migrate_process_trim": "^2.0@dev",
         "drupal/migrate_skip_on_404": "^1.1",
         "drupal/paragraphs": "^1.17",
+        "drupal/pathauto": "^1.13",
+        "drupal/redirect": "^1.10",
         "drupal/twig_tweak": "^3.3",
-        "drush/drush": "^12.2"
+        "drush/drush": "^12.2",
+        "pantheon-systems/drupal-integrations": "^10",
+        "pantheon-upstreams/upstream-configuration": "dev-main"
     },
     "conflict": {
         "drupal/drupal": "*"
