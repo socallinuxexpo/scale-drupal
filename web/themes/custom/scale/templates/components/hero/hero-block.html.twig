@@ -1,9 +1,11 @@
-<div class="max-w-screen-lg mx-auto">
+<div class="max-w-screen-lg mx-auto mb-7">
+  <div class="py-8">
+    {% block hero__title %}
+      <h1 class="mb-6">{{ title }}</h1>
+    {% endblock %}
 
-  <h1 class="mb-12">{{ title }}</h1>
-
-  {% block hero__bottom %}
-  {% endblock %}
-
-  <hr class="border border-black mb-7">
+    {% block hero__bottom %}
+    {% endblock %}
+  </div>
+  <hr class="border border-black">
 </div>

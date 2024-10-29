@@ -11,6 +11,8 @@
  * themed in menu-local-task.html.twig.
  */
 #}
+<div class="max-w-screen-lg mx-auto">
+
 {% if primary %}
   <h2 class="visually-hidden">{{ 'Primary tabs'|t }}</h2>
   {% embed 'scale:tabs' %}
@@ -28,3 +30,5 @@
     {% endblock %}
   {% endembed %}
 {% endif %}
+
+</div>

@@ -924,6 +924,10 @@ ul.menu .menu-item:has(.is-active):before {
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
 }
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -948,6 +952,9 @@ ul.menu .menu-item:has(.is-active):before {
 .mt-auto {
   margin-top: auto;
 }
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .block {
   display: block;
 }
@@ -969,6 +976,12 @@ ul.menu .menu-item:has(.is-active):before {
 .h-full {
   height: 100%;
 }
+.h-56 {
+  height: 14rem;
+}
+.h-44 {
+  height: 11rem;
+}
 .max-h-\[60px\] {
   max-height: 60px;
 }
@@ -977,6 +990,12 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .w-full {
   width: 100%;
+}
+.w-56 {
+  width: 14rem;
+}
+.w-44 {
+  width: 11rem;
 }
 .max-w-screen-lg {
   max-width: 1024px;
@@ -1005,8 +1024,16 @@ ul.menu .menu-item:has(.is-active):before {
 .gap-3 {
   gap: 0.75rem;
 }
+.gap-8 {
+  gap: 2rem;
+}
 .overflow-auto {
   overflow: auto;
+}
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .rounded-full {
   border-radius: 9999px;
@@ -1102,6 +1129,10 @@ ul.menu .menu-item:has(.is-active):before {
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
 }
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 .text-center {
   text-align: center;
 }
@@ -1136,6 +1167,10 @@ ul.menu .menu-item:has(.is-active):before {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -1660,4 +1695,11 @@ body {
 
 .hover\:opacity-70:hover {
   opacity: 0.7;
+}
+
+@media (min-width: 768px) {
+
+  .md\:flex {
+    display: flex;
+  }
 }

@@ -24,10 +24,7 @@ class HeroBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    // Check if we are on a node route and get the node object.
     $node = \Drupal::routeMatch()->getParameter('node');
-//    if ($node instanceof Node) {
-//    }
 
     return [
       '#theme' => 'hero_block',

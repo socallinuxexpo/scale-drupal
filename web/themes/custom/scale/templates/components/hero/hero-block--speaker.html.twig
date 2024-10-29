@@ -1,0 +1,37 @@
+{% set title__job = [
+  node.field_job_title.value ?? '',
+  node.field_organization.value ?? '',
+]|filter(v => v is not empty)|join(' - ') %}
+
+{% set has_image = node.field_profile_photo is not empty %}
+
+{% set image %}
+  {% if node.field_profile_photo is not empty %}
+    {% set image_field = node.field_profile_photo[0] %}
+    {% if image_field %}
+      <img src="{{ image_field.entity.uri.value | image_style('avatar_256x256_webp') }}"
+           alt="{{ image_field.alt }}"
+           class="rounded-full w-44 h-44">
+    {% endif %}
+  {% endif %}
+{% endset %}
+
+<div class="max-w-screen-lg mx-auto">
+  <div class="py-8">
+
+    <div class="md:flex gap-8 items-center">
+      {% if has_image %}
+        <div>{{ image }}</div>
+      {% endif %}
+      <div class="hero__contents">
+        <h1 class="mb-6">{{ title }}</h1>
+        <div class="text-2xl">
+          {{ title__job }}
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <hr class="border border-black mb-7">
+</div>
+

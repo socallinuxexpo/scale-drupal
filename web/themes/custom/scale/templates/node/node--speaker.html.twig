@@ -1,0 +1,30 @@
+<div class="max-w-screen-lg mx-auto">
+
+  <div class="mb-12">
+    {% if node.field_website.uri %}
+      <div class="text-2xl">
+        <a href="{{ node.field_website.uri }}" class="text-black" title="Website">
+          <i class="fa-solid fa-globe"></i>
+        </a>
+      </div>
+    {% endif %}
+
+    {% if node.field_twitter_profile.uri %}
+      <div class="text-2xl">
+        <a href="{{ node.field_twitter_profile.uri }}" class="text-black" title="Twitter">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="text-2xl mb-12">
+    {{ drupal_field('body', 'node', node.id, {label: 'hidden'}) }}
+  </div>
+
+  <div class="mb-8">
+    <h2 class="mb-5">Presentations</h2>
+    {{ drupal_view('speaker_presentations', 'embed', node.id) }}
+  </div>
+
+</div>
