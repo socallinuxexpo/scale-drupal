@@ -107,6 +107,9 @@ process:
       method: process
       message: 'Skipping empty speakers.'
     -
+      plugin: callback
+      callable: html_entity_decode
+    -
       plugin: explode
       delimiter: ','
     -

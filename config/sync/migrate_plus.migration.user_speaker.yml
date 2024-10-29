@@ -18,18 +18,46 @@ process:
   type:
     plugin: default_value
     default_value: speaker
-  title: name
+  title:
+    -
+      plugin: callback
+      callable: html_entity_decode
+      source: name
   created: created
   field_legacy_uid: uid
   status:
     plugin: default_value
     default_value: 1
-  field_first_name: first_name
-  field_last_name: last_name
-  field_job_title: job_title
-  field_organization: organization
-  field_website: website
-  field_twitter_profile: twitter
+  field_first_name:
+    -
+      plugin: callback
+      callable: html_entity_decode
+      source: first_name
+  field_last_name:
+    -
+      plugin: callback
+      callable: html_entity_decode
+      source: last_name
+  field_job_title:
+    -
+      plugin: callback
+      callable: html_entity_decode
+      source: job_title
+  field_organization:
+    -
+      plugin: callback
+      callable: html_entity_decode
+      source: organization
+  field_website:
+    -
+      plugin: callback
+      callable: urldecode
+      source: website
+  field_twitter_profile:
+    -
+      plugin: callback
+      callable: urldecode
+      source: twitter
   body/value: bio
   body/format:
     plugin: default_value
@@ -64,7 +92,11 @@ process:
     -
       plugin: file_import
       destination: '@pseudo_destination_path'
-  field_profile_photo/alt: name
+  field_profile_photo/alt:
+    -
+      plugin: callback
+      callable: html_entity_decode
+      source: name
   field_user_account:
     -
       plugin: skip_on_empty

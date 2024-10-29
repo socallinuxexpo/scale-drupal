@@ -17,13 +17,7 @@ process:
   type:
     plugin: default_value
     default_value: sponsor
-  title:
-    plugin: concat
-    source:
-      - scale_event
-      - sponsor_tier
-      - title
-    delimiter: ' - '
+  title: title
   created: created
   status: published
   field_legacy_nid: nid
