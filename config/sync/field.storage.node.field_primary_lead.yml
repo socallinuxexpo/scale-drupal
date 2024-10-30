@@ -1,0 +1,19 @@
+uuid: 0a92ee58-7754-40b0-ac52-60401c734db9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_primary_lead
+field_name: field_primary_lead
+entity_type: node
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

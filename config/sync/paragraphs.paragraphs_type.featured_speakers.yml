@@ -1,0 +1,10 @@
+uuid: 16089e65-c17b-4acc-a0f2-cdf32fc28142
+langcode: en
+status: true
+dependencies: {  }
+id: featured_speakers
+label: 'Featured Speakers'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

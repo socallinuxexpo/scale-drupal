@@ -37,12 +37,7 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
-    region: content
-  links:
-    settings: {  }
-    third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
 hidden:
   field_assets: true
@@ -62,3 +57,4 @@ hidden:
   field_speakers_ref: true
   field_tags: true
   field_time_slot: true
+  links: true

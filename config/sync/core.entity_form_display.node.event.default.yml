@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.field_event_id
+    - field.field.node.event.field_featured_speakers
     - field.field.node.event.field_legacy_tid
     - field.field.node.event.field_venue
     - node.type.event
@@ -37,6 +38,16 @@ content:
     weight: 122
     region: content
     settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_featured_speakers:
+    type: entity_reference_autocomplete
+    weight: 125
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
       size: 60
       placeholder: ''
     third_party_settings: {  }

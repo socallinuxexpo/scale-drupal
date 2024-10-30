@@ -23,8 +23,16 @@ process:
   status:
     plugin: default_value
     default_value: 1
-  field_first_name: first_name
-  field_last_name: last_name
+  field_first_name:
+    -
+      plugin: callback
+      callable: html_entity_decode
+      source: first_name
+  field_last_name:
+    -
+      plugin: callback
+      callable: html_entity_decode
+      source: last_name
   field_postal_code: postal_code
   field_age:
     -

@@ -1,0 +1,24 @@
+uuid: dce16f89-1901-4066-9fef-645b2e64378c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_primary_lead
+    - filter.format.basic_html
+    - node.type.landing_page
+  module:
+    - text
+id: node.landing_page.field_primary_lead
+field_name: field_primary_lead
+entity_type: node
+bundle: landing_page
+label: 'Primary Lead / Subtitle'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  allowed_formats:
+    - basic_html
+field_type: text_long

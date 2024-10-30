@@ -25,6 +25,7 @@ settings:
       - drupalInsertImage
       - '|'
       - heading
+      - style
       - code
       - '|'
       - sourceEditing
@@ -58,6 +59,14 @@ settings:
         - '<h4 id>'
         - '<h5 id>'
         - '<h6 id>'
+    ckeditor5_style:
+      styles:
+        -
+          label: 'Primary Button'
+          element: '<a class="btn btn-primary">'
+        -
+          label: 'Secondary Button'
+          element: '<a class="btn btn-secondary">'
 image_upload:
   status: true
   scheme: public
