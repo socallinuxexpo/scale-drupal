@@ -36,6 +36,7 @@
         "drupal/pathauto": "^1.13",
         "drupal/redirect": "^1.10",
         "drupal/twig_tweak": "^3.3",
+        "drupal/webform": "^6.2",
         "drush/drush": "^12.2",
         "pantheon-systems/drupal-integrations": "^10",
         "pantheon-upstreams/upstream-configuration": "dev-main"

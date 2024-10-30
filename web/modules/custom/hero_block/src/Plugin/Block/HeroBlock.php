@@ -24,16 +24,16 @@ class HeroBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $node = \Drupal::routeMatch()->getParameter('node');
-
-    return [
-      '#theme' => 'hero_block',
-      '#node' => $node,
-      '#title' => $node->getTitle(),
-      '#cache' => [
-        'contexts' => ['route'],
-      ],
-    ];
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      return [
+        '#theme' => 'hero_block',
+        '#node' => $node,
+        '#title' => $node->getTitle(),
+        '#cache' => [
+          'contexts' => ['route'],
+        ],
+      ];
+    }
   }
 
 }
