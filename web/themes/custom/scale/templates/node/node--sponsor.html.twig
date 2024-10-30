@@ -1,0 +1,52 @@
+<div class="max-w-screen-lg mx-auto">
+
+  {% set has_image = node.field_sponsor_logo is not empty %}
+
+  {% set image %}
+    {% if node.field_sponsor_logo is not empty %}
+      {% set image_field = node.field_sponsor_logo[0] %}
+      {% if image_field %}
+        <img src="{{ image_field.entity.uri.value | image_style('max_325x325') }}"
+             alt="{{ image_field.alt }}"
+             class="">
+      {% endif %}
+    {% endif %}
+  {% endset %}
+
+  <div class="flex gap-5 items-center mb-12">
+    {% if has_image %}
+      <div>{{ image }}</div>
+    {% endif %}
+
+    <div class="sponsor__data">
+      {% if node.field_sponsor_tier %}
+        {{ drupal_field('field_sponsor_tier', 'node', node.id, {label: 'hidden', settings: {link: false}}) }}
+      {% endif %}
+
+      {% if node.field_sponsor_website %}
+        {{ drupal_field('field_sponsor_website', 'node', node.id, {label: 'hidden'}) }}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="text-2xl mb-8">
+    {{ drupal_field('field_sponsor_bio', 'node', node.id, {label: 'hidden'}) }}
+  </div>
+
+
+
+  <div class="bg-primary-50 p-7 mb-7">
+    <h2>Become our Exhibitor</h2>
+    <div class="text-xl mb-3">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat ex quis turpis pretium fringilla.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat ex quis turpis ..</p>
+    </div>
+    <div class="flex gap-3 items-center">
+      {% embed 'scale:button' with {color: 'black'} %}
+        {% block button_text %}
+          Contact Us (TODO)
+        {% endblock %}
+      {% endembed %}
+    </div>
+  </div>
+
+</div>

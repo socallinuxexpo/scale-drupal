@@ -13,11 +13,11 @@
 
 {% embed 'scale:summary-card' %}
     {% block content %}
-        <div class="mb-5">
+        <a class="mb-5" href="{{ url }}">
             <div class="font-semibold text-lg">
                 {{ image }}
             </div>
-        </div>
+        </a>
 
         <div class="flex flex-wrap items-center gap-2 mb-5">
             {% for item in content.field_sponsor_tier['#items'] %}

@@ -1,0 +1,10 @@
+{% extends 'hero-block.html.twig' %}
+
+
+{% block hero__bottom %}
+
+  {% for type in content.sponsor_types %}
+    <div class="text-2xl mb-2">{{ node.label() }} is a SCaLE {{ type }}</div>
+  {% endfor %}
+
+{% endblock %}

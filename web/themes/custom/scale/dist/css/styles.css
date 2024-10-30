@@ -951,6 +951,9 @@ ul.menu .menu-item:has(.is-active):before {
 .mt-auto {
   margin-top: auto;
 }
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
 .block {
   display: block;
 }
@@ -1016,6 +1019,9 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-5 {
+  gap: 1.25rem;
 }
 .overflow-auto {
   overflow: auto;

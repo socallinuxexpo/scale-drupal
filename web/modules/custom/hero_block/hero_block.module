@@ -27,7 +27,7 @@ function hero_block_theme_suggestions_hero_block_alter(array &$suggestions, arra
 /**
  * Implements theme_preprocess_HOOK().
  */
-function hero_block_preprocess_hero_block__session(&$variables) {
+function hero_block_preprocess_hero_block__session(&$variables): void {
   /** @var \Drupal\node\Entity\Node $ndoe */
   $node = $variables["node"];
 
@@ -41,4 +41,20 @@ function hero_block_preprocess_hero_block__session(&$variables) {
   }
 
   $variables['content']['speakers'] = $speaker_nodes;
+}
+
+/**
+ * Implements theme_preprocess_HOOK().
+ */
+function hero_block_preprocess_hero_block__sponsor(&$variables): void {
+  /** @var \Drupal\node\Entity\Node $ndoe */
+  $node = $variables["node"];
+
+  $sponsor_type_entities = $node->get('field_sponsor_type')->referencedEntities();
+  $sponsor_types = [];
+  foreach ($sponsor_type_entities as $sponsor_type) {
+    $sponsor_types[] = $sponsor_type->label();
+  }
+
+  $variables['content']['sponsor_types'] = $sponsor_types;
 }
