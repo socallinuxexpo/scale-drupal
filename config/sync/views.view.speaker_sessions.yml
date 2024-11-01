@@ -1,15 +1,15 @@
-uuid: 54beacaf-c4a3-42f4-950e-418ae323fe0b
+uuid: d8133602-63bd-438d-aa48-016a11abc179
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.speaker_session
     - node.type.session
   module:
     - node
     - user
-id: speaker_presentations
-label: 'Speaker - Presentations'
+id: speaker_sessions
+label: 'Speaker - Sessions'
 module: views
 description: ''
 tag: ''
@@ -172,7 +172,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: speaker_session
       query:
         type: views_query
         options:

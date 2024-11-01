@@ -1,7 +1,29 @@
-<div class="mb-8">
-  <h3>{{ node.label }}</h3>
-  <div class="text-lg">
-    {{ content.body }}
-  </div>
-  <a href="{{ url }}" class="btn btn-black">See Presentation</a>
-</div>
+{% embed 'scale:container' with {
+  containerWidth: 'fixed',
+  classes: 'bg-primary-50 p-7 mb-7'
+} %}
+  {% block content %}
+    <div class="">
+      <h3>{{ node.label }}</h3>
+      <div class="flex gap-5 py-3">
+
+        {#  TODO: Pass this data via preprocessor  #}
+        {% set room = node.field_session_room.entity.label %}
+        {% set date_field = node.field_time_slot %}
+        {% set start_date = date_field.value|date('l, F j, Y - H:i') %}
+        {% set end_date = date_field.end_value|date('H:i') %}
+        <div class="w-1/2">
+          {{ start_date }} to {{ end_date }} - {{ room }}
+        </div>
+        <div class="w-1/2">
+          {{ drupal_view('session_teaser_subhead', 'embed', node.id) }}
+        </div>
+
+      </div>
+      <div class="text-lg">
+        {{ content.body }}
+      </div>
+      <a href="{{ url }}" class="btn btn-black">See Presentation</a>
+    </div>
+  {% endblock %}
+{% endembed %}

@@ -1,0 +1,29 @@
+uuid: eaa4f218-7b4a-4d9c-accb-70c1abe50c4f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_event
+    - node.type.event
+    - paragraphs.paragraphs_type.event_sessions
+id: paragraph.event_sessions.field_event
+field_name: field_event
+entity_type: paragraph
+bundle: event_sessions
+label: Event
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      event: event
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

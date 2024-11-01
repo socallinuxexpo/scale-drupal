@@ -1,0 +1,16 @@
+
+.messages {
+  @apply p-5 mb-8 border-l-4;
+
+  &.messages--status {
+    @apply bg-green-50 border-green-500;
+  }
+
+  &.messages--warning {
+    @apply bg-amber-50 border-amber-500;
+  }
+
+  &.messages--error {
+    @apply bg-red-50 border-red-500;
+  }
+}

@@ -2,6 +2,8 @@
 
   <div class="bg-primary-50 p-7 mb-7">
     {% set room = node.field_session_room.entity.label %}
+
+    {#  TODO: Pass this data via preprocessor  #}
     {% set date_field = node.field_time_slot %}
     {% set start_date = date_field.value|date('l, F j, Y - H:i') %}
     {% set end_date = date_field.end_value|date('H:i') %}

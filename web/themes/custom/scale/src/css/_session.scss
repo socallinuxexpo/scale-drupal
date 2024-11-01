@@ -1,0 +1,13 @@
+
+
+.view-session-teaser-subhead {
+  .views-row {
+    @apply flex gap-2 items-center mb-1;
+  }
+
+  .views-field-field-profile-photo {
+    picture {
+      @apply block w-8 rounded-full overflow-hidden;
+    }
+  }
+}

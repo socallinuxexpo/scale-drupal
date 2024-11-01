@@ -1,0 +1,21 @@
+uuid: 671424de-7a61-49db-9918-0794eaa316a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_sessions.field_event
+    - paragraphs.paragraphs_type.event_sessions
+id: paragraph.event_sessions.default
+targetEntityType: paragraph
+bundle: event_sessions
+mode: default
+content:
+  field_event:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

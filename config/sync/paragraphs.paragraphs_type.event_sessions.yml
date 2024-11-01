@@ -1,0 +1,10 @@
+uuid: 8272cfc1-ebc4-4e68-a239-fb4ba3c93237
+langcode: en
+status: true
+dependencies: {  }
+id: event_sessions
+label: 'Event Sessions'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

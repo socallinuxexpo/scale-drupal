@@ -1,0 +1,21 @@
+uuid: 1d4f472b-a89b-4d2f-af3d-72c437dfa3cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_sessions.field_event
+    - paragraphs.paragraphs_type.event_sessions
+id: paragraph.event_sessions.default
+targetEntityType: paragraph
+bundle: event_sessions
+mode: default
+content:
+  field_event:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

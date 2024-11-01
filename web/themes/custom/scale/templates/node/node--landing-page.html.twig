@@ -33,19 +33,7 @@
             </div>
         </div>
     </div>
-{% else %}
-    {% set date = node.getCreatedTime|date('j M Y') %}
-
-    {% embed 'scale:container' with {containerWidth: 'fixed'} %}
-        {% block content %}
-            <h1 class="">{{ node.label }}</h1>
-            <div class="text-2xl mb-12">{{ date }}</div>
-
-            <hr class="border border-black mb-7">
-        {% endblock %}
-    {% endembed %}
 {% endif %}
-
 
 <div class="">
     {{ drupal_field('field_components', 'node', node.id, {label: 'hidden'}) }}
