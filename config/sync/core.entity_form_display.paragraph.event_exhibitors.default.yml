@@ -1,0 +1,21 @@
+uuid: d7d0867d-3384-42da-840a-216f48279137
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_exhibitors.field_event
+    - paragraphs.paragraphs_type.event_exhibitors
+id: paragraph.event_exhibitors.default
+targetEntityType: paragraph
+bundle: event_exhibitors
+mode: default
+content:
+  field_event:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true

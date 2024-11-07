@@ -1,0 +1,10 @@
+uuid: a2d97c5b-3223-43d5-b2d6-3dc18429db13
+langcode: en
+status: true
+dependencies: {  }
+id: event_exhibitors
+label: 'Event Exhibitors'
+icon_uuid: null
+icon_default: null
+description: ''
+behavior_plugins: {  }

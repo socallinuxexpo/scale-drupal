@@ -984,6 +984,9 @@ ul.menu .menu-item:has(.is-active):before {
 .min-h-screen {
   min-height: 100vh;
 }
+.w-1\/2 {
+  width: 50%;
+}
 .w-44 {
   width: 11rem;
 }
@@ -992,9 +995,6 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .w-full {
   width: 100%;
-}
-.w-1\/2 {
-  width: 50%;
 }
 .max-w-screen-lg {
   max-width: 1024px;
@@ -1129,6 +1129,10 @@ ul.menu .menu-item:has(.is-active):before {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1144,10 +1148,6 @@ ul.menu .menu-item:has(.is-active):before {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
-}
-.py-3 {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
 }
 .text-center {
   text-align: center;

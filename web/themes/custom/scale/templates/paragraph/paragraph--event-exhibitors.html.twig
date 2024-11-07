@@ -1,0 +1,8 @@
+{% embed 'scale:container' with {containerWidth: 'fixed'} %}
+  {% block content %}
+    <div class="mb-8">
+      {% set event_id = paragraph.field_event.target_id %}
+      {{ drupal_view('event_exhibitors', 'grouped_grid', event_id) }}
+    </div>
+  {% endblock %}
+{% endembed %}

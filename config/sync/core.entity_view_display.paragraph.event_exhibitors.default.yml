@@ -1,0 +1,21 @@
+uuid: d7839ec3-0dfd-4bb5-8f80-b819696241d1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_exhibitors.field_event
+    - paragraphs.paragraphs_type.event_exhibitors
+id: paragraph.event_exhibitors.default
+targetEntityType: paragraph
+bundle: event_exhibitors
+mode: default
+content:
+  field_event:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }
