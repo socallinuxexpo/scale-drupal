@@ -130,7 +130,7 @@ function rate_bots_check_botscout($ip) {
     $url = "http://botscout.com/test/?ip=$ip&key=$key";
     $data = drupal_http_request($url, array('timeout' => 2));
     if ($data->code == 200) {
-      if ($data->data{0} == 'Y') {
+      if ($data->data[0] == 'Y') {
         return TRUE;
       }
     }
