@@ -11,6 +11,7 @@ dependencies:
     - field.field.node.special_event.field_special_event_image
     - field.field.node.special_event.field_sponsors_ref
     - field.field.node.special_event.field_when
+    - image.style.medium
     - node.type.special_event
   module:
     - datetime_range
@@ -64,10 +65,10 @@ content:
     region: content
   field_special_event_image:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: medium
       image_loading:
         attribute: lazy
     third_party_settings: {  }
