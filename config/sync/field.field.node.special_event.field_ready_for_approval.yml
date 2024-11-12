@@ -1,0 +1,21 @@
+uuid: 2d0efb96-693f-4ee6-8090-bf67fe5b78e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ready_for_approval
+    - node.type.special_event
+id: node.special_event.field_ready_for_approval
+field_name: field_ready_for_approval
+entity_type: node
+bundle: special_event
+label: 'Ready for Approval'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

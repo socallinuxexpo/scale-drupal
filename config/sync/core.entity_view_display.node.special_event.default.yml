@@ -1,0 +1,100 @@
+uuid: c635332b-5999-4df6-b772-03403b28d03a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.special_event.body
+    - field.field.node.special_event.field_legacy_nid
+    - field.field.node.special_event.field_ready_for_approval
+    - field.field.node.special_event.field_scale_events
+    - field.field.node.special_event.field_schedule
+    - field.field.node.special_event.field_special_event_image
+    - field.field.node.special_event.field_sponsors_ref
+    - field.field.node.special_event.field_when
+    - node.type.special_event
+  module:
+    - datetime_range
+    - image
+    - text
+    - user
+id: node.special_event.default
+targetEntityType: node
+bundle: special_event
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_legacy_nid:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_ready_for_approval:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_scale_events:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_schedule:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_special_event_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_sponsors_ref:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_when:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      from_to: both
+      separator: '-'
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

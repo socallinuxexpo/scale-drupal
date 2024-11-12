@@ -1,34 +1,25 @@
 langcode: en
 status: true
 dependencies: { }
-id: type_blog
+id: type_special_event
 class: null
 field_plugin_method: null
 cck_plugin_method: null
 migration_tags: null
 migration_group: default
-label: 'Blog Type'
+label: 'Special Event Type'
 source:
-  plugin: type_blog_source
+  plugin: type_special_event_source
   track_changes: true
   constants:
     DRUPAL_FILE_DIRECTORY: 'public://'
 process:
   type:
     plugin: default_value
-    default_value: article
+    default_value: special_event
   title: title
   created: created
   status: published
-  field_tags:
-    - plugin: skip_on_empty
-      method: process
-      source: tags
-      message: 'Empty tags.'
-    - plugin: explode
-      delimiter: ','
-    - plugin: trim
-    - plugin: entity_generate
   pseudo_folder_date:
     - plugin: format_date
       source: created
@@ -45,9 +36,9 @@ process:
       - '@pseudo_folder_directory'
       - filename
     delimiter: /
-  field_article_image:
+  field_special_event_image:
     - plugin: skip_on_empty
-      source: image/src
+      source: logo/src
       method: process
       message: 'Cannot import empty image filename.'
     - plugin: skip_on_404
@@ -55,22 +46,53 @@ process:
       message: 'Cannot reach the image at that URI.'
     - plugin: file_import
       destination: '@pseudo_destination_path'
-  field_article_image/alt: title
+  field_special_event_image/alt: logo/alt
+  field_special_event_image/title: logo/title
+  field_schedule/value: schedule
+  field_schedule/format:
+    plugin: default_value
+    default_value: full_html
   body/value: body
   body/format:
     plugin: default_value
     default_value: full_html
   body/summary: body_summary
+  field_when/value:
+    - plugin: format_date
+      source: start
+      from_format: U
+      to_format: Y-m-d\TH:i:s
+      from_timezone: 'America/New_York'
+      to_timezone: 'America/Los_Angeles'
+  field_when/end_value:
+    - plugin: format_date
+      source: end
+      from_format: U
+      to_format: Y-m-d\TH:i:s
+      from_timezone: 'America/New_York'
+      to_timezone: 'America/Los_Angeles'
+  field_legacy_nid: nid
   field_scale_events:
-    - plugin: explode
+    - plugin: skip_on_empty
       source: scale_event
+      method: process
+    - plugin: explode
       delimiter: ','
     - plugin: trim
     - plugin: entity_generate
+  field_sponsors_ref:
+    - plugin: skip_on_empty
+      source: sponsor
+      method: process
+    - plugin: explode
+      delimiter: ','
+    - plugin: trim
+    - plugin: entity_generate
+  field_ready_for_approval: ready_for_approval
+  path/alias: path
   path/pathauto:
     plugin: default_value
     default_value: 0
-  path/alias: path
 # TODO: Moderation State
 # @see https://www.drupal.org/project/drupal/issues/3157105#comment-13830538
 destination:

@@ -1,0 +1,22 @@
+uuid: 0df7521c-5f97-4082-b476-41edd09c762e
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: special_event
+label: 'Special Event'
+type: 'canonical_entities:node'
+pattern: 'scale/[node:field_scale_events:0:entity:title]/special-event/[node:title]'
+selection_criteria:
+  bd7499b3-09d8-45c4-98a3-4bda1be4c586:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: bd7499b3-09d8-45c4-98a3-4bda1be4c586
+    context_mapping:
+      node: node
+    bundles:
+      special_event: special_event
+selection_logic: and
+weight: -5
+relationships: {  }

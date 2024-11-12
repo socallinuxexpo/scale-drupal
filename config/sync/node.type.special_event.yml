@@ -1,0 +1,18 @@
+uuid: 74aa487a-4a7a-42c1-bc1e-d8179611cf07
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Special Event'
+type: special_event
+description: null
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

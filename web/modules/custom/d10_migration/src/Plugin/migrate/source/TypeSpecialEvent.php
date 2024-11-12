@@ -4,12 +4,12 @@ namespace Drupal\d10_migration\Plugin\migrate\source;
 
 /**
  * @MigrateSource(
- *  id = "type_session_source",
+ *  id = "type_special_event_source",
  * )
  */
-class TypeSession extends PaginatedSource {
+class TypeSpecialEvent extends PaginatedSource {
 
-  protected string $endpoint = '/migrate/type/presentation/json/paged';
+  protected string $endpoint = '/migrate/type/special_event/json/paged';
 
   /**
    * {@inheritdoc}
@@ -32,7 +32,7 @@ class TypeSession extends PaginatedSource {
    * {@inheritdoc}
    */
   public function __toString() {
-    return "Type Presentation";
+    return "Type Special Event";
   }
 
 }
