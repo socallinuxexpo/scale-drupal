@@ -1,0 +1,15 @@
+uuid: 276de687-c3e7-4e0f-b8a7-8d4f7f033c32
+langcode: en
+status: true
+dependencies: {  }
+id: article_breadcrumbs
+label: 'Article Breadcrumbs'
+description: ''
+entityType: node
+entityBundle: article
+language: und
+breadcrumbPaths: "<nolink>\r\n<nolink>"
+breadcrumbTitles: "Blog\r\n[node:field_scale_events:0:entity:title]"
+type: '1'
+pathPattern: ''
+extraCacheContexts: ''
