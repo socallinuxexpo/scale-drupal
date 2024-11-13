@@ -1,0 +1,268 @@
+diff --git a/handlers/views_handler_argument.inc b/handlers/views_handler_argument.inc
+index 9f9adab6..c95feaa2 100644
+--- a/handlers/views_handler_argument.inc
++++ b/handlers/views_handler_argument.inc
+@@ -33,6 +33,7 @@
+  *
+  * @ingroup views_argument_handlers
+  */
++#[\AllowDynamicProperties]
+ class views_handler_argument extends views_handler {
+ 
+   /**
+diff --git a/handlers/views_handler_filter_in_operator.inc b/handlers/views_handler_filter_in_operator.inc
+index c20e8f00..b7a450a9 100644
+--- a/handlers/views_handler_filter_in_operator.inc
++++ b/handlers/views_handler_filter_in_operator.inc
+@@ -15,6 +15,7 @@
+  *
+  * @ingroup views_filter_handlers
+  */
++#[\AllowDynamicProperties]
+ class views_handler_filter_in_operator extends views_handler_filter {
+ 
+   /**
+diff --git a/includes/base.inc b/includes/base.inc
+index ffe8a46c..b2a39c3c 100644
+--- a/includes/base.inc
++++ b/includes/base.inc
+@@ -8,6 +8,7 @@
+ /**
+  * Provides the basic object definitions used by plugins and handlers.
+  */
++#[\AllowDynamicProperties]
+ class views_object {
+ 
+   /**
+diff --git a/includes/handlers.inc b/includes/handlers.inc
+index 042d20ff..99eb5937 100644
+--- a/includes/handlers.inc
++++ b/includes/handlers.inc
+@@ -151,6 +151,7 @@ function views_get_table_join($table, $base_table) {
+  *                    control is provided.
+  * - access arguments: An array of arguments for the access callback.
+  */
++#[\AllowDynamicProperties]
+ class views_handler extends views_object {
+ 
+   /**
+@@ -809,6 +810,7 @@ class views_handler extends views_object {
+  * - numeric: If true, treat this field as numeric, using %d instead of %s in
+  *            queries.
+  */
++#[\AllowDynamicProperties]
+ class views_many_to_one_helper {
+ 
+   /**
+@@ -1580,6 +1582,7 @@ function views_date_sql_extract($extract_type, $field, $field_type = 'int', $set
+  *   - extra type: How all the extras will be combined. Either AND or OR.
+  *     Defaults to AND.
+  */
++#[\AllowDynamicProperties]
+ class views_join {
+   public $table = NULL;
+   public $left_table = NULL;
+@@ -1745,6 +1748,7 @@ class views_join {
+  *   Same as views_join class above, except:
+  *   - left_query: The subquery to use in the left side of the join clause.
+  */
++#[\AllowDynamicProperties]
+ class views_join_subquery extends views_join {
+ 
+   /**
+diff --git a/includes/view.inc b/includes/view.inc
+index 9986ffa9..976805e9 100644
+--- a/includes/view.inc
++++ b/includes/view.inc
+@@ -14,6 +14,7 @@
+  * Also includes the member functions to build the view query, execute the
+  * query and render the output.
+  */
++#[\AllowDynamicProperties]
+ class view extends views_db_object {
+ 
+   /**
+@@ -2220,6 +2221,7 @@ class view extends views_db_object {
+ /**
+  * Base class for views' database objects.
+  */
++#[\AllowDynamicProperties]
+ class views_db_object {
+ 
+   public $db_table;
+@@ -2626,6 +2628,7 @@ class views_db_object {
+  * This is just the database storage mechanism, and isn't terribly important
+  * to the behavior of the display at all.
+  */
++#[\AllowDynamicProperties]
+ class views_display extends views_db_object {
+ 
+   /**
+diff --git a/modules/locale/views_handler_argument_locale_group.inc b/modules/locale/views_handler_argument_locale_group.inc
+index 6efcd55f..01867122 100644
+--- a/modules/locale/views_handler_argument_locale_group.inc
++++ b/modules/locale/views_handler_argument_locale_group.inc
+@@ -10,6 +10,7 @@
+  *
+  * @ingroup views_argument_handlers
+  */
++#[\AllowDynamicProperties]
+ class views_handler_argument_locale_group extends views_handler_argument {
+ 
+   /**
+diff --git a/modules/locale/views_handler_argument_locale_language.inc b/modules/locale/views_handler_argument_locale_language.inc
+index 0c3f61eb..572f122e 100644
+--- a/modules/locale/views_handler_argument_locale_language.inc
++++ b/modules/locale/views_handler_argument_locale_language.inc
+@@ -10,6 +10,7 @@
+  *
+  * @ingroup views_argument_handlers
+  */
++#[\AllowDynamicProperties]
+ class views_handler_argument_locale_language extends views_handler_argument {
+ 
+   /**
+diff --git a/modules/translation/views_handler_filter_node_tnid.inc b/modules/translation/views_handler_filter_node_tnid.inc
+index 5bff0480..2c94b216 100644
+--- a/modules/translation/views_handler_filter_node_tnid.inc
++++ b/modules/translation/views_handler_filter_node_tnid.inc
+@@ -10,6 +10,7 @@
+  *
+  * @ingroup views_filter_handlers
+  */
++#[\AllowDynamicProperties]
+ class views_handler_filter_node_tnid extends views_handler_filter {
+ 
+   /**
+diff --git a/plugins/export_ui/views_ui.class.php b/plugins/export_ui/views_ui.class.php
+index 81cbdac3..25cc8205 100644
+--- a/plugins/export_ui/views_ui.class.php
++++ b/plugins/export_ui/views_ui.class.php
+@@ -10,6 +10,7 @@
+ /**
+  * CTools Export UI class handler for Views UI.
+  */
++#[\AllowDynamicProperties]
+ class views_ui extends ctools_export_ui {
+ 
+   /**
+diff --git a/plugins/views_plugin_access_none.inc b/plugins/views_plugin_access_none.inc
+index af2a7c99..463c0329 100644
+--- a/plugins/views_plugin_access_none.inc
++++ b/plugins/views_plugin_access_none.inc
+@@ -10,6 +10,7 @@
+  *
+  * @ingroup views_access_plugins
+  */
++#[\AllowDynamicProperties]
+ class views_plugin_access_none extends views_plugin_access {
+ 
+   /**
+diff --git a/plugins/views_plugin_display_attachment.inc b/plugins/views_plugin_display_attachment.inc
+index 57bd0906..8f525abb 100644
+--- a/plugins/views_plugin_display_attachment.inc
++++ b/plugins/views_plugin_display_attachment.inc
+@@ -14,6 +14,7 @@
+  *
+  * @ingroup views_display_plugins
+  */
++#[\AllowDynamicProperties]
+ class views_plugin_display_attachment extends views_plugin_display {
+ 
+   /**
+diff --git a/plugins/views_plugin_display_block.inc b/plugins/views_plugin_display_block.inc
+index 9fc01119..93fe86fb 100644
+--- a/plugins/views_plugin_display_block.inc
++++ b/plugins/views_plugin_display_block.inc
+@@ -10,6 +10,7 @@
+  *
+  * @ingroup views_display_plugins
+  */
++#[\AllowDynamicProperties]
+ class views_plugin_display_block extends views_plugin_display {
+ 
+   /**
+diff --git a/plugins/views_plugin_display_default.inc b/plugins/views_plugin_display_default.inc
+index 9531013e..cc7d3bc5 100644
+--- a/plugins/views_plugin_display_default.inc
++++ b/plugins/views_plugin_display_default.inc
+@@ -10,6 +10,7 @@
+  *
+  * @ingroup views_display_plugins
+  */
++#[\AllowDynamicProperties]
+ class views_plugin_display_default extends views_plugin_display {
+ 
+   /**
+diff --git a/plugins/views_plugin_display_feed.inc b/plugins/views_plugin_display_feed.inc
+index a3c2333c..682bb37a 100644
+--- a/plugins/views_plugin_display_feed.inc
++++ b/plugins/views_plugin_display_feed.inc
+@@ -12,6 +12,7 @@
+  *
+  * @ingroup views_display_plugins
+  */
++#[\AllowDynamicProperties]
+ class views_plugin_display_feed extends views_plugin_display_page {
+ 
+   /**
+diff --git a/plugins/views_plugin_display_page.inc b/plugins/views_plugin_display_page.inc
+index d743836d..3f44f523 100644
+--- a/plugins/views_plugin_display_page.inc
++++ b/plugins/views_plugin_display_page.inc
+@@ -10,6 +10,7 @@
+  *
+  * @ingroup views_display_plugins
+  */
++#[\AllowDynamicProperties]
+ class views_plugin_display_page extends views_plugin_display {
+ 
+   /**
+diff --git a/plugins/views_plugin_localization_none.inc b/plugins/views_plugin_localization_none.inc
+index 4a1a7d9b..a5c1c2a2 100644
+--- a/plugins/views_plugin_localization_none.inc
++++ b/plugins/views_plugin_localization_none.inc
+@@ -10,6 +10,7 @@
+  *
+  * @ingroup views_localization_plugins
+  */
++#[\AllowDynamicProperties]
+ class views_plugin_localization_none extends views_plugin_localization {
+ 
+   /**
+diff --git a/tests/test_plugins/views_test_plugin_access_test_dynamic.inc b/tests/test_plugins/views_test_plugin_access_test_dynamic.inc
+index 39f7600f..1ad54d6c 100644
+--- a/tests/test_plugins/views_test_plugin_access_test_dynamic.inc
++++ b/tests/test_plugins/views_test_plugin_access_test_dynamic.inc
+@@ -8,6 +8,7 @@
+ /**
+  * Tests a dynamic access plugin.
+  */
++#[\AllowDynamicProperties]
+ class views_test_plugin_access_test_dynamic extends views_plugin_access {
+ 
+   /**
+diff --git a/tests/views_access.test b/tests/views_access.test
+index d05436be..66222908 100644
+--- a/tests/views_access.test
++++ b/tests/views_access.test
+@@ -8,6 +8,7 @@
+ /**
+  * Basic test for pluggable access.
+  */
++#[\AllowDynamicProperties]
+ class ViewsAccessTest extends ViewsSqlTest {
+   public static function getInfo() {
+     return array(
+diff --git a/tests/views_query.test b/tests/views_query.test
+index b2f00291..dffa7237 100644
+--- a/tests/views_query.test
++++ b/tests/views_query.test
+@@ -8,6 +8,7 @@
+ /**
+  *
+  */
++#[\AllowDynamicProperties]
+ abstract class ViewsTestCase extends DrupalWebTestCase {
+ 
+   /**
