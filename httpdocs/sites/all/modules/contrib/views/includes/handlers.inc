@@ -190,11 +190,6 @@ class views_handler extends views_object {
   public $relationship = NULL;
 
   /**
-   * @var string $table The table.
-   */
-  protected $table;
-
-  /**
    * Init the handler with necessary data.
    *
    * @param view $view
