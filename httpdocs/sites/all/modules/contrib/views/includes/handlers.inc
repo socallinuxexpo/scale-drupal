@@ -824,6 +824,8 @@ class views_many_to_one_helper {
    * @var array
    */
   public $placeholders = array();
+  
+  protected $handler;
 
   /**
    * {@inheritdoc}
