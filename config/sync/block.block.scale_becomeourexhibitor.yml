@@ -12,7 +12,7 @@ dependencies:
 id: scale_becomeourexhibitor
 theme: scale
 region: content
-weight: -5
+weight: -4
 provider: null
 plugin: 'block_content:00662166-fce3-417a-b12c-4151b42669c5'
 settings:
