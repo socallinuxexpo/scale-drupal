@@ -1,4 +1,11 @@
-<ul class="flex">
+{% set classes = [
+  'flex',
+  'border-b',
+  'border-slate',
+  'my-8'
+] %}
+
+<ul{{ attributes.addClass(classes) }}>
   {% block tabs %}
     {{ tabs }}
   {% endblock %}

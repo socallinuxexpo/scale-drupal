@@ -429,7 +429,7 @@ a {
 }
 
 a:hover {
-  color: #4a8df3;
+  color: #175ac0;
 }
 
 :root {
@@ -901,9 +901,6 @@ ul.menu .menu-item:has(.is-active):before {
 .static {
   position: static;
 }
-.fixed {
-  position: fixed;
-}
 .absolute {
   position: absolute;
 }
@@ -924,13 +921,12 @@ ul.menu .menu-item:has(.is-active):before {
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
 }
-.mx-0 {
-  margin-left: 0px;
-  margin-right: 0px;
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
-.-mx-4 {
-  margin-left: -1rem;
-  margin-right: -1rem;
+.-mb-px {
+  margin-bottom: -1px;
 }
 .mb-12 {
   margin-bottom: 3rem;
@@ -986,9 +982,6 @@ ul.menu .menu-item:has(.is-active):before {
 .h-full {
   height: 100%;
 }
-.h-8 {
-  height: 2rem;
-}
 .max-h-\[60px\] {
   max-height: 60px;
 }
@@ -1006,12 +999,6 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .w-full {
   width: 100%;
-}
-.w-screen {
-  width: 100vw;
-}
-.max-w-screen-lg {
-  max-width: 1024px;
 }
 .flex-shrink {
   flex-shrink: 1;
@@ -1055,6 +1042,9 @@ ul.menu .menu-item:has(.is-active):before {
 .border-b {
   border-bottom-width: 1px;
 }
+.border-b-2 {
+  border-bottom-width: 2px;
+}
 .border-black {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -1062,6 +1052,13 @@ ul.menu .menu-item:has(.is-active):before {
 .border-dark-400 {
   --tw-border-opacity: 1;
   border-color: rgb(78 78 78 / var(--tw-border-opacity));
+}
+.border-primary {
+  --tw-border-opacity: 1;
+  border-color: rgb(29 113 240 / var(--tw-border-opacity));
+}
+.border-transparent {
+  border-color: transparent;
 }
 .bg-amber-50 {
   --tw-bg-opacity: 1;
@@ -1091,17 +1088,13 @@ ul.menu .menu-item:has(.is-active):before {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
 }
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-primary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(29 113 240 / var(--tw-bg-opacity));
-}
 .bg-slate-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -1205,6 +1198,10 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .text-inherit {
   color: inherit;
+}
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(29 113 240 / var(--tw-text-opacity));
 }
 .text-white {
   --tw-text-opacity: 1;
@@ -1766,6 +1763,11 @@ body {
 .focus\:btn-xl:focus {
   --btn-padding: 1.5rem 1.25rem;
   --btn-font-size: 1.125rem;
+}
+
+.hover\:border-primary:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(29 113 240 / var(--tw-border-opacity));
 }
 
 .hover\:opacity-70:hover {

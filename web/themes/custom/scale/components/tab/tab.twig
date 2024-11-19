@@ -1,4 +1,13 @@
-<li{{ attributes.addClass('p-3 hover:opacity-70') }}>
+{% set classes = [
+  'p-3',
+  'border-b-2',
+  '-mb-px',
+  'hover:border-primary',
+  is_active ? 'text-primary' : 'text-slate',
+  is_active ? 'border-primary' : 'border-transparent',
+] %}
+
+<li{{ attributes.addClass(classes) }}>
   {% block tab %}
     {{ tab }}
   {% endblock %}
