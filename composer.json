@@ -31,6 +31,7 @@
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/flag": "^4.0@beta",
         "drupal/gin": "^3.0@RC",
+        "drupal/menu_breadcrumb": "^2.0@alpha",
         "drupal/migrate_file": "^2.1",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_process_trim": "^2.0@dev",
