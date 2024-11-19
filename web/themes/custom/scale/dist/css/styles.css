@@ -924,6 +924,14 @@ ul.menu .menu-item:has(.is-active):before {
   margin-top: 1.75rem;
   margin-bottom: 1.75rem;
 }
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.-mx-4 {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -978,6 +986,9 @@ ul.menu .menu-item:has(.is-active):before {
 .h-full {
   height: 100%;
 }
+.h-8 {
+  height: 2rem;
+}
 .max-h-\[60px\] {
   max-height: 60px;
 }
@@ -995,6 +1006,9 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .w-full {
   width: 100%;
+}
+.w-screen {
+  width: 100vw;
 }
 .max-w-screen-lg {
   max-width: 1024px;
@@ -1080,6 +1094,10 @@ ul.menu .menu-item:has(.is-active):before {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 113 240 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;

@@ -49,29 +49,32 @@
     </div>
   </header>
 
-  {{ page.breadcrumb }}
+  <div class="container mx-auto">
+    {{ page.breadcrumb }}
+  </div>
 
-{#  <div class="layout-container">#}
+  <div class="container mx-auto">
     {{ page.pre_content }}
-    <main class="page-content clearfix" role="main">
-      <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
-      {{ page.highlighted }}
-      {{ page.content }}
-    </main>
+  </div>
 
-    <div class="mt-auto">
-      {% if page.footer %}
-        <div class="bg-dark text-white py-2 border-b border-dark-400">
-          {{ page.footer }}
-        </div>
-      {% endif %}
+  <main class="container mx-auto page-content clearfix" role="main">
+    <div class="visually-hidden"><a id="main-content" tabindex="-1"></a></div>
+    {{ page.highlighted }}
+    {{ page.content }}
+  </main>
 
-      {% if page.disclosure %}
-        <div class="bg-dark text-white py-2">
-          {{ page.disclosure }}
-        </div>
-      {% endif %}
-    </div>
+  <div class="mt-auto">
+    {% if page.footer %}
+      <div class="bg-dark text-white py-2 border-b border-dark-400">
+        {{ page.footer }}
+      </div>
+    {% endif %}
 
-{#  </div>#}
+    {% if page.disclosure %}
+      <div class="bg-dark text-white py-2">
+        {{ page.disclosure }}
+      </div>
+    {% endif %}
+  </div>
+
 </div>
