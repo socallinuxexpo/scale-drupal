@@ -1099,6 +1099,10 @@ ul.menu .menu-item:has(.is-active):before {
   --tw-bg-opacity: 1;
   background-color: rgb(29 113 240 / var(--tw-bg-opacity));
 }
+.bg-slate-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
+}
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }

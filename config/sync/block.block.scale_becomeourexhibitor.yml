@@ -1,0 +1,33 @@
+uuid: e63393f5-c33a-4f4d-8c91-31f39eef0ad5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:00662166-fce3-417a-b12c-4151b42669c5'
+  module:
+    - block_content
+    - node
+  theme:
+    - scale
+id: scale_becomeourexhibitor
+theme: scale
+region: content
+weight: -5
+provider: null
+plugin: 'block_content:00662166-fce3-417a-b12c-4151b42669c5'
+settings:
+  id: 'block_content:00662166-fce3-417a-b12c-4151b42669c5'
+  label: 'Become our Exhibitor'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      sponsor: sponsor

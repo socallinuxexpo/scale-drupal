@@ -1,7 +1,6 @@
 {% set classes = [
     'component',
     classes ?? '',
-    containerWidth ? 'container-' ~ containerWidth : 'container-fluid',
 ] %}
 
 <div{{ attributes.addClass(classes) }}>

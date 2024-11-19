@@ -19,11 +19,10 @@
 ]
 %}
 
-{% set insideWidth = containerWidth ? 'container-' ~ containerWidth : 'container-fluid' %}
 
 {% if content %}
   <div{{ attributes.addClass(classes) }}>
-    <div class="region-inside {{ insideWidth }}">
+    <div class="region-inside">
       {{ content }}
     </div>
   </div>

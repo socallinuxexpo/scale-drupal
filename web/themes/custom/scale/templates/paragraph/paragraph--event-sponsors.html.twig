@@ -11,14 +11,14 @@
         {% endfor %}
     {% endset %}
 
-    {% embed 'scale:container' with {containerWidth: 'fixed'} %}
+    {% embed 'scale:container' %}
         {% block content %}
             {{ content }}
         {% endblock %}
     {% endembed %}
 
 {% elseif preprocessor.layout == 'marquee' %}
-    {% embed 'scale:container' with {containerWidth: 'fluid'} %}
+    {% embed 'scale:container' %}
         {% block content %}
             {{ preprocessor.content }}
         {% endblock %}
