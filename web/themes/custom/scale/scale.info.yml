@@ -20,8 +20,8 @@ regions:
   primary_menu: 'Primary Navigation'
   secondary_menu: 'Secondary Navigation'
   breadcrumb: Breadcrumb
-  pre_content: 'Pre-content'
   highlighted: Highlighted
+  pre_content: 'Pre-content'
 #  help: Help
   content: Content
   footer: Footer
