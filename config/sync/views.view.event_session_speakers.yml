@@ -1,6 +1,6 @@
 uuid: 9539d946-d43a-47f2-9645-41de531ee714
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.summary_card

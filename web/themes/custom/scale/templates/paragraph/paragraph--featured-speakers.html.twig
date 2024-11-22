@@ -1,5 +1,6 @@
 {% embed 'scale:container' %}
     {% block content %}
-        {{ content.speakers }}
+      {% set event_id = paragraph.field_event.target_id %}
+      {{ drupal_view('featured_presentations', 'swiper', event_id) }}
     {% endblock %}
 {% endembed %}

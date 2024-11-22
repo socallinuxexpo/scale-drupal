@@ -7,13 +7,14 @@ dependencies:
     - field.field.node.session.body
     - field.field.node.session.field_assets
     - field.field.node.session.field_audio_video
+    - field.field.node.session.field_featured
     - field.field.node.session.field_legacy_nid
     - field.field.node.session.field_link_to_presentation
     - field.field.node.session.field_long_abstract
     - field.field.node.session.field_moderation_message
     - field.field.node.session.field_primary_contact
     - field.field.node.session.field_rating
-    - field.field.node.session.field_scale_events
+    - field.field.node.session.field_scale_event
     - field.field.node.session.field_session_level
     - field.field.node.session.field_session_room
     - field.field.node.session.field_session_room_overflow
@@ -105,14 +106,6 @@ content:
     third_party_settings: {  }
     weight: 105
     region: content
-  field_scale_events:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 118
-    region: content
   field_session_level:
     type: entity_reference_label
     label: above
@@ -184,4 +177,7 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  breadcrumbs: true
+  field_featured: true
+  field_scale_event: true

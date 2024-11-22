@@ -6,7 +6,6 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
     - field.field.node.event.field_event_id
-    - field.field.node.event.field_featured_speakers
     - field.field.node.event.field_legacy_tid
     - field.field.node.event.field_venue
     - node.type.event
@@ -32,7 +31,7 @@ content:
     weight: 100
     region: content
 hidden:
+  breadcrumbs: true
   field_event_id: true
-  field_featured_speakers: true
   field_legacy_tid: true
   field_venue: true

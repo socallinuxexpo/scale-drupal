@@ -1,11 +1,6 @@
-{#<div class="py-4">#}
-{#  {{ content.speakers }}#}
-{#</div>#}
-
-{#h-auto#}
-
 {% embed 'scale:container' %}
     {% block content %}
-        {{ content.speakers }}
+      {% set event_id = paragraph.field_event.target_id %}
+      {{ drupal_view('event_speakers', 'summary_cards', event_id) }}
     {% endblock %}
 {% endembed %}

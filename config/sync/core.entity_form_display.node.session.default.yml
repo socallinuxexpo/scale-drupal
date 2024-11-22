@@ -6,13 +6,14 @@ dependencies:
     - field.field.node.session.body
     - field.field.node.session.field_assets
     - field.field.node.session.field_audio_video
+    - field.field.node.session.field_featured
     - field.field.node.session.field_legacy_nid
     - field.field.node.session.field_link_to_presentation
     - field.field.node.session.field_long_abstract
     - field.field.node.session.field_moderation_message
     - field.field.node.session.field_primary_contact
     - field.field.node.session.field_rating
-    - field.field.node.session.field_scale_events
+    - field.field.node.session.field_scale_event
     - field.field.node.session.field_session_level
     - field.field.node.session.field_session_room
     - field.field.node.session.field_session_room_overflow
@@ -35,7 +36,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 121
+    weight: 8
     region: content
     settings:
       rows: 9
@@ -45,28 +46,35 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_assets:
     type: file_generic
-    weight: 140
+    weight: 25
     region: content
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
   field_audio_video:
     type: text_textarea
-    weight: 131
+    weight: 16
     region: content
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 27
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_legacy_nid:
     type: string_textfield
-    weight: 126
+    weight: 11
     region: content
     settings:
       size: 60
@@ -74,7 +82,7 @@ content:
     third_party_settings: {  }
   field_link_to_presentation:
     type: link_default
-    weight: 130
+    weight: 15
     region: content
     settings:
       placeholder_url: ''
@@ -82,7 +90,7 @@ content:
     third_party_settings: {  }
   field_long_abstract:
     type: text_textarea
-    weight: 128
+    weight: 13
     region: content
     settings:
       rows: 5
@@ -90,7 +98,7 @@ content:
     third_party_settings: {  }
   field_moderation_message:
     type: text_textarea
-    weight: 129
+    weight: 14
     region: content
     settings:
       rows: 5
@@ -98,7 +106,7 @@ content:
     third_party_settings: {  }
   field_primary_contact:
     type: email_default
-    weight: 132
+    weight: 17
     region: content
     settings:
       placeholder: ''
@@ -106,7 +114,7 @@ content:
     third_party_settings: {  }
   field_rating:
     type: entity_reference_autocomplete
-    weight: 125
+    weight: 10
     region: content
     settings:
       match_operator: CONTAINS
@@ -114,9 +122,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_scale_events:
+  field_scale_event:
     type: entity_reference_autocomplete
-    weight: 138
+    weight: 22
     region: content
     settings:
       match_operator: CONTAINS
@@ -126,7 +134,7 @@ content:
     third_party_settings: {  }
   field_session_level:
     type: entity_reference_autocomplete
-    weight: 137
+    weight: 21
     region: content
     settings:
       match_operator: CONTAINS
@@ -136,7 +144,7 @@ content:
     third_party_settings: {  }
   field_session_room:
     type: entity_reference_autocomplete
-    weight: 133
+    weight: 18
     region: content
     settings:
       match_operator: CONTAINS
@@ -146,7 +154,7 @@ content:
     third_party_settings: {  }
   field_session_room_overflow:
     type: entity_reference_autocomplete
-    weight: 134
+    weight: 19
     region: content
     settings:
       match_operator: CONTAINS
@@ -156,7 +164,7 @@ content:
     third_party_settings: {  }
   field_session_track:
     type: entity_reference_autocomplete
-    weight: 136
+    weight: 20
     region: content
     settings:
       match_operator: CONTAINS
@@ -166,7 +174,7 @@ content:
     third_party_settings: {  }
   field_short_abstract:
     type: text_textarea
-    weight: 127
+    weight: 12
     region: content
     settings:
       rows: 5
@@ -174,7 +182,7 @@ content:
     third_party_settings: {  }
   field_speakers_ref:
     type: entity_reference_autocomplete
-    weight: 139
+    weight: 24
     region: content
     settings:
       match_operator: CONTAINS
@@ -184,7 +192,7 @@ content:
     third_party_settings: {  }
   field_tags:
     type: entity_reference_autocomplete
-    weight: 124
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -194,40 +202,40 @@ content:
     third_party_settings: {  }
   field_time_slot:
     type: daterange_default
-    weight: 141
+    weight: 26
     region: content
     settings: {  }
     third_party_settings: {  }
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 15
+    weight: 3
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 120
+    weight: 7
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 16
+    weight: 4
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -235,12 +243,17 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     region: content
     settings:
       match_operator: CONTAINS
       match_limit: 10
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  url_redirects:
+    weight: 6
+    region: content
+    settings: {  }
     third_party_settings: {  }
 hidden: {  }

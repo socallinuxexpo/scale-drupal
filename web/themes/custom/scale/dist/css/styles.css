@@ -961,6 +961,9 @@ ul.menu .menu-item:has(.is-active):before {
 .block {
   display: block;
 }
+.inline-block {
+  display: inline-block;
+}
 .flex {
   display: flex;
 }
@@ -999,6 +1002,15 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .w-full {
   width: 100%;
+}
+.w-auto {
+  width: auto;
+}
+.w-12 {
+  width: 3rem;
+}
+.w-3 {
+  width: 0.75rem;
 }
 .flex-shrink {
   flex-shrink: 1;
@@ -1768,10 +1780,6 @@ body {
 .hover\:border-primary:hover {
   --tw-border-opacity: 1;
   border-color: rgb(29 113 240 / var(--tw-border-opacity));
-}
-
-.hover\:opacity-70:hover {
-  opacity: 0.7;
 }
 
 @media (min-width: 768px) {

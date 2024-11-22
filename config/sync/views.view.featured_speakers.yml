@@ -1,6 +1,6 @@
 uuid: ea7f17f5-aab2-425a-9017-9586a0136304
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.profile_card
@@ -10,7 +10,7 @@ dependencies:
     - user
     - views_plugins
 id: featured_speakers
-label: 'Featured Speakers'
+label: 'Featured Speakers (DEPRECATED)'
 module: views
 description: ''
 tag: ''

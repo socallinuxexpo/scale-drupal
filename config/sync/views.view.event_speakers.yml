@@ -88,10 +88,27 @@ display:
           separator: ', '
           field_api_classes: false
       pager:
-        type: some
+        type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 100
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       exposed_form:
         type: basic
         options:
@@ -110,19 +127,61 @@ display:
         type: tag
         options: {  }
       empty: {  }
-      sorts: {  }
+      sorts:
+        field_last_name_value:
+          id: field_last_name_value
+          table: node__field_last_name
+          field: field_last_name_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        field_first_name_value:
+          id: field_first_name_value
+          table: node__field_first_name
+          field: field_first_name_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+          expose:
+            label: ''
+            field_identifier: ''
+          exposed: false
+          granularity: second
       arguments:
         nid:
           id: nid
           table: node_field_data
           field: nid
-          relationship: none
+          relationship: field_scale_event
           group_type: group
           admin_label: ''
           entity_type: node
           entity_field: nid
           plugin_id: node_nid
-          default_action: 'not found'
+          default_action: empty
           exception:
             value: all
             title_enable: false
@@ -141,17 +200,12 @@ display:
             sort_order: asc
             number_of_records: 0
             format: default_summary
-          specify_validation: true
+          specify_validation: false
           validate:
-            type: 'entity:node'
+            type: none
             fail: 'not found'
-          validate_options:
-            bundles:
-              speaker: speaker
-            access: false
-            operation: view
-            multiple: 1
-          break_phrase: true
+          validate_options: {  }
+          break_phrase: false
           not: false
       filters:
         status:
@@ -226,7 +280,26 @@ display:
           distinct: false
           replica: false
           query_tags: {  }
-      relationships: {  }
+      relationships:
+        reverse__node__field_speakers_ref:
+          id: reverse__node__field_speakers_ref
+          table: node_field_data
+          field: reverse__node__field_speakers_ref
+          relationship: none
+          group_type: group
+          admin_label: session
+          entity_type: node
+          plugin_id: entity_reverse
+          required: true
+        field_scale_event:
+          id: field_scale_event
+          table: node__field_scale_event
+          field: field_scale_event
+          relationship: reverse__node__field_speakers_ref
+          group_type: group
+          admin_label: event
+          plugin_id: standard
+          required: true
       css_class: views-grid-2
       header: {  }
       footer: {  }
@@ -237,6 +310,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
@@ -253,6 +327,7 @@ display:
         - 'languages:language_content'
         - 'languages:language_interface'
         - url
+        - url.query_args
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }

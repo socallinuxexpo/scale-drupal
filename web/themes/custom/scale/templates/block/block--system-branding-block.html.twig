@@ -16,8 +16,8 @@
 {% block content %}
   <div class="flex items-center gap-2">
     {% if site_logo %}
-      <a href="{{ path('<front>') }}" rel="home">
-        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" fetchpriority="high" class="max-h-[60px]"/>
+      <a href="{{ path('<front>') }}" rel="home" class="block w-12">
+        <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" fetchpriority="high" class="block max-h-[60px] w-12"/>
       </a>
     {% endif %}
     {% if site_name %}

@@ -60,29 +60,23 @@ process:
   field_link_to_presentation/title: link_to_prezi__title
   field_link_to_presentation/uri: link_to_prezi__url
   field_primary_contact: primary_contact
-  field_scale_events:
-    - plugin: explode
+  field_scale_event:
+    - plugin: skip_on_empty
       source: scale_event
-      delimiter: ','
-    - plugin: trim
+      method: process
+      message: 'Skipping empty event.'
     - plugin: entity_generate
   field_session_room:
     - plugin: skip_on_empty
       source: room
       method: process
       message: 'Skipping empty room.'
-    - plugin: explode
-      delimiter: ','
-    - plugin: trim
     - plugin: entity_generate
   field_session_room_overflow:
     - plugin: skip_on_empty
       source: room_overflow
       method: process
       message: 'Skipping empty room_overflow.'
-    - plugin: explode
-      delimiter: ','
-    - plugin: trim
     - plugin: entity_generate
   field_speakers_ref:
     - plugin: skip_on_empty
@@ -136,6 +130,13 @@ process:
       to_format: Y-m-d\TH:i:s
       from_timezone: 'America/New_York'
       to_timezone: 'America/Los_Angeles'
+  field_featured:
+    - plugin: static_map
+      source: sticky
+      map:
+        "0": false
+        "1": true
+      default_value: false
   path/pathauto:
     plugin: default_value
     default_value: 0
