@@ -13,6 +13,15 @@
  */
 #}
 
-{% extends 'region.html.twig' %}
+{#{% extends 'region.html.twig' %}#}
 
-{% set attributes = attributes.addClass('flex items-center gap-2') %}
+{% set attributes = attributes.addClass('') %}
+
+
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="region-inside flex gap-5 px-8">
+      {{ content }}
+    </div>
+  </div>
+{% endif %}

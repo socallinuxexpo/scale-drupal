@@ -913,6 +913,10 @@ ul.menu .menu-item:has(.is-active):before {
 .float-start {
   float: inline-start;
 }
+.-mx-5 {
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -961,9 +965,6 @@ ul.menu .menu-item:has(.is-active):before {
 .block {
   display: block;
 }
-.inline-block {
-  display: inline-block;
-}
 .flex {
   display: flex;
 }
@@ -979,9 +980,6 @@ ul.menu .menu-item:has(.is-active):before {
 .h-44 {
   height: 11rem;
 }
-.h-auto {
-  height: auto;
-}
 .h-full {
   height: 100%;
 }
@@ -994,6 +992,9 @@ ul.menu .menu-item:has(.is-active):before {
 .w-1\/2 {
   width: 50%;
 }
+.w-12 {
+  width: 3rem;
+}
 .w-44 {
   width: 11rem;
 }
@@ -1002,15 +1003,6 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .w-full {
   width: 100%;
-}
-.w-auto {
-  width: auto;
-}
-.w-12 {
-  width: 3rem;
-}
-.w-3 {
-  width: 0.75rem;
 }
 .flex-shrink {
   flex-shrink: 1;
@@ -1147,6 +1139,10 @@ ul.menu .menu-item:has(.is-active):before {
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .py-1 {
   padding-top: 0.25rem;

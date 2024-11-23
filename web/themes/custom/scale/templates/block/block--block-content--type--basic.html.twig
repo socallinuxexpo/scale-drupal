@@ -30,14 +30,13 @@
 #}
 
 {% set classes = [
-  'p-7',
   'mb-12',
 ] %}
 
 {% if color == 'primary' %}
-  {% set classes = classes|merge(['bg-primary-50']) %}
+  {% set classes = classes|merge(['bg-primary-50', 'p-7']) %}
 {% elseif color == 'secondary' %}
-  {% set classes = classes|merge(['bg-slate-50']) %}
+  {% set classes = classes|merge(['bg-slate-50', 'p-7']) %}
 {% endif %}
 
 
