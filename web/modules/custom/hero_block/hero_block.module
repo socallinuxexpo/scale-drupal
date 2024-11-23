@@ -58,3 +58,27 @@ function hero_block_preprocess_hero_block__sponsor(&$variables): void {
 
   $variables['content']['sponsor_types'] = $sponsor_types;
 }
+
+/**
+ * Implements theme_preprocess_HOOK().
+ */
+function hero_block_preprocess_hero_block__landing_page(&$variables): void {
+  /** @var \Drupal\node\Entity\Node $ndoe */
+  $node = $variables["node"];
+
+  // Ensure the field_image field exists and is not empty.
+  if ($node->hasField('field_image') && !$node->get('field_image')->isEmpty()) {
+    // Load the image file entity.
+    $file = $node->get('field_image')->entity;
+
+    if ($file instanceof \Drupal\file\Entity\File) {
+      // Generate the image URL with the 'wide' image style.
+      $image_style = \Drupal::entityTypeManager()->getStorage('image_style')->load('wide');
+      if ($image_style) {
+        $image_url = $image_style->buildUrl($file->getFileUri());
+        // Add the URL to the variables for the template.
+        $variables['hero_image_url'] = $image_url;
+      }
+    }
+  }
+}

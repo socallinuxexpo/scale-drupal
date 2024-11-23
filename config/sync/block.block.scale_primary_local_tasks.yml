@@ -8,8 +8,8 @@ _core:
   default_config_hash: ACjBZI5shAMiiUpsz-inLYVXDqNNXRnSzAWV3kV_8Hw
 id: scale_primary_local_tasks
 theme: scale
-region: pre_content
-weight: -5
+region: content
+weight: -7
 provider: null
 plugin: local_tasks_block
 settings:

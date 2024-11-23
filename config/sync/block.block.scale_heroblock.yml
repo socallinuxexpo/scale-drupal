@@ -9,7 +9,7 @@ dependencies:
 id: scale_heroblock
 theme: scale
 region: pre_content
-weight: -7
+weight: -8
 provider: null
 plugin: hero_block
 settings:
