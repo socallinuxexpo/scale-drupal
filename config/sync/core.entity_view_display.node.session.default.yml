@@ -157,7 +157,7 @@ content:
     region: content
   field_short_abstract:
     type: text_default
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     weight: 107
