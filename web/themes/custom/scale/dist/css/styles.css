@@ -1019,6 +1019,9 @@ ul.menu .menu-item:has(.is-active):before {
 .w-full {
   width: 100%;
 }
+.max-w-full {
+  max-width: 100%;
+}
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -1051,6 +1054,9 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .overflow-auto {
   overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 .overflow-visible {
   overflow: visible;
