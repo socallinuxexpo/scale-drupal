@@ -153,12 +153,13 @@ process:
       from_timezone: America/New_York
       to_timezone: America/Los_Angeles
   field_featured:
-    plugin: static_map
-    source: sticky
-    map:
-      - false
-      - true
-    default_value: false
+    -
+      plugin: static_map
+      source: sticky
+      map:
+        - false
+        - true
+      default_value: false
   path/pathauto:
     plugin: default_value
     default_value: 0

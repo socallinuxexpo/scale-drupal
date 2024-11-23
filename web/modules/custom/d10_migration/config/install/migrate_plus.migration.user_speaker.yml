@@ -92,7 +92,7 @@ process:
       migration: user
   path/pathauto:
     plugin: default_value
-    default_value: 0
+    default_value: 1
   path/alias: path
 # TODO: Moderation State
 # @see https://www.drupal.org/project/drupal/issues/3157105#comment-13830538
