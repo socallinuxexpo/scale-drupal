@@ -1,4 +1,4 @@
-<div class="swiper">
+<div class="swiper !overflow-visible">
     <div class="swiper-wrapper" style="transition-timing-function: linear">
         {% for row in rows %}
             <div class="swiper-slide" style="height: auto;">{{ row.content }}</div>
@@ -6,7 +6,7 @@
     </div>
 
     {% if pagination %}
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination !top-full"></div>
     {% endif %}
 
     {% if navigation %}

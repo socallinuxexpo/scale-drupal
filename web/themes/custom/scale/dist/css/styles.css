@@ -910,6 +910,18 @@ ul.menu .menu-item:has(.is-active):before {
 .sticky {
   position: sticky;
 }
+.bottom-0 {
+  bottom: 0px;
+}
+.top-full {
+  top: 100%;
+}
+.top-5 {
+  top: 1.25rem;
+}
+.\!top-full {
+  top: 100% !important;
+}
 .float-start {
   float: inline-start;
 }
@@ -1036,6 +1048,17 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .overflow-auto {
   overflow: auto;
+}
+.overflow-visible {
+  overflow: visible;
+}
+.\!overflow-visible {
+  overflow: visible !important;
+}
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .rounded-full {
   border-radius: 9999px;
@@ -1171,6 +1194,12 @@ ul.menu .menu-item:has(.is-active):before {
 .py-8 {
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.pb-8 {
+  padding-bottom: 2rem;
+}
+.\!pb-8 {
+  padding-bottom: 2rem !important;
 }
 .text-center {
   text-align: center;

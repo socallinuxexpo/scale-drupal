@@ -13,13 +13,13 @@
 
   {% block body %}
     <div class="mt-auto">
-      <div class="font-semibold text-lg">
+      <div class="font-semibold text-lg truncate">
         {{ name }}
       </div>
-      <div class="font-medium text-sm">
+      <div class="font-medium text-sm truncate">
         {{ node.field_job_title.value }}
       </div>
-      <div class="font-medium text-sm">
+      <div class="font-medium text-sm truncate">
         {{ node.field_organization.value }}
       </div>
     </div>

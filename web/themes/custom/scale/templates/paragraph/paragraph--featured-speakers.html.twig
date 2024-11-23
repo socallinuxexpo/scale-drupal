@@ -1,6 +1,9 @@
+{% set attributes = attributes.addClass("py-8") %}
+
 {% embed 'scale:container' %}
     {% block content %}
       {% set event_id = paragraph.field_event.target_id %}
+      <h2 class="mb-5 text-center">Featured Speakers</h2>
       {{ drupal_view('featured_presentations', 'swiper', event_id) }}
     {% endblock %}
 {% endembed %}
