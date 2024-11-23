@@ -21,9 +21,19 @@
           const swiper = new Swiper($(element).find('.swiper')[0], {
             // Optional parameters
             // direction: 'vertical',
-            slidesPerView: options.slidesPerView ?? 1,
+            slidesPerView: 2.5,
             loop: options.loop === 1,
             spaceBetween: options.spaceBetween,
+
+            breakpoints: {
+              // when window width is >= 678px
+              678: {
+                slidesPerView: options.slidesPerView ? options.slidesPerView / 2 : 2.5,
+              },
+              1024: {
+                slidesPerView: options.slidesPerView ?? 2.5,
+              },
+            },
 
             // If we need pagination
             pagination: options.pagination ? {

@@ -30,7 +30,7 @@ function scale_preprocess_node__speaker__profile_card(&$variables) {
       '#alt' => $item['alt'] ?? '',
       '#title' => $item['title'] ?? '',
       '#attributes' => [
-        'class' => ['rounded-full'],
+        'class' => ['rounded-full w-full h-auto'],
       ],
     ];
   }

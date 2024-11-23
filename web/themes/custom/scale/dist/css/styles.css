@@ -995,6 +995,9 @@ ul.menu .menu-item:has(.is-active):before {
 .h-full {
   height: 100%;
 }
+.h-auto {
+  height: auto;
+}
 .max-h-\[60px\] {
   max-height: 60px;
 }
