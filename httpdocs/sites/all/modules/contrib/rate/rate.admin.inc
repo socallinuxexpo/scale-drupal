@@ -859,7 +859,7 @@ function rate_settings_form_validate($form, &$form_state) {
     $url = "http://botscout.com/test/?ip=84.16.230.111&key=" . $form_state['values'][RATE_VAR_BOT_BOTSCOUT_KEY];
     $data = drupal_http_request($url, array('timeout' => 5));
     if ($data->code == 200) {
-      if ($data->data{0} == 'Y' || $data->data{0} == 'N') {
+      if ($data->data[0] == 'Y' || $data->data[0] == 'N') {
         drupal_set_message(t('Rate has succesfully contacted the BotScout server.'));
       }
       else {
