@@ -783,6 +783,8 @@ class panels_display {
   public string $uuid;
   public string $storage_type;
   public string $storage_id;
+  public int $hide_title;
+  public string $title_pane;
 
   /**
    * Add a pane.

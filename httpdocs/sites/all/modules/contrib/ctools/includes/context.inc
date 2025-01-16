@@ -230,6 +230,11 @@ class ctools_context_required {
   public $skip_name_check = FALSE;
 
   /**
+   * @var mixed|null
+   */
+  private mixed $restrictions;
+
+  /**
    * The ctools_context_required constructor.
    *
    * Note: Constructor accepts a variable number of arguments, with optional
