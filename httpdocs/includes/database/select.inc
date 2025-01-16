@@ -857,6 +857,7 @@ class SelectQueryExtender implements SelectQueryInterface {
 /**
  * Query builder for SELECT statements.
  */
+#[\AllowDynamicProperties]
 class SelectQuery extends Query implements SelectQueryInterface {
 
   /**
