@@ -775,6 +775,14 @@ class panels_display {
   public $context = array();
   public $did = 'new';
   public $renderer = 'standard';
+  public string $layout;
+  public array $layout_settings;
+  public array $panel_settings;
+  public array $cache;
+  public string $title;
+  public string $uuid;
+  public string $storage_type;
+  public string $storage_id;
 
   /**
    * Add a pane.
