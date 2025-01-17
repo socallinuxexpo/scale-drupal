@@ -170,6 +170,12 @@ class DateObject extends DateTime {
   private $serializedTime;
   private $serializedTimezone;
 
+  private string $originalTime;
+
+  private bool $dateOnly;
+
+  private bool $timeOnly;
+
   /**
    * Prepares the object during serialization.
    *

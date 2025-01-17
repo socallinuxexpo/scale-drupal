@@ -232,7 +232,7 @@ class ctools_context_required {
   /**
    * @var mixed|null
    */
-  private mixed $restrictions;
+  private array $restrictions = [];
 
   /**
    * The ctools_context_required constructor.
