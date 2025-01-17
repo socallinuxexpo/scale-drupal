@@ -55,6 +55,7 @@
 /**
  *
  */
+#[\AllowDynamicProperties]
 class panels_renderer_standard {
   /**
    * The fully-loaded Panels display object that is to be rendered. "Fully

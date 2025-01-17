@@ -766,6 +766,7 @@ function panels_edit_layout($display, $finish, $destination = NULL, $allowed_lay
 /**
  * Forms the basis of a panel display.
  */
+#[\AllowDynamicProperties]
 class panels_display {
   public $args = array();
   public $content = array();
@@ -785,6 +786,7 @@ class panels_display {
   public string $storage_id;
   public int $hide_title;
   public string $title_pane;
+
 
   /**
    * Add a pane.

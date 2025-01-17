@@ -982,6 +982,7 @@ function ctools_export_object($table, $object, $indent = '', $identifier = NULL,
  * This looks for data the export subsystem needs and applies defaults so
  * that it's easily available.
  */
+#[\AllowDynamicProperties]
 function ctools_export_get_schema($table) {
   static $drupal_static_fast;
   if (!isset($drupal_static_fast)) {
