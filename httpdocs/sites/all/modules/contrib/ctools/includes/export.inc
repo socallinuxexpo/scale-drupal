@@ -1168,7 +1168,7 @@ function ctools_export_new_object($table, $set_defaults = TRUE) {
       $object->$field = $info['default'];
     }
     else {
-      $object->$field = NULL;
+//      $object->$field = NULL;
     }
   }
 
