@@ -405,6 +405,9 @@ abstract class DrupalLocalStreamWrapper implements DrupalStreamWrapperInterface 
   public function stream_open($uri, $mode, $options, &$opened_path) {
     $this->uri = $uri;
     $path = $this->getLocalPath();
+    if (!$path) {
+      return FALSE;
+    }
     $this->handle = ($options & STREAM_REPORT_ERRORS) ? fopen($path, $mode) : @fopen($path, $mode);
 
     if ((bool) $this->handle && $options & STREAM_USE_PATH) {

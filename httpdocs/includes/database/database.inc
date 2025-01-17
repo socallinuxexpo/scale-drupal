@@ -184,6 +184,7 @@
  *
  * @see http://php.net/manual/book.pdo.php
  */
+#[\AllowDynamicProperties]
 abstract class DatabaseConnection {
 
   /**

@@ -8,6 +8,7 @@
 /**
  * Date API views argument handler.
  */
+#[\AllowDynamicProperties]
 class date_views_argument_handler_simple extends views_handler_argument_date {
 
   /**

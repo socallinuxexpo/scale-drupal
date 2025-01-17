@@ -174,7 +174,7 @@ class DateObject extends DateTime {
 
   private bool $dateOnly;
 
-  private bool $timeOnly;
+  public bool $timeOnly;
 
   /**
    * Prepares the object during serialization.
