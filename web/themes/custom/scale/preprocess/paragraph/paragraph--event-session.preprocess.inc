@@ -42,6 +42,7 @@ function scale_preprocess_paragraph__event_sessions(&$variables) {
       'extendedProps' => [
         'speakers' => $result->speakers,
         'url' => $result->url,
+        'range_str' => $result->range_str,
       ],
     ];
   }

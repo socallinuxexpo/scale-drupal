@@ -73,6 +73,7 @@
               let customHtml = document.createElement('div');
               customHtml.innerHTML = `
                 <div class="p-2">
+                  <div class="text-xs">${arg.event.extendedProps.range_str}</div>
                   <div class="font-semibold">${arg.event.extendedProps.speakers}</div>
                   <div class="">
                     <a href="${arg.event.extendedProps.url}" class="text-inherit hover:text-inherit hover:underline">${arg.event.title}</a>

@@ -105,6 +105,7 @@ function watchFiles() {
     [
       options.config.tailwindjs,
       `${options.paths.src.css}/**/*.scss`,
+      `${options.paths.src.js}/**/*.js`,
       `${options.paths.templates}/**/*.twig`,
       `${options.paths.preprocess}/**/*.preprocess.inc`,
       `${options.paths.components}/**/*.twig`,
@@ -112,7 +113,7 @@ function watchFiles() {
       `${options.paths.components}/**/*.yml`,
       `${options.paths.config}/**/*.js`,
     ],
-    series(devStyles, previewReload)
+    series(devStyles, devScripts, previewReload)
   );
   console.log("\n\t" + logSymbols.info, "Watching for Changes..\n");
 }
