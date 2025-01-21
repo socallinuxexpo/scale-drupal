@@ -36,4 +36,4 @@ destination:
 migration_dependencies:
   required:
     - user
-#    - type_session
+    - type_session
