@@ -20,5 +20,7 @@ schedule_fullcalendar:
   js:
     dist/js/schedule-fullcalendar.js: { }
   dependencies:
-    - scale/fullcalendar
+    - core/drupal
     - core/jquery
+    - core/once
+    - scale/fullcalendar
