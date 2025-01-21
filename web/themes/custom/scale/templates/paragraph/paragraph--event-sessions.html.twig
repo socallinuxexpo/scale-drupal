@@ -1,8 +1,10 @@
+{{ attach_library('scale/schedule_fullcalendar') }}
+
 {% embed 'scale:container' %}
   {% block content %}
     <div class="mb-8">
       {% set event_id = paragraph.field_event.target_id %}
-      {{ drupal_view('session_teasers', 'embed', event_id) }}
+      <div class="fullCalendar" style="min-height: 4000px;"></div>
     </div>
   {% endblock %}
 {% endembed %}

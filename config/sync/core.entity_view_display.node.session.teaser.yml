@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.session.field_session_room
     - field.field.node.session.field_session_room_overflow
     - field.field.node.session.field_session_track
+    - field.field.node.session.field_session_votes
     - field.field.node.session.field_short_abstract
     - field.field.node.session.field_speakers_ref
     - field.field.node.session.field_tags
@@ -40,6 +41,11 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  flag_schedule_support:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
 hidden:
   breadcrumbs: true
   field_assets: true
@@ -56,6 +62,7 @@ hidden:
   field_session_room: true
   field_session_room_overflow: true
   field_session_track: true
+  field_session_votes: true
   field_short_abstract: true
   field_speakers_ref: true
   field_tags: true

@@ -19,6 +19,7 @@ dependencies:
     - field.field.node.session.field_session_room
     - field.field.node.session.field_session_room_overflow
     - field.field.node.session.field_session_track
+    - field.field.node.session.field_session_votes
     - field.field.node.session.field_short_abstract
     - field.field.node.session.field_speakers_ref
     - field.field.node.session.field_tags
@@ -172,6 +173,11 @@ content:
     third_party_settings: {  }
     weight: 121
     region: content
+  flag_schedule_support:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -181,3 +187,4 @@ hidden:
   breadcrumbs: true
   field_featured: true
   field_scale_event: true
+  field_session_votes: true

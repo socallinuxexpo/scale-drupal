@@ -13,7 +13,7 @@ module.exports = {
   content: [
     '!node_modules',
     './{components,templates,preprocess}/**/*.{twig,php,inc}',
-    './src/**/*.{scss,js}',
+    './src/**/*.{scss,js}'
   ],
   safelist: [
     {

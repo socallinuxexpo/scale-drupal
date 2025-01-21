@@ -9,3 +9,16 @@ swiperjs:
       dist/third-party/swiper-11.1.4/swiper-bundle.min.css: { minified: true }
   js:
     dist/third-party/swiper-11.1.4/swiper-bundle.min.js: { minified: true }
+
+fullcalendar:
+  js:
+    dist/third-party/fullcalendar_io/dist/index.global.min.js: { minified: true }
+    dist/third-party/fullcalendar_io/packages/resource/index.global.min.js: { minified: true }
+    dist/third-party/fullcalendar_io/packages/resource-timegrid/index.global.min.js: { minified: true }
+
+schedule_fullcalendar:
+  js:
+    dist/js/schedule-fullcalendar.js: { }
+  dependencies:
+    - scale/fullcalendar
+    - core/jquery

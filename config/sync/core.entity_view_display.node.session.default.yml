@@ -18,6 +18,7 @@ dependencies:
     - field.field.node.session.field_session_room
     - field.field.node.session.field_session_room_overflow
     - field.field.node.session.field_session_track
+    - field.field.node.session.field_session_votes
     - field.field.node.session.field_short_abstract
     - field.field.node.session.field_speakers_ref
     - field.field.node.session.field_tags
@@ -26,6 +27,7 @@ dependencies:
   module:
     - datetime_range
     - file
+    - fivestar
     - link
     - text
     - user
@@ -39,7 +41,7 @@ content:
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 0
     region: content
   field_assets:
     type: file_default
@@ -47,14 +49,14 @@ content:
     settings:
       use_description_as_link_text: true
     third_party_settings: {  }
-    weight: 120
+    weight: 16
     region: content
   field_audio_video:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 111
+    weight: 8
     region: content
   field_featured:
     type: boolean
@@ -64,7 +66,7 @@ content:
       format_custom_false: ''
       format_custom_true: ''
     third_party_settings: {  }
-    weight: 122
+    weight: 18
     region: content
   field_legacy_nid:
     type: string
@@ -72,7 +74,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    weight: 106
+    weight: 3
     region: content
   field_link_to_presentation:
     type: link
@@ -84,28 +86,28 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-    weight: 110
+    weight: 7
     region: content
   field_long_abstract:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 108
+    weight: 5
     region: content
   field_moderation_message:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 109
+    weight: 6
     region: content
   field_primary_contact:
     type: basic_string
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 112
+    weight: 9
     region: content
   field_rating:
     type: entity_reference_label
@@ -113,7 +115,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 105
+    weight: 2
     region: content
   field_scale_event:
     type: entity_reference_label
@@ -121,7 +123,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 115
+    weight: 12
     region: content
   field_session_level:
     type: entity_reference_label
@@ -129,7 +131,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 117
+    weight: 14
     region: content
   field_session_room:
     type: entity_reference_label
@@ -137,7 +139,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 113
+    weight: 10
     region: content
   field_session_room_overflow:
     type: entity_reference_label
@@ -145,7 +147,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 114
+    weight: 11
     region: content
   field_session_track:
     type: entity_reference_label
@@ -153,14 +155,24 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 116
+    weight: 13
+    region: content
+  field_session_votes:
+    type: fivestar_stars
+    label: above
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+    weight: 19
     region: content
   field_short_abstract:
     type: text_default
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 107
+    weight: 4
     region: content
   field_speakers_ref:
     type: entity_reference_label
@@ -168,7 +180,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 119
+    weight: 15
     region: content
   field_tags:
     type: entity_reference_label
@@ -176,7 +188,7 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 104
+    weight: 1
     region: content
   field_time_slot:
     type: daterange_default
@@ -187,12 +199,13 @@ content:
       from_to: both
       separator: '-'
     third_party_settings: {  }
-    weight: 121
+    weight: 17
     region: content
-  links:
+  flag_schedule_support:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 10
     region: content
 hidden:
   breadcrumbs: true
+  links: true

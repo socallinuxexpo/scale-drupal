@@ -1,0 +1,46 @@
+uuid: 138b244c-2d30-4068-982e-2ed5d7c7b4bd
+langcode: en
+status: true
+dependencies: {  }
+id: type_session_votes
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: default
+label: 'Session Votes'
+source:
+  plugin: type_session_votes_source
+  track_changes: true
+process:
+  value: score
+  entity_type:
+    plugin: default_value
+    default_value: node
+  entity_id:
+    -
+      plugin: migration_lookup
+      migration: type_session
+      source: nid
+      no_stub: true
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'nid is missing'
+  user_id:
+    -
+      plugin: migration_lookup
+      migration: user
+      source: uid
+      no_stub: true
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'uid is missing'
+  created: created
+destination:
+  plugin: 'entity:vote'
+  default_bundle: vote_type
+migration_dependencies:
+  required:
+    - user

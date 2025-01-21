@@ -1,0 +1,29 @@
+uuid: 3b8a097a-47bd-4a57-be08-a1e9a760b75f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_session_votes
+    - node.type.session
+  module:
+    - fivestar
+id: node.session.field_session_votes
+field_name: field_session_votes
+entity_type: node
+bundle: session
+label: 'Session Votes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  stars: 5
+  allow_clear: true
+  allow_revote: false
+  allow_ownvote: true
+  rated_while: editing
+  enable_voting_target: false
+  target_bridge_field: ''
+  target_fivestar_field: ''
+field_type: fivestar

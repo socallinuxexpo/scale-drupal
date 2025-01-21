@@ -25,6 +25,11 @@ class HeroBlock extends BlockBase {
    */
   public function build() {
     if ($node = \Drupal::routeMatch()->getParameter('node')) {
+
+      if (!$node instanceof Node) {
+        return [];
+      }
+
       return [
         '#theme' => 'hero_block',
         '#node' => $node,

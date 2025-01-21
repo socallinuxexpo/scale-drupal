@@ -1,0 +1,33 @@
+uuid: 34e3fd44-fe92-402d-8735-2fdf32fb1d2e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.session_track.field_schedule_color
+    - taxonomy.vocabulary.session_track
+  module:
+    - color_field
+    - text
+id: taxonomy_term.session_track.default
+targetEntityType: taxonomy_term
+bundle: session_track
+mode: default
+content:
+  description:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_schedule_color:
+    type: color_field_formatter_text
+    label: above
+    settings:
+      format: hex
+      opacity: true
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  breadcrumbs: true
