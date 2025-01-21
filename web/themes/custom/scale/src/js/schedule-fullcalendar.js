@@ -18,7 +18,7 @@
             height: '100%',
             expandRows: true,
             nowIndicator: true,
-            // displayEventTime: false,
+            displayEventTime: false,
 
             classNames: ['text-sm'],
 
