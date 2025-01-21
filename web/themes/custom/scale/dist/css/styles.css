@@ -898,8 +898,14 @@ ul.menu .menu-item:has(.is-active):before {
 .visible {
   visibility: visible;
 }
+.invisible {
+  visibility: hidden;
+}
 .static {
   position: static;
+}
+.fixed {
+  position: fixed;
 }
 .absolute {
   position: absolute;
@@ -912,6 +918,9 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .\!top-full {
   top: 100% !important;
+}
+.end-1 {
+  inset-inline-end: 0.25rem;
 }
 .float-start {
   float: inline-start;
@@ -974,8 +983,17 @@ ul.menu .menu-item:has(.is-active):before {
 .flex {
   display: flex;
 }
+.table {
+  display: table;
+}
 .grid {
   display: grid;
+}
+.contents {
+  display: contents;
+}
+.list-item {
+  display: list-item;
 }
 .hidden {
   display: none;
@@ -1017,6 +1035,9 @@ ul.menu .menu-item:has(.is-active):before {
   width: 100%;
 }
 .flex-shrink {
+  flex-shrink: 1;
+}
+.shrink {
   flex-shrink: 1;
 }
 .transform {
@@ -1157,6 +1178,9 @@ ul.menu .menu-item:has(.is-active):before {
 .p-7 {
   padding: 1.75rem;
 }
+.p-2 {
+  padding: 0.5rem;
+}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1231,6 +1255,9 @@ ul.menu .menu-item:has(.is-active):before {
 .uppercase {
   text-transform: uppercase;
 }
+.lowercase {
+  text-transform: lowercase;
+}
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1249,6 +1276,12 @@ ul.menu .menu-item:has(.is-active):before {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.underline {
+  text-decoration-line: underline;
+}
+.overline {
+  text-decoration-line: overline;
 }
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -1811,6 +1844,14 @@ body {
 .hover\:border-primary:hover {
   --tw-border-opacity: 1;
   border-color: rgb(29 113 240 / var(--tw-border-opacity));
+}
+
+.hover\:text-inherit:hover {
+  color: inherit;
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
 
 @media (min-width: 768px) {
