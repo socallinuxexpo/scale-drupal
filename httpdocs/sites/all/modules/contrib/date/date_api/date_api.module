@@ -229,7 +229,7 @@ class DateObject extends DateTime {
     $this->dateOnly = FALSE;
 
     // Store the raw time input so it is available for validation.
-    $this->originalTime = $time;
+    $this->originalTime = is_array($time) ? $this->toISO($time, TRUE) : (string) $time;
 
     // Allow string timezones.
     if (!empty($tz) && !is_object($tz)) {
