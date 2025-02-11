@@ -64,7 +64,6 @@ function scale_utility_form_alter(&$form, $form_state, $form_id) {
         3313, // Reproducible
         3314, // Data on Kubernetes
         2255, // HAM Radio
-        3735, // Kwaai
       );
       // Remove Keynote if not authorized. See $authorized_roles above.
       if (!$keynote_authorized) {
