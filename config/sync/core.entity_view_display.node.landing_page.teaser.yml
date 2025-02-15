@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.landing_page.field_hero_type
     - field.field.node.landing_page.field_image
     - field.field.node.landing_page.field_primary_lead
+    - field.field.node.landing_page.field_scale_event
     - field.field.node.landing_page.field_secondary_lead
     - node.type.landing_page
   module:
@@ -23,8 +24,10 @@ content:
     weight: 100
     region: content
 hidden:
+  breadcrumbs: true
   field_components: true
   field_hero_type: true
   field_image: true
   field_primary_lead: true
+  field_scale_event: true
   field_secondary_lead: true

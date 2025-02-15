@@ -3,19 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.latest_articles.field_event
     - paragraphs.paragraphs_type.latest_articles
 id: paragraph.latest_articles.default
 targetEntityType: paragraph
 bundle: latest_articles
 mode: default
-content:
-  field_event:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 0
-    region: content
-hidden: {  }
+content: {  }
+hidden:
+  breadcrumbs: true

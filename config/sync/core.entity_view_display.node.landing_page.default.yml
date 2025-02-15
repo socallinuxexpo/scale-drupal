@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.landing_page.field_hero_type
     - field.field.node.landing_page.field_image
     - field.field.node.landing_page.field_primary_lead
+    - field.field.node.landing_page.field_scale_event
     - field.field.node.landing_page.field_secondary_lead
     - node.type.landing_page
   module:
@@ -54,6 +55,14 @@ content:
     third_party_settings: {  }
     weight: 2
     region: content
+  field_scale_event:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
   field_secondary_lead:
     type: text_default
     label: above
@@ -62,4 +71,5 @@ content:
     weight: 3
     region: content
 hidden:
+  breadcrumbs: true
   links: true

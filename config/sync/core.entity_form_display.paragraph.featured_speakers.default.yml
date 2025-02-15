@@ -3,19 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.featured_speakers.field_event
     - paragraphs.paragraphs_type.featured_speakers
 id: paragraph.featured_speakers.default
 targetEntityType: paragraph
 bundle: featured_speakers
 mode: default
-content:
-  field_event:
-    type: options_select
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
+content: {  }
 hidden:
   created: true
   status: true

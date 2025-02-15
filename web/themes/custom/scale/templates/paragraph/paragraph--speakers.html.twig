@@ -1,6 +1,5 @@
 {% embed 'scale:container' %}
     {% block content %}
-      {% set event_id = paragraph.field_event.target_id %}
-      {{ drupal_view('event_speakers', 'summary_cards', event_id) }}
+      {{ drupal_view('event_speakers', 'summary_cards', event.id) }}
     {% endblock %}
 {% endembed %}

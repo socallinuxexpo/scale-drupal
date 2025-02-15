@@ -1,15 +1,15 @@
-uuid: 121f0e59-70bd-4bce-a0b3-e2564b4c8094
+uuid: ff28d109-e39d-444d-9580-da8d89e7ee58
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.paragraph.field_event
+    - field.storage.node.field_scale_event
     - node.type.event
-    - paragraphs.paragraphs_type.speakers
-id: paragraph.speakers.field_event
-field_name: field_event
-entity_type: paragraph
-bundle: speakers
+    - node.type.landing_page
+id: node.landing_page.field_scale_event
+field_name: field_scale_event
+entity_type: node
+bundle: landing_page
 label: Event
 description: ''
 required: true

@@ -3,19 +3,11 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.speakers.field_event
     - paragraphs.paragraphs_type.speakers
 id: paragraph.speakers.default
 targetEntityType: paragraph
 bundle: speakers
 mode: default
-content:
-  field_event:
-    type: entity_reference_label
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    weight: 0
-    region: content
-hidden: {  }
+content: {  }
+hidden:
+  breadcrumbs: true

@@ -4,12 +4,8 @@
  * Implements theme_preprocess_HOOK().
  */
 function scale_preprocess_paragraph__event_sessions(&$variables) {
-  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
-  $paragraph = $variables["elements"]["#paragraph"];
-
   // Load the event selected
-  $event_node = $paragraph->get('field_event')->referencedEntities()[0];
-  $event_id = $event_node->id();
+  $event_id = $variables["event"]["id"];
 
   $variables['#attached']['drupalSettings']['schedule']['event_id'] = $event_id;
 
