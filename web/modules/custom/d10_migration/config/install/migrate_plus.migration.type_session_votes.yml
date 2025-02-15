@@ -10,9 +10,6 @@ source:
   track_changes: true
 process:
   value: score
-  entity_type:
-    plugin: default_value
-    default_value: node
   entity_id:
     - plugin: migration_lookup
       migration: type_session
@@ -30,9 +27,13 @@ process:
       method: row
       message: "uid is missing"
   created: created
+  type:
+    plugin: default_value
+    default_value: session_approval
+
 destination:
   plugin: 'entity:vote'
-  default_bundle: 'vote_type'
+  default_bundle: 'vote'
 migration_dependencies:
   required:
     - user

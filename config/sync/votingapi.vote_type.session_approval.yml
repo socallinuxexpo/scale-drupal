@@ -1,0 +1,8 @@
+uuid: 3792c62b-ba98-400f-b8d8-d5af087daa18
+langcode: en
+status: true
+dependencies: {  }
+id: session_approval
+label: 'Session Approval'
+value_type: percentage
+description: ''

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f76e04b614bb0b2ecee8a09f86dc62b",
+    "content-hash": "b832a9ab30d51008b25861dffab16919",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2646,6 +2646,78 @@
             }
         },
         {
+            "name": "drupal/form_mode_control",
+            "version": "2.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/form_mode_control.git",
+                "reference": "8.x-2.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/form_mode_control-8.x-2.4.zip",
+                "reference": "8.x-2.4",
+                "shasum": "b49461df254ef9e1275fbe7d8e80220247744365"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-2.4",
+                    "datestamp": "1722080861",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Dakwamine",
+                    "homepage": "https://www.drupal.org/user/3517785"
+                },
+                {
+                    "name": "eme",
+                    "homepage": "https://www.drupal.org/user/542492"
+                },
+                {
+                    "name": "Flodevelop",
+                    "homepage": "https://www.drupal.org/user/735818"
+                },
+                {
+                    "name": "mandclu",
+                    "homepage": "https://www.drupal.org/user/52136"
+                },
+                {
+                    "name": "matio89",
+                    "homepage": "https://www.drupal.org/user/2320090"
+                },
+                {
+                    "name": "mh.marouan",
+                    "homepage": "https://www.drupal.org/user/3203501"
+                },
+                {
+                    "name": "MichaelB",
+                    "homepage": "https://www.drupal.org/user/2309046"
+                },
+                {
+                    "name": "snake_plissken",
+                    "homepage": "https://www.drupal.org/user/3624793"
+                }
+            ],
+            "description": "Allow you to use the form modes per role and per bundle / Entity.",
+            "homepage": "https://www.drupal.org/project/form_mode_control",
+            "support": {
+                "source": "https://git.drupalcode.org/project/form_mode_control"
+            }
+        },
+        {
             "name": "drupal/gin",
             "version": "3.0.0-rc14",
             "source": {
@@ -3384,6 +3456,58 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/twig_tweak",
                 "issues": "https://www.drupal.org/project/issues/twig_tweak"
+            }
+        },
+        {
+            "name": "drupal/verf",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/verf.git",
+                "reference": "2.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/verf-2.1.0.zip",
+                "reference": "2.1.0",
+                "shasum": "46e528f0c805580a6c43431fb3400085030294a0"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.1.0",
+                    "datestamp": "1738325526",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "legolasbo",
+                    "homepage": "https://www.drupal.org/user/2480548"
+                },
+                {
+                    "name": "peelas02",
+                    "homepage": "https://www.drupal.org/user/3836090"
+                },
+                {
+                    "name": "podarok",
+                    "homepage": "https://www.drupal.org/user/116002"
+                }
+            ],
+            "description": "Provides Views filters for entity reference fields.",
+            "homepage": "https://www.drupal.org/project/verf",
+            "support": {
+                "source": "https://git.drupalcode.org/project/verf"
             }
         },
         {
@@ -8579,7 +8703,7 @@
     },
     "prefer-stable": true,
     "prefer-lowest": false,
-    "platform": [],
-    "platform-dev": [],
+    "platform": {},
+    "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

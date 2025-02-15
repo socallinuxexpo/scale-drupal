@@ -1,4 +1,4 @@
-uuid: 4d694f41-084c-4095-a7a5-67b08d70662e
+uuid: 2352e0b9-bd60-4fd3-9057-81be4f2da3e1
 langcode: en
 status: true
 dependencies:
@@ -10,7 +10,7 @@ field_name: field_session_votes
 entity_type: node
 type: fivestar
 settings:
-  vote_type: vote
+  vote_type: session_approval
 module: fivestar
 locked: false
 cardinality: 1
