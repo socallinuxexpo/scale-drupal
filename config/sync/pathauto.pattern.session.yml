@@ -1,0 +1,22 @@
+uuid: 8f994be1-53fe-4c17-9871-ef2988cce5d9
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: session
+label: Session
+type: 'canonical_entities:node'
+pattern: 'scale/[node:field_scale_event:entity:field_event_id]/presentations/[node:title]'
+selection_criteria:
+  194a048b-57b0-4eae-8e3e-791c079efec9:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 194a048b-57b0-4eae-8e3e-791c079efec9
+    context_mapping:
+      node: node
+    bundles:
+      session: session
+selection_logic: and
+weight: -5
+relationships: {  }

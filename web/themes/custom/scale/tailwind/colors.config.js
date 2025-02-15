@@ -37,7 +37,7 @@ export const abstract_colors = {
   'primary': '#1D71F0',
   // 'secondary': ,
   // 'success': ,
-  // 'warning': ,
+  'warning': '#f0b100',
   // 'danger': ,
 };
 
