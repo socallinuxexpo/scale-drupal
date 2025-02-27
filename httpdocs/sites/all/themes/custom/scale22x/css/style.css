@@ -7805,6 +7805,13 @@ article h2 a:hover {
   background-color: #DDD;
   color: #D31111;
 }
+
+
+.legend-item .track-4140 {
+  background-color: #c2bfdd;
+  color: #000;
+}
+
 .legend-item .track-6 {
   background-color: #51cd7a;
   color: #FFF;
