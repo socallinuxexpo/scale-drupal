@@ -17,6 +17,7 @@ module:
   contact: 0
   contextual: 0
   csv_serialization: 0
+  custom_access: 0
   custom_breadcrumbs: 0
   d10_migration: 0
   datetime: 0

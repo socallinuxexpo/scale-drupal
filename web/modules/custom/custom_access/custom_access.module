@@ -1,0 +1,34 @@
+<?php
+
+use Drupal\Core\Session\AccountInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_node_access().
+ */
+function custom_access_node_access(NodeInterface $node, $op, AccountInterface $account) {
+  //  If the current entity use a speaker content type and the current user is referenced, allow user to edit the entity
+
+  // Only apply to 'edit' operation.
+  if ($op !== 'update') {
+    return NULL;
+  }
+
+  // Only apply to 'project' content type.
+  if ($node->getType() !== 'speaker') {
+    return NULL;
+  }
+
+  // Check if the current user is referenced in the field_project_owner field.
+  if ($node->hasField('field_user_account') && !$node->get('field_user_account')->isEmpty()) {
+    foreach ($node->get('field_user_account')->referencedEntities() as $referenced_user) {
+      if ($referenced_user->id() == $account->id()) {
+        // Grant access if current user is referenced.
+        return \Drupal\Core\Access\AccessResult::allowed()->cachePerUser();
+      }
+    }
+  }
+
+  // Return neutral to not override other access logic.
+  return \Drupal\Core\Access\AccessResult::neutral();
+}

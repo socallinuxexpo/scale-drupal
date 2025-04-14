@@ -1,0 +1,5 @@
+name: 'Custom Access Module'
+description: 'Provides custom access control for specific content or types of content.'
+type: module
+package: Custom
+core_version_requirement: ^10
