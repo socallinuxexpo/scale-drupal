@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.speaker_session
+    - core.entity_view_mode.node.my_session
     - node.type.session
     - node.type.speaker
   module:
@@ -401,7 +401,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: speaker_session
+          view_mode: my_session
       defaults:
         style: false
         row: false

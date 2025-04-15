@@ -1,29 +1,25 @@
 <div class="">
 
-  <div class="bg-primary-50 p-7 mb-7">
-    {% set room = node.field_session_room.entity.label %}
-
-    {#  TODO: Pass this data via preprocessor  #}
-    {% set date_field = node.field_time_slot %}
-    {% set start_date = date_field.value|date('l, F j, Y - H:i') %}
-    {% set end_date = date_field.end_value|date('H:i') %}
-    <div class="text-xl">
-      The presentation <span class="font-bold">will take place in {{ room }}</span> on <span
-        class="font-bold">{{ start_date }} to {{ end_date }}</span>
+  {% if start_date and end_date %}
+    <div class="bg-primary-50 p-7 mb-7">
+      {% set room = node.field_session_room.entity.label %}
+      <div class="text-xl">
+        The presentation <span class="font-bold">will take place in {{ room }}</span> on <span class="font-bold">{{ start_date }} to {{ end_date }}</span>
+      </div>
+      {#    <div class="flex gap-3 items-center"> #}
+      {#      {% embed 'scale:button' with {color: 'black'} %} #}
+      {#        {% block button_text %} #}
+      {#          Add to Calendar (TODO) #}
+      {#        {% endblock %} #}
+      {#      {% endembed %} #}
+      {#      {% embed 'scale:button' with {color: 'black'} %} #}
+      {#        {% block button_text %} #}
+      {#          Share (TODO) #}
+      {#        {% endblock %} #}
+      {#      {% endembed %} #}
+      {#    </div> #}
     </div>
-{#    <div class="flex gap-3 items-center">#}
-{#      {% embed 'scale:button' with {color: 'black'} %}#}
-{#        {% block button_text %}#}
-{#          Add to Calendar (TODO)#}
-{#        {% endblock %}#}
-{#      {% endembed %}#}
-{#      {% embed 'scale:button' with {color: 'black'} %}#}
-{#        {% block button_text %}#}
-{#          Share (TODO)#}
-{#        {% endblock %}#}
-{#      {% endembed %}#}
-{#    </div>#}
-  </div>
+  {% endif %}
 
   <div class="text-2xl">
     {{ drupal_field('field_long_abstract', 'node', node.id, {label: 'hidden'}) }}

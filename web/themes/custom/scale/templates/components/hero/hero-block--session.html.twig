@@ -2,13 +2,19 @@
 
 
 {% block hero__bottom %}
+  {% if not node.isPublished() %}
+    <div class="mb-3">
+      <span class="px-3 py-1 bg-red-50 text-sm text-red-500">Unpublished</span>
+    </div>
+  {% endif %}
 
   <div class="mb-12">
     {{ content.speakers }}
   </div>
 
   <div class="flex items-center gap-3">
-    {% if node.field_session_level %}
+
+    {% if node.field_session_level.value %}
       {% embed 'scale:badge' %}
         {% block text %}
           Audience: {{ node.field_session_level.entity.label }}
@@ -16,7 +22,7 @@
       {% endembed %}
     {% endif %}
 
-    {% if node.field_session_level %}
+    {% if node.field_session_track.value %}
       {% embed 'scale:badge' %}
         {% block text %}
           Topic: {{ node.field_session_track.entity.label }}

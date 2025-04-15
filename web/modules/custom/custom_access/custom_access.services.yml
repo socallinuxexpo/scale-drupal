@@ -1,0 +1,7 @@
+services:
+
+  custom_access.user_access_session:
+    class: Drupal\custom_access\UserAccessSession
+
+  custom_access.user_access_speaker:
+    class: Drupal\custom_access\UserAccessSpeaker

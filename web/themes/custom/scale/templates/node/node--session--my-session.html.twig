@@ -1,0 +1,14 @@
+<div class="mb-8">
+  {{ node.isPublished() ? '' : _self.unpublished() }}
+  <h3>{{ node.label }}</h3>
+  <div class="text-lg">
+    {{ content.field_short_abstract }}
+  </div>
+  <a href="{{ url }}" class="btn btn-black">See Presentation</a>
+</div>
+
+{% macro unpublished() %}
+  <div class="my-3">
+    <span class="px-3 py-1 bg-red-50 text-sm text-red-500">Unpublished</span>
+  </div>
+{% endmacro %}
