@@ -4,11 +4,21 @@ status: true
 dependencies:
   config:
     - field.field.node.speaker.body
+    - field.field.node.speaker.field_age
+    - field.field.node.speaker.field_education
+    - field.field.node.speaker.field_email
+    - field.field.node.speaker.field_employment_status
+    - field.field.node.speaker.field_ethnicity
     - field.field.node.speaker.field_first_name
+    - field.field.node.speaker.field_gender
+    - field.field.node.speaker.field_household_income
     - field.field.node.speaker.field_job_title
     - field.field.node.speaker.field_last_name
     - field.field.node.speaker.field_legacy_uid
+    - field.field.node.speaker.field_marital_status
     - field.field.node.speaker.field_organization
+    - field.field.node.speaker.field_phone
+    - field.field.node.speaker.field_postal_code
     - field.field.node.speaker.field_profile_photo
     - field.field.node.speaker.field_twitter_profile
     - field.field.node.speaker.field_user_account
@@ -32,6 +42,45 @@ content:
     third_party_settings: {  }
     weight: 101
     region: content
+  field_age:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_education:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_email:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_employment_status:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_ethnicity:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
   field_first_name:
     type: string
     label: above
@@ -39,6 +88,22 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 102
+    region: content
+  field_gender:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_household_income:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 117
     region: content
   field_job_title:
     type: string
@@ -64,6 +129,14 @@ content:
     third_party_settings: {  }
     weight: 107
     region: content
+  field_marital_status:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
   field_organization:
     type: string
     label: above
@@ -71,6 +144,22 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     weight: 105
+    region: content
+  field_phone:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_postal_code:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 116
     region: content
   field_profile_photo:
     type: image
@@ -120,4 +209,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  breadcrumbs: true

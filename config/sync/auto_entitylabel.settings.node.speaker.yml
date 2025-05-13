@@ -1,0 +1,10 @@
+status: 1
+pattern: '[node:field_first_name] [node:field_last_name]'
+escape: false
+preserve_titles: false
+save: true
+chunk: 50
+dependencies:
+  config:
+    - node.type.speaker
+new_content_behavior: 0

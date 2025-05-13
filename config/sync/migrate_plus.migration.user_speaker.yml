@@ -18,16 +18,17 @@ process:
   type:
     plugin: default_value
     default_value: speaker
-  title:
-    -
-      plugin: callback
-      callable: html_entity_decode
-      source: name
   created: created
   field_legacy_uid: uid
   status:
     plugin: default_value
     default_value: 1
+  field_email:
+    -
+      plugin: callback
+      callable: html_entity_decode
+      source: email
+  field_phone: phone
   field_first_name:
     -
       plugin: callback
@@ -105,6 +106,112 @@ process:
     -
       plugin: migration_lookup
       migration: user
+  field_marital_status:
+    -
+      plugin: skip_on_empty
+      source: marital_status
+      method: process
+      message: 'Skipping empty marital_status.'
+    -
+      plugin: entity_generate
+      source: marital_status
+      value_key: name
+      bundle_key: vid
+      bundle: user_marital_status
+      entity_type: taxonomy_term
+      values:
+        name: marital_status
+  field_household_income:
+    -
+      plugin: skip_on_empty
+      source: household_income
+      method: process
+      message: 'Skipping empty household_income.'
+    -
+      plugin: entity_generate
+      source: household_income
+      value_key: name
+      bundle_key: vid
+      bundle: user_household_income
+      entity_type: taxonomy_term
+      values:
+        name: household_income
+  field_ethnicity:
+    -
+      plugin: skip_on_empty
+      source: ethnicity
+      method: process
+      message: 'Skipping empty ethnicity.'
+    -
+      plugin: entity_generate
+      source: ethnicity
+      value_key: name
+      bundle_key: vid
+      bundle: user_ethnicity
+      entity_type: taxonomy_term
+      values:
+        name: ethnicity
+  field_gender:
+    -
+      plugin: skip_on_empty
+      source: gender
+      method: process
+      message: 'Skipping empty gender.'
+    -
+      plugin: entity_generate
+      source: gender
+      value_key: name
+      bundle_key: vid
+      bundle: user_gender
+      entity_type: taxonomy_term
+      values:
+        name: gender
+  field_postal_code: postal_code
+  field_age:
+    -
+      plugin: skip_on_empty
+      source: age
+      method: process
+      message: 'Skipping empty age.'
+    -
+      plugin: entity_generate
+      source: age
+      value_key: name
+      bundle_key: vid
+      bundle: user_age
+      entity_type: taxonomy_term
+      values:
+        name: age
+  field_education:
+    -
+      plugin: skip_on_empty
+      source: education
+      method: process
+      message: 'Skipping empty education.'
+    -
+      plugin: entity_generate
+      source: education
+      value_key: name
+      bundle_key: vid
+      bundle: user_education
+      entity_type: taxonomy_term
+      values:
+        name: education
+  field_employment_status:
+    -
+      plugin: skip_on_empty
+      source: employment
+      method: process
+      message: 'Skipping empty employment.'
+    -
+      plugin: entity_generate
+      source: employment
+      value_key: name
+      bundle_key: vid
+      bundle: user_employment
+      entity_type: taxonomy_term
+      values:
+        name: employment
   path/pathauto:
     plugin: default_value
     default_value: 1

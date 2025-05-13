@@ -6,6 +6,7 @@ dependencies:
     - filter.format.basic_html
     - filter.format.webform_default
     - node.type.session
+    - node.type.speaker
     - workflows.workflow.session_workflow
   module:
     - comment
@@ -30,6 +31,7 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'create session content'
+  - 'create speaker content'
   - 'delete own files'
   - 'edit own session content'
   - 'post comments'

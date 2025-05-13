@@ -1,15 +1,14 @@
-uuid: badfdf9a-01c7-4c19-a847-5fc422023a7a
+uuid: 47c3e165-5fc9-4a04-8569-d3e3d3a6c1bd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_postal_code
-  module:
-    - user
-id: user.user.field_postal_code
+    - field.storage.node.field_postal_code
+    - node.type.speaker
+id: node.speaker.field_postal_code
 field_name: field_postal_code
-entity_type: user
-bundle: user
+entity_type: node
+bundle: speaker
 label: 'Postal Code'
 description: ''
 required: false

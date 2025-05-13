@@ -1,13 +1,13 @@
-uuid: e4e34fe6-7681-4613-9407-2ad1f18a9456
+uuid: 609c1f15-5052-482a-a6ef-fe7664ed06c9
 langcode: en
 status: true
 dependencies:
   module:
+    - node
     - taxonomy
-    - user
-id: user.field_household_income
-field_name: field_household_income
-entity_type: user
+id: node.field_age
+field_name: field_age
+entity_type: node
 type: entity_reference
 settings:
   target_type: taxonomy_term

@@ -1,16 +1,15 @@
-uuid: 225a38a6-903a-4cdd-844e-71320c1ba6e2
+uuid: ef49fa6e-fc6c-4bf7-96a2-414f5ff95a7a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_age
+    - field.storage.node.field_age
+    - node.type.speaker
     - taxonomy.vocabulary.user_age
-  module:
-    - user
-id: user.user.field_age
+id: node.speaker.field_age
 field_name: field_age
-entity_type: user
-bundle: user
+entity_type: node
+bundle: speaker
 label: Age
 description: '<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.'
 required: false

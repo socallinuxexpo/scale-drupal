@@ -1,12 +1,12 @@
-uuid: 637589d7-db45-4bab-af43-cf1d3bd2e1ae
+uuid: cf0f0560-4ad3-456f-b3e7-875884503fe4
 langcode: en
 status: true
 dependencies:
   module:
-    - user
-id: user.field_postal_code
-field_name: field_postal_code
-entity_type: user
+    - node
+id: node.field_phone
+field_name: field_phone
+entity_type: node
 type: string
 settings:
   max_length: 255

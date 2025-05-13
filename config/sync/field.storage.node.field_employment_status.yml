@@ -1,13 +1,13 @@
-uuid: 32093d9a-0c08-44c9-8509-3f833bc2655d
+uuid: f8970ee9-f9dd-4b8b-b28d-7f4fcf985421
 langcode: en
 status: true
 dependencies:
   module:
+    - node
     - taxonomy
-    - user
-id: user.field_education
-field_name: field_education
-entity_type: user
+id: node.field_employment_status
+field_name: field_employment_status
+entity_type: node
 type: entity_reference
 settings:
   target_type: taxonomy_term

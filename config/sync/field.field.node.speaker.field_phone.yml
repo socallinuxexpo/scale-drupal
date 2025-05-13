@@ -1,17 +1,17 @@
-uuid: 2066c4ef-7625-4303-87e2-a979e109e5dc
+uuid: 581a63f7-0110-486a-9afa-ce11d8aaf415
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_last_name
+    - field.storage.node.field_phone
     - node.type.speaker
-id: node.speaker.field_last_name
-field_name: field_last_name
+id: node.speaker.field_phone
+field_name: field_phone
 entity_type: node
 bundle: speaker
-label: 'Last Name'
+label: Phone
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

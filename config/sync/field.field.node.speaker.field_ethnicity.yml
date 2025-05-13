@@ -1,16 +1,15 @@
-uuid: 0edd2a91-a78d-420a-8285-d287ad98f402
+uuid: 48b95a2c-c11b-4017-b481-1153cb42c1b4
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_ethnicity
+    - field.storage.node.field_ethnicity
+    - node.type.speaker
     - taxonomy.vocabulary.user_ethnicity
-  module:
-    - user
-id: user.user.field_ethnicity
+id: node.speaker.field_ethnicity
 field_name: field_ethnicity
-entity_type: user
-bundle: user
+entity_type: node
+bundle: speaker
 label: Ethnicity
 description: '<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.'
 required: false

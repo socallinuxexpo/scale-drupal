@@ -1,13 +1,13 @@
-uuid: 238e9ec2-45bc-414f-99f7-957256867c0a
+uuid: 29d3264b-b30e-4ac4-92f8-f95ea50e05c3
 langcode: en
 status: true
 dependencies:
   module:
+    - node
     - taxonomy
-    - user
-id: user.field_age
-field_name: field_age
-entity_type: user
+id: node.field_approval_status
+field_name: field_approval_status
+entity_type: node
 type: entity_reference
 settings:
   target_type: taxonomy_term

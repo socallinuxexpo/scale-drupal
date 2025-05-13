@@ -1,16 +1,15 @@
-uuid: 9a5eba2b-7181-4dec-a300-98054806605d
+uuid: ed52ee74-76a5-43e1-9ccc-bc97d2ec612a
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_gender
+    - field.storage.node.field_gender
+    - node.type.speaker
     - taxonomy.vocabulary.user_gender
-  module:
-    - user
-id: user.user.field_gender
+id: node.speaker.field_gender
 field_name: field_gender
-entity_type: user
-bundle: user
+entity_type: node
+bundle: speaker
 label: Gender
 description: '<em>OPTIONAL: </em>SCALE is occasionally asked to provide statistics regarding the demographics of our speaker group. Please consider filling in this field to help SCALE provide accurate information.'
 required: false

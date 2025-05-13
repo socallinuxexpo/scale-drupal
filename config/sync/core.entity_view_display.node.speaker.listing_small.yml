@@ -5,11 +5,21 @@ dependencies:
   config:
     - core.entity_view_mode.node.listing_small
     - field.field.node.speaker.body
+    - field.field.node.speaker.field_age
+    - field.field.node.speaker.field_education
+    - field.field.node.speaker.field_email
+    - field.field.node.speaker.field_employment_status
+    - field.field.node.speaker.field_ethnicity
     - field.field.node.speaker.field_first_name
+    - field.field.node.speaker.field_gender
+    - field.field.node.speaker.field_household_income
     - field.field.node.speaker.field_job_title
     - field.field.node.speaker.field_last_name
     - field.field.node.speaker.field_legacy_uid
+    - field.field.node.speaker.field_marital_status
     - field.field.node.speaker.field_organization
+    - field.field.node.speaker.field_phone
+    - field.field.node.speaker.field_postal_code
     - field.field.node.speaker.field_profile_photo
     - field.field.node.speaker.field_twitter_profile
     - field.field.node.speaker.field_user_account
@@ -121,4 +131,15 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  breadcrumbs: true
+  field_age: true
+  field_education: true
+  field_email: true
+  field_employment_status: true
+  field_ethnicity: true
+  field_gender: true
+  field_household_income: true
+  field_marital_status: true
+  field_phone: true
+  field_postal_code: true

@@ -10,7 +10,7 @@ namespace Drupal\d10_migration\Plugin\migrate\source;
  */
 class UserSpeaker extends PaginatedSource {
 
-  protected string $endpoint = '/migrate/user/speaker/json/all';
+  protected string $endpoint = '/migrate/speaker_2/json/paged';
 
   /**
    * {@inheritdoc}

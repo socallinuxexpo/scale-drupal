@@ -1,17 +1,16 @@
-uuid: 526bbd62-b82a-4b8a-a57a-090d3bbceb64
+uuid: 322e7d86-2268-4085-833b-cdd452b6fd75
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.user.field_marital_status
-    - taxonomy.vocabulary.user_marital_status
-  module:
-    - user
-id: user.user.field_marital_status
-field_name: field_marital_status
-entity_type: user
-bundle: user
-label: 'Marital Status'
+    - field.storage.node.field_household_income
+    - node.type.speaker
+    - taxonomy.vocabulary.user_household_income
+id: node.speaker.field_household_income
+field_name: field_household_income
+entity_type: node
+bundle: speaker
+label: 'Household Income'
 description: ''
 required: false
 translatable: false
@@ -21,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      user_marital_status: user_marital_status
+      user_household_income: user_household_income
     sort:
       field: name
       direction: asc

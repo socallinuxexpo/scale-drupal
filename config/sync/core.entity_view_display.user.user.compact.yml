@@ -4,22 +4,11 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
-    - field.field.user.user.field_age
-    - field.field.user.user.field_education
-    - field.field.user.user.field_employment_status
-    - field.field.user.user.field_ethnicity
     - field.field.user.user.field_first_name
-    - field.field.user.user.field_gender
-    - field.field.user.user.field_household_income
     - field.field.user.user.field_last_name
     - field.field.user.user.field_legacy_uid
-    - field.field.user.user.field_marital_status
     - field.field.user.user.field_phone
-    - field.field.user.user.field_postal_code
-    - field.field.user.user.user_picture
-    - image.style.thumbnail
   module:
-    - image
     - user
 _core:
   default_config_hash: 00zr_RBdTjPjBGITD3h4c1ESQZimjdVCcHGt1trLqIY
@@ -27,29 +16,11 @@ id: user.user.compact
 targetEntityType: user
 bundle: user
 mode: compact
-content:
-  user_picture:
-    type: image
-    label: hidden
-    settings:
-      image_link: content
-      image_style: thumbnail
-      image_loading:
-        attribute: lazy
-    third_party_settings: {  }
-    weight: 0
-    region: content
+content: {  }
 hidden:
-  field_age: true
-  field_education: true
-  field_employment_status: true
-  field_ethnicity: true
+  breadcrumbs: true
   field_first_name: true
-  field_gender: true
-  field_household_income: true
   field_last_name: true
   field_legacy_uid: true
-  field_marital_status: true
   field_phone: true
-  field_postal_code: true
   member_for: true

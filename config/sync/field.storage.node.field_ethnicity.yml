@@ -1,13 +1,13 @@
-uuid: f964d0ff-0ed8-47d5-b13c-3ee165708284
+uuid: 0dbdac46-feec-4c43-90ed-203878653e8c
 langcode: en
 status: true
 dependencies:
   module:
+    - node
     - taxonomy
-    - user
-id: user.field_ethnicity
+id: node.field_ethnicity
 field_name: field_ethnicity
-entity_type: user
+entity_type: node
 type: entity_reference
 settings:
   target_type: taxonomy_term

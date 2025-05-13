@@ -5,11 +5,21 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.speaker.body
+    - field.field.node.speaker.field_age
+    - field.field.node.speaker.field_education
+    - field.field.node.speaker.field_email
+    - field.field.node.speaker.field_employment_status
+    - field.field.node.speaker.field_ethnicity
     - field.field.node.speaker.field_first_name
+    - field.field.node.speaker.field_gender
+    - field.field.node.speaker.field_household_income
     - field.field.node.speaker.field_job_title
     - field.field.node.speaker.field_last_name
     - field.field.node.speaker.field_legacy_uid
+    - field.field.node.speaker.field_marital_status
     - field.field.node.speaker.field_organization
+    - field.field.node.speaker.field_phone
+    - field.field.node.speaker.field_postal_code
     - field.field.node.speaker.field_profile_photo
     - field.field.node.speaker.field_twitter_profile
     - field.field.node.speaker.field_user_account
@@ -37,11 +47,22 @@ content:
     weight: 100
     region: content
 hidden:
+  breadcrumbs: true
+  field_age: true
+  field_education: true
+  field_email: true
+  field_employment_status: true
+  field_ethnicity: true
   field_first_name: true
+  field_gender: true
+  field_household_income: true
   field_job_title: true
   field_last_name: true
   field_legacy_uid: true
+  field_marital_status: true
   field_organization: true
+  field_phone: true
+  field_postal_code: true
   field_profile_photo: true
   field_twitter_profile: true
   field_user_account: true
