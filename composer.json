@@ -22,6 +22,7 @@
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.4",
+        "drupal/auto_entitylabel": "^3.4",
         "drupal/calendar": "^1.0@beta",
         "drupal/color_field": "^3.0",
         "drupal/core-composer-scaffold": "^10",
