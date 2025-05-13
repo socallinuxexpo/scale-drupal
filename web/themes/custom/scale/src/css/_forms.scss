@@ -1,0 +1,41 @@
+
+.form-item, .form-wrapper {
+  @apply py-2
+}
+
+.js-form-type-checkbox {
+  display: grid;
+  grid-template-columns:auto 1fr;
+  column-gap: .75rem;
+  align-items: start;
+
+  .form-checkbox {
+    grid-row: 1 / 3;
+    @apply mt-1;
+  }
+
+  label.option {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .description {
+    grid-column: 2;
+  }
+}
+
+label:not(.form-checkbox) {
+  @apply block font-medium mb-1;
+}
+
+select, input:not(.form-checkbox):not(.form-radio):not([type="submit"]) {
+  @apply border border-slate-200 p-2;
+}
+
+.description {
+  @apply py-1 text-sm text-slate-500 max-w-3xl;
+}
+
+button, input:where([type='button']), input:where([type='reset']), input:where([type='submit']) {
+  @apply btn btn-sm btn-primary;
+}
