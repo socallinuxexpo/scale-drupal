@@ -1,0 +1,42 @@
+uuid: 5cbd9cfd-3426-4c37-a03b-1d3ca8276751
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.speakers_ief_widget
+  module:
+    - entity_browser_entity_form
+    - views
+name: inline_speaker_form
+label: 'Inline Speaker Form'
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Manage Speakers'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  304fb626-0631-4d5c-a99e-9ed0c995bfa6:
+    id: entity_form
+    uuid: 304fb626-0631-4d5c-a99e-9ed0c995bfa6
+    label: 'Add New Speaker'
+    weight: -9
+    settings:
+      submit_text: 'Save entity'
+      entity_type: node
+      bundle: speaker
+      form_mode: speaker
+  5fc4fb0c-9e2b-4539-9c9e-47f4ee19250a:
+    id: view
+    uuid: 5fc4fb0c-9e2b-4539-9c9e-47f4ee19250a
+    label: 'Select Existing Speakers'
+    weight: -10
+    settings:
+      submit_text: 'Select Speakers'
+      auto_select: false
+      view: speakers_ief_widget
+      view_display: entity_browser_1

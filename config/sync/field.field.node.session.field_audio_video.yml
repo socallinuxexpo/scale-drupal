@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_audio_video
+    - filter.format.basic_html
     - filter.format.full_html
     - node.type.session
   module:
@@ -20,5 +21,6 @@ default_value: {  }
 default_value_callback: ''
 settings:
   allowed_formats:
+    - basic_html
     - full_html
 field_type: text_long

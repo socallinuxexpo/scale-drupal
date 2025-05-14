@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - entity_browser.browser.inline_speaker_form
     - filter.format.basic_html
     - filter.format.webform_default
     - node.type.session
@@ -12,8 +13,10 @@ dependencies:
     - comment
     - contact
     - content_moderation
+    - entity_browser
     - file
     - filter
+    - form_mode_control
     - media
     - node
     - search
@@ -28,6 +31,7 @@ is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
+  - 'access inline_speaker_form entity browser pages'
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'create session content'
@@ -37,6 +41,8 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'use  The form mode speaker linked to  node entity( session )'
+  - 'use  The form mode speaker linked to  node entity( speaker )'
   - 'use session_workflow transition create_new_draft'
   - 'use session_workflow transition modify'
   - 'use text format basic_html'

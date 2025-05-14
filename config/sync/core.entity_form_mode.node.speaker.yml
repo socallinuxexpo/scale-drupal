@@ -5,7 +5,7 @@ dependencies:
   module:
     - node
 id: node.speaker
-label: Speaker
+label: 'Speaker / Representative'
 description: ''
 targetEntityType: node
 cache: true
