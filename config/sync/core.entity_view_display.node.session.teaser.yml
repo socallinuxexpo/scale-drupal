@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.session.body
+    - field.field.node.session.field_approval_status
     - field.field.node.session.field_assets
     - field.field.node.session.field_audio_video
     - field.field.node.session.field_featured
@@ -48,6 +49,7 @@ content:
     region: content
 hidden:
   breadcrumbs: true
+  field_approval_status: true
   field_assets: true
   field_audio_video: true
   field_featured: true

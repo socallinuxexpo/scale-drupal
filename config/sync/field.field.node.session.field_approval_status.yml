@@ -1,16 +1,16 @@
-uuid: 9d5303d8-e369-4ae1-b1e7-f0e0444f37b7
+uuid: 36aa35ec-3581-44ff-a7f1-7cba9cd8966b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_tags
+    - field.storage.node.field_approval_status
     - node.type.session
-    - taxonomy.vocabulary.session_tags
-id: node.session.field_tags
-field_name: field_tags
+    - taxonomy.vocabulary.session_status
+id: node.session.field_approval_status
+field_name: field_approval_status
 entity_type: node
 bundle: session
-label: Tags
+label: 'Approval Status'
 description: ''
 required: false
 translatable: false
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      session_tags: session_tags
+      session_status: session_status
     sort:
       field: name
       direction: asc

@@ -1,0 +1,11 @@
+uuid: cb77d661-cf97-4be9-8178-0451ca5125f7
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.my_session
+label: 'My Session'
+description: ''
+targetEntityType: node
+cache: true

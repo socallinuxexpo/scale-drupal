@@ -89,6 +89,18 @@ process:
       message: 'Skipping empty room_overflow.'
     -
       plugin: entity_generate
+  field_approval_status:
+    -
+      plugin: skip_on_empty
+      source: moderation_status
+      method: process
+      message: 'Skipping empty moderation_status.'
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      bundle_key: vid
+      bundle: session_status
+      value_key: name
   field_speakers_ref:
     -
       plugin: skip_on_empty
