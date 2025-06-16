@@ -95,7 +95,7 @@ content:
       size: 60
     third_party_settings: {  }
   field_scale_event:
-    type: options_select
+    type: grouped_select_widget
     weight: 19
     region: content
     settings: {  }
@@ -107,7 +107,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_session_track:
-    type: grouped_taxonomy_select
+    type: grouped_select_widget
     weight: 7
     region: content
     settings: {  }

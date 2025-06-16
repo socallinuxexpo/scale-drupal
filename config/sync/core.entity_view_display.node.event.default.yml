@@ -4,11 +4,13 @@ status: true
 dependencies:
   config:
     - field.field.node.event.body
+    - field.field.node.event.field_event_date
     - field.field.node.event.field_event_id
     - field.field.node.event.field_legacy_tid
     - field.field.node.event.field_venue
     - node.type.event
   module:
+    - datetime_range
     - text
     - user
 id: node.event.default
@@ -22,6 +24,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 101
+    region: content
+  field_event_date:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      from_to: both
+      separator: '-'
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_event_id:
     type: string

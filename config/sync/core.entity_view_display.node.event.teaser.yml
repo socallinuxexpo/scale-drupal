@@ -5,6 +5,7 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.event.body
+    - field.field.node.event.field_event_date
     - field.field.node.event.field_event_id
     - field.field.node.event.field_legacy_tid
     - field.field.node.event.field_venue
@@ -32,6 +33,7 @@ content:
     region: content
 hidden:
   breadcrumbs: true
+  field_event_date: true
   field_event_id: true
   field_legacy_tid: true
   field_venue: true
