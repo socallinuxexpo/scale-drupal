@@ -27,6 +27,7 @@ dependencies:
     - field.field.node.session.field_time_slot
     - node.type.session
   module:
+    - allowed_taxonomy
     - entity_browser
     - file
     - link
@@ -97,7 +98,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_session_track:
-    type: options_select
+    type: grouped_taxonomy_select
     weight: 6
     region: content
     settings: {  }

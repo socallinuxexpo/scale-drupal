@@ -5,6 +5,7 @@ module:
   admin_theme_override: 0
   admin_toolbar: 0
   admin_toolbar_tools: 0
+  allowed_taxonomy: 0
   automated_cron: 0
   big_pipe: 0
   block: 0

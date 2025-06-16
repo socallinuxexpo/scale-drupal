@@ -1,0 +1,21 @@
+uuid: 7b0d0d4b-2305-494c-a350-93cc7cb7444b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_active
+    - taxonomy.vocabulary.session_track
+id: taxonomy_term.session_track.field_active
+field_name: field_active
+entity_type: taxonomy_term
+bundle: session_track
+label: 'Active Track'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

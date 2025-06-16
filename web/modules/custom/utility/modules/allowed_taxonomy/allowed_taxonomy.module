@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * Implements hook_field_widget_single_element_form_alter().
+ */
+function admin_theme_override_field_widget_single_element_form_alter(&$element, $form_state, $context) {
+//  $fields = [
+//    'field_session_track',
+//  ];
+//
+//  // Check if this is your specific entity reference field
+//  if (in_array($context['items']->getFieldDefinition()->getName(), $fields) && $context['widget']->getPluginId() == 'options_select') {
+//    // Get the vocabulary name (adjust as needed)
+//    $vocabulary = 'session_track';
+//
+//    // Load all terms from the vocabulary
+//    $terms = \Drupal::entityTypeManager()
+//      ->getStorage('taxonomy_term')
+//      ->loadByProperties(['vid' => $vocabulary]);
+//
+//    $active_options = [];
+//    $inactive_options = [];
+//
+//    foreach ($terms as $term) {
+//      $active_value = $term->get('field_active')->value;
+//      $option_key = $term->id();
+//      $option_label = $term->getName();
+//
+//      if ($active_value) {
+//        $active_options[$option_key] = $option_label;
+//      }
+//      else {
+//        $inactive_options[$option_key] = $option_label;
+//      }
+//    }
+//
+//    // Create grouped options
+//    $grouped_options = [];
+//    if (!empty($active_options)) {
+//      $grouped_options['Active'] = $active_options;
+//    }
+//    if (!empty($inactive_options)) {
+//      $grouped_options['Inactive'] = $inactive_options;
+//    }
+//
+//    // Add the "None" option if the field is not required
+//    if (!$context['items']->getFieldDefinition()->isRequired()) {
+//      $grouped_options = ['- None -' => ''] + $grouped_options;
+//    }
+//
+//    $element['#options'] = $grouped_options;
+//  }
+}

@@ -1,0 +1,4 @@
+type: module
+name: Allowed Taxonomy Values
+description: Limits the items available in an entity reference field to a specific set of taxonomy terms.
+core_version_requirement: ^10
