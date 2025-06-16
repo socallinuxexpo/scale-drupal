@@ -24,3 +24,8 @@ schedule_fullcalendar:
     - core/jquery
     - core/once
     - scale/fullcalendar
+
+gin_override:
+  css:
+    theme:
+      dist/css/gin-override.css: { minified: false }

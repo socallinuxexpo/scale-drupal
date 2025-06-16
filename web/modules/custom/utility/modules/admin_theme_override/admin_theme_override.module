@@ -1,0 +1,61 @@
+<?php
+
+/**
+ * Implements hook_page_attachments()
+ */
+function admin_theme_override_page_attachments(array &$attachments) {
+  // attach the library if the active route is an admin one
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    $attachments['#attached']['library'][] = 'scale/gin_override';
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function admin_theme_override_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+//  $suggestions[] = 'node__speaker__listing_small';
+}
+
+/**
+ * Implements hook_theme().
+ */
+function admin_theme_override_theme($existing, $type, $theme, $path) {
+  $scale_theme_path = \Drupal::service('extension.list.theme')->getPath('scale');
+
+  return [
+    'node__speaker__listing_small' => [
+      'base hook' => 'node',
+      'path' => $scale_theme_path . '/templates/node',
+      'template' => 'node--speaker--listing-small',
+      // Inherit all variables from the base node hook
+      'variables' => $existing['node']['variables'] ?? [
+          'node' => NULL,
+          'view_mode' => NULL,
+          'elements' => NULL,
+        ],
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function admin_theme_override_theme_registry_alter(&$theme_registry) {
+  $scale_theme_path = \Drupal::service('extension.list.theme')->getPath('scale');
+
+  // Only do this when Gin is the active theme
+  $active_theme = \Drupal::theme()->getActiveTheme()->getName();
+
+  if ($active_theme === 'gin') {
+    // Register the new template suggestion
+    $theme_registry['node__speaker__listing_small'] = [
+      'render element' => 'elements',
+      'base hook' => 'node',
+      'path' => $scale_theme_path . '/templates/node',
+      'template' => 'node--speaker--listing-small',
+      'variables' => $theme_registry['node']['variables'] ?? [],
+    ];
+  }
+}

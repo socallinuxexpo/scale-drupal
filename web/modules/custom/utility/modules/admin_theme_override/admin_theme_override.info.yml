@@ -1,0 +1,4 @@
+type: module
+name: Admin Theme Override
+description: Overrides styles found in the Gin Admin Theme
+core_version_requirement: ^10

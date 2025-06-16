@@ -1,0 +1,19 @@
+
+
+.view-speakers-ief-widget {
+  .views-row {
+    @apply p-3 pt-12;
+  }
+
+  .views-field-field-profile-photo {
+    img {
+      @apply rounded;
+    }
+  }
+}
+
+.field--name-field-speakers-ref.field--widget-entity-browser-entity-reference {
+  .item-container.label {
+    @apply pt-12 min-h-fit;
+  }
+}

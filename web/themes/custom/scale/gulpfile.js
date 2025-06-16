@@ -62,7 +62,7 @@ function devStyles() {
   return src(`${options.paths.src.css}/**/*.scss`)
     .pipe(sass().on("error", sass.logError))
     .pipe(postcss([tailwindcss(options.config.tailwindjs), autoprefixer()]))
-    .pipe(concat({ path: "styles.css" }))
+    // .pipe(concat({ path: "styles.css" }))
     .pipe(size())
     .pipe(dest(options.paths.dist.css));
 }
