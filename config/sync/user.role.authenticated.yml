@@ -38,6 +38,7 @@ permissions:
   - 'create speaker content'
   - 'delete own files'
   - 'edit own session content'
+  - 'edit own speaker content'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'

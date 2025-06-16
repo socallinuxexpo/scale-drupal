@@ -17,10 +17,8 @@ class UserAccessSpeaker {
       return AccessResult::neutral();
     }
 
-    if ($node->hasField('field_user_account') && !$node->get('field_user_account')
-        ->isEmpty()) {
-      foreach ($node->get('field_user_account')
-        ->referencedEntities() as $user) {
+    if ($node->hasField('field_user_account') && !$node->get('field_user_account')->isEmpty()) {
+      foreach ($node->get('field_user_account')->referencedEntities() as $user) {
         if ($user->id() == $account->id()) {
           return AccessResult::allowed()->cachePerUser();
         }
