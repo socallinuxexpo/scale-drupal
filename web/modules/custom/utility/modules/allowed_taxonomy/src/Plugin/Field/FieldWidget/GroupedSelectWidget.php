@@ -4,6 +4,7 @@ namespace Drupal\allowed_taxonomy\Plugin\Field\FieldWidget;
 
 use Drupal\Core\Entity\FieldableEntityInterface;
 use Drupal\Core\Field\Plugin\Field\FieldWidget\OptionsSelectWidget;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Plugin implementation of the 'grouped_select_widget' widget.
@@ -17,6 +18,13 @@ use Drupal\Core\Field\Plugin\Field\FieldWidget\OptionsSelectWidget;
  * )
  */
 class GroupedSelectWidget extends OptionsSelectWidget {
+
+  /**
+   * {@inheritdoc}
+   */
+  protected function supportsGroups() {
+    return TRUE;
+  }
 
   /**
    * {@inheritdoc}
@@ -102,6 +110,13 @@ class GroupedSelectWidget extends OptionsSelectWidget {
     if (!empty($inactive_options)) {
       $this->options['Inactive'] = $inactive_options;
     }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function massageFormValues(array $values, array $form, FormStateInterface $form_state) {
+    return $values[0][0]["target_id"];
   }
 }
 

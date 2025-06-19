@@ -17,39 +17,47 @@ type_settings:
       published: false
       default_revision: false
     published:
-      label: Published
+      label: Accepted
       weight: 1
       published: true
       default_revision: true
     unpublished:
-      label: Unpublished
+      label: Rejected
       weight: 2
       published: false
       default_revision: false
   transitions:
-    create_new_draft:
-      label: 'Create New Draft'
+    accept_session:
+      label: 'Accept Session'
+      from:
+        - draft
+      to: published
+      weight: 0
+    back_to_draft:
+      label: 'Back to Draft'
+      from:
+        - published
+        - unpublished
+      to: draft
+      weight: 2
+    edit_accepted:
+      label: 'Edit Accepted'
+      from:
+        - published
+      to: published
+      weight: -1
+    edit_draft:
+      label: 'Edit Draft'
       from:
         - draft
       to: draft
       weight: -2
-    modify:
-      label: Modify
-      from:
-        - published
-      to: published
-      weight: 0
-    publish:
-      label: Publish
-      from:
-        - draft
-      to: published
-      weight: -1
-    unpublish:
-      label: Unpublish
+    reject_session:
+      label: 'Reject Session'
       from:
         - draft
         - published
+        - unpublished
       to: unpublished
       weight: 1
   entity_types:

@@ -20,14 +20,11 @@ class UserAccessSession {
     }
 
     if ($operation == 'update') {
-      if ($node->hasField('field_speakers_ref') && !$node->get('field_speakers_ref')
-          ->isEmpty()) {
-        foreach ($node->get('field_speakers_ref')
-          ->referencedEntities() as $speaker_node) {
-          if ($speaker_node->hasField('field_user_account') && !$speaker_node->get('field_user_account')
-              ->isEmpty()) {
-            foreach ($speaker_node->get('field_user_account')
-              ->referencedEntities() as $user) {
+      // User is a referenced speaker in the session.
+      if ($node->hasField('field_speakers_ref') && !$node->get('field_speakers_ref')->isEmpty()) {
+        foreach ($node->get('field_speakers_ref')->referencedEntities() as $speaker_node) {
+          if ($speaker_node->hasField('field_user_account') && !$speaker_node->get('field_user_account')->isEmpty()) {
+            foreach ($speaker_node->get('field_user_account')->referencedEntities() as $user) {
               if ($user->id() == $account->id()) {
                 return AccessResult::allowed()->cachePerUser();
               }

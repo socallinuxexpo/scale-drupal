@@ -1230,6 +1230,9 @@ ul.menu .menu-item:has(.is-active):before {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.pt-12 {
+  padding-top: 3rem;
+}
 .text-center {
   text-align: center;
 }
