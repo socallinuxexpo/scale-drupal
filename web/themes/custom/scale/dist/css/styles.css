@@ -1320,24 +1320,29 @@ ul.menu .menu-item:has(.is-active):before {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.messages {
+.messages, div[data-drupal-messages] {
+  margin-top: 2rem;
   margin-bottom: 2rem;
   border-left-width: 4px;
   padding: 1.25rem;
-}
-.messages.messages--status {
   --tw-border-opacity: 1;
   border-color: rgb(34 197 94 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(240 253 244 / var(--tw-bg-opacity));
 }
-.messages.messages--warning {
+.messages.messages--status, div[data-drupal-messages].messages--status {
+  --tw-border-opacity: 1;
+  border-color: rgb(34 197 94 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 253 244 / var(--tw-bg-opacity));
+}
+.messages.messages--warning, div[data-drupal-messages].messages--warning {
   --tw-border-opacity: 1;
   border-color: rgb(245 158 11 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(255 251 235 / var(--tw-bg-opacity));
 }
-.messages.messages--error {
+.messages.messages--error, div[data-drupal-messages].messages--error {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
