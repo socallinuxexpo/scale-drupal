@@ -6,9 +6,9 @@
 {% embed 'scale:profile-card' %}
 
   {% block header %}
-    <div class="">
+    <a href="{{ drupal_url('node/' ~ node.id) }}" class="">
       {{ content.profile_image }}
-    </div>
+    </a>
   {% endblock %}
 
   {% block body %}
