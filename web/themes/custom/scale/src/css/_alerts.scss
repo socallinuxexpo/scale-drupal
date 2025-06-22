@@ -1,7 +1,6 @@
 
-.messages, div[data-drupal-messages] {
+.messages {
   @apply p-5 my-8 border-l-4;
-  @apply bg-green-50 border-green-500;
 
   &.messages--status {
     @apply bg-green-50 border-green-500;
