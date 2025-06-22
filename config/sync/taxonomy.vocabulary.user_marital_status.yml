@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'User Marital Status'
 vid: user_marital_status
-description: ''
+description: null
 weight: 0
+new_revision: false

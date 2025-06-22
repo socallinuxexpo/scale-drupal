@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'User Education'
 vid: user_education
-description: ''
+description: null
 weight: 0
+new_revision: false

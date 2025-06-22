@@ -1,5 +1,6 @@
 _core:
   default_config_hash: YN65VBn9ms3wK02hGcMVrpM8ejxTxsUJgDXfF60Brcs
+langcode: en
 applies_admin_routes: true
 include_invalid_paths: false
 excluded_paths: ''

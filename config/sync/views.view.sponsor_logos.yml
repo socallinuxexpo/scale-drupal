@@ -139,7 +139,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: numeric
+          plugin_id: entity_target_id
           default_action: 'not found'
           exception:
             value: all
@@ -171,6 +171,7 @@ display:
             multiple: 0
           break_phrase: false
           not: false
+          target_entity_type_id: node
       filters:
         status:
           id: status

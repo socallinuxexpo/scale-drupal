@@ -4,5 +4,6 @@ status: true
 dependencies: {  }
 name: 'Session Rating'
 vid: session_rating
-description: ''
+description: null
 weight: 0
+new_revision: false

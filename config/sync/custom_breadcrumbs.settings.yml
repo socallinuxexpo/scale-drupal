@@ -1,5 +1,6 @@
 _core:
   default_config_hash: 1UhmOSvn6ZsaqBRRQ9VNQ3RrPKNpv3Mv-8S1V3ETTOE
+langcode: en
 home: true
 home_link: Home
 current_page: true
