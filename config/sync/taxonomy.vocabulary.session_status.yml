@@ -2,8 +2,8 @@ uuid: 70a2fbde-b785-4413-afa9-92279c5f0550
 langcode: en
 status: true
 dependencies: {  }
-name: 'Session Status'
+name: 'Session Status (legacy)'
 vid: session_status
-description: null
+description: 'Deprecated by Workflow'
 weight: 0
 new_revision: false

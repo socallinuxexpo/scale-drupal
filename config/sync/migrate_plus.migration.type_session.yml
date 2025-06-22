@@ -20,7 +20,11 @@ process:
     default_value: session
   title: title
   created: created
-  status: published
+  uid:
+    -
+      plugin: migration_lookup
+      migration: user
+      source: author
   field_session_level:
     plugin: entity_generate
     source: audience
@@ -168,18 +172,33 @@ process:
     -
       plugin: static_map
       source: sticky
+      default_value: false
       map:
         - false
         - true
-      default_value: false
   path/pathauto:
     plugin: default_value
-    default_value: 0
+    default_value: 1
   path/alias: path
+  moderation_state:
+    -
+      plugin: skip_on_empty
+      source: moderation_status
+      method: process
+    -
+      plugin: callback
+      callable: trim
+    -
+      plugin: callback
+      source: moderation_status
+      callable: strtolower
+    -
+      plugin: static_map
+      default_value: draft
+      map:
+        hold: draft
+        accepted: published
+        rejected: unpublished
 destination:
   plugin: 'entity:node'
-migration_dependencies:
-  required:
-    - user_speaker
-    - tax_room
-    - tax_event
+migration_dependencies: null

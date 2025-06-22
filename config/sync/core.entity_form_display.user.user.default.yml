@@ -22,14 +22,9 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  contact:
-    weight: 14
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_first_name:
     type: string_textfield
-    weight: 2
+    weight: 1
     region: content
     settings:
       size: 60
@@ -37,7 +32,7 @@ content:
     third_party_settings: {  }
   field_last_name:
     type: string_textfield
-    weight: 3
+    weight: 2
     region: content
     settings:
       size: 60
@@ -45,7 +40,7 @@ content:
     third_party_settings: {  }
   field_phone:
     type: string_textfield
-    weight: 4
+    weight: 3
     region: content
     settings:
       size: 60
@@ -53,7 +48,7 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 13
+    weight: 4
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -61,5 +56,6 @@ content:
     weight: 6
     region: content
 hidden:
+  contact: true
   field_legacy_uid: true
   language: true
