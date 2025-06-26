@@ -13,34 +13,39 @@ source:
   plugin: type_session_votes_source
   track_changes: true
 process:
+  type:
+    plugin: default_value
+    default_value: session_approval
+  created: created
   value: score
+  entity_type:
+    plugin: default_value
+    default_value: node
   entity_id:
+    -
+      plugin: skip_on_empty
+      source: nid
+      method: row
+      message: 'nid is missing'
     -
       plugin: migration_lookup
       migration: type_session
       source: nid
       no_stub: true
+  user_id:
     -
       plugin: skip_on_empty
+      source: uid
       method: row
-      message: 'nid is missing'
-  user_id:
+      message: 'uid is missing'
     -
       plugin: migration_lookup
       migration: user
       source: uid
       no_stub: true
-    -
-      plugin: skip_on_empty
-      method: row
-      message: 'uid is missing'
-  created: created
-  type:
-    plugin: default_value
-    default_value: session_approval
 destination:
   plugin: 'entity:vote'
-  default_bundle: vote
+  default_bundle: session_approval
 migration_dependencies:
   required:
     - user

@@ -32,11 +32,13 @@
         "drupal/devel": "^5.2",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/entity_browser": "^2.13",
+        "drupal/field_permissions": "^1.4",
         "drupal/fivestar": "^1.0@alpha",
         "drupal/flag": "^4.0@beta",
         "drupal/form_mode_control": "^2.4",
         "drupal/gin": "^3.0@RC",
         "drupal/inline_entity_form": "^3.0@RC",
+        "drupal/masquerade": "^2.0",
         "drupal/menu_breadcrumb": "^2.0@alpha",
         "drupal/migrate_file": "^2.1",
         "drupal/migrate_plus": "^6.0",
@@ -73,6 +75,9 @@
     "extra": {
         "enable-patching": true,
         "patches": {
+            "drupal/fivestar": {
+                "Migration support": "https://www.drupal.org/files/issues/2022-04-01/fivestar_field_migration-3138309-21.patch"
+            }
         },
         "drupal-scaffold": {
             "locations": {

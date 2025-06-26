@@ -1190,6 +1190,10 @@ ul.menu .menu-item:has(.is-active):before {
 .p-7 {
   padding: 1.75rem;
 }
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1233,6 +1237,9 @@ ul.menu .menu-item:has(.is-active):before {
 .pt-12 {
   padding-top: 3rem;
 }
+.text-left {
+  text-align: left;
+}
 .text-center {
   text-align: center;
 }
@@ -1271,6 +1278,10 @@ ul.menu .menu-item:has(.is-active):before {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 .text-inherit {
   color: inherit;
@@ -1552,6 +1563,29 @@ button, input:where([type=button]), input:where([type=reset]), input:where([type
   --tw-ring-color: #a5c6f9;
   --btn-padding: 0.75rem 0.75rem;
   --btn-font-size: 0.875rem;
+}
+
+table {
+  width: 100%;
+}
+table th {
+  text-align: left;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+table tr {
+  border-bottom-width: 1px;
+}
+table tr:last-child {
+  border-bottom-width: 0px;
+}
+table td {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 body {

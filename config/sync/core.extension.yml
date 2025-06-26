@@ -34,6 +34,7 @@ module:
   entity_browser_entity_form: 0
   entity_reference_revisions: 0
   field: 0
+  field_permissions: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -46,6 +47,7 @@ module:
   image_styles_builder: 0
   inline_entity_form: 0
   link: 0
+  masquerade: 0
   media: 0
   media_library: 0
   menu_breadcrumb: 0

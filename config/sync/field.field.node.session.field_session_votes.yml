@@ -20,9 +20,9 @@ default_value_callback: ''
 settings:
   stars: 5
   allow_clear: true
-  allow_revote: false
+  allow_revote: true
   allow_ownvote: true
-  rated_while: editing
+  rated_while: viewing
   enable_voting_target: false
   target_bridge_field: ''
   target_fivestar_field: ''
