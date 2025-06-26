@@ -37,6 +37,7 @@
         "drupal/flag": "^4.0@beta",
         "drupal/form_mode_control": "^2.4",
         "drupal/gin": "^3.0@RC",
+        "drupal/image_styles_builder": "^1.1",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/masquerade": "^2.0",
         "drupal/menu_breadcrumb": "^2.0@alpha",
@@ -75,8 +76,6 @@
     "extra": {
         "enable-patching": true,
         "patches": {
-            "drupal/fivestar": {
-                "Migration support": "https://www.drupal.org/files/issues/2022-04-01/fivestar_field_migration-3138309-21.patch"
             }
         },
         "drupal-scaffold": {
@@ -134,8 +133,5 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
-    },
-    "require-dev": {
-        "drupal/image_styles_builder": "^1.1"
     }
 }

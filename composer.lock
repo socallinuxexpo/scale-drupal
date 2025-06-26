@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a7e46a6507d9d351536d3a03ce2a544e",
+    "content-hash": "c19c785988f6c31185dc5c9eb8f5eb59",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3079,6 +3079,63 @@
                     "url": "https://paypal.me/saschaeggi"
                 }
             ]
+        },
+        {
+            "name": "drupal/image_styles_builder",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/image_styles_builder.git",
+                "reference": "1.1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/image_styles_builder-1.1.4.zip",
+                "reference": "1.1.4",
+                "shasum": "bbfa08080fbbfc1bfb84d5d766accc5f84b7d44d"
+            },
+            "require": {
+                "drupal/core": "^10 || ^11"
+            },
+            "require-dev": {
+                "drupal/coder": "^8.3.1",
+                "drush/drush": "^10 || ^11 || ^12 || ^13"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "1.1.4",
+                    "datestamp": "1748940973",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Antistatique",
+                    "homepage": "https://www.antistatique.net",
+                    "email": "info@antistatique.net",
+                    "role": "Sponsor"
+                },
+                {
+                    "name": "Kevin Wenger",
+                    "email": "wenger.kev@gmail.com",
+                    "homepage": "https://www.drupal.org/u/wengerk",
+                    "role": "Author & Maintainer"
+                }
+            ],
+            "description": "This module provides an image-styles builder abstraction toolkit.",
+            "homepage": "https://www.drupal.org/project/image_styles_builder",
+            "support": {
+                "source": "https://git.drupalcode.org/project/image_styles_builder",
+                "issues": "https://www.drupal.org/project/issues/image_styles_builder"
+            }
         },
         {
             "name": "drupal/inline_entity_form",
@@ -8920,65 +8977,7 @@
             "time": "2024-06-28T13:45:36+00:00"
         }
     ],
-    "packages-dev": [
-        {
-            "name": "drupal/image_styles_builder",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/image_styles_builder.git",
-                "reference": "1.1.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/image_styles_builder-1.1.1.zip",
-                "reference": "1.1.1",
-                "shasum": "8e50c40ccdd0ffd5bce37d0e648217d620abfd3a"
-            },
-            "require": {
-                "drupal/core": "^9.5 || ^10"
-            },
-            "require-dev": {
-                "drupal/coder": "^8.3.1",
-                "drush/drush": "^10 || ^11 || ^12 || ^13"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "1.1.1",
-                    "datestamp": "1717159758",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Antistatique",
-                    "homepage": "https://www.antistatique.net",
-                    "email": "info@antistatique.net",
-                    "role": "Sponsor"
-                },
-                {
-                    "name": "Kevin Wenger",
-                    "email": "wenger.kev@gmail.com",
-                    "homepage": "https://www.drupal.org/u/wengerk",
-                    "role": "Author & Maintainer"
-                }
-            ],
-            "description": "This module provides an image-styles builder abstraction toolkit.",
-            "homepage": "https://www.drupal.org/project/image_styles_builder",
-            "support": {
-                "source": "https://git.drupalcode.org/project/image_styles_builder",
-                "issues": "https://www.drupal.org/project/issues/image_styles_builder"
-            }
-        }
-    ],
+    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
