@@ -13,8 +13,7 @@ function scale_preprocess_paragraph__event_sponsors(&$variables) {
   $paragraph = $variables["elements"]["#paragraph"];
 
   // Load the event selected
-  $event_node = $paragraph->get('field_event')->referencedEntities()[0];
-  $event_id = $event_node->id();
+  $event_id = $variables["event"]["id"] ?? '';
 
   $layout = $paragraph->get('field_layout')->value;
 
@@ -23,6 +22,7 @@ function scale_preprocess_paragraph__event_sponsors(&$variables) {
     $view = \Drupal\views\Views::getView('event_sponsors');
     $view->setDisplay('swiper');
     $view->setArguments([$event_id]);
+    $view->setArguments(['10427']);
     $view->preExecute();
     $view->execute();
 
@@ -59,12 +59,14 @@ function scale_preprocess_paragraph__event_sponsors(&$variables) {
         continue;
       }
 
-      $args = implode('+', $nids);
+      $nids_str = implode('+', $nids);
+
+      $args = [$nids_str, $event_id];
 
       // Load view and pass event node nid as argument
       $view = \Drupal\views\Views::getView('event_sponsors');
       $view->setDisplay('grouped_grid');
-      $view->setArguments([$args]);
+      $view->setArguments($args);
       $view->preExecute();
       $view->execute();
 

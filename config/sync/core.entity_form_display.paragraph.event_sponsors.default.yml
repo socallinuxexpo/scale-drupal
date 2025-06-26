@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.event_sponsors.field_event
     - field.field.paragraph.event_sponsors.field_layout
     - paragraphs.paragraphs_type.event_sponsors
 id: paragraph.event_sponsors.default
@@ -11,12 +10,6 @@ targetEntityType: paragraph
 bundle: event_sponsors
 mode: default
 content:
-  field_event:
-    type: options_select
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
   field_layout:
     type: options_select
     weight: 1
