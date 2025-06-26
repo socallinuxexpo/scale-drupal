@@ -76,7 +76,6 @@
     "extra": {
         "enable-patching": true,
         "patches": {
-            }
         },
         "drupal-scaffold": {
             "locations": {
