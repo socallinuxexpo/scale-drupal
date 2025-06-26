@@ -457,6 +457,67 @@ display:
             sponsor: '0'
             venue: '0'
           show_unpublished: 0
+        field_session_track_target_id_verf:
+          id: field_session_track_target_id_verf
+          table: node__field_session_track
+          field: field_session_track_target_id_verf
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: verf
+          operator: in
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_session_track_target_id_verf_op
+            label: Track
+            description: ''
+            use_operator: false
+            operator: field_session_track_target_id_verf_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_session_track_target_id_verf
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          verf_target_bundles:
+            session_track: session_track
+            article_tags: '0'
+            exhibitor_type: '0'
+            session_level: '0'
+            session_rating: '0'
+            session_status: '0'
+            session_tags: '0'
+            sponsor_tier: '0'
+            sponsor_type: '0'
+            user_age: '0'
+            user_education: '0'
+            user_employment: '0'
+            user_ethnicity: '0'
+            user_gender: '0'
+            user_household_income: '0'
+            user_marital_status: '0'
+            venue_room: '0'
+          show_unpublished: 0
         title:
           id: title
           table: node_field_data
@@ -627,6 +688,7 @@ display:
         - 'config:field.storage.node.field_speakers_ref'
         - 'config:views.view.session_votes'
         - node_list
+        - taxonomy_term_list
   page_1:
     id: page_1
     display_title: Page
@@ -657,3 +719,4 @@ display:
         - 'config:field.storage.node.field_speakers_ref'
         - 'config:views.view.session_votes'
         - node_list
+        - taxonomy_term_list
