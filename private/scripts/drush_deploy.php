@@ -1,5 +1,7 @@
 <?php
 
+chdir($_ENV['PANTHEON_CODE_ROOT'] . '/web');
+
 echo "Running drush state:set system.maintenance_mode 1.\n";
 passthru('drush state:set system.maintenance_mode 1');
 
