@@ -35,6 +35,7 @@ content:
     weight: 100
     region: content
 hidden:
+  breadcrumbs: true
   field_legacy_nid: true
   field_ready_for_approval: true
   field_scale_events: true

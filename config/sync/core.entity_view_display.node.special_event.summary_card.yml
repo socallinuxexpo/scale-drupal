@@ -35,6 +35,7 @@ content:
     region: content
 hidden:
   body: true
+  breadcrumbs: true
   field_legacy_nid: true
   field_ready_for_approval: true
   field_schedule: true
