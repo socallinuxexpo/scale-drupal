@@ -22,7 +22,6 @@ function scale_preprocess_paragraph__event_sponsors(&$variables) {
     $view = \Drupal\views\Views::getView('event_sponsors');
     $view->setDisplay('swiper');
     $view->setArguments([$event_id]);
-    $view->setArguments(['10427']);
     $view->preExecute();
     $view->execute();
 
