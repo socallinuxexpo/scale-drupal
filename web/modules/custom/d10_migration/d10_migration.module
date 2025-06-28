@@ -9,61 +9,9 @@ use Drupal\node\Entity\Node;
  * Implements hook_preprocess_HOOK().
  */
 function d10_migration_preprocess_page(&$variables) {
-  $migration_id = 'user';
-
+//  $migration_id = 'type_session';
 //  $migration = \Drupal::service('plugin.manager.migration')->createInstance($migration_id);
 //  $migration->getIdMap()->prepareUpdate();
 //  $executable = new MigrateExecutable($migration, new MigrateMessage());
 //  $executable->import();
-  $i = 3;
-
-
-//  $nids = \Drupal::entityQuery('node')
-//    ->condition('type', 'vendor')
-//    ->accessCheck(FALSE)
-//    ->execute();
-//
-//  $nodes = Node::loadMultiple($nids);
-//  foreach ($nodes as $node) {
-//    $node->delete();
-//  }
-
-  // Get a database connection.
-  $connection = Database::getConnection();
-
-  // Query to fetch node entities of type "session" with more than one entity reference in field_session_room.
-  $query = $connection->select('node_field_data', 'nfd');
-  $query->addField('nfd', 'nid', 'node_id');
-  $query->addField('nfd', 'title', 'node_title');
-
-  // Join with the field data table for the entity reference field.
-  $query->join('node__field_session_room', 'nfer', 'nfd.nid = nfer.entity_id');
-
-  // Add conditions to filter nodes of type "session" and count the entity references.
-  $query->condition('nfd.type', 'session')
-    ->condition('nfd.status', 1); // Ensure the node is published (optional)
-
-  // Group by node ID and count the number of references.
-  $query->addExpression('COUNT(nfer.field_session_room_target_id)', 'ref_count');
-  $query->groupBy('nfd.nid');
-  $query->groupBy('nfd.title');
-  $query->having('COUNT(nfer.field_session_room_target_id) > 1');
-
-  // Execute the query.
-  $result = $query->execute();
-
-  // Fetch the results.
-  $nodes = $result->fetchAll();
-
-  $i = 2;
-}
-
-/**
- * Implements hook_cron().
- */
-function d10_migration_cron() {
-  //  $migration = \Drupal::service('plugin.manager.migration')->createInstance($migration_id);
-  //  $migration->getIdMap()->prepareUpdate();
-  //  $executable = new MigrateExecutable($migration, new MigrateMessage());
-  //  $executable->import();
 }

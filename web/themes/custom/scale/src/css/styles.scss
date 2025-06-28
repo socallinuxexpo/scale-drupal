@@ -33,8 +33,9 @@ body {
   .views-grid-#{$i} {
     .view-content {
       display: grid;
-      grid-template-columns: repeat(#{$i}, 1fr);
       grid-gap: 1rem;
+
+      @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-#{$i};
     }
   }
 }
