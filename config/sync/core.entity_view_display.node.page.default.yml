@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_image
     - field.field.node.page.field_legacy_nid
-    - field.field.node.page.field_scale_events
+    - field.field.node.page.field_scale_event
     - node.type.page
   module:
     - image
@@ -37,6 +37,14 @@ content:
     third_party_settings: {  }
     weight: 0
     region: content
+  field_scale_event:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 12
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -45,4 +53,3 @@ content:
 hidden:
   breadcrumbs: true
   field_legacy_nid: true
-  field_scale_events: true

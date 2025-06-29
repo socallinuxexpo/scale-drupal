@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.page.body
     - field.field.node.page.field_image
     - field.field.node.page.field_legacy_nid
-    - field.field.node.page.field_scale_events
+    - field.field.node.page.field_scale_event
     - node.type.page
   module:
     - text
@@ -34,4 +34,4 @@ hidden:
   breadcrumbs: true
   field_image: true
   field_legacy_nid: true
-  field_scale_events: true
+  field_scale_event: true
