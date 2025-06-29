@@ -87,6 +87,14 @@ class GroupedSelectWidget extends OptionsSelectWidget {
       ->getStorage('node')
       ->loadByProperties(['type' => 'event']);
 
+//    TODO: Implement logic to determine "active" event by checking session time_slots / dates
+//    foreach ($entities as $key => $entity) {
+//      // Get all 'session' nodes that reference the 'event' content type using the 'field_event_ref' field.
+//      $sessions = $this->entityTypeManager
+//        ->getStorage('node')
+//        ->loadByProperties(['type' => 'session', 'field_scale_event.target_id' => $entity->id()]);
+//    }
+
     return $this->buildGroupedOptions($entities, function ($entity) {
       return $entity->hasField('field_event_date')
         && $entity->get('field_event_date')->value > date('Y-m-d');

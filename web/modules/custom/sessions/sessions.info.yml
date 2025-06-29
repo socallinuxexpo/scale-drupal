@@ -1,0 +1,4 @@
+type: module
+name: Sessions Utility Module
+description: General utility functions related to SCaLE Sessions
+core_version_requirement: ^10

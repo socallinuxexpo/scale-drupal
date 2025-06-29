@@ -69,6 +69,7 @@ module:
   sdc: 0
   search: 0
   serialization: 0
+  sessions: 0
   shortcut: 0
   system: 0
   taxonomy: 0
