@@ -1,18 +1,18 @@
-uuid: 1a0b6de0-3f71-4d97-8594-e02b76e3ded9
+uuid: 057aed1e-806a-4a64-9929-e119b8322560
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_scale_events
+    - field.storage.node.field_scale_event
     - node.type.event
     - node.type.special_event
-id: node.special_event.field_scale_events
-field_name: field_scale_events
+id: node.special_event.field_scale_event
+field_name: field_scale_event
 entity_type: node
 bundle: special_event
-label: Event(s)
+label: Event
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

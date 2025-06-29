@@ -6,7 +6,7 @@ dependencies:
     - field.field.node.special_event.body
     - field.field.node.special_event.field_legacy_nid
     - field.field.node.special_event.field_ready_for_approval
-    - field.field.node.special_event.field_scale_events
+    - field.field.node.special_event.field_scale_event
     - field.field.node.special_event.field_schedule
     - field.field.node.special_event.field_special_event_image
     - field.field.node.special_event.field_sponsors_ref
@@ -48,13 +48,13 @@ content:
     third_party_settings: {  }
     weight: 111
     region: content
-  field_scale_events:
+  field_scale_event:
     type: entity_reference_label
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    weight: 118
+    weight: 12
     region: content
   field_schedule:
     type: text_default

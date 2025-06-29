@@ -72,13 +72,11 @@ process:
       from_timezone: 'America/New_York'
       to_timezone: 'America/Los_Angeles'
   field_legacy_nid: nid
-  field_scale_events:
+  field_scale_event:
     - plugin: skip_on_empty
       source: scale_event
       method: process
-    - plugin: explode
-      delimiter: ','
-    - plugin: trim
+      message: 'Skipping empty event.'
     - plugin: entity_generate
   field_sponsors_ref:
     - plugin: skip_on_empty
@@ -92,7 +90,7 @@ process:
   path/alias: path
   path/pathauto:
     plugin: default_value
-    default_value: 0
+    default_value: 1
 # TODO: Moderation State
 # @see https://www.drupal.org/project/drupal/issues/3157105#comment-13830538
 destination:
