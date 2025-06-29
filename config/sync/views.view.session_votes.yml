@@ -404,6 +404,50 @@ display:
           value:
             session: session
           group: 1
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: title
+          plugin_id: string
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
         field_scale_event_target_id_verf:
           id: field_scale_event_target_id_verf
           table: node__field_scale_event
@@ -518,29 +562,28 @@ display:
             user_marital_status: '0'
             venue_room: '0'
           show_unpublished: 0
-        title:
-          id: title
+        moderation_state:
+          id: moderation_state
           table: node_field_data
-          field: title
+          field: moderation_state
           relationship: none
           group_type: group
           admin_label: ''
           entity_type: node
-          entity_field: title
-          plugin_id: string
-          operator: contains
-          value: ''
+          plugin_id: moderation_state_filter
+          operator: in
+          value: {  }
           group: 1
           exposed: true
           expose:
-            operator_id: title_op
-            label: Title
+            operator_id: moderation_state_op
+            label: State
             description: ''
             use_operator: false
-            operator: title_op
+            operator: moderation_state_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: title
+            identifier: moderation_state
             required: false
             remember: false
             multiple: false
@@ -549,7 +592,7 @@ display:
               anonymous: '0'
               content_editor: '0'
               administrator: '0'
-            placeholder: ''
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -687,6 +730,7 @@ display:
       tags:
         - 'config:field.storage.node.field_speakers_ref'
         - 'config:views.view.session_votes'
+        - 'config:workflow_list'
         - node_list
         - taxonomy_term_list
   page_1:
@@ -718,5 +762,6 @@ display:
       tags:
         - 'config:field.storage.node.field_speakers_ref'
         - 'config:views.view.session_votes'
+        - 'config:workflow_list'
         - node_list
         - taxonomy_term_list
