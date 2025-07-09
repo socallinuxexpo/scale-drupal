@@ -49,6 +49,7 @@
         "drupal/paragraphs": "^1.17",
         "drupal/pathauto": "^1.13",
         "drupal/redirect": "^1.10",
+        "drupal/smtp": "^1.4",
         "drupal/twig_tweak": "^3.3",
         "drupal/verf": "^2.1",
         "drupal/views_aggregator": "^2.1",
