@@ -47,6 +47,8 @@ module:
   image_styles_builder: 0
   inline_entity_form: 0
   link: 0
+  mailgun: 0
+  mailsystem: 0
   masquerade: 0
   media: 0
   media_library: 0

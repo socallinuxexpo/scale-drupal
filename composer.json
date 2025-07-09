@@ -39,6 +39,7 @@
         "drupal/gin": "^3.0@RC",
         "drupal/image_styles_builder": "^1.1",
         "drupal/inline_entity_form": "^3.0@RC",
+        "drupal/mailgun": "^2.0",
         "drupal/masquerade": "^2.0",
         "drupal/menu_breadcrumb": "^2.0@alpha",
         "drupal/migrate_file": "^2.1",
@@ -65,11 +66,12 @@
     "config": {
         "allow-plugins": {
             "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "cweagans/composer-patches": true
+            "php-http/discovery": true,
+            "phpstan/extension-installer": true
         },
         "sort-packages": true
     },

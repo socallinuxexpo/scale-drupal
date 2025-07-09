@@ -1,0 +1,14 @@
+_core:
+  default_config_hash: dOpb-qZSN4HMxSM1G0SDGSd47h_x5a9lLXudo8K8_iA
+api_endpoint: 'https://api.mailgun.net'
+api_key: ''
+working_domain: _sender
+debug_mode: false
+test_mode: false
+tracking_opens: ''
+tracking_clicks: ''
+tracking_exception: 'user:password_reset'
+format_filter: plain_text
+use_queue: false
+use_theme: false
+tagging_mailkey: false
