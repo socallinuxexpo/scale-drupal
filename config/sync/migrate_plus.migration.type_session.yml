@@ -154,20 +154,24 @@ process:
       destination: '@pseudo_destination_path'
   field_time_slot/value:
     -
-      plugin: format_date
+      plugin: skip_on_empty
       source: slot_start
-      from_format: 'Y-m-d H:i:s'
-      to_format: 'Y-m-d\TH:i:s'
-      from_timezone: America/New_York
-      to_timezone: America/Los_Angeles
-  field_time_slot/end_value:
+      method: process
+      message: 'Skipping start date.'
     -
       plugin: format_date
-      source: slot_end
       from_format: 'Y-m-d H:i:s'
       to_format: 'Y-m-d\TH:i:s'
-      from_timezone: America/New_York
-      to_timezone: America/Los_Angeles
+  field_time_slot/end_value:
+    -
+      plugin: skip_on_empty
+      source: slot_end
+      method: process
+      message: 'Skipping end date.'
+    -
+      plugin: format_date
+      from_format: 'Y-m-d H:i:s'
+      to_format: 'Y-m-d\TH:i:s'
   field_featured:
     -
       plugin: static_map
@@ -201,4 +205,8 @@ process:
         rejected: unpublished
 destination:
   plugin: 'entity:node'
-migration_dependencies: null
+migration_dependencies:
+  required:
+    - user_speaker
+    - tax_room
+    - tax_event

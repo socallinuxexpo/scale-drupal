@@ -1,0 +1,150 @@
+<?php
+
+/**
+ * @file
+ * Active Event module for managing featured events across site forms.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
+
+/**
+ * Helper function to get event options with caching.
+ */
+function _active_event_get_event_options() {
+    $cid = 'active_event:event_options';
+
+    // Try to get from cache first.
+    if ($cache = \Drupal::cache()->get($cid)) {
+        return $cache->data;
+    }
+
+    // Build options array.
+    $options = ['_none' => '- Select an event -'];
+
+    // Get all published event nodes.
+    $nids = \Drupal::entityQuery('node')
+      ->condition('type', 'event')
+      ->condition('status', 1)
+      ->sort('title', 'ASC')
+      ->accessCheck(TRUE)
+      ->execute();
+
+    if (!empty($nids)) {
+        $nodes = Node::loadMultiple($nids);
+        foreach ($nodes as $node) {
+            $options[$node->id()] = $node->getTitle();
+        }
+    }
+
+    // Cache for 1 hour.
+    \Drupal::cache()->set($cid, $options, time() + 3600);
+
+    return $options;
+}
+
+/**
+ * Helper function to create active event form element.
+ */
+function _active_event_create_form_element($default_value = '_none', $description = NULL) {
+    $options = _active_event_get_event_options();
+
+    return [
+      '#type' => 'details',
+      '#title' => t('Active Event'),
+      '#description' => t('Configure the active event settings.'),
+      '#open' => TRUE,
+      'active_event' => [
+        '#type' => 'select',
+        '#title' => t('Featured Event'),
+        '#description' => $description ?: t('Select an event from the dropdown.'),
+        '#options' => $options,
+        '#default_value' => $default_value,
+      ],
+    ];
+}
+
+/**
+ * Helper function to save active event configuration.
+ */
+function _active_event_save_config($config_name, $config_key, $value) {
+    $config = \Drupal::configFactory()->getEditable($config_name);
+
+    if ($value && $value !== '_none') {
+        $config->set($config_key, $value);
+    } else {
+        $config->clear($config_key);
+    }
+
+    $config->save();
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alters the system site information form.
+ */
+function active_event_form_system_site_information_settings_alter(&$form, FormStateInterface $form_state) {
+    $current_value = \Drupal::config('active_event.settings')->get('active_event') ?: '_none';
+
+    $form['active_event_group'] = _active_event_create_form_element($current_value);
+    $form['active_event_group']['#weight'] = 1;
+
+    // Add custom submit handler.
+    $form['#submit'][] = 'active_event_system_site_information_settings_submit';
+}
+
+/**
+ * Custom submit handler for system site information form.
+ */
+function active_event_system_site_information_settings_submit($form, FormStateInterface $form_state) {
+    $selected_event = $form_state->getValue(['active_event']);
+    _active_event_save_config('active_event.settings', 'active_event', $selected_event);
+
+    // Clear cache when configuration changes.
+    \Drupal::cache()->delete('active_event:event_options');
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alters the menu edit form.
+ */
+function active_event_form_menu_edit_form_alter(&$form, FormStateInterface $form_state) {
+    $menu = $form_state->getFormObject()->getEntity();
+    $config_name = 'system.menu.' . $menu->id();
+    $current_value = \Drupal::config($config_name)->get('event') ?: '_none';
+
+    $form['active_event_group'] = _active_event_create_form_element(
+      $current_value,
+      t('Select an event to associate with this menu.')
+    );
+    $form['active_event_group']['#weight'] = 10;
+
+    // Add custom submit handler.
+    $form['actions']['submit']['#submit'][] = 'active_event_menu_edit_form_submit';
+}
+
+/**
+ * Custom submit handler for menu edit form.
+ */
+function active_event_menu_edit_form_submit($form, FormStateInterface $form_state) {
+    $menu = $form_state->getFormObject()->getEntity();
+    $selected_event = $form_state->getValue(['active_event_group', 'active_event']);
+
+    _active_event_save_config('system.menu.' . $menu->id(), 'event', $selected_event);
+
+    // Clear cache when configuration changes.
+    \Drupal::cache()->delete('active_event:event_options');
+
+    \Drupal::messenger()->addMessage(t('Event selection saved successfully.'));
+}
+
+/**
+ * Implements hook_cache_flush().
+ *
+ * Clear custom cache on general cache flush.
+ */
+function active_event_cache_flush() {
+    \Drupal::cache()->delete('active_event:event_options');
+}

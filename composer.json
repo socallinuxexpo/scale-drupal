@@ -25,6 +25,7 @@
         "drupal/auto_entitylabel": "^3.4",
         "drupal/calendar": "^1.0@beta",
         "drupal/color_field": "^3.0",
+        "drupal/config_ignore": "^3.3",
         "drupal/core-composer-scaffold": "^10",
         "drupal/core-project-message": "^10.2",
         "drupal/core-recommended": "^10",

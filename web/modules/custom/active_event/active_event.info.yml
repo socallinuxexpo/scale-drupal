@@ -1,0 +1,8 @@
+name: Active Event
+type: module
+description: 'Features related to setting the active event.'
+core_version_requirement: ^9 || ^10
+package: Custom
+dependencies:
+  - drupal:system
+  - drupal:node
