@@ -983,8 +983,17 @@ ul.menu .menu-item:has(.is-active):before {
 .mt-auto {
   margin-top: auto;
 }
+.mb-1 {
+  margin-bottom: 0.25rem;
+}
 .block {
   display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.inline {
+  display: inline;
 }
 .flex {
   display: flex;
@@ -1076,6 +1085,12 @@ ul.menu .menu-item:has(.is-active):before {
 .gap-8 {
   gap: 2rem;
 }
+.gap-4 {
+  gap: 1rem;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
 .overflow-auto {
   overflow: auto;
 }
@@ -1164,6 +1179,14 @@ ul.menu .menu-item:has(.is-active):before {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
+.bg-amber-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
+}
+.bg-amber-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 230 138 / var(--tw-bg-opacity));
+}
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
@@ -1251,6 +1274,9 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .text-center {
   text-align: center;
+}
+.font-body {
+  font-family: "Outfit", sans-serif;
 }
 .text-2xl {
   font-size: 1.5rem;

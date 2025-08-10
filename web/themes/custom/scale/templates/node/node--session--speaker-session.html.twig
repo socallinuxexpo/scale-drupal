@@ -1,5 +1,10 @@
 <div class="mb-8">
-  <h3>{{ node.label }}</h3>
+  <div class="flex items-center gap-2 mb-2">
+    <span class="text-sm bg-amber-200 py-1 px-3 font-body rounded">
+      {{ node.field_scale_event.0.entity.label }}
+    </span>
+    <h3>{{ node.label }}</h3>
+  </div>
   <div class="text-lg">
     {{ content.field_short_abstract }}
   </div>
