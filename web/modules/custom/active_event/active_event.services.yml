@@ -1,0 +1,13 @@
+services:
+
+  active_event.event:
+    class: Drupal\active_event\ActiveEvent
+    arguments: ['@config.factory', '@current_route_match', '@logger.channel.active_event']
+
+  active_event.menu:
+    class: Drupal\active_event\ActiveMenu
+    arguments: ['@config.factory', '@active_event.event', '@logger.channel.active_event']
+
+  logger.channel.active_event:
+    parent: logger.channel_base
+    arguments: ['active_event']
