@@ -110,6 +110,7 @@ function active_event_system_site_information_settings_submit($form, FormStateIn
  *
  * Alters the menu edit form.
  */
+
 function active_event_form_menu_edit_form_alter(&$form, FormStateInterface $form_state) {
     $menu = $form_state->getFormObject()->getEntity();
     $config_name = 'system.menu.' . $menu->id();
@@ -130,7 +131,7 @@ function active_event_form_menu_edit_form_alter(&$form, FormStateInterface $form
  */
 function active_event_menu_edit_form_submit($form, FormStateInterface $form_state) {
     $menu = $form_state->getFormObject()->getEntity();
-    $selected_event = $form_state->getValue(['active_event_group', 'active_event']);
+    $selected_event = $form_state->getValue('active_event');
 
     _active_event_save_config('system.menu.' . $menu->id(), 'event', $selected_event);
 
