@@ -12,7 +12,7 @@ field_name: field_assets
 entity_type: node
 bundle: session
 label: Assets
-description: ''
+description: 'Attach your slides here after the conference.'
 required: false
 translatable: false
 default_value: {  }

@@ -13,7 +13,7 @@ field_name: field_long_abstract
 entity_type: node
 bundle: session
 label: 'Long Abstract'
-description: ''
+description: 'An optional longer version of your abstract for use online.'
 required: true
 translatable: false
 default_value: {  }

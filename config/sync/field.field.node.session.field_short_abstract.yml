@@ -13,7 +13,7 @@ field_name: field_short_abstract
 entity_type: node
 bundle: session
 label: 'Short Abstract'
-description: ''
+description: 'A short version of your session abstract for use in print.'
 required: true
 translatable: false
 default_value: {  }

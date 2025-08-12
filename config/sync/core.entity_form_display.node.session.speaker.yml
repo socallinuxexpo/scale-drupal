@@ -31,7 +31,6 @@ dependencies:
     - allowed_taxonomy
     - entity_browser
     - file
-    - link
     - path
     - text
 id: node.session.speaker
@@ -51,32 +50,16 @@ content:
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 11
+    weight: 10
     region: content
     settings: {  }
     third_party_settings: {  }
   field_assets:
     type: file_generic
-    weight: 9
+    weight: 8
     region: content
     settings:
       progress_indicator: throbber
-    third_party_settings: {  }
-  field_audio_video:
-    type: text_textarea
-    weight: 5
-    region: content
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-  field_link_to_presentation:
-    type: link_default
-    weight: 17
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
     third_party_settings: {  }
   field_long_abstract:
     type: text_textarea
@@ -88,7 +71,7 @@ content:
     third_party_settings: {  }
   field_primary_contact:
     type: email_default
-    weight: 18
+    weight: 16
     region: content
     settings:
       placeholder: ''
@@ -96,19 +79,19 @@ content:
     third_party_settings: {  }
   field_scale_event:
     type: grouped_select_widget
-    weight: 19
+    weight: 17
     region: content
     settings: {  }
     third_party_settings: {  }
   field_session_level:
     type: options_select
-    weight: 8
+    weight: 7
     region: content
     settings: {  }
     third_party_settings: {  }
   field_session_track:
     type: grouped_select_widget
-    weight: 7
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -122,7 +105,7 @@ content:
     third_party_settings: {  }
   field_speakers_ref:
     type: entity_browser_entity_reference
-    weight: 6
+    weight: 5
     region: content
     settings:
       entity_browser: inline_speaker_form
@@ -146,27 +129,27 @@ content:
     third_party_settings: {  }
   path:
     type: path
-    weight: 14
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
   promote:
     type: boolean_checkbox
-    weight: 12
+    weight: 11
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   status:
     type: boolean_checkbox
-    weight: 16
+    weight: 15
     region: content
     settings:
       display_label: true
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
-    weight: 13
+    weight: 12
     region: content
     settings:
       display_label: true
@@ -181,7 +164,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 10
+    weight: 9
     region: content
     settings:
       match_operator: CONTAINS
@@ -190,14 +173,16 @@ content:
       placeholder: ''
     third_party_settings: {  }
   url_redirects:
-    weight: 15
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
 hidden:
   field_approval_status: true
+  field_audio_video: true
   field_featured: true
   field_legacy_nid: true
+  field_link_to_presentation: true
   field_moderation_message: true
   field_rating: true
   field_session_room: true
