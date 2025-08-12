@@ -167,10 +167,14 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_user_account:
-    type: options_select
+    type: entity_reference_autocomplete_tags
     weight: 10
     region: content
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   field_website:
     type: link_default
