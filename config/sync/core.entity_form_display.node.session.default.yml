@@ -71,6 +71,13 @@ content:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 19
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
   field_link_to_presentation:
     type: link_default
     weight: 10
@@ -189,7 +196,6 @@ content:
     third_party_settings: {  }
 hidden:
   field_approval_status: true
-  field_featured: true
   field_legacy_nid: true
   field_primary_contact: true
   field_rating: true
