@@ -301,6 +301,7 @@ display:
           plugin_id: standard
           required: true
       css_class: views-grid-2
+      group_by: true
       header: {  }
       footer: {  }
       display_extenders: {  }
