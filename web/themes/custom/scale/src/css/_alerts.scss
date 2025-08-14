@@ -1,4 +1,5 @@
 
+
 .messages {
   @apply p-5 my-8 border-l-4;
 
@@ -12,5 +13,21 @@
 
   &.messages--error {
     @apply bg-red-50 border-red-500;
+  }
+}
+
+
+div[data-drupal-messages] {
+  div[aria-label="Status message"] {
+    @extend .messages;
+    @extend .messages--status;
+  }
+  div[aria-label="Error message"] {
+    @extend .messages;
+    @extend .messages--error;
+  }
+  div[aria-label="Warning message"] {
+    @extend .messages;
+    @extend .messages--warning;
   }
 }
