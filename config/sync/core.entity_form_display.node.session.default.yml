@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - entity_browser.browser.inline_speaker_form
-    - field.field.node.session.body
     - field.field.node.session.field_approval_status
     - field.field.node.session.field_assets
     - field.field.node.session.field_audio_video
@@ -40,16 +39,6 @@ targetEntityType: node
 bundle: session
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 1
-    region: content
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-      show_summary: false
-    third_party_settings: {  }
   created:
     type: datetime_timestamp
     weight: 13

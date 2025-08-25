@@ -43,11 +43,6 @@ process:
     plugin: entity_generate
     source: rating
   field_legacy_nid: nid
-  body/value: long_abstract
-  body/format:
-    plugin: default_value
-    default_value: basic_html
-  body/summary: short_abstract
   field_audio_video/value: audio_video
   field_audio_video/format:
     plugin: default_value
