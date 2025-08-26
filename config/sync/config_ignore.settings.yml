@@ -5,8 +5,10 @@ ignored_config_entities:
   import:
     - active_event.settings
     - block.block.scale_activeeventmenu
+    - 'node.type.*:third_party_settings.menu_ui.*'
     - 'system.menu.*'
   export:
     - active_event.settings
     - block.block.scale_activeeventmenu
+    - 'node.type.*:third_party_settings.menu_ui.*'
     - 'system.menu.*'
