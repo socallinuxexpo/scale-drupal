@@ -1,7 +1,24 @@
 <?php
 
+use Drupal\views\ViewExecutable;
+
 /**
  * Implements hook_theme().
+ *
+ * This hook defines a custom theme hook for the module. It specifies the
+ * `views_swiperjs` theme hook, which is used to render a custom Views template.
+ *
+ * @param array $existing
+ *   An array of existing theme hooks.
+ * @param string $type
+ *   The type of hook being invoked.
+ * @param string $theme
+ *   The name of the theme.
+ * @param string $path
+ *   The path to the module implementing the hook.
+ *
+ * @return array
+ *   An associative array of theme hooks.
  */
 function views_plugins_theme($existing, $type, $theme, $path) {
   return [
@@ -12,9 +29,12 @@ function views_plugins_theme($existing, $type, $theme, $path) {
 }
 
 /**
- * Prepares variables for views views_swiperjs template.
+ * Prepares variables for the `views_swiperjs` template.
  *
- * Template: views-swiperjs.html.twig.
+ * This preprocess function is used to prepare variables for the custom Views
+ * template `views-swiperjs.html.twig`. It retrieves options for pagination,
+ * navigation, and scrollbar from the view's style plugin and makes them
+ * available to the template.
  *
  * @param array $variables
  *   An associative array containing:
@@ -23,15 +43,76 @@ function views_plugins_theme($existing, $type, $theme, $path) {
  */
 function views_plugins_preprocess_views_swiperjs(&$variables) {
   $view = $variables['view'];
-//  $rows = $variables['rows'];
-
+  // Retrieve options from the view's style plugin.
   $pagination = $view->style_plugin->options['pagination'];
   $navigation = $view->style_plugin->options['navigation'];
   $scrollbar = $view->style_plugin->options['scrollbar'];
 
+  // Call the default preprocess function for unformatted views.
   template_preprocess_views_view_unformatted($variables);
 
+  // Add the retrieved options to the template variables.
   $variables['navigation'] = $navigation;
   $variables['scrollbar'] = $scrollbar;
   $variables['pagination'] = $pagination;
+}
+
+/**
+ * Alters the exposed form for the `sessions` view.
+ *
+ * This hook modifies the exposed filter form for the `sessions` view with the
+ * display ID `admin`. Specifically, it changes the `event` field to a select
+ * dropdown and populates it with options based on nodes of type `event`.
+ *
+ * @param array $form
+ *   The form array to be altered.
+ * @param array $form_state
+ *   The form state array.
+ */
+function views_plugins_form_views_exposed_form_alter(&$form, &$form_state) {
+  if ($form['#id'] == 'views-exposed-form-sessions-admin') {
+    // Remove the size attribute to convert the field to a dropdown.
+    unset($form["event"]["#size"]);
+
+    // Load all nodes of type 'event' to populate the dropdown options.
+    $event_nodes = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->loadByProperties(['type' => 'event']);
+
+    $options = [];
+    foreach ($event_nodes as $event_node) {
+      $options[$event_node->id()] = $event_node->label();
+    }
+
+    // Set the field type to 'select' and assign the options.
+    $form["event"]["#type"] = 'select';
+    $form['event']['#options'] = $options;
+  }
+}
+
+/**
+ * Alters the `sessions` view before it is executed.
+ *
+ * This hook sets a default filter for the `event` field in the `sessions` view
+ * with the display ID `admin`. If no filter is applied, it uses the active
+ * event ID from the `active_event.event` service.
+ *
+ * @param \Drupal\views\ViewExecutable $view
+ *   The view object being executed.
+ * @param string $display_id
+ *   The display ID of the view.
+ * @param array $args
+ *   An array of arguments passed to the view.
+ */
+function views_plugins_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
+  if ($view->id() == 'sessions' && $display_id == 'admin') {
+    // Get the active event ID from the custom service.
+    $service = \Drupal::service('active_event.event');
+    $active_event_id = $service->getActiveEventId();
+
+    // Set the default filter for the 'event' field if none is applied.
+    if ($active_event_id && empty($view->getExposedInput()['event'])) {
+      $view->setExposedInput(['event' => $active_event_id]);
+    }
+  }
 }
