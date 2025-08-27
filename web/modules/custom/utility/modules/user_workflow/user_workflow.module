@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Custom module to redirect users after profile save.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_FORM_ID_alter() for user_form.
+ * Alternative approach - more specific targeting.
+ */
+function user_workflow_form_user_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Get the current user being edited
+  $user = $form_state->getFormObject()->getEntity();
+  $current_user = \Drupal::currentUser();
+
+  // Only redirect if user is editing their own profile
+  if ($user->id() == $current_user->id()) {
+    $form['actions']['submit']['#submit'][] = 'user_workflow_custom_submit';
+  }
+}
+
+/**
+ * Custom submit handler with additional logic.
+ */
+function user_workflow_custom_submit($form, FormStateInterface $form_state) {
+  // Add a success message
+  // \Drupal::messenger()->addMessage(t('Your profile has been updated successfully.'));
+
+  // Set redirect to user profile page
+  $form_state->setRedirect('user.page');
+}

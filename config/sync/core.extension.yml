@@ -85,6 +85,7 @@ module:
   twig_tweak: 0
   update: 0
   user: 0
+  user_workflow: 0
   utility: 0
   verf: 0
   views_aggregator: 0

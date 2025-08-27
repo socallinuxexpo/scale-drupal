@@ -1,0 +1,4 @@
+name: User Workflow
+type: module
+description: Redirects users to profile page after saving profile
+core_version_requirement: ^10
