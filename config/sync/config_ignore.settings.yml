@@ -7,8 +7,10 @@ ignored_config_entities:
     - block.block.scale_activeeventmenu
     - 'node.type.*:third_party_settings.menu_ui.*'
     - 'system.menu.*'
+    - user.mail
   export:
     - active_event.settings
     - block.block.scale_activeeventmenu
     - 'node.type.*:third_party_settings.menu_ui.*'
     - 'system.menu.*'
+    - user.mail
