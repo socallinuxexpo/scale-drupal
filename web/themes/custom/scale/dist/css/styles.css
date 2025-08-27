@@ -950,6 +950,10 @@ ul.menu .menu-item:has(.is-active):before {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
 .-mb-px {
   margin-bottom: -1px;
 }
@@ -983,17 +987,17 @@ ul.menu .menu-item:has(.is-active):before {
 .mt-auto {
   margin-top: auto;
 }
-.mb-1 {
-  margin-bottom: 0.25rem;
+.mr-4 {
+  margin-right: 1rem;
+}
+.ms-auto {
+  margin-inline-start: auto;
 }
 .block {
   display: block;
 }
 .inline-block {
   display: inline-block;
-}
-.inline {
-  display: inline;
 }
 .flex {
   display: flex;
@@ -1025,6 +1029,9 @@ ul.menu .menu-item:has(.is-active):before {
 .h-full {
   height: 100%;
 }
+.h-24 {
+  height: 6rem;
+}
 .max-h-\[60px\] {
   max-height: 60px;
 }
@@ -1046,11 +1053,20 @@ ul.menu .menu-item:has(.is-active):before {
 .w-full {
   width: 100%;
 }
+.w-24 {
+  width: 6rem;
+}
+.w-16 {
+  width: 4rem;
+}
 .max-w-3xl {
   max-width: 48rem;
 }
 .flex-shrink {
   flex-shrink: 1;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 .shrink {
   flex-shrink: 1;
@@ -1064,11 +1080,17 @@ ul.menu .menu-item:has(.is-active):before {
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+.flex-row {
+  flex-direction: row;
+}
 .flex-col {
   flex-direction: column;
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
 }
 .items-center {
   align-items: center;
@@ -1088,11 +1110,11 @@ ul.menu .menu-item:has(.is-active):before {
 .gap-4 {
   gap: 1rem;
 }
-.gap-1 {
-  gap: 0.25rem;
-}
 .overflow-auto {
   overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
 }
 .overflow-y-auto {
   overflow-y: auto;
@@ -1139,6 +1161,14 @@ ul.menu .menu-item:has(.is-active):before {
 .border-transparent {
   border-color: transparent;
 }
+.border-black-50 {
+  --tw-border-opacity: 1;
+  border-color: rgb(230 230 230 / var(--tw-border-opacity));
+}
+.bg-amber-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 230 138 / var(--tw-bg-opacity));
+}
 .bg-amber-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(255 251 235 / var(--tw-bg-opacity));
@@ -1179,13 +1209,9 @@ ul.menu .menu-item:has(.is-active):before {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-amber-500 {
+.bg-gray-200 {
   --tw-bg-opacity: 1;
-  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
-}
-.bg-amber-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 230 138 / var(--tw-bg-opacity));
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -2182,6 +2208,11 @@ body {
 .focus\:btn-xl:focus {
   --btn-padding: 1.5rem 1.25rem;
   --btn-font-size: 1.125rem;
+}
+
+.\*\:object-cover > * {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .hover\:border-primary:hover {

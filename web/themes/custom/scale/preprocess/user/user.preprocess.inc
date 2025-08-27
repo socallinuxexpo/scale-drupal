@@ -6,14 +6,16 @@
 function scale_preprocess_user(&$variables) {
   $user = $variables['elements']['#user'];
 
-  $speaker = get_user_speakers($user);
-  $variables['user_speaker'] = $speaker;
+  $speakers = getUserSpeakerIds($user);
+  $variables['user_speaker_ids'] = $speakers;
 
-  $sessions = get_user_sessions($user, $speaker);
-  $variables['user_sessions'] = join(',', $sessions);
+  $sessions = getUserSessionIds($user, $speakers);
+  $variables['user_session_ids'] = join(',', $sessions);
+
+  $variables['user'] = $user;
 }
 
-function get_user_speakers($user) {
+function getUserSpeakerIds($user) {
   // Get speaker nodes that point to current user
   $query = \Drupal::entityQuery('node')
     ->condition('type', 'speaker');
@@ -25,19 +27,21 @@ function get_user_speakers($user) {
   $query->condition($group);
   $query->accessCheck(TRUE);
 
-  $speakers = $query->execute();
-  $speaker = reset($speakers);
-  return $speaker;
+  return $query->execute();
 }
 
-function get_user_sessions($user, $speaker) {
+function getUserSessionIds($user, $speakers) {
   // Get session nodes that point to current user
   $query = \Drupal::entityQuery('node')
     ->condition('type', 'session');
 
   $group = $query->orConditionGroup()
-    ->condition('field_speakers_ref', $speaker, 'IN')
+//    ->condition('field_speakers_ref', $speakers, 'IN')
     ->condition('uid', $user->id());
+
+  if(!empty($speakers)) {
+    $group->condition('field_speakers_ref', $speakers, 'IN');
+  }
 
   $query->condition($group);
   $query->accessCheck(TRUE);
@@ -45,3 +49,5 @@ function get_user_sessions($user, $speaker) {
   $sessions = $query->execute();
   return $sessions;
 }
+
+
