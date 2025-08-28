@@ -1,0 +1,23 @@
+uuid: da12cb62-eb04-4b61-a84d-6f78147bc666
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: session_review
+label: 'Session Review'
+type: 'canonical_entities:node'
+pattern: /%/review
+view_mode: admin_review
+selection_criteria:
+  73feb67f-8e86-49f2-9349-16f361d0d606:
+    id: 'entity_bundle:node'
+    bundles:
+      session: session
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 73feb67f-8e86-49f2-9349-16f361d0d606
+selection_logic: and
+weight: -5
+relationships: {  }

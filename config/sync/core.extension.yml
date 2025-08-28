@@ -23,6 +23,7 @@ module:
   content_moderation: 0
   contextual: 0
   csv_serialization: 0
+  ctools: 0
   custom_access: 0
   custom_breadcrumbs: 0
   d10_migration: 0
@@ -88,6 +89,7 @@ module:
   user_workflow: 0
   utility: 0
   verf: 0
+  view_mode_page: 0
   views_aggregator: 0
   views_data_export: 0
   views_plugins: 0

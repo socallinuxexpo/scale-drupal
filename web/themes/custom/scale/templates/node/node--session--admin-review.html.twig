@@ -1,0 +1,60 @@
+<div class="">
+
+  {% if start_date and end_date %}
+    <div class="bg-primary-50 p-7 mb-7">
+      {% set room = node.field_session_room.entity.label %}
+      <div class="text-xl">
+        The presentation <span class="font-bold">will take place in {{ room }}</span> on <span class="font-bold">{{ start_date }} to {{ end_date }}</span>
+      </div>
+      {#    <div class="flex gap-3 items-center"> #}
+      {#      {% embed 'scale:button' with {color: 'black'} %} #}
+      {#        {% block button_text %} #}
+      {#          Add to Calendar (TODO) #}
+      {#        {% endblock %} #}
+      {#      {% endembed %} #}
+      {#      {% embed 'scale:button' with {color: 'black'} %} #}
+      {#        {% block button_text %} #}
+      {#          Share (TODO) #}
+      {#        {% endblock %} #}
+      {#      {% endembed %} #}
+      {#    </div> #}
+    </div>
+  {% endif %}
+
+  <h2>Short Abstract</h2>
+  <div class="text-2xl my-7">
+    {{ drupal_field('field_short_abstract', 'node', node.id, {label: 'hidden'}) }}
+  </div>
+
+  <h2>Long Abstract</h2>
+  <div class="text-2xl my-7">
+    {{ drupal_field('field_long_abstract', 'node', node.id, {label: 'hidden'}) }}
+  </div>
+
+  <h2>Tags</h2>
+  <div class="my-3">
+    {{ drupal_field('field_tags', 'node', node.id, {label: 'hidden'}) }}
+  </div>
+
+  {{ content.field_audio_video }}
+
+  <div class="my-7">
+    {% if node.field_assets is not empty %}
+      {% set file_url = node.field_assets.entity.uri.value|file_url %}
+      {{ drupal_link('Presentation'|t, file_url, {attributes: {class: ['btn', 'btn-black'], target: '_blank', download}}) }}
+    {% endif %}
+  </div>
+
+  <h2>Speaker(s) Previous Sessions</h2>
+  <div class="my-7">
+    {% set speaker_ids = [] %}
+    {% for speaker in node.field_speakers_ref %}
+      {% set speaker_ids = speaker_ids|merge([speaker.target_id]) %}
+    {% endfor %}
+
+    {{ drupal_view('speaker_sessions', 'embed', speaker_ids|join('+')) }}
+  </div>
+
+  {{ content.field_session_votes }}
+
+</div>

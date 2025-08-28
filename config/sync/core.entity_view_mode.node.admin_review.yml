@@ -1,0 +1,11 @@
+uuid: 8a5b34df-5ee8-4f75-a17c-caa55eb6b8c5
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.admin_review
+label: 'Admin Review'
+description: ''
+targetEntityType: node
+cache: true

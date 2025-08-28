@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5437b70c6bb7c2c50a2889e6d6ee64b2",
+    "content-hash": "081261ede155d71230d97cf740c549e3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4367,27 +4367,29 @@
             }
         },
         {
-            "name": "drupal/view_modes_display",
-            "version": "3.0.0",
+            "name": "drupal/view_mode_page",
+            "version": "4.0.3",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/view_modes_display.git",
-                "reference": "3.0.0"
+                "url": "https://git.drupalcode.org/project/view_mode_page.git",
+                "reference": "4.0.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/view_modes_display-3.0.0.zip",
-                "reference": "3.0.0",
-                "shasum": "0a27c4bcb9596784dcb99ebd43a3a70d7cded520"
+                "url": "https://ftp.drupal.org/files/projects/view_mode_page-4.0.3.zip",
+                "reference": "4.0.3",
+                "shasum": "76143d6606793fc9d6a7d06d023ca78ab9c529c2"
             },
             "require": {
-                "drupal/core": "^9.3 || ^10"
+                "drupal/core": "^10.3||^11.0",
+                "drupal/ctools": "*",
+                "drupal/token": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "3.0.0",
-                    "datestamp": "1682169896",
+                    "version": "4.0.3",
+                    "datestamp": "1736419295",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -4396,26 +4398,27 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
-                    "name": "pvhee",
-                    "homepage": "https://www.drupal.org/user/108811"
+                    "name": "davy-r",
+                    "homepage": "https://www.drupal.org/user/3278771"
                 },
                 {
-                    "name": "zach.bimson",
-                    "homepage": "https://www.drupal.org/user/1644060"
+                    "name": "rballou",
+                    "homepage": "https://www.drupal.org/user/1840982"
+                },
+                {
+                    "name": "vladimiraus",
+                    "homepage": "https://www.drupal.org/user/673120"
                 }
             ],
-            "description": "Preview view modes for every entity type",
-            "homepage": "https://www.drupal.org/project/view_modes_display",
-            "keywords": [
-                "Drupal"
-            ],
+            "description": "Makes it possible to create (additional) paths where entities will be shown in a given view_mode",
+            "homepage": "https://www.drupal.org/project/view_mode_page",
             "support": {
-                "source": "http://cgit.drupalcode.org/view_modes_display",
-                "issues": "http://drupal.org/project/issues/view_modes_display"
+                "source": "https://drupal.org/project/view_mode_page",
+                "issues": "https://drupal.org/project/issues/view_mode_page"
             }
         },
         {

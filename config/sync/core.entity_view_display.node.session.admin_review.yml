@@ -1,0 +1,99 @@
+uuid: 0043f57f-9e48-43c9-be64-09fa6e0d0b49
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.admin_review
+    - field.field.node.session.field_approval_status
+    - field.field.node.session.field_assets
+    - field.field.node.session.field_audio_video
+    - field.field.node.session.field_featured
+    - field.field.node.session.field_legacy_nid
+    - field.field.node.session.field_link_to_presentation
+    - field.field.node.session.field_long_abstract
+    - field.field.node.session.field_moderation_message
+    - field.field.node.session.field_primary_contact
+    - field.field.node.session.field_rating
+    - field.field.node.session.field_scale_event
+    - field.field.node.session.field_session_level
+    - field.field.node.session.field_session_room
+    - field.field.node.session.field_session_room_overflow
+    - field.field.node.session.field_session_track
+    - field.field.node.session.field_session_votes
+    - field.field.node.session.field_short_abstract
+    - field.field.node.session.field_speakers_ref
+    - field.field.node.session.field_tags
+    - field.field.node.session.field_time_slot
+    - node.type.session
+  module:
+    - fivestar
+    - text
+    - user
+id: node.session.admin_review
+targetEntityType: node
+bundle: session
+mode: admin_review
+content:
+  field_long_abstract:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_moderation_message:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_session_votes:
+    type: fivestar_stars
+    label: above
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  field_short_abstract:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_tags:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  flag_schedule_support:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 10
+    region: content
+hidden:
+  breadcrumbs: true
+  content_moderation_control: true
+  field_approval_status: true
+  field_assets: true
+  field_audio_video: true
+  field_featured: true
+  field_legacy_nid: true
+  field_link_to_presentation: true
+  field_primary_contact: true
+  field_rating: true
+  field_scale_event: true
+  field_session_level: true
+  field_session_room: true
+  field_session_room_overflow: true
+  field_session_track: true
+  field_speakers_ref: true
+  field_time_slot: true
+  links: true

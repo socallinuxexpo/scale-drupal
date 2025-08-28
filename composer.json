@@ -53,7 +53,7 @@
         "drupal/smtp": "^1.4",
         "drupal/twig_tweak": "^3.3",
         "drupal/verf": "^2.1",
-        "drupal/view_modes_display": "^3.0",
+        "drupal/view_mode_page": "^4.0",
         "drupal/views_aggregator": "^2.1",
         "drupal/views_data_export": "^1.5",
         "drupal/webform": "^6.2",
@@ -82,7 +82,10 @@
         "enable-patching": true,
         "patches": {
             "drupal/fivestar": {
-                "Rate content permission is not ported to D8": "https://www.drupal.org/files/issues/2024-01-22/rate-content-permission-not-port-d8-3133123-31.patch"
+                "Rate content permission is not ported to D8 | https://www.drupal.org/project/fivestar/issues/3133123": "https://www.drupal.org/files/issues/2024-01-22/rate-content-permission-not-port-d8-3133123-31.patch"
+            },
+            "drupal/view_mode_page": {
+                "The \"node_type\" plugin does not exist. | https://www.drupal.org/project/view_mode_page/issues/3505464": "https://www.drupal.org/files/issues/2025-02-10/the-node_type-plugin-does-not-exist.patch"
             }
         },
         "drupal-scaffold": {
