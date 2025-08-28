@@ -53,6 +53,7 @@
         "drupal/smtp": "^1.4",
         "drupal/twig_tweak": "^3.3",
         "drupal/verf": "^2.1",
+        "drupal/view_modes_display": "^3.0",
         "drupal/views_aggregator": "^2.1",
         "drupal/views_data_export": "^1.5",
         "drupal/webform": "^6.2",
@@ -80,6 +81,9 @@
     "extra": {
         "enable-patching": true,
         "patches": {
+            "drupal/fivestar": {
+                "Rate content permission is not ported to D8": "https://www.drupal.org/files/issues/2024-01-22/rate-content-permission-not-port-d8-3133123-31.patch"
+            }
         },
         "drupal-scaffold": {
             "locations": {
