@@ -13,6 +13,7 @@ dependencies:
     - field.storage.node.field_speakers_ref
     - field.storage.node.field_tags
     - node.type.session
+    - taxonomy.vocabulary.session_track
     - user.role.administrator
   module:
     - content_moderation
@@ -20,6 +21,7 @@ dependencies:
     - node
     - rest
     - serialization
+    - taxonomy
     - text
     - user
     - views_data_export
@@ -878,6 +880,54 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        tid:
+          id: tid
+          table: taxonomy_index
+          field: tid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: tid_op
+            label: 'Has taxonomy term'
+            description: ''
+            use_operator: false
+            operator: tid_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: track_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              content_editor: '0'
+              administrator: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          vid: session_track
+          type: select
+          hierarchy: false
+          limit: true
+          error_message: true
       filter_groups:
         operator: AND
         groups:
@@ -902,6 +952,15 @@ display:
           relationship: none
           group_type: group
           admin_label: event
+          plugin_id: standard
+          required: false
+        field_session_track:
+          id: field_session_track
+          table: node__field_session_track
+          field: field_session_track
+          relationship: none
+          group_type: group
+          admin_label: 'field_session_track: Taxonomy term'
           plugin_id: standard
           required: false
       header: {  }
