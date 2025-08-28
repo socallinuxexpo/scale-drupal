@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\views\Plugin\views\query\QueryPluginBase;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -87,32 +88,5 @@ function views_plugins_form_views_exposed_form_alter(&$form, &$form_state) {
     // Set the field type to 'select' and assign the options.
     $form["event"]["#type"] = 'select';
     $form['event']['#options'] = $options;
-  }
-}
-
-/**
- * Alters the `sessions` view before it is executed.
- *
- * This hook sets a default filter for the `event` field in the `sessions` view
- * with the display ID `admin`. If no filter is applied, it uses the active
- * event ID from the `active_event.event` service.
- *
- * @param \Drupal\views\ViewExecutable $view
- *   The view object being executed.
- * @param string $display_id
- *   The display ID of the view.
- * @param array $args
- *   An array of arguments passed to the view.
- */
-function views_plugins_views_pre_view(ViewExecutable $view, $display_id, array &$args) {
-  if ($view->id() == 'sessions' && $display_id == 'admin') {
-    // Get the active event ID from the custom service.
-    $service = \Drupal::service('active_event.event');
-    $active_event_id = $service->getActiveEventId();
-
-    // Set the default filter for the 'event' field if none is applied.
-    if ($active_event_id && empty($view->getExposedInput()['event'])) {
-      $view->setExposedInput(['event' => $active_event_id]);
-    }
   }
 }

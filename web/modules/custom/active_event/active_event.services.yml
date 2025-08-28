@@ -8,6 +8,12 @@ services:
     class: Drupal\active_event\ActiveMenu
     arguments: ['@config.factory', '@active_event.event', '@logger.channel.active_event']
 
+  active_event.sessions_export_default_event:
+    class: Drupal\active_event\EventSubscriber\SessionsExportDefaultEvent
+    arguments: ['@active_event.event']
+    tags:
+      - { name: event_subscriber }
+
   logger.channel.active_event:
     parent: logger.channel_base
     arguments: ['active_event']
