@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.storage.node.field_speakers_ref
     - node.type.session
+    - user.role.administrator
   module:
     - content_moderation
     - node
@@ -368,9 +369,10 @@ display:
           sort_asc_label: Asc
           sort_desc_label: Desc
       access:
-        type: perm
+        type: role
         options:
-          perm: 'access content'
+          role:
+            administrator: administrator
       cache:
         type: tag
         options: {  }
@@ -726,7 +728,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.field_speakers_ref'
         - 'config:views.view.session_votes'
@@ -758,7 +760,7 @@ display:
         - url
         - url.query_args
         - 'user.node_grants:view'
-        - user.permissions
+        - user.roles
       tags:
         - 'config:field.storage.node.field_speakers_ref'
         - 'config:views.view.session_votes'
