@@ -1,5 +1,17 @@
 
 
+.field--widget-text-textarea {
+  @apply mb-16;
+
+  .form-item {
+    //background: red;
+  }
+
+  .filter-help {
+    display: none;
+  }
+}
+
 .view-speakers-ief-widget {
   .views-row {
     @apply p-3 pt-12;
