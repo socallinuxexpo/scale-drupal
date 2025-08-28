@@ -863,7 +863,7 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              content_editor: '0'
+              reviewer: '0'
               administrator: '0'
             min_placeholder: ''
             max_placeholder: ''
@@ -907,7 +907,7 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              content_editor: '0'
+              reviewer: '0'
               administrator: '0'
             reduce: false
           is_grouped: false

@@ -1,4 +1,4 @@
-uuid: 30be7e30-a8d0-44f8-98a8-41e9cc11a84c
+uuid: f9dd40ce-6f5e-4527-86a7-da2c4cc09aac
 langcode: en
 status: true
 dependencies:
@@ -7,7 +7,9 @@ dependencies:
   module:
     - comment
     - contextual
+    - field_permissions
     - file
+    - fivestar
     - help
     - node
     - path
@@ -16,8 +18,8 @@ dependencies:
     - tour
 _core:
   default_config_hash: NtMgnXp0miNtJhag07NSjwdCm4zpJwhlDFs1HgyL4wI
-id: content_editor
-label: 'Content editor'
+id: reviewer
+label: Reviewer
 weight: 2
 is_admin: false
 permissions:
@@ -29,14 +31,19 @@ permissions:
   - 'access toolbar'
   - 'access tour'
   - 'administer url aliases'
+  - 'create field_session_votes'
   - 'create page content'
   - 'create url aliases'
   - 'delete own files'
   - 'delete own page content'
   - 'delete page revisions'
   - 'edit own comments'
+  - 'edit own field_session_votes'
   - 'edit own page content'
+  - 'rate content'
   - 'revert all revisions'
   - 'view all revisions'
+  - 'view field_session_votes'
+  - 'view own field_session_votes'
   - 'view own unpublished content'
   - 'view the administration theme'

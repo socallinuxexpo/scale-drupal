@@ -3,12 +3,12 @@ langcode: en
 status: true
 dependencies:
   config:
-    - user.role.content_editor
+    - user.role.reviewer
   module:
     - user
-id: user_add_role_action.content_editor
+id: user_add_role_action.reviewer
 label: 'Add the Content editor role to the selected user(s)'
 type: user
 plugin: user_add_role_action
 configuration:
-  rid: content_editor
+  rid: reviewer

@@ -6,6 +6,7 @@ dependencies:
     - field.storage.node.field_speakers_ref
     - node.type.session
     - user.role.administrator
+    - user.role.reviewer
   module:
     - content_moderation
     - node
@@ -372,6 +373,7 @@ display:
         type: role
         options:
           role:
+            reviewer: reviewer
             administrator: administrator
       cache:
         type: tag
@@ -435,7 +437,7 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              content_editor: '0'
+              reviewer: '0'
               administrator: '0'
             placeholder: ''
           is_grouped: false
@@ -477,7 +479,7 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              content_editor: '0'
+              reviewer: '0'
               administrator: '0'
             reduce: 0
           is_grouped: false
@@ -530,7 +532,7 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              content_editor: '0'
+              reviewer: '0'
               administrator: '0'
             reduce: 0
           is_grouped: false
@@ -592,7 +594,7 @@ display:
             remember_roles:
               authenticated: authenticated
               anonymous: '0'
-              content_editor: '0'
+              reviewer: '0'
               administrator: '0'
             reduce: false
           is_grouped: false
