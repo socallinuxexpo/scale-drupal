@@ -68,16 +68,16 @@ process:
       source: start
       from_format: U
       to_format: 'Y-m-d\TH:i:s'
-      from_timezone: America/New_York
-      to_timezone: America/Los_Angeles
+      from_timezone: America/Los_Angeles
+      to_timezone: UTC
   field_when/end_value:
     -
       plugin: format_date
       source: end
       from_format: U
       to_format: 'Y-m-d\TH:i:s'
-      from_timezone: America/New_York
-      to_timezone: America/Los_Angeles
+      from_timezone: America/Los_Angeles
+      to_timezone: UTC
   field_legacy_nid: nid
   field_scale_event:
     -
@@ -99,6 +99,9 @@ process:
       plugin: trim
     -
       plugin: entity_generate
+      bundle: sponsor
+      entity_type: node
+      lookup_field: title
   field_ready_for_approval: ready_for_approval
   path/alias: path
   path/pathauto:

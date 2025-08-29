@@ -8,9 +8,6 @@
 
         {#  TODO: Pass this data via preprocessor  #}
         {% set room = node.field_session_room.entity.label %}
-        {% set date_field = node.field_time_slot %}
-        {% set start_date = date_field.value|date('l, F j, Y - H:i') %}
-        {% set end_date = date_field.end_value|date('H:i') %}
         <div class="w-1/2">
           {{ start_date }} to {{ end_date }} - {{ room }}
         </div>

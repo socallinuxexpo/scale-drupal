@@ -4,31 +4,16 @@ use Drupal\Core\Datetime\DrupalDateTime;
 
 /**
  * Implements theme_preprocess_HOOK().
- */
-function scale_preprocess_node__session(&$variables): void {
-  _session_dates($variables);
-}
-
-/**
- * Implements theme_preprocess_HOOK().
- */
-function scale_preprocess_node__session__teaser(&$variables): void {
-  _session_dates($variables);
-}
-
-/**
- * Implements theme_preprocess_HOOK().
  *
- * @throws \Drupal\Core\TypedData\Exception\MissingDataException
  * @throws \DateInvalidTimeZoneException
  */
-function _session_dates(&$variables) {
+function scale_preprocess_node__special_event(&$variables) {
   /** @var \Drupal\node\Entity\Node $node */
   $node = $variables["elements"]["#node"];
 
-  if(!$node->get('field_time_slot')->isEmpty()) {
+  if(!$node->get('field_when')->isEmpty()) {
     /** @var \Drupal\datetime_range\Plugin\Field\FieldType\DateRangeItem $field_item */
-    $field_item = $node->get('field_time_slot')->first();
+    $field_item = $node->get('field_when')->first();
 
     // Get the DrupalDateTime objects which include timezone info
     $start_date_time = $field_item->get('value')->getDateTime();

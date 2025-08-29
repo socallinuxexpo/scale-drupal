@@ -130,15 +130,15 @@ process:
       source: slot_start
       from_format: Y-m-d H:i:s
       to_format: Y-m-d\TH:i:s
-      from_timezone: 'America/New_York'
-      to_timezone: 'America/Los_Angeles'
+      from_timezone: GMT
+      to_timezone: UTC
   field_time_slot/end_value:
     - plugin: format_date
       source: slot_end
       from_format: Y-m-d H:i:s
       to_format: Y-m-d\TH:i:s
-      from_timezone: 'America/New_York'
-      to_timezone: 'America/Los_Angeles'
+      from_timezone: GMT
+      to_timezone: UTC
   field_featured:
     - plugin: static_map
       source: sticky
@@ -171,6 +171,6 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - user_speaker
+#    - user_speaker
     - tax_room
     - tax_event

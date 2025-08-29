@@ -48,11 +48,6 @@ process:
     plugin: entity_generate
     source: rating
   field_legacy_nid: nid
-  body/value: long_abstract
-  body/format:
-    plugin: default_value
-    default_value: basic_html
-  body/summary: short_abstract
   field_audio_video/value: audio_video
   field_audio_video/format:
     plugin: default_value
@@ -154,24 +149,20 @@ process:
       destination: '@pseudo_destination_path'
   field_time_slot/value:
     -
-      plugin: skip_on_empty
-      source: slot_start
-      method: process
-      message: 'Skipping start date.'
-    -
       plugin: format_date
+      source: slot_start
       from_format: 'Y-m-d H:i:s'
       to_format: 'Y-m-d\TH:i:s'
+      from_timezone: GMT
+      to_timezone: UTC
   field_time_slot/end_value:
     -
-      plugin: skip_on_empty
-      source: slot_end
-      method: process
-      message: 'Skipping end date.'
-    -
       plugin: format_date
+      source: slot_end
       from_format: 'Y-m-d H:i:s'
       to_format: 'Y-m-d\TH:i:s'
+      from_timezone: GMT
+      to_timezone: UTC
   field_featured:
     -
       plugin: static_map
@@ -207,6 +198,5 @@ destination:
   plugin: 'entity:node'
 migration_dependencies:
   required:
-    - user_speaker
     - tax_room
     - tax_event

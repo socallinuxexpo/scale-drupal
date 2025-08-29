@@ -8,15 +8,11 @@
     {{ drupal_field('body', 'node', node.id, {label: 'hidden'}) }}
   </div>
   <div class="">
-    {% set start_date = content.field_when['#items'].0.value %}
-    {% set end_date = content.field_when['#items'].0.end_value %}
-
     {% if start_date and end_date %}
-      {{ start_date|date('l, F j, Y - H:i') }} to {{ end_date|date('H:i') }}
+      {{ start_date }} to {{ end_date }}
     {% elseif start_date %}
-      {{ start_date|date('l, F j, Y - H:i') }} }}
+      {{ start_date }} }}
     {% else %}
-      {# Fallback text if the date range is missing #}
       Date range not available.
     {% endif %}
   </div>
