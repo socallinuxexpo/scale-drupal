@@ -1,3 +1,8 @@
 <div class="">
+  {% if content.field_article_image %}
+    <div class="mb-5">
+      {{ content.field_article_image }}
+    </div>
+  {% endif %}
   {{ drupal_field('body', 'node', node.id, {label: 'hidden'}) }}
 </div>

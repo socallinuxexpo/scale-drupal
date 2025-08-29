@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.article.field_article_image
     - field.field.node.article.field_scale_events
     - field.field.node.article.field_tags
+    - image.style.max_650x650
     - node.type.article
   module:
     - image
@@ -26,10 +27,10 @@ content:
     region: content
   field_article_image:
     type: image
-    label: above
+    label: hidden
     settings:
       image_link: ''
-      image_style: ''
+      image_style: max_650x650
       image_loading:
         attribute: lazy
     third_party_settings: {  }
@@ -56,4 +57,5 @@ content:
     third_party_settings: {  }
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  breadcrumbs: true
