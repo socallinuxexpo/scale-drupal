@@ -32,3 +32,21 @@ function user_workflow_custom_submit($form, FormStateInterface $form_state) {
   // Set redirect to user profile page
   $form_state->setRedirect('user.page');
 }
+
+/**
+ * Implements hook_menu_local_tasks_alter().
+ */
+function user_workflow_menu_local_tasks_alter(&$data, $route_name) {
+  // Only alter tabs on user routes
+  if (strpos($route_name, 'entity.user.') === 0) {
+    // Change "View" to "View Profile"
+    if (isset($data['tabs'][0]['entity.user.canonical'])) {
+      $data['tabs'][0]['entity.user.canonical']['#link']['title'] = t('View Profile');
+    }
+
+    // Change "Edit" to "Edit Profile"
+    if (isset($data['tabs'][0]['entity.user.edit_form'])) {
+      $data['tabs'][0]['entity.user.edit_form']['#link']['title'] = t('Edit Profile');
+    }
+  }
+}
