@@ -1,0 +1,36 @@
+
+header {
+  ul.menu {
+
+    li.menu__item--level-1 {
+      position: relative;
+
+      &:hover > ul.menu--level-2 {
+        display: block;
+      }
+    }
+
+    ul.menu.menu--level-2 {
+      @apply bg-white shadow flex flex-col;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 10;
+      display: none;
+
+      li.menu__item--level-2 {
+        width: 200px;
+
+        &:hover {
+          &:before {
+            content: none;
+          }
+        }
+
+        a.menu__link {
+          @apply block px-4 py-2 text-gray-800 hover:underline;
+        }
+      }
+    }
+  }
+}

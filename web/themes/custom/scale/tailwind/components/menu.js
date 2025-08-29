@@ -19,7 +19,7 @@ module.exports = plugin(function({ addBase, addComponents, theme }) {
       '@apply flex': {},
       'padding': 'var(--menu-padding)',
 
-      '.menu-item': {
+      '.menu__item': {
         '@apply inline-block relative': {},
         'color': 'var(--menu-item-color)',
         'font-size': 'var(--menu-item-font-size)',
@@ -29,14 +29,14 @@ module.exports = plugin(function({ addBase, addComponents, theme }) {
           'color': 'inherit',
         },
         '&:hover': {
-          '@apply menu-item--hover': {},
+          '@apply menu__item--hover': {},
         },
         '&:has(.is-active)': {
-          '@apply menu-item--active': {},
+          '@apply menu__item--active': {},
         }
       },
     },
-    '.menu-item--underline': {
+    '.menu__item--underline': {
       '&:before': {
         'content': '""',
         'position': 'absolute',
@@ -48,12 +48,12 @@ module.exports = plugin(function({ addBase, addComponents, theme }) {
         '@apply rounded': {},
       },
     },
-    '.menu-item--hover': {
-      '@apply menu-item--underline': {},
+    '.menu__item--hover': {
+      '@apply menu__item--underline': {},
       '--menu-item-color': theme('colors.primary.400'),
     },
-    '.menu-item--active': {
-      '@apply menu-item--underline': {},
+    '.menu__item--active': {
+      '@apply menu__item--underline': {},
       '--menu-item-color': theme('colors.primary.500'),
     },
 

@@ -738,21 +738,21 @@ ul.menu {
   display: flex;
   padding: var(--menu-padding);
 }
-ul.menu .menu-item {
+ul.menu .menu__item {
   position: relative;
   display: inline-block;
   color: var(--menu-item-color);
   font-size: var(--menu-item-font-size);
 }
-ul.menu .menu-item a {
+ul.menu .menu__item a {
   display: inline-block;
   padding: var(--menu-item-padding);
   color: inherit;
 }
-ul.menu .menu-item:hover {
+ul.menu .menu__item:hover {
   --menu-item-color: #4a8df3;
 }
-ul.menu .menu-item:hover:before {
+ul.menu .menu__item:hover:before {
   content: "";
   position: absolute;
   width: 22px;
@@ -762,10 +762,10 @@ ul.menu .menu-item:hover:before {
   transform: translateX(-50%);
   border-radius: 0.25rem;
 }
-ul.menu .menu-item:has(.is-active) {
+ul.menu .menu__item:has(.is-active) {
   --menu-item-color: #1d71f0;
 }
-ul.menu .menu-item:has(.is-active):before {
+ul.menu .menu__item:has(.is-active):before {
   content: "";
   position: absolute;
   width: 22px;
@@ -989,9 +989,6 @@ ul.menu .menu-item:has(.is-active):before {
 }
 .mt-auto {
   margin-top: auto;
-}
-.mt-16 {
-  margin-top: 4rem;
 }
 .block {
   display: block;
@@ -1250,6 +1247,10 @@ ul.menu .menu-item:has(.is-active):before {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -1338,6 +1339,10 @@ ul.menu .menu-item:has(.is-active):before {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
+.text-gray-800 {
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
 .text-inherit {
   color: inherit;
 }
@@ -1386,6 +1391,45 @@ ul.menu .menu-item:has(.is-active):before {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
+header ul.menu li.menu__item--level-1 {
+  position: relative;
+}
+header ul.menu li.menu__item--level-1:hover > ul.menu--level-2 {
+  display: block;
+}
+header ul.menu ul.menu.menu--level-2 {
+  display: flex;
+  flex-direction: column;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  display: none;
+}
+header ul.menu ul.menu.menu--level-2 li.menu__item--level-2 {
+  width: 200px;
+}
+header ul.menu ul.menu.menu--level-2 li.menu__item--level-2:hover:before {
+  content: none;
+}
+header ul.menu ul.menu.menu--level-2 li.menu__item--level-2 a.menu__link {
+  display: block;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(31 41 55 / var(--tw-text-opacity));
+}
+header ul.menu ul.menu.menu--level-2 li.menu__item--level-2 a.menu__link:hover {
+  text-decoration-line: underline;
+}
+
 .messages, div[data-drupal-messages] div[aria-label="Warning message"], div[data-drupal-messages] div[aria-label="Error message"], div[data-drupal-messages] div[aria-label="Status message"] {
   margin-top: 2rem;
   margin-bottom: 2rem;
