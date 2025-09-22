@@ -21,6 +21,16 @@
     </div>
   {% endif %}
 
+  <h2>Time Slot</h2>
+  <div class="text-2xl my-7">
+    {{ drupal_field('field_time_slot', 'node', node.id, {label: 'hidden'}) }}
+  </div>
+
+  <h2>Track</h2>
+  <div class="text-2xl my-7">
+    {{ drupal_field('field_session_track', 'node', node.id, {label: 'hidden', settings: {link: false}}) }}
+  </div>
+
   <h2>Short Abstract</h2>
   <div class="text-2xl my-7">
     {{ drupal_field('field_short_abstract', 'node', node.id, {label: 'hidden'}) }}
@@ -31,9 +41,24 @@
     {{ drupal_field('field_long_abstract', 'node', node.id, {label: 'hidden'}) }}
   </div>
 
+  <h2>Message to Reviewers</h2>
+  <div class="text-2xl my-7">
+    {{ drupal_field('field_moderation_message', 'node', node.id, {label: 'hidden'}) }}
+  </div>
+
   <h2>Tags</h2>
   <div class="my-3">
-    {{ drupal_field('field_tags', 'node', node.id, {label: 'hidden'}) }}
+    {{ drupal_field('field_tags', 'node', node.id, {label: 'hidden', settings: {link: false}}) }}
+  </div>
+
+  <h2>Session Level</h2>
+  <div class="my-3">
+    {{ drupal_field('field_session_level', 'node', node.id, {label: 'hidden', settings: {link: false}}) }}
+  </div>
+
+  <h2>Rating</h2>
+  <div class="my-3">
+    {{ drupal_field('field_rating', 'node', node.id, {label: 'hidden', settings: {link: false}}) }}
   </div>
 
   {{ content.field_audio_video }}
@@ -55,6 +80,22 @@
     {{ drupal_view('speaker_sessions', 'embed', speaker_ids|join('+')) }}
   </div>
 
-  {{ content.field_session_votes }}
+
+
+  <h2>Voting</h2>
+  <div class="my-3">
+    <div class="flex gap-3">
+      <div>
+        <span>Vote</span>
+        {{ drupal_field('field_session_votes', 'node', node.id, {label: 'hidden', type: 'fivestar_stars'}) }}
+      </div>
+      <div>
+        <span>Your Vote</span>
+        <div class="py-3">
+          {{ drupal_field('field_session_votes', 'node', node.id, {label: 'hidden', type: 'fivestar_percentage'}) }}
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>

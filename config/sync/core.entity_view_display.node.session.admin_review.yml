@@ -26,6 +26,7 @@ dependencies:
     - field.field.node.session.field_time_slot
     - node.type.session
   module:
+    - datetime_range
     - fivestar
     - text
     - user
@@ -39,24 +40,29 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 1
+    weight: 2
     region: content
   field_moderation_message:
     type: text_default
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
+    region: content
+  field_session_level:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: false
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_session_votes:
-    type: fivestar_stars
+    type: fivestar_percentage
     label: above
-    settings:
-      text_format: average
-      display_format: average
-      fivestar_widget: basic
+    settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_short_abstract:
     type: text_default
@@ -71,7 +77,18 @@ content:
     settings:
       link: true
     third_party_settings: {  }
-    weight: 2
+    weight: 3
+    region: content
+  field_time_slot:
+    type: daterange_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+      from_to: both
+      separator: '-'
+    third_party_settings: {  }
+    weight: 1
     region: content
   flag_schedule_support:
     settings: {  }
@@ -90,10 +107,8 @@ hidden:
   field_primary_contact: true
   field_rating: true
   field_scale_event: true
-  field_session_level: true
   field_session_room: true
   field_session_room_overflow: true
   field_session_track: true
   field_speakers_ref: true
-  field_time_slot: true
   links: true
