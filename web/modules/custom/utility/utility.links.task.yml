@@ -1,0 +1,23 @@
+# utility.links.task.yml
+
+# Main tab - this creates a tab under admin/content
+utility.votes_tab:
+  title: 'Voting'
+  route_name: view.session_votes.page_1
+  base_route: system.admin_content
+#  weight: 10
+
+# Sub-tabs - these appear under the Voting tab
+# The key is that sub-tabs use the MAIN TAB'S route as their base_route
+
+utility.votes_default_tab:
+  title: 'By Session'
+  route_name: view.session_votes.page_1
+  parent_id: utility.votes_tab
+  weight: 0
+
+utility.votes_by_user_tab:
+  title: 'By User'
+  route_name: view.session_votes_by_reviewer.page_1
+  parent_id: utility.votes_tab
+  weight: 1
