@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * Implements hook_views_data().
+ */
+function utility_views_data(): array {
+    $data = [];
+
+    // Add a custom field that can be used with any base table
+    $data['views']['my_rating'] = [
+      'title' => t('My Rating'),
+      'help' => t('Displays the rating for this content by the current user.'),
+      'field' => [
+        'id' => 'my_rating',
+      ],
+    ];
+
+    return $data;
+}

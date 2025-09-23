@@ -6,14 +6,15 @@ use Drupal\node\NodeInterface;
 /**
  * Implements hook_ENTITY_TYPE_insert().
  */
-function sessions_node_insert(EntityInterface $entity): void {
-  // Check if the entity is a node and of type 'session'.
-  if ($entity instanceof NodeInterface && $entity->bundle() == 'session') {
-    // Clear all existing messages first.
-    \Drupal::messenger()->deleteAll();
+function sessions_node_insert(EntityInterface $entity): void
+{
+    // Check if the entity is a node and of type 'session'.
+    if ($entity instanceof NodeInterface && $entity->bundle() == 'session') {
+        // Clear all existing messages first.
+        \Drupal::messenger()->deleteAll();
 
-    // Display the success message.
-    \Drupal::messenger()
-      ->addStatus(t('Your session has been successfully submitted! You will receive an email when your session status has been updated.'));
-  }
+        // Display the success message.
+        \Drupal::messenger()
+          ->addStatus(t('Your session has been successfully submitted! You will receive an email when your session status has been updated.'));
+    }
 }
