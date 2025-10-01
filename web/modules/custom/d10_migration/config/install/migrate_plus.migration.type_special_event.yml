@@ -46,6 +46,7 @@ process:
       message: 'Cannot reach the image at that URI.'
     - plugin: file_import
       destination: '@pseudo_destination_path'
+      file_exists: replace
   field_special_event_image/alt: logo/alt
   field_special_event_image/title: logo/title
   field_schedule/value: schedule
