@@ -13,3 +13,6 @@
 *.sql
 *.gz
 /srv
+
+# Chef settings file.
+web/sites/default/settings.chef.php
