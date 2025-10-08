@@ -1,0 +1,29 @@
+uuid: a44b446c-aa28-4e99-a283-27fd2e999f39
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.23x-footer
+  module:
+    - system
+  theme:
+    - scale
+id: scale_23xfooter
+theme: scale
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:23x-footer'
+settings:
+  id: 'system_menu_block:23x-footer'
+  label: '23x Footer'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/scale/23x\r\n/scale/23x/*"

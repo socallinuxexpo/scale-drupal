@@ -1,0 +1,29 @@
+uuid: b92d290b-2524-48cb-8902-cfcecc359aa6
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.23x-menu
+  module:
+    - system
+  theme:
+    - scale
+id: scale_23xmenu
+theme: scale
+region: primary_menu
+weight: -6
+provider: null
+plugin: 'system_menu_block:23x-menu'
+settings:
+  id: 'system_menu_block:23x-menu'
+  label: '23x Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/scale/23x\r\n/scale/23x/*"
