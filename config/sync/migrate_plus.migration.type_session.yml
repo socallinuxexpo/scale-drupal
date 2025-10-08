@@ -147,6 +147,7 @@ process:
       plugin: file_import
       source: uploaded_file
       destination: '@pseudo_destination_path'
+      file_exists: replace
   field_time_slot/value:
     -
       plugin: format_date

@@ -102,6 +102,7 @@ process:
       plugin: file_import
       source: logo/src
       destination: '@pseudo_destination_path'
+      file_exists: replace
   field_sponsor_logo/alt: title
   path/pathauto:
     plugin: default_value

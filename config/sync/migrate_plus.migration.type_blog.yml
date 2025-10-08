@@ -64,6 +64,7 @@ process:
     -
       plugin: file_import
       destination: '@pseudo_destination_path'
+      file_exists: replace
   field_article_image/alt: title
   body/value: body
   body/format:

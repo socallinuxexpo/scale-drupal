@@ -93,6 +93,7 @@ process:
     -
       plugin: file_import
       destination: '@pseudo_destination_path'
+      file_exists: replace
   field_profile_photo/alt:
     -
       plugin: callback
