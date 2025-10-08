@@ -4,13 +4,16 @@ mode: intermediate
 ignored_config_entities:
   import:
     - active_event.settings
+    - 'block.block.*'
     - block.block.scale_activeeventmenu
     - 'node.type.*:third_party_settings.menu_ui.*'
     - 'system.menu.*'
+    - system.site
     - user.mail
   export:
     - active_event.settings
     - block.block.scale_activeeventmenu
     - 'node.type.*:third_party_settings.menu_ui.*'
     - 'system.menu.*'
+    - system.site
     - user.mail
