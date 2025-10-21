@@ -1,0 +1,21 @@
+uuid: ce17aa68-12ad-4407-9221-e8a7994cce23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_sponsors.field_layout
+    - paragraphs.paragraphs_type.event_sponsors
+id: paragraph.event_sponsors.default
+targetEntityType: paragraph
+bundle: event_sponsors
+mode: default
+content:
+  field_layout:
+    type: options_select
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
