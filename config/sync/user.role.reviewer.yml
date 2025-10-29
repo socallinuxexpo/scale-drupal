@@ -6,6 +6,7 @@ dependencies:
     - node.type.page
   module:
     - comment
+    - content_moderation
     - contextual
     - field_permissions
     - file
@@ -43,6 +44,7 @@ permissions:
   - 'rate content'
   - 'revert all revisions'
   - 'view all revisions'
+  - 'view any unpublished content'
   - 'view field_session_votes'
   - 'view own field_session_votes'
   - 'view own unpublished content'
