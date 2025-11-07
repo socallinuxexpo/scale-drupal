@@ -1,0 +1,22 @@
+uuid: 6a5b177a-3ab7-4b52-98c9-827bb9d26248
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: sponsor
+label: Sponsor
+type: 'canonical_entities:node'
+pattern: 'scale/[node:field_scale_event:entity:field_event_id]/sponsor/[node:title]'
+selection_criteria:
+  6264ee46-2854-43a5-87d0-b83cb3f467b0:
+    id: 'entity_bundle:node'
+    negate: false
+    uuid: 6264ee46-2854-43a5-87d0-b83cb3f467b0
+    context_mapping:
+      node: node
+    bundles:
+      sponsor: sponsor
+selection_logic: and
+weight: -5
+relationships: {  }
