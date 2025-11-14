@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_display.comment.comment.default
     - core.entity_view_mode.node.admin_review
     - field.field.node.session.field_approval_status
     - field.field.node.session.field_assets
@@ -14,6 +15,7 @@ dependencies:
     - field.field.node.session.field_moderation_message
     - field.field.node.session.field_primary_contact
     - field.field.node.session.field_rating
+    - field.field.node.session.field_reviewer_comments
     - field.field.node.session.field_scale_event
     - field.field.node.session.field_session_level
     - field.field.node.session.field_session_room
@@ -26,6 +28,7 @@ dependencies:
     - field.field.node.session.field_time_slot
     - node.type.session
   module:
+    - comment
     - datetime_range
     - fivestar
     - text
@@ -48,6 +51,15 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_reviewer_comments:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_session_level:
     type: entity_reference_label

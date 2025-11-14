@@ -2,6 +2,9 @@
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\NodeInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_ENTITY_TYPE_insert().
@@ -17,4 +20,26 @@ function sessions_node_insert(EntityInterface $entity): void
         \Drupal::messenger()
           ->addStatus(t('Your session has been successfully submitted! You will receive an email when your session status has been updated.'));
     }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function sessions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id === 'comment_comment_form') {
+    // Add our own submit handler at the end of the queue.
+    $form['#submit'][] = 'sessions_comment_comment_form_redirect';
+  }
+}
+
+/**
+ * Custom submit handler to override the final redirect.
+ */
+function sessions_comment_comment_form_redirect(array &$form, FormStateInterface $form_state) {
+  $current_path = \Drupal::service('path.current')->getPath();
+
+  // Only adjust if the user was on a /review page.
+  if (str_ends_with($current_path, '/review')) {
+    $form_state->setRedirectUrl(Url::fromUserInput($current_path));
+  }
 }
