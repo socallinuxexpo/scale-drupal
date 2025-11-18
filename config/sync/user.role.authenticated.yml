@@ -10,7 +10,6 @@ dependencies:
     - node.type.speaker
     - workflows.workflow.session_workflow
   module:
-    - comment
     - contact
     - content_moderation
     - entity_browser
@@ -29,7 +28,6 @@ label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
   - 'access inline_speaker_form entity browser pages'
   - 'access shortcuts'
@@ -39,9 +37,7 @@ permissions:
   - 'delete own files'
   - 'edit own session content'
   - 'edit own speaker content'
-  - 'post comments'
   - 'search content'
-  - 'skip comment approval'
   - 'use  The form mode speaker linked to  node entity( session )'
   - 'use  The form mode speaker linked to  node entity( speaker )'
   - 'use session_workflow transition edit_accepted'

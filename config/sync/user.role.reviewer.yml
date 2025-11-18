@@ -25,6 +25,7 @@ weight: 2
 is_admin: false
 permissions:
   - 'access administration pages'
+  - 'access comments'
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
@@ -41,8 +42,10 @@ permissions:
   - 'edit own comments'
   - 'edit own field_session_votes'
   - 'edit own page content'
+  - 'post comments'
   - 'rate content'
   - 'revert all revisions'
+  - 'skip comment approval'
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view field_session_votes'
