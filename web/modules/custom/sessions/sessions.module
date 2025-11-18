@@ -23,23 +23,57 @@ function sessions_node_insert(EntityInterface $entity): void
 }
 
 /**
+ * Implements hook_comment_insert().
+ * 
+ * Redirects back to /review page after posting a comment or reply.
+ */
+function sessions_comment_insert(EntityInterface $entity) {
+  _sessions_redirect_to_review($entity);
+}
+
+/**
  * Implements hook_form_alter().
+ * 
+ * When posting comment, redirect to /review.
  */
 function sessions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if ($form_id === 'comment_comment_form') {
-    // Add our own submit handler at the end of the queue.
-    $form['#submit'][] = 'sessions_comment_comment_form_redirect';
+  // Handle posting comment, editing, replying, and delete.
+  if ($form_id === 'comment_comment_form' || $form_id === 'comment_comment_delete_form') {
+    $form['actions']['submit']['#submit'][] = '_sessions_comment_form_redirect_to_review';
   }
 }
 
 /**
- * Custom submit handler to override the final redirect.
+ * Custom submit handler to redirect session comments to /review page.
  */
-function sessions_comment_comment_form_redirect(array &$form, FormStateInterface $form_state) {
-  $current_path = \Drupal::service('path.current')->getPath();
+function _sessions_comment_form_redirect_to_review(array &$form, FormStateInterface $form_state) {
+  $comment = $form_state->getFormObject()->getEntity();
+  
+  if ($comment && $comment->getCommentedEntity()) {
+    $commented_entity = $comment->getCommentedEntity();
+    
+    // For session comments, always redirect to /review.
+    if ($commented_entity instanceof NodeInterface && $commented_entity->bundle() === 'session') {
+      $review_url = $commented_entity->toUrl('canonical', ['absolute' => FALSE])->toString() . '/review';
+      $form_state->setRedirectUrl(Url::fromUserInput($review_url));
+    }
+  }
+}
 
-  // Only adjust if the user was on a /review page.
-  if (str_ends_with($current_path, '/review')) {
-    $form_state->setRedirectUrl(Url::fromUserInput($current_path));
+/**
+ * Helper function to redirect to /review page after posting a new comment.
+ */
+function _sessions_redirect_to_review(EntityInterface $entity) {
+  $commented_entity = $entity->getCommentedEntity();
+  
+  // For session comments, always redirect to /review (no anchor).
+  if ($commented_entity instanceof NodeInterface && $commented_entity->bundle() === 'session') {
+
+    $review_url = $commented_entity->toUrl('canonical', ['absolute' => FALSE])->toString() . '/review';
+    
+    // Set the redirect response.
+    $response = new RedirectResponse($review_url);
+    $response->send();
+    exit;
   }
 }
