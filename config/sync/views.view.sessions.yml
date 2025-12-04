@@ -116,7 +116,7 @@ display:
           entity_type: vote_result
           entity_field: value
           plugin_id: field
-          label: Rating
+          label: 'Voting average'
           exclude: false
           alter:
             alter_text: false
