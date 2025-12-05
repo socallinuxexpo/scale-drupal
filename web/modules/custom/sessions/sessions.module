@@ -35,11 +35,18 @@ function sessions_comment_insert(EntityInterface $entity) {
  * Implements hook_form_alter().
  * 
  * When posting comment, redirect to /review.
+ * Also adds speaker validation to session node forms.
  */
 function sessions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Handle posting comment, editing, replying, and delete.
   if ($form_id === 'comment_comment_form' || $form_id === 'comment_comment_delete_form') {
     $form['actions']['submit']['#submit'][] = '_sessions_comment_form_redirect_to_review';
+  }
+  
+  // Add speaker validation to session node forms.
+  if ($form_id === 'node_session_form' || $form_id === 'node_session_edit_form') {
+    // Add custom validation handler.
+    $form['#validate'][] = '_sessions_validate_speakers_field';
   }
 }
 
@@ -75,5 +82,42 @@ function _sessions_redirect_to_review(EntityInterface $entity) {
     $response = new RedirectResponse($review_url);
     $response->send();
     exit;
+  }
+}
+
+/**
+ * Custom validation handler for session forms to check speakers field.
+ */
+function _sessions_validate_speakers_field(array &$form, FormStateInterface $form_state) {
+  // Get the speakers field value.
+  $speakers = $form_state->getValue('field_speakers_ref');
+  
+  // Check if speakers field is empty.
+  $is_empty = TRUE;
+  if (!empty($speakers)) {
+    foreach ($speakers as $speaker) {
+      if (!empty($speaker['target_id'])) {
+        $is_empty = FALSE;
+        break;
+      }
+    }
+  }
+  
+  // If speakers field is empty, show warning and rebuild form.
+  if ($is_empty) {
+    // Check if this is a second attempt (form was already rebuilt once).
+    $warning_shown = $form_state->get('speaker_warning_shown');
+    
+    if ($warning_shown) {
+      // Second attempt - user has confirmed by clicking save again, allow it to proceed.
+      return;
+    }
+    
+    // First attempt - show warning and rebuild form.
+    $form_state->set('speaker_warning_shown', TRUE);
+    $form_state->setRebuild(TRUE);
+    
+    // Show warning message to user.
+    \Drupal::messenger()->addWarning(t('Warning: You are saving this session without any speakers assigned. If this is intentional, please click Save again to confirm.'));
   }
 }
