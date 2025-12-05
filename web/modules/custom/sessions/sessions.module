@@ -93,12 +93,15 @@ function _sessions_validate_speakers_field(array &$form, FormStateInterface $for
   $speakers = $form_state->getValue('field_speakers_ref');
   
   // Check if speakers field is empty.
+  // For IEF widgets, the target_id is stored as a concatenated string like "node:19396 node:19395"
   $is_empty = TRUE;
-  if (!empty($speakers)) {
-    foreach ($speakers as $speaker) {
-      if (!empty($speaker['target_id'])) {
+  if (!empty($speakers) && is_array($speakers)) {
+    // Check if target_id exists and contains node references
+    if (!empty($speakers['target_id'])) {
+      $target_id_string = trim($speakers['target_id']);
+      // Check if the string contains actual node references (not just empty or whitespace)
+      if (!empty($target_id_string) && strpos($target_id_string, 'node:') !== FALSE) {
         $is_empty = FALSE;
-        break;
       }
     }
   }
