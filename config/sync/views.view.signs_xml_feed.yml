@@ -453,7 +453,7 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
@@ -748,8 +748,8 @@ display:
         - 'config:field.storage.node.field_short_abstract'
         - 'config:field.storage.node.field_speakers_ref'
         - 'config:field.storage.node.field_time_slot'
-  data_export_1:
-    id: data_export_1
+  xml:
+    id: xml
     display_title: 'Data export'
     display_plugin: data_export
     position: 2
@@ -792,7 +792,7 @@ display:
               raw_output: false
             field_short_abstract:
               alias: Short-abstract
-              raw_output: true
+              raw_output: false
             field_profile_photo:
               alias: Photo
               raw_output: false
