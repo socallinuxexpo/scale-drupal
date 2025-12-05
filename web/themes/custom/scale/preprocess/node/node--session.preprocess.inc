@@ -40,6 +40,14 @@ function _session_dates(&$variables) {
     $end_date_time->setTimezone($timezone);
 
     $variables['start_date'] = $start_date_time->format('l, F j, Y - H:i');
-    $variables['end_date'] = $end_date_time->format('H:i');
+    
+    // Check if start and end dates are on different days
+    if ($start_date_time->format('Y-m-d') !== $end_date_time->format('Y-m-d')) {
+      // Multi-day session: show full date and time for end date
+      $variables['end_date'] = $end_date_time->format('l, F j, Y - H:i');
+    } else {
+      // Same day session: show only time for end date
+      $variables['end_date'] = $end_date_time->format('H:i');
+    }
   }
 }
