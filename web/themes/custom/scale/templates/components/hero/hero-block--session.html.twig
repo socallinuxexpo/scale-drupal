@@ -2,9 +2,11 @@
 
 
 {% block hero__bottom %}
-  {% if not node.isPublished() %}
-    <div class="mb-3">
-      <span class="px-3 py-1 bg-red-50 text-sm text-red-500">Unpublished</span>
+  {% if moderation_state_label %}
+    <div class="mb-5">
+      <span class="text-sm bg-blue-50 text-blue-500 py-1 px-3 font-body rounded">
+        {{ moderation_state_label }}
+      </span>
     </div>
   {% endif %}
 

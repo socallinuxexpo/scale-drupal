@@ -28,7 +28,7 @@ function hero_block_theme_suggestions_hero_block_alter(array &$suggestions, arra
  * Implements theme_preprocess_HOOK().
  */
 function hero_block_preprocess_hero_block__session(&$variables): void {
-  /** @var \Drupal\node\Entity\Node $ndoe */
+  /** @var \Drupal\node\Entity\Node $node */
   $node = $variables["node"];
 
   // Get speakers and render the nodes using the listing view mode
@@ -41,6 +41,25 @@ function hero_block_preprocess_hero_block__session(&$variables): void {
   }
 
   $variables['content']['speakers'] = $speaker_nodes;
+  
+  // Add moderation state label
+  if ($node->hasField('moderation_state') && !$node->get('moderation_state')->isEmpty()) {
+    $moderation_state_value = $node->get('moderation_state')->value;
+    
+    // Load the workflow state configuration entity
+    $workflow_state = \Drupal::entityTypeManager()
+      ->getStorage('workflow')
+      ->loadByProperties(['type' => 'content_moderation']);
+    
+    if (!empty($workflow_state)) {
+      $workflow = reset($workflow_state);
+      $states = $workflow->getTypePlugin()->getStates();
+      
+      if (isset($states[$moderation_state_value])) {
+        $variables['moderation_state_label'] = $states[$moderation_state_value]->label();
+      }
+    }
+  }
 }
 
 /**

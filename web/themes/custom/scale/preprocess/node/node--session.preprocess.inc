@@ -15,6 +15,7 @@ function scale_preprocess_node__session(&$variables): void {
  */
 function scale_preprocess_node__session__teaser(&$variables): void {
   _session_dates($variables);
+  _session_moderation_state_label($variables);
 }
 
 /**
