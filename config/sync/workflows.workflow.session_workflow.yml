@@ -12,7 +12,7 @@ type: content_moderation
 type_settings:
   states:
     draft:
-      label: Draft
+      label: 'Pending Review'
       weight: 0
       published: false
       default_revision: false
@@ -25,7 +25,7 @@ type_settings:
       label: Rejected
       weight: 2
       published: false
-      default_revision: false
+      default_revision: true
   transitions:
     accept_session:
       label: 'Accept Session'

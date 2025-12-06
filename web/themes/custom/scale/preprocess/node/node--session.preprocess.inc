@@ -7,6 +7,7 @@ use Drupal\Core\Datetime\DrupalDateTime;
  */
 function scale_preprocess_node__session(&$variables): void {
   _session_dates($variables);
+  _session_moderation_state_label($variables);
 }
 
 /**
@@ -14,6 +15,32 @@ function scale_preprocess_node__session(&$variables): void {
  */
 function scale_preprocess_node__session__teaser(&$variables): void {
   _session_dates($variables);
+}
+
+/**
+ * Add moderation state label to variables.
+ */
+function _session_moderation_state_label(&$variables) {
+  /** @var \Drupal\node\Entity\Node $node */
+  $node = $variables["elements"]["#node"];
+  
+  if ($node->hasField('moderation_state') && !$node->get('moderation_state')->isEmpty()) {
+    $moderation_state_value = $node->get('moderation_state')->value;
+    
+    // Load the workflow state configuration entity
+    $workflow_state = \Drupal::entityTypeManager()
+      ->getStorage('workflow')
+      ->loadByProperties(['type' => 'content_moderation']);
+    
+    if (!empty($workflow_state)) {
+      $workflow = reset($workflow_state);
+      $states = $workflow->getTypePlugin()->getStates();
+      
+      if (isset($states[$moderation_state_value])) {
+        $variables['moderation_state_label'] = $states[$moderation_state_value]->label();
+      }
+    }
+  }
 }
 
 /**

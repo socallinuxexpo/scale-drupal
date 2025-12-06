@@ -9,6 +9,10 @@ use Drupal\Core\Access\AccessResult;
 class UserAccessSession {
 
   public function checkAccess(NodeInterface $node, $operation, AccountInterface $account) {
+    if($account->hasRole('administrator')) {
+      return AccessResult::allowed()->cachePerUser();
+    }
+
     if ($node->getType() !== 'session') {
       return AccessResult::neutral();
     }
