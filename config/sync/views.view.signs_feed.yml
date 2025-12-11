@@ -1,4 +1,4 @@
-uuid: b99ef822-6ac1-45e1-a94b-56134c60b849
+uuid: 8791ea67-9d7e-4cbf-ac48-25a4fceb8596
 langcode: en
 status: true
 dependencies:
@@ -19,8 +19,8 @@ dependencies:
     - text
     - user
     - views_data_export
-id: signs_xml_feed
-label: 'Signs XML Feed'
+id: signs_feed
+label: 'Signs Feed'
 module: views
 description: ''
 tag: ''
@@ -739,6 +739,67 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_profile_photo'
+        - 'config:field.storage.node.field_session_room'
+        - 'config:field.storage.node.field_session_track'
+        - 'config:field.storage.node.field_short_abstract'
+        - 'config:field.storage.node.field_speakers_ref'
+        - 'config:field.storage.node.field_time_slot'
+  rest_export_1:
+    id: rest_export_1
+    display_title: 'REST export'
+    display_plugin: rest_export
+    position: 3
+    display_options:
+      style:
+        type: serializer
+        options:
+          uses_fields: false
+          formats:
+            json: json
+      row:
+        type: data_field
+        options:
+          field_options:
+            title:
+              alias: title
+              raw_output: false
+            field_session_room:
+              alias: room
+              raw_output: false
+            field_time_slot:
+              alias: day
+              raw_output: false
+            field_time_slot_1:
+              alias: time
+              raw_output: false
+            field_speakers_ref:
+              alias: speakers
+              raw_output: false
+            field_session_track:
+              alias: track
+              raw_output: false
+            field_short_abstract:
+              alias: short_abstract
+              raw_output: false
+            field_profile_photo:
+              alias: photo
+              raw_output: false
+            view_node:
+              alias: link
+              raw_output: false
+      display_extenders: {  }
+      path: scale/%/signs
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - request_format
+        - url
         - 'user.node_grants:view'
         - user.permissions
       tags:
