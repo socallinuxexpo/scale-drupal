@@ -39,6 +39,7 @@
         "drupal/flag": "^4.0@beta",
         "drupal/form_mode_control": "^2.4",
         "drupal/gin": "^3.0@RC",
+        "drupal/honeypot": "^2.2",
         "drupal/image_styles_builder": "^1.1",
         "drupal/inline_entity_form": "^3.0@RC",
         "drupal/mailgun": "^2.0",
