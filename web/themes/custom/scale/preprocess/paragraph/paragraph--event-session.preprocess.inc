@@ -47,13 +47,28 @@ function scale_preprocess_paragraph__event_sessions(&$variables) {
   $start_dates = array_column($agenda, 'start');
   $end_dates = array_column($agenda, 'end');
 
-  // Convert to DateTime for comparison
-  $earliest_start = min(array_map('strtotime', $start_dates));
-  $latest_end = max(array_map('strtotime', $end_dates));
+  // Initialize default values
+  $earliest_start_date = date('Y-m-d');
+  $latest_end_date = date('Y-m-d');
 
-  // Convert back to readable date format
-  $earliest_start_date = date('Y-m-d', $earliest_start);
-  $latest_end_date = date('Y-m-d', $latest_end);
+  // Filter out empty values before processing
+  $start_dates = array_filter($start_dates, function($date) {
+    return !empty($date);
+  });
+  $end_dates = array_filter($end_dates, function($date) {
+    return !empty($date);
+  });
+
+  // Only process dates if we have valid agenda items
+  if (!empty($start_dates) && !empty($end_dates)) {
+    // Convert to DateTime for comparison
+    $earliest_start = min(array_map('strtotime', $start_dates));
+    $latest_end = max(array_map('strtotime', $end_dates));
+
+    // Convert back to readable date format
+    $earliest_start_date = date('Y-m-d', $earliest_start);
+    $latest_end_date = date('Y-m-d', $latest_end);
+  }
 
   $variables['#attached']['drupalSettings']['schedule']['tracks'] = $tracks;
   $variables['#attached']['drupalSettings']['schedule']['agenda'] = $agenda;
