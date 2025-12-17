@@ -1,0 +1,163 @@
+diff --git a/src/Plugin/Field/FieldType/FivestarItem.php b/src/Plugin/Field/FieldType/FivestarItem.php
+index 1a81321..98365d7 100644
+--- a/src/Plugin/Field/FieldType/FivestarItem.php
++++ b/src/Plugin/Field/FieldType/FivestarItem.php
+@@ -244,6 +244,11 @@ class FivestarItem extends FieldItemBase {
+ 
+     $owner = $this->getVoteOwner($entity, $field_settings['rated_while']);
+ 
++    // Check if vote should be created based on field settings.
++    if (!$this->shouldCreateVote($entity, $field_settings, $owner)) {
++      return FALSE;
++    }
++
+     if ($update) {
+       // Delete previous votes.
+       $criteria = [
+@@ -270,24 +275,26 @@ class FivestarItem extends FieldItemBase {
+       }
+     }
+ 
+-    // Add new vote.
+-    $vote_manager->addVote($entity, $vote_rating, $field_settings['vote_type'], $owner->id());
++    // Add new vote only if rating is provided.
++    if ($vote_rating > 0) {
++      $vote_manager->addVote($entity, $vote_rating, $field_settings['vote_type'], $owner->id());
+ 
+-    // Check to see if there is a target entity. If so, add the vote to that
+-    // entity as well.
+-    if (!empty($target_entity)) {
+-      if ($entity instanceof EntityPublishedInterface && !$entity->isPublished()) {
+-        // Don't add vote to the target entity if the voted entity is both
+-        // publishable and unpublished.
+-      }
+-      else {
+-        // Add vote to the target entity.
+-        $vote_manager->addVote(
+-          $target_entity,
+-          $vote_rating,
+-          $field_settings['vote_type'],
+-          $owner->id()
+-        );
++      // Check to see if there is a target entity. If so, add the vote to that
++      // entity as well.
++      if (!empty($target_entity)) {
++        if ($entity instanceof EntityPublishedInterface && !$entity->isPublished()) {
++          // Don't add vote to the target entity if the voted entity is both
++          // publishable and unpublished.
++        }
++        else {
++          // Add vote to the target entity.
++          $vote_manager->addVote(
++            $target_entity,
++            $vote_rating,
++            $field_settings['vote_type'],
++            $owner->id()
++          );
++        }
+       }
+     }
+ 
+@@ -327,29 +334,47 @@ class FivestarItem extends FieldItemBase {
+     $field_settings = $this->getFieldDefinition()->getSettings();
+     $target_entity = $this->getTargetEntity($del_entity, $field_settings);
+ 
+-    if (!$target_entity) {
+-      return;
+-    }
+-
+     $vote_storage = \Drupal::entityTypeManager()->getStorage('vote');
++    
++    // Delete votes associated with the entity being deleted.
+     $votes = $vote_storage->loadByProperties([
+       'entity_type' => $del_entity->getEntityTypeId(),
+       'entity_id' => $del_entity->id(),
++      'type' => $field_settings['vote_type'],
+     ]);
+ 
+     foreach ($votes as $vote) {
+-      // Get target vote.
+-      $target_votes = $vote_storage->loadByProperties([
+-        'entity_type' => $target_entity->getEntityTypeId(),
+-        'entity_id' => $target_entity->id(),
+-        'type' => $vote->bundle(),
+-        'user_id' => $vote->getOwnerId(),
+-        'value' => $vote->getValue(),
+-        'vote_source' => $vote->getSource(),
+-      ]);
+-
+-      foreach ($target_votes as $target_vote) {
+-        $target_vote->delete();
++      $vote->delete();
++    }
++
++    // Delete votes from target entity if it exists.
++    if (!empty($target_entity)) {
++      foreach ($votes as $vote) {
++        // Find target votes with more flexible criteria to handle IP address changes.
++        $target_vote_criteria = [
++          'entity_type' => $target_entity->getEntityTypeId(),
++          'entity_id' => $target_entity->id(),
++          'type' => $vote->bundle(),
++          'user_id' => $vote->getOwnerId(),
++          'value' => $vote->getValue(),
++        ];
++
++        // Only include vote_source if the user is anonymous and we have a source.
++        if ($vote->getOwnerId() == 0 && !empty($vote->getSource())) {
++          $target_vote_criteria['vote_source'] = $vote->getSource();
++        }
++
++        $target_votes = $vote_storage->loadByProperties($target_vote_criteria);
++
++        // If no exact match found and user is anonymous, try without vote_source.
++        if (empty($target_votes) && $vote->getOwnerId() == 0) {
++          unset($target_vote_criteria['vote_source']);
++          $target_votes = $vote_storage->loadByProperties($target_vote_criteria);
++        }
++
++        foreach ($target_votes as $target_vote) {
++          $target_vote->delete();
++        }
+       }
+     }
+   }
+@@ -384,4 +409,38 @@ class FivestarItem extends FieldItemBase {
+     }
+   }
+ 
++  /**
++   * Determines whether a vote should be created based on field settings.
++   *
++   * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
++   *   The entity being voted on.
++   * @param array $field_settings
++   *   The field settings.
++   * @param \Drupal\Core\Session\AccountInterface $owner
++   *   The vote owner.
++   *
++   * @return bool
++   *   TRUE if vote should be created, FALSE otherwise.
++   */
++  protected function shouldCreateVote(FieldableEntityInterface $entity, array $field_settings, $owner) {
++    // Check if voting is allowed while viewing.
++    if ($field_settings['rated_while'] === 'viewing') {
++      // For "viewing" mode, votes should only be created through the widget,
++      // not during entity save operations.
++      return FALSE;
++    }
++
++    // Check if user is allowed to vote on their own content.
++    if (!$field_settings['allow_ownvote']) {
++      if ($entity instanceof EntityOwnerInterface) {
++        // Don't allow vote if the voter is the entity owner.
++        if ($entity->getOwnerId() == $owner->id()) {
++          return FALSE;
++        }
++      }
++    }
++
++    return TRUE;
++  }
++
+ }

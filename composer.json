@@ -85,7 +85,7 @@
         "patches": {
             "drupal/fivestar": {
                 "Rate content permission is not ported to D8 | https://www.drupal.org/project/fivestar/issues/3133123": "https://www.drupal.org/files/issues/2024-01-22/rate-content-permission-not-port-d8-3133123-31.patch",
-                "The deleted vote do not remove from the average | https://www.drupal.org/project/fivestar/issues/2849714": "https://www.drupal.org/files/issues/2025-10-29/the-deleted-vote-do-not-remove-from-the-average-2849714-11.patch"
+                "Custom patch": "web/modules/patches/combined-issues-3152654-and-2849714.patch"
             },
             "drupal/view_mode_page": {
                 "The \"node_type\" plugin does not exist. | https://www.drupal.org/project/view_mode_page/issues/3505464": "https://www.drupal.org/files/issues/2025-02-10/the-node_type-plugin-does-not-exist.patch"
