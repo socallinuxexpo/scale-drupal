@@ -15,6 +15,7 @@ dependencies:
     - field.storage.node.field_time_slot
     - node.type.session
     - user.role.administrator
+    - workflows.workflow.session_workflow
   module:
     - content_moderation
     - csv_serialization
@@ -876,6 +877,87 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+        moderation_state:
+          id: moderation_state
+          table: node_field_data
+          field: moderation_state
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: moderation_state_filter
+          operator: in
+          value:
+            session_workflow-published: session_workflow-published
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          operator: '='
+          value: '1'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
       filter_groups:
         operator: AND
         groups:
@@ -1039,6 +1121,7 @@ display:
         - 'config:field.storage.node.field_short_abstract'
         - 'config:field.storage.node.field_speakers_ref'
         - 'config:field.storage.node.field_tags'
+        - 'config:workflow_list'
   data_export_2:
     id: data_export_2
     display_title: 'Schedule Export'
@@ -1616,6 +1699,7 @@ display:
         - 'config:field.storage.node.field_session_track'
         - 'config:field.storage.node.field_short_abstract'
         - 'config:field.storage.node.field_time_slot'
+        - 'config:workflow_list'
   page_1:
     id: page_1
     display_title: Page
@@ -1642,3 +1726,4 @@ display:
         - 'config:field.storage.node.field_short_abstract'
         - 'config:field.storage.node.field_speakers_ref'
         - 'config:field.storage.node.field_tags'
+        - 'config:workflow_list'
