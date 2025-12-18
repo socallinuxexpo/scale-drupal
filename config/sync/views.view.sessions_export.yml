@@ -1392,10 +1392,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_short_abstract:
-          id: field_short_abstract
-          table: node__field_short_abstract
-          field: field_short_abstract
+        field_long_abstract:
+          id: field_long_abstract
+          table: node__field_long_abstract
+          field: field_long_abstract
           relationship: none
           group_type: group
           admin_label: ''
@@ -1695,9 +1695,9 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags:
+        - 'config:field.storage.node.field_long_abstract'
         - 'config:field.storage.node.field_session_room'
         - 'config:field.storage.node.field_session_track'
-        - 'config:field.storage.node.field_short_abstract'
         - 'config:field.storage.node.field_time_slot'
         - 'config:workflow_list'
   page_1:
