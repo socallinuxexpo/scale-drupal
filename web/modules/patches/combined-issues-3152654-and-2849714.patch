@@ -1,8 +1,19 @@
 diff --git a/src/Plugin/Field/FieldType/FivestarItem.php b/src/Plugin/Field/FieldType/FivestarItem.php
-index 1a81321..98365d7 100644
+index 1a81321..93df957 100644
 --- a/src/Plugin/Field/FieldType/FivestarItem.php
 +++ b/src/Plugin/Field/FieldType/FivestarItem.php
-@@ -244,6 +244,11 @@ class FivestarItem extends FieldItemBase {
+@@ -228,7 +228,9 @@ class FivestarItem extends FieldItemBase {
+    */
+   public function isEmpty() {
+     $rating = $this->get('rating')->getValue();
+-    return empty($rating) || $rating == '-';
++    // Don't consider 0 as empty for fivestar fields, as 0 represents a cancel action
++    // Only consider NULL, empty string, or '-' as empty
++    return $rating === NULL || $rating === '' || $rating == '-';
+   }
+ 
+   /**
+@@ -244,6 +246,11 @@ class FivestarItem extends FieldItemBase {
  
      $owner = $this->getVoteOwner($entity, $field_settings['rated_while']);
  
@@ -14,14 +25,14 @@ index 1a81321..98365d7 100644
      if ($update) {
        // Delete previous votes.
        $criteria = [
-@@ -270,24 +275,26 @@ class FivestarItem extends FieldItemBase {
+@@ -270,24 +277,26 @@ class FivestarItem extends FieldItemBase {
        }
      }
  
 -    // Add new vote.
 -    $vote_manager->addVote($entity, $vote_rating, $field_settings['vote_type'], $owner->id());
-+    // Add new vote only if rating is provided.
-+    if ($vote_rating > 0) {
++    // Only add a new vote if the rating is not 0 (not cancelled).
++    if ($vote_rating != 0) {
 +      $vote_manager->addVote($entity, $vote_rating, $field_settings['vote_type'], $owner->id());
  
 -    // Check to see if there is a target entity. If so, add the vote to that
@@ -58,7 +69,7 @@ index 1a81321..98365d7 100644
        }
      }
  
-@@ -327,29 +334,47 @@ class FivestarItem extends FieldItemBase {
+@@ -327,29 +336,47 @@ class FivestarItem extends FieldItemBase {
      $field_settings = $this->getFieldDefinition()->getSettings();
      $target_entity = $this->getTargetEntity($del_entity, $field_settings);
  
@@ -67,7 +78,7 @@ index 1a81321..98365d7 100644
 -    }
 -
      $vote_storage = \Drupal::entityTypeManager()->getStorage('vote');
-+    
++
 +    // Delete votes associated with the entity being deleted.
      $votes = $vote_storage->loadByProperties([
        'entity_type' => $del_entity->getEntityTypeId(),
@@ -122,29 +133,47 @@ index 1a81321..98365d7 100644
        }
      }
    }
-@@ -384,4 +409,38 @@ class FivestarItem extends FieldItemBase {
+@@ -384,4 +411,56 @@ class FivestarItem extends FieldItemBase {
      }
    }
  
 +  /**
 +   * Determines whether a vote should be created based on field settings.
 +   *
-+   * @param \Drupal\Core\Entity\FieldableEntityInterface $entity
++   * @param  \Drupal\Core\Entity\FieldableEntityInterface  $entity
 +   *   The entity being voted on.
-+   * @param array $field_settings
++   * @param  array  $field_settings
 +   *   The field settings.
-+   * @param \Drupal\Core\Session\AccountInterface $owner
++   * @param  \Drupal\Core\Session\AccountInterface  $owner
 +   *   The vote owner.
 +   *
 +   * @return bool
 +   *   TRUE if vote should be created, FALSE otherwise.
 +   */
-+  protected function shouldCreateVote(FieldableEntityInterface $entity, array $field_settings, $owner) {
++  protected function shouldCreateVote(
++    FieldableEntityInterface $entity,
++    array $field_settings,
++    $owner
++  ) {
 +    // Check if voting is allowed while viewing.
 +    if ($field_settings['rated_while'] === 'viewing') {
-+      // For "viewing" mode, votes should only be created through the widget,
-+      // not during entity save operations.
-+      return FALSE;
++      // For "viewing" mode, we need to check if this is a user-initiated vote
++      // vs an administrative save. We can detect this by checking if the
++      // current user is the vote owner and if we're in a form submission context.
++      $current_user = \Drupal::currentUser();
++
++      // If the vote owner is different from current user, this is likely
++      // an administrative operation, so don't create the vote.
++      if ($owner->id() != $current_user->id()) {
++        return FALSE;
++      }
++
++      // Check if this is being called during entity creation (not an update)
++      // During entity creation with "viewing" mode, we shouldn't create votes
++      // as the user hasn't actually voted yet.
++      if ($entity->isNew()) {
++        return FALSE;
++      }
 +    }
 +
 +    // Check if user is allowed to vote on their own content.
