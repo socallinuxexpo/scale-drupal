@@ -1,0 +1,25 @@
+uuid: c4609e10-b180-49d8-b224-9061c9808250
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_list
+    - paragraphs.paragraphs_type.event_sessions_list
+id: paragraph.event_sessions_list.field_list
+field_name: field_list
+entity_type: paragraph
+bundle: event_sessions_list
+label: list
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: views
+  handler_settings:
+    view:
+      view_name: presentations
+      display_name: entity_reference_1
+      arguments: {  }
+field_type: entity_reference

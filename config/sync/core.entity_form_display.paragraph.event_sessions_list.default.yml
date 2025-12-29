@@ -1,0 +1,25 @@
+uuid: cc9dbc88-2690-404d-a21e-673df28f20fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_sessions_list.field_list
+    - paragraphs.paragraphs_type.event_sessions_list
+id: paragraph.event_sessions_list.default
+targetEntityType: paragraph
+bundle: event_sessions_list
+mode: default
+content:
+  field_list:
+    type: entity_reference_autocomplete
+    weight: 0
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
