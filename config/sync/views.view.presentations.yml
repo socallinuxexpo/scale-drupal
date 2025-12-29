@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.teaser
     - field.storage.node.field_session_room
     - field.storage.node.field_short_abstract
     - field.storage.node.field_speakers_ref
@@ -601,6 +602,65 @@ display:
     display_plugin: block
     position: 1
     display_options:
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_session_room'
+        - 'config:field.storage.node.field_short_abstract'
+        - 'config:field.storage.node.field_speakers_ref'
+        - 'config:field.storage.node.field_time_slot'
+  embed_1:
+    id: embed_1
+    display_title: Embed
+    display_plugin: embed
+    position: 3
+    display_options:
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          relationship: none
+          view_mode: teaser
+      defaults:
+        style: false
+        row: false
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags:
+        - 'config:field.storage.node.field_session_room'
+        - 'config:field.storage.node.field_short_abstract'
+        - 'config:field.storage.node.field_speakers_ref'
+        - 'config:field.storage.node.field_time_slot'
+  entity_reference_1:
+    id: entity_reference_1
+    display_title: 'Entity Reference'
+    display_plugin: entity_reference
+    position: 2
+    display_options:
+      style:
+        type: entity_reference
+        options:
+          search_fields:
+            title: title
+            field_speakers_ref: '0'
+            field_session_room: '0'
+            field_time_slot: '0'
+            field_short_abstract: '0'
+            view_node: '0'
       display_extenders: {  }
     cache_metadata:
       max-age: -1
