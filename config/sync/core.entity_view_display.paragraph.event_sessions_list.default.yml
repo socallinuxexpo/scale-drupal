@@ -1,0 +1,22 @@
+uuid: 73dcc70b-3e04-4d71-a30f-f7192aaae514
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.event_sessions_list.field_list
+    - paragraphs.paragraphs_type.event_sessions_list
+id: paragraph.event_sessions_list.default
+targetEntityType: paragraph
+bundle: event_sessions_list
+mode: default
+content:
+  field_list:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  breadcrumbs: true
