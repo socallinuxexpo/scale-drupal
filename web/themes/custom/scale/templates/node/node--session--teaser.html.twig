@@ -11,9 +11,11 @@
         {# TODO: Pass this data via preprocessor #}
         {% set room = node.field_session_room.entity.label %}
 
+        {#
         <div class="md:w-1/2">
           {{ start_date }} to {{ end_date }} - {{ room }}
         </div>
+        #}
 
         <div class="md:w-1/2">
           {{ drupal_view('session_teaser_subhead', 'embed', node.id) }}
@@ -21,6 +23,7 @@
       </div>
 
       <div class="text-base text-slate-800 leading-relaxed">
+        {{ drupal_field('field_short_abstract', 'node', node.id, {label: 'hidden'}) }}
         {{ content.body }}
       </div>
 
