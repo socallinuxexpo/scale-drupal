@@ -10,6 +10,16 @@
 
         if (calendarEl) {
 
+          // Ensure the end date is inclusive by adding one day
+          const validRangeEnd = new Date(settings.schedule.range.end);
+          validRangeEnd.setDate(validRangeEnd.getDate() + 1);
+          const validRangeEndStr = validRangeEnd.toISOString().split('T')[0];
+
+          const validRange = {
+            start: settings.schedule.range.start,
+            end: validRangeEndStr
+          };
+
           const calendar = new FullCalendar.Calendar(calendarEl, {
             schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
             // plugins: ['ResourceTimeGrid'],
@@ -20,26 +30,11 @@
             nowIndicator: true,
             displayEventTime: false,
 
-            classNames: ['text-sm'],
-
             initialDate: settings.schedule.range.start,
-            visibleRange: settings.schedule.range,
-            // visibleRange: {
-            //   start: settings.schedule.range.start,
-            //   end: settings.schedule.range.end
-            // }
+            validRange: validRange,
 
             // Header Toolbar
-            // customButtons: {
-            //   myCustomButton: {
-            //     text: 'Custom Button',
-            //     click: function() {
-            //       alert('Custom button clicked!');
-            //     }
-            //   }
-            // },
             headerToolbar: {
-              // left: 'prev,next myCustomButton',
               left: 'prev,next',
               center: 'title',
               right: 'resourceTimeGridDay,resourceTimeline,listWeek'
@@ -51,9 +46,6 @@
             },
 
             // Slot
-            // eventMinHeight: 300,
-            // eventShortHeight: 80,
-            slotHeight: 300,
             slotMinTime: '08:00:00',
             slotLabelInterval: '00:30',
             slotLabelFormat: {
