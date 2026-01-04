@@ -13,7 +13,6 @@ swiperjs:
 fullcalendar:
   js:
     dist/third-party/fullcalendar_io/dist/index.global.min.js: { minified: true }
-    dist/third-party/fullcalendar_io/packages/resource/index.global.min.js: { minified: true }
     dist/third-party/fullcalendar_io/packages/resource-timegrid/index.global.min.js: { minified: true }
 
 schedule_fullcalendar:
