@@ -10,6 +10,7 @@
 /.idea
 .DS_Store
 
+*.mysql
 *.sql
 *.gz
 /srv

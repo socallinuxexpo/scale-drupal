@@ -56,3 +56,4 @@ creation+administrator+node+speaker: node.speaker.default
 modification+authenticated+node+speaker: node.speaker.speaker
 modification+reviewer+node+speaker: node.speaker.speaker
 modification+administrator+node+speaker: node.speaker.default
+'use  The form mode default linked to  paragraph entity( event_sessions_list )': paragraph.event_sessions_list.default
