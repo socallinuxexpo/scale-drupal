@@ -83,8 +83,9 @@
               day: 'Day View'
             },
 
-            // Slot
-            slotMinTime: '08:00:00',
+            // Slot - Use dynamic time range based on actual sessions
+            slotMinTime: settings.schedule.timeRange ? settings.schedule.timeRange.start : '08:00:00',
+            slotMaxTime: settings.schedule.timeRange ? settings.schedule.timeRange.end : '23:59:59',
             slotLabelInterval: '00:30',
             slotLabelFormat: {
               hour: 'numeric',
