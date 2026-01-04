@@ -20,6 +20,44 @@
             end: validRangeEndStr
           };
 
+          // Check for date parameter in URL
+          function getDateFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const dateParam = urlParams.get('date');
+            
+            if (dateParam) {
+              // Validate the date is within our valid range
+              const requestedDate = new Date(dateParam);
+              const startDate = new Date(settings.schedule.range.start);
+              const endDate = new Date(settings.schedule.range.end);
+              
+              if (requestedDate >= startDate && requestedDate <= endDate) {
+                return dateParam;
+              }
+            }
+            
+            return settings.schedule.range.start;
+          }
+
+          // Function to update URL with current date
+          function updateURLWithDate(date) {
+            const url = new URL(window.location);
+            url.searchParams.set('date', date);
+            window.history.replaceState({}, '', url);
+          }
+
+          // Function to generate a shareable link for a specific date
+          function generateShareableLink(date) {
+            const url = new URL(window.location);
+            url.searchParams.set('date', date);
+            return url.toString();
+          }
+
+          // Make the function available globally for external use
+          window.generateCalendarLink = generateShareableLink;
+
+          const initialDate = getDateFromURL();
+
           const calendar = new FullCalendar.Calendar(calendarEl, {
             schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
             // plugins: ['ResourceTimeGrid'],
@@ -30,7 +68,7 @@
             nowIndicator: true,
             displayEventTime: false,
 
-            initialDate: settings.schedule.range.start,
+            initialDate: initialDate,
             validRange: validRange,
 
             // Header Toolbar
@@ -59,6 +97,15 @@
             dayMinWidth: 300,
             resources: settings.schedule.tracks,
             events: settings.schedule.agenda,
+
+            // Update URL when date changes
+            datesSet: function(dateInfo) {
+              // Get the current date being displayed
+              const currentDate = dateInfo.start.toISOString().split('T')[0];
+              
+              // Update URL to reflect current date
+              updateURLWithDate(currentDate);
+            },
 
             // Event output
             eventContent: function(arg) {
