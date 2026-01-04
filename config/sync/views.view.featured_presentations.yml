@@ -259,8 +259,9 @@ display:
           navigation: 1
           pagination: 1
           scrollbar: 0
-          marquee: 0
           loop: 1
+          autoplay: 0
+          autoplayDelay: '3000'
       row:
         type: fields
         options:

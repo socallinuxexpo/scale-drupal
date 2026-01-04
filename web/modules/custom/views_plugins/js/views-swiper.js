@@ -5,18 +5,12 @@
         const instances = drupalSettings.views_plugins.swiper_js;
 
         const initSwiper = (element, options) => {
-          const marquee_options = options.marquee ? {
-            // autoplay: {
-            //   delay: 0,
-            //   // pauseOnMouseEnter: true,
-            //   disableOnInteraction: false,
-            // },
-            loop: true,
-            freeMode: true,
-            // speed: 5000,
-            grabCursor: true,
-            slidesPerView: 'auto',
-          } : {};
+          // Configure autoplay if enabled
+          const autoplay_options = options.autoplay ? {
+            delay: parseInt(options.autoplayDelay) || 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          } : false;
 
           const swiper = new Swiper($(element).find('.swiper')[0], {
             // Optional parameters
@@ -24,6 +18,9 @@
             slidesPerView: 2.5,
             loop: options.loop === 1,
             spaceBetween: options.spaceBetween,
+
+            // Autoplay configuration
+            autoplay: autoplay_options,
 
             breakpoints: {
               // when window width is >= 678px
@@ -50,8 +47,6 @@
             scrollbar: options.scrollbar ? {
               el: '.swiper-scrollbar',
             } : false,
-
-            ...marquee_options,
           });
         };
 

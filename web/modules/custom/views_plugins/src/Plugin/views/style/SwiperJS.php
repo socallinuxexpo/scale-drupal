@@ -44,8 +44,9 @@ class SwiperJS extends StylePluginBase {
     $options['pagination'] = ['default' => FALSE];
     $options['scrollbar'] = ['default' => FALSE];
     $options['spaceBetween'] = ['default' => 0];
-    $options['marquee'] = ['default' => FALSE];
     $options['loop'] = ['default' => FALSE];
+    $options['autoplay'] = ['default' => FALSE];
+    $options['autoplayDelay'] = ['default' => 3000];
     return $options;
   }
 
@@ -84,17 +85,28 @@ class SwiperJS extends StylePluginBase {
       '#type' => 'checkbox',
       '#default_value' => $this->options['scrollbar'],
     ];
-    $form['marquee'] = [
-      '#title' => $this->t('Marquee-style'),
-      '#description' => $this->t('Enable the Swiper to scroll, continuously, like a marquee.'),
-      '#type' => 'checkbox',
-      '#default_value' => $this->options['marquee'],
-    ];
     $form['loop'] = [
       '#title' => $this->t('Loop'),
       '#description' => $this->t('Enable loop for the SwiperJS slider.'),
       '#type' => 'checkbox',
       '#default_value' => $this->options['loop'],
+    ];
+    $form['autoplay'] = [
+      '#title' => $this->t('Enable Autoplay'),
+      '#description' => $this->t('Enable autoplay for the SwiperJS slider.'),
+      '#type' => 'checkbox',
+      '#default_value' => $this->options['autoplay'],
+    ];
+    $form['autoplayDelay'] = [
+      '#title' => $this->t('Autoplay Delay'),
+      '#description' => $this->t('Delay between transitions in milliseconds (only applies when autoplay is enabled).'),
+      '#type' => 'textfield',
+      '#default_value' => $this->options['autoplayDelay'],
+      '#states' => [
+        'visible' => [
+          ':input[name="style_options[autoplay]"]' => ['checked' => TRUE],
+        ],
+      ],
     ];
   }
 
@@ -121,8 +133,9 @@ class SwiperJS extends StylePluginBase {
         'pagination' => $this->options['pagination'],
         'scrollbar' => $this->options['scrollbar'],
         'spaceBetween' => $this->options['spaceBetween'],
-        'marquee' => $this->options['marquee'],
         'loop' => $this->options['loop'],
+        'autoplay' => $this->options['autoplay'],
+        'autoplayDelay' => $this->options['autoplayDelay'],
       ]
     ];
 
