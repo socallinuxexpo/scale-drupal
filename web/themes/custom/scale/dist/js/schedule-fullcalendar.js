@@ -10,6 +10,54 @@
 
         if (calendarEl) {
 
+          // Ensure the end date is inclusive by adding one day
+          const validRangeEnd = new Date(settings.schedule.range.end);
+          validRangeEnd.setDate(validRangeEnd.getDate() + 1);
+          const validRangeEndStr = validRangeEnd.toISOString().split('T')[0];
+
+          const validRange = {
+            start: settings.schedule.range.start,
+            end: validRangeEndStr
+          };
+
+          // Check for date parameter in URL
+          function getDateFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const dateParam = urlParams.get('date');
+            
+            if (dateParam) {
+              // Validate the date is within our valid range
+              const requestedDate = new Date(dateParam);
+              const startDate = new Date(settings.schedule.range.start);
+              const endDate = new Date(settings.schedule.range.end);
+              
+              if (requestedDate >= startDate && requestedDate <= endDate) {
+                return dateParam;
+              }
+            }
+            
+            return settings.schedule.range.start;
+          }
+
+          // Function to update URL with current date
+          function updateURLWithDate(date) {
+            const url = new URL(window.location);
+            url.searchParams.set('date', date);
+            window.history.replaceState({}, '', url);
+          }
+
+          // Function to generate a shareable link for a specific date
+          function generateShareableLink(date) {
+            const url = new URL(window.location);
+            url.searchParams.set('date', date);
+            return url.toString();
+          }
+
+          // Make the function available globally for external use
+          window.generateCalendarLink = generateShareableLink;
+
+          const initialDate = getDateFromURL();
+
           const calendar = new FullCalendar.Calendar(calendarEl, {
             schedulerLicenseKey: 'CC-Attribution-NonCommercial-NoDerivatives',
             // plugins: ['ResourceTimeGrid'],
@@ -20,26 +68,11 @@
             nowIndicator: true,
             displayEventTime: false,
 
-            classNames: ['text-sm'],
-
-            initialDate: settings.schedule.range.start,
-            visibleRange: settings.schedule.range,
-            // visibleRange: {
-            //   start: settings.schedule.range.start,
-            //   end: settings.schedule.range.end
-            // }
+            initialDate: initialDate,
+            validRange: validRange,
 
             // Header Toolbar
-            // customButtons: {
-            //   myCustomButton: {
-            //     text: 'Custom Button',
-            //     click: function() {
-            //       alert('Custom button clicked!');
-            //     }
-            //   }
-            // },
             headerToolbar: {
-              // left: 'prev,next myCustomButton',
               left: 'prev,next',
               center: 'title',
               right: 'resourceTimeGridDay,resourceTimeline,listWeek'
@@ -51,9 +84,6 @@
             },
 
             // Slot
-            // eventMinHeight: 300,
-            // eventShortHeight: 80,
-            slotHeight: 300,
             slotMinTime: '08:00:00',
             slotLabelInterval: '00:30',
             slotLabelFormat: {
@@ -67,6 +97,15 @@
             dayMinWidth: 300,
             resources: settings.schedule.tracks,
             events: settings.schedule.agenda,
+
+            // Update URL when date changes
+            datesSet: function(dateInfo) {
+              // Get the current date being displayed
+              const currentDate = dateInfo.start.toISOString().split('T')[0];
+              
+              // Update URL to reflect current date
+              updateURLWithDate(currentDate);
+            },
 
             // Event output
             eventContent: function(arg) {
