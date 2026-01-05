@@ -2,7 +2,7 @@
 
 
 {% block hero__bottom %}
-  {% if moderation_state_label %}
+  {% if moderation_state_label and user.hasPermission('view any unpublished content') %}
     <div class="mb-5">
       <span class="text-sm bg-blue-50 text-blue-500 py-1 px-3 font-body rounded">
         {{ moderation_state_label }}
