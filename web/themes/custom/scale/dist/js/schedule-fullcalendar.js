@@ -10,32 +10,30 @@
 
         if (calendarEl) {
 
-          // Ensure the end date is inclusive by adding one day
-          const validRangeEnd = new Date(settings.schedule.range.end);
-          validRangeEnd.setDate(validRangeEnd.getDate() + 1);
-          const validRangeEndStr = validRangeEnd.toISOString().split('T')[0];
+          // Ensure the end date is inclusive by setting to end of day
+          const validRangeEnd = new Date(settings.schedule.range.end + 'T23:59:59');
 
           const validRange = {
             start: settings.schedule.range.start,
-            end: validRangeEndStr
+            end: validRangeEnd
           };
 
           // Check for date parameter in URL
           function getDateFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
             const dateParam = urlParams.get('date');
-            
+
             if (dateParam) {
               // Validate the date is within our valid range
               const requestedDate = new Date(dateParam);
               const startDate = new Date(settings.schedule.range.start);
               const endDate = new Date(settings.schedule.range.end);
-              
+
               if (requestedDate >= startDate && requestedDate <= endDate) {
                 return dateParam;
               }
             }
-            
+
             return settings.schedule.range.start;
           }
 
@@ -70,6 +68,16 @@
 
             initialDate: initialDate,
             validRange: validRange,
+            weekends: true,
+            hiddenDays: [],
+
+            // Debug: Log the valid range to console
+            viewDidMount: function(info) {
+              console.log('FullCalendar validRange:', validRange);
+              console.log('Current view:', info.view.type);
+              console.log('View start:', info.view.currentStart);
+              console.log('View end:', info.view.currentEnd);
+            },
 
             // Header Toolbar
             headerToolbar: {
