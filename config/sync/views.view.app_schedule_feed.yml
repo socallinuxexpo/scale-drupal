@@ -1365,7 +1365,7 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
@@ -1430,10 +1430,10 @@ display:
               raw_output: false
             field_short_abstract:
               alias: ShortAbstract
-              raw_output: true
+              raw_output: false
             field_long_abstract:
               alias: LongAbstract
-              raw_output: true
+              raw_output: false
       defaults:
         fields: false
       display_extenders: {  }
