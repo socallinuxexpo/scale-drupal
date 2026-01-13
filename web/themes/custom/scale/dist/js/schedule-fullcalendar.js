@@ -61,7 +61,7 @@
             // plugins: ['ResourceTimeGrid'],
             initialView: 'resourceTimeGridDay',
             filterResourcesWithEvents: true,
-            height: '100%',
+            height: 'auto',
             expandRows: true,
             nowIndicator: true,
             displayEventTime: false,
