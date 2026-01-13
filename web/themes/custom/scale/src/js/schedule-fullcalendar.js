@@ -71,14 +71,6 @@
             weekends: true,
             hiddenDays: [],
 
-            // Debug: Log the valid range to console
-            viewDidMount: function(info) {
-              console.log('FullCalendar validRange:', validRange);
-              console.log('Current view:', info.view.type);
-              console.log('View start:', info.view.currentStart);
-              console.log('View end:', info.view.currentEnd);
-            },
-
             // Header Toolbar
             headerToolbar: {
               left: 'prev,next',
@@ -103,9 +95,14 @@
             },
 
             dayMaxEvents: true,
-            dayMinWidth: 300,
+            dayMinWidth: 100,
             resources: settings.schedule.tracks,
             events: settings.schedule.agenda,
+
+            // eventMinHeight: 90,
+            // eventShortHeight: 90,
+            slotMinHeight: 100,
+            // contentHeight: 'auto',
 
             // Update URL when date changes
             datesSet: function(dateInfo) {
@@ -116,18 +113,68 @@
               updateURLWithDate(currentDate);
             },
 
-            // Event output
+            // Event output - view-specific content
             eventContent: function(arg) {
               let customHtml = document.createElement('div');
-              customHtml.innerHTML = `
-                <div class="p-2">
-                  <div class="text-xs">${arg.event.extendedProps.range_str}</div>
-                  <div class="font-semibold">${arg.event.extendedProps.speakers}</div>
-                  <div class="">
-                    <a href="${arg.event.extendedProps.url}" class="text-inherit hover:text-inherit hover:underline">${arg.event.title}</a>
-                  </div>
-                </div>
-              `;
+              const viewType = arg.view.type;
+              
+              // Different content based on view type
+              switch(viewType) {
+                case 'resourceTimeGridDay':
+                  // Compact vertical layout for day view
+                  customHtml.innerHTML = `
+                    <div class="p-2">
+                      <div class="text-xs">${arg.event.extendedProps.range_str}</div>
+                      <a href="${arg.event.extendedProps.url}" class="inline-block text-inherit hover:text-inherit hover:underline flex gap-1">
+                        <div class="font-semibold text-sm">${arg.event.extendedProps.speakers}</div>
+                        <div>|</div>
+                        <div class="text-sm">
+                          ${arg.event.title}
+                        </div>
+                      </a>
+                    </div>
+                  `;
+                  break;
+                  
+                // case 'resourceTimeline':
+                //   // Horizontal layout for timeline view - time is already shown on timeline
+                //   customHtml.innerHTML = `
+                //     <div class="p-2 flex flex-col h-full justify-center">
+                //       <div class="text-xs">${arg.event.extendedProps.range_str}</div>
+                //       <div class="font-semibold text-sm mb-1">${arg.event.extendedProps.speakers}</div>
+                //       <div class="text-sm leading-tight">
+                //         <a href="${arg.event.extendedProps.url}" class="text-inherit hover:text-inherit hover:underline">${arg.event.title}</a>
+                //       </div>
+                //     </div>
+                //   `;
+                //   break;
+                //
+                // case 'listWeek':
+                //   // Minimal layout for list view - list already shows time and date
+                //   customHtml.innerHTML = `
+                //     <div class="">
+                //       <div class="text-xs">${arg.event.extendedProps.range_str}</div>
+                //       <div class="font-semibold">${arg.event.extendedProps.speakers}</div>
+                //       <div class="flex-1">
+                //         <a href="${arg.event.extendedProps.url}" class="text-inherit hover:text-inherit hover:underline">${arg.event.title}</a>
+                //       </div>
+                //     </div>
+                //   `;
+                //   break;
+                  
+                default:
+                  // Fallback to original layout
+                  customHtml.innerHTML = `
+                    <div class="p-2 flex flex-col h-full justify-center">
+                      <div class="text-xs">${arg.event.extendedProps.range_str}</div>
+                      <div class="font-semibold text-sm mb-1">${arg.event.extendedProps.speakers}</div>
+                      <div class="text-sm leading-tight">
+                        <a href="${arg.event.extendedProps.url}" class="text-inherit hover:text-inherit hover:underline">${arg.event.title}</a>
+                      </div>
+                    </div>
+                  `;
+              }
+              
               return { domNodes: [customHtml] };
             }
           });
