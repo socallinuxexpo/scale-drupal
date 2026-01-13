@@ -18,6 +18,12 @@
             end: validRangeEnd
           };
 
+          // Determine minHeight based on number of timeRange slots
+          // Each slot is 30 minutes and each event is 73px tall
+          const timeSlots = settings.schedule.timeRange ? settings.schedule.timeRange.slots : 32;
+          const calendarHeight = timeSlots * 45;
+
+
           // Check for date parameter in URL
           function getDateFromURL() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -61,10 +67,14 @@
             // plugins: ['ResourceTimeGrid'],
             initialView: 'resourceTimeGridDay',
             filterResourcesWithEvents: true,
-            height: 'auto',
             expandRows: true,
             nowIndicator: true,
             displayEventTime: false,
+            height: calendarHeight,
+            // eventMinHeight: 90,
+            // eventShortHeight: 90,
+            // slotMinHeight: 100,
+            // contentHeight: 'auto',
 
             initialDate: initialDate,
             validRange: validRange,
@@ -99,11 +109,6 @@
             resources: settings.schedule.tracks,
             events: settings.schedule.agenda,
 
-            // eventMinHeight: 90,
-            // eventShortHeight: 90,
-            slotMinHeight: 100,
-            // contentHeight: 'auto',
-
             // Update URL when date changes
             datesSet: function(dateInfo) {
               // Get the current date being displayed
@@ -120,22 +125,21 @@
               
               // Different content based on view type
               switch(viewType) {
-                case 'resourceTimeGridDay':
-                  // Compact vertical layout for day view
-                  customHtml.innerHTML = `
-                    <div class="p-2">
-                      <div class="text-xs">${arg.event.extendedProps.range_str}</div>
-                      <a href="${arg.event.extendedProps.url}" class="inline-block text-inherit hover:text-inherit hover:underline flex gap-1">
-                        <div class="font-semibold text-sm">${arg.event.extendedProps.speakers}</div>
-                        <div>|</div>
-                        <div class="text-sm">
-                          ${arg.event.title}
-                        </div>
-                      </a>
-                    </div>
-                  `;
-                  break;
-                  
+                // case 'resourceTimeGridDay':
+                //   // Compact vertical layout for day view
+                //   customHtml.innerHTML = `
+                //     <div class="p-2">
+                //       <div class="text-xs">${arg.event.extendedProps.range_str}</div>
+                //       <a href="${arg.event.extendedProps.url}" class="inline-block text-inherit hover:text-inherit hover:underline flex gap-1">
+                //         <div class="font-semibold text-sm">${arg.event.extendedProps.speakers}</div>
+                //         <div>|</div>
+                //         <div class="text-sm">
+                //           ${arg.event.title}
+                //         </div>
+                //       </a>
+                //     </div>
+                //   `;
+                //   break;
                 // case 'resourceTimeline':
                 //   // Horizontal layout for timeline view - time is already shown on timeline
                 //   customHtml.innerHTML = `

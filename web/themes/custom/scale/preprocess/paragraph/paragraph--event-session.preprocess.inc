@@ -124,6 +124,19 @@ function scale_preprocess_paragraph__event_sessions(&$variables) {
     }
   }
 
+  // Calculate the number of 30-minute time slots
+  $time_slots = 0;
+  if (!empty($earliest_start_time) && !empty($latest_end_time)) {
+    $start_timestamp = strtotime($earliest_start_time);
+    $end_timestamp = strtotime($latest_end_time);
+    
+    // Calculate difference in minutes
+    $time_difference_minutes = ($end_timestamp - $start_timestamp) / 60;
+    
+    // Calculate number of 30-minute slots
+    $time_slots = ceil($time_difference_minutes / 30);
+  }
+
   $variables['#attached']['drupalSettings']['schedule']['tracks'] = $tracks;
   $variables['#attached']['drupalSettings']['schedule']['agenda'] = $agenda;
   $variables['#attached']['drupalSettings']['schedule']['range'] = [
@@ -133,5 +146,6 @@ function scale_preprocess_paragraph__event_sessions(&$variables) {
   $variables['#attached']['drupalSettings']['schedule']['timeRange'] = [
     'start' => $earliest_start_time,
     'end' => $latest_end_time,
+    'slots' => $time_slots,
   ];
 }
