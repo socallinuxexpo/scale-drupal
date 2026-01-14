@@ -41,3 +41,22 @@ body {
   }
 }
 
+/* Pager: align items horizontally */
+.pager__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+/* remove default list spacing */
+.pager__item {
+  margin: 0;
+}
+
+.pager__item.is-active a {
+  font-weight: 700;
+}
