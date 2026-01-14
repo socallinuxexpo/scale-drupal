@@ -1,6 +1,6 @@
 uuid: ab1d1a8d-c9e7-4eab-8c63-db97bdd256bd
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - field.storage.node.field_long_abstract
