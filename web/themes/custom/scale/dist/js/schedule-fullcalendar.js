@@ -15,14 +15,29 @@
 
           const validRange = {
             start: settings.schedule.range.start,
-            end: validRangeEnd
+            end: validRangeEnd,
           };
 
           // Determine minHeight based on number of timeRange slots
           // Each slot is 30 minutes and each event is 73px tall
           const timeSlots = settings.schedule.timeRange ? settings.schedule.timeRange.slots : 32;
-          const calendarHeight = timeSlots * 45;
+          const dayViewHeight = timeSlots * 100;
+          console.log('Calculated calendar height:', dayViewHeight);
 
+          // Calculate width for Full Schedule view based on number of tracks/resources
+          const uniqueTracks = new Set();
+          if (settings.schedule.tracks) {
+            settings.schedule.tracks.forEach(track => {
+              if (track && typeof track.id !== 'undefined' && track.id !== null && track.id !== '') {
+                uniqueTracks.add(track.id);
+              }
+            });
+          }
+          console.log('Unique tracks:', Array.from(uniqueTracks));
+          // const numberOfTracks = settings.schedule.tracks ? settings.schedule.tracks.length : 8;
+          const numberOfTracks = uniqueTracks ? uniqueTracks.length : 8;
+          console.log('Number of tracks:', numberOfTracks);
+          const timelineWidth = Math.max(numberOfTracks * 50, 50); // Minimum 1200px, 150px per track
 
           // Check for date parameter in URL
           function getDateFromURL() {
@@ -70,7 +85,9 @@
             expandRows: true,
             nowIndicator: true,
             displayEventTime: false,
-            height: calendarHeight,
+            // height: dayViewHeight,
+            height: 'auto',
+            // height: '100%',
             // eventMinHeight: 90,
             // eventShortHeight: 90,
             // slotMinHeight: 100,
@@ -85,12 +102,12 @@
             headerToolbar: {
               left: 'prev,next',
               center: 'title',
-              right: 'resourceTimeGridDay,resourceTimeline,listWeek'
+              right: 'resourceTimeGridDay,resourceTimeline,listWeek',
             },
             buttonText: {
               resourceTimeline: 'Full Schedule',
               listWeek: 'List View',
-              day: 'Day View'
+              day: 'Day View',
             },
 
             // Slot - Use dynamic time range based on actual sessions
@@ -101,7 +118,7 @@
               hour: 'numeric',
               minute: '2-digit',
               omitZeroMinute: false,
-              meridiem: 'short'
+              meridiem: 'short',
             },
 
             dayMaxEvents: true,
@@ -109,22 +126,46 @@
             resources: settings.schedule.tracks,
             events: settings.schedule.agenda,
 
+            // View-specific options
+            views: {
+              resourceTimeGridDay: {
+                // height: dayViewHeight
+              },
+              resourceTimeline: {
+                slotMinWidth: 120, // Minimum width for each time slot
+                resourceAreaWidth: '20%', // Width of the resource area (track names)
+                contentHeight: 'auto',
+                aspectRatio: null, // Allow custom width control
+              },
+            },
+
             // Update URL when date changes
-            datesSet: function(dateInfo) {
+            datesSet: function (dateInfo) {
               // Get the current date being displayed
               const currentDate = dateInfo.start.toISOString().split('T')[0];
-              
+
               // Update URL to reflect current date
               updateURLWithDate(currentDate);
             },
 
+            // Apply dynamic dimensions when switching to views
+            viewDidMount: function (info) {
+              if (info.view.type === 'resourceTimeline') {
+                calendar.setOption('height', 'auto');
+              } else if (info.view.type === 'resourceTimeGridDay') {
+                calendar.setOption('height', dayViewHeight);
+              } else {
+                calendar.setOption('height', 'auto');
+              }
+            },
+
             // Event output - view-specific content
-            eventContent: function(arg) {
+            eventContent: function (arg) {
               let customHtml = document.createElement('div');
               const viewType = arg.view.type;
-              
+
               // Different content based on view type
-              switch(viewType) {
+              switch (viewType) {
                 // case 'resourceTimeGridDay':
                 //   // Compact vertical layout for day view
                 //   customHtml.innerHTML = `
@@ -140,47 +181,48 @@
                 //     </div>
                 //   `;
                 //   break;
-                // case 'resourceTimeline':
-                //   // Horizontal layout for timeline view - time is already shown on timeline
-                //   customHtml.innerHTML = `
-                //     <div class="p-2 flex flex-col h-full justify-center">
-                //       <div class="text-xs">${arg.event.extendedProps.range_str}</div>
-                //       <div class="font-semibold text-sm mb-1">${arg.event.extendedProps.speakers}</div>
-                //       <div class="text-sm leading-tight">
-                //         <a href="${arg.event.extendedProps.url}" class="text-inherit hover:text-inherit hover:underline">${arg.event.title}</a>
-                //       </div>
-                //     </div>
-                //   `;
-                //   break;
-                //
-                // case 'listWeek':
-                //   // Minimal layout for list view - list already shows time and date
-                //   customHtml.innerHTML = `
-                //     <div class="">
-                //       <div class="text-xs">${arg.event.extendedProps.range_str}</div>
-                //       <div class="font-semibold">${arg.event.extendedProps.speakers}</div>
-                //       <div class="flex-1">
-                //         <a href="${arg.event.extendedProps.url}" class="text-inherit hover:text-inherit hover:underline">${arg.event.title}</a>
-                //       </div>
-                //     </div>
-                //   `;
-                //   break;
-                  
+                case 'resourceTimeline':
+                  // Horizontal layout for timeline view - time is already shown on timeline
+                  customHtml.innerHTML = `
+                    <a 
+                      href="${arg.event.extendedProps.url}" 
+                      class="text-inherit hover:text-inherit hover:underline p-1 flex flex-col h-full justify-center overflow-hidden"
+                    >
+                      <div class="text-sm leading-tight">${arg.event.title}</div>
+                      <div class="font-semibold text-sm mb-1">${arg.event.extendedProps.speakers}</div>
+                    </a>
+                  `;
+                  break;
+
+                case 'listWeek':
+                  // Minimal layout for list view - list already shows time and date
+                  customHtml.innerHTML = `
+                    <a 
+                      href="${arg.event.extendedProps.url}" 
+                      class="text-inherit hover:text-inherit hover:underline p-1 flex flex-col h-full justify-center overflow-hidden"
+                    >
+                      <div class="text-xs">${arg.event.extendedProps.range_str}</div>
+                      <div class="text-sm leading-tight">${arg.event.title}</div>
+                      <div class="font-semibold text-sm mb-1">${arg.event.extendedProps.speakers}</div>
+                    </a>
+                  `;
+                  break;
+
                 default:
                   // Fallback to original layout
                   customHtml.innerHTML = `
-                    <div class="p-2 flex flex-col h-full justify-center">
-                      <div class="text-xs">${arg.event.extendedProps.range_str}</div>
-                      <div class="font-semibold text-sm mb-1">${arg.event.extendedProps.speakers}</div>
-                      <div class="text-sm leading-tight">
-                        <a href="${arg.event.extendedProps.url}" class="text-inherit hover:text-inherit hover:underline">${arg.event.title}</a>
-                      </div>
-                    </div>
+                    <a 
+                      href="${arg.event.extendedProps.url}" 
+                      class="text-inherit hover:text-inherit hover:underline p-1 flex flex-col h-full justify-center overflow-hidden"
+                    >
+                      <div class="text-xs leading-tight">${arg.event.title}</div>
+                      <div class="font-semibold text-xs mb-1">${arg.event.extendedProps.speakers}</div>
+                    </a>
                   `;
               }
-              
+
               return { domNodes: [customHtml] };
-            }
+            },
           });
           calendar.render();
 
