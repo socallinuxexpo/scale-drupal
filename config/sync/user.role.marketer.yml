@@ -1,0 +1,24 @@
+uuid: 7c88b12c-09f6-4ddd-a5d8-2a34015d8f1a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.article
+    - node.type.special_event
+    - taxonomy.vocabulary.article_tags
+  module:
+    - node
+    - taxonomy
+id: marketer
+label: Marketer
+weight: 4
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access taxonomy overview'
+  - 'create article content'
+  - 'create special_event content'
+  - 'create terms in article_tags'
+  - 'edit own article content'
+  - 'edit own special_event content'
+  - 'edit terms in article_tags'

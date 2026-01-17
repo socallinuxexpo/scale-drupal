@@ -1,0 +1,14 @@
+uuid: 16a8e442-b3c3-41d5-9fac-f5cd3a9842ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.marketer
+  module:
+    - user
+id: user_remove_role_action.marketer
+label: 'Remove the Marketer role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: marketer

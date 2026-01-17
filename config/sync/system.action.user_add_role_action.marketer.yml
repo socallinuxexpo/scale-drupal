@@ -1,0 +1,14 @@
+uuid: 68989012-6985-4da4-9a78-c6b99770520c
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.marketer
+  module:
+    - user
+id: user_add_role_action.marketer
+label: 'Add the Marketer role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: marketer
