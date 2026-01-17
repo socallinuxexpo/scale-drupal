@@ -1,0 +1,8 @@
+name: 'Session Enhancements'
+type: module
+description: 'Enhances the session time slot field with smart defaults and auto-population'
+core_version_requirement: ^10
+package: 'SCALE'
+dependencies:
+  - drupal:node
+  - datetime_range:datetime_range

@@ -1,0 +1,9 @@
+session_enhancements:
+  version: 1.x
+  js:
+    js/session_enhancements.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/once

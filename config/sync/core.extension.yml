@@ -75,6 +75,7 @@ module:
   sdc: 0
   search: 0
   serialization: 0
+  session_enhancements: 0
   sessions: 0
   shortcut: 0
   smtp: 0

@@ -1,0 +1,246 @@
+<?php
+
+/**
+ * @file
+ * Session Enhancements module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function session_enhancements_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  // Only alter session node forms.
+  if (!in_array($form_id, ['node_session_form', 'node_session_edit_form'])) {
+    return;
+  }
+
+  // Check if the time slot field exists.
+  if (!isset($form['field_time_slot'])) {
+    return;
+  }
+
+  // Set date constraints based on event selection.
+  $node = $form_state->getFormObject()->getEntity();
+  if ($node instanceof NodeInterface) {
+    _session_enhancements_set_date_constraints($form, $node);
+  }
+
+  // Add a process callback to ensure attributes are set correctly.
+  if (isset($form['field_time_slot']['widget'][0])) {
+    $form['field_time_slot']['widget'][0]['#process'][] = 'session_enhancements_datetime_process';
+  }
+
+  // Add AJAX callback for event field changes.
+  if (isset($form['field_scale_event']['widget'][0]['target_id'])) {
+    $form['field_scale_event']['widget'][0]['target_id']['#ajax'] = [
+      'callback' => 'session_enhancements_event_ajax_callback',
+      'wrapper' => 'field-time-slot-wrapper',
+      'event' => 'change',
+    ];
+  }
+
+  // Add wrapper for AJAX updates.
+  if (isset($form['field_time_slot'])) {
+    $form['field_time_slot']['#prefix'] = '<div id="field-time-slot-wrapper">';
+    $form['field_time_slot']['#suffix'] = '</div>';
+  }
+
+  // Remove seconds from time fields.
+  _session_enhancements_remove_seconds($form);
+  
+  // Add JavaScript library for auto-population functionality.
+  $form['#attached']['library'][] = 'session_enhancements/session_enhancements';
+}
+
+/**
+ * AJAX callback for event field changes.
+ */
+function session_enhancements_event_ajax_callback($form, FormStateInterface $form_state) {
+  // Get the selected event ID.
+  $event_values = $form_state->getValue('field_scale_event');
+  $event_id = !empty($event_values[0]['target_id']) ? $event_values[0]['target_id'] : NULL;
+  
+  if ($event_id) {
+    // Apply date constraints based on the selected event.
+    $node = $form_state->getFormObject()->getEntity();
+    $node->set('field_scale_event', $event_id);
+    _session_enhancements_set_date_constraints($form, $node);
+  }
+  
+  return $form['field_time_slot'];
+}
+
+/**
+ * Set date constraints based on the event's date range.
+ */
+function _session_enhancements_set_date_constraints(&$form, NodeInterface $node) {
+  $event_id = $node->get('field_scale_event')->target_id;
+  if (!$event_id) {
+    return;
+  }
+
+  // Load the event node.
+  $event = \Drupal::entityTypeManager()->getStorage('node')->load($event_id);
+  if (!$event || !$event->hasField('field_event_date')) {
+    return;
+  }
+
+  $event_date_field = $event->get('field_event_date');
+  if ($event_date_field->isEmpty()) {
+    return;
+  }
+
+  // Get the event date range.
+  $event_start_date = $event_date_field->value;
+  $event_end_date = $event_date_field->end_value;
+  
+  if (!$event_start_date) {
+    return;
+  }
+
+  // Convert to date strings for HTML5 date inputs.
+  $start_date = new \DateTime($event_start_date);
+  $end_date = $event_end_date ? new \DateTime($event_end_date) : $start_date;
+  
+  $min_date = $start_date->format('Y-m-d');
+  $max_date = $end_date->format('Y-m-d');
+
+  // Set min/max constraints on date fields.
+  // For datetime range widgets, we need to target the date subfield specifically.
+  if (isset($form['field_time_slot']['widget'][0]['value']['#date_date_element'])) {
+    $form['field_time_slot']['widget'][0]['value']['#date_date_element'] = 'date';
+    $form['field_time_slot']['widget'][0]['value']['#date_date_format'] = 'Y-m-d';
+    if (!isset($form['field_time_slot']['widget'][0]['value']['#attributes'])) {
+      $form['field_time_slot']['widget'][0]['value']['#attributes'] = [];
+    }
+    $form['field_time_slot']['widget'][0]['value']['#attributes']['min'] = $min_date;
+    $form['field_time_slot']['widget'][0]['value']['#attributes']['max'] = $max_date;
+  }
+  
+  if (isset($form['field_time_slot']['widget'][0]['end_value']['#date_date_element'])) {
+    $form['field_time_slot']['widget'][0]['end_value']['#date_date_element'] = 'date';
+    $form['field_time_slot']['widget'][0]['end_value']['#date_date_format'] = 'Y-m-d';
+    if (!isset($form['field_time_slot']['widget'][0]['end_value']['#attributes'])) {
+      $form['field_time_slot']['widget'][0]['end_value']['#attributes'] = [];
+    }
+    $form['field_time_slot']['widget'][0]['end_value']['#attributes']['min'] = $min_date;
+    $form['field_time_slot']['widget'][0]['end_value']['#attributes']['max'] = $max_date;
+  }
+
+  // Also add debugging to see what we're setting.
+  \Drupal::logger('session_enhancements')->info('Setting date constraints: min=@min, max=@max for event @event', [
+    '@min' => $min_date,
+    '@max' => $max_date,
+    '@event' => $event_id,
+  ]);
+}
+
+/**
+ * Process callback for datetime fields to set date constraints.
+ */
+function session_enhancements_datetime_process($element, FormStateInterface $form_state, $form) {
+  // Get the node from the form state.
+  $node = $form_state->getFormObject()->getEntity();
+  if (!$node instanceof NodeInterface) {
+    return $element;
+  }
+
+  $event_id = $node->get('field_scale_event')->target_id;
+  if (!$event_id) {
+    return $element;
+  }
+
+  // Load the event node.
+  $event = \Drupal::entityTypeManager()->getStorage('node')->load($event_id);
+  if (!$event || !$event->hasField('field_event_date')) {
+    return $element;
+  }
+
+  $event_date_field = $event->get('field_event_date');
+  if ($event_date_field->isEmpty()) {
+    return $element;
+  }
+
+  // Get the event date range.
+  $event_start_date = $event_date_field->value;
+  $event_end_date = $event_date_field->end_value;
+  
+  if (!$event_start_date) {
+    return $element;
+  }
+
+  // Convert to date strings for HTML5 date inputs.
+  $start_date = new \DateTime($event_start_date);
+  $end_date = $event_end_date ? new \DateTime($event_end_date) : $start_date;
+  
+  $min_date = $start_date->format('Y-m-d');
+  $max_date = $end_date->format('Y-m-d');
+
+  // Set constraints on the date inputs.
+  if (isset($element['value']['date'])) {
+    $element['value']['date']['#attributes']['min'] = $min_date;
+    $element['value']['date']['#attributes']['max'] = $max_date;
+  }
+  
+  if (isset($element['end_value']['date'])) {
+    $element['end_value']['date']['#attributes']['min'] = $min_date;
+    $element['end_value']['date']['#attributes']['max'] = $max_date;
+  }
+
+  // Set step attribute and format for time inputs to remove seconds.
+  if (isset($element['value']['time'])) {
+    $element['value']['time']['#attributes']['step'] = 60;
+    $element['value']['time']['#date_time_format'] = 'H:i';
+    $element['value']['time']['#date_time_element'] = 'time';
+  }
+  
+  if (isset($element['end_value']['time'])) {
+    $element['end_value']['time']['#attributes']['step'] = 60;
+    $element['end_value']['time']['#date_time_format'] = 'H:i';
+    $element['end_value']['time']['#date_time_element'] = 'time';
+  }
+
+  // Also set the main element time format.
+  if (isset($element['value'])) {
+    $element['value']['#date_time_format'] = 'H:i';
+  }
+  
+  if (isset($element['end_value'])) {
+    $element['end_value']['#date_time_format'] = 'H:i';
+  }
+
+  return $element;
+}
+
+/**
+ * Remove seconds from time input fields.
+ */
+function _session_enhancements_remove_seconds(&$form) {
+  // Try setting the time format at multiple levels.
+  if (isset($form['field_time_slot']['widget'][0]['value'])) {
+    $form['field_time_slot']['widget'][0]['value']['#date_time_format'] = 'H:i';
+    $form['field_time_slot']['widget'][0]['value']['#date_time_element'] = 'time';
+    $form['field_time_slot']['widget'][0]['value']['#date_increment'] = 60;
+  }
+  if (isset($form['field_time_slot']['widget'][0]['end_value'])) {
+    $form['field_time_slot']['widget'][0]['end_value']['#date_time_format'] = 'H:i';
+    $form['field_time_slot']['widget'][0]['end_value']['#date_time_element'] = 'time';
+    $form['field_time_slot']['widget'][0]['end_value']['#date_increment'] = 60;
+  }
+  
+  // Set at the widget level.
+  if (isset($form['field_time_slot']['widget'][0])) {
+    $form['field_time_slot']['widget'][0]['#date_time_format'] = 'H:i';
+    $form['field_time_slot']['widget'][0]['#date_increment'] = 60;
+  }
+  
+  // Try setting at the field level.
+  if (isset($form['field_time_slot'])) {
+    $form['field_time_slot']['#date_time_format'] = 'H:i';
+    $form['field_time_slot']['#date_increment'] = 60;
+  }
+}
