@@ -1,0 +1,10 @@
+services:
+  session_enhancements.view_mode_page_access_checker:
+    class: Drupal\session_enhancements\Access\ViewModePageAccessChecker
+    tags:
+      - { name: access_check, applies_to: _view_mode_page_access }
+
+  session_enhancements.route_subscriber:
+    class: Drupal\session_enhancements\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

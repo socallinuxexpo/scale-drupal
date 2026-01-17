@@ -6,3 +6,4 @@ package: 'SCALE'
 dependencies:
   - drupal:node
   - datetime_range:datetime_range
+  - view_mode_page:view_mode_page
