@@ -30,18 +30,25 @@ function scale_preprocess_paragraph__event_sponsors(&$variables) {
 
   if ($layout === 'grouped_grid') {
     // Get events by sponsor tier
-
-    // TODO: Write a Service to get this
     $vocabulary = 'sponsor_tier';
 
-    // Build the entity query to fetch term IDs from the specified vocabulary.
+     // Build the entity query to fetch term IDs from the specified vocabulary.
     $query = \Drupal::entityQuery('taxonomy_term')
       ->accessCheck(TRUE)
-      ->condition('vid', $vocabulary);
+      ->condition('vid', $vocabulary)
+      ->sort('weight', 'ASC');
 
     // Execute the query to get the term IDs.
     $term_ids = $query->execute();
     $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($term_ids);
+
+    // Reorder terms to match the query order
+    $ordered_terms = [];
+    foreach ($term_ids as $tid) {
+      if (isset($terms[$tid])) {
+        $ordered_terms[$tid] = $terms[$tid];
+      }
+    }
 
     foreach ($terms as $term) {
       // Build the entity query to fetch Sponsor nodes.
