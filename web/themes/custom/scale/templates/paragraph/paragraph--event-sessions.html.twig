@@ -2,6 +2,9 @@
 
 {% embed 'scale:container' %}
   {% block content %}
+    <div class="schedule-legend mb-8">
+      {{ drupal_view('schedule_track_legend', 'legend', event.id) }}
+    </div>
     <div class="mb-8">
       <div class="fullCalendar"></div>
     </div>

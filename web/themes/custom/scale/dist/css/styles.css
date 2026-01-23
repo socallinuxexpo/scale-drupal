@@ -1059,9 +1059,6 @@ ul.menu .menu__item:has(.is-active):before {
 .max-w-3xl {
   max-width: 48rem;
 }
-.flex-1 {
-  flex: 1 1 0%;
-}
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -1759,6 +1756,17 @@ table td {
   padding-right: 0.5rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.schedule-legend .view-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.schedule-legend .views-row {
+  display: flex;
+  gap: 0.5rem;
 }
 
 body {
