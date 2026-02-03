@@ -1319,6 +1319,10 @@ display:
           text: view
           output_url_as_text: true
           absolute: false
+      pager:
+        type: none
+        options:
+          offset: 0
       style:
         type: serializer
         options:
