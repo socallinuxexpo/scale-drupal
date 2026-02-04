@@ -1,0 +1,24 @@
+uuid: 02583824-8555-434e-9d7c-741bffa153db
+langcode: en
+status: true
+dependencies: {  }
+id: G-FPM4BHDCS5.69838f24a075c1.37053725
+label: G-FPM4BHDCS5
+weight: 0
+tag_container_ids:
+  - G-FPM4BHDCS5
+advanced_settings:
+  consent_mode: false
+dimensions_metrics: {  }
+conditions: {  }
+events:
+  generate_lead:
+    value: ''
+    currency: ''
+  search: {  }
+  webform_purchase: {  }
+  custom: {  }
+  login:
+    method: CMS
+  sign_up:
+    method: CMS

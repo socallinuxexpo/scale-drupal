@@ -43,6 +43,7 @@ module:
   filter: 0
   fivestar: 0
   form_mode_control: 0
+  google_tag: 0
   help: 0
   hero_block: 0
   history: 0
