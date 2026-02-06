@@ -1460,6 +1460,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+      pager:
+        type: none
+        options:
+          offset: 0
       style:
         type: serializer
         options:
