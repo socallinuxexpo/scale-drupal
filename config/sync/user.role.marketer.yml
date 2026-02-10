@@ -19,6 +19,7 @@ permissions:
   - 'create article content'
   - 'create special_event content'
   - 'create terms in article_tags'
+  - 'edit any special_event content'
   - 'edit own article content'
   - 'edit own special_event content'
   - 'edit terms in article_tags'
