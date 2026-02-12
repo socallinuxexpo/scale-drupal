@@ -11,19 +11,29 @@ label: 'Session Workflow'
 type: content_moderation
 type_settings:
   states:
+    accepted:
+      label: Accepted
+      weight: -2
+      published: false
+      default_revision: false
+    declined:
+      label: Declined
+      weight: 1
+      published: false
+      default_revision: true
     draft:
       label: 'Pending Review'
-      weight: 0
+      weight: -3
       published: false
       default_revision: false
     published:
-      label: Accepted
-      weight: 1
+      label: Confirmed
+      weight: -1
       published: true
       default_revision: true
     unpublished:
       label: Rejected
-      weight: 2
+      weight: 0
       published: false
       default_revision: true
   transitions:
@@ -31,33 +41,55 @@ type_settings:
       label: 'Accept Session'
       from:
         - draft
-      to: published
-      weight: 0
+      to: accepted
+      weight: -1
     back_to_draft:
       label: 'Back to Draft'
       from:
+        - accepted
+        - declined
         - published
         - unpublished
       to: draft
+      weight: -2
+    confirm_session:
+      label: 'Confirm Session'
+      from:
+        - accepted
+      to: published
+      weight: 0
+    decline_session:
+      label: 'Decline Session'
+      from:
+        - accepted
+        - draft
+        - published
+        - unpublished
+      to: declined
       weight: 2
     edit_accepted:
       label: 'Edit Accepted'
       from:
+        - accepted
+      to: accepted
+      weight: -3
+    edit_confirmed:
+      label: 'Edit Confirmed'
+      from:
         - published
       to: published
-      weight: -1
+      weight: -3
     edit_draft:
       label: 'Edit Draft'
       from:
         - draft
       to: draft
-      weight: -2
+      weight: -4
     reject_session:
       label: 'Reject Session'
       from:
         - draft
         - published
-        - unpublished
       to: unpublished
       weight: 1
   entity_types:

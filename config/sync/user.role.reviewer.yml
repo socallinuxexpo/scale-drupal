@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.page
+    - workflows.workflow.session_workflow
   module:
     - comment
     - content_moderation
@@ -46,6 +47,11 @@ permissions:
   - 'rate content'
   - 'revert all revisions'
   - 'skip comment approval'
+  - 'use session_workflow transition accept_session'
+  - 'use session_workflow transition back_to_draft'
+  - 'use session_workflow transition confirm_session'
+  - 'use session_workflow transition decline_session'
+  - 'use session_workflow transition reject_session'
   - 'view all revisions'
   - 'view any unpublished content'
   - 'view field_session_votes'

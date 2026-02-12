@@ -41,6 +41,7 @@ permissions:
   - 'use  The form mode speaker linked to  node entity( session )'
   - 'use  The form mode speaker linked to  node entity( speaker )'
   - 'use session_workflow transition edit_accepted'
+  - 'use session_workflow transition edit_confirmed'
   - 'use session_workflow transition edit_draft'
   - 'use text format basic_html'
   - 'use text format webform_default'
