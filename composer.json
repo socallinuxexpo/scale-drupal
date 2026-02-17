@@ -46,6 +46,7 @@
         "drupal/mailgun": "^2.0",
         "drupal/masquerade": "^2.0",
         "drupal/menu_breadcrumb": "^2.0@alpha",
+        "drupal/metatag": "^2.2",
         "drupal/migrate_file": "^2.1",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_process_trim": "^2.0@dev",
