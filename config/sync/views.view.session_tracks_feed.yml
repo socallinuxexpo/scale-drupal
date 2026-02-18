@@ -328,7 +328,7 @@ display:
           field_options:
             name:
               alias: name
-              raw_output: false
+              raw_output: true
             field_schedule_color:
               alias: color
               raw_output: false
