@@ -1,9 +1,9 @@
-uuid: 04e09217-0410-4025-a996-69f22318d615
+uuid: 21ff5110-cc8d-4d3f-886c-27d4d61a4613
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.agenda_session
     - field.field.node.sponsor.field_booth_number
     - field.field.node.sponsor.field_exhibitor_type
     - field.field.node.sponsor.field_featured
@@ -18,11 +18,21 @@ dependencies:
     - node.type.sponsor
   module:
     - user
-id: node.sponsor.teaser
+id: node.sponsor.agenda_session
 targetEntityType: node
 bundle: sponsor
-mode: teaser
+mode: agenda_session
 content:
+  field_featured:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 122
+    region: content
   links:
     settings: {  }
     third_party_settings: {  }
@@ -32,7 +42,6 @@ hidden:
   breadcrumbs: true
   field_booth_number: true
   field_exhibitor_type: true
-  field_featured: true
   field_legacy_nid: true
   field_ready_for_approval: true
   field_scale_event: true

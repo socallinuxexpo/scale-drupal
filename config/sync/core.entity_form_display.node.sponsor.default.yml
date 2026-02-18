@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.sponsor.field_booth_number
     - field.field.node.sponsor.field_exhibitor_type
+    - field.field.node.sponsor.field_featured
     - field.field.node.sponsor.field_legacy_nid
     - field.field.node.sponsor.field_ready_for_approval
     - field.field.node.sponsor.field_scale_event
@@ -45,6 +46,13 @@ content:
     weight: 3
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_featured:
+    type: boolean_checkbox
+    weight: 21
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_ready_for_approval:
     type: boolean_checkbox
