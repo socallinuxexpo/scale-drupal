@@ -29,59 +29,13 @@ function scale_preprocess_paragraph__event_sponsors(&$variables) {
   }
 
   if ($layout === 'grouped_grid') {
-    // Get events by sponsor tier
-    $vocabulary = 'sponsor_tier';
-
-     // Build the entity query to fetch term IDs from the specified vocabulary.
-    $query = \Drupal::entityQuery('taxonomy_term')
-      ->accessCheck(TRUE)
-      ->condition('vid', $vocabulary)
-      ->sort('weight', 'ASC');
-
-    // Execute the query to get the term IDs.
-    $term_ids = $query->execute();
-    $terms = \Drupal\taxonomy\Entity\Term::loadMultiple($term_ids);
-
-    // Reorder terms to match the query order
-    $ordered_terms = [];
-    foreach ($term_ids as $tid) {
-      if (isset($terms[$tid])) {
-        $ordered_terms[$tid] = $terms[$tid];
-      }
-    }
-
-    foreach ($terms as $term) {
-      // Build the entity query to fetch Sponsor nodes.
-      $query = \Drupal::entityQuery('node')
-        ->accessCheck(TRUE)
-        ->condition('type', 'sponsor')
-        ->condition('field_scale_event', $event_id)
-        ->condition('field_sponsor_tier', $term->id());
-
-      // Execute the query and load the Sponsor nodes.
-      $nids = $query->execute();
-
-      if (empty($nids)) {
-        continue;
-      }
-
-      $nids_str = implode('+', $nids);
-
-      $args = [$nids_str, $event_id];
-
-      // Load view and pass event node nid as argument
       $view = \Drupal\views\Views::getView('event_sponsors');
       $view->setDisplay('grouped_grid');
-      $view->setArguments($args);
+      $view->setArguments([$event_id]);
       $view->preExecute();
       $view->execute();
 
-      // Add the rendered view to the output array.
-      $output[] = [
-        'group' => $term->label(),
-        'view' => $view->buildRenderable(),
-      ];
-    }
+      $output[] = $view->buildRenderable();
   }
 
   $variables['preprocessor'] = [

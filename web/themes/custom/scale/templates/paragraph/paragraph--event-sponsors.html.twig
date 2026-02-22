@@ -1,14 +1,7 @@
 {% if preprocessor.layout == 'grouped_grid' %}
 
     {% set content %}
-        {% for item in preprocessor.content %}
-            <div class="mb-5">
-                <h2>{{ item.group }}</h2>
-                <div class="py-4">
-                    {{ item.view }}
-                </div>
-            </div>
-        {% endfor %}
+        {{ preprocessor.content }}
     {% endset %}
 
     {% embed 'scale:container' %}

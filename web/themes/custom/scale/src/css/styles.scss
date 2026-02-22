@@ -38,6 +38,10 @@ body {
       grid-gap: 1rem;
 
       @apply grid-cols-1 md:grid-cols-2 lg:grid-cols-#{$i};
+
+      h3 {
+        @apply col-span-#{$i};
+      }
     }
   }
 }

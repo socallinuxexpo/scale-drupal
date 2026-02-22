@@ -1799,6 +1799,9 @@ body {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
+.views-grid-1 .view-content h3 {
+  grid-column: span 1 / span 1;
+}
 
 .views-grid-2 .view-content {
   display: grid;
@@ -1818,6 +1821,9 @@ body {
   .views-grid-2 .view-content {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+.views-grid-2 .view-content h3 {
+  grid-column: span 2 / span 2;
 }
 
 .views-grid-3 .view-content {
@@ -1839,6 +1845,9 @@ body {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+.views-grid-3 .view-content h3 {
+  grid-column: span 3 / span 3;
+}
 
 .views-grid-4 .view-content {
   display: grid;
@@ -1858,6 +1867,9 @@ body {
   .views-grid-4 .view-content {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
+}
+.views-grid-4 .view-content h3 {
+  grid-column: span 4 / span 4;
 }
 
 .views-grid-5 .view-content {
@@ -1879,6 +1891,9 @@ body {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
+.views-grid-5 .view-content h3 {
+  grid-column: span 5 / span 5;
+}
 
 .views-grid-6 .view-content {
   display: grid;
@@ -1898,6 +1913,9 @@ body {
   .views-grid-6 .view-content {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
+}
+.views-grid-6 .view-content h3 {
+  grid-column: span 6 / span 6;
 }
 
 .views-grid-7 .view-content {
@@ -1919,6 +1937,9 @@ body {
     grid-template-columns: repeat(7, minmax(0, 1fr));
   }
 }
+.views-grid-7 .view-content h3 {
+  grid-column: span 7 / span 7;
+}
 
 .views-grid-8 .view-content {
   display: grid;
@@ -1938,6 +1959,9 @@ body {
   .views-grid-8 .view-content {
     grid-template-columns: repeat(8, minmax(0, 1fr));
   }
+}
+.views-grid-8 .view-content h3 {
+  grid-column: span 8 / span 8;
 }
 
 .views-grid-9 .view-content {
@@ -1959,6 +1983,9 @@ body {
     grid-template-columns: repeat(9, minmax(0, 1fr));
   }
 }
+.views-grid-9 .view-content h3 {
+  grid-column: span 9 / span 9;
+}
 
 .views-grid-10 .view-content {
   display: grid;
@@ -1978,6 +2005,9 @@ body {
   .views-grid-10 .view-content {
     grid-template-columns: repeat(10, minmax(0, 1fr));
   }
+}
+.views-grid-10 .view-content h3 {
+  grid-column: span 10 / span 10;
 }
 
 .views-grid-11 .view-content {
@@ -1999,6 +2029,9 @@ body {
     grid-template-columns: repeat(11, minmax(0, 1fr));
   }
 }
+.views-grid-11 .view-content h3 {
+  grid-column: span 11 / span 11;
+}
 
 .views-grid-12 .view-content {
   display: grid;
@@ -2018,6 +2051,9 @@ body {
   .views-grid-12 .view-content {
     grid-template-columns: repeat(12, minmax(0, 1fr));
   }
+}
+.views-grid-12 .view-content h3 {
+  grid-column: span 12 / span 12;
 }
 
 /* Pager: align items horizontally */
