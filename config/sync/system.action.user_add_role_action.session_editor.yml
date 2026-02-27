@@ -1,0 +1,14 @@
+uuid: fb2c9c4e-a6c8-40f0-b089-ff1f55b27883
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.session_editor
+  module:
+    - user
+id: user_add_role_action.session_editor
+label: 'Add the Session Editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: session_editor

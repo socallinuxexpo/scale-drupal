@@ -1,0 +1,18 @@
+uuid: 7266dbca-3eb1-4bc3-9b4f-9abf9f13c429
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.session
+    - workflows.workflow.session_workflow
+  module:
+    - content_moderation
+    - node
+id: session_editor
+label: 'Session Editor'
+weight: 5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'edit any session content'
+  - 'use session_workflow transition edit_accepted'

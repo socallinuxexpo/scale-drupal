@@ -1,0 +1,14 @@
+uuid: 8fadc41f-7aa2-43cc-a958-e64544822425
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.session_editor
+  module:
+    - user
+id: user_remove_role_action.session_editor
+label: 'Remove the Session Editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: session_editor
