@@ -15,6 +15,7 @@ dependencies:
     - help
     - node
     - path
+    - session_enhancements
     - system
     - toolbar
     - tour
@@ -31,6 +32,7 @@ permissions:
   - 'access contextual links'
   - 'access files overview'
   - 'access help pages'
+  - 'access review pages'
   - 'access toolbar'
   - 'access tour'
   - 'administer url aliases'
