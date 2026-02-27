@@ -8,5 +8,6 @@ id: global
 label: Global
 tags:
   canonical_url: '[current-page:url]'
+  og_description: 'The Southern California Linux Expo (SCALE) is North America’s largest community-run open source conference.'
   og_image: 'https://www.socallinuxexpo.org/sites/default/files/2026-02/scale-basic-card.png'
   title: '[current-page:title] | [site:name]'
