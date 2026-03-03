@@ -2409,7 +2409,16 @@ body {
   text-decoration-line: underline;
 }
 
+.mailing-list-form input[type="email"] {
+  color: #000;
+  background-color: #fff;
+}
+
 @media (min-width: 768px) {
+
+  .mailing-list-form {
+    padding-left: 100px;
+  }
 
   .md\:flex {
     display: flex;

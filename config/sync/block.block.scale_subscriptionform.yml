@@ -1,0 +1,25 @@
+uuid: be959a95-4a36-49b5-afb2-5134970b551b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2554f071-7a8c-4096-925e-03c3fa379625'
+  module:
+    - block_content
+  theme:
+    - scale
+id: scale_subscriptionform
+theme: scale
+region: disclosure
+weight: 0
+provider: null
+plugin: 'block_content:2554f071-7a8c-4096-925e-03c3fa379625'
+settings:
+  id: 'block_content:2554f071-7a8c-4096-925e-03c3fa379625'
+  label: 'Subscription form'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
