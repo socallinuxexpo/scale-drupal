@@ -8,6 +8,9 @@ header {
       &:hover > ul.menu--level-2 {
         display: block;
       }
+      &:focus-within > ul.menu--level-2 {
+        display: block;
+      }
     }
 
     ul.menu.menu--level-2 {
@@ -33,4 +36,19 @@ header {
       }
     }
   }
+}
+
+@media (max-width: 768px) {
+
+  header ul.menu ul.menu--level-2 {
+    position: static;
+    display: none;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  header ul.menu li.menu__item--level-1:focus-within > ul.menu--level-2 {
+    display: block;
+  }
+
 }
