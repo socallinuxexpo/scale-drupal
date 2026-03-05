@@ -2460,6 +2460,7 @@ body {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: visible;
     position: relative;
     white-space: nowrap;
   }
