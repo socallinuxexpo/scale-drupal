@@ -2409,7 +2409,16 @@ body {
   text-decoration-line: underline;
 }
 
+.mailing-list-form input[type="email"] {
+  color: #000;
+  background-color: #fff;
+}
+
 @media (min-width: 768px) {
+
+  .mailing-list-form {
+    padding-left: 100px;
+  }
 
   .md\:flex {
     display: flex;
@@ -2441,5 +2450,18 @@ body {
     flex-direction: column;
     align-items: stretch;
     gap: 0.75rem;
+  }
+}
+
+/* enable vertical scroll for menu on mobile */
+@media (max-width: 768px) {
+
+  ul.menu {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: visible;
+    position: relative;
+    white-space: nowrap;
   }
 }
