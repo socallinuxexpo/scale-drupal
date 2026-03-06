@@ -53,22 +53,20 @@ class GroupedSelectWidget extends OptionsSelectWidget {
    * {@inheritdoc}
    */
   protected function getOptions(FieldableEntityInterface $entity): array {
-    if (isset($this->options)) {
-      return $this->options;
-    }
-
-    $this->options = [];
+    $options = [];
     $bundles = $this->getTargetBundles();
 
+    \Drupal::logger('allowed_taxonomy')->notice('Bundles found: @bundles', ['@bundles' => implode(',', $bundles)]);
+
     foreach ($bundles as $bundle) {
-      $options = $bundle === 'event'
+      $bundleOptions = $bundle === 'event'
         ? $this->getEventOptions()
         : $this->getTaxonomyOptions($bundle);
 
-      $this->options = array_merge($this->options, $options);
+      $options = array_merge($options, $bundleOptions);
     }
 
-    return $this->options;
+    return $options;
   }
 
   /**
@@ -97,7 +95,7 @@ class GroupedSelectWidget extends OptionsSelectWidget {
 
     return $this->buildGroupedOptions($entities, function ($entity) {
       return $entity->hasField('field_event_date')
-        && $entity->get('field_event_date')->value > date('Y-m-d');
+        && $entity->get('field_event_date')->end_value >= date('Y-m-d');
     });
   }
 
@@ -121,15 +119,15 @@ class GroupedSelectWidget extends OptionsSelectWidget {
   private function buildGroupedOptions(array $entities, callable $isActiveCallback): array {
     $active = [];
     $inactive = [];
-    $isEditForm = $this->routeMatch->getRouteName() === 'entity.node.edit_form';
+    $hasPermission = \Drupal::currentUser()->hasPermission('edit any session content');
 
     foreach ($entities as $entity) {
       $key = $entity->id();
       $label = method_exists($entity, 'getName') ? $entity->getName() : $entity->label();
 
-      if ($isActiveCallback($entity)) {
+      if($isActiveCallback($entity)) {
         $active[$key] = $label;
-      } elseif ($isEditForm) {
+      } elseif($hasPermission) {
         $inactive[$key] = $label;
       }
     }
