@@ -2453,15 +2453,38 @@ body {
   }
 }
 
-/* enable vertical scroll for menu on mobile */
+/* enable horizontal scroll for menu on mobile */
 @media (max-width: 768px) {
+  .primary-menu-wrapper {
+    overflow-x: auto;
+    overflow-y:visible;
+    padding-bottom: 100px;
+  }
 
   ul.menu {
     display: flex;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: visible;
-    position: relative;
     white-space: nowrap;
+    position: relative;
+
+    ul.menu--level-2 {
+      display: none;
+      flex-direction: column;
+      flex-wrap: wrap;
+      overflow-x: visible;
+      overflow-y: visible;
+      white-space: normal;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 50;
+      width: 200px;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+  }
+
+  header ul.menu li.menu__item--level-1:focus-within > ul.menu--level-2 {
+    display: flex;
   }
 }

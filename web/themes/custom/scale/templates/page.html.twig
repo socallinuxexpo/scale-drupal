@@ -44,7 +44,9 @@
   <header class="content-header clearfix bg-dark text-white">
     <div class="container mx-auto px-5 flex flex-col md:flex-row items-left gap-2 py-2">
       {{ page.site_branding }}
-      {{ page.primary_menu }}
+      <div class="primary-menu-wrapper">
+          {{ page.primary_menu }}
+      </div>
       {{ page.secondary_menu }}
     </div>
   </header>
