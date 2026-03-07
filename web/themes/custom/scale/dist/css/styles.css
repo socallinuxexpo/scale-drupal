@@ -2457,8 +2457,8 @@ body {
 @media (max-width: 768px) {
   .primary-menu-wrapper {
     overflow-x: auto;
-    overflow-y:visible;
-    padding-bottom: 100px;
+    overflow-y: visible;
+    padding-bottom: 70px;
   }
 
   ul.menu {
