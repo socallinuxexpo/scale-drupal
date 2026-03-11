@@ -30,7 +30,9 @@
   <div class="my-7">
     {% if node.field_assets is not empty %}
       {% set file_url = node.field_assets.entity.uri.value|file_url %}
-      {{ drupal_link('Presentation'|t, file_url, {attributes: {class: ['btn', 'btn-black'], target: '_blank', download}}) }}
+      <a href="{{ file_url }}" class="btn btn-black" target="_blank">
+        {{ 'Presentation' | t }}
+      </a>
     {% endif %}
   </div>
 
