@@ -4,10 +4,15 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_age
+    - field.storage.node.field_education
     - field.storage.node.field_email
+    - field.storage.node.field_employment_status
+    - field.storage.node.field_ethnicity
     - field.storage.node.field_first_name
     - field.storage.node.field_gender
+    - field.storage.node.field_household_income
     - field.storage.node.field_last_name
+    - field.storage.node.field_marital_status
     - field.storage.node.field_postal_code
     - field.storage.node.field_scale_event
     - node.type.speaker
@@ -684,6 +689,321 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        field_education:
+          id: field_education
+          table: node__field_education
+          field: field_education
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_employment_status:
+          id: field_employment_status
+          table: node__field_employment_status
+          field: field_employment_status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_ethnicity:
+          id: field_ethnicity
+          table: node__field_ethnicity
+          field: field_ethnicity
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_household_income:
+          id: field_household_income
+          table: node__field_household_income
+          field: field_household_income
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_marital_status:
+          id: field_marital_status
+          table: node__field_marital_status
+          field: field_marital_status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         field_scale_event:
           id: field_scale_event
           table: node__field_scale_event
@@ -850,16 +1170,14 @@ display:
       empty: {  }
       sorts: {  }
       arguments:
-        nid:
-          id: nid
-          table: node_field_data
-          field: nid
-          relationship: none
+        field_event_id_value:
+          id: field_event_id_value
+          table: node__field_event_id
+          field: field_event_id_value
+          relationship: field_scale_event
           group_type: group
           admin_label: ''
-          entity_type: node
-          entity_field: nid
-          plugin_id: node_nid
+          plugin_id: string
           default_action: empty
           exception:
             value: all
@@ -884,8 +1202,12 @@ display:
             type: none
             fail: 'not found'
           validate_options: {  }
+          glossary: false
+          limit: 0
+          case: none
+          path_case: none
+          transform_dash: false
           break_phrase: false
-          not: false
       filters:
         status:
           id: status
@@ -935,6 +1257,15 @@ display:
           entity_type: node
           plugin_id: entity_reverse
           required: true
+        field_scale_event:
+          id: field_scale_event
+          table: node__field_scale_event
+          field: field_scale_event
+          relationship: reverse__node__field_speakers_ref
+          group_type: group
+          admin_label: event
+          plugin_id: standard
+          required: true
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -950,10 +1281,15 @@ display:
         - user.roles
       tags:
         - 'config:field.storage.node.field_age'
+        - 'config:field.storage.node.field_education'
         - 'config:field.storage.node.field_email'
+        - 'config:field.storage.node.field_employment_status'
+        - 'config:field.storage.node.field_ethnicity'
         - 'config:field.storage.node.field_first_name'
         - 'config:field.storage.node.field_gender'
+        - 'config:field.storage.node.field_household_income'
         - 'config:field.storage.node.field_last_name'
+        - 'config:field.storage.node.field_marital_status'
         - 'config:field.storage.node.field_postal_code'
         - 'config:field.storage.node.field_scale_event'
   rest_export_1:
@@ -1007,14 +1343,26 @@ display:
             title_1:
               alias: session_title
               raw_output: false
+            field_education:
+              alias: speaker_education
+              raw_output: false
+            field_employment_status:
+              alias: speaker_employment
+              raw_output: false
+            field_ethnicity:
+              alias: speaker_ethnicity
+              raw_output: false
+            field_household_income:
+              alias: speaker_household_income
+              raw_output: false
+            field_marital_status:
+              alias: speaker_marital_status
+              raw_output: false
             field_scale_event:
               alias: session_event
               raw_output: false
             moderation_state:
               alias: session_state
-              raw_output: false
-            nothing:
-              alias: ''
               raw_output: false
       display_extenders: {  }
       path: scale/feed/demographics/%uid
@@ -1029,9 +1377,14 @@ display:
         - user.roles
       tags:
         - 'config:field.storage.node.field_age'
+        - 'config:field.storage.node.field_education'
         - 'config:field.storage.node.field_email'
+        - 'config:field.storage.node.field_employment_status'
+        - 'config:field.storage.node.field_ethnicity'
         - 'config:field.storage.node.field_first_name'
         - 'config:field.storage.node.field_gender'
+        - 'config:field.storage.node.field_household_income'
         - 'config:field.storage.node.field_last_name'
+        - 'config:field.storage.node.field_marital_status'
         - 'config:field.storage.node.field_postal_code'
         - 'config:field.storage.node.field_scale_event'
