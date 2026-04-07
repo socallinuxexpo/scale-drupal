@@ -14,6 +14,7 @@ dependencies:
     - user.role.administrator
   module:
     - content_moderation
+    - csv_serialization
     - node
     - rest
     - serialization
@@ -562,7 +563,7 @@ display:
             external: false
             replace_spaces: false
             path_case: none
-            trim_whitespace: false
+            trim_whitespace: true
             alt: ''
             rel: ''
             link_class: ''
@@ -576,7 +577,7 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
@@ -587,7 +588,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -595,11 +596,11 @@ display:
           click_sort_column: value
           type: timestamp
           settings:
-            date_format: long
-            custom_date_format: ''
+            date_format: custom
+            custom_date_format: 'l, F j, Y - H:i'
             timezone: ''
             tooltip:
-              date_format: long
+              date_format: ''
               custom_date_format: ''
             time_diff:
               enabled: false
@@ -969,48 +970,51 @@ display:
       style:
         type: serializer
         options:
-          grouping: {  }
-          uses_fields: false
-          formats: {  }
+          formats:
+            csv: csv
+            json: json
       row:
         type: data_field
         options:
           field_options:
+            nid:
+              alias: speaker_id
+              raw_output: false
             title:
               alias: speaker_title
-              raw_output: false
-            title_1:
-              alias: session_title
-              raw_output: false
-            field_age:
-              alias: speaker_age
-              raw_output: false
-            created:
-              alias: speaker_created
-              raw_output: false
-            field_email:
-              alias: speaker_email
-              raw_output: false
-            field_scale_event:
-              alias: session_event
               raw_output: false
             field_first_name:
               alias: speaker_first_name
               raw_output: false
+            field_last_name:
+              alias: speaker_last_name
+              raw_output: false
+            field_email:
+              alias: speaker_email
+              raw_output: false
+            field_postal_code:
+              alias: speaker_postal_code
+              raw_output: false
+            field_age:
+              alias: speaker_age
+              raw_output: false
             field_gender:
               alias: speaker_gender
               raw_output: false
-            nid:
-              alias: speaker_id
+            created:
+              alias: speaker_created
               raw_output: false
-            field_last_name:
-              alias: speaker_last_name
+            title_1:
+              alias: session_title
+              raw_output: false
+            field_scale_event:
+              alias: session_event
               raw_output: false
             moderation_state:
               alias: session_state
               raw_output: false
-            field_postal_code:
-              alias: speaker_postal_code
+            nothing:
+              alias: ''
               raw_output: false
       display_extenders: {  }
       path: scale/feed/demographics/%uid
