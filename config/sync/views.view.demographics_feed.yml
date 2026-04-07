@@ -558,7 +558,7 @@ display:
           entity_field: created
           plugin_id: field
           label: ''
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: '{{ created }}'
@@ -1348,10 +1348,9 @@ display:
     position: 1
     display_options:
       pager:
-        type: some
+        type: none
         options:
           offset: 0
-          items_per_page: 10
       style:
         type: serializer
         options:
@@ -1386,6 +1385,9 @@ display:
             field_gender:
               alias: speaker_gender
               raw_output: false
+            created:
+              alias: speaker_created_timestamp
+              raw_output: true
             nothing:
               alias: speaker_created
               raw_output: false
