@@ -21,6 +21,7 @@ dependencies:
     - content_moderation
     - csv_serialization
     - node
+    - pager_serializer
     - rest
     - serialization
     - user
@@ -1348,11 +1349,29 @@ display:
     position: 1
     display_options:
       pager:
-        type: none
+        type: full
         options:
           offset: 0
+          pagination_heading_level: h4
+          items_per_page: 100
+          total_pages: null
+          id: 0
+          tags:
+            next: 'Next ›'
+            previous: '‹ Previous'
+            first: '« First'
+            last: 'Last »'
+          expose:
+            items_per_page: false
+            items_per_page_label: 'Items per page'
+            items_per_page_options: '5, 10, 25, 50'
+            items_per_page_options_all: false
+            items_per_page_options_all_label: '- All -'
+            offset: false
+            offset_label: Offset
+          quantity: 9
       style:
-        type: serializer
+        type: pager_serializer
         options:
           formats:
             csv: csv
@@ -1424,6 +1443,7 @@ display:
         - 'languages:language_interface'
         - request_format
         - url
+        - url.query_args
         - 'user.node_grants:view'
         - user.roles
       tags:
