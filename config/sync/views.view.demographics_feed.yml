@@ -637,7 +637,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: "{{ created|date('l, F j, Y - H:i') }}"
+            text: "{{ created|trim|date('l, F j, Y - H:i') }}"
             make_link: false
             path: ''
             absolute: false
