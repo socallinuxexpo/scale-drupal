@@ -3,16 +3,9 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_age
-    - field.storage.node.field_education
     - field.storage.node.field_email
-    - field.storage.node.field_employment_status
-    - field.storage.node.field_ethnicity
     - field.storage.node.field_first_name
-    - field.storage.node.field_gender
-    - field.storage.node.field_household_income
     - field.storage.node.field_last_name
-    - field.storage.node.field_marital_status
     - field.storage.node.field_postal_code
     - field.storage.node.field_scale_event
     - node.type.speaker
@@ -24,6 +17,7 @@ dependencies:
     - pager_serializer
     - rest
     - serialization
+    - taxonomy
     - user
 id: demographics_feed
 label: 'Demographics Feed'
@@ -422,14 +416,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_age:
-          id: field_age
-          table: node__field_age
-          field: field_age
-          relationship: none
+        name_1:
+          id: name_1
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_age
           group_type: group
           admin_label: ''
-          plugin_id: field
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
           label: ''
           exclude: false
           alter:
@@ -471,11 +467,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -485,14 +481,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_gender:
-          id: field_gender
-          table: node__field_gender
-          field: field_gender
-          relationship: none
+          convert_spaces: false
+        name_2:
+          id: name_2
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_gender
           group_type: group
           admin_label: ''
-          plugin_id: field
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
           label: ''
           exclude: false
           alter:
@@ -534,11 +533,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -548,6 +547,7 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          convert_spaces: false
         created:
           id: created
           table: node_field_data
@@ -739,14 +739,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_education:
-          id: field_education
-          table: node__field_education
-          field: field_education
-          relationship: none
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_education
           group_type: group
           admin_label: ''
-          plugin_id: field
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
           label: ''
           exclude: false
           alter:
@@ -788,11 +790,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -802,14 +804,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_employment_status:
-          id: field_employment_status
-          table: node__field_employment_status
-          field: field_employment_status
-          relationship: none
+          convert_spaces: false
+        name_3:
+          id: name_3
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_employment_status
           group_type: group
           admin_label: ''
-          plugin_id: field
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
           label: ''
           exclude: false
           alter:
@@ -851,11 +856,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -865,14 +870,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_ethnicity:
-          id: field_ethnicity
-          table: node__field_ethnicity
-          field: field_ethnicity
-          relationship: none
+          convert_spaces: false
+        name_4:
+          id: name_4
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_ethnicity
           group_type: group
           admin_label: ''
-          plugin_id: field
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
           label: ''
           exclude: false
           alter:
@@ -914,11 +922,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -928,14 +936,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_household_income:
-          id: field_household_income
-          table: node__field_household_income
-          field: field_household_income
-          relationship: none
+          convert_spaces: false
+        name_5:
+          id: name_5
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_household_income
           group_type: group
           admin_label: ''
-          plugin_id: field
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
           label: ''
           exclude: false
           alter:
@@ -977,11 +988,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -991,14 +1002,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-        field_marital_status:
-          id: field_marital_status
-          table: node__field_marital_status
-          field: field_marital_status
-          relationship: none
+          convert_spaces: false
+        name_6:
+          id: name_6
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_marital_status
           group_type: group
           admin_label: ''
-          plugin_id: field
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
           label: ''
           exclude: false
           alter:
@@ -1040,11 +1054,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: false
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -1054,6 +1068,7 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          convert_spaces: false
         field_scale_event:
           id: field_scale_event
           table: node__field_scale_event
@@ -1316,6 +1331,69 @@ display:
           admin_label: event
           plugin_id: standard
           required: true
+        field_education:
+          id: field_education
+          table: node__field_education
+          field: field_education
+          relationship: none
+          group_type: group
+          admin_label: education
+          plugin_id: standard
+          required: false
+        field_age:
+          id: field_age
+          table: node__field_age
+          field: field_age
+          relationship: none
+          group_type: group
+          admin_label: age
+          plugin_id: standard
+          required: false
+        field_gender:
+          id: field_gender
+          table: node__field_gender
+          field: field_gender
+          relationship: none
+          group_type: group
+          admin_label: gender
+          plugin_id: standard
+          required: false
+        field_employment_status:
+          id: field_employment_status
+          table: node__field_employment_status
+          field: field_employment_status
+          relationship: none
+          group_type: group
+          admin_label: employment
+          plugin_id: standard
+          required: false
+        field_ethnicity:
+          id: field_ethnicity
+          table: node__field_ethnicity
+          field: field_ethnicity
+          relationship: none
+          group_type: group
+          admin_label: ethnicity
+          plugin_id: standard
+          required: false
+        field_household_income:
+          id: field_household_income
+          table: node__field_household_income
+          field: field_household_income
+          relationship: none
+          group_type: group
+          admin_label: income
+          plugin_id: standard
+          required: false
+        field_marital_status:
+          id: field_marital_status
+          table: node__field_marital_status
+          field: field_marital_status
+          relationship: none
+          group_type: group
+          admin_label: marital
+          plugin_id: standard
+          required: false
       header: {  }
       footer: {  }
       display_extenders: {  }
@@ -1330,16 +1408,9 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags:
-        - 'config:field.storage.node.field_age'
-        - 'config:field.storage.node.field_education'
         - 'config:field.storage.node.field_email'
-        - 'config:field.storage.node.field_employment_status'
-        - 'config:field.storage.node.field_ethnicity'
         - 'config:field.storage.node.field_first_name'
-        - 'config:field.storage.node.field_gender'
-        - 'config:field.storage.node.field_household_income'
         - 'config:field.storage.node.field_last_name'
-        - 'config:field.storage.node.field_marital_status'
         - 'config:field.storage.node.field_postal_code'
         - 'config:field.storage.node.field_scale_event'
   rest_export_1:
@@ -1398,14 +1469,11 @@ display:
             field_postal_code:
               alias: speaker_postal_code
               raw_output: false
-            field_age:
+            name_1:
               alias: speaker_age
-              raw_output: false
-            field_gender:
+              raw_output: true
+            name_2:
               alias: speaker_gender
-              raw_output: false
-            created:
-              alias: speaker_created_timestamp
               raw_output: true
             nothing:
               alias: speaker_created
@@ -1413,20 +1481,32 @@ display:
             title_1:
               alias: session_title
               raw_output: false
-            field_education:
+            name:
               alias: speaker_education
-              raw_output: false
-            field_employment_status:
+              raw_output: true
+            name_3:
               alias: speaker_employment
+              raw_output: true
+            field_employment_status:
+              alias: speaker_employment2
               raw_output: false
-            field_ethnicity:
+            name_4:
               alias: speaker_ethnicity
+              raw_output: true
+            field_ethnicity:
+              alias: speaker_ethnicity2
               raw_output: false
-            field_household_income:
+            name_5:
               alias: speaker_household_income
+              raw_output: true
+            field_household_income:
+              alias: speaker_household_income2
               raw_output: false
-            field_marital_status:
+            name_6:
               alias: speaker_marital_status
+              raw_output: true
+            field_marital_status:
+              alias: speaker_marital_status2
               raw_output: false
             field_scale_event:
               alias: session_event
@@ -1447,15 +1527,8 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags:
-        - 'config:field.storage.node.field_age'
-        - 'config:field.storage.node.field_education'
         - 'config:field.storage.node.field_email'
-        - 'config:field.storage.node.field_employment_status'
-        - 'config:field.storage.node.field_ethnicity'
         - 'config:field.storage.node.field_first_name'
-        - 'config:field.storage.node.field_gender'
-        - 'config:field.storage.node.field_household_income'
         - 'config:field.storage.node.field_last_name'
-        - 'config:field.storage.node.field_marital_status'
         - 'config:field.storage.node.field_postal_code'
         - 'config:field.storage.node.field_scale_event'
