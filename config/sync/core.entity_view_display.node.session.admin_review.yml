@@ -31,6 +31,7 @@ dependencies:
     - comment
     - datetime_range
     - fivestar
+    - taxonomy
     - text
     - user
 id: node.session.admin_review
@@ -38,6 +39,20 @@ targetEntityType: node
 bundle: session
 mode: admin_review
 content:
+  field_approval_status:
+    type: entity_reference_rss_category
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 9
+    region: content
+  field_audio_video:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 3
+    region: content
   field_long_abstract:
     type: text_default
     label: above
@@ -50,31 +65,33 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 4
+    weight: 5
     region: content
   field_reviewer_comments:
     type: comment_default
-    label: above
+    label: inline
     settings:
       view_mode: default
       pager_id: 0
     third_party_settings: {  }
-    weight: 7
+    weight: 8
     region: content
   field_session_level:
-    type: entity_reference_label
-    label: inline
-    settings:
-      link: false
-    third_party_settings: {  }
-    weight: 6
-    region: content
-  field_session_votes:
-    type: fivestar_percentage
+    type: entity_reference_rss_category
     label: above
     settings: {  }
     third_party_settings: {  }
-    weight: 5
+    weight: 7
+    region: content
+  field_session_votes:
+    type: fivestar_stars
+    label: above
+    settings:
+      text_format: average
+      display_format: average
+      fivestar_widget: basic
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_short_abstract:
     type: text_default
@@ -84,12 +101,11 @@ content:
     weight: 0
     region: content
   field_tags:
-    type: entity_reference_label
+    type: entity_reference_rss_category
     label: above
-    settings:
-      link: true
+    settings: {  }
     third_party_settings: {  }
-    weight: 3
+    weight: 4
     region: content
   field_time_slot:
     type: daterange_default
@@ -110,9 +126,7 @@ content:
 hidden:
   breadcrumbs: true
   content_moderation_control: true
-  field_approval_status: true
   field_assets: true
-  field_audio_video: true
   field_featured: true
   field_legacy_nid: true
   field_link_to_presentation: true
