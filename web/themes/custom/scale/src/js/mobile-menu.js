@@ -68,6 +68,12 @@
           document.body.style.overflow = '';
         }
 
+        // Close button inside the panel
+        var closeBtn = menuWrapper.querySelector('.mobile-menu-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', closeMenu);
+        }
+
         toggleBtn.addEventListener('click', function () {
           var isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
           if (isExpanded) {

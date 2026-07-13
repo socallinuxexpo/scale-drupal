@@ -45,17 +45,22 @@
     <div class="container mx-auto px-5 flex flex-col md:flex-row items-left gap-2 py-2">
       {{ page.site_branding }}
 
-      {# Hamburger toggle button on mobile #}
-      <button class="hamburger-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu-wrapper">
-        <span class="hamburger-icon"></span>
-      </button>
+      <div class="primary-menu-wrapper" id="primary-menu-wrapper">
+        <div class="mobile-menu-header">
+          {{ page.site_branding }}
+          <button class="mobile-menu-close" aria-label="Close menu">&#10005;</button>
+        </div>
+        {{ page.primary_menu }}
+      </div>
 
       {# Overlay behind the mobile menu #}
       <div class="menu-overlay" aria-hidden="true"></div>
 
-      <div class="primary-menu-wrapper" id="primary-menu-wrapper">
-          {{ page.primary_menu }}
-      </div>
+      {# Hamburger toggle button #}
+      <button class="hamburger-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu-wrapper">
+        <span class="hamburger-icon"></span>
+      </button>
+
       {{ page.secondary_menu }}
     </div>
   </header>

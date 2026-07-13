@@ -2,6 +2,7 @@
 
 // Hamburger button
 .hamburger-toggle {
+  margin-left: auto;
   display: none;
   background: none;
   border: none;
@@ -40,6 +41,8 @@
 
   // Animate to X when open
   &[aria-expanded="true"] {
+    display: none;
+    
     .hamburger-icon {
       background-color: transparent;
 
@@ -53,6 +56,49 @@
         transform: rotate(-45deg);
       }
     }
+  }
+}
+
+.mobile-menu-header {
+  display: none;
+}
+
+.mobile-menu-close {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu-header {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .content-header .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .mobile-menu-close {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
   }
 }
 
