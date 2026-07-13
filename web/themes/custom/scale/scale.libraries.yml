@@ -28,3 +28,10 @@ gin_override:
   css:
     theme:
       dist/css/gin-override.css: { minified: false }
+
+mobile-menu:
+  js:
+    src/js/mobile-menu.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
