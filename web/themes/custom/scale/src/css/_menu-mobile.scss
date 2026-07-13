@@ -1,0 +1,188 @@
+// Mobile hamburger menu styles
+
+// Hamburger button
+.hamburger-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101;
+
+  .hamburger-icon {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #fff;
+    position: relative;
+    transition: background-color 0.3s ease;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      left: 0;
+      transition: transform 0.3s ease, top 0.3s ease;
+    }
+
+    &::before {
+      top: -7px;
+    }
+
+    &::after {
+      top: 7px;
+    }
+  }
+
+  // Animate to X when open
+  &[aria-expanded="true"] {
+    .hamburger-icon {
+      background-color: transparent;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+
+// Mobile submenu toggle button (the expand/collapse arrow)
+.submenu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+
+  &[aria-expanded="true"] {
+    transform: rotate(180deg);
+  }
+}
+
+// Mobile breakpoint
+@media (max-width: 767px) {
+  .hamburger-toggle {
+    display: block;
+  }
+
+  .submenu-toggle {
+    display: block;
+  }
+
+  .primary-menu-wrapper {
+    // Off-canvas sliding panel
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100vw;
+    height: 100vh;
+    background-color: #222222;
+    z-index: 100;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    padding-top: 90px;
+
+    &.is-open {
+      left: 0;
+    }
+  }
+
+  // Overlay behind the menu
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+
+    &.is-active {
+      display: block;
+    }
+  }
+
+  header {
+    ul.menu {
+      // Reset desktop horizontal layout to vertical
+      flex-direction: column;
+      gap: 0;
+
+      li.menu__item--level-1 {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        // Main link takes up available space, toggle button sits beside it
+        > a.menu__link {
+          flex: 1;
+          padding: 0.75rem 1rem;
+          color: #fff;
+        }
+
+        // Disable desktop hover behavior on mobile
+        &:hover > ul.menu--level-2 {
+          display: none;
+        }
+        &:focus-within > ul.menu--level-2 {
+          display: none;
+        }
+      }
+
+      // Level 2 submenu: vertical dropdown within the column
+      ul.menu.menu--level-2 {
+        position: static; // no longer absolutely positioned
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.15);
+        box-shadow: none;
+        display: none;
+        flex-direction: column;
+
+        // Show when toggled open
+        &.is-open {
+          display: flex !important;
+        }
+
+        li.menu__item--level-2 {
+          width: 100%;
+
+          a.menu__link {
+            display: block;
+            padding: 0.6rem 1rem 0.6rem 2rem; // indented
+            color: rgba(255, 255, 255, 0.85);
+
+            &:hover {
+              text-decoration: underline;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Desktop: ensure hamburger and overlay are hidden
+@media (min-width: 768px) {
+  .hamburger-toggle,
+  .menu-overlay,
+  .submenu-toggle {
+    display: none !important;
+  }
+}
