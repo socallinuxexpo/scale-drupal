@@ -98,11 +98,6 @@
 {# renders the comment content #}
 
   <div{{ content_attributes }}>
-    {% if comment.getSubject() %}
-      {{ title_prefix }}
-      <h3>{{ comment.getSubject() }}</h3>
-      {{ title_suffix }}
-    {% endif %}
     {{ content }}
   </div>
 </article>
