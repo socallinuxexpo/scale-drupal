@@ -20,6 +20,8 @@ dependencies:
     - field.field.node.speaker.field_phone
     - field.field.node.speaker.field_postal_code
     - field.field.node.speaker.field_profile_photo
+    - field.field.node.speaker.field_recording_consent
+    - field.field.node.speaker.field_speaker_agreement
     - field.field.node.speaker.field_twitter_profile
     - field.field.node.speaker.field_user_account
     - field.field.node.speaker.field_website
@@ -171,6 +173,26 @@ content:
         attribute: lazy
     third_party_settings: {  }
     weight: 109
+    region: content
+  field_recording_consent:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_speaker_agreement:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 121
     region: content
   field_twitter_profile:
     type: link

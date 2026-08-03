@@ -1,0 +1,21 @@
+uuid: f5a820cd-39a1-4c48-8dcd-2d3fd0050d5f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_recording_consent
+    - node.type.speaker
+id: node.speaker.field_recording_consent
+field_name: field_recording_consent
+entity_type: node
+bundle: speaker
+label: 'Recording & Livestream Consent'
+description: 'By selecting this, I understand that all talks are recorded and livestreamed.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

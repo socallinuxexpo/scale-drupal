@@ -21,6 +21,8 @@ dependencies:
     - field.field.node.speaker.field_phone
     - field.field.node.speaker.field_postal_code
     - field.field.node.speaker.field_profile_photo
+    - field.field.node.speaker.field_recording_consent
+    - field.field.node.speaker.field_speaker_agreement
     - field.field.node.speaker.field_twitter_profile
     - field.field.node.speaker.field_user_account
     - field.field.node.speaker.field_website
@@ -158,6 +160,20 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_recording_consent:
+    type: boolean_checkbox
+    weight: 28
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  field_speaker_agreement:
+    type: boolean_checkbox
+    weight: 27
+    region: content
+    settings:
+      display_label: true
     third_party_settings: {  }
   field_twitter_profile:
     type: link_default
