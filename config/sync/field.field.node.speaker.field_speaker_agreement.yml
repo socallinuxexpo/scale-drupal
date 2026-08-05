@@ -1,0 +1,21 @@
+uuid: e1c74555-b843-48c5-9ae6-fcee08a167dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_speaker_agreement
+    - node.type.speaker
+id: node.speaker.field_speaker_agreement
+field_name: field_speaker_agreement
+entity_type: node
+bundle: speaker
+label: 'Speaker Agreement & Code of Conduct'
+description: 'By selecting this, I acknowledge that I have read and abide by the terms of the <a href=https://www.socallinuxexpo.org/scale/24x/speaker-agreement>Speaker Agreement</a> and <a href=https://www.socallinuxexpo.org/scale/24x/code-conduct>Code of Conduct</a>.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
