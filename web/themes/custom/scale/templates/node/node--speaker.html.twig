@@ -9,14 +9,6 @@
       </div>
     {% endif %}
 
-    {% if node.field_twitter_profile.uri %}
-      <div class="text-2xl">
-        <a href="{{ node.field_twitter_profile.uri }}" target="_blank" class="text-black" title="Twitter">
-          <i class="fa-brands fa-x-twitter"></i>
-        </a>
-      </div>
-    {% endif %}
-
     {% set social_icons = {
       'Mastodon': 'fa-mastodon',
       'X': 'fa-x-twitter',
