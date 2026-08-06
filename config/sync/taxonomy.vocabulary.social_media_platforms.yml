@@ -1,0 +1,9 @@
+uuid: ceba96c8-1f6d-4143-b440-088ee9c8efac
+langcode: en
+status: true
+dependencies: {  }
+name: 'Social Media Platforms'
+vid: social_media_platforms
+description: 'Platforms available for speaker social media links'
+weight: 0
+new_revision: false

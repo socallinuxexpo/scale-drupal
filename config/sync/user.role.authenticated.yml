@@ -38,6 +38,7 @@ permissions:
   - 'edit own session content'
   - 'edit own speaker content'
   - 'search content'
+  - 'use  The form mode default linked to  paragraph entity( social_media_link )'
   - 'use  The form mode speaker linked to  node entity( session )'
   - 'use  The form mode speaker linked to  node entity( speaker )'
   - 'use session_workflow transition edit_accepted'
