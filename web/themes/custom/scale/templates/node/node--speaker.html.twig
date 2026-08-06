@@ -16,6 +16,25 @@
         </a>
       </div>
     {% endif %}
+
+    {% set social_icons = {
+      'Mastodon': 'fa-mastodon',
+      'X': 'fa-x-twitter',
+      'Bluesky': 'fa-bluesky',
+      'LinkedIn': 'fa-linkedin-in',
+      'Facebook': 'fa-facebook-f',
+      'Instagram': 'fa-instagram',
+      'GitHub': 'fa-github',
+    } %}
+    {% for item in node.field_social_media_links %}
+      {% set platform = item.entity.field_platform.entity.label %}
+      {% set icon = social_icons[platform]|default('fa-share-nodes') %}
+      <div class="text-2xl">
+        <a href="{{ item.entity.field_url.uri }}" target="_blank" class="text-black" title="{{ platform }}">
+          <i class="fa-brands {{ icon }}"></i>
+        </a>
+      </div>
+    {% endfor %}
   </div>
 
   <div class="text-2xl mb-12">

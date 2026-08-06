@@ -22,6 +22,7 @@ dependencies:
     - field.field.node.speaker.field_postal_code
     - field.field.node.speaker.field_profile_photo
     - field.field.node.speaker.field_recording_consent
+    - field.field.node.speaker.field_social_media_links
     - field.field.node.speaker.field_speaker_agreement
     - field.field.node.speaker.field_twitter_profile
     - field.field.node.speaker.field_user_account
@@ -67,6 +68,7 @@ hidden:
   field_postal_code: true
   field_profile_photo: true
   field_recording_consent: true
+  field_social_media_links: true
   field_speaker_agreement: true
   field_twitter_profile: true
   field_user_account: true

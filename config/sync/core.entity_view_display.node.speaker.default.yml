@@ -21,6 +21,7 @@ dependencies:
     - field.field.node.speaker.field_postal_code
     - field.field.node.speaker.field_profile_photo
     - field.field.node.speaker.field_recording_consent
+    - field.field.node.speaker.field_social_media_links
     - field.field.node.speaker.field_speaker_agreement
     - field.field.node.speaker.field_twitter_profile
     - field.field.node.speaker.field_user_account
@@ -28,6 +29,7 @@ dependencies:
     - image.style.large
     - node.type.speaker
   module:
+    - entity_reference_revisions
     - image
     - link
     - text
@@ -183,6 +185,15 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     weight: 122
+    region: content
+  field_social_media_links:
+    type: entity_reference_revisions_entity_view
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 121
     region: content
   field_speaker_agreement:
     type: boolean

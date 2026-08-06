@@ -1,0 +1,29 @@
+uuid: e5f138d0-829e-42a1-9d19-3835b8456512
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_platform
+    - paragraphs.paragraphs_type.social_media_link
+    - taxonomy.vocabulary.social_media_platforms
+id: paragraph.social_media_link.field_platform
+field_name: field_platform
+entity_type: paragraph
+bundle: social_media_link
+label: Platform
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      social_media_platforms: social_media_platforms
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
