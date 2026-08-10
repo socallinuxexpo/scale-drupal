@@ -441,6 +441,10 @@ display:
     display_plugin: data_export
     position: 1
     display_options:
+      pager:
+        type: none
+        options:
+          offset: 0
       style:
         type: data_export
         options:
@@ -467,6 +471,8 @@ display:
         - cookie
       filename: 'speaker-social-links--[date:html_datetime].csv'
       automatic_download: false
+      export_method: standard
+      export_batch_size: 1000
       store_in_public_file_directory: null
       custom_redirect_path: false
       redirect_to_display: none
