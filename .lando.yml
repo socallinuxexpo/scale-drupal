@@ -1,16 +1,9 @@
 name: scale10
-recipe: pantheon
+recipe: drupal10
 config:
-  framework: drupal8
-  site: scale-conf
-  id: 247425fd-b327-4b33-915d-e7f6a2b53818
-  # Disable the SOLR index
-  index: false
-  # Disable the VARNISH edge
-  edge: false
-  # Disable the REDIS cache
-  cache: false
   webroot: web
+  php: '8.2'
+  database: mysql:8.0
   xdebug: true
   config:
     php: .lando.php.ini
