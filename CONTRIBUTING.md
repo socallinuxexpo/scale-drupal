@@ -29,7 +29,7 @@ The site comes up at **https://scale10.lndo.site**.
 
 ### The database
 
-You'll also need one. Dumps aren't distributed publicly — the database holds speaker and attendee personal data. Ask on the issue you're working on and we'll sort it out.
+You'll need a database to have your local environment reflect the live site. Database dumps aren't distributed publicly, as these hold personal data for speakers, attendees, and admins. Ask on the issue you're working on and we'll sort it out.
 
 Once you have one:
 
@@ -152,6 +152,17 @@ Push your branch to your fork and open a pull request against `master`. Referenc
 Keep pull requests to one issue where you can. Configuration-only changes make good first contributions.
 
 Someone on the web team will review it. Once it's approved it can be merged. You don't need production access — deploying is handled separately.
+
+### Pull request titles
+
+The title prefix says what kind of attention a pull request needs.
+
+- **`[WIP]`** — still being worked on, no review needed. A draft pull request works too.
+- **`[REVIEW]`** — **author merges.** Review and give it an approval if it's good or only needs small fixes. If it needs more than that, leave comments and hold off approving.
+- **`[READY]`** — **reviewer merges.** Review, give it an approval, and merge if it's good.
+- **`[HOLD]`** — finished but blocked on something else, like a maintainer decision. Don't merge.
+
+GitHub tracks approvals separately from comments, so approving leaves a visible sign-off.
 
 ## Things that surprise people
 
