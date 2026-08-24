@@ -1,0 +1,29 @@
+uuid: 52d3507c-3e20-4482-bd8d-d786ec274581
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.24x-menu
+  module:
+    - system
+  theme:
+    - scale
+id: scale_24xmenu
+theme: scale
+region: primary_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:24x-menu'
+settings:
+  id: 'system_menu_block:24x-menu'
+  label: '24x Menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/scale/24x\r\n/scale/24x/*\r\n/scale/speaker/*"
