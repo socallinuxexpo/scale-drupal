@@ -46,6 +46,22 @@
     {{ drupal_field('field_moderation_message', 'node', node.id, {label: 'hidden'}) }}
   </div>
 
+  <h2>Voting</h2>
+  <div class="my-3">
+    <div class="flex gap-3">
+      <div>
+        <span>Vote</span>
+        {{ drupal_field('field_session_votes', 'node', node.id, {label: 'hidden', type: 'fivestar_stars'}) }}
+      </div>
+      <div>
+        <span>Your Vote</span>
+        <div class="py-3">
+          {{ drupal_field('field_session_votes', 'node', node.id, {label: 'hidden', type: 'fivestar_percentage'}) }}
+        </div>
+      </div>
+    </div>
+  </div>
+
   <h2>Tags</h2>
   <div class="my-3">
     {{ drupal_field('field_tags', 'node', node.id, {label: 'hidden', settings: {link: false}}) }}
@@ -78,24 +94,6 @@
     {% endfor %}
 
     {{ drupal_view('speaker_sessions', 'embed', speaker_ids|join('+')) }}
-  </div>
-
-
-
-  <h2>Voting</h2>
-  <div class="my-3">
-    <div class="flex gap-3">
-      <div>
-        <span>Vote</span>
-        {{ drupal_field('field_session_votes', 'node', node.id, {label: 'hidden', type: 'fivestar_stars'}) }}
-      </div>
-      <div>
-        <span>Your Vote</span>
-        <div class="py-3">
-          {{ drupal_field('field_session_votes', 'node', node.id, {label: 'hidden', type: 'fivestar_percentage'}) }}
-        </div>
-      </div>
-    </div>
   </div>
 
   {{ content.field_reviewer_comments }}
