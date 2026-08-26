@@ -1,0 +1,29 @@
+uuid: e5905a6b-c9b4-458d-9c68-04aeef0adba4
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.24x-footer
+  module:
+    - system
+  theme:
+    - scale
+id: scale_24xfooter
+theme: scale
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:24x-footer'
+settings:
+  id: 'system_menu_block:24x-footer'
+  label: '24x Footer'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: "/scale/24x/*\r\n/scale/24x\r\n/scale/speaker/*"
