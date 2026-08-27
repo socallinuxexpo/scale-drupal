@@ -90,3 +90,19 @@ function views_plugins_form_views_exposed_form_alter(&$form, &$form_state) {
     $form['event']['#options'] = $options;
   }
 }
+
+/**
+ * Implements hook_views_data_alter().
+ *
+ * Registers the speaker name filter, on node_field_data so it only appears
+ * on node based views.
+ */
+function views_plugins_views_data_alter(array &$data) {
+  $data['node_field_data']['speaker_name'] = [
+    'title' => t('Speaker name'),
+    'help' => t('Filter content by the name of any referenced speaker.'),
+    'filter' => [
+      'id' => 'speaker_name',
+    ],
+  ];
+}
