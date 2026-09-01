@@ -50,11 +50,21 @@ function _sessions_send_submission_email(NodeInterface $node): void
     $key = 'session_submission';
     $langcode = \Drupal::currentUser()->getPreferredLangcode();
 
+    // During hook_node_insert, the pathauto alias may not exist yet.
+    if (\Drupal::moduleHandler()->moduleExists('pathauto')) {
+        \Drupal::service('pathauto.generator')->createEntityAlias($node, 'insert');
+        \Drupal::service('path_alias.manager')->cacheClear();
+    }
+
+    $speaker_info = _sessions_get_speaker_info($node);
+
     $params = [
         'node' => $node,
         'title' => $node->getTitle(),
         'full_name' => _sessions_get_author_full_name($node),
-        'cc_emails' => _sessions_get_speaker_emails($node),
+        'cc_emails' => array_filter(array_column($speaker_info, 'email')),
+        'session_url' => $node->toUrl('canonical', ['absolute' => TRUE])->toString(),
+        'speaker_links' => $speaker_info,
     ];
 
     $send = true;
@@ -69,36 +79,39 @@ function _sessions_send_submission_email(NodeInterface $node): void
 }
 
 /**
- * Gets email addresses for all speakers referenced on a session node.
+ * Gets info for all speakers referenced on a session node.
  *
  * @param \Drupal\node\NodeInterface $node
  *   The session node.
  *
  * @return array
- *   An array of speaker email addresses (may be empty).
+ *   An array of ['name' => string, 'url' => string, 'email' => string|null]
+ *   for each speaker.
  */
-function _sessions_get_speaker_emails(NodeInterface $node): array
+function _sessions_get_speaker_info(NodeInterface $node): array
 {
-    $emails = [];
+    $speakers = [];
 
-    if (!$node->hasField('field_speakers_ref') || $node->get('field_speakers_ref')->isEmpty()) {
-        return $emails;
-    }
+    foreach (_sessions_get_speaker_ids($node) as $speaker_id) {
+        $speaker = \Drupal\node\Entity\Node::load($speaker_id);
 
-    // This is a multivalue reference field, so loop through each referenced item.
-    foreach ($node->get('field_speakers_ref')->referencedEntities() as $speaker) {
-        if ($speaker instanceof NodeInterface
-            && $speaker->hasField('field_email')
-            && !$speaker->get('field_email')->isEmpty()
-        ) {
-            $email = $speaker->get('field_email')->value;
-            if (!empty($email)) {
-                $emails[] = $email;
-            }
+        if (!$speaker) {
+            continue;
         }
+
+        $email = NULL;
+        if ($speaker->hasField('field_email') && !$speaker->get('field_email')->isEmpty()) {
+            $email = $speaker->get('field_email')->value ?: NULL;
+        }
+
+        $speakers[] = [
+            'name' => $speaker->getTitle(),
+            'url' => $speaker->toUrl('canonical', ['absolute' => TRUE])->toString(),
+            'email' => $email,
+        ];
     }
 
-    return $emails;
+    return $speakers;
 }
 
 /**
@@ -185,11 +198,160 @@ function sessions_mail($key, &$message, $params): void
                 '@full_name' => $params['full_name'],
                 '@title' => $params['title'],
             ]);
+            $message['body'][] = t('View your session: @url', [
+                '@url' => $params['session_url'],
+            ]);
+            if (!empty($params['speaker_links'])) {
+                $speaker_lines = [];
+                foreach ($params['speaker_links'] as $link) {
+                    $speaker_lines[] = t('  - @name: @url', ['@name' => $link['name'], '@url' => $link['url']]);
+                }
+                $message['body'][] = t('Speaker profiles:') . "\n" . implode("\n", $speaker_lines);
+            }
             $message['body'][] = t(
-                "We appreciate your time and effort in crafting this talk proposal. You will be able to log back in and make edits to your proposal until the cfp deadline. Our program committee will begin reviewing proposals in September, and they may reach out to you with specific questions about your talk. You can expect to hear from us about whether your proposal was accepted by the end of November.\n\nIf you have questions, or wish to withdraw this proposal, please email cfp@socallinuxexpo.org.\n\n***\n\nSpeaker Agreement: By participating as a Speaker at the Event, I consent to the terms and conditions of this Agreement And Release.\n\nI will not be paid by the Linux Expo of Southern California for my services as Speaker, nor will my expenses be reimbursed by Linux Expo of Southern California unless I have a separate compensation or travel grant agreement regarding the Event. No fees will be paid on account of any reproduction or distribution of any materials that include any aspect of my participation in the Event.\n\nI will meet all deadlines for producing slides, materials, and other requirements.\n\nNeither I, nor my employer, may substitute another speaker in my place. If I cannot fulfill my commitment, the Event team will evaluate and approve any substitutions.\n\nThe Event is an educational event, not a sales or marketing platform. The Event is retaining me to provide an objective presentation that meets the educational needs of the Event attendees.\n\nEvent organizers and Linux Expo of Southern California may record, in any format, my participation in the Event; for distribution on their website via a creative commons license. On my own behalf and on behalf of my employer, I grant to the Event and its designees the irrevocable right to record, transcribe, modify, reproduce, perform, display, and distribute, in whole or in part and in any form and for any purpose, in any media now or subsequently known, my participation in the Event, and consent to the use of any text, other image, or sound in conjunction therewith. I further waive and release all claims and rights that may arise out of such use in any jurisdiction, now or in the future, and specifically waive any legal restrictions on waivers of future claims.\n\nI will release my slides for distribution via the SCALE conference website.\n\nI am over 18 years of age or have the consent of my parent or guardian to agree to the terms of this contract.\n\nThis Agreement And Release is governed by California law; choice of law rules do not apply, regardless of jurisdiction.\n\nI also agree to abide by the code of conduct, which can be found at https://www.socallinuxexpo.org/scale/24x/code-conduct\n\n",
+                "We appreciate your time and effort in crafting this talk proposal. You will be able to log back in and make edits to your proposal until the cfp deadline. Our program committee will begin reviewing proposals in September, and they may reach out to you with specific questions about your talk. You can expect to hear from us about whether your proposal was accepted by the end of November.\n\nIf you have questions, or wish to withdraw this proposal, please email cfp@socallinuxexpo.org.\n\nYou may also reach out to cfp@socallinuxexpo.org if you are a speaker but are unable to access the session link above. Alternatively, you may work through your session submitter to make edits.\n\n***\n\nSpeaker Agreement: By participating as a Speaker at the Event, I consent to the terms and conditions of this Agreement And Release.\n\nI will not be paid by the Linux Expo of Southern California for my services as Speaker, nor will my expenses be reimbursed by Linux Expo of Southern California unless I have a separate compensation or travel grant agreement regarding the Event. No fees will be paid on account of any reproduction or distribution of any materials that include any aspect of my participation in the Event.\n\nI will meet all deadlines for producing slides, materials, and other requirements.\n\nNeither I, nor my employer, may substitute another speaker in my place. If I cannot fulfill my commitment, the Event team will evaluate and approve any substitutions.\n\nThe Event is an educational event, not a sales or marketing platform. The Event is retaining me to provide an objective presentation that meets the educational needs of the Event attendees.\n\nEvent organizers and Linux Expo of Southern California may record, in any format, my participation in the Event; for distribution on their website via a creative commons license. On my own behalf and on behalf of my employer, I grant to the Event and its designees the irrevocable right to record, transcribe, modify, reproduce, perform, display, and distribute, in whole or in part and in any form and for any purpose, in any media now or subsequently known, my participation in the Event, and consent to the use of any text, other image, or sound in conjunction therewith. I further waive and release all claims and rights that may arise out of such use in any jurisdiction, now or in the future, and specifically waive any legal restrictions on waivers of future claims.\n\nI will release my slides for distribution via the SCALE conference website.\n\nI am over 18 years of age or have the consent of my parent or guardian to agree to the terms of this contract.\n\nThis Agreement And Release is governed by California law; choice of law rules do not apply, regardless of jurisdiction.\n\nI also agree to abide by the code of conduct, which can be found at https://www.socallinuxexpo.org/scale/24x/code-conduct\n\n",
             );
             break;
+
+        case 'speaker_added':
+            $message['subject'] = t("You've been added as a SCaLE speaker: @title", [
+                '@title' => $params['title'],
+            ]);
+            $message['body'][] = t('You have been added as a SCaLE speaker to the talk "@title".', [
+                '@title' => $params['title'],
+            ]);
+            $message['body'][] = t('View the session: @url', [
+                '@url' => $params['session_url'],
+            ]);
+            if (!empty($params['speaker_links'])) {
+                $speaker_lines = [];
+                foreach ($params['speaker_links'] as $link) {
+                    $speaker_lines[] = t('  - @name: @url', ['@name' => $link['name'], '@url' => $link['url']]);
+                }
+                $message['body'][] = t('Speaker profiles:') . "\n" . implode("\n", $speaker_lines);
+            }
+
+            $message['body'][] = t('Our program committee will begin reviewing proposals in September, and they may reach out to you with specific questions about your talk. You can expect to hear from us about whether your proposal was accepted by the end of November.');
+
+            $message['body'][] = t('If you have questions, or wish to withdraw this proposal, please email cfp@socallinuxexpo.org.');
+
+            $message['body'][] = t('You may also reach out to cfp@socallinuxexpo.org if you are a speaker but are unable to access the session link above. Alternatively, you may work through your session submitter to make edits.');
+
+            $message['body'][] = t('***');
+
+            $message['body'][] = t('To speak at SCaLE (and co-located events), one must agree to the following:');
+
+            $message['body'][] = t('By participating as a Speaker at the Event, I consent to the terms and conditions of this Agreement And Release.');
+
+            $message['body'][] = t('I will not be paid by the Linux Expo of Southern California for my services as Speaker, nor will my expenses be reimbursed by Linux Expo of Southern California unless I have a separate compensation or travel grant agreement regarding the Event. No fees will be paid on account of any reproduction or distribution of any materials that include any aspect of my participation in the Event.');
+
+            $message['body'][] = t('I will meet all deadlines for producing slides, materials, and other requirements.');
+
+            $message['body'][] = t('I will provide the organizers with my full legal name for conference records. If I explicitly request to be listed publicly under a different name (professional name, chosen name, etc), the organizers will do so if/where possible.');
+
+            $message['body'][] = t('I will provide the organizers a recent photograph clearly showing my face and true likeness. Illustrations, avatars, cartoons, logos, heavily obscured or stylized images, and images of other people are not acceptable. Minimum resolution 800x1000 pixels; headshot or upper-body framing preferred.');
+
+            $message['body'][] = t('I will attend and present in-person. SCaLE does not support remote presentations.');
+
+            $message['body'][] = t('Neither I, nor my employer, may substitute another speaker in my place. If I cannot fulfill my commitment, the Event team will evaluate and approve any substitutions.');
+
+            $message['body'][] = t('The Event is an educational event, not a sales or marketing platform. The Event is retaining me to provide an objective presentation that meets the educational needs of the Event attendees.');
+
+            $message['body'][] = t('Event organizers and Linux Expo of Southern California may record, in any format, my participation in the Event; for distribution on their website via a creative commons license. On my own behalf and on behalf of my employer, I grant to the Event and its designees the irrevocable right to record, transcribe, modify, reproduce, perform, display, and distribute, in whole or in part and in any form and for any purpose, in any media now or subsequently known, my participation in the Event, and consent to the use of any text, other image, or sound in conjunction therewith. I further waive and release all claims and rights that may arise out of such use in any jurisdiction, now or in the future, and specifically waive any legal restrictions on waivers of future claims.');
+
+            $message['body'][] = t('I will release my slides for distribution via the SCaLE conference website.');
+
+            $message['body'][] = t('I am over 18 years of age or have the consent of my parent or guardian to agree to the terms of this contract.');
+
+            $message['body'][] = t('This Agreement And Release is governed by California law; choice of law rules do not apply, regardless of jurisdiction.');
+
+            $message['body'][] = t('I also agree to abide by the code of conduct, which can be found at https://www.socallinuxexpo.org/scale/24x/code-conduct');
+
+            break;
     }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function sessions_node_update(EntityInterface $entity): void
+{
+    if ($entity instanceof NodeInterface && $entity->bundle() == 'session') {
+        _sessions_notify_newly_added_speakers($entity);
+    }
+}
+
+/**
+ * Notifies any speakers newly added to a session since its last save.
+ *
+ * @param \Drupal\node\NodeInterface $node
+ *   The updated session node.
+ */
+function _sessions_notify_newly_added_speakers(NodeInterface $node): void
+{
+    if (!isset($node->original)) {
+        return;
+    }
+
+    $old_speaker_ids = _sessions_get_speaker_ids($node->original);
+    $new_speaker_ids = _sessions_get_speaker_ids($node);
+
+    $added_speaker_ids = array_diff($new_speaker_ids, $old_speaker_ids);
+
+    if (empty($added_speaker_ids)) {
+        return;
+    }
+
+    $mailManager = \Drupal::service('plugin.manager.mail');
+    $langcode = \Drupal::currentUser()->getPreferredLangcode();
+
+    foreach ($added_speaker_ids as $speaker_id) {
+        $speaker = \Drupal\node\Entity\Node::load($speaker_id);
+
+        if (!$speaker || !$speaker->hasField('field_email') || $speaker->get('field_email')->isEmpty()) {
+            continue;
+        }
+
+        $email = $speaker->get('field_email')->value;
+
+        if (empty($email)) {
+            continue;
+        }
+
+        $params = [
+            'node' => $node,
+            'title' => $node->getTitle(),
+            'session_url' => $node->toUrl('canonical', ['absolute' => TRUE])->toString(),
+            'speaker_links' => _sessions_get_speaker_info($node),
+        ];
+
+        $result = $mailManager->mail('sessions', 'speaker_added', $email, $langcode, $params, NULL, TRUE);
+
+        if (!$result['result']) {
+            \Drupal::logger('sessions')->error(
+                'Failed to send speaker-added email for node @nid to @email.',
+                ['@nid' => $node->id(), '@email' => $email]
+            );
+        }
+    }
+}
+
+/**
+ * Gets the referenced speaker node IDs for a session node.
+ *
+ * @param \Drupal\node\NodeInterface $node
+ *   The session node.
+ *
+ * @return array
+ *   An array of speaker node IDs (may be empty).
+ */
+function _sessions_get_speaker_ids(NodeInterface $node): array
+{
+    if (!$node->hasField('field_speakers_ref') || $node->get('field_speakers_ref')->isEmpty()) {
+        return [];
+    }
+
+    return array_column($node->get('field_speakers_ref')->getValue(), 'target_id');
 }
 
 /**
