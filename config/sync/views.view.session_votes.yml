@@ -549,7 +549,7 @@ display:
         type: basic
         options:
           submit_button: Apply
-          reset_button: false
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -660,13 +660,15 @@ display:
             operator_list: {  }
             identifier: event
             required: false
-            remember: false
+            remember: true
             multiple: false
             remember_roles:
-              authenticated: authenticated
+              reviewer: reviewer
+              administrator: administrator
               anonymous: '0'
-              reviewer: '0'
-              administrator: '0'
+              authenticated: '0'
+              marketer: '0'
+              session_editor: '0'
             reduce: 0
           is_grouped: false
           group_info:
@@ -713,13 +715,15 @@ display:
             operator_list: {  }
             identifier: field_session_track_target_id_verf
             required: false
-            remember: false
+            remember: true
             multiple: false
             remember_roles:
-              authenticated: authenticated
+              reviewer: reviewer
+              administrator: administrator
               anonymous: '0'
-              reviewer: '0'
-              administrator: '0'
+              authenticated: '0'
+              marketer: '0'
+              session_editor: '0'
             reduce: 0
           is_grouped: false
           group_info:
@@ -741,6 +745,7 @@ display:
             session_rating: '0'
             session_status: '0'
             session_tags: '0'
+            social_media_platforms: '0'
             sponsor_tier: '0'
             sponsor_type: '0'
             user_age: '0'
