@@ -265,8 +265,6 @@ function sessions_mail($key, &$message, $params): void
 
             $message['body'][] = t('This Agreement And Release is governed by California law; choice of law rules do not apply, regardless of jurisdiction.');
 
-            $message['body'][] = t('This Agreement And Release is governed by California law; choice of law rules do not apply, regardless of jurisdiction.');
-
             $message['body'][] = t('I also agree to abide by the code of conduct, which can be found at https://www.socallinuxexpo.org/scale/24x/code-conduct');
 
             break;
