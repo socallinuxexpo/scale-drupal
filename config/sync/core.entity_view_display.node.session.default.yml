@@ -169,7 +169,7 @@ content:
     label: above
     settings:
       text_format: average
-      display_format: average
+      display_format: user
       fivestar_widget: basic
     third_party_settings: {  }
     weight: 19

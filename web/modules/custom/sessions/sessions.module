@@ -218,6 +218,21 @@ function sessions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     // Add custom validation handler.
     $form['#validate'][] = '_sessions_validate_speakers_field';
   }
+
+  // Populate vote_user for fivestar forms so display_format "user" works.
+  if (strpos($form_id, 'fivestar_form') === 0 && isset($form['vote'])) {
+    $context = $form_state->get('context');
+    if ($context && isset($context['entity'])) {
+      $entity = $context['entity'];
+      $field_settings = $context['field_definition']->getSettings();
+      $user_vote = _sessions_get_user_vote($entity, $field_settings['vote_type']);
+      if ($user_vote !== NULL) {
+        $form['vote']['#values']['vote_user'] = $user_vote;
+        $form['vote']['#default_value'] = $user_vote;
+      }
+      $form['#cache']['max-age'] = 0;
+    }
+  }
 }
 
 /**
@@ -253,6 +268,41 @@ function _sessions_redirect_to_review(EntityInterface $entity) {
     $response->send();
     exit;
   }
+}
+
+/**
+ * Gets the current user's vote value for an entity.
+ *
+ * @param \Drupal\Core\Entity\EntityInterface $entity
+ *   The voted entity.
+ * @param string $vote_type
+ *   The vote type machine name.
+ *
+ * @return float|null
+ *   The vote value, or NULL if the user hasn't voted.
+ */
+function _sessions_get_user_vote(EntityInterface $entity, string $vote_type): ?float
+{
+    $uid = \Drupal::currentUser()->id();
+    if (!$uid) {
+        return NULL;
+    }
+
+    $vote_storage = \Drupal::entityTypeManager()->getStorage('vote');
+    $vote_ids = $vote_storage->getQuery()
+        ->condition('entity_type', $entity->getEntityTypeId())
+        ->condition('entity_id', $entity->id())
+        ->condition('type', $vote_type)
+        ->condition('user_id', $uid)
+        ->accessCheck(FALSE)
+        ->execute();
+
+    if (empty($vote_ids)) {
+        return NULL;
+    }
+
+    $vote = $vote_storage->load(reset($vote_ids));
+    return $vote ? (float) $vote->getValue() : NULL;
 }
 
 /**
