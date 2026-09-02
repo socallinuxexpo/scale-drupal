@@ -1,0 +1,32 @@
+/**
+ * @file
+ * Lets a reviewer hide the My Rating column while screen sharing.
+ *
+ * The class sits on <body> rather than on the view, because the votes view
+ * uses AJAX and replaces its own markup on every sort or filter.
+ */
+
+body.hide-my-rating .views-field-my-rating {
+  display: none;
+}
+
+/**
+ * The sort link puts an arrow beside the label, which leaves "My Rating" too
+ * little room and wraps it onto two lines.
+ */
+th.views-field-my-rating {
+  white-space: nowrap;
+}
+
+.hide-my-rating-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5em;
+  margin: 0 0 0.75em;
+  white-space: nowrap;
+}
+
+.hide-my-rating-toggle label {
+  margin: 0;
+}
