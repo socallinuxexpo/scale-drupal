@@ -71,6 +71,19 @@ function views_plugins_preprocess_views_swiperjs(&$variables) {
  *   The form state array.
  */
 function views_plugins_form_views_exposed_form_alter(&$form, &$form_state) {
+  if ($form['#id'] == 'views-exposed-form-session-votes-page-1') {
+    if (isset($form['event']['#options'])) {
+      $options = $form['event']['#options'];
+      $all_option = [];
+      if (isset($options['All'])) {
+        $all_option['All'] = $options['All'];
+        unset($options['All']);
+      }
+      $options = array_reverse($options, TRUE);
+      $form['event']['#options'] = $all_option + $options;
+    }
+  }
+
   if ($form['#id'] == 'views-exposed-form-sessions-admin') {
     // Remove the size attribute to convert the field to a dropdown.
     unset($form["event"]["#size"]);
@@ -84,6 +97,8 @@ function views_plugins_form_views_exposed_form_alter(&$form, &$form_state) {
     foreach ($event_nodes as $event_node) {
       $options[$event_node->id()] = $event_node->label();
     }
+    natcasesort($options);
+    $options = array_reverse($options, TRUE);
 
     // Set the field type to 'select' and assign the options.
     $form["event"]["#type"] = 'select';
