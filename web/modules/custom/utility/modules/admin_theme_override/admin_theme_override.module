@@ -57,5 +57,11 @@ function admin_theme_override_theme_registry_alter(&$theme_registry) {
       'template' => 'node--speaker--listing-small',
       'variables' => $theme_registry['node']['variables'] ?? [],
     ];
+
+    $module_path = \Drupal::service('extension.list.module')->getPath('admin_theme_override');
+    if (isset($theme_registry['views_view'])) {
+      $theme_registry['views_view']['path'] = $module_path . '/templates';
+      $theme_registry['views_view']['template'] = 'views-view';
+    }
   }
 }
