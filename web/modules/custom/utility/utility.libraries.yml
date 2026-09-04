@@ -1,0 +1,9 @@
+hide_my_rating:
+  version: 1.x
+  css:
+    theme:
+      css/hide-my-rating.css: {  }
+  js:
+    js/hide-my-rating.js: {  }
+  dependencies:
+    - core/drupal

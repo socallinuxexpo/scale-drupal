@@ -856,14 +856,23 @@ display:
           row_class: ''
           default_row_class: true
           columns:
+            view_node: view_node
             title: title
             field_speakers_ref: field_speakers_ref
             field_session_track: field_session_track
             moderation_state: moderation_state
             value: value
+            my_rating: my_rating
             value_1: value_1
           default: '-1'
           info:
+            view_node:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             title:
               sortable: true
               default_sort_order: asc
@@ -893,6 +902,13 @@ display:
             value:
               sortable: true
               default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            my_rating:
+              sortable: true
+              default_sort_order: desc
               align: ''
               separator: ''
               empty_column: false

@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\views\ViewExecutable;
+
 /**
  * Implements hook_views_data().
  */
@@ -16,4 +18,16 @@ function utility_views_data(): array {
     ];
 
     return $data;
+}
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * Attaches the control that hides the My Rating column, so reviewers can keep
+ * their own votes off screen while sharing.
+ */
+function utility_views_pre_render(ViewExecutable $view): void {
+    if ($view->id() === 'session_votes') {
+        $view->element['#attached']['library'][] = 'utility/hide_my_rating';
+    }
 }
