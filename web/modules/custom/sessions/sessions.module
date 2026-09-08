@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Mail\MailManagerInterface;
@@ -505,4 +506,28 @@ function _sessions_validate_speakers_field(array &$form, FormStateInterface $for
     // Show warning message to user.
     \Drupal::messenger()->addWarning(t('Warning: You are saving this session without any speakers assigned. If this is intentional, please click Save again to confirm.'));
   }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view_alter().
+ *
+ * Marks a session as read when it is viewed on its review page.
+ *
+ * Core only does this for the full view mode, see history_node_view_alter().
+ * Reviewer comments are hidden on the full display and are read at
+ * /node/{nid}/review, which view_mode_page renders in the admin_review mode,
+ * so without this the new comment count on the votes report never clears.
+ */
+function sessions_node_view_alter(array &$build, EntityInterface $node, EntityViewDisplayInterface $display): void
+{
+    if ($display->getOriginalMode() !== 'admin_review') {
+        return;
+    }
+
+    $build['#cache']['contexts'][] = 'user.roles:authenticated';
+
+    if (\Drupal::currentUser()->isAuthenticated()) {
+        $build['#attached']['library'][] = 'history/mark-as-read';
+        $build['#attached']['drupalSettings']['history']['nodesToMarkAsRead'][$node->id()] = TRUE;
+    }
 }
