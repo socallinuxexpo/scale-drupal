@@ -82,6 +82,8 @@ function views_plugins_form_views_exposed_form_alter(&$form, &$form_state) {
       $options = array_reverse($options, TRUE);
       $form['event']['#options'] = $all_option + $options;
     }
+
+    _views_plugins_group_track_options($form);
   }
 
   if ($form['#id'] == 'views-exposed-form-sessions-admin') {
@@ -104,6 +106,58 @@ function views_plugins_form_views_exposed_form_alter(&$form, &$form_state) {
     $form["event"]["#type"] = 'select';
     $form['event']['#options'] = $options;
   }
+}
+
+/**
+ * Splits the Track filter options into Active and Inactive groups.
+ *
+ * The edit talk form already groups tracks this way, through the
+ * GroupedSelectWidget in allowed_taxonomy. Views filters have no widget to
+ * reuse, so the same split is done here on the options array instead.
+ *
+ * Unlike the widget, inactive tracks are always shown. The votes report can
+ * load older events, so reviewers need them.
+ *
+ * @param array $form
+ *   The exposed form for the session votes view.
+ */
+function _views_plugins_group_track_options(array &$form) {
+  if (!isset($form['field_session_track_target_id_verf']['#options'])) {
+    return;
+  }
+
+  $options = $form['field_session_track_target_id_verf']['#options'];
+
+  // Keep "- Any -" at the top rather than sorting it into a group.
+  $any_option = [];
+  if (isset($options['All'])) {
+    $any_option['All'] = $options['All'];
+    unset($options['All']);
+  }
+
+  $terms = \Drupal::entityTypeManager()
+    ->getStorage('taxonomy_term')
+    ->loadMultiple(array_keys($options));
+
+  $active = [];
+  $inactive = [];
+
+  foreach ($options as $tid => $label) {
+    $term = $terms[$tid] ?? NULL;
+
+    if ($term && $term->hasField('field_active') && $term->get('field_active')->value) {
+      $active[$tid] = $label;
+    }
+    else {
+      $inactive[$tid] = $label;
+    }
+  }
+
+  // A nested array renders as an optgroup, so each key becomes a heading.
+  $form['field_session_track_target_id_verf']['#options'] = $any_option + array_filter([
+    'Active' => $active ?: NULL,
+    'Inactive' => $inactive ?: NULL,
+  ]);
 }
 
 /**
