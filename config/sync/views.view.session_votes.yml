@@ -11,6 +11,7 @@ dependencies:
   module:
     - content_moderation
     - node
+    - taxonomy
     - user
     - utility
     - verf
@@ -221,7 +222,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: Track
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -275,6 +276,72 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        name:
+          id: name
+          table: taxonomy_term_field_data
+          field: name
+          relationship: field_session_track
+          group_type: group
+          admin_label: ''
+          entity_type: taxonomy_term
+          entity_field: name
+          plugin_id: term_name
+          label: Track
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          convert_spaces: false
         moderation_state:
           id: moderation_state
           table: node_field_data
@@ -864,6 +931,7 @@ display:
             value: value
             my_rating: my_rating
             value_1: value_1
+            name: name
           default: '-1'
           info:
             view_node:
@@ -920,6 +988,13 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
+            name:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
           override: true
           sticky: false
           summary: ''
@@ -960,6 +1035,15 @@ display:
           group_type: group
           admin_label: count
           entity_type: node
+          plugin_id: standard
+          required: false
+        field_session_track:
+          id: field_session_track
+          table: node__field_session_track
+          field: field_session_track
+          relationship: none
+          group_type: group
+          admin_label: 'field_session_track: Taxonomy term'
           plugin_id: standard
           required: false
       use_ajax: true
