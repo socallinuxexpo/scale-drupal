@@ -17,3 +17,6 @@
 
 # Chef settings file.
 web/sites/default/settings.chef.php
+
+# Written by the migration script.
+track-migration-log.csv
