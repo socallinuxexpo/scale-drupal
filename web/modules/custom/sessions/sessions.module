@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Mail\MailManagerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
+use Drupal\sessions\Form\TrackSuggestionForm;
 
 /**
  * Implements hook_ENTITY_TYPE_insert().
@@ -563,4 +564,46 @@ function sessions_node_view_alter(array &$build, EntityInterface $node, EntityVi
         $build['#attached']['library'][] = 'history/mark-as-read';
         $build['#attached']['drupalSettings']['history']['nodesToMarkAsRead'][$node->id()] = TRUE;
     }
+
+    if ($node->bundle() === 'session') {
+        _sessions_add_track_suggestions($build, $node);
+    }
+}
+
+/**
+ * Adds the track suggestions section to a talk's review page.
+ *
+ * Lists every suggestion made for the talk, then the form for making or
+ * updating your own.
+ */
+function _sessions_add_track_suggestions(array &$build, NodeInterface $node): void
+{
+    $section = [
+        '#type' => 'container',
+        '#weight' => 50,
+        '#attributes' => ['class' => ['my-7']],
+        // The form is prefilled with the viewer's own suggestion, and the list
+        // has to update as soon as anyone adds one.
+        '#cache' => [
+            'contexts' => ['user'],
+            'tags' => ['node_list:track_suggestion'],
+        ],
+        'heading' => [
+            '#markup' => '<h2>' . t('Track Suggestions') . '</h2>',
+        ],
+    ];
+
+    $list = views_embed_view('track_swaps', 'block_1', $node->id());
+    if ($list) {
+        $section['list'] = $list;
+    }
+
+    // Its own permission, so reviewers don't need the Track suggestion content
+    // permissions, which would also open Drupal's default forms that skip this
+    // form's rules.
+    if (\Drupal::currentUser()->hasPermission('suggest track changes')) {
+        $section['form'] = \Drupal::formBuilder()->getForm(TrackSuggestionForm::class, $node);
+    }
+
+    $build['track_suggestions'] = $section;
 }

@@ -9,7 +9,7 @@ id: node.track_suggestion.field_swap_comment
 field_name: field_swap_comment
 entity_type: node
 bundle: track_suggestion
-label: Comment
+label: Reason
 description: ''
 required: false
 translatable: false

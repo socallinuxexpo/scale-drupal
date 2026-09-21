@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * One track suggestion in the list on a talk's review page.
+ *
+ * Views supplies the fields and this lays them out. dist/css/styles.css is
+ * committed rather than rebuilt on deploy, so only Tailwind classes already in
+ * it take effect. The row matches the speaker list's rows.
+ */
+#}
+{# Decisions get a tint. Anything else, including open, stays the default. #}
+{% set badge_colors = {'accepted': 'bg-green-50', 'rejected': 'bg-red-50'} %}
+{% set badge_bg = badge_colors[row._entity.field_swap_status.value]|default('bg-primary-50') %}
+
+<div class="py-4 border-b border-black-50">
+  <div class="flex items-center gap-2">
+    <span class="font-bold">{{ fields.field_suggested_track.content }}</span>
+    <span class="text-xs text-gray-600 {{ badge_bg }} px-2 rounded">{{ fields.field_swap_status.content }}</span>
+  </div>
+  <div class="text-sm text-gray-500 mb-1">
+    by {{ fields.uid.content }} on {{ fields.created.content }}
+  </div>
+  {% if fields.field_swap_comment %}
+    <div>{{ fields.field_swap_comment.content }}</div>
+  {% endif %}
+</div>
