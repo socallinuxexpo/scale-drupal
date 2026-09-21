@@ -1,0 +1,29 @@
+uuid: 0a0a16f4-d29e-439d-8a20-0b3106ecf1db
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_suggested_track
+    - node.type.track_suggestion
+    - taxonomy.vocabulary.session_track
+id: node.track_suggestion.field_suggested_track
+field_name: field_suggested_track
+entity_type: node
+bundle: track_suggestion
+label: 'Suggested track'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      session_track: session_track
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

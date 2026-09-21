@@ -1,0 +1,15 @@
+uuid: e9d1ef66-d727-4bec-a98a-c9d460757252
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui: {  }
+name: 'Track suggestion'
+type: track_suggestion
+description: null
+help: null
+new_revision: true
+preview_mode: 0
+display_submitted: false

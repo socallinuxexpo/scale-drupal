@@ -283,6 +283,34 @@ function sessions_node_update(EntityInterface $entity): void
 }
 
 /**
+ * Implements hook_node_presave().
+ *
+ * Only session editors can change a track suggestion's status. Anyone who can
+ * edit any track suggestion is treated as a session editor.
+ */
+function sessions_node_presave(EntityInterface $entity): void
+{
+    if (!$entity instanceof NodeInterface || $entity->bundle() !== 'track_suggestion') {
+        return;
+    }
+
+    // New suggestions always start open. Old track is set by code on accept.
+    if ($entity->isNew()) {
+        $entity->set('field_swap_status', 'suggested');
+        $entity->set('field_old_track', NULL);
+        return;
+    }
+
+    if (\Drupal::currentUser()->hasPermission('edit any track_suggestion content')) {
+        return;
+    }
+
+    // Reviewers can reword their suggestion but not change its status.
+    $entity->set('field_swap_status', $entity->original->get('field_swap_status')->value);
+    $entity->set('field_old_track', $entity->original->get('field_old_track')->target_id);
+}
+
+/**
  * Notifies any speakers newly added to a session since its last save.
  *
  * @param \Drupal\node\NodeInterface $node
@@ -380,6 +408,11 @@ function sessions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id === 'node_session_form' || $form_id === 'node_session_edit_form') {
     // Add custom validation handler.
     $form['#validate'][] = '_sessions_validate_speakers_field';
+  }
+
+  // Everyone can see a suggestion's status, only session editors can change it.
+  if ($form_id === 'node_track_suggestion_form' || $form_id === 'node_track_suggestion_edit_form') {
+    $form['field_swap_status']['#disabled'] = !\Drupal::currentUser()->hasPermission('edit any track_suggestion content');
   }
 
   // Populate vote_user for fivestar forms so display_format "user" works.

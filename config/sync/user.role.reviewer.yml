@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.page
+    - node.type.track_suggestion
     - workflows.workflow.session_workflow
   module:
     - comment
@@ -38,13 +39,16 @@ permissions:
   - 'administer url aliases'
   - 'create field_session_votes'
   - 'create page content'
+  - 'create track_suggestion content'
   - 'create url aliases'
   - 'delete own files'
   - 'delete own page content'
+  - 'delete own track_suggestion content'
   - 'delete page revisions'
   - 'edit own comments'
   - 'edit own field_session_votes'
   - 'edit own page content'
+  - 'edit own track_suggestion content'
   - 'post comments'
   - 'rate content'
   - 'revert all revisions'

@@ -1,0 +1,29 @@
+uuid: 45c6fa00-f095-4cd6-abe4-f81bad4c8377
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_old_track
+    - node.type.track_suggestion
+    - taxonomy.vocabulary.session_track
+id: node.track_suggestion.field_old_track
+field_name: field_old_track
+entity_type: node
+bundle: track_suggestion
+label: 'Old track'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      session_track: session_track
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

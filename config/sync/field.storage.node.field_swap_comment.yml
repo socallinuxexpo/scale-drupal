@@ -1,0 +1,19 @@
+uuid: ed8099cf-8bc5-4367-ad7a-2361f9305b2d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_swap_comment
+field_name: field_swap_comment
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
