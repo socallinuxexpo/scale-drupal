@@ -1,0 +1,19 @@
+uuid: cf5f10b9-a521-4d60-b455-19beb2168c0c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviewed_on
+    - node.type.track_suggestion
+id: node.track_suggestion.field_reviewed_on
+field_name: field_reviewed_on
+entity_type: node
+bundle: track_suggestion
+label: 'Reviewed on'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: timestamp

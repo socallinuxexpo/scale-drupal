@@ -88,7 +88,7 @@ function views_plugins_form_views_exposed_form_alter(&$form, &$form_state) {
 
   if ($form['#id'] == 'views-exposed-form-track-swaps-page-1') {
     _views_plugins_group_track_options($form, 'suggested_track');
-    _views_plugins_group_track_options($form, 'current_track');
+    _views_plugins_group_track_options($form, 'original_track');
   }
 
   if ($form['#id'] == 'views-exposed-form-sessions-admin') {
@@ -179,6 +179,14 @@ function views_plugins_views_data_alter(array &$data) {
     'help' => t('Filter content by the name of any referenced speaker.'),
     'filter' => [
       'id' => 'speaker_name',
+    ],
+  ];
+
+  $data['node_field_data']['original_track'] = [
+    'title' => t('Original track'),
+    'help' => t('For an accepted track suggestion, the track its talk was moved out of. Otherwise the talk\'s current track.'),
+    'filter' => [
+      'id' => 'original_track',
     ],
   ];
 

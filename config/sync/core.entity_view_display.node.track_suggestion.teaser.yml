@@ -4,7 +4,10 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.track_suggestion.field_decision_note
     - field.field.node.track_suggestion.field_old_track
+    - field.field.node.track_suggestion.field_reviewed_by
+    - field.field.node.track_suggestion.field_reviewed_on
     - field.field.node.track_suggestion.field_suggested_track
     - field.field.node.track_suggestion.field_swap_comment
     - field.field.node.track_suggestion.field_swap_status
@@ -24,7 +27,10 @@ content:
     region: content
 hidden:
   breadcrumbs: true
+  field_decision_note: true
   field_old_track: true
+  field_reviewed_by: true
+  field_reviewed_on: true
   field_suggested_track: true
   field_swap_comment: true
   field_swap_status: true

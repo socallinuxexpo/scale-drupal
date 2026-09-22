@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.track_suggestion.field_decision_note
     - field.field.node.track_suggestion.field_old_track
+    - field.field.node.track_suggestion.field_reviewed_by
+    - field.field.node.track_suggestion.field_reviewed_on
     - field.field.node.track_suggestion.field_suggested_track
     - field.field.node.track_suggestion.field_swap_comment
     - field.field.node.track_suggestion.field_swap_status
@@ -22,6 +25,14 @@ content:
     weight: 2
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_decision_note:
+    type: string_textarea
+    weight: 13
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
     third_party_settings: {  }
   field_suggested_track:
     type: entity_reference_autocomplete
@@ -115,3 +126,5 @@ content:
     third_party_settings: {  }
 hidden:
   field_old_track: true
+  field_reviewed_by: true
+  field_reviewed_on: true

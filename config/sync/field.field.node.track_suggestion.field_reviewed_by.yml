@@ -1,0 +1,29 @@
+uuid: 7fd7563d-b6f1-423f-ad16-616c14f852e2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_reviewed_by
+    - node.type.track_suggestion
+id: node.track_suggestion.field_reviewed_by
+field_name: field_reviewed_by
+entity_type: node
+bundle: track_suggestion
+label: 'Reviewed by'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+      direction: ASC
+    auto_create: false
+    filter:
+      type: _none
+    include_anonymous: true
+field_type: entity_reference

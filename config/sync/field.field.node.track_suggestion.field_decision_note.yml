@@ -1,0 +1,19 @@
+uuid: e913eed7-1462-4fbd-8c56-18a32cc39b2b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_decision_note
+    - node.type.track_suggestion
+id: node.track_suggestion.field_decision_note
+field_name: field_decision_note
+entity_type: node
+bundle: track_suggestion
+label: 'Decision note'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
