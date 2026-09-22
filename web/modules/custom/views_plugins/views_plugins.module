@@ -86,6 +86,11 @@ function views_plugins_form_views_exposed_form_alter(&$form, &$form_state) {
     _views_plugins_group_track_options($form);
   }
 
+  if ($form['#id'] == 'views-exposed-form-track-swaps-page-1') {
+    _views_plugins_group_track_options($form, 'suggested_track');
+    _views_plugins_group_track_options($form, 'current_track');
+  }
+
   if ($form['#id'] == 'views-exposed-form-sessions-admin') {
     // Remove the size attribute to convert the field to a dropdown.
     unset($form["event"]["#size"]);
@@ -115,18 +120,20 @@ function views_plugins_form_views_exposed_form_alter(&$form, &$form_state) {
  * GroupedSelectWidget in allowed_taxonomy. Views filters have no widget to
  * reuse, so the same split is done here on the options array instead.
  *
- * Unlike the widget, inactive tracks are always shown. The votes report can
- * load older events, so reviewers need them.
+ * Unlike the widget, inactive tracks are always shown. The votes report and
+ * the track swaps list can both load older events, so they're needed.
  *
  * @param array $form
- *   The exposed form for the session votes view.
+ *   The exposed form holding the track filter.
+ * @param string $key
+ *   The filter's identifier. Defaults to the votes view's Track filter.
  */
-function _views_plugins_group_track_options(array &$form) {
-  if (!isset($form['field_session_track_target_id_verf']['#options'])) {
+function _views_plugins_group_track_options(array &$form, string $key = 'field_session_track_target_id_verf') {
+  if (!isset($form[$key]['#options'])) {
     return;
   }
 
-  $options = $form['field_session_track_target_id_verf']['#options'];
+  $options = $form[$key]['#options'];
 
   // Keep "- Any -" at the top rather than sorting it into a group.
   $any_option = [];
@@ -154,7 +161,7 @@ function _views_plugins_group_track_options(array &$form) {
   }
 
   // A nested array renders as an optgroup, so each key becomes a heading.
-  $form['field_session_track_target_id_verf']['#options'] = $any_option + array_filter([
+  $form[$key]['#options'] = $any_option + array_filter([
     'Active' => $active ?: NULL,
     'Inactive' => $inactive ?: NULL,
   ]);
