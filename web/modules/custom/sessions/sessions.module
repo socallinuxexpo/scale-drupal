@@ -5,9 +5,11 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Core\Messenger\MessengerInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
 use Drupal\sessions\Form\TrackSuggestionForm;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_ENTITY_TYPE_insert().
@@ -317,6 +319,14 @@ function sessions_node_presave(EntityInterface $entity): void
     $original = $entity->original;
     $was_open = $original->get('field_swap_status')->value === 'suggested';
 
+    // Read before anything below resets these, so "nothing changed" can be
+    // told apart from a real save. Drupal shows the same "has been updated"
+    // message either way, which reads as if a decision happened when it
+    // didn't. sessions_track_suggestion_edit_submit() uses this to fix that.
+    $entity->trackSuggestionUnchanged =
+        $entity->get('field_decision_note')->value === $original->get('field_decision_note')->value
+        && $entity->get('field_swap_status')->value === $original->get('field_swap_status')->value;
+
     // A suggestion always stays on the talk it was made for.
     $entity->set('field_talk', $original->get('field_talk')->target_id);
 
@@ -408,6 +418,47 @@ function _sessions_apply_accepted_suggestion(NodeInterface $suggestion): void
         $other->set('field_decision_note', t('Another suggestion was accepted.'));
         $other->save();
     }
+}
+
+/**
+ * Describes the most recent accepted swap for a talk, if it has been swapped.
+ *
+ * @return array|null
+ *   The track it came from, the track it went to, and when the swap was
+ *   decided. NULL if the talk has never been swapped.
+ */
+function _sessions_last_track_swap(NodeInterface $talk): ?array
+{
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
+
+    $nids = $storage->getQuery()
+        ->accessCheck(FALSE)
+        ->condition('type', 'track_suggestion')
+        ->condition('field_talk', $talk->id())
+        ->condition('field_swap_status', 'accepted')
+        ->exists('field_old_track')
+        ->exists('field_reviewed_on')
+        ->sort('field_reviewed_on', 'DESC')
+        ->range(0, 1)
+        ->execute();
+
+    if (!$nids) {
+        return NULL;
+    }
+
+    $swap = $storage->load(reset($nids));
+    $from = $swap->get('field_old_track')->entity;
+    $to = $swap->get('field_suggested_track')->entity;
+
+    if (!$from || !$to) {
+        return NULL;
+    }
+
+    return [
+        'from' => $from->label(),
+        'to' => $to->label(),
+        'on' => $swap->get('field_reviewed_on')->value,
+    ];
 }
 
 /**
@@ -568,17 +619,31 @@ function sessions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $is_open = $suggestion->get('field_swap_status')->value === 'suggested';
     $can_decide = $is_open && \Drupal::currentUser()->hasPermission('edit any track_suggestion content');
 
-    // Changing these here would mean accepting something nobody suggested.
+    // Changing these here would mean accepting something nobody suggested,
+    // or rewriting the reviewer's own stated reason after the fact.
     $form['field_talk']['#disabled'] = TRUE;
     $form['field_suggested_track']['#disabled'] = TRUE;
+    $form['field_swap_comment']['#disabled'] = TRUE;
 
     // Everyone can see the status and note, but decisions are final.
     $form['field_swap_status']['#disabled'] = !$can_decide;
     $form['field_decision_note']['#disabled'] = !$can_decide;
 
+    // "Suggested" reads right on the badge reviewers see (describing their
+    // own suggestion), but reads like a real option next to Accepted and
+    // Rejected on this screen. Only reviewers ever see the badge, and only
+    // session editors ever see this form, so the two never meet.
+    if (isset($form['field_swap_status']['widget']['#options']['suggested'])) {
+      $form['field_swap_status']['widget']['#options']['suggested'] = t('Pending');
+    }
+
     if ($can_decide) {
       $form['#validate'][] = '_sessions_validate_track_decision';
     }
+
+    // Runs after the default save, so it can fix the redirect and the
+    // message the save already produced.
+    $form['actions']['submit']['#submit'][] = '_sessions_track_suggestion_edit_submit';
   }
 
   // Populate vote_user for fivestar forms so display_format "user" works.
@@ -612,6 +677,40 @@ function _sessions_validate_track_decision(array &$form, FormStateInterface $for
   $suggestion = $form_state->getFormObject()->getEntity();
   if ($problem = _sessions_accept_problem($suggestion)) {
     $form_state->setErrorByName('field_swap_status', $problem);
+  }
+}
+
+/**
+ * Runs after a track suggestion's decision form saves.
+ *
+ * The default save always lands on the suggestion's own page and always says
+ * "has been updated", even if nothing was actually decided. This sends the
+ * reviewer back to the talk instead, and corrects the message when saving
+ * genuinely changed nothing.
+ */
+function _sessions_track_suggestion_edit_submit(array &$form, FormStateInterface $form_state) {
+  $suggestion = $form_state->getFormObject()->getEntity();
+
+  // Every entity edit link gets a destination added automatically, which
+  // always wins over a redirect set here unless told otherwise. The list's
+  // own destination (return to the queue) is worth keeping; anything else is
+  // the talk's plain page, since /review resolves to the same route as the
+  // canonical one core builds that destination from. Send those back to the
+  // review page instead, where the suggestion was actually decided from.
+  $destination = \Drupal::request()->query->get('destination', '');
+
+  if (!str_starts_with($destination, '/admin/content/track-swaps')) {
+    $talk = $suggestion->get('field_talk')->entity;
+
+    if ($talk) {
+      $form_state->setRedirectUrl(Url::fromUserInput($talk->toUrl()->toString() . '/review'));
+      $form_state->setIgnoreDestination(TRUE);
+    }
+  }
+
+  if (!empty($suggestion->trackSuggestionUnchanged)) {
+    \Drupal::messenger()->deleteByType(MessengerInterface::TYPE_STATUS);
+    \Drupal::messenger()->addStatus(t('No changes made.'));
   }
 }
 
@@ -776,6 +875,18 @@ function _sessions_add_track_suggestions(array &$build, NodeInterface $node): vo
         ],
     ];
 
+    if ($swap = _sessions_last_track_swap($node)) {
+        $section['swap'] = [
+            '#markup' => t('This talk was swapped from @from to @to on @date.', [
+                '@from' => $swap['from'],
+                '@to' => $swap['to'],
+                '@date' => \Drupal::service('date.formatter')->format($swap['on'], 'custom', 'M j, Y'),
+            ]),
+            '#prefix' => '<p class="text-sm text-gray-500">',
+            '#suffix' => '</p>',
+        ];
+    }
+
     $list = views_embed_view('track_swaps', 'block_1', $node->id());
     if ($list) {
         $section['list'] = $list;
@@ -789,4 +900,20 @@ function _sessions_add_track_suggestions(array &$build, NodeInterface $node): vo
     }
 
     $build['track_suggestions'] = $section;
+}
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * The Reason and Decision note columns on the track swaps list rewrite
+ * themselves into a <details>/<summary> for long text (see the view's
+ * Rewrite results). This loads the one rule that trims the browser's
+ * default bold styling on it. Scoped to this one view, same as
+ * utility_views_pre_render().
+ */
+function sessions_views_pre_render(ViewExecutable $view): void
+{
+    if ($view->id() === 'track_swaps') {
+        $view->element['#attached']['library'][] = 'sessions/track_swaps';
+    }
 }

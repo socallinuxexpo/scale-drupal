@@ -1,0 +1,32 @@
+/**
+ * The Reason and Decision note columns preview long text in a native
+ * <details>/<summary>. Browsers bold <summary>, which reads too heavy next
+ * to plain table text.
+ */
+.track-swap-preview {
+  font-weight: normal;
+  cursor: pointer;
+}
+
+/**
+ * Reason and Decision note values vary wildly in length (a Reason can run to
+ * a full paragraph), so auto layout stretches one column far past the other.
+ * Capping both evens them out, and Suggested by needs a floor because capping
+ * the others starves it.
+ *
+ * Not table-layout: fixed, that breaks browser zoom on this table.
+ */
+.views-field-field-swap-comment,
+.views-field-field-decision-note {
+  max-width: 26rem;
+}
+
+.views-field-uid {
+  min-width: 6rem;
+}
+
+/* Keeps the "Suggested by" header on one line; auto layout widens the
+ * column to fit. */
+th.views-field-uid {
+  white-space: nowrap;
+}

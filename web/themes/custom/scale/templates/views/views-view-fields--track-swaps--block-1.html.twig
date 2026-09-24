@@ -23,4 +23,7 @@
   {% if fields.field_swap_comment %}
     <div>{{ fields.field_swap_comment.content }}</div>
   {% endif %}
+  {% if fields.operations.content|render|trim %}
+    <div class="text-sm">{{ fields.operations.content }}</div>
+  {% endif %}
 </div>

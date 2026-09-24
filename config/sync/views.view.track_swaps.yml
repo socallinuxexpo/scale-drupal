@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.field_decision_note
     - field.storage.node.field_old_track
     - field.storage.node.field_session_track
     - field.storage.node.field_speakers_ref
@@ -11,7 +12,6 @@ dependencies:
     - field.storage.node.field_swap_status
     - node.type.track_suggestion
     - user.role.administrator
-    - user.role.reviewer
     - user.role.session_editor
   module:
     - node
@@ -36,6 +36,72 @@ display:
     display_options:
       title: 'Track swaps'
       fields:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: field_talk
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          entity_field: nid
+          plugin_id: field
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
         title:
           id: title
           table: node_field_data
@@ -51,8 +117,8 @@ display:
           alter:
             alter_text: false
             text: ''
-            make_link: false
-            path: ''
+            make_link: true
+            path: 'node/{{ nid }}/review'
             absolute: false
             external: false
             replace_spaces: false
@@ -90,7 +156,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -634,8 +700,8 @@ display:
           label: Reason
           exclude: false
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "{% if field_swap_comment|length > 25 %}<details><summary class=\"track-swap-preview\">{{ field_swap_comment|slice(0, 25)|raw }}…</summary>{{ field_swap_comment }}</details>{% else %}{{ field_swap_comment }}{% endif %}\r\n\r\n"
             make_link: false
             path: ''
             absolute: false
@@ -650,14 +716,76 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 40
+            max_length: 25
             word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: true
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: basic_string
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        field_decision_note:
+          id: field_decision_note
+          table: node__field_decision_note
+          field: field_decision_note
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: field
+          label: 'Decision note'
+          exclude: false
+          alter:
+            alter_text: true
+            text: "{% if field_decision_note|length > 25 %}<details><summary class=\"track-swap-preview\">{{ field_decision_note|slice(0, 25)|raw }}…</summary>{{ field_decision_note }}</details>{% else %}{{ field_decision_note }}{% endif %}\r\n"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 25
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
             preserve_tags: ''
             html: false
           element_type: ''
@@ -759,7 +887,7 @@ display:
         type: basic
         options:
           submit_button: Apply
-          reset_button: false
+          reset_button: true
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
@@ -769,7 +897,6 @@ display:
         type: role
         options:
           role:
-            reviewer: reviewer
             administrator: administrator
             session_editor: session_editor
       cache:
@@ -1243,6 +1370,7 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags:
+        - 'config:field.storage.node.field_decision_note'
         - 'config:field.storage.node.field_old_track'
         - 'config:field.storage.node.field_session_track'
         - 'config:field.storage.node.field_speakers_ref'
@@ -1588,10 +1716,64 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        operations:
+          id: operations
+          table: node
+          field: operations
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: entity_operations
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          destination: true
       pager:
         type: none
         options:
           offset: 0
+      access:
+        type: none
+        options: {  }
       sorts:
         created:
           id: created
@@ -1676,6 +1858,7 @@ display:
           separator: ' | '
           hide_empty: true
       defaults:
+        access: false
         pager: false
         style: false
         row: false
@@ -1693,7 +1876,6 @@ display:
         - 'languages:language_interface'
         - url
         - 'user.node_grants:view'
-        - user.roles
       tags:
         - 'config:field.storage.node.field_suggested_track'
         - 'config:field.storage.node.field_swap_comment'
@@ -1732,6 +1914,7 @@ display:
         - 'user.node_grants:view'
         - user.roles
       tags:
+        - 'config:field.storage.node.field_decision_note'
         - 'config:field.storage.node.field_old_track'
         - 'config:field.storage.node.field_session_track'
         - 'config:field.storage.node.field_speakers_ref'
