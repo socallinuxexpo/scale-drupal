@@ -6,6 +6,7 @@ use Drupal\node\NodeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Mail\MailManagerInterface;
 use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Render\Element;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
 use Drupal\sessions\Form\TrackSuggestionForm;
@@ -588,8 +589,35 @@ function sessions_comment_insert(EntityInterface $entity) {
 }
 
 /**
+ * Implements hook_menu_links_discovered_alter().
+ *
+ * Drupal offers every content type under Add content. Suggestions are made
+ * from a talk's review page, so the link to add one directly is dropped.
+ */
+function sessions_menu_links_discovered_alter(&$links): void
+{
+    foreach ($links as $key => $link) {
+        if (($link['route_name'] ?? '') === 'node.add'
+            && ($link['route_parameters']['node_type'] ?? '') === 'track_suggestion') {
+            unset($links[$key]);
+        }
+    }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node_add_list.
+ *
+ * Same reason as the menu link above: keeps it off the Add content page.
+ * Themes build their own list from 'content', so drop it there too.
+ */
+function sessions_preprocess_node_add_list(array &$variables): void
+{
+    unset($variables['content']['track_suggestion'], $variables['types']['track_suggestion']);
+}
+
+/**
  * Implements hook_form_alter().
- * 
+ *
  * When posting comment, redirect to /review.
  * Also adds speaker validation to session node forms.
  */
@@ -605,13 +633,20 @@ function sessions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['#validate'][] = '_sessions_validate_speakers_field';
   }
 
-  // The default forms for track suggestions. Only admins can add through them,
+  // The default forms for track suggestions. Only admins reach the add form,
   // and only session editors reach the edit form, which is where they accept
   // or reject. These mirror the rules sessions_node_presave() enforces.
   if ($form_id === 'node_track_suggestion_form') {
-    // New suggestions always start open, so there's nothing to decide yet.
-    $form['field_swap_status']['#disabled'] = TRUE;
-    $form['field_decision_note']['#access'] = FALSE;
+    // Suggestions are made from a talk's review page, where the form knows
+    // the talk and offers only the tracks it can move to. This one has none
+    // of that, so it points at the right place instead.
+    foreach (Element::children($form) as $key) {
+      $form[$key]['#access'] = FALSE;
+    }
+
+    $form['notice'] = [
+      '#markup' => '<p>' . t('Track suggestions are made from a talk’s review page.') . '</p>',
+    ];
   }
 
   if ($form_id === 'node_track_suggestion_edit_form') {
