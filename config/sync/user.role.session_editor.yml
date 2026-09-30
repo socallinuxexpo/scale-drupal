@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.session
+    - node.type.track_suggestion
     - workflows.workflow.session_workflow
   module:
     - content_moderation
@@ -15,4 +16,5 @@ is_admin: null
 permissions:
   - 'access content overview'
   - 'edit any session content'
+  - 'edit any track_suggestion content'
   - 'use session_workflow transition edit_accepted'

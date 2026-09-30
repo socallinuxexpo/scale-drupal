@@ -58,3 +58,4 @@ modification+reviewer+node+speaker: node.speaker.speaker
 modification+administrator+node+speaker: node.speaker.default
 'use  The form mode default linked to  paragraph entity( event_sessions_list )': paragraph.event_sessions_list.default
 'use  The form mode default linked to  paragraph entity( social_media_link )': paragraph.social_media_link.default
+'use  The form mode default linked to  node entity( track_suggestion )': node.track_suggestion.default

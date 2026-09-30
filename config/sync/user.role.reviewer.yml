@@ -16,6 +16,7 @@ dependencies:
     - node
     - path
     - session_enhancements
+    - sessions
     - system
     - toolbar
     - tour
@@ -49,6 +50,7 @@ permissions:
   - 'rate content'
   - 'revert all revisions'
   - 'skip comment approval'
+  - 'suggest track changes'
   - 'use session_workflow transition accept_session'
   - 'use session_workflow transition back_to_draft'
   - 'use session_workflow transition confirm_session'

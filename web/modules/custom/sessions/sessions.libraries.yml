@@ -1,0 +1,5 @@
+track_swaps:
+  version: 1.x
+  css:
+    theme:
+      css/track-swaps.css: {  }

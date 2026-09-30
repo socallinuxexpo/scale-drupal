@@ -1,0 +1,101 @@
+uuid: f0a4312b-1f8b-4109-8d88-c35f9c8ca75b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.track_suggestion.field_decision_note
+    - field.field.node.track_suggestion.field_old_track
+    - field.field.node.track_suggestion.field_reviewed_by
+    - field.field.node.track_suggestion.field_reviewed_on
+    - field.field.node.track_suggestion.field_suggested_track
+    - field.field.node.track_suggestion.field_swap_comment
+    - field.field.node.track_suggestion.field_swap_status
+    - field.field.node.track_suggestion.field_talk
+    - node.type.track_suggestion
+  module:
+    - options
+    - user
+id: node.track_suggestion.default
+targetEntityType: node
+bundle: track_suggestion
+mode: default
+content:
+  field_decision_note:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_old_track:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 105
+    region: content
+  field_reviewed_by:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  field_reviewed_on:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+      tooltip:
+        date_format: long
+        custom_date_format: ''
+      time_diff:
+        enabled: false
+        future_format: '@interval hence'
+        past_format: '@interval ago'
+        granularity: 2
+        refresh: 60
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_suggested_track:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_swap_comment:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_swap_status:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_talk:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  breadcrumbs: true

@@ -1,0 +1,22 @@
+uuid: 52a53fef-9930-41e3-937d-0fd2f97938d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.track_suggestion
+id: node.track_suggestion.status
+field_name: status
+entity_type: node
+bundle: track_suggestion
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

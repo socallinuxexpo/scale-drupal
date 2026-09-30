@@ -5,8 +5,12 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\node\NodeInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Render\Element;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
+use Drupal\sessions\Form\TrackSuggestionForm;
+use Drupal\views\ViewExecutable;
 
 /**
  * Implements hook_ENTITY_TYPE_insert().
@@ -277,9 +281,229 @@ function sessions_mail($key, &$message, $params): void
  */
 function sessions_node_update(EntityInterface $entity): void
 {
-    if ($entity instanceof NodeInterface && $entity->bundle() == 'session') {
+    // A track swap only changes the track, and the newest revision it edits
+    // can differ from the live one, so comparing speakers could email people
+    // who weren't added.
+    if ($entity instanceof NodeInterface && $entity->bundle() == 'session' && empty($entity->sessionsTrackSwap)) {
         _sessions_notify_newly_added_speakers($entity);
     }
+
+    if ($entity instanceof NodeInterface && $entity->bundle() == 'track_suggestion') {
+        _sessions_apply_accepted_suggestion($entity);
+    }
+}
+
+/**
+ * Implements hook_node_presave().
+ *
+ * Enforces the track suggestion rules on every save, whichever form or script
+ * it comes from. Anyone who can edit any track suggestion is treated as a
+ * session editor, and only they can accept or reject.
+ */
+function sessions_node_presave(EntityInterface $entity): void
+{
+    if (!$entity instanceof NodeInterface || $entity->bundle() !== 'track_suggestion') {
+        return;
+    }
+
+    $decision_fields = ['field_old_track', 'field_decision_note', 'field_reviewed_by', 'field_reviewed_on'];
+
+    // New suggestions always start open, with nothing decided yet.
+    if ($entity->isNew()) {
+        $entity->set('field_swap_status', 'suggested');
+        foreach ($decision_fields as $field) {
+            $entity->set($field, NULL);
+        }
+        return;
+    }
+
+    $original = $entity->original;
+    $was_open = $original->get('field_swap_status')->value === 'suggested';
+
+    // Read before anything below resets these, so "nothing changed" can be
+    // told apart from a real save. Drupal shows the same "has been updated"
+    // message either way, which reads as if a decision happened when it
+    // didn't. sessions_track_suggestion_edit_submit() uses this to fix that.
+    $entity->trackSuggestionUnchanged =
+        $entity->get('field_decision_note')->value === $original->get('field_decision_note')->value
+        && $entity->get('field_swap_status')->value === $original->get('field_swap_status')->value;
+
+    // A suggestion always stays on the talk it was made for.
+    $entity->set('field_talk', $original->get('field_talk')->target_id);
+
+    // Only the person who made it can change the track, and only while open.
+    // Otherwise a session editor could accept a track the reviewer never
+    // suggested.
+    if (!$was_open || $entity->getOwnerId() != \Drupal::currentUser()->id()) {
+        $entity->set('field_suggested_track', $original->get('field_suggested_track')->target_id);
+    }
+
+    $can_decide = $was_open && \Drupal::currentUser()->hasPermission('edit any track_suggestion content');
+    $status = $entity->get('field_swap_status')->value;
+
+    // Decisions are final, and only session editors make them. Anything else
+    // keeps the status and decision fields as they were.
+    if (!$can_decide || $status === 'suggested') {
+        $note = $entity->get('field_decision_note')->getValue();
+
+        $entity->set('field_swap_status', $original->get('field_swap_status')->value);
+        foreach ($decision_fields as $field) {
+            $entity->set($field, $original->get($field)->getValue());
+        }
+
+        // A session editor can leave a note on an open suggestion.
+        if ($can_decide) {
+            $entity->set('field_decision_note', $note);
+        }
+        return;
+    }
+
+    // Accepted or rejected just now.
+    $entity->set('field_reviewed_by', \Drupal::currentUser()->id());
+    $entity->set('field_reviewed_on', \Drupal::time()->getRequestTime());
+
+    if ($status === 'accepted') {
+        $talk = _sessions_latest_revision($entity->get('field_talk')->target_id);
+        $entity->set('field_old_track', $talk ? $talk->get('field_session_track')->target_id : NULL);
+    }
+}
+
+/**
+ * Applies a suggestion that was just accepted. Called from hook_node_update().
+ *
+ * Moves the talk and closes the other open suggestions on it. This runs inside the same database transaction as the
+ * accept, so if moving the talk fails the accept is rolled back too.
+ */
+function _sessions_apply_accepted_suggestion(NodeInterface $suggestion): void
+{
+    $was_open = $suggestion->original->get('field_swap_status')->value === 'suggested';
+    if (!$was_open || $suggestion->get('field_swap_status')->value !== 'accepted') {
+        return;
+    }
+
+    $new_tid = $suggestion->get('field_suggested_track')->target_id;
+    $talk = _sessions_latest_revision($suggestion->get('field_talk')->target_id);
+
+    if ($talk && $talk->get('field_session_track')->target_id != $new_tid) {
+        $talk->set('field_session_track', $new_tid);
+
+        // Saving a moderated node in code can drop it back to the default
+        // state, so write the current state back explicitly. Same as #178.
+        if ($talk->hasField('moderation_state')) {
+            $talk->set('moderation_state', $talk->get('moderation_state')->value);
+        }
+
+        $talk->setNewRevision(TRUE);
+        $talk->setRevisionUserId(\Drupal::currentUser()->id());
+        $talk->setRevisionCreationTime(\Drupal::time()->getRequestTime());
+        $talk->setRevisionLogMessage(t('Track changed by accepted track suggestion @nid.', ['@nid' => $suggestion->id()]));
+
+        // Moving a talk isn't adding speakers, so don't email anyone.
+        $talk->sessionsTrackSwap = TRUE;
+        $talk->save();
+    }
+
+    // Close the other suggestions still open on this talk. Anything suggested
+    // after this is a new round and stays open.
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
+    $nids = $storage->getQuery()
+        ->accessCheck(FALSE)
+        ->condition('type', 'track_suggestion')
+        ->condition('field_talk', $suggestion->get('field_talk')->target_id)
+        ->condition('field_swap_status', 'suggested')
+        ->condition('nid', $suggestion->id(), '<>')
+        ->execute();
+
+    foreach ($storage->loadMultiple($nids) as $other) {
+        $other->set('field_swap_status', 'rejected');
+        $other->set('field_decision_note', t('Another suggestion was accepted.'));
+        $other->save();
+    }
+}
+
+/**
+ * Describes the most recent accepted swap for a talk, if it has been swapped.
+ *
+ * @return array|null
+ *   The track it came from, the track it went to, and when the swap was
+ *   decided. NULL if the talk has never been swapped.
+ */
+function _sessions_last_track_swap(NodeInterface $talk): ?array
+{
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
+
+    $nids = $storage->getQuery()
+        ->accessCheck(FALSE)
+        ->condition('type', 'track_suggestion')
+        ->condition('field_talk', $talk->id())
+        ->condition('field_swap_status', 'accepted')
+        ->exists('field_old_track')
+        ->exists('field_reviewed_on')
+        ->sort('field_reviewed_on', 'DESC')
+        ->range(0, 1)
+        ->execute();
+
+    if (!$nids) {
+        return NULL;
+    }
+
+    $swap = $storage->load(reset($nids));
+    $from = $swap->get('field_old_track')->entity;
+    $to = $swap->get('field_suggested_track')->entity;
+
+    if (!$from || !$to) {
+        return NULL;
+    }
+
+    return [
+        'from' => $from->label(),
+        'to' => $to->label(),
+        'on' => $swap->get('field_reviewed_on')->value,
+    ];
+}
+
+/**
+ * Loads the newest revision of a node, which may be ahead of the live one.
+ *
+ * Editing the live revision when a newer draft exists would bury the draft,
+ * so track changes always start from the newest.
+ */
+function _sessions_latest_revision($nid): ?NodeInterface
+{
+    if (!$nid) {
+        return NULL;
+    }
+
+    $storage = \Drupal::entityTypeManager()->getStorage('node');
+    $vid = $storage->getLatestRevisionId($nid);
+
+    return $vid ? $storage->loadRevision($vid) : NULL;
+}
+
+/**
+ * Checks whether a suggestion can be accepted right now.
+ *
+ * @return string|null
+ *   Why it can't, or NULL if it can.
+ */
+function _sessions_accept_problem(NodeInterface $suggestion): ?string
+{
+    $track = $suggestion->get('field_suggested_track')->entity;
+    $talk = _sessions_latest_revision($suggestion->get('field_talk')->target_id);
+
+    if (!$track || !$talk) {
+        return (string) t('The talk or suggested track no longer exists.');
+    }
+
+    if ($talk->get('field_session_track')->target_id == $track->id()) {
+        return (string) t('This talk is already in @track.', ['@track' => $track->label()]);
+    }
+
+    if ($track->hasField('field_active') && !$track->get('field_active')->value) {
+        return (string) t('@track is no longer an active track.', ['@track' => $track->label()]);
+    }
+
+    return NULL;
 }
 
 /**
@@ -365,8 +589,35 @@ function sessions_comment_insert(EntityInterface $entity) {
 }
 
 /**
+ * Implements hook_menu_links_discovered_alter().
+ *
+ * Drupal offers every content type under Add content. Suggestions are made
+ * from a talk's review page, so the link to add one directly is dropped.
+ */
+function sessions_menu_links_discovered_alter(&$links): void
+{
+    foreach ($links as $key => $link) {
+        if (($link['route_name'] ?? '') === 'node.add'
+            && ($link['route_parameters']['node_type'] ?? '') === 'track_suggestion') {
+            unset($links[$key]);
+        }
+    }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node_add_list.
+ *
+ * Same reason as the menu link above: keeps it off the Add content page.
+ * Themes build their own list from 'content', so drop it there too.
+ */
+function sessions_preprocess_node_add_list(array &$variables): void
+{
+    unset($variables['content']['track_suggestion'], $variables['types']['track_suggestion']);
+}
+
+/**
  * Implements hook_form_alter().
- * 
+ *
  * When posting comment, redirect to /review.
  * Also adds speaker validation to session node forms.
  */
@@ -382,6 +633,54 @@ function sessions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     $form['#validate'][] = '_sessions_validate_speakers_field';
   }
 
+  // The default forms for track suggestions. Only admins reach the add form,
+  // and only session editors reach the edit form, which is where they accept
+  // or reject. These mirror the rules sessions_node_presave() enforces.
+  if ($form_id === 'node_track_suggestion_form') {
+    // Suggestions are made from a talk's review page, where the form knows
+    // the talk and offers only the tracks it can move to. This one has none
+    // of that, so it points at the right place instead.
+    foreach (Element::children($form) as $key) {
+      $form[$key]['#access'] = FALSE;
+    }
+
+    $form['notice'] = [
+      '#markup' => '<p>' . t('Track suggestions are made from a talk’s review page.') . '</p>',
+    ];
+  }
+
+  if ($form_id === 'node_track_suggestion_edit_form') {
+    $suggestion = $form_state->getFormObject()->getEntity();
+    $is_open = $suggestion->get('field_swap_status')->value === 'suggested';
+    $can_decide = $is_open && \Drupal::currentUser()->hasPermission('edit any track_suggestion content');
+
+    // Changing these here would mean accepting something nobody suggested,
+    // or rewriting the reviewer's own stated reason after the fact.
+    $form['field_talk']['#disabled'] = TRUE;
+    $form['field_suggested_track']['#disabled'] = TRUE;
+    $form['field_swap_comment']['#disabled'] = TRUE;
+
+    // Everyone can see the status and note, but decisions are final.
+    $form['field_swap_status']['#disabled'] = !$can_decide;
+    $form['field_decision_note']['#disabled'] = !$can_decide;
+
+    // "Suggested" reads right on the badge reviewers see (describing their
+    // own suggestion), but reads like a real option next to Accepted and
+    // Rejected on this screen. Only reviewers ever see the badge, and only
+    // session editors ever see this form, so the two never meet.
+    if (isset($form['field_swap_status']['widget']['#options']['suggested'])) {
+      $form['field_swap_status']['widget']['#options']['suggested'] = t('Pending');
+    }
+
+    if ($can_decide) {
+      $form['#validate'][] = '_sessions_validate_track_decision';
+    }
+
+    // Runs after the default save, so it can fix the redirect and the
+    // message the save already produced.
+    $form['actions']['submit']['#submit'][] = '_sessions_track_suggestion_edit_submit';
+  }
+
   // Populate vote_user for fivestar forms so display_format "user" works.
   if (strpos($form_id, 'fivestar_form') === 0 && isset($form['vote'])) {
     $context = $form_state->get('context');
@@ -395,6 +694,58 @@ function sessions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
       }
       $form['#cache']['max-age'] = 0;
     }
+  }
+}
+
+/**
+ * Validates accepting a track suggestion before anything is saved.
+ *
+ * Catches the talk already being in that track, or the track having gone
+ * inactive since it was suggested.
+ */
+function _sessions_validate_track_decision(array &$form, FormStateInterface $form_state) {
+  $status = $form_state->getValue(['field_swap_status', 0, 'value']);
+  if ($status !== 'accepted') {
+    return;
+  }
+
+  $suggestion = $form_state->getFormObject()->getEntity();
+  if ($problem = _sessions_accept_problem($suggestion)) {
+    $form_state->setErrorByName('field_swap_status', $problem);
+  }
+}
+
+/**
+ * Runs after a track suggestion's decision form saves.
+ *
+ * The default save always lands on the suggestion's own page and always says
+ * "has been updated", even if nothing was actually decided. This sends the
+ * reviewer back to the talk instead, and corrects the message when saving
+ * genuinely changed nothing.
+ */
+function _sessions_track_suggestion_edit_submit(array &$form, FormStateInterface $form_state) {
+  $suggestion = $form_state->getFormObject()->getEntity();
+
+  // Every entity edit link gets a destination added automatically, which
+  // always wins over a redirect set here unless told otherwise. The list's
+  // own destination (return to the queue) is worth keeping; anything else is
+  // the talk's plain page, since /review resolves to the same route as the
+  // canonical one core builds that destination from. Send those back to the
+  // review page instead, where the suggestion was actually decided from.
+  $destination = \Drupal::request()->query->get('destination', '');
+
+  if (!str_starts_with($destination, '/admin/content/track-swaps')) {
+    $talk = $suggestion->get('field_talk')->entity;
+
+    if ($talk) {
+      $form_state->setRedirectUrl(Url::fromUserInput($talk->toUrl()->toString() . '/review'));
+      $form_state->setIgnoreDestination(TRUE);
+    }
+  }
+
+  if (!empty($suggestion->trackSuggestionUnchanged)) {
+    \Drupal::messenger()->deleteByType(MessengerInterface::TYPE_STATUS);
+    \Drupal::messenger()->addStatus(t('No changes made.'));
   }
 }
 
@@ -529,5 +880,75 @@ function sessions_node_view_alter(array &$build, EntityInterface $node, EntityVi
     if (\Drupal::currentUser()->isAuthenticated()) {
         $build['#attached']['library'][] = 'history/mark-as-read';
         $build['#attached']['drupalSettings']['history']['nodesToMarkAsRead'][$node->id()] = TRUE;
+    }
+
+    if ($node->bundle() === 'session') {
+        _sessions_add_track_suggestions($build, $node);
+    }
+}
+
+/**
+ * Adds the track suggestions section to a talk's review page.
+ *
+ * Lists every suggestion made for the talk, then the form for making or
+ * updating your own.
+ */
+function _sessions_add_track_suggestions(array &$build, NodeInterface $node): void
+{
+    $section = [
+        '#type' => 'container',
+        '#weight' => 50,
+        '#attributes' => ['class' => ['my-7']],
+        // The form is prefilled with the viewer's own suggestion, and the list
+        // has to update as soon as anyone adds one.
+        '#cache' => [
+            'contexts' => ['user'],
+            'tags' => ['node_list:track_suggestion'],
+        ],
+        'heading' => [
+            '#markup' => '<h2>' . t('Track Suggestions') . '</h2>',
+        ],
+    ];
+
+    if ($swap = _sessions_last_track_swap($node)) {
+        $section['swap'] = [
+            '#markup' => t('This talk was swapped from @from to @to on @date.', [
+                '@from' => $swap['from'],
+                '@to' => $swap['to'],
+                '@date' => \Drupal::service('date.formatter')->format($swap['on'], 'custom', 'M j, Y'),
+            ]),
+            '#prefix' => '<p class="text-sm text-gray-500">',
+            '#suffix' => '</p>',
+        ];
+    }
+
+    $list = views_embed_view('track_swaps', 'block_1', $node->id());
+    if ($list) {
+        $section['list'] = $list;
+    }
+
+    // Its own permission, so reviewers don't need the Track suggestion content
+    // permissions, which would also open Drupal's default forms that skip this
+    // form's rules.
+    if (\Drupal::currentUser()->hasPermission('suggest track changes')) {
+        $section['form'] = \Drupal::formBuilder()->getForm(TrackSuggestionForm::class, $node);
+    }
+
+    $build['track_suggestions'] = $section;
+}
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * The Reason and Decision note columns on the track swaps list rewrite
+ * themselves into a <details>/<summary> for long text (see the view's
+ * Rewrite results). This loads the one rule that trims the browser's
+ * default bold styling on it. Scoped to this one view, same as
+ * utility_views_pre_render().
+ */
+function sessions_views_pre_render(ViewExecutable $view): void
+{
+    if ($view->id() === 'track_swaps') {
+        $view->element['#attached']['library'][] = 'sessions/track_swaps';
     }
 }

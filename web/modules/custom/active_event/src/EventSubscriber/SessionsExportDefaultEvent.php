@@ -30,9 +30,16 @@ class SessionsExportDefaultEvent implements EventSubscriberInterface {
 
     $request = $event->getRequest();
 
-    // Only act on the `sessions` view page display `admin`.
-    // Views page routes are "view.{view_id}.{display_id}".
-    if ($request->attributes->get('_route') !== 'view.sessions.admin') {
+    // Admin views that should open on the active event. Views page routes are
+    // "view.{view_id}.{display_id}", and each one's event filter must use the
+    // identifier "event".
+    $routes = [
+      'view.sessions.admin',
+      'view.track_swaps.page_1',
+    ];
+
+    $route = $request->attributes->get('_route');
+    if (!in_array($route, $routes, TRUE)) {
       return;
     }
 
@@ -51,7 +58,7 @@ class SessionsExportDefaultEvent implements EventSubscriberInterface {
     $query = $request->query->all();
     $query['event'] = $active_id;
 
-    $url = Url::fromRoute('view.sessions.admin', [], ['query' => $query])
+    $url = Url::fromRoute($route, [], ['query' => $query])
       ->toString();
     $event->setResponse(new RedirectResponse($url, 302));
   }
