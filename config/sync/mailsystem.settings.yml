@@ -9,3 +9,4 @@ modules:
   webform:
     sponsor_prospectus_email:
       sender: SMTPMailSystem
+      formatter: SMTPMailSystem

@@ -244,13 +244,13 @@ handlers:
       sender_mail: ''
       sender_name: ''
       subject: 'SCALE 24x Sponsorship Follow Up'
-      body: "{% if data.name %}Hi {{ data.name }},{% else %}Hi,{% endif %}\r\n\r\n\r\n{% if data.company %}We look forward to connecting about {{ data.company }} joining us at SCALE.{% else %}We look forward to connecting about sponsorship opportunities at SCALE.{% endif %} We are attaching a copy of our sponsorship prospectus here for your review. We would be happy to discuss your goals and budget and work with you on something as well. If you have any questions about the event or about any sponsorship tiers please reply here.\r\n\r\nRegards,\r\nThe SCALE Sponsorship Team\r\n"
+      body: "<p>{% if data.name|trim %}Hi {{ data.name|trim }},{% else %}Hi,{% endif %}</p>\r\n\r\n<p>{% if data.company|trim %}We look forward to connecting about {{ data.company|trim }} joining us at SCALE.{% else %}We look forward to connecting about sponsorship opportunities at SCALE.{% endif %} We are attaching a copy of our sponsorship prospectus here for your review. We would be happy to discuss your goals and budget and work with you on something as well. If you have any questions about the event or about any sponsorship tiers please reply here.</p>\r\n\r\n<p>Regards,<br>\r\nThe SCALE Sponsorship Team</p>"
       excluded_elements: {  }
       ignore_access: false
       exclude_empty: true
       exclude_empty_checkbox: false
       exclude_attachments: false
-      html: false
+      html: true
       attachments: true
       twig: true
       theme_name: ''
