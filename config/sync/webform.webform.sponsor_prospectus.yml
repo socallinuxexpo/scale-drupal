@@ -234,7 +234,7 @@ handlers:
       to_options: {  }
       bcc_mail: sponsorship@socallinuxexpo.org
       bcc_options: {  }
-      cc_mail: test-cc@example.com
+      cc_mail: ''
       cc_options: {  }
       from_mail: sponsorship@socallinuxexpo.org
       from_options: {  }
