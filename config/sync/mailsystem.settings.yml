@@ -6,3 +6,7 @@ defaults:
   formatter: php_mail
 modules:
   mailgun: {  }
+  webform:
+    sponsor_prospectus_email:
+      sender: SMTPMailSystem
+      formatter: SMTPMailSystem
