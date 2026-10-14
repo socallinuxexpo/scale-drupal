@@ -1,0 +1,15 @@
+uuid: c708235d-a2bf-4e5d-8da5-5da0fe166227
+langcode: en
+status: true
+dependencies:
+  config:
+    - workflows.workflow.session_workflow
+  module:
+    - node
+    - sessions
+id: session_accept_action
+label: 'Accept sessions'
+type: node
+plugin: session_change_moderation_state
+configuration:
+  target_state: accepted
