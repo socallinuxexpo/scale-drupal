@@ -7,3 +7,12 @@ hide_my_rating:
     js/hide-my-rating.js: {  }
   dependencies:
     - core/drupal
+
+# No version key on purpose: it becomes a fixed ?v= on the URL, so the file
+# would keep one address across deploys and stay cached. Without one, Drupal
+# uses its rotating token.
+sponsor_logo_alt:
+  js:
+    js/sponsor-logo-alt.js: {  }
+  dependencies:
+    - core/drupal
