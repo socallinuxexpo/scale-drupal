@@ -1,0 +1,15 @@
+uuid: d7278343-4468-48e0-8d18-8c927f7d3c87
+langcode: en
+status: true
+dependencies:
+  config:
+    - workflows.workflow.session_workflow
+  module:
+    - node
+    - sessions
+id: session_reject_action
+label: 'Reject sessions'
+type: node
+plugin: session_change_moderation_state
+configuration:
+  target_state: unpublished

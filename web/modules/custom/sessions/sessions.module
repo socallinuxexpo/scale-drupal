@@ -945,10 +945,23 @@ function _sessions_add_track_suggestions(array &$build, NodeInterface $node): vo
  * Rewrite results). This loads the one rule that trims the browser's
  * default bold styling on it. Scoped to this one view, same as
  * utility_views_pre_render().
+ *
+ * The votes page also hides its bulk operations from anyone who cannot use
+ * them. Views builds the action dropdown from the field's selected_actions
+ * only - BulkForm::getBulkOptions() never consults the action's access() -
+ * so without this every reviewer would see checkboxes and a Status dropdown
+ * that error on each row they picked. Dropping the field here removes the
+ * column and the form together, leaving their page exactly as it was.
  */
 function sessions_views_pre_render(ViewExecutable $view): void
 {
     if ($view->id() === 'track_swaps') {
         $view->element['#attached']['library'][] = 'sessions/track_swaps';
+    }
+
+    if ($view->id() === 'session_votes' && isset($view->field['node_bulk_form'])) {
+        if (!\Drupal::currentUser()->hasPermission('bulk change session status')) {
+            unset($view->field['node_bulk_form']);
+        }
     }
 }

@@ -1,0 +1,15 @@
+uuid: c082d028-b1a7-444e-a627-e05399b09842
+langcode: en
+status: true
+dependencies:
+  config:
+    - workflows.workflow.session_workflow
+  module:
+    - node
+    - sessions
+id: session_decline_action
+label: 'Decline sessions'
+type: node
+plugin: session_change_moderation_state
+configuration:
+  target_state: declined
