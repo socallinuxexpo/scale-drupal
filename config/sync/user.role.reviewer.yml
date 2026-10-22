@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - node.type.page
+    - node.type.track_suggestion
     - workflows.workflow.session_workflow
   module:
     - comment
@@ -43,6 +44,7 @@ permissions:
   - 'delete own files'
   - 'delete own page content'
   - 'delete page revisions'
+  - 'edit any track_suggestion content'
   - 'edit own comments'
   - 'edit own field_session_votes'
   - 'edit own page content'
