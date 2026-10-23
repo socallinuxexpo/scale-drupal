@@ -1,3 +1,7 @@
 suggest track changes:
   title: 'Suggest track changes'
   description: 'Suggest a different track for a talk from its review page.'
+
+bulk change session status:
+  title: 'Change session status in bulk'
+  description: 'Accept, reject, decline or confirm many talks at once from the votes page.'

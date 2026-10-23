@@ -1,0 +1,15 @@
+uuid: 709bee5a-002f-47c4-a717-3936a5b09a92
+langcode: en
+status: true
+dependencies:
+  config:
+    - workflows.workflow.session_workflow
+  module:
+    - node
+    - sessions
+id: session_confirm_action
+label: 'Confirm sessions'
+type: node
+plugin: session_change_moderation_state
+configuration:
+  target_state: published
