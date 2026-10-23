@@ -11,7 +11,7 @@ field_name: field_speakers_ref
 entity_type: node
 bundle: session
 label: Speakers
-description: ''
+description: "You must link a Speaker Profile for the speaker. Speaker profiles are <i>separate</i> from your CfP tool login.\r\nClick the <strong>Manage Speakers</strong> button to link a Speaker Profile. <br>\r\nIf you need to create a new profile, click <strong>Add New Speaker</strong> on the Manage Speakers dialogue box. "
 required: false
 translatable: false
 default_value: {  }
