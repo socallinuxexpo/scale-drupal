@@ -1,5 +1,6 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\views\ViewExecutable;
 
 /**
@@ -30,4 +31,33 @@ function utility_views_pre_render(ViewExecutable $view): void {
     if ($view->id() === 'session_votes') {
         $view->element['#attached']['library'][] = 'utility/hide_my_rating';
     }
+}
+
+/**
+ * Implements hook_field_widget_single_element_WIDGET_TYPE_form_alter().
+ *
+ * ImageWidget builds the alt box in a #process callback, so it does not exist
+ * yet here - hence queueing another callback behind it rather than setting
+ * the value directly.
+ */
+function utility_field_widget_single_element_image_image_form_alter(array &$element, FormStateInterface $form_state, array $context): void {
+    $items = $context['items'];
+
+    if ($items->getFieldDefinition()->getName() === 'field_sponsor_logo') {
+        $element['#process'][] = 'utility_sponsor_logo_alt_prefill';
+    }
+}
+
+/**
+ * Process callback: loads the script that defaults the alt text.
+ *
+ * Attached here, not in the widget alter: FormBuilder merges element defaults
+ * with `$element += $info`, so setting #attached any earlier discards
+ * managed_file's own, taking file/drupal.file with it and silently breaking
+ * the upload.
+ */
+function utility_sponsor_logo_alt_prefill(array $element, FormStateInterface $form_state, array $form): array {
+    $element['#attached']['library'][] = 'utility/sponsor_logo_alt';
+
+    return $element;
 }
