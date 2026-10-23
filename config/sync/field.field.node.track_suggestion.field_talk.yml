@@ -17,7 +17,7 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:node'
+  handler: 'sessions:talk'
   handler_settings:
     target_bundles:
       session: session
