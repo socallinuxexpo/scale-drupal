@@ -8,11 +8,11 @@ use Drupal\views\Plugin\views\filter\InOperator;
  * Filters track suggestions by the track the talk was in.
  *
  * Issue #222 asks for one "Original Track" filter: the track a talk was moved
- * out of once a suggestion is accepted, and the talk's current track before
- * that. Two fields, so the match is a subquery per case rather than a join.
+ * out of once a decision pins one, and the talk's current track before that.
+ * Two fields, so the match is a subquery per case rather than a join.
  *
- * An accepted suggestion with no old track recorded falls back to the current
- * track, so the filter matches what the Original track column displays.
+ * The matching field handler is in Plugin/views/field/OriginalTrack.php. Both
+ * have to answer the same question or the column and the filter disagree.
  *
  * @ingroup views_filter_handlers
  *
