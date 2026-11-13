@@ -286,6 +286,7 @@ function sessions_node_update(EntityInterface $entity): void
     // who weren't added.
     if ($entity instanceof NodeInterface && $entity->bundle() == 'session' && empty($entity->sessionsTrackSwap)) {
         _sessions_notify_newly_added_speakers($entity);
+        _sessions_close_fulfilled_suggestions($entity);
     }
 
     if ($entity instanceof NodeInterface && $entity->bundle() == 'track_suggestion') {
@@ -416,13 +417,84 @@ function _sessions_apply_accepted_suggestion(NodeInterface $suggestion): void
 
     foreach ($storage->loadMultiple($nids) as $other) {
         $other->set('field_swap_status', 'rejected');
-        $other->set('field_decision_note', t('Another suggestion was accepted.'));
+        $other->set('field_decision_note', _sessions_append_note(
+            $other,
+            t('Another suggestion was accepted.')
+        ));
         $other->save();
     }
 }
 
 /**
- * Describes the most recent accepted swap for a talk, if it has been swapped.
+ * Adds a line to a suggestion's decision note, keeping anything already there.
+ *
+ * A session editor can leave a note on an open suggestion, so closing one in
+ * code must not write over what they said.
+ */
+function _sessions_append_note(NodeInterface $suggestion, $line): string
+{
+    $existing = trim($suggestion->get('field_decision_note')->value ?? '');
+
+    return $existing ? $existing . "\n" . $line : (string) $line;
+}
+
+/**
+ * Closes open suggestions that asked for the track a talk just moved to.
+ *
+ * Editors only - closing one because a speaker moved their own talk would lose
+ * a request that is still valid if they move it back. Suggestions for a
+ * different track stay open. Failures are logged, not thrown, so housekeeping
+ * can't block an editor's save.
+ */
+function _sessions_close_fulfilled_suggestions(NodeInterface $talk): void
+{
+    if (!\Drupal::currentUser()->hasPermission('edit any track_suggestion content')) {
+        return;
+    }
+
+    if (!$talk->original) {
+        return;
+    }
+
+    $new_tid = $talk->get('field_session_track')->target_id;
+    $old_tid = $talk->original->get('field_session_track')->target_id;
+
+    if (!$new_tid || $new_tid == $old_tid) {
+        return;
+    }
+
+    try {
+        $storage = \Drupal::entityTypeManager()->getStorage('node');
+
+        // Suggestions are unpublished, so an access check would find none.
+        $nids = $storage->getQuery()
+            ->accessCheck(FALSE)
+            ->condition('type', 'track_suggestion')
+            ->condition('field_talk', $talk->id())
+            ->condition('field_swap_status', 'suggested')
+            ->condition('field_suggested_track', $new_tid)
+            ->execute();
+
+        foreach ($storage->loadMultiple($nids) as $suggestion) {
+            $suggestion->set('field_swap_status', 'fulfilled');
+            $suggestion->set('field_old_track', $old_tid);
+            $suggestion->set('field_decision_note', _sessions_append_note(
+                $suggestion,
+                t('The talk was moved directly to the suggested track.')
+            ));
+            $suggestion->save();
+        }
+    }
+    catch (\Exception $e) {
+        \Drupal::logger('sessions')->error('Could not close fulfilled suggestions for talk @nid: @message', [
+            '@nid' => $talk->id(),
+            '@message' => $e->getMessage(),
+        ]);
+    }
+}
+
+/**
+ * Describes the most recent completed swap for a talk, if it has been swapped.
  *
  * @return array|null
  *   The track it came from, the track it went to, and when the swap was
@@ -436,7 +508,7 @@ function _sessions_last_track_swap(NodeInterface $talk): ?array
         ->accessCheck(FALSE)
         ->condition('type', 'track_suggestion')
         ->condition('field_talk', $talk->id())
-        ->condition('field_swap_status', 'accepted')
+        ->condition('field_swap_status', ['accepted', 'fulfilled'], 'IN')
         ->exists('field_old_track')
         ->exists('field_reviewed_on')
         ->sort('field_reviewed_on', 'DESC')
@@ -670,6 +742,13 @@ function sessions_form_alter(&$form, FormStateInterface $form_state, $form_id) {
     // session editors ever see this form, so the two never meet.
     if (isset($form['field_swap_status']['widget']['#options']['suggested'])) {
       $form['field_swap_status']['widget']['#options']['suggested'] = t('Pending');
+    }
+
+    // Fulfilled is set in code when a talk moves outside the swap page, so it
+    // is never something to pick. Left in place on one that already has it,
+    // or the disabled select would show the wrong value.
+    if ($is_open) {
+      unset($form['field_swap_status']['widget']['#options']['fulfilled']);
     }
 
     if ($can_decide) {
