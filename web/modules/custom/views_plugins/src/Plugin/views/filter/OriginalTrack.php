@@ -8,11 +8,11 @@ use Drupal\views\Plugin\views\filter\InOperator;
  * Filters track suggestions by the track the talk was in.
  *
  * Issue #222 asks for one "Original Track" filter: the track a talk was moved
- * out of once a suggestion is accepted, and the talk's current track before
- * that. Two fields, so the match is a subquery per case rather than a join.
+ * out of once a decision pins one, and the talk's current track before that.
+ * Two fields, so the match is a subquery per case rather than a join.
  *
- * An accepted suggestion with no old track recorded falls back to the current
- * track, so the filter matches what the Original track column displays.
+ * The matching field handler is in Plugin/views/field/OriginalTrack.php. Both
+ * have to answer the same question or the column and the filter disagree.
  *
  * @ingroup views_filter_handlers
  *
@@ -78,21 +78,21 @@ class OriginalTrack extends InOperator {
 
     $this->ensureMyTable();
 
+    // Mirrors the Original track column: a recorded old track wins, otherwise
+    // the talk's live track. Status is deliberately not checked - the column
+    // doesn't either, and the two drifted when 'fulfilled' was added.
     $this->query->addWhereExpression(
       $this->options['group'],
       "{$this->tableAlias}.nid IN (
-        SELECT accepted.entity_id
-        FROM {node__field_swap_status} accepted
-        INNER JOIN {node__field_old_track} moved_from ON moved_from.entity_id = accepted.entity_id
-        WHERE accepted.field_swap_status_value = 'accepted'
-          AND moved_from.field_old_track_target_id IN (:original_tids[])
+        SELECT moved_from.entity_id
+        FROM {node__field_old_track} moved_from
+        WHERE moved_from.field_old_track_target_id IN (:original_tids[])
         UNION
-        SELECT open.entity_id
-        FROM {node__field_swap_status} open
-        INNER JOIN {node__field_talk} talk ON talk.entity_id = open.entity_id
-        INNER JOIN {node__field_session_track} current_track ON current_track.entity_id = talk.field_talk_target_id
-        LEFT JOIN {node__field_old_track} recorded ON recorded.entity_id = open.entity_id
-        WHERE (open.field_swap_status_value <> 'accepted' OR recorded.field_old_track_target_id IS NULL)
+        SELECT suggestion.entity_id
+        FROM {node__field_talk} suggestion
+        INNER JOIN {node__field_session_track} current_track ON current_track.entity_id = suggestion.field_talk_target_id
+        LEFT JOIN {node__field_old_track} recorded ON recorded.entity_id = suggestion.entity_id
+        WHERE recorded.field_old_track_target_id IS NULL
           AND current_track.field_session_track_target_id IN (:original_tids[])
       )",
       [':original_tids[]' => $tids]
