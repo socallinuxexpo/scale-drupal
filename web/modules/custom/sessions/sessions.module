@@ -359,11 +359,14 @@ function sessions_node_presave(EntityInterface $entity): void
         return;
     }
 
-    // Accepted or rejected just now.
+    // Accepted, rejected or fulfilled just now.
     $entity->set('field_reviewed_by', \Drupal::currentUser()->id());
     $entity->set('field_reviewed_on', \Drupal::time()->getRequestTime());
 
-    if ($status === 'accepted') {
+    // A decision pins where the talk was when it was made, so the row stops
+    // following the talk around. The accept cascade and the direct-move
+    // cleanup pin their own first, so never overwrite one already set.
+    if ($entity->get('field_old_track')->isEmpty()) {
         $talk = _sessions_latest_revision($entity->get('field_talk')->target_id);
         $entity->set('field_old_track', $talk ? $talk->get('field_session_track')->target_id : NULL);
     }
@@ -384,6 +387,10 @@ function _sessions_apply_accepted_suggestion(NodeInterface $suggestion): void
 
     $new_tid = $suggestion->get('field_suggested_track')->target_id;
     $talk = _sessions_latest_revision($suggestion->get('field_talk')->target_id);
+
+    // Read before the move. The suggestions closed below were decided against
+    // the track the talk is leaving, not the one it is going to.
+    $old_tid = $talk ? $talk->get('field_session_track')->target_id : NULL;
 
     if ($talk && $talk->get('field_session_track')->target_id != $new_tid) {
         $talk->set('field_session_track', $new_tid);
@@ -417,6 +424,7 @@ function _sessions_apply_accepted_suggestion(NodeInterface $suggestion): void
 
     foreach ($storage->loadMultiple($nids) as $other) {
         $other->set('field_swap_status', 'rejected');
+        $other->set('field_old_track', $old_tid);
         $other->set('field_decision_note', _sessions_append_note(
             $other,
             t('Another suggestion was accepted.')
