@@ -1,0 +1,64 @@
+Only create a vote when the save came from the rating widget.
+
+https://www.drupal.org/project/fivestar/issues/3152654
+
+FivestarItem::postSave() runs on every save of the host entity. With
+rated_while set to "viewing" it deletes the current user's votes and recreates
+one from the field's stored rating - so editing a node, accepting a workflow
+change, or any other programmatic save silently overwrites the saver's own
+vote, or fabricates one for a user who never voted.
+
+Based on the patch in comment #6, with three deliberate changes:
+
+  - setSyncing(TRUE) is not included. It suppresses content moderation's
+    forced revision and default-revision handling site-wide, which is a
+    larger behavioural change than this fix needs.
+  - The flag is cleared in a finally block so it cannot outlive the save if
+    save() throws.
+  - The two nested conditionals are combined into one for readability.
+
+diff --git a/src/Form/FivestarForm.php b/src/Form/FivestarForm.php
+--- a/src/Form/FivestarForm.php
++++ b/src/Form/FivestarForm.php
+@@ -119,9 +119,19 @@ class FivestarForm extends FormBase {
+       $entity = $context['entity'];
+       $fivestar_field_name = $context['field_definition']->getName();
+       if ($entity->hasField($fivestar_field_name)) {
++        // Mark this save as coming from the rating widget, so the field's
++        // postSave() can tell a real vote from any other entity save.
++        $entity->fivestar_form = TRUE;
++
+         // For votingapi value will be save during save rating value to
+         // field storage.
+         $entity->set($fivestar_field_name, $form_state->getValue('vote'));
+-        $entity->save();
++
++        try {
++          $entity->save();
++        }
++        finally {
++          unset($entity->fivestar_form);
++        }
+       }
+     }
+
+diff --git a/src/Plugin/Field/FieldType/FivestarItem.php b/src/Plugin/Field/FieldType/FivestarItem.php
+--- a/src/Plugin/Field/FieldType/FivestarItem.php
++++ b/src/Plugin/Field/FieldType/FivestarItem.php
+@@ -243,6 +243,16 @@ class FivestarItem extends FieldItemBase {
+     $vote_manager = \Drupal::service('fivestar.vote_manager');
+     $target_entity = $this->getTargetEntity($entity, $field_settings);
+     $vote_rating = $entity->get($field_definition->getName())->rating ?: 0;
++
++    // Only create a vote when the save came from the rating widget. Any other
++    // save - an edit, a track swap, a status change - must not touch votes.
++    // NOTE: this guard only applies when rated_while is "viewing" (our
++    // setting, see field.field.node.session.field_session_votes.yml). If that
++    // is ever changed to "editing", votes come from the entity form instead
++    // and this protection is intentionally bypassed.
++    if ($field_settings['rated_while'] != 'editing' && !isset($entity->fivestar_form)) {
++      return FALSE;
++    }
+
+     $owner = $this->getVoteOwner($entity, $field_settings['rated_while']);
+
