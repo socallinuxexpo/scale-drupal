@@ -20,7 +20,7 @@ Based on the patch in comment #6, with three deliberate changes:
 diff --git a/src/Form/FivestarForm.php b/src/Form/FivestarForm.php
 --- a/src/Form/FivestarForm.php
 +++ b/src/Form/FivestarForm.php
-@@ -119,9 +119,19 @@ class FivestarForm extends FormBase {
+@@ -119,10 +119,20 @@
        $entity = $context['entity'];
        $fivestar_field_name = $context['field_definition']->getName();
        if ($entity->hasField($fivestar_field_name)) {
@@ -41,11 +41,11 @@ diff --git a/src/Form/FivestarForm.php b/src/Form/FivestarForm.php
 +        }
        }
      }
-
+ 
 diff --git a/src/Plugin/Field/FieldType/FivestarItem.php b/src/Plugin/Field/FieldType/FivestarItem.php
 --- a/src/Plugin/Field/FieldType/FivestarItem.php
 +++ b/src/Plugin/Field/FieldType/FivestarItem.php
-@@ -243,6 +243,16 @@ class FivestarItem extends FieldItemBase {
+@@ -243,6 +243,16 @@
      $vote_manager = \Drupal::service('fivestar.vote_manager');
      $target_entity = $this->getTargetEntity($entity, $field_settings);
      $vote_rating = $entity->get($field_definition->getName())->rating ?: 0;
@@ -59,6 +59,6 @@ diff --git a/src/Plugin/Field/FieldType/FivestarItem.php b/src/Plugin/Field/Fiel
 +    if ($field_settings['rated_while'] != 'editing' && !isset($entity->fivestar_form)) {
 +      return FALSE;
 +    }
-
+ 
      $owner = $this->getVoteOwner($entity, $field_settings['rated_while']);
-
+ 
