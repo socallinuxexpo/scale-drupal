@@ -88,7 +88,8 @@
         "patches": {
             "drupal/fivestar": {
                 "Rate content permission is not ported to D8 | https://www.drupal.org/project/fivestar/issues/3133123": "https://www.drupal.org/files/issues/2024-01-22/rate-content-permission-not-port-d8-3133123-31.patch",
-                "Custom patch": "web/modules/patches/combined-issues-3152654-and-2849714.patch"
+                "Custom patch": "web/modules/patches/combined-issues-3152654-and-2849714.patch",
+                "Votes created on every entity save | https://www.drupal.org/project/fivestar/issues/3152654": "web/modules/patches/fivestar-no-vote-on-entity-save-3152654.patch"
             },
             "drupal/view_mode_page": {
                 "The \"node_type\" plugin does not exist. | https://www.drupal.org/project/view_mode_page/issues/3505464": "https://www.drupal.org/files/issues/2025-02-10/the-node_type-plugin-does-not-exist.patch"
