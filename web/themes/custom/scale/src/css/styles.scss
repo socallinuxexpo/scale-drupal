@@ -18,6 +18,21 @@ body {
   @apply font-body;
 }
 
+// Tailwind's preflight strips list markers; restore them in CKEditor content.
+.text-formatted {
+  ul {
+    @apply list-disc pl-12 mb-4;
+  }
+
+  ol {
+    @apply list-decimal pl-12 mb-4;
+  }
+
+  li {
+    @apply mb-1;
+  }
+}
+
 
 // TODO: Find view using this and remove this
 // TODO: Or make this a utility class
