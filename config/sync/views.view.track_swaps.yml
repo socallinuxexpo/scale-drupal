@@ -232,6 +232,56 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+        original_track:
+          id: original_track
+          table: node_field_data
+          field: original_track
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: node
+          plugin_id: original_track
+          label: 'Original track'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
         field_old_track:
           id: field_old_track
           table: node__field_old_track
@@ -304,7 +354,7 @@ display:
           admin_label: ''
           plugin_id: field
           label: 'Original track'
-          exclude: false
+          exclude: true
           alter:
             alter_text: true
             text: '{% if field_old_track %}{{ field_old_track }}{% else %}{{ field_session_track }}{% endif %}'
@@ -1310,18 +1360,30 @@ display:
           row_class: ''
           default_row_class: true
           columns:
+            nid: nid
             title: title
             field_speakers_ref: field_speakers_ref
+            original_track: original_track
+            field_old_track: field_old_track
             field_session_track: field_session_track
             name: name
             field_suggested_track: field_suggested_track
+            field_reviewed_by: field_reviewed_by
             field_swap_status: field_swap_status
             uid: uid
             created: created
             field_swap_comment: field_swap_comment
+            field_decision_note: field_decision_note
             operations: operations
           default: '-1'
           info:
+            nid:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
             title:
               sortable: true
               default_sort_order: asc
@@ -1330,6 +1392,20 @@ display:
               empty_column: false
               responsive: ''
             field_speakers_ref:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            original_track:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_old_track:
+              sortable: false
+              default_sort_order: asc
               align: ''
               separator: ''
               empty_column: false
@@ -1349,6 +1425,13 @@ display:
               empty_column: false
               responsive: ''
             field_suggested_track:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_reviewed_by:
               sortable: false
               default_sort_order: asc
               align: ''
@@ -1377,6 +1460,13 @@ display:
               empty_column: false
               responsive: ''
             field_swap_comment:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_decision_note:
               sortable: false
               default_sort_order: asc
               align: ''

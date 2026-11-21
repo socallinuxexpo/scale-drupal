@@ -20,6 +20,9 @@ settings:
     -
       value: rejected
       label: Rejected
+    -
+      value: fulfilled
+      label: Fulfilled
   allowed_values_function: ''
 module: options
 locked: false
